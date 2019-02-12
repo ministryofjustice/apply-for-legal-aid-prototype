@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Capital restrictions
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "other_capital"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="check_answers_capital_full" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Do any restrictions apply to your property, savings or assets?
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <div class="govuk-checkboxes" data-module="checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+                    Repossession or deferred interest in a property
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="investments" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("investments","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
+                    Subject matter or dispute in other legal proceedings
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                    Foreign exchange controls
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
+                    Restrait or freezing order
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="premium-bonds" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("premium-bonds","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
+                    Bankruptcy
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
+                    Held overseas
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

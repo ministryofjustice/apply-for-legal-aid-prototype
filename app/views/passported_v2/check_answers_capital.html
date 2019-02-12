@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/passported_v2/capital_restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+        <h2 class="govuk-heading-m">
+          Property, savings and other assets
+        </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Own the home you live in
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Yes, with a mortgage or loan{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Property value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £145,000{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Outstanding mortgage amount
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £127,345{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Owned with anyone else
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No, sole owner{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Savings and investments
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Savings account £1,234{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Other assets
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            -{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Do any restrictions apply?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            -{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+     </dl>
+
+
+    <h2 class="govuk-heading-m">Submit your details</h2>
+
+      <p class="govuk-body">
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <a class="govuk-button" href="/passported_v2/dashboard_2" role="button">
+        Submit
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}

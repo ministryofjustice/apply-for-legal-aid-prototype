@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers 'Capital' pages
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers 'Capital' pages
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">Links to different page views/styles</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/capital_check_your_answers/check_answers_capital_blank">Check your answers (No to all)</a> - No to property, savings or assets</li>
+            <li><a href="/capital_check_your_answers/check_answers_capital_full">Check your answers (Yes to all)</a> - Yes to all property, savings, assets and capital restrictions</li>
+            <li><a href="/capital_check_your_answers/check_answers_capital_ownhome">Check your answers (Yes to property No to others)</a> - Yes to all property, No to savings, assets and restrictions</li>
+            <li><a href="/capital_check_your_answers/check_answers_capital_1_tickbox">Check your answers (1 tickbox selected)</a> - Yes to property, 1 tickbox selected for savings, assets and restrictions</li>
+            <li><a href="/capital_check_your_answers/check_answers_capital_yes_and_no">Check your answers (Yes/No combinations)</a> - No to property and savings Yes to assets and restrictions</li>
+          </ul>
+        </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

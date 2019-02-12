@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Prospects of success
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "costs"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="declaration" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What are the prospects of success?
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="prospects" type="radio" value="better" {{ checked("prospects","better") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    50% or better
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="prospects" type="radio" value="marginal" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("prospects","marginal") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    Marginal 45 - 50%
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                      Please explain why you believe legal aid should be granted
+                    </label>
+                    <textarea class="govuk-textarea" id="marginal-more-detail" name="marginal-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['marginal-more-detail'] }}</textarea>
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-3" name="prospects" type="radio" value="borderline" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("prospects","borderline") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                    Borderline
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      Please explain why you believe legal aid should be granted
+                    </label>
+                    <textarea class="govuk-textarea" id="borderline-more-detail" name="borderline-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['borderline-more-detail'] }}</textarea>
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-4" name="prospects" type="radio" value="uncertain" data-aria-controls="conditional-how-contacted-conditional-4" {{ checked("prospects","uncertain") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+                    Uncertain
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-4">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      Please explain why you believe legal aid should be granted
+                    </label>
+                    <textarea class="govuk-textarea" id="uncertain-more-detail" name="uncertain-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['uncertain-more-detail'] }}</textarea>
+
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-5" name="prospects" type="radio" value="poor" data-aria-controls="conditional-how-contacted-conditional-5" {{ checked("prospects","poor") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
+                    Poor
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                      Please explain why you believe legal aid should be granted
+                    </label>
+                    <textarea class="govuk-textarea" id="marginal-more-detail" name="marginal-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['marginal-more-detail'] }}</textarea>
+                  </div>
+
+                </div>
+
+                </div>
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save as draft
+          </a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

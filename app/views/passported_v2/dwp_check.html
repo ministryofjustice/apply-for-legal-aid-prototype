@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Benefits checker
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+  function load() {
+    window.location.href = "passported";
+  }
+  window.onload = setTimeout(load, 5000);;
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main role="main" class="govuk-main-wrapper">
+
+
+    <div class="govuk-grid">
+      <div class="govuk-grid__item govuk-grid__item--two-thirds">
+        <div align="center"><a href="means_assessment_required"><img src="/public/images/loading.gif"></a></div>
+
+        <div align="center">
+
+            <p align="center" class="govuk-body govuk-!-font-size-24" style="width:500px;">Checking your client's details with the Department for Work and Pensions</p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

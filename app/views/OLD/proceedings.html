@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Home",
+  href: "/dashboard"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What does your client want legal aid for?
+      </h1>
+    </legend>
+
+  </fieldset>
+</div>
+</div>
+</div>
+                <div id="search-field" class="govuk-form-group">
+    <label class="govuk-heading-m" for="reference-number" style="margin-bottom: 10px">
+        Search
+        <span class="govuk-caption-m">
+            For example by category of law, matter type or proceeding name
+        </span>
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+</div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      </tr>
+</thead>
+<tbody class="govuk-table__body">
+ <tr class="govuk-table__row">
+   <th class="govuk-table__cell" <h1 class="govuk-body govuk-!-font-size-19">
+     <span class="govuk-caption-m">Family > Domestic Abuse</span>
+     Non-molestation order
+   </h1></th>
+   <td class="govuk-table__cell" style="text-align:right;"> <a href="/client_details" class="govuk-button" style="top:15px;">
+     Select and continue</a></td>
+ </tr>
+ <tr class="govuk-table__row">
+   <th class="govuk-table__cell" <h1 class="govuk-body govuk-!-font-size-19">
+     <span class="govuk-caption-m">Family > Domestic Abuse</span>
+     Non-molestation order - Appeal
+   </h1></th>
+   <td class="govuk-table__cell" style="text-align:right;"> <a href="/client_details" class="govuk-button" style="top:15px;">
+     Select and continue</a> </td>
+ </tr>
+ <tr class="govuk-table__row">
+   <th class="govuk-table__cell" <h1 class="govuk-body govuk-!-font-size-19">
+     <span class="govuk-caption-m">Family > Domestic Abuse</span>
+     Non-molestation order - Enforcement
+   </h1></th>
+   <td class="govuk-table__cell" style="text-align:right;"> <a href="/client_details" class="govuk-button" style="top:15px;">
+     Select and continue</a> </td>
+ </tr>
+ </tbody>
+</table>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with completing this application
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>For any queries about your application, contact the following:
+      <br><br>
+          Case enquires (Monday to Friday, 09:00 - 17:00) <br>
+                Phone: 0300 200 2020
+		    <br><br>
+		        Technical support (Monday to Friday, 09:00 - 17:00) <br>
+		           Email: <a href="#noop">online-support@justice.gov.uk</a> <br>
+		              Phone: 0300 200 2020
+		</p>
+  </div>
+</details>
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

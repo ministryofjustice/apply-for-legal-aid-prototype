@@ -1,0 +1,66 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for legal aid prototypes
+        <span class="govuk-caption-xl"></span>
+      </h1>
+      <p class="govuk-body-l">
+        Versions of all the prototypes for the Apply for legal aid team
+      </p>
+
+    </div>
+  </div>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Passported benefit</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        	<li><a href="/start_page">Version 1</a> - Substantive - Proceedings at the start of flow, capital questions, first attempt at simple merits</li>
+          <li><a href="/passported_v2/start_page">Version 2</a> - Substantive or delegated (Non-mole order)- Client details at the start of flow, proccedings, capital questions, expanded proceeding relevant merits</li>
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Not passported</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        	<li><a href="/non_passported_v1/start_page">Version 1</a> - Substantive or delegated (Non-mole order)</li>
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Playground</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        	<li><a href="/merits_flow/legal_help">Merits flow - Non-mole order</a> - Merits flow only</li>
+          <li><a href="/footer/feedback">Footer - Feedback page</a></li>
+          <li><a href="/footer/contact">Footer - Contact page</a></li>
+          <li><a href="/proceeding_flow/dashboard">Client details & proceedings - Initial pages flow</a></li>
+          <li><a href="/error_pages/page_not_found">Error page - Page not found</a></li>
+          <li><a href="/capital_check_your_answers/check_answers_capital_home">Capital check your answers page</a></li>
+          <li><a href="/means_pages/means_home">Means pages</a></li>
+          <li><a href="/limitations/limitations">Initial limitations ideas</a></li>
+          <li><a href="/test">test</a></li>
+
+          <br>
+          <h2 class="govuk-heading-m">Jim's miscellany</h2>
+
+  <li>Car capital questions (1 per page): <a href="/jim/car_capital_questions/vehicles">V2</a>; V1 <a href="/jim/car_owned_outright/vehicles">owned outright</a>; <a href="/jim/car_owned_financing/vehicles">financing</a>; <a href="/jim/car_owned_none/vehicles">none</a> / <a href="/jim/car_checkbox/other_capital">Car capital checkbox</a></li>
+  <li>'Before you continue' content: <a href="/jim/passported_what_happens_next/passported">brought forward</a>; <a href="/passported_v2/assessment_start">current</a></li>
+  <li>Prospects of success: <a href="/jim/prospects_of_success/prospects">2 pages and less radios</a></li>
+  <li>Statement of case: <a href="/jim/statement/statement">no upload or text error</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+{% endblock %}

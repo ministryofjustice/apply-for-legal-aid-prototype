@@ -1,0 +1,395 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Incoming transactions
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "applicant_type"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">
+            Incoming transactions
+          </h1>
+          <p class="govuk-body">You can add or amend the Incoming categories that your client has selected before their application is submitted.</p>
+
+        </div>
+      </div>
+
+          <div class="govuk-!-padding-bottom-8"></div>
+
+          <h2 class="govuk-heading-l">Salary or wages</h2>
+          <table class="govuk-table" style="border-spacing:0">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Description</th>
+                <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Date</th>
+                <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Amount</th>
+                <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Category</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Cash in HSBC 17Oct</td>
+                <td class="govuk-table__cell">17 OCT 2017</td>
+                <td class="govuk-table__cell">£250.00</td>
+                <td class="govuk-table__cell">
+                  <div class="govuk-form-group">
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="help">None selected</option>
+                      <option value="wages">Salary or wages</option>
+                      <option value="benefits" selected>Benefits</option>
+                      <option value="maintenance">Maintenance received from ex-partner</option>
+                      <option value="lodger">Income from property or lodger</option>
+                      <option value="student_loan">Student loan or grant</option>
+                      <option value="pension">Pension</option>
+                      <option value="help">Financial help from family or friends</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Care Home Ltd Salary</td>
+                <td class="govuk-table__cell">23 OCT 2017</td>
+                <td class="govuk-table__cell ">£174.77</td>
+                <td class="govuk-table__cell">
+                  <div class="govuk-form-group">
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="help">None selected</option>
+                      <option value="wages">Salary or wages</option>
+                      <option value="benefits" selected>Benefits</option>
+                      <option value="maintenance">Maintenance received from ex-partner</option>
+                      <option value="lodger">Income from property or lodger</option>
+                      <option value="student_loan">Student loan or grant</option>
+                      <option value="pension">Pension</option>
+                      <option value="help">Financial help from family or friends</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell">29 SEP 2017</td>
+                <td class="govuk-table__cell  ">£165.55</td>
+                <td class="govuk-table__cell">
+                  <div class="govuk-form-group">
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="help">None selected</option>
+                      <option value="wages">Salary or wages</option>
+                      <option value="benefits" selected>Benefits</option>
+                      <option value="maintenance">Maintenance received from ex-partner</option>
+                      <option value="lodger">Income from property or lodger</option>
+                      <option value="student_loan">Student loan or grant</option>
+                      <option value="pension">Pension</option>
+                      <option value="help">Financial help from family or friends</option>
+                    </select>
+                  </div>
+                </td>
+             </tr>
+           </tbody>
+         </table>
+
+             <h2 class="govuk-heading-l">Benefits</h2>
+             <table class="govuk-table" style="border-spacing:0">
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th class="govuk-table__header" scope="col">Description</th>
+                   <th class="govuk-table__header" scope="col">Date</th>
+                   <th class="govuk-table__header" scope="col">Amount</th>
+                   <th class="govuk-table__header" scope="col">Category</th>
+                 </tr>
+               </thead>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Work and child TC</td>
+               <td class="govuk-table__cell">06 OCT 2017</td>
+               <td class="govuk-table__cell  ">£165.55</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Work and child TC</td>
+               <td class="govuk-table__cell">13 OCT 2017</td>
+               <td class="govuk-table__cell  ">£165.55</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Work and child TC</td>
+               <td class="govuk-table__cell">20 OCT 2017</td>
+               <td class="govuk-table__cell  ">£165.55</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Care Home Ltd Salary</td>
+               <td class="govuk-table__cell">14 OCT 2017</td>
+               <td class="govuk-table__cell  ">£136.31</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Cash in HSBC 16Oct</td>
+               <td class="govuk-table__cell">14 OCT 2017</td>
+               <td class="govuk-table__cell  ">£130.00</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+           </tbody>
+           </table>
+
+             <h2 class="govuk-heading-l">Not categorised</h2>
+             <table class="govuk-table" style="border-spacing:0">
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th class="govuk-table__header" scope="col">Description</th>
+                   <th class="govuk-table__header" scope="col">Date</th>
+                   <th class="govuk-table__header" scope="col">Amount</th>
+                   <th class="govuk-table__header" scope="col">Category</th>
+                 </tr>
+               </thead>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Care Home Ltd Salary</td>
+               <td class="govuk-table__cell">09 OCT 2017</td>
+               <td class="govuk-table__cell  ">£116.40</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Care Home Ltd Salary</td>
+               <td class="govuk-table__cell">02 OCT 2017</td>
+               <td class="govuk-table__cell  ">£108.24</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">CHB</td>
+               <td class="govuk-table__cell">23 OCT 2017</td>
+               <td class="govuk-table__cell  ">£82.80</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+               <td class="govuk-table__cell">09 OCT 2017</td>
+               <td class="govuk-table__cell  ">£60.00</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+               <td class="govuk-table__cell">03 OCT 2017</td>
+               <td class="govuk-table__cell  ">£56.79</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages">Salary or wages</option>
+                     <option value="benefits" selected>Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+             <tr class="govuk-table__row">
+               <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+               <td class="govuk-table__cell">03 OCT 2017</td>
+               <td class="govuk-table__cell  ">£56.79</td>
+               <td class="govuk-table__cell">
+                 <div class="govuk-form-group">
+                   <select class="govuk-select" id="sort" name="sort">
+                     <option value="help">None selected</option>
+                     <option value="wages"selected>Salary or wages</option>
+                     <option value="benefits">Benefits</option>
+                     <option value="maintenance">Maintenance received from ex-partner</option>
+                     <option value="lodger">Income from property or lodger</option>
+                     <option value="student_loan">Student loan or grant</option>
+                     <option value="pension">Pension</option>
+                     <option value="help">Financial help from family or friends</option>
+                   </select>
+                 </div>
+               </td>
+             </tr>
+
+           </tbody>
+         </table>
+
+
+          <a href="provisional_result_v2"<button type="submit" class="govuk-button">
+            Save and return
+          </button></a>
+
+    </div>
+  </div>
+  </main>
+</div>
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}

@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-column-two-thirds">
+      <button class="link-back">Back</button>
+      <form class="form" action="event-location" method="POST">
+        <fieldset id="mock-address-lookup" data-required="Please answer this question">
+          <!-- <div class="form-group"> -->
+            <legend><h1 class="govuk-heading-l">Where will your event be held?</h1></legend>
+          <!-- </div> -->
+          <div id="address-lookup-loader"></div>
+          <div class="address-lookup-step1">
+            <div class="govuk-form-group">
+              <label class="govuk-form-label form-label-bold" for="event-postcode">Postcode</label>
+              <input class="govuk-form-control form-control-1-4" id="event-postcode" type="text" name="event-postcode" value="{{ data['event-postcode'] }}" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <button class="js-launch-lookup button">Find address</button>
+            </div>
+          </div>
+          <div class="address-lookup-step2">
+            <div class="govuk-form-group">
+              <div class="govuk-form-group">
+                <label class="govuk-form-label form-label-bold" for="change-postcode">Postcode</label>
+                <span id="change-postcode" class="postcode"></span> <a href="#change-postcode" aria-label="change postcode" class="change-postcode">Change</a>
+              </div>
+              <label class="govuk-form-label govuk-form-label-bold" for="event-address">Select an address</label>
+              <select class="govuk-form-control" id="event-address" name="event-address">
+                <option>5 addresses found</option>
+                <option>162 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                <option>162B Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                <option>163 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                <option>164 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                <option>165 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+              </select>
+              <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Sort by
+  </label>
+  <select class="govuk-select" id="event-address" name="event-address">
+    <option value="published">Recently published</option>
+    <option value="updated" selected>Recently updated</option>
+    <option value="views">Most views</option>
+    <option value="comments">Most comments</option>
+  </select>
+</div>
+            </div>
+            <div class="govuk-form-group">
+              <input class="button" type="submit" value="Continue">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

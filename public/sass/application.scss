@@ -1,0 +1,99 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// Import GOV.UK Frontend
+@import "node_modules/govuk-frontend/all";
+
+// Patterns that aren't in Frontend
+@import "patterns/check-your-answers";
+@import "patterns/task-list";
+@import "patterns/related-items";
+@import 'patterns/currency-input';
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+
+div.proceeding-list {
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+div.proceeding-list:hover {
+    background-color: #e7f4fb;
+}
+
+div.no-results {
+    margin-left: 0px;
+    font-family: "nta", Arial;
+    font-size: 19px;
+    padding-bottom: 20px;
+}
+
+.change-link {
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+.statute {
+  padding-bottom: 20px;
+}
+
+ul.proceeding-list {
+    padding: 0px;
+    margin-top: 22px;
+}
+
+li.proceeding__list-item {
+display: inline-block;
+}
+
+.proceeding-item {
+  margin-bottom: 5px;
+}
+
+.postcode_change {
+display: inline-block;
+}
+
+p.postcode_change {
+display: inline-block;
+padding-left: 10px;
+}
+
+div.clear-search {
+  padding-top: 8px;
+}
+
+.right {
+  margin-right: 15px;
+}
+
+.draft-button {
+  background-color: #dee0e2;
+  color: #0b0c0c !important;
+  box-shadow: 0 2px 0 #b5babe;
+}
+
+.draft-button:hover {
+  background-color: #d0d3d6;
+}
+
+.position_right {
+  position: absolute;
+  display: block;
+  right: 0px;
+  bottom: 12px;
+
+}
+
+.form-buttons {
+  margin-right: 15px;
+
+}

@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/passported_v2/savings_investments"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="capital_restrictions" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                <!-- The work you can do and how much you can get -->
+                Review cost and scope of the work you can do
+                </h1>
+              </legend>
+              <div class="govuk-!-padding-bottom-6"></div>
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Proceeding
+              </legend>
+              <p class="govuk-body">Non-molestation order (domestic abuse)</p>
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Cost limit
+                <div class="govuk-!-padding-bottom-1"></div>
+              <!--  <span class="govuk-hint">
+                    This is the default amount for the proceeding you selected. You can request more.
+                  </span> -->
+                  <p class="govuk-body">£5,000</p>
+              </legend>
+
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">The work you can do
+                <div class="govuk-!-padding-bottom-1"></div>
+              <!-- <span class="govuk-hint">
+                  This is the default scope for the proceeding you selected. You can add more.
+                </span> -->
+                  <p class="govuk-body">As to proceedings under Part IV Family Law Act 1996 limited to all steps
+                    up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest
+                    to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached,
+                     and representation in contempt proceedings).</p>
+                </legend>
+
+                </span>
+
+              <div class="govuk-!-padding-bottom-6"></div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save as draft
+          </a>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

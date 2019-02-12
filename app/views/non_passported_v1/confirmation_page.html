@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h2 class="govuk-panel__title">
+            Application created
+          </h2>
+          <div class="govuk-panel__body">
+            Your case reference number is
+            <br><strong>2018/LAA/4ewrqfdd</strong>
+          </div>
+        </div>
+
+<div class="govuk-!-padding-top-4"></div>
+
+        <h3 class="govuk-heading-m">We have sent your client a secure link</h3>
+
+        <p class="govuk-body">Your client can use the link to complete the online financial assessment from home or another location.</p>
+
+        <h3 class="govuk-heading-m">What happens next</h3>
+
+        <p class="govuk-body">
+          You will be sent the results of your client's financial assessment so you can confirm they are eligible for legal aid.
+        </p>
+
+
+
+<a href="dashboard_2" role="button" class="govuk-button">
+  Back to your applications
+</a>
+
+<a href="citizen_start_page" role="button" class="govuk-button" style="background-color: #b10e1e;">
+  Go to citizen journey
+</a>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

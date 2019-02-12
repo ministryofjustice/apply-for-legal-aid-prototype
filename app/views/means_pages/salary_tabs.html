@@ -1,0 +1,904 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Salary statement
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "means_home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">
+            Select your salary and wages
+          </h1>
+
+        </div>
+      </div>
+
+          <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+          <div class="govuk-!-padding-bottom-5"></div>
+
+          <div class="govuk-tabs" data-module="tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#categorised-inc-transactions">
+                  Salary or wages
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#uncategorised-inc-transactions">
+                  Benefits
+                </a>
+              </li>
+            </ul>
+
+            <section class="govuk-tabs__panel" id="categorised-inc-transactions">
+
+              <table class="govuk-table" style="border-spacing:0">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header govuk-!-width-one-fifth multiple-choice--hod" scope="col">
+                     <div class="govuk-checkboxes__item">
+                       <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+                       <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+                         &nbsp;
+                       </label>
+                     </div>
+                   </th>
+                    <th class="govuk-table__header govuk-!-width-one-half" scope="col">Description</th>
+                    <th class="govuk-table__header govuk-!-width-one-fifth" scope="col">Date</th>
+                    <th class="govuk-table__header govuk-table__header--numeric" "govuk-!-width-one-fifth" scope="col">Amount</th>
+                  </tr>
+                </thead>
+              <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-1" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-1"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                <td class="govuk-table__cell">Care Home Ltd Salary</td>
+                <td class="govuk-table__cell">02 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-2" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-2"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 17Oct</td>
+                <td class="govuk-table__cell">17 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-3" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-3"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in Natwest 03Oct</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-4" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-4"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in Barclays 01SEPT</td>
+                <td class="govuk-table__cell">01 SEPT2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-5" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-5"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                <td class="govuk-table__cell">01 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-6" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-6"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">CHB</td>
+                <td class="govuk-table__cell">23 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-7" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-7"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                <td class="govuk-table__cell">09 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-8" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-8"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-9" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-9"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell  govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-10" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-10"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">01 SEPT 2017</td>
+                <td class="govuk-table__cell  govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-11" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-11"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                <td class="govuk-table__cell">01 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-12" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-12"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">CHB</td>
+                <td class="govuk-table__cell">23 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-13" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-13"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                <td class="govuk-table__cell">09 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-14" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-14"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-15" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-15"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-16" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-16"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">01 SEPT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-17" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-17"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                <td class="govuk-table__cell">01 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-18" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-18"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">CHB</td>
+                <td class="govuk-table__cell">23 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-19" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-19"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                <td class="govuk-table__cell">09 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-20" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-20"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-21" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-21"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">03 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-22" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-22"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                <td class="govuk-table__cell">01 SEPT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <form>
+                    <fieldset class="govuk-fieldset">
+                      <div class="multiple-choice--hod">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="inc-23" name="inc" type="checkbox" value="Categoru">
+                          <label class="govuk-label govuk-checkboxes__label" for="inc-23"></label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form></td>
+                <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                <td class="govuk-table__cell">01 OCT 2017</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+              </tr>
+          </table>
+
+            </section>
+
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="uncategorised-inc-transactions">
+
+
+
+
+               <table class="govuk-table" style="border-spacing:0">
+                 <thead class="govuk-table__head">
+                   <tr class="govuk-table__row">
+                     <th class="govuk-table__header govuk-!-width-one-fifth multiple-choice--hod" scope="col">
+                      <div class="govuk-checkboxes__item">
+                        <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+                        <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+                          &nbsp;
+                        </label>
+                      </div>
+                    </th>
+                     <th class="govuk-table__header govuk-!-width-one-half" scope="col">Description</th>
+                     <th class="govuk-table__header govuk-!-width-one-fifth" scope="col">Date</th>
+                     <th class="govuk-table__header govuk-table__header--numeric" "govuk-!-width-one-fifth" scope="col">Amount</th>
+                   </tr>
+                 </thead>
+               <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <form>
+                      <fieldset class="govuk-fieldset">
+                        <div class="multiple-choice--hod">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="inc-1" name="inc" type="checkbox" value="Categoru">
+                            <label class="govuk-label govuk-checkboxes__label" for="inc-1"></label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form></td>
+                 <td class="govuk-table__cell">Care Home Ltd Salary</td>
+                 <td class="govuk-table__cell">02 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-2" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-2"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 17Oct</td>
+                 <td class="govuk-table__cell">17 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-3" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-3"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in Natwest 03Oct</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-4" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-4"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in Barclays 01SEPT</td>
+                 <td class="govuk-table__cell">01 SEPT2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-5" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-5"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                 <td class="govuk-table__cell">01 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-6" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-6"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">CHB</td>
+                 <td class="govuk-table__cell">23 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-7" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-7"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                 <td class="govuk-table__cell">09 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-8" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-8"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-9" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-9"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell  govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-10" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-10"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">01 SEPT 2017</td>
+                 <td class="govuk-table__cell  govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-11" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-11"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                 <td class="govuk-table__cell">01 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-12" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-12"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">CHB</td>
+                 <td class="govuk-table__cell">23 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-13" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-13"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                 <td class="govuk-table__cell">09 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-14" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-14"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-15" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-15"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-16" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-16"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">01 SEPT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-17" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-17"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                 <td class="govuk-table__cell">01 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-18" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-18"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">CHB</td>
+                 <td class="govuk-table__cell">23 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-19" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-19"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 09Oct</td>
+                 <td class="govuk-table__cell">09 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-20" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-20"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 03-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-21" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-21"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">03 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-22" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-22"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Sky digital reversal of 11-10</td>
+                 <td class="govuk-table__cell">01 SEPT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">
+                   <form>
+                     <fieldset class="govuk-fieldset">
+                       <div class="multiple-choice--hod">
+                         <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="inc-23" name="inc" type="checkbox" value="Categoru">
+                           <label class="govuk-label govuk-checkboxes__label" for="inc-23"></label>
+                         </div>
+                       </div>
+                     </fieldset>
+                   </form></td>
+                 <td class="govuk-table__cell">Cash in HSBC 01Oct</td>
+                 <td class="govuk-table__cell">01 OCT 2017</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+               </tr>
+             </tbody>
+           </table>
+
+            </section>
+          </div>
+
+
+<div class="govuk-!-padding-bottom-8"></div>
+
+
+          <a href="means_home"<button type="submit" class="govuk-button">
+            Save and return
+          </button></a>
+
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}

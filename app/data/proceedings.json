@@ -1,0 +1,359 @@
+[
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 1,
+        "proceedingtype": "Extend, variation or discharge - Part IV",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 2,
+        "proceedingtype": "Forced marriage protection order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 3,
+        "proceedingtype": "Harassment - injunction",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 4,
+        "proceedingtype": "Inherent jurisdiction high court injunction",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 5,
+        "proceedingtype": "Non-molestation order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 6,
+        "proceedingtype": "Occupation order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 7,
+        "proceedingtype": "Variation or discharge under section 5 protection from harassment act 1997",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 1,
+        "proceedingtype": "Application for a care order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 2,
+        "proceedingtype": "Application for a care order (joined party)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 3,
+        "proceedingtype": "Application for a supervision order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 4,
+        "proceedingtype": "Application for a supervision order (joined party)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 5,
+        "proceedingtype": "Application for adoption"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 6,
+        "proceedingtype": "Application for contact with a child in care"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 7,
+        "proceedingtype": "Application to discharge a care order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 8,
+        "proceedingtype": "Application to discharge emergency protection"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 9,
+        "proceedingtype": "Child assessment order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 10,
+        "proceedingtype": "Contact on making of special guardianship order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 11,
+        "proceedingtype": "Contact order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 12,
+        "proceedingtype": "Contested adoption application"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 13,
+        "proceedingtype": "Declaration for overseas adoption"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 14,
+        "proceedingtype": "Education supervision order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 15,
+        "proceedingtype": "Emergency protection"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 16,
+        "proceedingtype": "End contact with a child or children in care"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 17,
+        "proceedingtype": "Exclusion requirement"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 18,
+        "proceedingtype": "Habeas corpus on secure accommodation"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 19,
+        "proceedingtype": "Order for the recovery of a child or children"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 20,
+        "proceedingtype": "Parental responsibility"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 21,
+        "proceedingtype": "Placement order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 22,
+        "proceedingtype": "Prohibited steps order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 23,
+        "proceedingtype": "Residence order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 24,
+        "proceedingtype": "Revocation placement order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 25,
+        "proceedingtype": "Secure accommodation order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 26,
+        "proceedingtype": "Special guardianship order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 27,
+        "proceedingtype": "Specific issue order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 28,
+        "proceedingtype": "Substitute supervision with care"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 29,
+        "proceedingtype": "Variation or discharge a child assessment"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 30,
+        "proceedingtype": "Variation or discharge a contact order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 31,
+        "proceedingtype": "Variation or discharge of a special guardianship order"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 32,
+        "proceedingtype": "Variation or discharge prohibited steps"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 33,
+        "proceedingtype": "Variation or discharge residence"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 34,
+        "proceedingtype": "Variation or discharge specific issues"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family",
+        "mattertypeid": 2,
+        "mattertype": "Public Law - Family",
+        "proceedingtypeid": 35,
+        "proceedingtype": "Variation or discharge supervision"
+    }
+]

@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/passported_v2/declaration"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Scope of legal aid
+      </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Proceeding
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Non-molestation order{{ data['...'] }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="search#search">
+            Change <span class="govuk-visually-hidden">proceeding</span>
+          </a>
+        </dd>
+      </div>
+   </dl>
+
+        <h2 class="govuk-heading-m">
+          Capital assessment
+        </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            House or mortgage
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Savings, bonds, stocks and shares
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Anything that can contribute to the legal costs
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+     </dl>
+
+     <h2 class="govuk-heading-m">
+       Merits assessment
+     </h2>
+
+     <dl class="app-check-your-answers app-check-your-answers--long">
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Client received legal help
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           Yes{{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question" style="border-bottom-width: 0px;">
+           Statement of case
+         </dt>
+         <dd class="app-check-your-answers__answer" style="border-bottom-width: 0px;">
+           {{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change" style="border-bottom-width: 0px;">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       </dl>
+       <div class="govuk-grid-row">
+       <div class="govuk-grid-column-full">
+         <p>{{ data['statement'] }}</p>
+      </div>
+      </div>
+
+      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Estimated legal costs
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           £ {{ data['costs'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Prospects of success
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           50% or better{{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Client declaration
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           Read & agreed {{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Complete the application</h2>
+
+      <p class="govuk-body">
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <a class="govuk-button" href="/passported_v2/dashboard_2" role="button">
+        Accept and send application
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

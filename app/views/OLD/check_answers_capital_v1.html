@@ -1,0 +1,470 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "capital_restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+        <h2 class="govuk-heading-m">
+          Property
+        </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Own the home you live in
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Yes, with a mortgage or loan
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Property value
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £145,000.00
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Outstanding mortgage amount
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £127,345.00
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Owned with anyone else
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No, sole owner
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+     </dl>
+
+     <h2 class="govuk-heading-m">
+       Savings and investments
+     </h2>
+
+     <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         	Post Office, ISAs and other savings accounts
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £100.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Cash savings
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £145.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Signatory on another person's bank account
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £127.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         National Savings Certificates and Premium Bonds
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Shares in a PLC (public limited company)
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         PEPs, unit trusts, capital bonds and government stocks
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Life assurance and endowment policies not linked to a mortgage
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     </dl>
+
+     <h2 class="govuk-heading-m">
+       Other assets
+     </h2>
+
+     <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         	Second property or holiday home estimated value
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £100.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Second property or holiday home outstanding mortgage amount
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £145.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Second property or holiday home percentage owned
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         12 %
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Timeshare
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Land
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Jewellery, art or antiques with a value over £500
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Car, van or motorcycle less than 3 years old
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Classic car purchased as an investment
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Money or assets from the estate of a person who has died
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Money owed to you, including from a private mortgage
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Interest in a trust
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         £1.00
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     </dl>
+
+     <h2 class="govuk-heading-m">
+       Do any restrictions apply?
+     </h2>
+
+     <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         	Repossession or deferred interest in a property
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Subject matter of dispute in other legal proceedings
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Foreign exchange controls
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Restraint or freezing order
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Bankruptcy
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Held overseas
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+     </dl>
+
+    <h2 class="govuk-heading-m">Merits assessment</h2>
+
+      <p class="govuk-body">
+        You will now need to complete the merits assessment for the proceeding you are applying for.
+      </p>
+
+      <a class="govuk-button" href="legal_help" role="button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

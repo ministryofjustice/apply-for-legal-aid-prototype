@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Assessment start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "/passported"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Before you continue</h1>
+
+    <form action="property" method="post" novalidate>
+
+      <h2 class="govuk-heading-m">Capital assessment</h2>
+
+  <!--  <p class="govuk-body">
+          You will need the following information:
+        </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>If your client owns a home or has a mortgage and their values.</li>
+              <li>Any national savings, premium bonds, capital bonds or stocks and shares and their values.</li>
+              <li>Anything else that can contribute towards the legal costs.</li>
+            </ul> -->
+
+            <p class="govuk-body">
+                    You'll need to tell us if your client:
+                  </p>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>owns a home or has a mortgage (and their values)</li>
+                        <li>has any savings, investments or other capital (and their values)</li>
+                        <li>has any other means of contributing towards legal costs</li>
+                      </ul>
+
+    <h2 class="govuk-heading-m">Merits assessment</h2>
+
+    <p class="govuk-body">
+          You'll need to give:
+        </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a full statement of case</li>
+              <li>information about any attempts to settle</li>
+              <li>cost estimates <!-- under the certificate applied for --></li>
+              <li>the prospects of success</li>
+            </ul>
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save as draft
+    </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
