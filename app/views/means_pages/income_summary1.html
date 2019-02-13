@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "types_of_income"
+  href: "types_of_income3"
 }) }}
 
 {% endblock %}
@@ -49,7 +49,7 @@ Apply for legal aid - Income start page
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="govuk-body" href="salary3" aria-describedby="eligibility-completed">
-                Add from your bank statement
+                Select from your bank statement
               </a>
             </li>
           </ul>
@@ -64,7 +64,7 @@ Apply for legal aid - Income start page
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="govuk-body" href="benefits3" aria-describedby="eligibility-completed">
-                Add from your bank statement
+                Select from your bank statement
               </a>
             </li>
           </ul>
@@ -76,12 +76,29 @@ Apply for legal aid - Income start page
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
-                Add from your bank statement
+                Select from your bank statement
               </a>
             </li>
           </ul>
         </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number"> + </span> <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
+              Add another type of income
+            </a>
+          </h2>
+        </li>
       </ol>
+
+      <!-- <p class="govuk-body">
+          <a href="types_of_income3" class="govuk-link">Add another type of income</a>
+        </p> -->
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <a href="salary" role="button" class="govuk-button">
+          Continue
+        </a>
 
     </div>
   </div>
