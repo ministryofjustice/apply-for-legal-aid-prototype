@@ -74,7 +74,21 @@ Apply for legal aid - Salary statement
           font-weight: bold;
           font-style: normal;
       }
-    }  
+    }
+    @media (max-width: 60em) {
+      td:nth-of-type(3),td:nth-of-type(2) {
+        display: block;
+      }
+      td:nth-of-type(2) {
+        border-bottom:0px;
+      }
+      th:nth-of-type(3) {
+        display: none;
+      }
+      th:nth-of-type(2)::after {
+        content: " and Description";
+      }
+    }
   </style>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
