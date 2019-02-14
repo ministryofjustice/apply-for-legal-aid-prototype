@@ -33,7 +33,49 @@ Apply for legal aid - Salary statement
 {% endblock %}
 
 {% block content %}
+  <style>
+    td::before {
+      display: none;
+    }
+    @media (max-width: 40.0625em) {
 
+      table, tr, td  {
+          display: block;
+      }
+      td.govuk-table__cell {
+          border-bottom:0px;
+      }
+      tr {
+          border-bottom: 1px solid #bfc1c3;
+          width:100%;
+      }
+      th,
+      tr:first-of-type {
+          display: none;
+      }
+      tr {
+          padding:0.7em 2vw
+      }
+
+      td.govuk-table__cell--numeric {
+          text-align: left;
+      }
+      td:nth-child(2)::before {
+          content: "Date: ";
+      }
+      td:nth-child(3)::before {
+          content: "Description: ";
+      }
+      td:nth-child(4)::before {
+          content: "Amount: ";
+      }
+      td::before {
+          display: inline;
+          font-weight: bold;
+          font-style: normal;
+      }
+    }  
+  </style>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="income_summary_populated" method="post" novalidate>
