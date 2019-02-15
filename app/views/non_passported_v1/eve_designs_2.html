@@ -23,13 +23,11 @@ Apply for legal aid - Check client financial assessment
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Review your client's financial self-assessment
+          Your client has completed their financial assessment
         </h1>
 
 
@@ -38,7 +36,7 @@ Apply for legal aid - Check client financial assessment
             <br>Solicitor: <strong>Hitchcock, King & James</strong></p>
 
 
-<p class="govuk-body">Your client has completed their financial assessment. You can review their answers below and make corrections before their application is submitted.</p>
+<p class="govuk-body">You can review their answers and make corrections before their application is submitted.</p>
 
           <table class="govuk-table" style="
           margin-bottom: 10px;
@@ -46,25 +44,38 @@ Apply for legal aid - Check client financial assessment
               <h2 class="govuk-heading-l">Income</h2>
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="row">Total gross wage</th>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£535.72</td>
+                  <td class="govuk-table__cell">Salary or wages</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Total state benefits</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£745.00</td>
+                    <td class="govuk-table__cell">Benefits</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Gross income</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,280.72</td>
+                    <td class="govuk-table__cell">Maintenance received from an ex-partner</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Gross income limit</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,657.00</td>
+                    <td class="govuk-table__cell">Income from a property or lodger</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Student loan or grant</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Pensions (state, work, private)</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Financial help from friends or family</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
                   </tr>
                 </tbody>
               </table>
 
-                <p><a href="incoming_transactions_list_v2" style="float:right; padding-bottom: 30px;">View full list of incoming transactions</a></p>
+                <p><a href="eve_designs_1" style="float:right; padding-bottom: 30px;">View full list of incoming transactions</a></p>
+<div class="govuk-!-padding-bottom-8"></div>
 
               <table class="govuk-table" style="
                 margin-bottom: 10px;
@@ -72,92 +83,85 @@ Apply for legal aid - Check client financial assessment
                 <h2 class="govuk-heading-l">Outgoings</h2>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Mortgage, rent or board</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£1048.50</td>
+                    <td class="govuk-table__cell" scope="row">Rent or mortgage</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Total deductions</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£1048.50</td>
+                    <td class="govuk-table__cell" scope="row">Council tax</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Total disposable income</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£232.22</td>
+                    <td class="govuk-table__cell" scope="row">Childcare costs to a nursery</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Disposable income limit</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£733.00</td>
+                    <td class="govuk-table__cell" scope="row">Maintenance paid to an ex-partner</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Existing legal aid contributions</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                 </tbody>
               </table>
 
               <p><a href="outgoing_transactions_list" style="float:right; padding-bottom: 30px;">View full list of outgoing transactions</a></p>
+<div class="govuk-!-padding-bottom-8"></div>
 
               <table class="govuk-table">
                 <h2 class="govuk-heading-l">Capital</h2>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Bank accounts</th>
+                    <td class="govuk-table__cell" scope="row">Bank accounts</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£470.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">National Savings Certificates</th>
+                    <td class="govuk-table__cell" scope="row">National Savings Certificates</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Premium bonds</th>
+                    <td class="govuk-table__cell" scope="row">Premium bonds</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Stocks and shares</th>
+                    <td class="govuk-table__cell" scope="row">Stocks and shares</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Other assets</th>
+                    <td class="govuk-table__cell" scope="row">Other assets</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Property</th>
+                    <td class="govuk-table__cell" scope="row">Property</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change <span class="govuk-visually-hidden">blank</span>
                     </a></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Total capital</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£470.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Total capital limit</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£8,000.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                   </tr>
                 </tbody>
               </table>
 
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-
+              <a href="legal_help"<button type="submit" class="govuk-button">
+                Continue
+              </button></a>
     </div>
   </div>
-  </main>
-</div>
+
 
   {% endblock %}
 

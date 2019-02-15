@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
+Apply for legal aid - Outgoings summary
 {% endblock %}
 
 {% block header %}
@@ -37,14 +37,14 @@ Apply for legal aid - Income start page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Select your income</h1>
+    <h1 class="govuk-heading-xl">Select your payments</h1>
 
-    <p>Add all your income from your bank statements.</p>
+    <p>Add all your regular outgoing payments from your bank statements.</p>
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Salary or wages
+            <span class="app-task-list__section-number">1. </span> Rent or mortgage
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -56,10 +56,7 @@ Apply for legal aid - Income start page
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Benefits
-            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                For example, Child Benefit, Working Tax Credit, Child Tax Credit
-            </span>
+            <span class="app-task-list__section-number">2. </span> Council Tax
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -71,7 +68,7 @@ Apply for legal aid - Income start page
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
+            <span class="app-task-list__section-number">3. </span> Childcare costs to a nursery or registered provider
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -103,7 +100,7 @@ Apply for legal aid - Income start page
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="#" role="button" class="govuk-button">
+        <a href="non_passported_v1/property" role="button" class="govuk-button">
           Continue
         </a>
 
