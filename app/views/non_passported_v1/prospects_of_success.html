@@ -32,7 +32,8 @@ Apply for legal aid - Prospects of success
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                 <!--  What are the prospects of success? -->
-                   How likely is a successful outcome?
+                  How likely is a successful outcome?
+                <!--  What are the chances of a successful outcome? -->
                 </h1>
               </legend>
 
@@ -49,8 +50,11 @@ Apply for legal aid - Prospects of success
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="prospects" type="radio" value="marginal" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("prospects","marginal") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    Marginal (45% to 50%)
+                  <!--  Marginal --> 45% or better but less than 50%
                   </label>
+                  <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    45% or better but less than 50%
+                  </span> -->
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
                   <div class="govuk-form-group">
@@ -66,6 +70,9 @@ Apply for legal aid - Prospects of success
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
                     Borderline
                   </label>
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    You cannot assess the likelihood of a successful outcome
+                  </span>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
                   <div class="govuk-form-group">
@@ -81,6 +88,9 @@ Apply for legal aid - Prospects of success
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
                     Uncertain
                   </label>
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    <!-- Investigations can be carried out --> Work still needs to be done to determine the likelihood of success
+                  </span>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-4">
                   <div class="govuk-form-group">
@@ -95,8 +105,11 @@ Apply for legal aid - Prospects of success
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-5" name="prospects" type="radio" value="poor" data-aria-controls="conditional-how-contacted-conditional-5" {{ checked("prospects","poor") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
-                    Poor
+                  <!--  Poor --> Less than 45%
                   </label>
+                <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    Less than 45%
+                  </span> -->
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
                   <div class="govuk-form-group">
