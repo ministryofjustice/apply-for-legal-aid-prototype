@@ -7,6 +7,40 @@
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
 <script>
+$( document ).ready(function() {
+	if ($(".selectClearAll").length) {
+		function resetSelectClear(table) {
+			if ((table.find("input:checked")).length>0) {
+				table.find(".selectAll").removeClass("selectAll").addClass("clearAll").text("Clear All");
+			} else {
+				table.find(".clearAll").removeClass("clearAll").addClass("selectAll").text("Select All");
+			}
+				
+		}
+
+		$(".selectClearAll").click(function(){
+			var table = $(this).parents("table");
+			if($(this).hasClass("clearAll")) {
+				table.find("input:checked").trigger("click");
+				return false;
+			} else if ($(this).hasClass("selectAll")) {
+				table.find("input:not(:checked)").trigger("click");
+				return false;
+			}
+		});
+		$("table input").click(function(){
+			var table = $(this).parents("table");
+			resetSelectClear(table)
+		});		
+
+		$(".selectClearAll").ready(function(){
+			var table = $(this).parents("table");
+			resetSelectClear(table)
+		});
+		
+	}
+
+});
 	$( document ).ready(function() {
 		if ($(".sortableTable")) {
 			function dateorder(x) {
