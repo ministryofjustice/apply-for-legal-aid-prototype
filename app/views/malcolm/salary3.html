@@ -59,6 +59,7 @@ Apply for legal aid - Salary statement
     td::before {
       display: none;
     }
+/*
     @media (max-width: 40.0625em) {
 
       table, tr, td  {
@@ -97,19 +98,21 @@ Apply for legal aid - Salary statement
           font-style: normal;
       }
     }
-    @media (max-width: 60em) {
-      td:nth-of-type(3),td:nth-of-type(2) {
+*/
+    @media (max-width: 375px) {
+      .table-combinecell_2and3at375 td:nth-of-type(3),
+			.table-combinecell_2and3at375 td:nth-of-type(2) {
         display: block;
         border-bottom:0px;
       }
-      tr {
-	    border-bottom:1px solid #bfc1c3;
+      .table-combinecell_2and3at375 tr {
+				border-bottom:1px solid #bfc1c3;
       }
-      th:nth-of-type(3) {
+      .table-combinecell_2and3at375 th:nth-of-type(3) {
         display: none;
       }
-      th:nth-of-type(2)::after {
-        content: " and Description";
+      .table-combinecell_2and3at375 th:nth-of-type(2)::before {
+        content: "Description and ";
       }
     }
 		.headerSortDown:after,
@@ -144,9 +147,22 @@ Apply for legal aid - Salary statement
 		.headerSortUp {
 			padding-right: 10px;
 		}
+		
+		@media (min-width: 700px) {
+			.grid-column-minimum-660 {
+				min-width:660px;
+			}
+		}		
+		@media (max-width: 700px) {
+			.grid-column-minimum-660 {
+				width:100%;
+				float:none;
+			}
+		}		
+
   </style>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds grid-column-minimum-660">
         <form action="salary_selected" method="post" novalidate>
 
           <h1 class="govuk-heading-xl">
@@ -158,7 +174,7 @@ Apply for legal aid - Salary statement
           <!-- <p class="govuk-body">Name: <strong> John Doe </strong> <br> Case reference: <strong> 2018/LAA/4ewrqfdd </strong> <br> Your solicitor: <strong> Hitchcock, Jones & King </strong></p>
           <p class="govuk-body">Placeholder: Might need to say this is from multiple banks.</p>  -->
           <div class="govuk-!-padding-bottom-4"></div>
-          <table class="govuk-table sortableTable">
+          <table class="govuk-table sortableTable .table-combinecell_2and3at375">
             <caption class="govuk-table__caption" style="padding-bottom:10px;">01 January to 31 January 2019</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
