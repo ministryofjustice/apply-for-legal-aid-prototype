@@ -32,13 +32,16 @@ Apply for legal aid - Property and mortgage
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                 <!--  Do any restrictions apply to your client's property, savings or assets? -->
-                  Are there any restrictions on your client's property, savings or assets?
+                  Are there any restrictions on your client's property, savings or investments, or items of value?
                 </h1>
               </legend>
+              <div class="govuk-!-padding-bottom-4"></div>
 
-                <div class="govuk-!-padding-bottom-4"></div>
-<p class="govuk-body">That is, is there any reason why your client cannot sell or get money from their assets.
-  <p>
+            <span class="govuk-hint">
+For example, their home has been repossessed or they're bankrupt
+</span>
+<div class="govuk-!-padding-bottom-4"></div>
+
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
