@@ -6,3 +6,195 @@
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
+<script>
+$( document ).ready(function() {
+	if ($(".selectClearAll").length) {
+		function resetSelectClear(table) {
+			if ((table.find("input:checked")).length>0) {
+				table.find(".selectAll").removeClass("selectAll").addClass("clearAll").text("Clear All");
+			} else {
+				table.find(".clearAll").removeClass("clearAll").addClass("selectAll").text("Select All");
+			}
+				
+		}
+
+		$(".selectClearAll").click(function(){
+			var table = $(this).parents("table");
+			if($(this).hasClass("clearAll")) {
+				table.find("input:checked").trigger("click");
+				return false;
+			} else if ($(this).hasClass("selectAll")) {
+				table.find("input:not(:checked)").trigger("click");
+				return false;
+			}
+		});
+		$("table input").click(function(){
+			var table = $(this).parents("table");
+			resetSelectClear(table)
+		});		
+
+		$(".selectClearAll").ready(function(){
+			var table = $(this).parents("table");
+			resetSelectClear(table)
+		});
+		
+	}
+
+});
+	$( document ).ready(function() {
+		if ($(".sortableTable")) {
+			function dateorder(x) {
+				var xarray = x.split(/[\/\-\s]+/i);
+				var dayNumber; 
+				var monthNumber;
+				var yearNumber;
+				
+				if (Number(xarray[2])<100 && Number(xarray[0])>100) {
+					dayNumber = xarray[2];
+					yearNumber = xarray[0];
+				} else {
+					dayNumber = xarray[0];
+					yearNumber = xarray[2];
+				}
+				
+				if (isNaN(xarray[1])){
+					monthNumber = ({
+						"JAN"  : 01,
+						"FEB"  : 02,
+						"MAR"  : 03,
+						"APR"  : 04,
+						"MAY"  : 05,
+						"JUN"  : 06,
+						"JUL"  : 07,
+						"AUG"  : 08,
+						"SEP"  : 09,
+						"OCT"  : 10,
+						"NOV"  : 11,
+						"DEC"  : 12
+					})[xarray[1].substring(0,3).toUpperCase()];
+				} else {
+					monthNumber = xarray[1];
+				}
+				
+				if (isNaN(dayNumber) ) dayNumber = 0;
+				if (isNaN(monthNumber) ) monthNumber = 0;
+				if (isNaN(yearNumber) ) yearNumber = 0;
+
+				var order = yearNumber*10000 + monthNumber*100 + parseInt(dayNumber);
+				
+				return order;
+				
+			}
+
+			//var table = $('table.sorting');
+			var table;
+
+			$('th.dateSort, th.textSort, th.numberSort')
+					.wrapInner('<span class="sortableColumn" title="sort this column"/>')
+					.each(function(){
+
+							var th = $(this),
+									thIndex = th.index(),
+									inverse = false;
+						
+							th.click(function(){
+								
+								table = th.parents("table");
+								
+								th.parent().children().removeClass("headerSortUp headerSortDown")
+								
+								if (inverse) {
+									th.addClass("headerSortUp")
+								} else {
+									th.addClass("headerSortDown")
+								}
+								
+								table.find('td').filter(function(){
+
+											return $(this).index() === thIndex;
+
+									}).sortElements(function(a, b){
+
+											if( $.text([a]) == $.text([b]) )
+													return 0;
+
+											if(th.hasClass( "numberSort" )) {
+								
+								return Number($.text([a]).replace(/[^0-9.-]+/g,"")) > Number($.text([b]).replace(/[^0-9.-]+/g,"")) ?
+									inverse ? -1 : 1
+									: inverse ? 1 : -1;
+								
+							} else if(th.hasClass( "dateSort" )){
+								
+								return dateorder($.text([a])) > dateorder($.text([b])) ?
+									inverse ? -1 : 1
+									: inverse ? 1 : -1;
+								
+							} else {
+								
+								return $.text([a]) > $.text([b]) ?
+									inverse ? -1 : 1
+									: inverse ? 1 : -1;
+							}
+
+									}, function(){
+
+											// parentNode is the element we want to move
+											return this.parentNode; 
+
+									});
+
+									inverse = !inverse;
+						
+							});
+
+					});
+				
+			jQuery.fn.sortElements = (function(){
+					
+					var sort = [].sort;
+					
+					return function(comparator, getSortable) {
+							
+							getSortable = getSortable || function(){return this;};
+							
+							var placements = this.map(function(){
+									
+									var sortElement = getSortable.call(this),
+											parentNode = sortElement.parentNode,
+											
+											// Since the element itself will change position, we have
+											// to have some way of storing it's original position in
+											// the DOM. The easiest way is to have a 'flag' node:
+											nextSibling = parentNode.insertBefore(
+													document.createTextNode(''),
+													sortElement.nextSibling
+											);
+									
+									return function() {
+											
+											if (parentNode === this) {
+													throw new Error(
+															"You can't sort elements if any one is a descendant of another."
+													);
+											}
+											
+											// Insert before flag:
+											parentNode.insertBefore(this, nextSibling);
+											// Remove flag:
+											parentNode.removeChild(nextSibling);
+											
+									};
+									
+							});
+						 
+							return sort.call(this, comparator).each(function(i){
+									placements[i].call(getSortable.call(this));
+							});
+							
+					};
+					
+			})();
+		}
+	});
+</script>

@@ -28,34 +28,164 @@ Apply for legal aid - Salary statement
 
   {{ govukBackLink({
     text: "Back",
-      href: "salary_selected"
+      href: "income_summary1"
   }) }}
 {% endblock %}
 
 {% block content %}
+  <style>
+	
+		.numberSort,
+		.textSort,
+		.dateSort {
+			color:#005ea5;
+			text-decoration:underline;
+			cursor:pointer;
+		}
+		.numberSort:hover,
+		.textSort:hover,
+		.dateSort:hover {
+			color:#2b8cc4;
+		}
+		.numberSort:active > span.sortableColumn,
+		.numberSort:focus > span.sortableColumn,
+		.textSort:active > span.sortableColumn,
+		.textSort:focus > span.sortableColumn,
+		.dateSort:active > span.sortableColumn,
+		.dateSort:focus > span.sortableColumn {
+			background-color:#ffbf47;
+		}
+	
+    td::before {
+      display: none;
+    }
+/*
+    @media (max-width: 40.0625em) {
 
+      table, tr, td  {
+          display: block;
+      }
+      td.govuk-table__cell {
+          border-bottom:0px;
+      }
+      tr {
+          border-bottom: 1px solid #bfc1c3;
+          width:100%;
+      }
+      th,
+      tr:first-of-type {
+          display: none;
+      }
+      tr {
+          padding:0.7em 2vw
+      }
+
+      td.govuk-table__cell--numeric {
+          text-align: left;
+      }
+      td:nth-child(2)::before {
+          content: "Date: ";
+      }
+      td:nth-child(3)::before {
+          content: "Description: ";
+      }
+      td:nth-child(4)::before {
+          content: "Amount: ";
+      }
+      td::before {
+          display: inline;
+          font-weight: bold;
+          font-style: normal;
+      }
+    }
+*/
+    @media (max-width: 375px) {
+      .table-combinecell_2and3at375 td:nth-of-type(3),
+			.table-combinecell_2and3at375 td:nth-of-type(2) {
+        display: block;
+        border-bottom:0px;
+      }
+      .table-combinecell_2and3at375 tr {
+				border-bottom:1px solid #bfc1c3;
+      }
+      .table-combinecell_2and3at375 th:nth-of-type(3) {
+        display: none;
+      }
+      .table-combinecell_2and3at375 th:nth-of-type(2)::before {
+        content: "Description and ";
+      }
+    }
+		.headerSortDown:after,
+		.headerSortUp:after {
+			content: ' ';
+			position: relative;
+			left: 6px;
+			border: 6px solid transparent;
+			font-size:0;
+		}
+
+		.headerSortDown:after {
+			border-top-color: #005ea5;
+			border-top-width: 13px;
+			border-bottom-width: 0;
+		}
+
+		.headerSortUp:after {
+			bottom: 12px;
+			border-bottom-color: #005ea5;
+			border-bottom-width: 13px;
+			border-top-width: 0;
+		}
+		.headerSortDown:hover:after{
+			border-top-color: #2b8cc4;
+		}
+		.headerSortUp:hover:after {
+			border-bottom-color: #2b8cc4;
+		}
+
+		.headerSortDown,
+		.headerSortUp {
+			padding-right: 10px;
+		}
+		
+		@media (min-width: 700px) {
+			.grid-column-minimum-660 {
+				min-width:660px;
+			}
+		}		
+		@media (max-width: 700px) {
+			.grid-column-minimum-660 {
+				width:100%;
+				float:none;
+			}
+		}		
+
+  </style>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="benefits_selected" method="post" novalidate>
+      <div class="govuk-grid-column-two-thirds grid-column-minimum-660">
+        <form action="salary_selected" method="post" novalidate>
 
           <h1 class="govuk-heading-xl">
-            Add benefits payments
+            Your salary or wage payments
           </h1>
-
+          <h2 class="govuk-heading-m">
+            Select all that apply
+          </h2>
           <!-- <p class="govuk-body">Name: <strong> John Doe </strong> <br> Case reference: <strong> 2018/LAA/4ewrqfdd </strong> <br> Your solicitor: <strong> Hitchcock, Jones & King </strong></p>
-          <p class="govuk-body">Placeholder: Might need to say this is from multiple banks.</p> -->
+          <p class="govuk-body">Placeholder: Might need to say this is from multiple banks.</p>  -->
           <div class="govuk-!-padding-bottom-4"></div>
-          <table class="govuk-table">
-            <caption class="govuk-table__caption" style="padding-bottom:10px;">1 January 2019 to 31 January 2019</caption>
+          <table class="govuk-table sortableTable table-combinecell_2and3at375">
+            <caption class="govuk-table__caption" style="padding-bottom:10px;">01 January to 31 January 2019</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
-                  Select all
-                </a>
+                <th class="govuk-table__header" scope="col">
+									<a class="govuk-body selectClearAll selectAll" href="" aria-describedby="eligibility-completed">
+										Select all
+									</a>
                 </th>
-                <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header" scope="col">Description <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+                <th class="govuk-table__header dateSort" scope="col">Date</th>
+								<th class="govuk-table__header textSort" scope="col">Description</th>
+                <th class="govuk-table__header numberSort govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -72,8 +202,8 @@ Apply for legal aid - Salary statement
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="" checked>
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-2"></label> -->
+                    <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
+                    <label class="govuk-label govuk-checkboxes__label" for="income-2"></label>
                   </div></td>
                 <td class="govuk-table__cell">27 Jan 2019</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -103,7 +233,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">21 Jan 2019</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -143,7 +273,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">16 Jan 2019</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -193,7 +323,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">07 Jan 2019</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -214,17 +344,18 @@ Apply for legal aid - Salary statement
 
           <div class="govuk-!-padding-bottom-6"></div>
 
-          <table class="govuk-table">
-            <caption class="govuk-table__caption" style="padding-bottom:10px;">1 December 2018 to 31 December 2018</caption>
+          <table class="govuk-table sortableTable table-combinecell_2and3at375">
+            <caption class="govuk-table__caption" style="padding-bottom:10px;">01 December to 31 December 2018</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
-                  Select all
-                </a>
+                <th class="govuk-table__header" scope="col">
+									<a class="govuk-body selectClearAll selectAll" href="" aria-describedby="eligibility-completed">
+										Select all
+									</a>
                 </th>
-                <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header" scope="col">Description <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+								<th class="govuk-table__header dateSort" scope="col">Date</th>
+                <th class="govuk-table__header textSort" scope="col">Description</th>
+                <th class="govuk-table__header numberSort govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -242,7 +373,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-2"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-2"></label>
                   </div></td>
                 <td class="govuk-table__cell">27/12/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -272,7 +403,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">21/12/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -312,7 +443,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">16/12/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -362,7 +493,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">07/12/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -383,17 +514,18 @@ Apply for legal aid - Salary statement
 
           <div class="govuk-!-padding-bottom-6"></div>
 
-          <table class="govuk-table">
-            <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 30 November 2018</caption>
+          <table class="govuk-table sortableTable table-combinecell_2and3at375">
+            <caption class="govuk-table__caption" style="padding-bottom:10px;">01 November to 30 November 2018</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
-                  Select all
-                </a>
+                <th class="govuk-table__header" scope="col">
+									<a class="govuk-body selectClearAll selectAll" href="" aria-describedby="eligibility-completed">
+										Select all
+									</a>
                 </th>
-                <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header" scope="col">Description <img src="/public/images/filter_icon.svg" style="float:right;"></th>
-                <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+								<th class="govuk-table__header dateSort" scope="col">Date</th>
+                <th class="govuk-table__header textSort" scope="col">Description</th>
+                <th class="govuk-table__header numberSort govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -411,7 +543,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-2"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-2"></label>
                   </div></td>
                 <td class="govuk-table__cell">27/11/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -441,7 +573,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">21/11/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -481,7 +613,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">16/11/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -531,7 +663,7 @@ Apply for legal aid - Salary statement
                 <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <!-- <label class="govuk-label govuk-checkboxes__label" for="income-1"></label> -->
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                   </div></td>
                 <td class="govuk-table__cell">07/11/2018</td>
                 <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
@@ -551,7 +683,7 @@ Apply for legal aid - Salary statement
           </table>
 
           <button type="submit" class="govuk-button">
-            Save and continue
+            Continue
           </button>
         </form>
 
@@ -597,3 +729,4 @@ Apply for legal aid - Salary statement
     }
   }) }}
   {% endblock %}
+
