@@ -16,8 +16,8 @@ Apply for legal aid - Client details
   }) }}
 
   {{ govukBackLink({
-    text: "Home",
-      href: "dashboard"
+    text: "Back",
+      href: "eve_designs_2"
   }) }}
 {% endblock %}
 
@@ -27,7 +27,7 @@ Apply for legal aid - Client details
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Details of the most recent incident</h1>
 
-      <form action="injunction_capacity" method="post" novalidate>
+      <form action="injunction_details" method="post" novalidate>
 
         <div class="govuk-!-padding-bottom-2"></div>
 
@@ -35,7 +35,7 @@ Apply for legal aid - Client details
 
 
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Date the respondent first contacted you
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Enter the date your client first contacted you
               </legend>
               <span id="dob-hint" class="govuk-hint">
                 For example, 31 3 1980
@@ -71,7 +71,7 @@ Apply for legal aid - Client details
 
           <div class="govuk-!-padding-bottom-2"></div>
 
-          <label class="govuk-heading-m">Details of the most recent incident
+          <label class="govuk-heading-m">Enter details of the most recent incident
             </label>
 
             <!--          <span class="govuk-hint">
@@ -80,7 +80,7 @@ Apply for legal aid - Client details
 
 
             <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="15" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10 " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
             </div>
 

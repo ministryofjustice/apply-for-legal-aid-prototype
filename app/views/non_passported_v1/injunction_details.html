@@ -17,7 +17,7 @@ Apply for legal aid - Alternative funding
 
   {{ govukBackLink({
     text: "Back",
-      href: "capital_restrictions"
+      href: "injunction"
   }) }}
 {% endblock %}
 
@@ -25,14 +25,14 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="injunction_bail" method="post" class="form">
+        <form action="statement_1" method="post" class="form">
 
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Injunction details
+      Details of the injunction
       </h1>
     </legend>
     <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
@@ -42,7 +42,7 @@ Apply for legal aid - Alternative funding
 
   <!--  <h2 class="govuk-heading-m">H2</h2> -->
 
-<h2 class="govuk-heading-m">Does the respondent have the capacity to understand the terms of the order?</h2>
+<h2 class="govuk-heading-m">Does the respondent have the mental capacity to understand the terms of the injunction?</h2>
     <div class="govuk-radios govuk-radios--inline" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -64,14 +64,12 @@ Apply for legal aid - Alternative funding
           </label>
           <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
         </div>
-
       </div>
-
       </div>
 <div class="govuk-!-padding-bottom-6"></div>
 
 
-      <h2 class="govuk-heading-m">Has the respondent received a warning letter?</h2>
+      <h2 class="govuk-heading-m">Has a warning letter been sent?</h2>
       <div class="govuk-radios govuk-radios--inline" data-module="radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -88,7 +86,7 @@ Apply for legal aid - Alternative funding
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
           <div class="govuk-form-group">
             <label class="govuk-label" for="contact-by-email">
-              Tell us why the respondent needs legal aid
+              Tell us why a warning letter has not been sent
             </label>
             <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
           </div>
