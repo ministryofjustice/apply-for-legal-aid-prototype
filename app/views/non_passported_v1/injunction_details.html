@@ -32,7 +32,7 @@ Apply for legal aid - Alternative funding
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Details of the injunction
+      Respondent details <!-- About the respondent -->
       </h1>
     </legend>
     <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
@@ -42,7 +42,7 @@ Apply for legal aid - Alternative funding
 
   <!--  <h2 class="govuk-heading-m">H2</h2> -->
 
-<h2 class="govuk-heading-m">Does the respondent have the mental capacity to understand the terms of the injunction?</h2>
+<h2 class="govuk-heading-m">Does the respondent have the mental capacity to understand the terms of a non-molestation order?</h2>
     <div class="govuk-radios govuk-radios--inline" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -57,10 +57,10 @@ Apply for legal aid - Alternative funding
           No
         </label>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-        <div class="govuk-form-group">
+      <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div class="govuk-form-group" style="padding-top:60px;">
           <label class="govuk-label" for="contact-by-email">
-            Tell us why the respondent cannot understand the terms of the order
+            Tell us how the respondent lacks mental capacity
           </label>
           <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
         </div>
@@ -69,7 +69,7 @@ Apply for legal aid - Alternative funding
 <div class="govuk-!-padding-bottom-6"></div>
 
 
-      <h2 class="govuk-heading-m">Has a warning letter been sent?</h2>
+      <h2 class="govuk-heading-m">Has a warning letter been sent to the respondent?</h2>
       <div class="govuk-radios govuk-radios--inline" data-module="radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -83,8 +83,8 @@ Apply for legal aid - Alternative funding
             No
           </label>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-          <div class="govuk-form-group">
+        <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+          <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
               Tell us why a warning letter has not been sent
             </label>
@@ -111,8 +111,8 @@ Apply for legal aid - Alternative funding
             No
           </label>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-          <div class="govuk-form-group">
+        <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+          <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
               Tell us why the police have not been notified
             </label>
@@ -137,10 +137,10 @@ Apply for legal aid - Alternative funding
             No
           </label>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-          <div class="govuk-form-group">
+        <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+          <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
-            Tell us why the respondent needs legal aid
+            Tell us why legal aid is required
             </label>
             <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
           </div>
