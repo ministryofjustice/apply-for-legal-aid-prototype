@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Home",
-      href: "/passported_v2/dashboard"
+      href: "dashboard"
   }) }}
 {% endblock %}
 
@@ -25,40 +25,20 @@ Apply for legal aid - Client details
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Enter your client's details</h1>
+      <h1 class="govuk-heading-xl">Details of the most recent incident</h1>
 
-      <form action="postcode_finder" method="post" novalidate>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
-            </legend>
-
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="firstname">
-                First name
-                </label>
-              <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
-            </div>
-
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="lastname">
-                Last name
-                </label>
-              <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
-            </div>
-
-          </fieldset>
-        </div>
+      <form action="injunction_capacity" method="post" novalidate>
 
         <div class="govuk-!-padding-bottom-2"></div>
 
         <div class="govuk-form-group">
+
+
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Date the respondent first contacted you
               </legend>
               <span id="dob-hint" class="govuk-hint">
-                For example, 31 3 1980.
+                For example, 31 3 1980
               </span>
               <div class="govuk-date-input" id="dob">
                 <div class="govuk-date-input__item">
@@ -91,27 +71,19 @@ Apply for legal aid - Client details
 
           <div class="govuk-!-padding-bottom-2"></div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="national-insurance-number">
-              National Insurance number
+          <label class="govuk-heading-m">Details of the most recent incident
             </label>
-            <span id="national-insurance-number-hint" class="govuk-hint">
-              For example, ‘QQ 12 34 56 C’.
-            </span>
-            <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['national-insurance-number'] }}">
-          </div>
 
-           <div class="govuk-!-padding-bottom-2"></div>
+            <!--          <span class="govuk-hint">
+                        You can upload a file or type (or copy and paste) text into the text box.
+                      </span> -->
 
-           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="email-address">
-              Email address
-            </label>
-            <span id="email-hint" class="govuk-hint">
-              We'll use this to send your client a secure link if they need to complete a financial assessment
-            </span>
-            <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
-          </div>
+
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="15" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+
+            </div>
+
 
           <div class="govuk-!-padding-bottom-2"></div>
 
@@ -122,13 +94,11 @@ Apply for legal aid - Client details
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
                 <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Client represented by person acting in a professional capacity
-                    Select if someone is providing details about the client on their behalf
+                    Client represented by person acting in a professional capacity
                 </label>
               </div>
-          </div>
+          </div> -->
 
-          <div class="govuk-!-padding-bottom-4"></div> -->
 
         <!--  <details class="govuk-details">
             <summary class="govuk-details__summary">
@@ -137,21 +107,21 @@ Apply for legal aid - Client details
               </span>
             </summary>
             <div class="govuk-details__text">
-               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits.</p>
+               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits</p>
               <p class="govuk-body">Your client can also ask for a reminder through the post.</p>
             </div>
           </details> -->
 
-          <div class="govuk-form-group">
-            <button type="submit" class="govuk-button form-buttons">
-              Continue
-            </button>
-            <button role="button" class="govuk-button draft-button form-buttons">
-              Save as draft
-            </button>
-          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
 
+        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save as draft
+          </a> -->
 
+          <p class="govuk-body">
+            <a href="dashboard">Save and come back later</a></p>
 
         </form>
 
@@ -166,14 +136,6 @@ Apply for legal aid - Client details
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -181,7 +143,11 @@ Apply for legal aid - Client details
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {
