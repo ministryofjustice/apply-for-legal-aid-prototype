@@ -91,13 +91,16 @@ $( document ).ready(function() {
 
 			$('th.dateSort, th.textSort, th.numberSort')
 					.wrapInner('<span class="sortableColumn" title="sort this column"/>')
+					.prepend('<span class="govuk-visually-hidden">Click to sort by </span>')
 					.each(function(){
 
 							var th = $(this),
 									thIndex = th.index(),
 									inverse = false;
-						
-							th.click(function(){
+							
+							th.attr("tabindex","0");
+							
+							th.on("keypress click",function(){
 								
 								table = th.parents("table");
 								
