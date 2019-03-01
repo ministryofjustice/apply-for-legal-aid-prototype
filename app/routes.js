@@ -89,7 +89,7 @@ router.get('/other_capital_alt', function (req, res) {
 })
 
 
-// Branching
+// Branching for non_passported_v1 prototype
 router.get('/non_passported_v1/online_banking_declaration', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var onlinebank = req.query.onlinebank
@@ -103,7 +103,7 @@ router.get('/non_passported_v1/online_banking_declaration', function (req, res) 
   }
 })
 
-router.get('/non_passported_v1/income_start', function (req, res) {
+router.get('/non_passported_v1/types_of_income', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var otherbank = req.query.otherbank
 
@@ -112,9 +112,25 @@ router.get('/non_passported_v1/income_start', function (req, res) {
     res.redirect('/non_passported_v1/additional_accounts')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('non_passported_v1/income_start')
+    res.render('non_passported_v1/types_of_income')
   }
 })
+
+router.get('/non_passported_v1/savings_investments', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var property= req.query.property
+
+  if (property === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/non_passported_v1/yes_holding_page')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.render('non_passported_v1/savings_investments')
+  }
+})
+
+
+
 
 // Vehicles
 router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
