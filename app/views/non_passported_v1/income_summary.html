@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Outgoings summary
+Apply for legal aid - Income start page
 {% endblock %}
 
 {% block header %}
@@ -28,7 +28,7 @@ Apply for legal aid - Outgoings summary
 
   {{ govukBackLink({
   text: "Back",
-  href: "types_of_income3"
+  href: "types_of_income"
 }) }}
 
 {% endblock %}
@@ -37,51 +37,57 @@ Apply for legal aid - Outgoings summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl"><!-- Regular payments you make -->Your regular payments</h1>
+    <h1 class="govuk-heading-xl">Your income</h1>
 
-<h2 class="govuk-heading-m"><!-- Add payments from your bank statements for each category -->Add payments you made from 1 November 2018 to 31 January 2019</h2>
+<h2 class="govuk-heading-m">Add income you received from 1 November 2018 to 31 January 2019</h2>
+  <!--  <h2 class="govuk-heading-m">Add income from your bank statements for each category</h2>
+ Add income for the last 3 months to each category -->
+
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Rent or mortgage
+            <span class="app-task-list__section-number">1. </span> Salary or wages
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="govuk-body" href="salary3" aria-describedby="eligibility-completed">
-                Add rent or mortgage payments
+              <a class="govuk-body" href="salary" aria-describedby="eligibility-completed">
+                Add salary or wage payments <!-- Select payments from your bank statement -->
               </a>
             </li>
           </ul>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Council Tax
+            <span class="app-task-list__section-number">2. </span> Benefits
+          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                For example, Universal Credit or Child Benefit.
+            </span> -->
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="govuk-body" href="benefits3" aria-describedby="eligibility-completed">
-                Add Council Tax payments
+              <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
+                Add benefits payments <!-- Select payments from your bank statement -->
               </a>
             </li>
           </ul>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Childcare costs
+            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
-                Add childcare costs
+                Add payments from family or friends <!-- Select payments from your bank statement -->
               </a>
             </li>
           </ul>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income3" aria-describedby="eligibility-completed">
-              Add another type of regular payment
+            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income" aria-describedby="eligibility-completed">
+              Add another type of income
             </a>
           </h2>
         </li>
@@ -100,7 +106,7 @@ Apply for legal aid - Outgoings summary
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="property" role="button" class="govuk-button">
+        <a href="#" role="button" class="govuk-button">
           Save and continue
         </a>
 
