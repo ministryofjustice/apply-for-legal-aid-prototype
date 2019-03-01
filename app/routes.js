@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Route for search proceeding
+// Route for search proceeding list
 
 router.get('/search', function (req, res) {
 
@@ -48,6 +48,15 @@ router.get('/proceeding_flow/search', function (req, res) {
 router.get('/limitations/search', function (req, res) {
 
   res.render('limitations/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/jim/limitations/search', function (req, res) {
+
+  res.render('jim/limitations/search',
     {
       proceedings: utils.getProceedings()
     })
