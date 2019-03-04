@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "property"
   }) }}
 {% endblock %}
 
@@ -25,21 +25,19 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="capital_restrictions_select" method="post" class="form">
+        <form action="savings_investments_select" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                <!--  Do any restrictions apply to your client's property, savings or assets? -->
-                  Are there any restrictions on your client's property, savings or investments, or items of value?
+                  Does your client have any savings or investments?
                 </h1>
               </legend>
-              <div class="govuk-!-padding-bottom-4"></div>
 
-            <span class="govuk-hint">
-For example, their home has been repossessed or they're bankrupt.
-</span>
+                <div class="govuk-!-padding-bottom-4"></div>
+                <span class="govuk-hint">
+For example, bank or building society accounts, cash savings or shares.</span>
 <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
@@ -60,6 +58,25 @@ For example, their home has been repossessed or they're bankrupt.
               </div>
             </fieldset>
           </div>
+
+        <!--  <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What counts as savings or investments?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+               <p class="govuk-body">We need to know if your client has:</p>
+                 <ul class="govuk-list govuk-list--bullet">
+               <li>bank, building society, Post Office or ISA accounts</li>
+               <li>cash savings</li>
+               <li>power of attorney, for example over a Junior ISA</li>
+               <li>National Savings Certificates or Premium Bonds</li>
+               <li>shares in a public limited company (PLC)</li>
+               <li>personal equity plans (PEPs), unit trusts, capital bonds or government stocks</li>
+               <li>life assurance or endowment policies not linked to a mortgage</li>
+            </div>
+          </details> -->
 
           <button type="submit" class="govuk-button">
             Continue
