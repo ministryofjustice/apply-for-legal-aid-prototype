@@ -1,0 +1,318 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Salary statement
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income_summary1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <style>
+	
+		.numberSort,
+		.textSort,
+		.dateSort {
+			color:#005ea5;
+			text-decoration:underline;
+			cursor:pointer;
+		}
+		.numberSort:hover,
+		.textSort:hover,
+		.dateSort:hover {
+			color:#2b8cc4;
+		}
+		.numberSort:active > span.sortableColumn,
+		.numberSort:focus > span.sortableColumn,
+		.textSort:active > span.sortableColumn,
+		.textSort:focus > span.sortableColumn,
+		.dateSort:active > span.sortableColumn,
+		.dateSort:focus > span.sortableColumn {
+			background-color:#ffbf47;
+		}
+	
+    td::before {
+      display: none;
+    }
+/*
+    @media (max-width: 40.0625em) {
+
+      table, tr, td  {
+          display: block;
+      }
+      td.govuk-table__cell {
+          border-bottom:0px;
+      }
+      tr {
+          border-bottom: 1px solid #bfc1c3;
+          width:100%;
+      }
+      th,
+      tr:first-of-type {
+          display: none;
+      }
+      tr {
+          padding:0.7em 2vw
+      }
+
+      td.govuk-table__cell--numeric {
+          text-align: left;
+      }
+      td:nth-child(2)::before {
+          content: "Date: ";
+      }
+      td:nth-child(3)::before {
+          content: "Description: ";
+      }
+      td:nth-child(4)::before {
+          content: "Amount: ";
+      }
+      td::before {
+          display: inline;
+          font-weight: bold;
+          font-style: normal;
+      }
+    }
+*/
+    @media (max-width: 375px) {
+      .table-combinecell_2and3at375 td:nth-of-type(3),
+			.table-combinecell_2and3at375 td:nth-of-type(2) {
+        display: block;
+        border-bottom:0px;
+      }
+      .table-combinecell_2and3at375 tr {
+				border-bottom:1px solid #bfc1c3;
+      }
+      .table-combinecell_2and3at375 th:nth-of-type(3) {
+        display: none;
+      }
+      .table-combinecell_2and3at375 th:nth-of-type(2)::before {
+        content: "Description and ";
+      }
+    }
+		.headerSortDown:after,
+		.headerSortUp:after {
+			content: ' ';
+			position: relative;
+			left: 6px;
+			border: 6px solid transparent;
+			font-size:0;
+		}
+
+		.headerSortDown:after {
+			border-top-color: #005ea5;
+			border-top-width: 13px;
+			border-bottom-width: 0;
+		}
+
+		.headerSortUp:after {
+			bottom: 12px;
+			border-bottom-color: #005ea5;
+			border-bottom-width: 13px;
+			border-top-width: 0;
+		}
+		.headerSortDown:hover:after{
+			border-top-color: #2b8cc4;
+		}
+		.headerSortUp:hover:after {
+			border-bottom-color: #2b8cc4;
+		}
+
+		.headerSortDown,
+		.headerSortUp {
+			padding-right: 10px;
+		}
+		
+		@media (min-width: 700px) {
+			.grid-column-minimum-660 {
+				min-width:660px;
+			}
+		}		
+		@media (max-width: 700px) {
+			.grid-column-minimum-660 {
+				width:100%;
+				float:none;
+			}
+		}		
+
+    .grid-test{
+      display:grid;
+      grid-template-areas:  "header-select-all header-date header-desig header-amount" "tick-box label label label" ;
+      grid-template-columns: 10% 30% 40% 20%;
+    }
+    .grid-test {
+      font-family: "nta", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: #0b0c0c;
+    }
+    .dateHeader {
+      grid-area: header-date;
+      font-size: 1.1875rem;
+      align-self: stretch;
+      line-height: 1.31579;
+    }
+    .desigHeader {
+      grid-area: header-desig;
+      font-size: 1.1875rem;
+      align-self: stretch;
+      line-height: 1.31579;
+    }
+    .amountHeader {
+      grid-area: header-amount;
+      justify-self: end;
+      align-self: stretch;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+    .selectClearAll {
+      grid-area: header-select-all;
+    }
+    .grid-row.govuk-checkboxes__item {
+      display:grid;
+      grid-template-areas:  "label" ;
+      grid-template-columns: 100%;
+      border-bottom: 1px solid #bfc1c3;
+    }
+    .grid-row.govuk-checkboxes__item input {
+      grid-area: tick-box;
+    }
+    .grid-row.govuk-checkboxes__item label {
+      grid-area: label;
+      justify-self: stretch;
+      display: grid;
+      grid-template-columns: 33% 44% 1fr;
+      padding-right:0;
+    }
+    .grid-row .govuk-table__cell {
+      border-bottom:none;
+    
+    }
+    
+  </style>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds grid-column-minimum-660">
+        <form action="salary_selected" method="post" novalidate>
+
+          <h1 class="govuk-heading-xl">
+            Your salary or wage payments
+          </h1>
+					
+          <h2 class="govuk-heading-m">
+            Select all that apply
+          </h2> 
+          
+          <p class="govuk-body">this one uses CSS Grid - which may be an alternative approach if accessibility testing fails (not expected)
+            Sorting not programmed for this one.</p>
+          <div class="govuk-!-padding-bottom-4"></div>
+					<div class="grid-test">
+            <a class="govuk-body selectClearAll selectAll" href="" aria-describedby="eligibility-completed">
+              Select all
+            </a>
+            <div class="dateSort dateHeader" >Date</div>
+            <div class="textSort desigHeader">Description</div>
+            <div class="numberSort amountHeader">Amount</div>
+          </div>
+            <div class="govuk-checkboxes__item grid-row">
+              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="income-1">
+                <span class="govuk-table__cell">29 Jan 2019</span>
+                <span class="govuk-table__cell">Work and child TC</span>
+                <span class="govuk-table__cell govuk-table__cell--numeric">£165.65</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item grid-row">
+              <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="income-2">
+                <span class="govuk-table__cell">03 Jan 2019</span>
+                <span class="govuk-table__cell">Bribe</span>
+                <span class="govuk-table__cell govuk-table__cell--numeric">£65.65</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item grid-row">
+              <input class="govuk-checkboxes__input" id="income-3" name="income" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="income-3">
+                <span class="govuk-table__cell">01 Jan 2019</span>
+                <span class="govuk-table__cell">100 Guineas prize</span>
+                <span class="govuk-table__cell govuk-table__cell--numeric">£105.00</span>
+              </label>
+            </div>
+					
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}
+
