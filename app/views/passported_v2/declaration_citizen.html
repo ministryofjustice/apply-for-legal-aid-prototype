@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid -
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/passported_v2/prospects_of_success"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Declaration</h1>
+
+    <form action="check_answers_merits" method="post" novalidate>
+
+
+<!-- <p class="govuk-body">
+      Please ask your client or their representative to review the following declaration(s). Should they have any queries regarding the declaration(s) they should discuss this with you. The declaration(s), upon submission of the application, must be printed and signed by the relevant person(s). They must be retained on the client’s file.</p> -->
+
+  <!--  <p class="govuk-body">
+          My solicitors have given me to keep:</p>
+  <ul class="govuk-list govuk-list--bullet">
+<li>The Legal Aid Agency’s leaflet about Legal Aid ( ‘Paying for your Legal Aid’ leaflet available at  <a href="">https://www.gov.uk/guidance/funding-and-costs-assessment-for-civil-and-crime-matters</a></li>
+</ul>
+ <p class="govuk-body">
+My solicitors have explained the LAA Statutory Charge to me. In particular, my solicitors have advised that if I recover or retain any property or asset, the Statutory Charge may arise, which could be payable immediately or postponed and registered as an interest - bearing charge on my home at the Legal Aid Agency’s discretion.</p> -->
+
+<p class="govuk-body">You confirm that you've explained to your client that:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the LAA Statutory Charge applies to them</li>
+  <li>legal aid is not always free</li>
+  <li>the Legal Aid Agency may register an interest-bearing charge against their property</li>
+  <li>they may have to pay back all or part of the legal costs at the end of the case</li>
+  <li>the more work their solicitor does, the more they may have to pay back</li>
+</ul>
+
+<!-- <p class="govuk-body">
+By applying, you confirm that the information you have provided is true.</p>
+
+
+ <p class="govuk-body">
+As far as I know, all the information I have given is true and I have not withheld any relevant information. I understand that if I knowingly give false information or withhold relevant information or fail to disclose any change in circumstances for the duration of my funding that my Legal Aid may be stopped and criminal proceedings may be taken against me.</p>
+<p class="govuk-body">I give my permission for the Legal Aid Agency to make any enquiries of third parties and I authorise those third parties to give any information necessary to deal with this.</p>
+<p class="govuk-body">I understand if false or inaccurate information is provided and fraud is identified, details will be passed to fraud prevention agencies to prevent fraud and money laundering. For further details explaining how the information held by fraud prevention agencies may be used contact the Counter Fraud and Investigations team on 0203 334 5588.
+</p> -->
+
+        <button type="submit" class="govuk-button">
+          I agree
+        </button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
