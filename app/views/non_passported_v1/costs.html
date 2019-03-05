@@ -17,7 +17,7 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/statement_1"
+      href: "statement_1"
   }) }}
 {% endblock %}
 
@@ -28,7 +28,7 @@ Apply for legal aid -
 
     <h1 class="govuk-heading-xl">What are the estimated legal costs of doing the work?</h1>
 
-    <form action="/passported_v2/prospects_of_success" method="post" novalidate>
+    <form action="prospects_of_success" method="post" novalidate>
       <div class="govuk-form-group">
 
           <span id="postcode-hint" class="govuk-hint">
@@ -41,11 +41,11 @@ Apply for legal aid -
       </div>
 
       <button type="submit" class="govuk-button">
-        Continue
+        Save and continue
       </button>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save as draft
+        Save and come back later
       </a>
 
     </form>
