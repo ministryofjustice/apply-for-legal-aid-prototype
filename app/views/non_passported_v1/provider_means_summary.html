@@ -17,7 +17,7 @@ Apply for legal aid - Check client financial assessment
 
   {{ govukBackLink({
     text: "Back",
-      href: "applicant_type"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -30,15 +30,12 @@ Apply for legal aid - Check client financial assessment
           Your client has completed their financial assessment
         </h1>
 
-
         <p>Client: <strong>John Doe</strong>
           <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong>
 
-<p class="govuk-body">You can review their answers and make corrections before their application is submitted.</p>
+          <p class="govuk-body">You can review their answers and make corrections before their application is submitted.</p>
 
-          <table class="govuk-table" style="
-          margin-bottom: 10px;
-          padding-bottom: 0px">
+          <table class="govuk-table" style="margin-bottom: 15px;">
               <h2 class="govuk-heading-l">Income</h2>
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
@@ -72,21 +69,16 @@ Apply for legal aid - Check client financial assessment
                 </tbody>
               </table>
 
-                <p><a href="clients_income" style="float:right; padding-bottom: 30px;">View full list of incoming transactions</a></p>
-<div class="govuk-!-padding-bottom-8"></div>
+              <p><a href="clients_income" style="float:right;">View declared income</a></p>
 
-              <table class="govuk-table" style="
-                margin-bottom: 10px;
-                padding-bottom: 0px">
+              <div class="govuk-!-padding-bottom-8"></div>
+
+              <table class="govuk-table" style="margin-bottom: 15px;">
                 <h2 class="govuk-heading-l">Outgoings</h2>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell" scope="row">Rent or mortgage</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell" scope="row">Council tax</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell" scope="row">Childcare costs to a nursery or registered provider</td>
@@ -97,158 +89,58 @@ Apply for legal aid - Check client financial assessment
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell" scope="row">Existing legal aid contributions</td>
+                    <td class="govuk-table__cell" scope="row">Existing criminal legal aid contributions</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
                   </tr>
                 </tbody>
               </table>
 
-              <p><a href="clients_outgoings" style="float:right; padding-bottom: 30px;">View full list of outgoing transactions</a></p>
-<div class="govuk-!-padding-bottom-8"></div>
+              <p><a href="clients_outgoings" style="float:right;">View declared outgoings</a></p>
 
-              <h2 class="govuk-heading-l">Capital</h2>
+              <div class="govuk-!-padding-bottom-8"></div>
 
-              <h2 class="govuk-heading-m">
-                Property
-              </h2>
+              <table class="govuk-table" style="margin-bottom: 15px;">
+                <h2 class="govuk-heading-l">Capital</h2>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Property</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Savings and investments</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Other assets</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Capital restrictions</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                </tbody>
+              </table>
 
-            <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">
-                  Property owned
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  Yes, owned outright
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="property">
-                    Change <span class="govuk-visually-hidden">blank</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">
-                  Property value
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  £145,000.00
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change <span class="govuk-visually-hidden">blank</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">
-                  Outstanding mortgage amount
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  £127,345.00
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change <span class="govuk-visually-hidden">blank</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">
-                  Owned with anyone else
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  Yes, a friend, family member or other individual
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change <span class="govuk-visually-hidden">blank</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__answer">
-                  Percent owned
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  40.00%
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change <span class="govuk-visually-hidden">blank</span>
-                  </a>
-                </dd>
-              </div>
-           </dl>
+              <p><a href="check_answers_capital_full" style="float:right;">View declared capital</a></p>
 
-             <div class="govuk-grid-row">
-               <div class="govuk-grid-column-two-thirds">
-             <h2 class="govuk-heading-m">Savings and investments</h2>
-             </div>
-             <div class="govuk-grid-column-one-third">
-               <p><a class="govuk-link" style="float:right;" href="savings_investments">Change</a></p>
-             </div>
-             </div>
+              <div class="govuk-!-padding-bottom-8"></div>
 
-             <table class="govuk-table">
-                 <tbody class="govuk-table__body">
-                   <tr class="govuk-table__row">
-                     <th class="govuk-table__cell govuk-body" scope="row">Post Office, ISAs and other savings accounts</th>
-                         <td class="govuk-table__cell govuk-table__cell--numeric">£535.72</td>
-                     </tr>
-                   </tbody>
-                 </table>
+            </div>
+          </div>
 
-                 <div class="govuk-!-padding-bottom-6"></div>
+              <form action="provider_means_calculation" method="post" novalidate>
 
-                 <div class="govuk-grid-row">
-                   <div class="govuk-grid-column-two-thirds">
-                 <h2 class="govuk-heading-m">Other assets</h2>
-                 </div>
-                 <div class="govuk-grid-column-one-third">
-                   <p><a class="govuk-link" style="float:right;" href="other_capital">Change</a></p>
-                 </div>
-                 </div>
+                <input type="hidden" name="answers-checked" value="true">
 
-                 <table class="govuk-table">
-                     <tbody class="govuk-table__body">
-                       <tr class="govuk-table__row">
-                         <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home estimated value</th>
-                             <td class="govuk-table__cell govuk-table__cell--numeric">£67,535.72</td>
-                         </tr>
-                       </tbody>
-                     </table>
+                <button type="submit" class="govuk-button">
+                  Save and continue
+                </button>
 
-             <div class="govuk-!-padding-bottom-6"></div>
+                <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                   Save and come back later
+                 </a>
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-              <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
-              </div>
-              <div class="govuk-grid-column-one-third">
-                <p><a class="govuk-link" style="float:right;" href="capital_restrictions">Change</a></p>
-              </div>
-              </div>
-
-              <table class="govuk-table">
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <th class="govuk-table__cell govuk-body" scope="row">Repossession or deferred interest in a property</th>
-                          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <div class="govuk-!-padding-bottom-6"></div>
-
-              <a role="button" href="injunction" class="govuk-button">
-                 Save and continue
-               </a>
-
-             <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-                Save and come back later
-              </a>
-    </div>
-  </div>
+              </form>
 
 
   {% endblock %}
