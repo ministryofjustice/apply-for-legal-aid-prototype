@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
-{% from "breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid - Citizen start page
+Apply for legal aid - Other capital
 {% endblock %}
 
 {% block header %}
@@ -28,54 +28,53 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "check_answers_capital_full"
+      href: "citizen_start_page"
   }) }}
-
 {% endblock %}
 
 {% block content %}
-
-
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <form action="agree_bank_access" method="post" class="form">
 
+        <h1 class="govuk-heading-xl">Give one-time access to your bank accounts</h1>
+        <p class="govuk-body">
+          You'll be redirected to a secure service to sign in to your online banking.
+        </p>
+        <p class="govuk-body">
+          You'll need to share all of your bank accounts, including any in joint names or with no money.
+        </p>
 
+        <h2 class="govuk-heading-m">How we connect to your online banking</h2>
 
-        <h1 class="govuk-heading-xl">Declaration</h1>
-
-        <p class="govuk-body">By submitting this assessment, I agree that:</p>
-
+<p class="govuk-body">After you've signed in and authorised us to access your account, we:</p>
 <ul class="govuk-list govuk-list--bullet">
-<li>I've instructed Hitchcock, Jones and King to represent me</li>
-<li>the Legal Aid Agency can share my information with organisations like the Department for Work and Pensions and HM Revenue and Customs</li>
-<li>the information I’ve given is complete and correct</li>
-<li>I’ll report any changes to my financial situation immediately</li>
+
+  <li>download bank transactions covering the last 3 months</li>
+  <li>automatically end the bank connection after one hour</li>
 </ul>
 
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
+      <!--  <ul class="govuk-list govuk-list--number">
+          <li>You sign in and authorise access to your accounts.</li>
+          <li>We download 3 months of transactions.</li>
+        </ul> -->
 
-  <p class="govuk-body" style="padding-left: 60px;">If you give wrong or incomplete information, or do not report changes, you may:</p>
-
-  <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
-  <li>be prosecuted</li>
-  <li>need to pay a financial penalty</li>
-  <li>have your legal aid stopped and have to pay back the costs</li>
-  <!-- <li>have to pay more for your legal aid</li> -->
-  </ul>
-
-<br>
-  <button type="submit" class="govuk-button">
-    Agree and submit
-  </button>
-
-</div>
+          <div class="govuk-inset-text">
+          <p class="govuk-body">
+            We do not save your online banking username and password.
+          <!-- Your online banking details are not saved. --></p>
+        </div>
 
 
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
       </div>
-
     </div>
+
 
 {% endblock %}
 
