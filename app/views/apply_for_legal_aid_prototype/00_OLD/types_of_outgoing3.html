@@ -4,18 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Types of income
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Types of outgoing
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +17,7 @@ Apply for legal aid - Types of income
 
   {{ govukBackLink({
     text: "Back",
-      href: "other_bank_radios"
+      href: "outgoings_start3"
   }) }}
 {% endblock %}
 
@@ -36,20 +25,22 @@ Apply for legal aid - Types of income
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="income_summary" method="post" class="form">
+        <form action="outgoings_summary1" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Select any types of income you receive
+                  <!-- What do you pay out each month? -->
+                  Select any regular payments you make
                 </h1>
               </legend>
 
               <div class="govuk-!-padding-bottom-4"></div>
+
             <!--  <span id="citizenship-conditional-hint" class="govuk-hint">
-                Do not select any if you have no income.
-              </span> -->
+              Do not select any if you make no regular payments.
+            </span> -->
 
               <div class="govuk-!-padding-bottom-4"></div>
 
@@ -57,62 +48,40 @@ Apply for legal aid - Types of income
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-1" name="salary" type="checkbox" value="yes" data-aria-controls="income-conditional-1" {{ checked("salary","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-1">
-                    Salary or wages
+                    Rent or mortgage
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                    Benefits
+                    Council Tax
                   </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, Universal Credit or Child Benefit
-                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                    Maintenance payments
+                    Childcare costs to a nursery or registered provider
                   </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, for children or from an ex-partner
-                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                    Income from a property or lodger
+                    Maintenance payments
+                  <!--  Maintenance payments (for one or more children or to an ex-partner) -->
                   </label>
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                      For example, for children or to an ex-partner
+                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-5" name="student-loan" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-5" {{ checked("student-loan","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-5">
-                    Student loan or grant
+                    Existing legal aid contributions
                   </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                    Pensions
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Include State, work or private pensions
-                  </span>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                    Financial help from friends or family
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, money from a family member for rent or bills
-                  </span>
                 </div>
 
               </div>

@@ -4,7 +4,18 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,30 +27,40 @@ Apply for legal aid -
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
-      href: "check_answers_merits"
-  }) }}
+  text: "Back",
+  href: "other_bank_radios"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
+    <h1 class="govuk-heading-xl">Details about your income</h1>
 
-    <form action="confirmation_page" method="post" novalidate>
+    <form action="types_of_income" method="post" novalidate>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
+      <p class="govuk-body">We'll ask you to:</p>
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>select the types of income you receive</li>
+              <li>sort the income types into categories</li>
+            </ul>
+
+    <!--  <h2 class="govuk-heading-m">What you need to do</h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Select the type of income you receive.</li>
+              <li>Go through your bank statments selecting the income.</li>
+              <li>Ensure you have shown all the income you receive.</li>
+            </ul> -->
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
 
     </form>
   </div>

@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check client financial assessment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Your client has completed their financial assessment
+        </h1>
+
+        <p>Client: <strong>John Doe</strong>
+          <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong>
+
+          <p class="govuk-body">You can review their answers and make corrections before their application is submitted.</p>
+
+          <table class="govuk-table" style="margin-bottom: 15px;">
+              <h2 class="govuk-heading-l">Income</h2>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Salary or wages</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Benefits</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Maintenance payments</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Income from a property or lodger</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Student loan or grant</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Pensions</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Financial help from friends or family</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >None declared</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p><a href="clients_income" style="float:right;">View declared income</a></p>
+
+              <div class="govuk-!-padding-bottom-8"></div>
+
+              <table class="govuk-table" style="margin-bottom: 15px;">
+                <h2 class="govuk-heading-l">Outgoings</h2>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Rent or mortgage</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Childcare costs to a nursery or registered provider</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Maintenance payments</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Existing criminal legal aid contributions</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None declared</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p><a href="clients_outgoings" style="float:right;">View declared outgoings</a></p>
+
+              <div class="govuk-!-padding-bottom-8"></div>
+
+              <table class="govuk-table" style="margin-bottom: 15px;">
+                <h2 class="govuk-heading-l">Capital</h2>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Property</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Savings and investments</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Other assets</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row">Capital restrictions</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p><a href="check_answers_capital_full" style="float:right;">View declared capital</a></p>
+
+              <div class="govuk-!-padding-bottom-8"></div>
+
+            </div>
+          </div>
+
+              <form action="provider_means_calculation" method="post" novalidate>
+
+                <input type="hidden" name="answers-checked" value="true">
+
+                <button type="submit" class="govuk-button">
+                  Save and continue
+                </button>
+
+                <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                   Save and come back later
+                 </a>
+
+              </form>
+
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}

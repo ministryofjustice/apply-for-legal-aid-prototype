@@ -17,7 +17,7 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "check_answers_merits"
+      href: "statement_1"
   }) }}
 {% endblock %}
 
@@ -25,21 +25,28 @@ Apply for legal aid -
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
 
-    <form action="confirmation_page" method="post" novalidate>
+    <h1 class="govuk-heading-xl">What are the estimated legal costs of doing the work?</h1>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
+    <form action="prospects_of_success" method="post" novalidate>
+      <div class="govuk-form-group">
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
+          <span id="postcode-hint" class="govuk-hint">
+            Include profit costs, disbursements, expert costs and counsel fees
+          </span>
+
+
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
 
     </form>
   </div>

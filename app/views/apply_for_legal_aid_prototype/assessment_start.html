@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+Apply for legal aid - Assessment start page
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,31 +16,46 @@ Apply for legal aid -
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
-      href: "check_answers_merits"
-  }) }}
+  text: "Back",
+  href: "/passported_v2/passported"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
+    <h1 class="govuk-heading-xl">Before you continue</h1>
 
-    <form action="confirmation_page" method="post" novalidate>
+    <form action="property" method="post" novalidate>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
+      <h2 class="govuk-heading-m">Capital assessment</h2>
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>If your client owns a home or has a mortgage and their values.</li>
+              <li>Any national savings, premium bonds, capital bonds or stocks and shares and their values.</li>
+              <li>Anything else that can contribute towards the legal costs.</li>
+            </ul>
 
+    <h2 class="govuk-heading-m">Merits assessment</h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>A full statement of case providing sufficient information to satisfy the regulations.</li>
+              <li>Any attempts made to settle including details.</li>
+              <li>Cost estimates under the certificate applied for.</li>
+              <li>Prospects of success.</li>
+            </ul>
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save as draft
+    </a>
     </form>
   </div>
 </div>

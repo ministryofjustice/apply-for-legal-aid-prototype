@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+Apply for legal aid - Profile
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,33 +17,39 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "check_answers_merits"
+      href: "dashboard"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
+<h1 class="govuk-heading-xl">Your profile</h1>
 
-    <form action="confirmation_page" method="post" novalidate>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-visually-hidden">Your profile</caption>
+  <thead class="govuk-table__head">
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Name</td>
+      <td class="govuk-table__cell">Neha Patel</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Email address</td>
+      <td class="govuk-table__cell">Neha.Patel@solicitors.com</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Role</td>
+      <td class="govuk-table__cell">Admin</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Account number</td>
+      <td class="govuk-table__cell">1A234B:3D456G:2S345T</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
-
-    </form>
-  </div>
-</div>
 
 {% endblock %}
 

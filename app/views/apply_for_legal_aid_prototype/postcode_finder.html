@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+Apply for legal aid - Correspondence address lookup
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,33 +17,45 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "check_answers_merits"
+      href: "client_details"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-    <form action="confirmation_page" method="post" novalidate>
+        <h1 class="govuk-heading-xl">Enter a correspondence address for your client</h1>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
+        <form action="postcode_select" method="post" novalidate>
+          <div class="govuk-form-group">
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="postcode"> Postcode
+            </legend>
 
-    </form>
-  </div>
-</div>
+              <span id="postcode-hint" class="govuk-hint">
+                This must be a valid UK postcode.
+              </span>
+
+            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Find address
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+          <p>
+            <a class="govuk-link" href="manual_address">Enter address manually</a>
+          </p>
+
+        </form>
+      </div>
+    </div>
 
 {% endblock %}
 
