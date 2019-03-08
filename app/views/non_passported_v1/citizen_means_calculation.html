@@ -7,6 +7,17 @@
 Apply for legal aid - Check client financial assessment
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -35,7 +46,7 @@ Apply for legal aid - Check client financial assessment
           </div> -->
           <br>
           <h1 class="govuk-panel__title">
-            You are likey to recieve legal aid
+            You are unlikely to receive legal aid
           </h1>
           <div class="govuk-panel__body">
             based on your financial situation
