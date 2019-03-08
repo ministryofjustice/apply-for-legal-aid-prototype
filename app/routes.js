@@ -173,7 +173,7 @@ router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
   if (over18 === 'no') {
     res.redirect('/non_passported_v1/prospects_less_than_50')
   } else {
-    res.redirect('/non_passported_v1/declaration')
+    res.redirect('/non_passported_v1/check_answers_merits')
   }
 })
 
