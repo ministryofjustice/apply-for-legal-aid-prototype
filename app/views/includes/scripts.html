@@ -42,6 +42,34 @@ $( document ).ready(function() {
 
 });
 	$( document ).ready(function() {
+  
+    //remove (both methods)
+    $("[href=client_details#firstname]:not(.removeA>a)").click(function(){
+      $(this).parents("tr").css("display","none");
+      return false;
+    });
+  //  $(".removeB").click(function(){
+   //   $(this).parents("tr").css("display","none");
+    //  return false;
+    //});
+    $(".removeA").click(function(){
+      if($(this).attr("colspan") == 4) {
+        //undo
+        $(this).parents("tr").children("td").css("display","table-cell");
+        $(this).attr("colspan","1");
+        $(this).children("a").text("Remove");
+      } else {
+        //redo
+        $(this).parents("tr").children("td:not(.removeA)").css("display","none");
+        $(this).attr("colspan","4");
+        $(this).children("a").text("Undo");
+      }
+      return false;
+    });
+ 
+  
+  
+  
 		if ($(".sortableTable")) {
 			function dateorder(x) {
 				var xarray = x.split(/[\/\-\s]+/i);
