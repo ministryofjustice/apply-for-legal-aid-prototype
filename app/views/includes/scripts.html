@@ -45,8 +45,11 @@ $( document ).ready(function() {
   
     //remove (both methods)
     $("[href=client_details#firstname]:not(.removeA>a)").click(function(){
-      $(this).parents("tr").fadeOut(800);
-    //$(this).parents("tr").css("display","none");
+      $(this).parents("tr").css("height",$(this).parents("tr").height());
+      $(this).parents("tr").children("td").css("display","none");
+      $(this).parents("tr").slideUp();
+    //  $(this).parents("tr").fadeOut(800);
+    //  $(this).parents("tr").css("display","none");
       return false;
     });
   //  $(".removeB").click(function(){
