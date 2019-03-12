@@ -34,8 +34,67 @@ Apply for legal aid - Income start page
 {% endblock %}
 
 {% block content %}
+  <style>
+	
+		.numberSort,
+		.textSort,
+		.dateSort {
+			color:#005ea5;
+			text-decoration:underline;
+			cursor:pointer;
+		}
+		.numberSort:hover,
+		.textSort:hover,
+		.dateSort:hover {
+			color:#2b8cc4;
+		}
+		.numberSort:active > span.sortableColumn,
+		.numberSort:focus > span.sortableColumn,
+		.textSort:active > span.sortableColumn,
+		.textSort:focus > span.sortableColumn,
+		.dateSort:active > span.sortableColumn,
+		.dateSort:focus > span.sortableColumn {
+			background-color:#ffbf47;
+		}
+	
+    td::before {
+      display: none;
+    }
+  		.headerSortDown:after,
+		.headerSortUp:after {
+			content: ' ';
+			position: relative;
+			left: 6px;
+			border: 6px solid transparent;
+			font-size:0;
+		}
 
-<div class="govuk-grid-row">
+		.headerSortDown:after {
+			border-top-color: #005ea5;
+			border-top-width: 13px;
+			border-bottom-width: 0;
+		}
+
+		.headerSortUp:after {
+			bottom: 12px;
+			border-bottom-color: #005ea5;
+			border-bottom-width: 13px;
+			border-top-width: 0;
+		}
+		.headerSortDown:hover:after{
+			border-top-color: #2b8cc4;
+		}
+		.headerSortUp:hover:after {
+			border-bottom-color: #2b8cc4;
+		}
+
+		.headerSortDown,
+		.headerSortUp {
+			padding-right: 10px;
+		}
+		
+  </style>
+  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Select your income</h1>
 
@@ -48,12 +107,12 @@ Apply for legal aid - Income start page
           </h2>
 
           <ul class="app-task-list__items">
-            <table class="govuk-table" style="margin-bottom:0px;">
+            <table class="govuk-table sortableTable" style="margin-bottom:0px;">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Date</th>
-                  <th class="govuk-table__header" scope="col">Description</th>
-                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                  <th class="govuk-table__header dateSort" scope="col">Date</th>
+                  <th class="govuk-table__header textSort" scope="col">Description</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold numberSort" scope="col">Amount</th>
                   <th class="govuk-table__header" scope="col"></th>
                 </tr>
               </thead>
