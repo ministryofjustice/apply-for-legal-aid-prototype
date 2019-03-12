@@ -45,7 +45,8 @@ $( document ).ready(function() {
   
     //remove (both methods)
     $("[href=client_details#firstname]:not(.removeA>a)").click(function(){
-      $(this).parents("tr").css("display","none");
+      $(this).parents("tr").fadeOut(800);
+    //$(this).parents("tr").css("display","none");
       return false;
     });
   //  $(".removeB").click(function(){
