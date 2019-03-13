@@ -29,15 +29,31 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "postcode_select"
+      href: "search"
   }) }}
 {% endblock %}
 
 {% block content %}
 
+<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#name">Search and select a proceeding</a>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
+        <h1 class="govuk-heading-xl">
+          <!-- The costs and work you're covered for -->
+          What you're covered for
+        </h1>
       </div>
     </div>
 
@@ -45,31 +61,40 @@ $('#search').hideseek({
       <div class="govuk-grid-column-two-thirds">
 
     <table class="govuk-table">
-        <h2 class="govuk-heading-m">You have selected 1 proceeding</h2>
+        <h2 class="govuk-heading-m">Proceeding</h2>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th class="govuk-table__cell govuk-body" scope="row"><h3 class="govuk-body proceeding-item">Non-molestation order</h3>
-            <li class="govuk-caption-m proceeding__list-item">Family</li>
+            <li class="govuk-caption-m proceeding__list-item">Family law</li>
             <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li></th>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search">
-                  Remove <span class="govuk-visually-hidden">blank</span>
+                  Change<span class="govuk-visually-hidden">blank</span>
                 </a></td>
             </tr>
           </tbody>
         </table>
+        <p class="govuk-body">
+          <strong>Form of service:</strong> Full representation<br><br>
+          <strong>Costs you can incur:</strong> £5,000<br><br>
+          <strong>Work you can do:</strong>
+          As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration 	of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
+          <!-- Limited to all steps up to and including serving a final order. If there is a breach leading to arrest, you may represent the client on the consideration of the court. You cannot apply for an arrest warrant or represent someone in contempt proceedings. -->
+        </p>
+
+
       </div>
       </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
 
-    <div id="search-field" class="govuk-form-group">
+  <!--  <div id="search-field" class="govuk-form-group">
 
       <label class="govuk-heading-m" for="search">
         Search for legal proceedings
+          <span class="govuk-hint">
+            For example by category of law, matter type or legal proceeding
+          </span>
       </label>
-      <span class="govuk-hint">
-        For example 'non-molestation order', or search by category of law or matter type
-      </span>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -81,7 +106,7 @@ $('#search').hideseek({
       </div>
 
       <div class="govuk-grid-row">
-        <div id="proceedings-list" class="govuk-grid-column-full ">
+        <div id="proceedings-list" class="govuk-grid-column-full">
 
         {% for proceeding in proceedings -%}
         <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
@@ -106,10 +131,10 @@ $('#search').hideseek({
 
     </div>
 </div>
-</div>
+</div> -->
 
 
-<a class="govuk-button" href="what_youre_covered_for" role="button">
+<a class="govuk-button" href="check_answers" role="button">
   Save and continue
 </a>
 

@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "property"
+      href: "outgoings_summary"
   }) }}
 {% endblock %}
 
@@ -25,58 +25,50 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_investments_select" method="post" class="form">
+        <form action="savings_investments" method="get" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have any savings or investments?
+                  Do you own the home with anyone else?
                 </h1>
               </legend>
 
                 <div class="govuk-!-padding-bottom-4"></div>
-                <span class="govuk-hint">
-For example, bank or building society accounts, cash savings or shares.</span>
-<div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
+                    Yes, with a partner or ex-partner
                   </label>
                 </div>
 
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes, with a housing association or landlord
+                  </label>
+                </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
-                    No
+                    Yes, with a friend, family member or other person
                   </label>
                 </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No, I'm the sole owner
+                  </label>
+                </div>
+
               </div>
             </fieldset>
           </div>
-
-        <!--  <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                What counts as savings or investments?
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-               <p class="govuk-body">We need to know if your client has:</p>
-                 <ul class="govuk-list govuk-list--bullet">
-               <li>bank, building society, Post Office or ISA accounts</li>
-               <li>cash savings</li>
-               <li>power of attorney, for example over a Junior ISA</li>
-               <li>National Savings Certificates or Premium Bonds</li>
-               <li>shares in a public limited company (PLC)</li>
-               <li>personal equity plans (PEPs), unit trusts, capital bonds or government stocks</li>
-               <li>life assurance or endowment policies not linked to a mortgage</li>
-            </div>
-          </details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -85,6 +77,7 @@ For example, bank or building society accounts, cash savings or shares.</span>
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+
         </form>
       </div>
     </div>
@@ -97,14 +90,6 @@ For example, bank or building society accounts, cash savings or shares.</span>
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -112,7 +97,11 @@ For example, bank or building society accounts, cash savings or shares.</span>
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {
