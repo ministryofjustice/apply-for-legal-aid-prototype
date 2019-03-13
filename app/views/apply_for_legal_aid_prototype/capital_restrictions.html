@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Capital restrictions
+Apply for legal aid - Property and mortgage
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Capital restrictions
 
   {{ govukBackLink({
     text: "Back",
-      href: "other_capital"
+      href: "other_capital_select"
   }) }}
 {% endblock %}
 
@@ -25,63 +25,43 @@ Apply for legal aid - Capital restrictions
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="check_answers_capital_full" method="post" class="form">
+        <form action="capital_restrictions_select" method="post" class="form">
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+            <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do any restrictions apply to your property, savings or assets?
+                <!--  Do any restrictions apply to your client's property, savings or assets? -->
+                <!--  Are there any restrictions on your assets? /// property, savings or investments, or valuable items? -->
+                <!--  Is there any reason why you cannot sell assets to pay towards legal aid? -->
+                  Can you sell assets if you need to pay towards legal aid?
                 </h1>
               </legend>
-
               <div class="govuk-!-padding-bottom-4"></div>
 
-              <div class="govuk-checkboxes" data-module="checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Repossession or deferred interest in a property
+            <!--  <p class="gov-ukbody"></p> -->
+
+          <!--  <span class="govuk-hint">
+For example, your home has been repossessed or you're bankrupt.
+</span> -->
+<div class="govuk-!-padding-bottom-4"></div>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
                   </label>
                 </div>
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="investments" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("investments","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                    Subject matter or dispute in other legal proceedings
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No
                   </label>
                 </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    Foreign exchange controls
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    Restrait or freezing order
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="premium-bonds" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("premium-bonds","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
-                    Bankruptcy
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
-                    Held overseas
-                  </label>
-                </div>
-
               </div>
-
             </fieldset>
           </div>
 
@@ -89,6 +69,9 @@ Apply for legal aid - Capital restrictions
             Save and continue
           </button>
 
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
         </form>
       </div>
     </div>
@@ -101,6 +84,14 @@ Apply for legal aid - Capital restrictions
           items: [
             {
               href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
               text: "Contact"
             },
             {
@@ -108,11 +99,7 @@ Apply for legal aid - Capital restrictions
               text: "Feedback"
             },
             {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              href: "#",
               text: "Terms and conditions"
             },
             {
