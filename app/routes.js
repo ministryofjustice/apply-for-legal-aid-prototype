@@ -36,15 +36,6 @@ router.get('/non_passported_v1/search', function (req, res) {
 
 })
 
-router.get('/non_passported_v2/search', function (req, res) {
-
-  res.render('non_passported_v2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-
-})
-
 router.get('/apply_for_legal_aid_prototype/search', function (req, res) {
 
   res.render('apply_for_legal_aid_prototype/search',
