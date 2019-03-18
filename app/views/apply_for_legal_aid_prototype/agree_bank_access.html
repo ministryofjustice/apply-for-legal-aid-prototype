@@ -46,7 +46,7 @@ Apply for legal aid - Agree bank access
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="bank-consent-1" name="bank-consent" type="checkbox" value="yes" data-aria-controls="conditional-bank-consent-1" {{ checked("bank-consent","yes") }}>
             <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="bank-consent-1">
-              <p><strong> I agree for you to check bank transactions covering 3 months </strong> <br> using temporary access to my online banking</p>
+              <p><strong> I agree for you to check 3 months of bank transactions</strong> <br> using temporary access to my online banking</p>
             </label>
           </div>
 
@@ -68,8 +68,20 @@ Apply for legal aid - Agree bank access
           </div>
         </details> -->
 
+      <!--  <div class="govuk-inset-text">
+        <p class="govuk-body">
+         You'll be transferred to a secure service to sign in to your online banking.
+      </div> -->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We'll hand over to a secure service for you to sign in to your online banking.</p>
+      
+
+
         <a href="https://auth.truelayer.com/?response_type=code&client_id=applyforlegalaidtest-uxqw&nonce=2546921908&scope=info%20accounts%20balance%20transactions%20cards%20direct_debits%20standing_orders%20products%20beneficiaries%20offline_access&redirect_uri=https://apply-for-legal-aid-prototype.herokuapp.com/non_passported_v1/citizen_accounts&enable_mock=true&enable_oauth_providers=true&enable_open_banking_providers=false&enable_credentials_sharing_providers=true" role="button" class="govuk-button">
-          Sign in to secure third party service
+          Save and continue
         </a>
 
       </div>
