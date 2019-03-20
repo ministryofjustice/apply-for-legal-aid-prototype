@@ -7,17 +7,6 @@
 Apply for legal aid - Property and mortgage
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -28,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "savings_investments_select"
+      href: "property"
   }) }}
 {% endblock %}
 
@@ -36,23 +25,33 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="other_capital_select" method="post" class="form">
+        <form action="types_of_outgoing_yes_no" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you own any valuable items<!-- other assets -->?
+                  Confirm you have no income
                 </h1>
               </legend>
 
-              <div class="govuk-!-padding-bottom-4"></div>
-            <!--  <span class="govuk-hint">
-For example, a second property, jewellery, art or antiques worth over £500, or interest in a trust.</span> -->
+                <div class="govuk-!-padding-bottom-6"></div>
 
-                <div class="govuk-!-padding-bottom-4"></div>
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
 
-              <div class="govuk-radios">
+                  <p class="govuk-body" style="padding-left: 60px;">You could be prosecuted if you deliberately give untrue or misleading information.</p>
+
+                <!--  <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+                  <li>be prosecuted</li>
+                  <li>need to pay a financial penalty</li>
+                  <li>have your legal aid stopped and have to pay back the costs</li>
+                 <li>have to pay more for your legal aid</li>
+                </ul> -->
+
+
+
+            <!--  <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
@@ -66,34 +65,33 @@ For example, a second property, jewellery, art or antiques worth over £500, or 
                   <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
-                </div>
+                </div> -->
+
               </div>
             </fieldset>
-          </div>
 
-         <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  What counts as 'valuable items'?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                 <p class="govuk-body">We need to know if you have:</p>
-                   <ul class="govuk-list govuk-list--bullet">
-                  <li>a second property or holiday home</li>
-                  <li>a timeshare property</li>
-                  <li>land</li>
-                  <li>jewellery, art or antiques with a value over £500</li>
-                  <li>a car, van or motorcycle less than 3 years old</li>
-                  <li>a classic car purchased as an investment</li>
-                  <li>money or assets from the estate of a person who has died</li>
-                  <li>money owed to you, including from a private mortgage</li>
-                  <li>interest in a trust</li>
-              </div>
-            </details>
+
+        <!--  <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What counts as savings or investments?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+               <p class="govuk-body">We need to know if your client has:</p>
+                 <ul class="govuk-list govuk-list--bullet">
+               <li>bank, building society, Post Office or ISA accounts</li>
+               <li>cash savings</li>
+               <li>power of attorney, for example over a Junior ISA</li>
+               <li>National Savings Certificates or Premium Bonds</li>
+               <li>shares in a public limited company (PLC)</li>
+               <li>personal equity plans (PEPs), unit trusts, capital bonds or government stocks</li>
+               <li>life assurance or endowment policies not linked to a mortgage</li>
+            </div>
+          </details> -->
 
           <button type="submit" class="govuk-button">
-            Save and continue
+            Confirm and continue
           </button>
 
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">

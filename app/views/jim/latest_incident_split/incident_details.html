@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Correspondence address lookup
+Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,41 +17,47 @@ Apply for legal aid - Correspondence address lookup
 
   {{ govukBackLink({
     text: "Back",
-      href: "client_details"
+      href: "legal-help"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Enter details of the latest incident</h1>
 
-        <h1 class="govuk-heading-xl">Enter a correspondence address for your client</h1>
+        <form action="#" method="post" novalidate>
 
-        <form action="postcode_select" method="post" novalidate>
           <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+            <!--  <p class="govuk-body-l">Tell us about the case and give sufficient information to satisfy the regulations.<p> -->
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="postcode"> Postcode
-            </legend>
+            <p class="govuk-body">Example details go here...</p>
 
-              <span id="postcode-hint" class="govuk-hint">
-                This must be a valid UK postcode
-              </span>
+          <!--  <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+            </ul> -->
 
-            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
           </div>
 
+<!-- <span class="govuk-hint">
+  You can upload a file or type (or copy and paste) text into the text box.
+</span> -->
+
+
+
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+
+            </div>
           <button type="submit" class="govuk-button">
-            Find address
+            Save and continue
           </button>
 
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-
-          <p>
-            <a class="govuk-link" href="manual_address">Enter address manually</a>
-          </p>
 
         </form>
       </div>
@@ -65,6 +71,14 @@ Apply for legal aid - Correspondence address lookup
           items: [
             {
               href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
               text: "Contact"
             },
             {
@@ -72,11 +86,7 @@ Apply for legal aid - Correspondence address lookup
               text: "Feedback"
             },
             {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              href: "#",
               text: "Terms and conditions"
             },
             {

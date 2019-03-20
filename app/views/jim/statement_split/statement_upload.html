@@ -7,17 +7,6 @@
 Apply for legal aid - Property and mortgage
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -36,58 +25,62 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_investments_select" method="post" class="form">
+        <form action="types_of_income2" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have any savings or investments?
+                  Upload a statement of case
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
+                <div class="govuk-!-padding-bottom-6"></div>
+
+                <p class="govuk-body">We need to know:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>what has happened in the case so far</li>
+                  <li>about any other people involved and their relationship to your client</li>
+                  <li>why the current proceedings are necessary</li>
+                  <li>how many people you're representing</li>
+                  <li>if anyone else might be able to fund the case</li>
+                <!--  <li>any other information relevant to the case</li> -->
+                </ul>
+
+
+
+                <label class="govuk-heading-m">Attach a file</label>
               <!--  <span class="govuk-hint">
-For example, bank or building society accounts, cash savings or shares.</span> -->
-<div class="govuk-!-padding-bottom-4"></div>
-
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
-                  </label>
-                </div>
-
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="property-3">
-                    No
-                  </label>
-                </div>
-              </div>
+                  You can upload a file or type (or copy and paste) text into the text box.
+                </span> -->
+                          <div class="govuk-form-group">
+                          <!--   <label class="govuk-label" for="file-upload-1">
+                              Upload a file
+                            </label> -->
+                            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                          </div>
             </fieldset>
           </div>
-
-       <details class="govuk-details">
+<br>
+        <!--  <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                What counts as savings and investments?
+                What counts as savings or investments?
               </span>
             </summary>
             <div class="govuk-details__text">
-               <p class="govuk-body">We need to know if you have:</p>
+               <p class="govuk-body">We need to know if your client has:</p>
                  <ul class="govuk-list govuk-list--bullet">
                <li>bank, building society, Post Office or ISA accounts</li>
                <li>cash savings</li>
-               <li>authority to access someone else's bank account (such as a child's)</li>
+               <li>power of attorney, for example over a Junior ISA</li>
                <li>National Savings Certificates or Premium Bonds</li>
                <li>shares in a public limited company (PLC)</li>
                <li>personal equity plans (PEPs), unit trusts, capital bonds or government stocks</li>
                <li>life assurance or endowment policies not linked to a mortgage</li>
             </div>
-          </details>
+          </details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue
