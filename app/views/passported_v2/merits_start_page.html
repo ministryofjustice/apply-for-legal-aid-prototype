@@ -1,10 +1,21 @@
 {% extends "layout.html" %}
+{% from "breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "back-link/macro.njk" import govukBackLink %}
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,33 +28,44 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "check_answers_merits"
+      href: "provider_means_calculation"
   }) }}
+
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
 
-    <form action="application_submitted" method="post" novalidate>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
+
+
+        <h1 class="govuk-heading-xl">Provide details of the case</h1>
+
+      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
+<p class="govuk-body">We need to know if the merits of the case qualify for legal aid.</p>
+
+          <p class="govuk-body">You'll need to enter:</p>
+
 <ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide legal representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
+<li>details about the most recent incident</li>
+<li>information about the respondent</li>
+<li>a statement of case</li>
+<li>the estimated costs of doing the work</li>
+<li>the chances of a successful outcome</li>
 </ul>
 
-<br>
-        <button type="submit" class="govuk-button">
-          Submit application
-        </button>
 
-    </form>
-  </div>
-</div>
+<br>
+  <a href="incident_date" role="button" class="govuk-button right">
+    Continue
+  </a>
+
+
+      </div>
+
+    </div>
 
 {% endblock %}
 

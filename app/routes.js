@@ -186,6 +186,21 @@ router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
   }
 })
 
+// Prospects of success (Passported v2)
+router.post('/passported_v2/prospects_less_than_50', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['vehicles']
+
+  if (over18 === 'no') {
+    res.redirect('/passported_v2/prospects_less_than_50')
+  } else {
+    res.redirect('/passported_v2/check_answers_merits')
+  }
+})
+
 // Statement of case (select upload or enter)
 router.post('/jim/statement_split/statement_upload', function (req, res) {
   // Get the answer from session data
@@ -200,6 +215,22 @@ router.post('/jim/statement_split/statement_upload', function (req, res) {
     res.redirect('/jim/statement_split/statement_upload')
   }
 })
+
+// Passported property v2 - property
+router.post('/passported_v2/property_amount', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/passported_v2/savings_investments_select')
+  } else {
+    res.redirect('/passported_v2/property_amount')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line

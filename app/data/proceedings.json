@@ -1,7 +1,7 @@
 [
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 1,
@@ -12,7 +12,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 2,
@@ -23,7 +23,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 3,
@@ -34,7 +34,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 4,
@@ -45,7 +45,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 5,
@@ -56,7 +56,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 6,
@@ -67,7 +67,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 7,
@@ -78,7 +78,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 1,
@@ -86,7 +86,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 2,
@@ -94,7 +94,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 3,
@@ -102,7 +102,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 4,
@@ -110,7 +110,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 5,
@@ -118,7 +118,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 6,
@@ -126,7 +126,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 7,
@@ -134,7 +134,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 8,
@@ -142,7 +142,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 9,
@@ -150,7 +150,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 10,
@@ -158,7 +158,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 11,
@@ -166,7 +166,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 12,
@@ -174,7 +174,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 13,
@@ -182,7 +182,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 14,
@@ -190,7 +190,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 15,
@@ -198,7 +198,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 16,
@@ -206,7 +206,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 17,
@@ -222,7 +222,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 19,
@@ -230,7 +230,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 20,
@@ -238,7 +238,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 21,
@@ -246,7 +246,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 22,
@@ -254,7 +254,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 23,
@@ -262,7 +262,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 24,
@@ -270,7 +270,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 25,
@@ -278,7 +278,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 26,
@@ -286,7 +286,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 27,
@@ -294,7 +294,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 28,
@@ -302,7 +302,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 29,
@@ -310,7 +310,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 30,
@@ -318,7 +318,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 31,
@@ -326,7 +326,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 32,
@@ -334,7 +334,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 33,
@@ -342,7 +342,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 34,
@@ -350,10 +350,10 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 2,
         "mattertype": "Public Law - Family",
         "proceedingtypeid": 35,
-        "proceedingtype": "Variation of discharge supervision"
+        "proceedingtype": "Variation or discharge supervision"
     }
 ]

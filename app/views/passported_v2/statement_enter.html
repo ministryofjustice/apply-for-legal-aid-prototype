@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Property and mortgage
+Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "passported"
+      href: "legal-help"
   }) }}
 {% endblock %}
 
@@ -25,44 +25,33 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="property_amount" method="post" class="form">
+        <h1 class="govuk-heading-xl">Enter a statement of case</h1>
+
+        <form action="costs" method="post" novalidate>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Does your client own the home they live in?
-                </h1>
-              </legend>
+            <label class="govuk-label" for="more-detail">
+            <!--  <p class="govuk-body-l">Tell us about the case and give sufficient information to satisfy the regulations.<p> -->
 
-                <div class="govuk-!-padding-bottom-4"></div>
+            <p class="govuk-body">We need to know:</p>
 
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, with a mortgage or loan
-
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, owned outright
-
-                  </label>
-                </div>
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="property-3">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>what has happened in the case so far</li>
+              <li>about any other people involved and their relationship to your client</li>
+              <li>why the current proceedings are necessary</li>
+              <li>how many people you're representing</li>
+              <li>if anyone else might be able to fund the case</li>
+            <!--  <li>any other information relevant to the case</li> -->
+            </ul>
           </div>
+ <label class="govuk-heading-m">Type or paste your statement</label>
+<!-- <span class="govuk-hint">
+  Type or paste text into the text box.
+</span> -->
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="15" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
+            </div>
           <button type="submit" class="govuk-button">
             Save and continue
           </button>
@@ -70,6 +59,7 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+
         </form>
       </div>
     </div>

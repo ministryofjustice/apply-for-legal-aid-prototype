@@ -55,37 +55,40 @@ Apply for legal aid - Statement of case
                 <li>Any other persons who might benefit who can bring or fund the case.</li>
                 <li>Details of the most recent incident, if a warning letter has been sent, the police have been notified or there are any criminal charges.</li> -->
               </ul>
+
+              <p class="govuk-body">You can upload or type your statement.</p>
+
             </label>
             <!-- <span id="more-detail-hint" class="govuk-hint">
               Don’t include personal or financial information, eg your National Insurance number or credit card details.
             </span> -->
           </div>
 
-          <label class="govuk-heading-m">Upload or enter your statement
-            </label>
+
 
             <!--          <span class="govuk-hint">
                         You can upload a file or type (or copy and paste) text into the text box.
                       </span> -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="file-upload-1">
-              Upload a file
-            </label>
+            <label class="govuk-heading-m">Attach a file
+              </label>
             <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
           </div>
 
             <div class="govuk-form-group">
+              <label class="govuk-heading-m">Enter your statement
+                </label>
             <textarea class="govuk-textarea" id="more-detail" name="statement" rows="15" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
             </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save as draft
+            Save and come back later
           </a>
 
         </form>
