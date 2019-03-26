@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "passported"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,41 +25,57 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="property_amount" method="post" class="form">
+        <form action="prospects_less_than_50" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client own the home they live in?
+                  Is the chance of a successful outcome 50% or better?
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
+              <div class="govuk-!-padding-top-4"></div>
+
+            <!--   <span class="govuk-hint">
+                This includes cars, vans or motorcycles.
+              </span> -->
 
               <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, with a mortgage or loan
 
-                  </label>
-                </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, owned outright
-
+                    Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
                 </div>
               </div>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
+
             </fieldset>
           </div>
 

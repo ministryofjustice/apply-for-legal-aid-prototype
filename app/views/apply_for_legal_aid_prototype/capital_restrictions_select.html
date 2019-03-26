@@ -7,17 +7,6 @@
 Apply for legal aid - Other capital
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -60,42 +49,50 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    My home has been repossessed or I'm paying 'deferred interest' on a property
+                    Repossession <!-- or I'm paying 'deferred interest' on a property -->
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="investments" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("investments","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                    My assets are the subject of dispute in other legal proceedings
+
+                    Subject of dispute in other legal proceedings
+
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    My assets are under foreign exchange controls
+
+                    Foreign exchange controls
+
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    My assets are under a restraint or freezing order
+
+                    Restraint or freezing order
+
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="premium-bonds" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("premium-bonds","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
-                    I'm bankrupt
+                    Bankruptcy
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
-                    My assets are held overseas
+
+                    Held overseas
+
                   </label>
                 </div>
 

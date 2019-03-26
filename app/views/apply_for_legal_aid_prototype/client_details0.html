@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Home",
-      href: "/passported_v2/dashboard"
+      href: "dashboard"
   }) }}
 {% endblock %}
 
@@ -108,7 +108,14 @@ Apply for legal aid - Client details
               Email address
             </label>
             <span id="email-hint" class="govuk-hint">
-              We'll send your client a link to our service if they need to answer questions about their finances
+              <!-- We will use this to send your client information about the case.
+If your client needs to complete a financial assessment we'll send an email to this address
+We'll send your client a secure link if they need to complete a financial assessment
+We'll use this to send your client instructions on how to complete a financial assessment if required
+We'll send your client a secure link to an online financial assessment if they need to complete one
+We'll use this to send your client a secure link if they need to complete a financial assessment -->
+We'll send your client a link to our service if they need to answer questions about their finances
+
             </span>
             <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
           </div>
@@ -122,13 +129,11 @@ Apply for legal aid - Client details
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
                 <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Client represented by person acting in a professional capacity
-                    Select if someone is providing details about the client on their behalf
+                    Client represented by person acting in a professional capacity
                 </label>
               </div>
-          </div>
+          </div> -->
 
-          <div class="govuk-!-padding-bottom-4"></div> -->
 
         <!--  <details class="govuk-details">
             <summary class="govuk-details__summary">
@@ -137,21 +142,21 @@ Apply for legal aid - Client details
               </span>
             </summary>
             <div class="govuk-details__text">
-               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits.</p>
+               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits</p>
               <p class="govuk-body">Your client can also ask for a reminder through the post.</p>
             </div>
           </details> -->
 
-          <div class="govuk-form-group">
-            <button type="submit" class="govuk-button form-buttons">
-              Save and continue
-            </button>
-            <button role="button" class="govuk-button draft-button form-buttons">
-              Save and come back later
-            </button>
-          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
 
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
+          <!-- <p class="govuk-body">
+            <a href="dashboard">Save and come back later</a></p> -->
 
         </form>
 
@@ -166,14 +171,6 @@ Apply for legal aid - Client details
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -181,7 +178,11 @@ Apply for legal aid - Client details
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {

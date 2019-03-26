@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Costs
+Apply for legal aid -
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Costs
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/statement_1"
+      href: "statement_1"
   }) }}
 {% endblock %}
 
@@ -26,17 +26,17 @@ Apply for legal aid - Costs
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">What are the estimated legal costs of doing the work?</h1>
+    <h1 class="govuk-heading-xl">What is the outstanding mortgage on your client's home?</h1>
 
-    <form action="prospects" method="post" novalidate>
+    <form action="property_ownership" method="post" novalidate>
       <div class="govuk-form-group">
 
-        <p class="govuk-body">
-Include profit costs, disbursements, expert costs and counsel fees.</p>
 
-        <!--  <span id="postcode-hint" class="govuk-hint">
-            Include profit costs, disbursements, expert costs and counsel fees.
-          </span> -->
+      <!--  <h2 class="govuk-heading-m">Enter the outstanding mortgage amount</h2> -->
+
+          <span id="postcode-hint" class="govuk-hint">
+            Check the statement from your client's mortgage provider or lender
+          </span>
 
 
         <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
@@ -63,14 +63,6 @@ Include profit costs, disbursements, expert costs and counsel fees.</p>
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -78,7 +70,11 @@ Include profit costs, disbursements, expert costs and counsel fees.</p>
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {
