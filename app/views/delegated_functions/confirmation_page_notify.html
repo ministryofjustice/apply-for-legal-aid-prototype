@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+  Apply for legal aid
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,34 +15,47 @@ Apply for legal aid -
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  {{ govukBackLink({
-    text: "Back",
-      href: "check_answers_notify"
-  }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
+<div class="govuk-width-container">
 
-    <form action="confirmation_page" method="post" novalidate>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h2 class="govuk-panel__title">
+            Application created
+          </h2>
+          <div class="govuk-panel__body">
+            You have notified us you have exercised delegated functions
+          </div>
+          <br>
+          <div class="govuk-panel__body">
+            Your case reference number is
+            <br><strong>2018/LAA/4ewrqfdd</strong>
+          </div>
+        </div>
 
-    <p class="govuk-body">By submitting this application, I confirm that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>I'm authorised to provide legal representation under a contract with the Legal Aid Agency</li>
-<li>I've gone through all parts of the application with my client</li>
-<li>to the best of my knowledge, the information my client has given me is complete and correct</li>
-</ul>
+<div class="govuk-!-padding-top-4"></div>
+
+        <p class="govuk-body">We've saved the information you've provided, this can be used to progress the application to a full 'substantive' application. </p>
+
+        <h3 class="govuk-heading-m">What happens next</h3>
+
+        <p class="govuk-body">
+          Space for text on how to progress, work the provider can do? Etc....
+        </p>
 
 <br>
-        <button type="submit" class="govuk-button">
-          Submit notification
-        </button>
 
-    </form>
+<a href="home_2" role="button" class="govuk-button">
+  Back to your applications
+</a>
+
+    </div>
   </div>
+
 </div>
 
 {% endblock %}
