@@ -72,6 +72,15 @@ router.get('/jim/limitations/search', function (req, res) {
 
 })
 
+router.get('/apply_for_legal_aid_prototype/search_notify', function (req, res) {
+
+  res.render('apply_for_legal_aid_prototype/search_notify',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
 
 // CAPITAL Branching
 router.get('/capital', function (req, res) {
@@ -186,6 +195,7 @@ router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
   }
 })
 
+
 // Prospects of success (Passported v2)
 router.post('/passported_v2/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
@@ -216,6 +226,7 @@ router.post('/jim/statement_split/statement_upload', function (req, res) {
   }
 })
 
+
 // Passported property v2 - property
 router.post('/passported_v2/property_amount', function (req, res) {
   // Get the answer from session data
@@ -230,7 +241,6 @@ router.post('/passported_v2/property_amount', function (req, res) {
     res.redirect('/passported_v2/property_amount')
   }
 })
-
 
 
 // Add your routes here - above the module.exports line

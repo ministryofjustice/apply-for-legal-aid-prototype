@@ -28,12 +28,23 @@ Apply for legal aid - Homepage
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Make a full application</h2>
+        <h2 class="govuk-heading-m">Make an application</h2>
         <p class="govuk-body">Tell us the basic case details and check if your client receives benefits that qualify for legal aid.</p>
 
         <a href="client_details" class="govuk-button govuk-button__start ">
           Start application
         </a>
+
+        <!-- <p class="govuk-body">Notify us you have exercised delegated functions</p>
+        <a href="client_details_notify" class="govuk-button" style="background-color:#005ea5;">
+          Notify us
+        </a> -->
+        <!-- <h3 class="govuk-heading-m">Delegated functions</h3>
+        <p class="govuk-body">Notify us you have exercised delegated functions</p>
+
+        <a href="client_details_notify" class="govuk-button" style="background-color:#005ea5;">
+          Notify us
+        </a> -->
 
       </div>
 
@@ -48,18 +59,108 @@ Apply for legal aid - Homepage
       </div>
     </div>
 
-    <div class="govuk-!-padding-top-6"></div>
+    <div class="govuk-!-padding-top-8"></div>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m">Current applications</h3>
+      </div>
 
-  <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="border-bottom: 3px solid #000"> -->
+      <div class="govuk-grid-column-one-third">
+        <input class="govuk-input" id="event-name" name="event-name" type="text" value="Search">
+      </div>
+    </div>
 
-  <h3 class="govuk-heading-m">Current applications</h3>
+  <div class="govuk-!-padding-top-2"></div>
 
-  <div class="govuk-!-padding-top-6"></div>
+  <div class="govuk-tabs" data-module="tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
 
-  <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#application">
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#delegated">
+          Delegated functions notifications
+        </a>
+      </li>
+    </ul>
 
-    <table class="govuk-table">
+    <section class="govuk-tabs__panel" id="application" style="border:0px; padding-right:0px; padding-left:10px;">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Name</th>
+            <th class="govuk-table__header" scope="col">Date started</th>
+            <th class="govuk-table__header" scope="col">Case reference</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">David Francis</td>
+            <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/4ewrgfdd</td>
+            <td class="govuk-table__cell">Application submitted</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Paul Farmer</td>
+            <td class="govuk-table__cell">Mon, 18 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/7ewghdfa</td>
+            <td class="govuk-table__cell">Application submitted</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Rita Patel</td>
+            <td class="govuk-table__cell">Fri, 15 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/1erfhdhy</td>
+            <td class="govuk-table__cell">Application submitted</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="delegated" style="border:0px; padding-right:0px; padding-left:10px;">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Name</th>
+            <th class="govuk-table__header" scope="col">Date notified</th>
+            <th class="govuk-table__header" scope="col">Cases reference</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">David Francis</td>
+            <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/4ewrgfdd</td>
+            <td class="govuk-table__cell">Notified of delegation</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Paul Farmer</td>
+            <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/4ewrgfdd</td>
+            <td class="govuk-table__cell">Notified of delegation</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Rita Patel</td>
+            <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+            <td class="govuk-table__cell">2019/LAA/4ewrgfdd</td>
+            <td class="govuk-table__cell">Notified of delegation</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+  </div>
+
+    <!-- <table class="govuk-table">
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -118,7 +219,7 @@ Apply for legal aid - Homepage
         </tr>
       </tbody>
 
-    </table>
+    </table> -->
 
 </div>
 
