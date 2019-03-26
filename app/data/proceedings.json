@@ -1,7 +1,7 @@
 [
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 1,
@@ -12,7 +12,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 2,
@@ -23,7 +23,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 3,
@@ -34,7 +34,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 4,
@@ -45,7 +45,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 5,
@@ -56,7 +56,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 6,
@@ -67,7 +67,7 @@
     },
     {
         "categoryoflawid": 1,
-        "categoryoflaw": "Family",
+        "categoryoflaw": "Family law",
         "mattertypeid": 1,
         "mattertype": "Domestic Abuse",
         "proceedingtypeid": 7,
