@@ -72,9 +72,9 @@ router.get('/jim/limitations/search', function (req, res) {
 
 })
 
-router.get('/apply_for_legal_aid_prototype/search_notify', function (req, res) {
+router.get('/delegated_functions/search_notify', function (req, res) {
 
-  res.render('apply_for_legal_aid_prototype/search_notify',
+  res.render('delegated_functions/search_notify',
     {
       proceedings: utils.getProceedings()
     })
