@@ -96,16 +96,16 @@ Apply for legal aid - Check your answers - Merits
      </dl>
 
      <h2 class="govuk-heading-m">
-       Case details
+       Details of the latest incident
      </h2>
 
      <dl class="app-check-your-answers app-check-your-answers--long">
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-           Date your client contacted you about the latest incident
+           When did your client tell you about the latest domestic abuse incident?
          </dt>
          <dd class="app-check-your-answers__answer">
-          12 April 2019 {{ data['...'] }}
+           2 April 2019{{ data['...'] }}
          </dd>
          <dd class="app-check-your-answers__change">
            <a href="#">
@@ -115,7 +115,20 @@ Apply for legal aid - Check your answers - Merits
        </div>
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-          Details of the incident
+           When did the latest incident occur?
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           1 April 2019{{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           What happened during the incident?
          </dt>
          <dd class="app-check-your-answers__answer">
           {{ data['...'] }}
@@ -126,6 +139,13 @@ Apply for legal aid - Check your answers - Merits
            </a>
          </dd>
        </div>
+</dl>
+<br><br>
+
+<h2 class="govuk-heading-m">
+  Respondent details
+</h2>
+<dl class="app-check-your-answers app-check-your-answers--long">
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
            Does the respondent have the mental capacity to understand the terms of a court order?
@@ -152,7 +172,7 @@ Apply for legal aid - Check your answers - Merits
            </a>
          </dd>
        </div>
-    
+
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
            Have the police been notified?
@@ -180,6 +200,12 @@ Apply for legal aid - Check your answers - Merits
          </dd>
        </div>
      </dl>
+<br><br>
+
+
+     <h2 class="govuk-heading-m">
+       Case details
+     </h2>
 <dl class="app-check-your-answers app-check-your-answers--long">
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question" style=“border-bottom-width: 0px;”>
@@ -195,11 +221,6 @@ Apply for legal aid - Check your answers - Merits
          </dd>
        </div>
 </dl>
-<div class=“govuk-grid-row”>
-        <div class=“govuk-grid-column-full”>
-          <p>PUT CONTENT HERE</p>
-        </div>
-     </div>
 
 
      <dl class="app-check-your-answers app-check-your-answers--long">
@@ -221,7 +242,20 @@ Apply for legal aid - Check your answers - Merits
            Is the chance of a successful outcome 50% or better?
          </dt>
          <dd class="app-check-your-answers__answer">
-           Yes{{ data['...'] }}
+           No{{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           How likely is a successful outcome?
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           45% to 49%{{ data['...'] }}
          </dd>
          <dd class="app-check-your-answers__change">
            <a href="#">
