@@ -29,7 +29,7 @@ Apply for legal aid - Check your answers - Merits
         Check your answers
       </h1>
 
-      <h2 class="govuk-heading-m">
+    <!--  <h2 class="govuk-heading-m">
         Scope of legal aid
       </h2>
 
@@ -93,7 +93,7 @@ Apply for legal aid - Check your answers - Merits
             </a>
           </dd>
         </div>
-     </dl>
+     </dl> -->
 
      <h2 class="govuk-heading-m">
        Details of the latest incident
@@ -142,6 +142,37 @@ Apply for legal aid - Check your answers - Merits
 </dl>
 <br><br>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Respondent details</h2>
+</div>
+<div class="govuk-grid-column-one-third">
+  <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p>
+</div>
+</div>
+
+<table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-body" scope="row"><strong>Does the respondent have the mental capacity to understand the terms of a court order?</strong></th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Has a warning letter been sent to the respondent?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have the police been notified?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have bail conditions been set?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+<!--
 <h2 class="govuk-heading-m">
   Respondent details
 </h2>
@@ -199,8 +230,8 @@ Apply for legal aid - Check your answers - Merits
            </a>
          </dd>
        </div>
-     </dl>
-<br><br>
+     </dl> -->
+<br>
 
 
      <h2 class="govuk-heading-m">
@@ -208,13 +239,13 @@ Apply for legal aid - Check your answers - Merits
      </h2>
 <dl class="app-check-your-answers app-check-your-answers--long">
        <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question" style=“border-bottom-width: 0px;”>
+         <dt class="app-check-your-answers__question">
            Statement of case
          </dt>
-         <dd class="app-check-your-answers__answer" style=“border-bottom-width: 0px;”>
+         <dd class="app-check-your-answers__answer">
            {{ data['...'] }}
          </dd>
-         <dd class="app-check-your-answers__change" style=“border-bottom-width: 0px;">
+         <dd class="app-check-your-answers__change">
            <a href="#">
              Change <span class="govuk-visually-hidden">blank</span>
            </a>
@@ -274,14 +305,18 @@ Apply for legal aid - Check your answers - Merits
 
 
 
-    <h2 class="govuk-heading-m">Complete the application</h2>
+  <!--  <h2 class="govuk-heading-m">Complete the application</h2>
 
       <p class="govuk-body">
         By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
+      </p> -->
 
       <a class="govuk-button" href="declaration" role="button">
-        Save and Continue
+        Save and continue
+      </a>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
       </a>
 
     </div>
