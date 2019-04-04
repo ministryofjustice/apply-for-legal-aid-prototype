@@ -29,7 +29,7 @@ Apply for legal aid - Check your answers - Merits
         Check your answers
       </h1>
 
-    <!--  <h2 class="govuk-heading-m">
+      <h2 class="govuk-heading-m">
         Scope of legal aid
       </h2>
 
@@ -93,10 +93,10 @@ Apply for legal aid - Check your answers - Merits
             </a>
           </dd>
         </div>
-     </dl> -->
+     </dl>
 
      <h2 class="govuk-heading-m">
-       Details of the latest incident
+       Merits assessment
      </h2>
 
      <dl class="app-check-your-answers app-check-your-answers--long">
@@ -242,86 +242,76 @@ Apply for legal aid - Check your answers - Merits
 <dl class="app-check-your-answers app-check-your-answers--long">
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
+
            Statement of case
          </dt>
-         <dd class="app-check-your-answers__answer">
-           {{ data['...'] }}
+         <dd class="app-check-your-answers__answer" style="border-bottom-width: 0px;">
 
          </dd>
-         <dd class="app-check-your-answers__change">
+         <dd class="app-check-your-answers__change" style="border-bottom-width: 0px;">
            <a href="#">
              Change <span class="govuk-visually-hidden">blank</span>
            </a>
          </dd>
        </div>
-
-</dl>
-
-
-
-     <dl class="app-check-your-answers app-check-your-answers--long">
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           What are the estimated legal costs of doing the work?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           £5,000{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Is the chance of a successful outcome 50% or better?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           No{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           How likely is a successful outcome?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           45% to 49%{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-
-
        </dl>
+
        <div class="govuk-grid-row">
-       <div class="govuk-grid-column-full">
-         <p>{{ data['statement'] }}</p>
+         <div class="govuk-grid-column-full">
+           <p>PUT CONTENT HERE</p>
+         </div>
       </div>
-      </div>
 
+      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Estimated legal costs
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           £ {{ data['costs'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Prospects of success
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           50% or better{{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Client declaration
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           Read & agreed {{ data['...'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+    </dl>
 
-
-  <!--  <h2 class="govuk-heading-m">Complete the application</h2>
+    <h2 class="govuk-heading-m">Complete the application</h2>
 
       <p class="govuk-body">
         By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p> -->
+      </p>
 
       <a class="govuk-button" href="declaration" role="button">
-        Save and continue
-      </a>
-
-      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
+        Save and Continue
       </a>
 
     </div>
