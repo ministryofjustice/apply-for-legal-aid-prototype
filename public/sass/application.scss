@@ -213,3 +213,67 @@ div.clear-search {
 		background-color: #FFF;
 	}
 }
+
+// HOME OFFICE - Pagination
+
+
+
+.padding {
+  padding-left: 15px;
+}
+
+.pagination {
+  padding: 0;
+  margin: 0;
+}
+
+.pagination__item {
+  display: inline-block;
+  list-style: none;
+}
+.pagination__link {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background: #F8F8F8;
+    outline: 3px solid #FFBF47;
+  }
+
+  &.current {
+    color: #0B0C0C;
+    font-weight: 700;
+    border: none;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover, &:focus {
+      color: #0B0C0C;
+      background: none;
+    }
+  }
+}
+
+.pagination__summary {
+
+  -webkit-font-smoothing: antialiased;
+  padding: 5px 0  ;
+
+  @media (min-width: 642px) {
+    float: right;
+  }
+}
+
+// Table status dots
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #006435;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
