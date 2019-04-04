@@ -28,33 +28,42 @@ Apply for legal aid - Does your client use online banking
         <form action="/non_passported_v1/online_banking_declaration" method="get" class="form">
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                   Have you exercised delegated functions in the last 5 days?
                 </h1>
               </legend>
-
-                <div class="govuk-!-padding-bottom-4"></div>
-
-              <div class="govuk-radios">
+              <span id="how-contacted-conditional-hint" class="govuk-hint">
+                Select one option.
+              </span>
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+                  <input class="govuk-radios__input" id="delegated-functions-1" name="delegated-functions" type="radio" value="yes" data-aria-controls="conditional-delegated-functions-1">
+                  <label class="govuk-label govuk-radios__label" for="delegated-functions-1">
                     Yes
-
                   </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Email address
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                  </div>
+
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+                  <input class="govuk-radios__input" id="delegated-functions-2" name="delegated-functions" type="radio" value="no" data-aria-controls="delegated-functions-2">
+                  <label class="govuk-label govuk-radios__label" for="delegated-functions-2">
                     No
-
                   </label>
                 </div>
+
               </div>
             </fieldset>
           </div>
+
 
           <button type="submit" class="govuk-button">
             Save and continue
