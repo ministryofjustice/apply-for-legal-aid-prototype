@@ -25,19 +25,19 @@ Apply for legal aid - Client details
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl"><!-- Enter details of the latest incident --> When did your client tell you about the latest domestic abuse incident?</h1>
+      <h1 class="govuk-heading-xl">Details of the latest domestic abuse incident</h1>
 
-  <!--  <p class="govuk-body">Enter the date they first contacted you for legal advice about the matter.</p> -->
+    <!--  <p class="govuk-body">Enter the date they first contacted you to seek legal advice about this matter.</p> -->
 
-      <form action="injunction_date_details" method="post" novalidate>
+      <form action="injunction_details" method="post" novalidate>
 
 
         <div class="govuk-form-group">
 
 
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-            <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Date your client contacted you about the incident
-            </legend> -->
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"><!-- Enter the date the incident occurred --> When did the incident occur?
+            </legend>
               <span id="dob-hint" class="govuk-hint">
                 For example, 31 3 2019
               </span>
@@ -72,18 +72,16 @@ Apply for legal aid - Client details
 
           <div class="govuk-!-padding-bottom-2"></div>
 
-        <!--  <label class="govuk-heading-m">Details of the incident
+          <label class="govuk-heading-m"><!-- Enter details of the incident --> What happened during the incident?
             </label>
 
-              <span class="govuk-hint">
-                        You can upload a file or type (or copy and paste) text into the text box.
-                      </span>
+
 
 
             <div class="govuk-form-group">
             <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10 " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
-          </div> -->
+          </div>
 
 
 
