@@ -40,10 +40,11 @@ Apply for legal aid - Accounts
         <h1 class="govuk-heading-xl">You've successfully shared your bank transactions</h1>
 
      <p class="govuk-body">
-          We've downloaded bank statements covering the last 3 months.
+          We've downloaded <!-- bank statements covering the last 3 months. --> 3 months of your transaction history.
         </p>
         <p class="govuk-body">
-          We'll show you your statements so you can tell us more about your financial situation.
+      <!--    We'll show you your statements so you can tell us more about your financial situation. -->
+      We'll ask you to group your transactions to help us understand your financial situation.
         </p>
 
 
@@ -57,7 +58,7 @@ Apply for legal aid - Accounts
               </tr>
               <tr class="govuk-table__row">
               <td class="govuk-table__header" scope="row">Account holder address</td>
-              <td class="govuk-table__cell">1 Market Street, San Francisco, 94103, USA</td>
+              <td class="govuk-table__cell">2 Denman Road, London SE15 5NP</td>
             </tr>
           </tbody>
         </table>
@@ -80,15 +81,19 @@ Apply for legal aid - Accounts
               <td class="govuk-table__cell">Mock TRANSACTION ACCOUNT 1</td>
               <td class="govuk-table__cell">10000000</td>
               <td class="govuk-table__cell">01-21-31</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£55.00</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£205.79</td>
             </tr>
           </tbody>
         </table>
 
-        <div class="govuk-inset-text">
-You can add more bank accounts later if you need to.
-</div>
+        <p class="govuk-body">
+             <a href="https://auth.truelayer.com/?response_type=code&amp;client_id=applyforlegalaidtest-uxqw&amp;nonce=2546921908&amp;scope=info%20accounts%20balance%20transactions%20cards%20direct_debits%20standing_orders%20products%20beneficiaries%20offline_access&amp;redirect_uri=https://apply-for-legal-aid-prototype.herokuapp.com/apply_for_legal_aid_prototype/citizen_accounts&amp;enable_mock=true&amp;enable_oauth_providers=true&amp;enable_open_banking_providers=false&amp;enable_credentials_sharing_providers=true">Add another bank account</a>
+           </p>
 
+      <!--  <div class="govuk-inset-text">
+You can add more bank accounts later if you need to.
+</div> -->
+<br>
         <button type="submit" class="govuk-button">
           Continue
         </button>
