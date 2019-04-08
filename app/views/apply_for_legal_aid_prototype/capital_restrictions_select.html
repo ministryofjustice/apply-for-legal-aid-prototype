@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "other_capital_select"
+      href: "capital_restrictions"
   }) }}
 {% endblock %}
 
@@ -31,7 +31,7 @@ Apply for legal aid - Other capital
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Restrictions on your property or other assets <!-- property, savings or investments, or valuable items -->
+                  Do any of the following restrictions apply to your property or other assets? <!-- property, savings or investments, or valuable items -->
                 </h1>
               </legend>
 
@@ -42,14 +42,14 @@ Apply for legal aid - Other capital
 
               <div class="govuk-!-padding-bottom-6"></div>
 
-              <h2 class="govuk-heading-m">Select all that apply</h2>
+              <h2 class="govuk-heading-m">Select all that apply</h2> 
 
 
               <div class="govuk-checkboxes" data-module="checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Repossession <!-- or I'm paying 'deferred interest' on a property -->
+                    Repossession or deferred interest in a property <!-- or I'm paying 'deferred interest' on a property -->
                   </label>
                 </div>
 
