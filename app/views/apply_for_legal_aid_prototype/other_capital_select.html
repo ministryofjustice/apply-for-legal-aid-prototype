@@ -7,17 +7,6 @@
 Apply for legal aid - Other capital
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -28,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "savings_investments_select"
+      href: "other_capital"
   }) }}
 {% endblock %}
 
@@ -36,15 +25,16 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="capital_restrictions_select" method="post" class="form">
+        <form action="capital_restrictions" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                 <!--  Does your client have any of the following?
-                Other assets - select any that apply to your client -->
-                Your valuable items
+                Other assets - select any that apply to your client
+               Your valuable items -->
+              Do you have any of the following items of value?
                 </h1>
               </legend>
 
@@ -54,7 +44,7 @@ Apply for legal aid - Other capital
                 Do not select any if your client has no other assets.
               </span> -->
 
-              <h2 class="govuk-heading-m">Select all that apply</h2>
+            <h2 class="govuk-heading-m">Select all that apply</h2>
 
 
               <div class="govuk-checkboxes" data-module="checkboxes">
@@ -188,7 +178,7 @@ Apply for legal aid - Other capital
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="citizenship-conditional-8" name="estates" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-8" {{ checked("estates","yes") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-8">
-                      Money owed to them, including from a private mortgage
+                      Money owed to you, including from a private mortgage
                     </label>
                   </div>
                   <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-8">

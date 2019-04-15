@@ -120,14 +120,14 @@ $( document ).ready(function() {
       
       //JS for AP-404
       $(".tickboxTable.sortableTable th").attr("aria-hidden","false"); //this removes aria-hidden = true for sortable tables, so a screen reader can detect them and the user can therefore sort them
-      $(".tickboxTable label").each(function(){
+/*      $(".tickboxTable label").each(function(){
         //removes any current text (initially blank anyway)
         $(this).text("");
         //replaces with a cocktail of text from the other table cells
         var screenReaderContent = $(this).parents("tr").children("td:nth-child(3)").text() + " for " + $(this).parents("tr").children("td:nth-child(4)").text() + " of " + $(this).parents("tr").children("td:nth-child(2)").text();
         console.log(screenReaderContent);
         $(this).text(screenReaderContent);
-      });
+      });*/
       //End of JS for AP-404
       
       
