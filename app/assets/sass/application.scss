@@ -196,24 +196,7 @@ div.clear-search {
   text-align: center;
 }
 
-// HOME OFFICE - Button styles
 
-.button-white {
-  box-shadow: 0 1px 0 #0b0c0c;
-	background-color: #FFF;
-	color: #0b0c0c;
-	&[disabled]{
-		background-color: #FFF;
-	}
-}
-
-.button-white:hover {
-	background-color: darken(#FFF, 5%);
-	color: #0b0c0c;
-	&[disabled]{
-		background-color: #FFF;
-	}
-}
 
 // HOME OFFICE - Pagination
 
@@ -277,4 +260,16 @@ div.clear-search {
   position: relative;
   top: 5px;
   margin-right: 10px;
+}
+
+// Search icon
+.search-icon{
+  background: url(images/icon-search-2x.png) no-repeat;
+}
+
+.icon{
+  position:absolute;
+  left:18px;
+  top:9px;
+  font-size:30px;
 }

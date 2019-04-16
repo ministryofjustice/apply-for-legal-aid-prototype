@@ -150,7 +150,7 @@ router.get('/non_passported_v1/savings_investments', function (req, res) {
 
 
 
-// Vehicles
+// Vehicles provider
 router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -164,6 +164,23 @@ router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
     res.redirect('/jim/car_capital_questions/vehicles_costs')
   }
 })
+
+// Vehicles applicant
+router.post('/jim/citizen_car_capital_questions/vehicles_costs', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/citizen_car_capital_questions/savings_investments')
+  } else {
+    res.redirect('/jim/citizen_car_capital_questions/vehicles_costs')
+  }
+})
+
+
 
 // Prospects of success (Jim's prototype)
 router.post('/jim/prospects_of_success/prospects_less_than_50', function (req, res) {
