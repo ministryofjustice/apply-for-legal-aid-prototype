@@ -1,0 +1,301 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "what_youre_covered_for"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+     <h2 class="govuk-heading-m">
+       Client details
+     </h2>
+
+     <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           First name
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           {{ data['firstname'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="client_details#firstname">
+             Change <span class="govuk-visually-hidden">first name</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Last name
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           {{ data['lastname'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="client_details#lastname">
+             Change <span class="govuk-visually-hidden">last name</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Date of birth
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           1 January 1980
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="client_details#dob-day">
+             Change <span class="govuk-visually-hidden">dob</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           National Insurance number
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           {{ data['national-insurance-number'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="client_details#national-insurance-number">
+             Change <span class="govuk-visually-hidden">national insurance number</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Email address
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           {{ data['email-address'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="client_details#national-insurance-number">
+             Change <span class="govuk-visually-hidden">email address</span>
+           </a>
+         </dd>
+       </div>
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Correspondence address
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           1 Main Street<br/>London<br/>{{ data['postcode'] }}
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="postcode_finder#postcode">
+             Change <span class="govuk-visually-hidden">correspondance address</span>
+           </a>
+         </dd>
+       </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Date you started work
+    </h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Date delegated functions exercised
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          1 March 2019
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="search#search">
+            Change <span class="govuk-visually-hidden">delegated_functions</span>
+          </a>
+        </dd>
+      </div>
+   </dl>
+
+   <h2 class="govuk-heading-m">
+     Proceeding
+   </h2>
+
+   <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+   <div class="app-check-your-answers__contents">
+     <dt class="app-check-your-answers__question">
+       Proceeding
+     </dt>
+     <dd class="app-check-your-answers__answer">
+       Non-molestation order{{ data['...'] }}
+     </dd>
+     <dd class="app-check-your-answers__change">
+       <a href="search#search">
+         Change <span class="govuk-visually-hidden">proceeding</span>
+       </a>
+     </dd>
+   </div>
+   </dl>
+
+    <h2 class="govuk-heading-m">
+      Emergency work you're covered for
+    </h2>
+
+  <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Form of service
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Full representation
+      </dd>
+      <dd class="app-check-your-answers__change">
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Costs you can incur
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        £1,350
+      </dd>
+      <dd class="app-check-your-answers__change">
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Work you can do
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Hearing
+      </dd>
+      <dd class="app-check-your-answers__change">
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Full wording
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Limited to all steps up to and including the hearing.
+      </dd>
+      <dd class="app-check-your-answers__change">
+      </dd>
+    </div>
+ </dl>
+
+ <h2 class="govuk-heading-m">
+   Substantive work you're applying for
+ </h2>
+
+<dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
+ <div class="app-check-your-answers__contents">
+   <dt class="app-check-your-answers__question">
+     Form of service
+   </dt>
+   <dd class="app-check-your-answers__answer">
+     Full representation
+   </dd>
+   <dd class="app-check-your-answers__change">
+   </dd>
+ </div>
+ <div class="app-check-your-answers__contents">
+   <dt class="app-check-your-answers__question">
+     Costs you can incur
+   </dt>
+   <dd class="app-check-your-answers__answer">
+     £5,000
+   </dd>
+   <dd class="app-check-your-answers__change">
+   </dd>
+ </div>
+ <div class="app-check-your-answers__contents">
+   <dt class="app-check-your-answers__question">
+     Work you can do
+   </dt>
+   <dd class="app-check-your-answers__answer">
+     Injunction FLA to final hearing
+   </dd>
+   <dd class="app-check-your-answers__change">
+   </dd>
+ </div>
+ <div class="app-check-your-answers__contents">
+   <dt class="app-check-your-answers__question">
+     Full wording
+   </dt>
+   <dd class="app-check-your-answers__answer">
+     As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration 	of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
+   </dd>
+   <dd class="app-check-your-answers__change">
+   </dd>
+ </div>
+</dl>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
+      </p>
+
+      <a class="govuk-button" href="means_assessment_required" role="button">
+        Save and continue
+      </a>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

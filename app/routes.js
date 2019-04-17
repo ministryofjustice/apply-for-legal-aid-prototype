@@ -81,6 +81,15 @@ router.get('/delegated_functions/search_notify', function (req, res) {
 
 })
 
+router.get('/delegated_functions/v2/search', function (req, res) {
+
+  res.render('delegated_functions/v2/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
 
 // CAPITAL Branching
 router.get('/capital', function (req, res) {

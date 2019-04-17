@@ -25,58 +25,84 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/non_passported_v1/online_banking_declaration" method="get" class="form">
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Have you exercised delegated functions in the last 5 days?
-                </h1>
-              </legend>
-              <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
-                Select one option.
-              </span> -->
-              <div class="govuk-!-padding-bottom-2"></div>
-              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="delegated-functions-1" name="delegated-functions" type="radio" value="yes" data-aria-controls="conditional-delegated-functions-1">
-                  <label class="govuk-label govuk-radios__label" for="delegated-functions-1">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="contact-by-email">
-                      Email address
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
-                  </div>
-
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="delegated-functions-2" name="delegated-functions" type="radio" value="no" data-aria-controls="delegated-functions-2">
-                  <label class="govuk-label govuk-radios__label" for="delegated-functions-2">
-                    No
-                  </label>
-                </div>
-
-              </div>
-            </fieldset>
-          </div>
+        <form action="client_details" method="post" class="form">
 
 
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Have you exercised delegated functions?
+      </h1>
+    </legend>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
-        </form>
+    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      If yes the date must be within 5 days of submission
+    </span>
 
+    <div class="govuk-!-padding-bottom-4"></div>
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+        <label class="govuk-label" for="how-contacted-conditional-1">
+          Date you started
+        </label>
+        <span id="dob-hint" class="govuk-hint">
+      For example, 18 4 2019
+    </span>
+    <div class="govuk-date-input" id="dob">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="dob-day-2">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="dob-month-2">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month-2" name="dob-month-2" type="number" pattern="[0-9]*" value="{{ data['dob-month-2'] }}">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="dob-year-2">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year-2" name="dob-year-2" type="number" pattern="[0-9]*" value="{{ data['dob-year-2'] }}">
+        </div>
       </div>
     </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          No
+        </label>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+      </form>
+    </div>
+  </div>
 
 {% endblock %}
 
