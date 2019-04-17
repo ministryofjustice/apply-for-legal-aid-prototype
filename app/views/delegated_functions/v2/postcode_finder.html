@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Confirmation page
+Apply for legal aid - Correspondence address lookup
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,53 +16,46 @@ Apply for legal aid - Confirmation page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "check_answers"
-}) }}
-
+    text: "Back",
+      href: "client_details"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-
-  <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">John Doe must complete a financial assessment</h1>
-    </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <ul class="how-to-renew" data-id="how-to-renew-uk">
-          <li>
 
-          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
-            <p style="color: #fff;">
-            This is because they do not receive benefits that qualify for legal aid.</p>
-          </li>
+        <h1 class="govuk-heading-xl">Enter a correspondence address for your client</h1>
 
-          <li>
+        <form action="postcode_select" method="post" novalidate>
+          <div class="govuk-form-group">
 
-            <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px;">What happens next</h2>
-        <p style="color: #fff;">Your client will need to answer questions about their financial situation.</p>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="postcode"> Postcode
+            </legend>
 
-            <p style="color: #fff;">We'll ask you to give them access to the online assessment which they can complete at home or another location.</p>
+              <span id="postcode-hint" class="govuk-hint">
+                This must be a valid UK postcode.
+              </span>
 
-          <!--  <p style="color: #fff;">We'll let you know when they've completed it so you can continue the application.</p> -->
-          </li>
+            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+          </div>
 
-        </ul>
+          <button type="submit" class="govuk-button">
+            Find address
+          </button>
 
-        <div class="govuk-!-padding-bottom-4"></div>
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
-        <a href="online_banking_radios" role="button" class="govuk-button white-button right">
-          Continue</a>
-        <a href=#" role="button" class="govuk-button draft-button">
-          Save and come back later
-        </a>
+          <p>
+            <a class="govuk-link" href="manual_address">Enter address manually</a>
+          </p>
 
+        </form>
       </div>
     </div>
-  </div>
-
 
 {% endblock %}
 
