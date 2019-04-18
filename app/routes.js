@@ -174,6 +174,36 @@ router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
   }
 })
 
+// Vehicles provider v2 (less than 3 years ago)
+router.post('/jim/car_capital_questions_v2/vehicles_regular_use', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/car_capital_questions_v2/savings_investments')
+  } else {
+    res.redirect('/jim/car_capital_questions_v2/vehicles_regular_use')
+  }
+})
+
+// Vehicles provider v2 (regular use)
+router.post('/jim/car_capital_questions_v2/vehicles_costs', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/car_capital_questions_v2/savings_investments')
+  } else {
+    res.redirect('/jim/car_capital_questions_v2/vehicles_costs')
+  }
+})
+
 // Vehicles applicant
 router.post('/jim/citizen_car_capital_questions/vehicles_costs', function (req, res) {
   // Get the answer from session data
