@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Proceedings
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "search"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          What you're covered for
+        </h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table">
+        <h2 class="govuk-heading-m">Proceeding</h2>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row"><h3 class="govuk-body proceeding-item">Non-molestation order</h3>
+            <li class="govuk-caption-m proceeding__list-item">Family law</li>
+            <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li></th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search_notify">
+                  Change<span class="govuk-visually-hidden">blank</span>
+                </a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+        <h2 class="govuk-heading-m">Emergency certificate</h2>
+        <p class="govuk-body">
+          <strong>Form of service:</strong> Full representation<br><br>
+          <strong>Costs you can incur:</strong> £1,350<br><br>
+          <strong>Work you can do:</strong>
+          Hearing
+          <p>Limited to all steps up to and including the hearing.
+          </p>
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <div class="govuk-!-padding-bottom-4"></div>
+        <h2 class="govuk-heading-m">Full or 'substantive' certificate</h2>
+        <p class="govuk-body">
+          <strong>Form of service:</strong> Full representation<br><br>
+          <strong>Costs you can incur:</strong> £5,000<br><br>
+          <strong>Work you can do:</strong>
+          Injunction FLA to final hearing
+          <p>As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration 	of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
+          </p>
+        </p>
+
+
+      </div>
+      </div>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+<a class="govuk-button" href="check_answers" role="button">
+  Save and continue
+</a>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
