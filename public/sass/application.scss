@@ -115,7 +115,6 @@ div.clear-search {
 // HOME OFFICE - Interruption card styles
 
 .flash-card {
-  margin-top: 1em;
   padding: 30px;
   background: #005EA5;
   color: #FFF;
@@ -137,7 +136,7 @@ div.clear-search {
     }
 
     li {
-      margin-bottom: 22px;
+      margin-bottom: 5px;
     }
   }
 
@@ -166,8 +165,8 @@ div.clear-search {
 
   @media (min-width: 769px) {
     .flash-card {
-      margin-top: 1.25em;
-      padding: 35px 50px;
+      margin-top: 0em;
+      padding: 60px 60px;
     }
   }
 

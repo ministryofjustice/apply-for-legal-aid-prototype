@@ -26,6 +26,11 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
+  {{ govukBackLink({
+    text: "Back",
+      href: "provider_means_calculation"
+  }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -34,30 +39,29 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-!-padding-top-4"></div>
 
-        <h1 class="govuk-heading-xl">Complete your legal aid financial assessment hello</h1>
 
-        <p class="govuk-body">Name: <strong> John Doe </strong> <br> Case reference: <strong> 2018/LAA/4ewrqfdd </strong> <br> Your solicitor: <strong> Hitchcock, Jones & King </strong></p>
+        <h1 class="govuk-heading-xl">Provide details of the case</h1>
 
-        <p class="govuk-body">You'll need to answer questions about your:</p>
+      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
+<p class="govuk-body">We need to know if the merits of the case qualify for legal aid.</p>
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>bank accounts</li>
-            <li>income and regular costs</li>
-            <li>property, savings, investments and any other assets</li>
-          </ul>
+          <p class="govuk-body">You'll need to enter:</p>
 
-        <p class="govuk-body">We use this information to work out if you can get legal aid or you need to pay towards the legal costs.</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>details about the most recent incident</li>
+<li>information about the respondent</li>
+<li>a statement of case</li>
+<li>the estimated costs of doing the work</li>
+<li>the chances of a successful outcome</li>
+</ul>
 
-        <h2 class="govuk-heading-m">What you'll need</h2>
 
-        <p class="govuk-body">
-          Your online banking sign in details.</p>
+<br>
+  <a href="injunction" role="button" class="govuk-button right">
+    Continue
+  </a>
 
-        <a href="bank_access_information" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
-          Start
-        </a>
 
       </div>
 

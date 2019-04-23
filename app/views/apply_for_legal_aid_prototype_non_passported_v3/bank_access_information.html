@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "citizen_start_page"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="agree_bank_access" method="post" class="form">
+
+        <h1 class="govuk-heading-xl">Give one-time access to your bank accounts</h1>
+        <p class="govuk-body">
+        <!--   You'll be redirected to a secure service to sign in to your online banking. -->
+        We'll transfer you to a secure service to sign in to your online banking.
+        </p>
+
+        <div class="govuk-inset-text">
+        <p class="govuk-body">
+          You'll need to share all of your bank accounts with us, including any in joint names or with no money.
+        </p>
+      </div>
+
+    <!-- <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Bank accounts we need to know about
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+               <p class="govuk-body">You must tell us if you have accounts with:</p>
+               <ul class="govuk-list govuk-list--bullet">
+                 <li>HSBC</li>
+<li>Lloyds</li>
+<li>Royal Bank of Scotland</li>
+<li>Barclays</li>
+<li>Standard Chartered</li>
+<li>etc</li>
+<li>etc</li>
+<li>etc</li>
+            </div>
+
+          </details> -->
+
+
+        <h2 class="govuk-heading-m">How we connect to your online banking</h2>
+
+<p class="govuk-body">After you've signed in and authorised us to access your account, we download bank transactions covering the last 3 months.</p>
+
+
+      <!--  <ul class="govuk-list govuk-list--number">
+          <li>You sign in and authorise access to your accounts.</li>
+          <li>We download 3 months of transactions.</li>
+        </ul> -->
+
+          <div class="govuk-inset-text">
+          <p class="govuk-body">
+            We do not save your online banking username and password.
+          <!-- Your online banking details are not saved. --></p>
+        </div>
+
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+      </form>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
