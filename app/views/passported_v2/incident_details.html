@@ -25,33 +25,64 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Enter details of the latest incident</h1>
+        <h1 class="govuk-heading-xl">Details of the latest domestic abuse incident</h1>
+
+      <!--  <p class="govuk-body">Enter the date they first contacted you to seek legal advice about this matter.</p> -->
 
         <form action="respondent_details" method="post" novalidate>
 
+
           <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-            <!--  <p class="govuk-body-l">Tell us about the case and give sufficient information to satisfy the regulations.<p> -->
-
-          <!--  <p class="govuk-body">Tell us what happened and the date and time of the incident.</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li></li>
-            </ul> -->
-
-          </div>
-
-<!-- <span class="govuk-hint">
-  You can upload a file or type (or copy and paste) text into the text box.
-</span> -->
 
 
+              <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"><!-- Enter the date the incident occurred --> When did the incident occur?
+              </legend>
+                <span id="dob-hint" class="govuk-hint">
+                  For example, 31 3 2019.
+                </span>
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
 
-            <div class="govuk-form-group">
-              <span class="govuk-hint">
-                Tell us what happened and the date and time of the incident.
-              </span>
-            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+            <div class="govuk-!-padding-bottom-2"></div>
+
+            <label class="govuk-heading-m"><!-- Enter details of the incident --> What happened during the incident?
+              </label>
+
+
+
+
+              <div class="govuk-form-group">
+              <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10 " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+
+
+
 
             </div>
           <button type="submit" class="govuk-button">
