@@ -4,7 +4,18 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Does your client use online banking
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +28,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "outgoings_summary"
   }) }}
 {% endblock %}
 
@@ -25,15 +36,13 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="confirmation_page" method="get" class="form">
+        <form action="property_amount" method="get" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  <!-- How would you like to proceed? -->
-                <!--  Do you want to continue making a full application? -->
-                Do you want to start a full application now?
+                  Do you own the home that you live in?
                 </h1>
               </legend>
 
@@ -41,18 +50,24 @@ Apply for legal aid - Does your client use online banking
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-                  <!--  Continue with full application -->
-                  Yes
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes, with a mortgage or loan
+
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-                  <!--  Complete full application later -->
-                  No, I'll start later
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes, owned outright
 
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No
                   </label>
                 </div>
               </div>
@@ -63,11 +78,12 @@ Apply for legal aid - Does your client use online banking
             Save and continue
           </button>
 
+
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-        </form>
 
+        </form>
       </div>
     </div>
 

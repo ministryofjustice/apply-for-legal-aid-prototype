@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Does your client use online banking
+Apply for legal aid - Property and mortgage
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,36 +25,39 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="confirmation_page" method="get" class="form">
+        <form action="savings_investments_select" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  <!-- How would you like to proceed? -->
-                <!--  Do you want to continue making a full application? -->
-                Do you want to start a full application now?
+                  Is the vehicle in regular use?
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
 
+                <div class="govuk-!-padding-bottom-4"></div>
+                <span class="govuk-hint">
+                    This includes use by your partner.
+                  </span>
+<div class="govuk-!-padding-bottom-4"></div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-                  <!--  Continue with full application -->
-                  Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-                  <!--  Complete full application later -->
-                  No, I'll start later
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
 
                   </label>
                 </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+
+                  </label>
+                </div>
+
+
               </div>
             </fieldset>
           </div>
@@ -66,8 +69,8 @@ Apply for legal aid - Does your client use online banking
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-        </form>
 
+        </form>
       </div>
     </div>
 
@@ -79,6 +82,14 @@ Apply for legal aid - Does your client use online banking
           items: [
             {
               href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
               text: "Contact"
             },
             {
@@ -86,11 +97,7 @@ Apply for legal aid - Does your client use online banking
               text: "Feedback"
             },
             {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              href: "#",
               text: "Terms and conditions"
             },
             {
