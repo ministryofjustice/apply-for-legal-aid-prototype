@@ -329,6 +329,52 @@ router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
   }
 })
 
+// Delegated functions - continue with full application or come back later
+router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/confirmation_page')
+  } else {
+    res.redirect('/jim/delegated_functions/other_bank_radios')
+  }
+})
+
+// Delegated functions - continue with full application or come back later
+router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/confirmation_page')
+  } else {
+    res.redirect('/jim/delegated_functions/other_bank_radios')
+  }
+})
+
+// Vehicles non-passported v3
+router.post('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/savings_investments_select')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs')
+  }
+})
+
+
 
 // Add your routes here - above the module.exports line
 module.exports = router
