@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "outgoings_summary"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,48 +25,66 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="property_percent" method="get" class="form">
+        <form action="vehicles_costs" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you own the home with anyone else?
+                  Do you own a vehicle?
                 </h1>
               </legend>
-
-                <div class="govuk-!-padding-bottom-4"></div>
+              <div class="govuk-!-padding-bottom-4"></div>
+              <span class="govuk-hint">
+                This includes car, vans or motorcycles.
+              </span>
+              <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, with a partner or ex-partner
-                  </label>
-                </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, with a housing association or landlord
+                    Yes
                   </label>
                 </div>
+
+              <!--  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes, with financing (for example, hire purchase)
+                   <span class="govuk-hint">
+                  Includes hire purchase (HP) and personal purchase contract (PCP)
+                  </span>
+                  </label>
+                </div> -->
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
-                    Yes, with a friend, family member or other person
+                    No
                   </label>
                 </div>
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="property-3">
-                    No, I'm the sole owner
-                  </label>
-                </div>
-
               </div>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
+
             </fieldset>
           </div>
 
@@ -74,9 +92,9 @@ Apply for legal aid - Property and mortgage
             Save and continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
-          </a>
+          </a> -->
 
         </form>
       </div>
@@ -90,6 +108,14 @@ Apply for legal aid - Property and mortgage
           items: [
             {
               href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
               text: "Contact"
             },
             {
@@ -97,11 +123,7 @@ Apply for legal aid - Property and mortgage
               text: "Feedback"
             },
             {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              href: "#",
               text: "Terms and conditions"
             },
             {
