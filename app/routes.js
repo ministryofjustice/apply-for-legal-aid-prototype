@@ -374,6 +374,21 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs', f
   }
 })
 
+// Prospects of success (Passported v2)
+router.post('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['vehicles']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/check_answers_merits')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line
