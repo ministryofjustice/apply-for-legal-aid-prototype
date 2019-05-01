@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
   {{ govukBackLink({
     text: "Back",
-      href: "legal-help"
+      href: "injunction_details"
   }) }}
 {% endblock %}
 
@@ -43,7 +43,7 @@ Apply for legal aid - Statement of case
                   <li>how many clients you're representing</li>
                   <li>if anyone else might be able to fund this case</li>
                   <li>any other information relevant to the case</li>
-
+</ul>
 
 
             <!--  <h2 class="govuk-heading-m">You must include the following details</h2>
@@ -64,7 +64,10 @@ Apply for legal aid - Statement of case
               Don’t include personal or financial information, eg your National Insurance number or credit card details.
             </span> -->
           </div>
-            <div class="govuk-!-padding-bottom-4"></div>
+    
+
+            <label class="govuk-heading-m">Upload or enter your statement
+              </label>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="file-upload-1">
@@ -79,11 +82,11 @@ Apply for legal aid - Statement of case
             </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save as draft
+            Save and come back later
           </a>
 
         </form>

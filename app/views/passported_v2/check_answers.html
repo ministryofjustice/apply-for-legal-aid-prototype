@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/postcode_select"
+      href: "search"
   }) }}
 {% endblock %}
 
@@ -115,7 +115,7 @@ Apply for legal aid - Check your answers
     </dl>
 
     <h2 class="govuk-heading-m">
-      Scope of legal aid
+      What you're covered for
     </h2>
 
   <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
@@ -133,6 +133,45 @@ Apply for legal aid - Check your answers
       </dd>
     </div>
     <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Form of service
+      </dt>
+      <dd class="app-check-your-answers__answer">
+      Full representation{{ data['...'] }}
+      </dd>
+      <dd class="app-check-your-answers__change">
+      <!--  <a href="search#search">
+          Change <span class="govuk-visually-hidden">proceeding</span>
+        </a> -->
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Costs you can incur
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        £5,000{{ data['...'] }}
+      </dd>
+      <dd class="app-check-your-answers__change">
+      <!--  <a href="search#search">
+          Change <span class="govuk-visually-hidden">proceeding</span>
+        </a> -->
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Work you can do
+      </dt>
+      <dd class="app-check-your-answers__answer">
+Limited to all steps up to and including serving a final order. If your client breaches an order and they're arrested, you may represent them on the consideration of the court. You cannot apply for an arrest warrant or represent someone in contempt proceedings.{{ data['...'] }}
+      </dd>
+      <dd class="app-check-your-answers__change">
+      <!--  <a href="search#search">
+          Change <span class="govuk-visually-hidden">proceeding</span>
+        </a> -->
+      </dd>
+    </div>
+    <!-- <div class="app-check-your-answers__contents">
       <dt class="app-check-your-answers__question">
         Delegated functions
       </dt>
@@ -157,7 +196,7 @@ Apply for legal aid - Check your answers
           Change <span class="govuk-visually-hidden">proceeding</span>
         </a>
       </dd>
-    </div>
+    </div> -->
  </dl>
 
     <h2 class="govuk-heading-m">Check your client's benefits status</h2>
@@ -165,13 +204,13 @@ Apply for legal aid - Check your answers
       <p class="govuk-body">
         We will now check your client's details with the Department for Work and Pensions to see if they receive benefits that qualify for legal aid.
       </p>
-
-      <a class="govuk-button" href="dwp_check" role="button">
-        Continue
+<br>
+      <a class="govuk-button" href="passported" role="button">
+        Save and continue
       </a>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save as draft
+        Save and come back later
       </a>
 
     </div>

@@ -19,6 +19,7 @@ $govuk-global-styles: true;
     opacity: 1; /* Firefox */
 }
 
+// Search list styles
 
 div.proceeding-list {
     padding: 0px;
@@ -71,6 +72,8 @@ div.clear-search {
   padding-top: 8px;
 }
 
+// Button styles
+
 .right {
   margin-right: 15px;
 }
@@ -85,6 +88,17 @@ div.clear-search {
   background-color: #d0d3d6;
 }
 
+.white-button {
+  background-color: #ffffff;
+  font-weight: 700;
+  color: #005ea5 !important;
+  box-shadow: 0 2px 0 #001526;
+}
+
+.white-button:hover {
+  background-color: #d0d3d6;
+}
+
 .position_right {
   position: absolute;
   display: block;
@@ -96,4 +110,165 @@ div.clear-search {
 .form-buttons {
   margin-right: 15px;
 
+}
+
+// HOME OFFICE - Interruption card styles
+
+.flash-card {
+  padding: 30px;
+  background: #005EA5;
+  color: #FFF;
+
+  header {
+    background-color: inherit;
+  }
+
+  ul.how-to-renew {
+    padding-left: 0;
+    list-style: none;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 0;
+      padding: 0;
+      color: #FFF;
+      font-size: 28px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  h1 {
+    color: #FFF;
+    &:first-of-type {
+      margin-top: 0 !important;
+    }
+  }
+
+  a {
+    color: #FFF;
+    &:visited, &:hover, &:active {
+      color: #FFF; }
+    }
+    details {
+      // margin-bottom: 1em;
+      summary {
+        color: #FFF;
+      }
+      .panel {
+        border-left-color: #FFF;
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    .flash-card {
+      margin-top: 0em;
+      padding: 60px 60px;
+    }
+  }
+
+.circle-white {
+  color: #005ea5;
+  background: #fff;
+  float: left;
+  margin-right: 15px;
+}
+
+.circle-step {
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+}
+
+.circle {
+  margin-top: 6px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-family: 'Inter UI', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+// HOME OFFICE - Pagination
+
+
+
+.padding {
+  padding-left: 15px;
+}
+
+.pagination {
+  padding: 0;
+  margin: 0;
+}
+
+.pagination__item {
+  display: inline-block;
+  list-style: none;
+}
+.pagination__link {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background: #F8F8F8;
+    outline: 3px solid #FFBF47;
+  }
+
+  &.current {
+    color: #0B0C0C;
+    font-weight: 700;
+    border: none;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover, &:focus {
+      color: #0B0C0C;
+      background: none;
+    }
+  }
+}
+
+.pagination__summary {
+
+  -webkit-font-smoothing: antialiased;
+  padding: 5px 0  ;
+
+  @media (min-width: 642px) {
+    float: right;
+  }
+}
+
+// Table status dots
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #006435;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+
+// Search icon
+.search-icon{
+  background: url(images/icon-search-2x.png) no-repeat;
+}
+
+.icon{
+  position:absolute;
+  left:18px;
+  top:9px;
+  font-size:30px;
 }

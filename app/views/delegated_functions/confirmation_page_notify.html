@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h2 class="govuk-panel__title">
+            Application created
+          </h2>
+          <div class="govuk-panel__body">
+            You have notified us you have exercised delegated functions
+          </div>
+          <br>
+          <div class="govuk-panel__body">
+            Your case reference number is
+            <br><strong>2018/LAA/4ewrqfdd</strong>
+          </div>
+        </div>
+
+<div class="govuk-!-padding-top-4"></div>
+
+        <p class="govuk-body">We've saved the information you've provided, this can be used to progress the application to a full 'substantive' application. </p>
+
+        <h3 class="govuk-heading-m">What happens next</h3>
+
+        <p class="govuk-body">
+          Space for text on how to progress, work the provider can do? Etc....
+        </p>
+
+<br>
+
+<a href="home_v1" role="button" class="govuk-button">
+  Back to your applications
+</a>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

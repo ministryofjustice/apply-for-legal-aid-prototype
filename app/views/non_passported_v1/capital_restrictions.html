@@ -7,6 +7,17 @@
 Apply for legal aid - Capital restrictions
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -86,7 +97,7 @@ Apply for legal aid - Capital restrictions
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
         </form>

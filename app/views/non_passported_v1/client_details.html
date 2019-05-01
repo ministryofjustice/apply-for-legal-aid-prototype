@@ -58,7 +58,7 @@ Apply for legal aid - Client details
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
               </legend>
               <span id="dob-hint" class="govuk-hint">
-                For example, 31 3 1980.
+                For example, 31 3 1980
               </span>
               <div class="govuk-date-input" id="dob">
                 <div class="govuk-date-input__item">
@@ -96,7 +96,7 @@ Apply for legal aid - Client details
               National Insurance number
             </label>
             <span id="national-insurance-number-hint" class="govuk-hint">
-              For example, ‘QQ 12 34 56 C’.
+              For example, ‘QQ 12 34 56 C’
             </span>
             <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['national-insurance-number'] }}">
           </div>
@@ -108,14 +108,20 @@ Apply for legal aid - Client details
               Email address
             </label>
             <span id="email-hint" class="govuk-hint">
-              We will use this to send your client information about the case.
+              <!-- We will use this to send your client information about the case.
+If your client needs to complete a financial assessment we'll send an email to this address
+We'll send your client a secure link if they need to complete a financial assessment
+We'll use this to send your client instructions on how to complete a financial assessment if required
+We'll send your client a secure link to an online financial assessment if they need to complete one -->
+We'll use this to send your client a secure link if they need to complete a financial assessment
+
             </span>
             <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
           </div>
 
           <div class="govuk-!-padding-bottom-2"></div>
 
-          <div class="govuk-form-group">
+        <!--  <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="email">
               Client representation
             </label>
@@ -125,11 +131,10 @@ Apply for legal aid - Client details
                     Client represented by person acting in a professional capacity
                 </label>
               </div>
-          </div>
+          </div> -->
 
-          <div class="govuk-!-padding-bottom-4"></div>
 
-          <details class="govuk-details">
+        <!--  <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                 I don't have my client's details
@@ -139,15 +144,18 @@ Apply for legal aid - Client details
                <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits</p>
               <p class="govuk-body">Your client can also ask for a reminder through the post.</p>
             </div>
-          </details>
+          </details> -->
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save as draft
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
           </a>
+
+          <!-- <p class="govuk-body">
+            <a href="dashboard">Save and come back later</a></p> -->
 
         </form>
 

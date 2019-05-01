@@ -36,11 +36,21 @@ Apply for legal aid - Agree bank access
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Do you agree to share your bank statements with us?</h1>
+        <h1 class="govuk-heading-xl">Do you agree to share your bank transactions with us?</h1>
 
         <p class="govuk-body">
-          We only use your bank statements to support your legal aid application. We do not use the information for anything else.
+          We only use your bank transactions to support your legal aid application. We do not use the information for anything else.
         </p>
+
+        <div class="govuk-checkboxes" data-module="checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="bank-consent-1" name="bank-consent" type="checkbox" value="yes" data-aria-controls="conditional-bank-consent-1" {{ checked("bank-consent","yes") }}>
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="bank-consent-1">
+              <p><strong> I agree for you to check bank transactions covering 3 months </strong> <br> using temporary access to my online banking</p>
+            </label>
+          </div>
+
+        </div>
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">
@@ -58,18 +68,8 @@ Apply for legal aid - Agree bank access
           </div>
         </details>
 
-        <div class="govuk-checkboxes" data-module="checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="bank-consent-1" name="bank-consent" type="checkbox" value="yes" data-aria-controls="conditional-bank-consent-1" {{ checked("bank-consent","yes") }}>
-            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="bank-consent-1">
-              <p><strong> I agree for you to check bank statements covering 3 months </strong> <br> using temporary access to my online banking</p>
-            </label>
-          </div>
-
-        </div>
-
-        <a href="https://auth.truelayer.com/?response_type=code&client_id=applyforlegalaidtest-uxqw&nonce=4260784360&scope=info%20accounts%20balance%20transactions%20cards%20offline_access&redirect_uri=https://legal-aid-substantive.herokuapp.com/non_passported_v1/citizen_accounts&enable_mock=true&enable_oauth_providers=true&enable_open_banking_providers=false&enable_credentials_sharing_providers=true" role="button" class="govuk-button">
-          Continue
+        <a href="https://auth.truelayer.com/?response_type=code&client_id=applyforlegalaidtest-uxqw&nonce=2546921908&scope=info%20accounts%20balance%20transactions%20cards%20direct_debits%20standing_orders%20products%20beneficiaries%20offline_access&redirect_uri=https://apply-for-legal-aid-prototype.herokuapp.com/non_passported_v1/citizen_accounts&enable_mock=true&enable_oauth_providers=true&enable_open_banking_providers=false&enable_credentials_sharing_providers=true" role="button" class="govuk-button">
+          Save and continue
         </a>
 
       </div>

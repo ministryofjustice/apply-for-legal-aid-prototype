@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+You cannot view this page – Apply for legal aid – GOV.UK
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">This link has expired</h1>
+
+<!-- <p>This is either because you:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>took longer than 7 days to use the link - <a href="#">request another link</a></li>
+          <li>did not type the correct web address</li>
+          <li>did not copy and paste the entire web address</li>
+<li>have already submitted your application</li>
+</ul> -->
+
+
+
+ <p><a href="#">Request a new link</a></p>
+
+
+
+<!-- <p>You need to either:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="#">request a new link</a> if you took longer than 7 days to click the link in the email</li>
+    <li>click the link in the email if you incorrectly entered or copied and pasted the link</li>
+</ul> -->
+
+
+
+      <!--  <span id="citizenship-conditional-hint" class="govuk-body">
+          <a href="#">Request another link</a>
+        </span> -->
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

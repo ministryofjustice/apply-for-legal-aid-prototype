@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Homepage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-padding-top-4"></div>
+
+        <h1 class="govuk-heading-xl">Your applications</h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Make a new application</h2>
+        <p class="govuk-body">Tell us the basic case details and check if your client receives benefits that qualify for legal aid.</p>
+
+        <a href="#" class="govuk-button govuk-button--start">
+          Start now
+        </a>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Delegated functions</h3>
+        <p class="govuk-body">Tell us if you've used delegated functions to grant legal aid for your client.</p>
+
+        <a href="client_details_notify" class="govuk-button" style="background-color:#005ea5;">
+          Notify us
+        </a>
+
+      </div>
+    </div>
+
+    <div class="govuk-!-padding-top-9"></div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Existing applications</h3>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <input class="govuk-input" id="event-name" name="event-name" type="text" value="Search applications">
+      </div>
+    </div>
+
+    <div class="govuk-!-padding-top-4"></div>
+
+    <!-- <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Name</th>
+          <th class="govuk-table__header" scope="col">Date started</th>
+          <th class="govuk-table__header" scope="col">Case reference</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row"><a class="govuk-link" href="application_page">John Doe</a></td>
+          <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+          <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Application submitted</td>
+        </tr>
+      </tbody>
+
+    </table> -->
+
+    <div class="govuk-tabs" data-module="tabs">
+
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#applications">
+            Applications
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            Delegated functions
+          </a>
+        </li>
+      </ul>
+
+      <section class="govuk-tabs__panel" id="applications" style="border:0px; padding-right:0px; padding-left:10px; padding-bottom:15px;">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Name</th>
+              <th class="govuk-table__header" scope="col">Date</th>
+              <th class="govuk-table__header" scope="col">Case reference</th>
+              <th class="govuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="#">David Francis</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot"></span> Application submitted</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="#">Paul Farmer</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot"></span> Application submitted</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="#">Rita Patel</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot"></span> Application submitted</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week" style="border:0px; padding-right:0px; padding-left:10px; padding-bottom:15px;">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Name</th>
+              <th class="govuk-table__header" scope="col">Date notified</th>
+              <th class="govuk-table__header" scope="col">Case reference</th>
+              <th class="govuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">John Doe</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Notified</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Steve Smith</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Notified</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Patty LaBelle</td>
+              <td class="govuk-table__cell">Tue, 19 Mar 2019</td>
+              <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+              <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Notified</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+
+
+        <div class="pagination__summary">Showing 1 &ndash; 3 of 3 results</div>
+        <ul class="pagination">
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+          <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 3, current page">3</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
+        </ul>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

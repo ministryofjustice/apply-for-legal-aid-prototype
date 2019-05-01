@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "passported"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_investments" method="post" class="form">
+        <form action="property_amount" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -52,7 +52,7 @@ Apply for legal aid - Property and mortgage
 
                   </label>
                 </div>
-                
+
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
@@ -64,11 +64,11 @@ Apply for legal aid - Property and mortgage
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save as draft
+            Save and come back later
           </a>
         </form>
       </div>

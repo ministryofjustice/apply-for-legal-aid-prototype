@@ -7,6 +7,17 @@
 Apply for legal aid - Check your answers
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -52,7 +63,7 @@ Apply for legal aid - Check your answers
           Property value
         </dt>
         <dd class="app-check-your-answers__answer">
-          £145,000.00
+          £145,000
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
@@ -65,7 +76,7 @@ Apply for legal aid - Check your answers
           Outstanding mortgage amount
         </dt>
         <dd class="app-check-your-answers__answer">
-          £127,345.00
+          £127,345
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
@@ -91,7 +102,7 @@ Apply for legal aid - Check your answers
           Percent owned
         </dt>
         <dd class="app-check-your-answers__answer">
-          40.00%
+          40%
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
@@ -118,7 +129,7 @@ Apply for legal aid - Check your answers
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">Cash savings</th>
-               <td class="govuk-table__cell govuk-table__cell--numeric">£745.00</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">£745</td>
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">Signatory on another person's bank account</th>
@@ -126,19 +137,19 @@ Apply for legal aid - Check your answers
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">National Savings Certificates and Premium Bonds</th>
-               <td class="govuk-table__cell govuk-table__cell--numeric">£2,657.00</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">£2,657</td>
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">Shares in a PLC (public limited company)</th>
-               <td class="govuk-table__cell govuk-table__cell--numeric">£1,345.00</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">£1,345</td>
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">PEPs, unit trusts, capital bonds and government stocks</th>
-               <td class="govuk-table__cell govuk-table__cell--numeric">£256.00</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">£256</td>
              </tr>
              <tr class="govuk-table__row">
                <th class="govuk-table__cell govuk-body" scope="row">Life assurance and endowment policies not linked to a mortgage</th>
-               <td class="govuk-table__cell govuk-table__cell--numeric">£45,687.00</td>
+               <td class="govuk-table__cell govuk-table__cell--numeric">£45,687</td>
              </tr>
            </tbody>
          </table>
@@ -164,43 +175,43 @@ Apply for legal aid - Check your answers
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home outstanding mortgage amount</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£745.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£745</td>
                  </tr>
                  <tr class="govuk-table__row">
-                   <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home percentage ownedt</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£12%</td>
+                   <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home percentage owned</th>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">12%</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Timeshare</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£2,657.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£2,657</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Land</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£1,345.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£1,345</td>
                  </tr>
                  <tr class="govuk-table__row">
-                   <th class="govuk-table__cell govuk-body" scope="row">Jewellery, art or antiques with a value over £500s</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£256.00</td>
+                   <th class="govuk-table__cell govuk-body" scope="row">Jewellery, art or antiques with a value over £500</th>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£256</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Car, van or motorcycle less than 3 years old</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£45.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£45</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Classic car purchased as an investment</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£87.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£87</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Money or assets from the estate of a person who has died</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Money owed to you, including from a private mortgage</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£45,687.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£45,687</td>
                  </tr>
                  <tr class="govuk-table__row">
                    <th class="govuk-table__cell govuk-body" scope="row">Interest in a trust</th>
-                   <td class="govuk-table__cell govuk-table__cell--numeric">£1.00</td>
+                   <td class="govuk-table__cell govuk-table__cell--numeric">£1</td>
                  </tr>
                </tbody>
              </table>
@@ -247,18 +258,12 @@ Apply for legal aid - Check your answers
 
           <div class="govuk-!-padding-bottom-6"></div>
 
-    <h2 class="govuk-heading-m">Merits assessment</h2>
 
-      <p class="govuk-body">
-        You will now need to complete the merits assessment for the proceeding you are applying for.
-      </p>
+      <a class="govuk-button" href="citizen_declaration" role="button">
 
-      <a class="govuk-button" href="#" role="button">
-        Submit
+        Save and continue
       </a>
-      <a class="govuk-button" href="eve_designs_2" role="button">
-        Go to provider journey
-      </a>
+
 
     </div>
   </div>
