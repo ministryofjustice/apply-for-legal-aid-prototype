@@ -33,8 +33,10 @@ Apply for legal aid - Other capital
                 <h1 class="govuk-fieldset__heading">
                 <!--  Does your client have any of the following?
                 Other assets - select any that apply to your client
-               Your valuable items -->
-              What types of <!-- items of value -->assets does your client have?
+               Your valuable items
+               What assets does your client have -->
+               Which types of assets does your client have?
+
                 </h1>
               </legend>
 
@@ -52,8 +54,11 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    Jewellery, art or antiques with a value over £500
+                    Personal possessions worth more than £500
                   </label>
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                      For example, jewellery, art or antiques.
+                  </span>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-4">
                   <div class="govuk-form-group">
@@ -219,7 +224,7 @@ Apply for legal aid - Other capital
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                         <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                          My client has none of these
+                          None of these
                         </label>
                       </div>
 
