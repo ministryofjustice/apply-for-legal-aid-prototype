@@ -25,39 +25,41 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Statement of case</h1>
+        <h1 class="govuk-heading-xl">Provide a statement of case</h1>
 
         <form action="costs" method="post" novalidate>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="more-detail">
-            <!--  <p class="govuk-body-l">Please tell us about the case providing sufficient information to satisfy the regulations.<p>
+            <!--  <p class="govuk-body-l">Please tell us about the case providing sufficient information to satisfy the regulations.<p> -->
 
-              <h2 class="govuk-heading-m">You must include the following details</h2> -->
 
-              <p class="govuk-body">You must tell us:</p>
+                <p class="govuk-body">You need to tell us:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>what has happened in the case so far</li>
+                  <li>details of the latest domestic abuse incident</li>
+                  <li>about any other parties involved and their relationship to the applicant</li>
+                  <li>how many clients you're representing</li>
+                  <li>why the current proceedings are necessary</li>
+                  <li>if anyone else might be able to fund this case</li>
+                <!--  <li>any other information relevant to the case</li> -->
+
+
+
+            <!--  <h2 class="govuk-heading-m">You must include the following details</h2>
 
               <ul class="govuk-list govuk-list--bullet">
-
-                <li>what has happened in the case so far</li>
-                <li>about any other people involved and their relationship to your client</li>
-                <li>why the current proceedings are necessary</li>
-                <li>how many people you're representing</li>
-                <li>if anyone else might be able to fund the case</li>
-
-                <!-- <li>Previous Legal help or Family help.</li>
-                <li>Previous court proceedings and if the issue is currently before court.</li> -->
-                <!-- <li>Opponents & other parties including those with an interest in the issue.</li>
+                 <li>Previous Legal help or Family help.</li>
+                <li>Previous court proceedings and if the issue is currently before court.</li>
+             <li>Opponents & other parties including those with an interest in the issue.</li>
                 <li>What has happened so far.</li>
                 <li>Parties involved and their relationship to the applicant.</li>
                 <li>Explain why the current proceedings are neccessary.</li>
                 <li>Number of clients represented.</li>
                 <li>Any other persons who might benefit who can bring or fund the case.</li>
-                <li>Details of the most recent incident, if a warning letter has been sent, the police have been notified or there are any criminal charges.</li> -->
-              </ul>
-
-              <p class="govuk-body">You can upload or type your statement.</p>
-
+                <li>Details of the most recent incident, if a warning letter has been sent, the police have been notified or there are any criminal charges.</li>
+              </ul> -->
             </label>
             <!-- <span id="more-detail-hint" class="govuk-hint">
               Don’t include personal or financial information, eg your National Insurance number or credit card details.
@@ -65,20 +67,24 @@ Apply for legal aid - Statement of case
           </div>
 
 
+        <!--  <div class="govuk-inset-text">
+          You can upload your statement or enter it manually.</div> -->
 
-            <!--          <span class="govuk-hint">
-                        You can upload a file or type (or copy and paste) text into the text box.
-                      </span> -->
+            <h2 class="govuk-heading-m">Attach a file</h2>
+          <!--  <span id="more-detail-hint" class="govuk-hint">
+            You can upload your statement or enter it in the text box.</span> -->
+            <div class="govuk-form-group">
+            <!--  <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label> -->
+              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+        <p class="govuk-body">or</p>
 
-          <div class="govuk-form-group">
-            <label class="govuk-heading-m">Attach a file
-              </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-          </div>
+            <h2 class="govuk-heading-m">Enter text</h2>
+
 
             <div class="govuk-form-group">
-              <label class="govuk-heading-m">Enter your statement
-                </label>
             <textarea class="govuk-textarea" id="more-detail" name="statement" rows="15" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
             </div>
@@ -87,9 +93,6 @@ Apply for legal aid - Statement of case
             Save and continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
 
         </form>
       </div>
