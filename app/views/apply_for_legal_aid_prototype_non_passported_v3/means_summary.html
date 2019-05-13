@@ -27,29 +27,43 @@ Apply for legal aid - Check client financial assessment
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Your client has completed their financial assessment
+          Check your answers
         </h1>
 
-        <p>Client: <strong>John Doe</strong>
-          <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong>
+      <!--  <p>Client: <strong>John Doe</strong>
+          <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong></p>
 
-          <p class="govuk-body">You can review your client's answers and make changes before you submit the application.</p>
+          <p class="govuk-body">You can review your client's answers and make changes before you submit the application.</p> -->
 
           <table class="govuk-table" style="margin-bottom: 15px;">
-              <h2 class="govuk-heading-l">Income</h2>
-              <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption>
+
+            <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
+            <h2 class="govuk-heading-l">Your client's income</h2>
+            </div>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-s">10 February 2019 to 10 May 2019</h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <p><a class="govuk-link" style="float:right;" href="income_summary">Change</a></p>
+            </div>
+            </div>
+
+
+
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Salary or wages</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£560.00</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Benefits</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£464.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Maintenance payments</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Income from a property or lodger</td>
@@ -65,26 +79,38 @@ Apply for legal aid - Check client financial assessment
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Financial help from friends or family</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                 </tbody>
               </table>
 
-              <p><a href="clients_income" style="float:right;">Review income</a></p>
+            <!--  <p><a href="income_summary" style="float:right;">View/change declared income</a></p> -->
 
-              <div class="govuk-!-padding-bottom-8"></div>
+              <div class="govuk-!-padding-bottom-6"></div>
 
               <table class="govuk-table" style="margin-bottom: 15px;">
-                <h2 class="govuk-heading-l">Regular payments</h2>
-                <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption>
+                <h2 class="govuk-heading-l">Your client's regular payments</h2>
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-s">10 February 2019 to 10 May 2019</h2>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <p><a class="govuk-link" style="float:right;" href="outgoings_summary">Change</a></p>
+                </div>
+                </div>
+
+
+
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell" scope="row">Rent or mortgage</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">- £1,200.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"> Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell" scope="row">Childcare costs</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">- £350.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Declared</td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell" scope="row">Maintenance payments</td>
@@ -97,9 +123,9 @@ Apply for legal aid - Check client financial assessment
                 </tbody>
               </table>
 
-              <p><a href="clients_outgoings" style="float:right;">Review regular payments</a></p>
+            <!--  <p><a href="outgoings_summary" style="float:right;">View/change regular payments</a></p> -->
 
-              <div class="govuk-!-padding-bottom-8"></div>
+              <div class="govuk-!-padding-bottom-6"></div>
 
               <table class="govuk-table" style="margin-bottom: 10px;">
 
@@ -191,7 +217,7 @@ Apply for legal aid - Check client financial assessment
               <div class="govuk-grid-column-one-third">
                 <p><a class="govuk-link" style="float:right;" href="#">Change</a></p>
               </div>
-              
+
               </div>
 
               <table class="govuk-table">
