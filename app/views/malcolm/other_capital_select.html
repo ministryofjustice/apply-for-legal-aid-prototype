@@ -251,6 +251,31 @@ Apply for legal aid - Other capital
 
 {% endblock %}
 
+<script>
+  let restoreArray = [];
+  $("#none-of-above").click(function(){
+    if ($(this).is(':checked')) {
+      $("input:checked").each(function(){
+        $(this).click();
+        restoreArray .push($(this).not("#none-of-above"));
+      });
+      $(this).prop("checked",true);
+    } else {
+      $.each(restoreArray, function(index,item){
+        console.log(item);
+        item.not("#none-of-above").click();
+      });
+      restoreArray = [];
+    }
+  });
+  $("input:not(#none-of-above):not(:checked)").click(function(){
+    if ($("#none-of-above").is(":checked")) {
+      restoreArray = [];
+      $("#none-of-above:checked").click();
+    }
+  });
+</script>
+
 {% block footer %}
     {{ govukFooter({
       meta: {
