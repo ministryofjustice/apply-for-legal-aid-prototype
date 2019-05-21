@@ -27,37 +27,44 @@ Apply for legal aid - Does your client use online banking
       <div class="govuk-grid-column-two-thirds">
         <form action="confirmation_page" method="post" class="form">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  <!-- How would you like to proceed? -->
-                <!--  Do you want to continue making a full application?
-                Do you want to start a full application now? -->
-                Do you want to apply for a full certificate now?
-                </h1>
-              </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
-
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+                <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Do you want to make a full application now?
+          </h1>
+        </legend>
+<div class="govuk-!-padding-bottom-6"></div>
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-                  <!--  Continue with full application -->
-                  Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-                  <!--  Complete full application later -->
-                  No, I'll apply later
 
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+              Yes
+            </label> </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+            <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+              No, I'll start later
+            </label> </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="onlinebank-2">
+                You must submit a full application by 11 June 2019.
+              </label>
+            </div>
+
+          </div>
+
+
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
           </div>
 
           <button type="submit" class="govuk-button">
@@ -67,7 +74,7 @@ Apply for legal aid - Does your client use online banking
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-        </form>
+
 
       </div>
     </div>
