@@ -30,26 +30,18 @@ Apply for legal aid - Client details
 
 <p class="govuk-body">Enter your dependants' details one at a time. You can add more later.</p>
 
-      <form action="dependant_over_16_child" method="post" novalidate>
+      <form action="dependant_one_relationship" method="post" novalidate>
         <div class="govuk-!-padding-bottom-4"></div>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
-            </legend>
+
 
             <div class="govuk-form-group">
-                <label class="govuk-label" for="firstname">
-                First name
-                </label>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
+              </legend>
               <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
             </div>
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="lastname">
-                Last name
-                </label>
-              <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
-            </div>
 
           </fieldset>
         </div>
