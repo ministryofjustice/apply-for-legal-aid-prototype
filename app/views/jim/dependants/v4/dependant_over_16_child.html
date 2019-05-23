@@ -31,7 +31,7 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is Jane Doe a child?
+                  Is Jane Doe a child or adult dependant?
               <!--  Does anyone depend on you for financial support?
                 Do you have parental responsibility for this dependant? -->
                 </h1>
@@ -49,26 +49,32 @@ Apply for legal aid - Property and mortgage
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    Yes
+                    Child dependant
+                    <span class="govuk-hint">
+                    For example, your birth child, an adopted or foster child, or grandchild.
+                      </span>
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
                   <span id="dob-hint" class="govuk-hint">
                 For example, ...
               </span>
-                </div>
+                </div> -->
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    No
+                    Adult dependant
+                    <span class="govuk-hint">
+                    For example, an adult relative such as a parent or grandparent.
+                    </span>
                   </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
                     <span id="dob-hint" class="govuk-hint">
                   For example, ...
                 </span>
-                  </div>
+                  </div> --?
 
 
 
