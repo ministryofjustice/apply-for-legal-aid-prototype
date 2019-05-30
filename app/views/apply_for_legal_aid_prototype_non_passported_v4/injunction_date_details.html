@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "provider_means_calculation"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">When did the latest domestic abuse incident occur?</h1>
+
+    <!--  <p class="govuk-body">Enter the date they first contacted you to seek legal advice about this matter.</p> -->
+
+      <form action="injunction_details" method="post" novalidate>
+
+
+        <div class="govuk-form-group">
+
+
+            <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+      <!--   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> When did the incident occur?
+            </legend> -->
+              <span id="dob-hint" class="govuk-hint">
+                For example, 31 3 2019
+              </span>
+              <div class="govuk-date-input" id="dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-!-padding-bottom-2"></div>
+
+        <!--  <label class="govuk-heading-m"><!-- Enter details of the incident --> <!-- What happened during the incident?
+            </label>
+
+
+
+
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10 " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+
+          </div> -->
+
+
+
+
+        <!--  <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="email">
+              Client representation
+            </label>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Client represented by person acting in a professional capacity
+                </label>
+              </div>
+          </div> -->
+
+
+        <!--  <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I don't have my client's details
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits</p>
+              <p class="govuk-body">Your client can also ask for a reminder through the post.</p>
+            </div>
+          </details> -->
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+            <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+               Save and come back later
+             </a>
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

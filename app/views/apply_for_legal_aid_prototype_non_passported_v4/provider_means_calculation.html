@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check client financial assessment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "provider_means_summary"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation" style="background-color:	#005ea5;">
+          <div class="govuk-panel__body">
+            <!-- If the case qaulifies: -->
+          </div>
+          <br>
+          <h1 class="govuk-panel__title">
+            Your client is unlikely to qualify for legal aid
+          </h1>
+          <div class="govuk-panel__body">
+            based on their financial situation
+          </div>
+        </div>
+
+        <div class="govuk-!-padding-bottom-4"></div>
+
+        <p>Client: <strong>John Doe</strong>
+          <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong>
+
+
+
+
+
+
+              <div class="govuk-!-padding-bottom-6"></div>
+
+
+
+            </div>
+          </div>
+
+              <form action="merits_start_page" method="post" novalidate>
+
+                <input type="hidden" name="answers-checked" value="true">
+
+                <button type="submit" class="govuk-button">
+                  Save and continue
+                </button>
+
+              </form>
+
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}
