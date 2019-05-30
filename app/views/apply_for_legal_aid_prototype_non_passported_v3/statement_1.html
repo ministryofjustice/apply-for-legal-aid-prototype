@@ -27,43 +27,85 @@ Apply for legal aid - Statement of case
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Provide a statement of case</h1>
 
-        <form action="costs" method="post" novalidate>
+        <form action="prospects_of_success" method="post" novalidate>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="more-detail">
             <!--  <p class="govuk-body-l">Please tell us about the case providing sufficient information to satisfy the regulations.<p> -->
 
+            <h2 class="govuk-heading-m">When did the latest domestic abuse incident occur?</h2>
 
-                <p class="govuk-body">You need to tell us:</p>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+          <!--   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> When did the incident occur?
+                </legend> -->
+                  <span id="dob-hint" class="govuk-hint">
+                    For example, 31 3 2019.
+                  </span>
+                  <div class="govuk-date-input" id="dob">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+<div class="govuk-!-padding-bottom-4"></div>
+
+<!-- <h2 class="govuk-heading-m">Provide a statement</h2> -->
+
+
+            <p class="govuk-body">You need to tell us:</p>
 
                 <ul class="govuk-list govuk-list--bullet">
-                  <li>what has happened in the case so far</li>
                   <li>details of the latest domestic abuse incident</li>
+                  <li>what has happened in the case so far</li>
                   <li>about any other parties involved and their relationship to the applicant</li>
                   <li>how many clients you're representing</li>
                   <li>why the current proceedings are necessary</li>
                   <li>if anyone else might be able to fund this case</li>
-                <!--  <li>any other information relevant to the case</li> -->
+</ul>
 
+<!-- <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What we need to know
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">You need to tell us:</p>
 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>details of the latest domestic abuse incident</li>
+        <li>what has happened in the case so far</li>
+        <li>about any other parties involved and their relationship to the applicant</li>
+        <li>how many clients you're representing</li>
+        <li>why the current proceedings are necessary</li>
+        <li>if anyone else might be able to fund this case</li>
+    </div>
+  </details> -->
 
-            <!--  <h2 class="govuk-heading-m">You must include the following details</h2>
-
-              <ul class="govuk-list govuk-list--bullet">
-                 <li>Previous Legal help or Family help.</li>
-                <li>Previous court proceedings and if the issue is currently before court.</li>
-             <li>Opponents & other parties including those with an interest in the issue.</li>
-                <li>What has happened so far.</li>
-                <li>Parties involved and their relationship to the applicant.</li>
-                <li>Explain why the current proceedings are neccessary.</li>
-                <li>Number of clients represented.</li>
-                <li>Any other persons who might benefit who can bring or fund the case.</li>
-                <li>Details of the most recent incident, if a warning letter has been sent, the police have been notified or there are any criminal charges.</li>
-              </ul> -->
             </label>
-            <!-- <span id="more-detail-hint" class="govuk-hint">
-              Don’t include personal or financial information, eg your National Insurance number or credit card details.
-            </span> -->
           </div>
 
 

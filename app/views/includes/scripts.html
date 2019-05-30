@@ -8,6 +8,29 @@
 {% endif %}
 <script>
 $( document ).ready(function() {
+    //none of the above code
+    let restoreArray = [];
+    $("#none-of-above").click(function(){
+      if ($(this).is(':checked')) {
+        $("input:checked").each(function(){
+          $(this).click();
+          restoreArray .push($(this).not("#none-of-above"));
+        });
+        $(this).prop("checked",true);
+      } else {
+        $.each(restoreArray, function(index,item){
+          item.not("#none-of-above").click();
+        });
+        restoreArray = [];
+      }
+    });
+    $("input:not(#none-of-above):not(:checked)").click(function(){
+      if ($("#none-of-above").is(":checked")) {
+        restoreArray = [];
+        $("#none-of-above:checked").click();
+      }
+    });
+	
 	if ($(".selectClearAll").length) {
 		function resetSelectClear(table) {
 			if ((table.find("input:checked")).length>0) {
