@@ -15,26 +15,32 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
-    opacity: 1; /* Firefox */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+//
+.side-profile{
+  position: sticky;
+  top:50px;
 }
 
 // Search list styles
 
 div.proceeding-list {
-    padding: 0px;
-    border-bottom: 1px solid #ccc;
+  padding: 0px;
+  border-bottom: 1px solid #ccc;
 }
 
 div.proceeding-list:hover {
-    background-color: #e7f4fb;
+  background-color: #e7f4fb;
 }
 
 div.no-results {
-    margin-left: 0px;
-    font-family: "nta", Arial;
-    font-size: 19px;
-    padding-bottom: 20px;
+  margin-left: 0px;
+  font-family: "nta", Arial;
+  font-size: 19px;
+  padding-bottom: 20px;
 }
 
 .change-link {
@@ -47,12 +53,12 @@ div.no-results {
 }
 
 ul.proceeding-list {
-    padding: 0px;
-    margin-top: 22px;
+  padding: 0px;
+  margin-top: 22px;
 }
 
 li.proceeding__list-item {
-display: inline-block;
+  display: inline-block;
 }
 
 .proceeding-item {
@@ -60,12 +66,12 @@ display: inline-block;
 }
 
 .postcode_change {
-display: inline-block;
+  display: inline-block;
 }
 
 p.postcode_change {
-display: inline-block;
-padding-left: 10px;
+  display: inline-block;
+  padding-left: 10px;
 }
 
 div.clear-search {
@@ -170,105 +176,142 @@ div.clear-search {
     }
   }
 
-.circle-white {
-  color: #005ea5;
-  background: #fff;
-  float: left;
-  margin-right: 15px;
-}
-
-.circle-step {
-  min-width: 24px;
-  min-height: 24px;
-  line-height: 24px;
-}
-
-.circle {
-  margin-top: 6px;
-  display: inline-block;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  font-family: 'Inter UI', sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-}
-
-
-
-// HOME OFFICE - Pagination
-
-
-
-.padding {
-  padding-left: 15px;
-}
-
-.pagination {
-  padding: 0;
-  margin: 0;
-}
-
-.pagination__item {
-  display: inline-block;
-  list-style: none;
-}
-.pagination__link {
-  display: block;
-  padding: 5px 10px;
-  text-decoration: none;
-
-  &:hover, &:focus {
-    background: #F8F8F8;
-    outline: 3px solid #FFBF47;
+  .circle-white {
+    color: #005ea5;
+    background: #fff;
+    float: left;
+    margin-right: 15px;
   }
 
-  &.current {
-    color: #0B0C0C;
-    font-weight: 700;
-    border: none;
-    pointer-events: none;
-    cursor: default;
+  .circle-step {
+    min-width: 24px;
+    min-height: 24px;
+    line-height: 24px;
+  }
+
+  .circle {
+    margin-top: 6px;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-family: 'Inter UI', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+
+
+  // HOME OFFICE - Pagination
+
+
+
+  .padding {
+    padding-left: 15px;
+  }
+
+  .pagination {
+    padding: 0;
+    margin: 0;
+  }
+
+  .pagination__item {
+    display: inline-block;
+    list-style: none;
+  }
+  .pagination__link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
 
     &:hover, &:focus {
+      background: #F8F8F8;
+      outline: 3px solid #FFBF47;
+    }
+
+    &.current {
       color: #0B0C0C;
-      background: none;
+      font-weight: 700;
+      border: none;
+      pointer-events: none;
+      cursor: default;
+
+      &:hover, &:focus {
+        color: #0B0C0C;
+        background: none;
+      }
     }
   }
-}
 
-.pagination__summary {
+  .pagination__summary {
 
-  -webkit-font-smoothing: antialiased;
-  padding: 5px 0  ;
+    -webkit-font-smoothing: antialiased;
+    padding: 5px 0  ;
 
-  @media (min-width: 642px) {
-    float: right;
+    @media (min-width: 642px) {
+      float: right;
+    }
   }
-}
 
-// Table status dots
+  // Table status dots
 
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #006435;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  top: 5px;
-  margin-right: 10px;
-}
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #006435;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+  }
 
-// Search icon
-.search-icon{
-  background: url(images/icon-search-2x.png) no-repeat;
-}
+  // Search icon
+  .search-icon{
+    background: url(images/icon-search-2x.png) no-repeat;
+  }
 
-.icon{
-  position:absolute;
-  left:18px;
-  top:9px;
-  font-size:30px;
-}
+  .icon{
+    position:absolute;
+    left:18px;
+    top:9px;
+    font-size:30px;
+  }
+
+  // homeoffice nav
+  // https://home-office-digital-patterns.herokuapp.com/components/navigation#
+  .navbar .navbar__list-items {
+    padding-left: 0;
+    background-color: white;
+    border-bottom: 6px solid #005ea5;
+
+    li {
+      display: inline-block;
+      margin-bottom: 0;
+      a {
+        @include govuk-font(19, $weight: regular);
+        // @extend .bold-small !optional;
+        color: #005ea5;
+        display: inline-block;
+        padding: 15px 10px 10px 10px;
+        margin-right: 15px;
+        margin-bottom: 0;
+        font-size: inherit;
+        text-decoration: none;
+        &:hover {
+          color: #2b8cc4;
+          border-bottom: 4px solid #005ea5 !important;
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+      &.active a,
+      &.active a:hover {
+        color: 	#2b8cc4;
+        border-bottom: 4px solid #005ea5 !important;
+        // font-weight: bold;
+      }
+    }
+  }
