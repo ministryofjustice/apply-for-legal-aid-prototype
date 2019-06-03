@@ -31,7 +31,7 @@ Apply for legal aid - Other capital
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Orders, actions and restrictions <!-- property, savings or investments, or valuable items -->
+                  Do any of the following apply to you or your assets? <!-- property, savings or investments, or valuable items -->
                 </h1>
               </legend>
 
@@ -42,56 +42,78 @@ Apply for legal aid - Other capital
 
               <div class="govuk-!-padding-bottom-6"></div>
 
-              <h2 class="govuk-heading-m"> Select all that apply <!-- Do any of the following apply to your property or other assets? --></h2>
+            <h2 class="govuk-heading-m"> Select all that apply</h2>
 
+<div class="govuk-!-padding-bottom-2"></div>
 
               <div class="govuk-checkboxes" data-module="checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    My home has been repossessed <!-- or I'm paying 'deferred interest' on a property -->
+                    Your home has been repossessed <!-- or I'm paying 'deferred interest' on a property -->
+                  <!--  <span class="govuk-hint">
+                    For example, your child or grandchild.
+                      </span> -->
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    I'm paying deferred interest on a property <!-- or I'm paying 'deferred interest' on a property -->
+                    You're paying deferred interest on a property <!-- or I'm paying 'deferred interest' on a property -->
+                    <span class="govuk-hint">
+                    This means...
+                      </span>
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="investments" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("investments","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                    My assets are the subject of dispute in other legal proceedings
+                    Your assets are the subject of dispute in other legal proceedings
+                    <span class="govuk-hint">
+                    This means...
+                      </span>
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    My assets are under foreign exchange controls
+                    Your assets are under foreign exchange controls
+                    <span class="govuk-hint">
+                    This means...
+                      </span>
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    My assets are under a restraint or freezing order
+                    Your assets are under a restraint or freezing order
+                    <span class="govuk-hint">
+                    This means...
+                      </span>
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="premium-bonds" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("premium-bonds","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
-                    I'm bankrupt
+                  You're bankrupt
+                  <!--  <span class="govuk-hint">
+                    For example, your child or grandchild.
+                      </span> -->
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
-                    My assets are held overseas
+                    Your assets are held overseas
+                    <span class="govuk-hint">
+                    This means...
+                      </span>
                   </label>
                 </div>
 
@@ -117,7 +139,7 @@ Apply for legal aid - Other capital
         <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a> -->
-          
+
         </form>
       </div>
     </div>
