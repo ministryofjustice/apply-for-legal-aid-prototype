@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "savings_investments"
+  href: "javascript:goBack()"
   }) }}
 {% endblock %}
 
@@ -231,6 +231,9 @@ Apply for legal aid - Other capital
             Save and come back later
           </a> -->
         </form>
+      </div>
+      <div class="side-profile">
+        {% include "includes/aside_06.html" %}
       </div>
     </div>
 

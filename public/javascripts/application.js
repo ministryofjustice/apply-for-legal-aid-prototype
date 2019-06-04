@@ -41,3 +41,8 @@ $('.navbar__list-items a').click(function (e) {
     target.parents('li').addClass('active');
     // target.parents().find('h1:first').text($(this).text());
 });
+
+
+function goBack() {
+  window.history.back();
+}
