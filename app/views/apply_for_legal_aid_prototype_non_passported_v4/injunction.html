@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "provider_means_calculation"
+  href: "javascript:goBack()"
   }) }}
 {% endblock %}
 
@@ -123,6 +123,9 @@ Apply for legal aid - Client details
 
         </form>
 
+      </div>
+      <div class="side-profile">
+        {% include "includes/aside_06.html" %}
       </div>
     </div>
 

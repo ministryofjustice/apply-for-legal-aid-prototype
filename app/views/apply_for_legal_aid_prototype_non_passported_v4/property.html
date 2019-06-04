@@ -28,7 +28,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_outgoing"
+  href: "javascript:goBack()"
   }) }}
 {% endblock %}
 
@@ -84,6 +84,9 @@ Apply for legal aid - Property and mortgage
           </a>
 
         </form>
+      </div>
+      <div class="side-profile">
+        {% include "includes/aside_06.html" %}
       </div>
     </div>
 
