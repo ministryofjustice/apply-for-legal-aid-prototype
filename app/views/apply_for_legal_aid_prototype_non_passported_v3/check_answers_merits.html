@@ -29,94 +29,32 @@ Apply for legal aid - Check your answers - Merits
         Check your answers
       </h1>
 
-      <h2 class="govuk-heading-m">
-        Scope of legal aid
-      </h2>
-
-    <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Proceeding
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Non-molestation order{{ data['...'] }}
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="search#search">
-            Change <span class="govuk-visually-hidden">proceeding</span>
-          </a>
-        </dd>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Latest incident details</h2>
       </div>
-   </dl>
+      <div class="govuk-grid-column-one-third">
+        <p><a class="govuk-link" style="float:right;" href="injunction">Change</a></p>
+      </div>
+      </div>
 
-        <h2 class="govuk-heading-m">
-          Capital assessment
-        </h2>
+      <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row"><strong>When did your client tell you about the latest domestic abuse incident?</strong></th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+              </tr>
 
-      <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            House or mortgage
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Savings, bonds, stocks and shares
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Anything that can contribute to the legal costs
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell govuk-body" scope="row"><strong>When did the incident occur?</strong></th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+              </tr>
 
-  <!--   <h2 class="govuk-heading-m">
-       Case details
-     </h2> -->
+            </tbody>
+          </table>
 
-     <dl class="app-check-your-answers app-check-your-answers--long">
-       <div class="app-check-your-answers__contents">
 
-         <dt class="app-check-your-answers__question">
-           When did your client tell you about the latest domestic abuse incident?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           2 April 2019{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-
-</dl>
-<br><br>
+<br>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -149,67 +87,7 @@ Apply for legal aid - Check your answers - Merits
       </tbody>
     </table>
 
-<!--
-<h2 class="govuk-heading-m">
-  Respondent details
-</h2>
-<dl class="app-check-your-answers app-check-your-answers--long">
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Does the respondent have the mental capacity to understand the terms of a court order?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           Yes{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Has a warning letter been sent to the respondent?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           Yes{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Have the police been notified?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           Yes{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Have bail conditions been set?
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           Yes{{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-     </dl> -->
 <br>
-
 
      <h2 class="govuk-heading-m">
        Case details
@@ -218,37 +96,25 @@ Apply for legal aid - Check your answers - Merits
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      When did the latest domestic abuse incident occur?
+      Provide a statement of case
     </dt>
     <dd class="app-check-your-answers__answer">
-      1 April 2019{{ data['...'] }}
+      2 April 2019{{ data['...'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="#">
+      <a href="statement_1">
         Change <span class="govuk-visually-hidden">blank</span>
       </a>
     </dd>
   </div>
 
-       <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Statement of case
-         </dt>
-         <dd class="app-check-your-answers__answer" style="border-bottom-width: 0px;">
-         </dd>
-         <dd class="app-check-your-answers__change" style="border-bottom-width: 0px;">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
        </dl>
 
-       <div class="govuk-grid-row">
+      <!-- <div class="govuk-grid-row">
          <div class="govuk-grid-column-full">
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
          </div>
-      </div>
+      </div> -->
 
       <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
 
@@ -260,7 +126,7 @@ Apply for legal aid - Check your answers - Merits
            No{{ data['...'] }}
          </dd>
          <dd class="app-check-your-answers__change">
-           <a href="#">
+           <a href="prospects_of_success">
              Change <span class="govuk-visually-hidden">blank</span>
            </a>
          </dd>
@@ -274,31 +140,14 @@ Apply for legal aid - Check your answers - Merits
            Borderline{{ data['...'] }}
          </dd>
          <dd class="app-check-your-answers__change">
-           <a href="#">
+           <a href="prospects_less_than_50">
              Change <span class="govuk-visually-hidden">blank</span>
            </a>
          </dd>
        </div>
-      <!-- <div class="app-check-your-answers__contents">
-         <dt class="app-check-your-answers__question">
-           Client declaration
-         </dt>
-         <dd class="app-check-your-answers__answer">
-           Read & agreed {{ data['...'] }}
-         </dd>
-         <dd class="app-check-your-answers__change">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div> -->
+
     </dl>
 
-  <!--  <h2 class="govuk-heading-m">Complete the application</h2>
-
-      <p class="govuk-body">
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p> -->
 
       <a class="govuk-button" href="declaration" role="button">
         Save and Continue
@@ -310,6 +159,7 @@ Apply for legal aid - Check your answers - Merits
 
     </div>
   </div>
+
 
   {% endblock %}
 
