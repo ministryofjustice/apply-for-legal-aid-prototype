@@ -49,8 +49,11 @@ Apply for legal aid - Prospects of success
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="prospects" type="radio" value="marginal" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("prospects","marginal") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    45% to 49% (or 'marginal')
+                    45% to 49%
                   </label>
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    The chance of a successful outcome is marginal.
+                  </span>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
                   <div class="govuk-form-group">
@@ -65,13 +68,16 @@ Apply for legal aid - Prospects of success
              <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="how-contacted-conditional-3" name="prospects" type="radio" value="borderline" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("prospects","borderline") }}>
                       <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
-                        Less than 45% (or 'poor')
+                        Less than 45%
                       </label>
+                      <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                        The chance of a successful outcome is poor.
+                      </span>
                     </div>
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="contact-by-text">
-                         Tell us why you believe we should provide legal aid
+                         Tell us why legal aid should be granted
                        </label>
                         <textarea class="govuk-textarea" id="borderline-more-detail" name="borderline-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['borderline-more-detail'] }}</textarea>
                       </div>
@@ -83,7 +89,7 @@ Apply for legal aid - Prospects of success
                     Borderline
                   </label>
                   <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                    You cannot predict the outcome
+                    You cannot predict the outcome.
                   </span>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
@@ -102,13 +108,13 @@ Apply for legal aid - Prospects of success
                     I do not know yet
                   </label>
                   <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                    Work still needs to be done to determine the likelihood of success
+                    Work still needs to be done to determine the likelihood of success.
                   </span>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-4">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-text">
-                      Tell us why you believe we should provide legal aid
+                      Tell us why legal aid should be granted
                     </label>
                     <textarea class="govuk-textarea" id="uncertain-more-detail" name="uncertain-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['uncertain-more-detail'] }}</textarea>
                   </div>
