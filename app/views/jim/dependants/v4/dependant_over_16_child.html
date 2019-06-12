@@ -31,8 +31,9 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is Jane Doe a child or adult dependant?
-              <!--  Does anyone depend on you for financial support?
+                  What is your relationship to Jane Doe?
+                <!--  Is Jane Doe a child or adult dependant?
+                Does anyone depend on you for financial support?
                 Do you have parental responsibility for this dependant? -->
                 </h1>
               </legend>
@@ -49,9 +50,11 @@ Apply for legal aid - Property and mortgage
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    Child dependant
+                    <!-- Child dependant --> They're a child relative
                     <span class="govuk-hint">
-                    For example, your child or grandchild.
+                    <!-- For example, your child or grandchild. -->
+                    For example, your child, grandchild, niece or nephew.
+
                       </span>
                   </label>
                 </div>
@@ -64,9 +67,9 @@ Apply for legal aid - Property and mortgage
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    Adult dependant
+                  <!--  Adult dependant --> They're an adult relative
                     <span class="govuk-hint">
-                    For example, a parent, grandparent or other adult relative.
+                    For example, a parent, grandparent, auntie or uncle.
                     </span>
                   </label>
                   </div>
