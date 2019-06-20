@@ -30,12 +30,16 @@ Apply for legal aid - Check your answers - Merits
       </h1>
 
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Dependant 1</h2>
+</div>
+<div class="govuk-grid-column-one-third">
+  <p><a class="govuk-link" style="float:right;" href="/jim/dependants/v4/remove_jane">Remove dependant</a></p>
+</div>
+</div>
 
-     <h2 class="govuk-heading-m">
-       Dependant details
-     </h2>
-
-<dl class="app-check-your-answers app-check-your-answers--long">
+<!-- <dl class="app-check-your-answers app-check-your-answers--long">
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       Do you have any dependants?
@@ -49,15 +53,15 @@ Apply for legal aid - Check your answers - Merits
       </a>
     </dd>
   </div>
-       </dl>
+       </dl> -->
 
       <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-           Enter your first dependant's details
+           Name
          </dt>
          <dd class="app-check-your-answers__answer">
-           Jane Doe<br>Born 12 October 2001
+           Jane Doe
          </dd>
          <dd class="app-check-your-answers__change">
            <a href="/jim/dependants/v4/dependant_one_age">
@@ -68,7 +72,21 @@ Apply for legal aid - Check your answers - Merits
 
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-           What is your relationship to Jane Doe?
+           Date of birth
+         </dt>
+         <dd class="app-check-your-answers__answer">
+           12 October 2001
+         </dd>
+         <dd class="app-check-your-answers__change">
+           <a href="/jim/dependants/v4/dependant_one_age">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+
+       <div class="app-check-your-answers__contents">
+         <dt class="app-check-your-answers__question">
+           Your relationship
          </dt>
          <dd class="app-check-your-answers__answer">
            They're a child relative{{ data['...'] }}
@@ -83,7 +101,7 @@ Apply for legal aid - Check your answers - Merits
 
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-           Is Jane Doe in full-time education or training?
+           In full-time education or training
          </dt>
          <dd class="app-check-your-answers__answer">
            No{{ data['...'] }}
@@ -97,10 +115,10 @@ Apply for legal aid - Check your answers - Merits
 
        <div class="app-check-your-answers__contents">
          <dt class="app-check-your-answers__question">
-           Does Jane Doe receive any income?
+           Income
          </dt>
          <dd class="app-check-your-answers__answer">
-           Yes<br>£1,000
+           None
          </dd>
 
          <dd class="app-check-your-answers__change">
@@ -109,17 +127,24 @@ Apply for legal aid - Check your answers - Merits
            </a>
          </dd>
        </div>
-
     </dl>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Dependant 2</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p><a class="govuk-link" style="float:right;" href="/jim/dependants/v4/remove_joe">Remove dependant</a></p>
+    </div>
+    </div>
 
     <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
      <div class="app-check-your-answers__contents">
        <dt class="app-check-your-answers__question">
-         Enter your second dependant's details
+         Name
        </dt>
        <dd class="app-check-your-answers__answer">
-         Joe Doe<br>Born 10 May 1967
+         Joe Doe
        </dd>
        <dd class="app-check-your-answers__change">
          <a href="/jim/dependants/v4/dependant_two_age">
@@ -130,7 +155,21 @@ Apply for legal aid - Check your answers - Merits
 
      <div class="app-check-your-answers__contents">
        <dt class="app-check-your-answers__question">
-         What is your relationship to Joe Doe?
+         Date of birth
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         10 May 1967
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="/jim/dependants/v4/dependant_two_age">
+           Change <span class="govuk-visually-hidden">blank</span>
+         </a>
+       </dd>
+     </div>
+
+     <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Your relationship
        </dt>
        <dd class="app-check-your-answers__answer">
          They're an adult relative{{ data['...'] }}
@@ -144,10 +183,10 @@ Apply for legal aid - Check your answers - Merits
 
      <div class="app-check-your-answers__contents">
        <dt class="app-check-your-answers__question">
-         Does Joe Doe receive any income?
+         Income
        </dt>
        <dd class="app-check-your-answers__answer">
-         Yes<br>£1,000
+        £1,100
        </dd>
 
        <dd class="app-check-your-answers__change">
@@ -159,10 +198,10 @@ Apply for legal aid - Check your answers - Merits
 
      <div class="app-check-your-answers__contents">
        <dt class="app-check-your-answers__question">
-         Does Joe Doe have assets worth more than £8,000?
+         Assets worth more than £8,000
        </dt>
        <dd class="app-check-your-answers__answer">
-         No{{ data['...'] }}
+         £9,210{{ data['...'] }}
        </dd>
        <dd class="app-check-your-answers__change">
          <a href="/jim/dependants/v4/dependant_over_16_adult_capital">
@@ -170,9 +209,11 @@ Apply for legal aid - Check your answers - Merits
          </a>
        </dd>
      </div>
-
   </dl>
 
+  <p class="govuk-body"><a href="/jim/dependants/v4/dependant_three_age">Add another dependant</a></p>
+
+<div class="govuk-!-padding-bottom-6"></div>
 
       <a class="govuk-button" href="declaration" role="button">
         Save and Continue
