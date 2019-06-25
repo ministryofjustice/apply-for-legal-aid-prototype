@@ -25,78 +25,41 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post" class="form">
+        <form action="office" method="post" class="form">
 
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-      Can your client complete the financial assessment on their own?
+      Confirm the Hitchcock, Jones and King office responsible for this application<!-- About the respondent -->
       </h1>
     </legend>
-    <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
-      Select one option
-    </span> -->
+<div class="govuk-!-padding-bottom-6"></div>
+
+
+  <!--  <strong>Office:</strong> City of London<br>
+    <strong>Legal Aid Agency account number:</strong> 2J234B</p>
+<div class="govuk-!-padding-bottom-2"></div> -->
 
 
 
-<div class="govuk-!-padding-bottom-4"></div>
-
-
-<!-- <details class="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        What is open banking?
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-       <p class="govuk-body">Open banking lets users securely share their financial data with authorised third parties.</p>
-       <p class="govuk-body">We'll hand your client over to a secure service and ask them to:</p>
-       <ul class="govuk-list govuk-list--bullet">
-         <li>sign in to their online banking</li>
-         <li>authorise us to download bank statements covering the past 3 months</li>
-         </ul>
-      <!--  <p class="govuk-body">They'll need to authorise us to download 3 months of bank statements.</p>
-      <p class="govuk-body">We will not save your client's sign-in details.</p>
-    </div>
-  </details> -->
-
-  <!--  <h2 class="govuk-heading-m">H2</h2> -->
+  <!--  <h2 class="govuk-heading-m">Is this correct?</h2> -->
 
   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
 
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("online-banking","yes") }}>
             <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-              Yes
+              City of London (account number: 2J234B)
             </label></div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1" style="padding-top:10px;">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="onlinebank-1">
-                  <p class="govuk-body">Your client will need to:</p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>use online banking</li>
-                    <li>know the sign-in details for all of their bank accounts</li>
-                    <li>authorise us to download 3 months of bank statements</li>
-                  <!--  <li>authorise us to download bank statements covering the past 3 months</li> -->
-                  </ul>
-                </label>
-              </div>
-            </div>
+
 
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
       <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-        No, I'll do it on their behalf
+        A different office
       </label> </div>
-    <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:10px;">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="onlinebank-2">
-        You will need to collect your client's financial information from printouts or scans of their bank statements.
-        </label>
-      </div>
-    </div> -->
                     </div>
                     </div>
 
