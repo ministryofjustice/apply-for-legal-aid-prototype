@@ -19,6 +19,10 @@ $govuk-global-styles: true;
   opacity: 1; /* Firefox */
 }
 
+.govuk-tag{
+text-transform: none;
+}
+
 //
 .side-profile{
   position: sticky;

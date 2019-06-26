@@ -25,20 +25,14 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="hearing" method="post" class="form">
+        <form action="what_youre_covered_for" method="post" class="form">
 
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      <!--  Have you exercised delegated functions?
-      Have you started work on this case yet?
-      Have you used delegated functions to start work on this case?
-      Have you already started work on this case using delegated functions?
-      Have you used delegated functions to grant legal aid to your client?
-      Have you used delegated functions for this application? -->
-      Have you used delegated functions?
+      Enter the date of the court hearing
       </h1>
     </legend>
 
@@ -55,19 +49,11 @@ Apply for legal aid - Does your client use online banking
         <div class="govuk-!-padding-bottom-6"></div>
 
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
         <label class="govuk-label" for="how-contacted-conditional-1">
-          Date you used delegated functions <!-- Date you granted legal aid -->
+          Date the hearing took place <!-- Date you granted legal aid -->
         </label>
         <span id="dob-hint" class="govuk-hint">
-      For example, 18 4 2019
+      For example, 18 6 2019
     </span>
     <div class="govuk-date-input" id="dob">
       <div class="govuk-date-input__item">
@@ -97,11 +83,11 @@ Apply for legal aid - Does your client use online banking
     </div>
       </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-          No
-        </label>
+    
+        </div>
+
+
+
         </fieldset>
       </div>
 
