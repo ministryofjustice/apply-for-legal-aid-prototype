@@ -42,7 +42,7 @@ th:first-child {
     </h1>
 
     <p>Client: <strong>John Doe</strong>
-      <br>Case reference: <strong>2018/LAA/4ewrqfdd</strong>
+      <br>Case reference: <strong>L-23A-56D</strong>
     </p>
 
     <h2 class="govuk-heading-l">
@@ -131,21 +131,41 @@ th:first-child {
 </dl>
 
 <h2 class="govuk-heading-m">
-  What you're covered for
+  What you're applying for
 </h2>
 
 <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      Proceeding
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      Non-molestation order{{ data['...'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="search#search">
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    <!-- What does your client want legal aid for? --> Proceeding
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    Non-molestation order{{ data['...'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="search#search">
       Change <span class="govuk-visually-hidden">proceeding</span>
-    </a> -->
+    </a>
+  </dd>
+</div>
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    Certificate
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    Emergency
+  </dd>
+  <dd class="app-check-your-answers__change">
+  </dd>
+</div>
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    Form of service
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    Full representation
+  </dd>
+  <dd class="app-check-your-answers__change">
   </dd>
 </div>
 <div class="app-check-your-answers__contents">
@@ -153,40 +173,34 @@ th:first-child {
     Costs you can incur
   </dt>
   <dd class="app-check-your-answers__answer">
-    £5,000
+    £1,350
   </dd>
   <dd class="app-check-your-answers__change">
-    <!--  <a href="search#search">
-    Change <span class="govuk-visually-hidden">proceeding</span>
-  </a> -->
-</dd>
+  </dd>
 </div>
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
     Work you can do
   </dt>
   <dd class="app-check-your-answers__answer">
-    Injunction FLA to final hearing
+    All steps up to and including the hearing on 21 July 2019
   </dd>
   <dd class="app-check-your-answers__change">
-    <!--  <a href="search#search">
-    Change <span class="govuk-visually-hidden">proceeding</span>
-  </a> -->
-</dd>
+  </dd>
 </div>
 </dl>
+
 <table class="govuk-table" style="margin-bottom: 15px;">
 
   <h2 class="govuk-heading-l">
-    Means assessment
+    <!-- Means assessment --> Income, regular payments and assets
   </h2>
 
   <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
     <h2 class="govuk-heading-m">Income</h2>
   </div>
 
-  <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption>
-
+  <!-- <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption> -->
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -202,7 +216,7 @@ th:first-child {
       <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Income from a  or lodger</td>
+      <td class="govuk-table__cell">Income from a property or lodger</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
     </tr>
     <tr class="govuk-table__row">
@@ -226,7 +240,7 @@ th:first-child {
 
 <table class="govuk-table" style="margin-bottom: 15px;">
   <h2 class="govuk-heading-m">Regular payments</h2>
-  <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption>
+<!--  <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 31 January 2019</caption> -->
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell" scope="row">Rent or mortgage</td>
@@ -280,7 +294,7 @@ th:first-child {
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes, owned outright</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Property value</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Estimated value</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£145,000.00</td>
     </tr>
     <tr class="govuk-table__row">
@@ -311,31 +325,29 @@ th:first-child {
 <table class="govuk-table">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Does your client own a vehicle?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Vehicle owned</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">What is the estimated value of the vehicle?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Estimated value</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Are there any payments left on the vehicle?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Outstanding payments</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">When did your client buy the vehicle?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Date of purchase</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">19 April 2008</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Is the vehicle in regular use?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">In regular use</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
     </tr>
   </table>
 
 
 <div class="govuk-!-padding-bottom-6"></div>
-
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -349,15 +361,15 @@ th:first-child {
 <table class="govuk-table">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Post Office, ISAs and other savings accounts</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Money in accounts your client does not access online</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£535.72</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Cash savings</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Money your client does not keep in a bank account</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£745.00</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Signatory on another person's bank account</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Access to another person's bank account</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£1,280.72</td>
     </tr>
     <tr class="govuk-table__row">
@@ -385,7 +397,7 @@ th:first-child {
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Items of value</h2>
+    <h2 class="govuk-heading-m">Other assets</h2>
   </div>
   <div class="govuk-grid-column-one-third">
     <!-- <p><a class="govuk-link" style="float:right;" href="other_capital_select">Change</a></p> -->
@@ -394,6 +406,10 @@ th:first-child {
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Valuable items worth more than £500</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£656.00</td>
+    </tr>
     <tr class="govuk-table__row">
       <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home estimated value</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£67,535.72</td>
@@ -415,23 +431,11 @@ th:first-child {
       <td class="govuk-table__cell govuk-table__cell--numeric">£1,345.00</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Jewellery, art or antiques with a value over £500</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£256.00</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Car, van or motorcycle less than 3 years old</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£45.00</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Classic car purchased as an investment</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£87.00</td>
-    </tr>
-    <tr class="govuk-table__row">
       <th class="govuk-table__cell govuk-body" scope="row">Money or assets from the estate of a person who has died</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
     </tr>
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Money owed to you, including from a private mortgage</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Money owed to your client</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">£45,687.00</td>
     </tr>
     <tr class="govuk-table__row">
@@ -445,10 +449,27 @@ th:first-child {
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
+    <h2 class="govuk-heading-m">Restrictions</h2>
   </div>
   <div class="govuk-grid-column-one-third">
     <!-- <p><a class="govuk-link" style="float:right;" href="capital_restrictions_select">Change</a></p> -->
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Restrictions preventing your client from selling or borrowing against their assets</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
   </div>
 </div>
 
@@ -479,18 +500,18 @@ th:first-child {
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <h2 class="govuk-heading-l">
-  Merits assessment
+  Merits
 </h2>
 
 <dl class="app-check-your-answers app-check-your-answers--long">
   <div class="app-check-your-answers__contents">
 
     <dt class="app-check-your-answers__question">
-      When did your client tell you about the latest domestic abuse incident?
+      Date your client told you about the latest domestic abuse incident
     </dt>
     <dd class="app-check-your-answers__answer">
       2 April 2019{{ data['...'] }}
@@ -503,7 +524,7 @@ th:first-child {
 </div>
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    When did the latest incident occur?
+    Date the incident occurred
   </dt>
   <dd class="app-check-your-answers__answer">
     1 April 2019{{ data['...'] }}
@@ -542,12 +563,12 @@ Change <span class="govuk-visually-hidden">blank</span>
 <table class="govuk-table">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Does the respondent have the mental capacity to understand the terms of a court order?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Has the mental capacity to understand the terms of a court order</th>
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
     </tr>
 
     <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Has a warning letter been sent to the respondent?</th>
+      <th class="govuk-table__cell govuk-body" scope="row">Has a warning letter been sent?</th>
       <td class="govuk-table__cell govuk-table__cell--numeric" >Yes</td>
     </tr>
     <tr class="govuk-table__row">
@@ -570,7 +591,7 @@ Change <span class="govuk-visually-hidden">blank</span>
 <dl class="app-check-your-answers app-check-your-answers--long">
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      Provide a statement of case
+      Statement of case
     </dt>
     <dd class="app-check-your-answers__answer">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -593,7 +614,7 @@ Change <span class="govuk-visually-hidden">blank</span>
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      Is the chance of a successful outcome 50% or better
+      Chance of a successful outcome 50% or better
     </dt>
     <dd class="app-check-your-answers__answer">
       No{{ data['...'] }}
@@ -607,7 +628,7 @@ Change <span class="govuk-visually-hidden">blank</span>
 
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    What is the chance of a successful outcome?
+    Chance of a successful outcome
   </dt>
   <dd class="app-check-your-answers__answer">
     Borderline{{ data['...'] }}
