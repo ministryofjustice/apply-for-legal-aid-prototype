@@ -29,7 +29,7 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "search"
+      href: "postcode_select"
   }) }}
 {% endblock %}
 
@@ -50,79 +50,19 @@ $('#search').hideseek({
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-        <!--  What you're covered for
-        What you're covered for using delegated functions -->
-      What you're applying for
-
-        </h1>
+        <h1 class="govuk-heading-xl"> What does your client want legal aid for?  <!--What have you used delegated functions for? --></h1>
       </div>
     </div>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-    <table class="govuk-table">
-        <h2 class="govuk-heading-m">Proceeding</h2>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row"><h3 class="govuk-body proceeding-item">Non-molestation order</h3>
-            <li class="govuk-caption-m proceeding__list-item">Family law</li>
-            <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li>
-            </th>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search_notify">
-                  Change<span class="govuk-visually-hidden">blank</span>
-                </a></td>
-            </tr>
-          </tbody>
-        </table>
-
-      <!--  <div class="govuk-inset-text">
-  You're covered for the following work because you've used delegated functions:
-      </div> -->
-
-
-        <h2 class="govuk-heading-m">If you've used delegated functions</h2>
-        <p class="govuk-body">
-         <strong>Certificate:</strong> Emergency<br><br>
-          <strong>Form of service:</strong> Full representation<br><br>
-          <strong>Costs you can incur:</strong> £1,350<br><br>
-          <strong>Work you can do:</strong> All steps up to and including the hearing on 21 July 2019.
-        <!--  Hearing
-          <p>Limited to all steps up to and including the hearing.
-          </p> -->
-        </p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <!--  <div class="govuk-inset-text">
-You'll be covered for the following work once you've completed a full (or 'substantive') application:
-</div> -->
-
-        <div class="govuk-!-padding-bottom-2"></div>
-        <h2 class="govuk-heading-m">Once you've been issued a substantive certificate</h2>
-        <p class="govuk-body">
-
-         <strong>Certificate:</strong> Substantive<br><br>
-          <strong>Form of service:</strong> Full representation<br><br>
-          <strong>Costs you can incur:</strong> £5,000<br><br>
-          <strong>Work you can do:</strong>
-          All steps up to and including getting and serving a final order. If the order is breached you can apply for power of arrest. You cannot apply for a warrant of arrest or contempt of court proceedings.</p>
-
-
-      </div>
-      </div>
-
-      <div class="govuk-!-padding-bottom-4"></div>
-
-  <!--  <div id="search-field" class="govuk-form-group">
+    <div id="search-field" class="govuk-form-group">
 
       <label class="govuk-heading-m" for="search">
         Search for legal proceedings
-          <span class="govuk-hint">
-            For example by category of law, matter type or legal proceeding
-          </span>
       </label>
+      <span class="govuk-hint">
+        <!-- For example by category of law, matter type or legal proceeding. -->
+        For example, ‘non-molestation order’. Or search by category of law or matter type.
+      </span>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -134,7 +74,7 @@ You'll be covered for the following work once you've completed a full (or 'subst
       </div>
 
       <div class="govuk-grid-row">
-        <div id="proceedings-list" class="govuk-grid-column-full">
+        <div id="proceedings-list" class="govuk-grid-column-full ">
 
         {% for proceeding in proceedings -%}
         <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
@@ -149,7 +89,7 @@ You'll be covered for the following work once you've completed a full (or 'subst
             </div>
 
             <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
-                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="#">
+                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="what_youre_covered_for">
                     Select
                 </a>
             </div>
@@ -159,10 +99,12 @@ You'll be covered for the following work once you've completed a full (or 'subst
 
     </div>
 </div>
-</div> -->
+</div>
 
 
-<a class="govuk-button" href="check_answers" role="button">
+
+
+<a class="govuk-button" href="delegated_functions" role="button">
   Save and continue
 </a>
 

@@ -7,18 +7,6 @@
   Apply for legal aid - Proceedings
 {% endblock %}
 
-{% block pageScripts %}
-<script src="/public/javascripts/jquery.hideseek.min.js"></script>
-<script>
-$('#search').hideseek({
-    highlight: true,
-    min_chars: 3,
-    nodata: "No results found.",
-    hidden_mode: true
-});
-</script>
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -34,19 +22,6 @@ $('#search').hideseek({
 {% endblock %}
 
 {% block content %}
-
-<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#name">Search and select a proceeding</a>
-      </li>
-    </ul>
-  </div>
-</div> -->
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -82,9 +57,9 @@ $('#search').hideseek({
       </div> -->
 
 
-        <h2 class="govuk-heading-m">If you've used delegated functions</h2>
+        <h2 class="govuk-heading-m">If you've started work using delegated functions</h2>
         <p class="govuk-body">
-         <strong>Certificate:</strong> Emergency<br><br>
+        <!-- <strong>Certificate:</strong> Emergency<br><br> -->
           <strong>Form of service:</strong> Full representation<br><br>
           <strong>Costs you can incur:</strong> £1,350<br><br>
           <strong>Work you can do:</strong> All steps up to and including the hearing on 21 July 2019.
@@ -101,65 +76,22 @@ You'll be covered for the following work once you've completed a full (or 'subst
 
         <div class="govuk-!-padding-bottom-2"></div>
         <h2 class="govuk-heading-m">Once you've been issued a substantive certificate</h2>
+        <span class="govuk-hint">
+          You'll need to complete a full application before this applies.
+        </span>
         <p class="govuk-body">
-
-         <strong>Certificate:</strong> Substantive<br><br>
+      <!--  <strong>Certificate:</strong> Substantive<br><br> -->
           <strong>Form of service:</strong> Full representation<br><br>
           <strong>Costs you can incur:</strong> £5,000<br><br>
           <strong>Work you can do:</strong>
           All steps up to and including getting and serving a final order. If the order is breached you can apply for power of arrest. You cannot apply for a warrant of arrest or contempt of court proceedings.</p>
 
 
+
       </div>
       </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
-
-  <!--  <div id="search-field" class="govuk-form-group">
-
-      <label class="govuk-heading-m" for="search">
-        Search for legal proceedings
-          <span class="govuk-hint">
-            For example by category of law, matter type or legal proceeding
-          </span>
-      </label>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <input class="govuk-input" id="search" name="search" type="text" data-list="#proceedings-list">
-        </div>
-        <div class="govuk-grid-column-one-third clear-search">
-          <p><a class="govuk-link" href="search">Clear search</a></p>
-        </div>
-      </div>
-
-      <div class="govuk-grid-row">
-        <div id="proceedings-list" class="govuk-grid-column-full">
-
-        {% for proceeding in proceedings -%}
-        <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
-            <div class="govuk-grid-column-two-thirds">
-
-                <ul class="proceeding-list">
-                  <h3 class="govuk-body proceeding-item">{{proceeding.proceedingtype | capitalize}}</h3>
-                  <li class="govuk-caption-m proceeding__list-item">{{proceeding.categoryoflaw| capitalize}}</li>
-                  <li class="govuk-caption-m proceeding__list-item"> > {{proceeding.mattertype | capitalize}}</li>
-                </ul>
-            </div>
-
-            <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
-                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="#">
-                    Select
-                </a>
-            </div>
-
-        </div>
-        {%- endfor %}
-
-    </div>
-</div>
-</div> -->
 
 
 <a class="govuk-button" href="check_answers" role="button">
@@ -169,6 +101,7 @@ You'll be covered for the following work once you've completed a full (or 'subst
 <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
   Save and come back later
 </a>
+
 
 {% endblock %}
 
