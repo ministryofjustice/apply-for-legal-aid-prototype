@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Homepage
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <div class="govuk-!-padding-top-4"></div>
+        <h1 class="govuk-fieldset__heading">
+          Search legal aid applications
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <div class="govuk-!-padding-top-4"></div>
+        <label class="govuk-label" for="search">
+          Search by applicant name or application reference number
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="search" name="search" type="text">
+      </div>
+
+    </fieldset>
+
+  </div>
+</div>
+<a href="search_results" class="govuk-button govuk-button__start ">
+  Search applications
+</a>
+
+<div class="govuk-!-padding-top-6"></div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m">Search results</h3>
+
+  </div>
+</div>
+
+<div class=""></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">Date</th>
+      <th class="govuk-table__header" scope="col">Case reference</th>
+      <th class="govuk-table__header" scope="col">Status</th>
+      <th class="govuk-table__header" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">David Francis</td>
+      <td class="govuk-table__cell">19 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Application submitted</td>
+      <td class="govuk-table__cell"><a href="read_only">View application</a></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
