@@ -1,6 +1,7 @@
 <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/node_modules/govuk-frontend/all.js"></script>
+<script src="/node_modules/hmcts-frontend/all.js"></script>
 <script src="/public/javascripts/application.js"></script>
 
 {% if useAutoStoreData %}
@@ -30,7 +31,7 @@ $( document ).ready(function() {
         $("#none-of-above:checked").click();
       }
     });
-	
+
 	if ($(".selectClearAll").length) {
 		function resetSelectClear(table) {
 			if ((table.find("input:checked")).length>0) {
@@ -38,7 +39,7 @@ $( document ).ready(function() {
 			} else {
 				table.find(".clearAll").removeClass("clearAll").addClass("selectAll").text("Select All");
 			}
-				
+
 		}
 
 		$(".selectClearAll").click(function(){
@@ -54,18 +55,18 @@ $( document ).ready(function() {
 		$("table input").click(function(){
 			var table = $(this).parents("table");
 			resetSelectClear(table)
-		});		
+		});
 
 		$(".selectClearAll").ready(function(){
 			var table = $(this).parents("table");
 			resetSelectClear(table)
 		});
-		
+
 	}
 
 });
 	$( document ).ready(function() {
-  
+
     //remove (both methods)
     $("[href=client_details#firstname]:not(.removeA>a)").click(function(){
       $(this).parents("tr").css("height",$(this).parents("tr").height());
@@ -93,17 +94,17 @@ $( document ).ready(function() {
       }
       return false;
     });
- 
-  
-  
-  
+
+
+
+
 		if ($(".sortableTable")) {
 			function dateorder(x) {
 				var xarray = x.split(/[\/\-\s]+/i);
-				var dayNumber; 
+				var dayNumber;
 				var monthNumber;
 				var yearNumber;
-				
+
 				if (Number(xarray[2])<100 && Number(xarray[0])>100) {
 					dayNumber = xarray[2];
 					yearNumber = xarray[0];
@@ -111,7 +112,7 @@ $( document ).ready(function() {
 					dayNumber = xarray[0];
 					yearNumber = xarray[2];
 				}
-				
+
 				if (isNaN(xarray[1])){
 					monthNumber = ({
 						"JAN"  : 01,
@@ -130,17 +131,17 @@ $( document ).ready(function() {
 				} else {
 					monthNumber = xarray[1];
 				}
-				
+
 				if (isNaN(dayNumber) ) dayNumber = 0;
 				if (isNaN(monthNumber) ) monthNumber = 0;
 				if (isNaN(yearNumber) ) yearNumber = 0;
 
 				var order = yearNumber*10000 + monthNumber*100 + parseInt(dayNumber);
-				
+
 				return order;
-				
+
 			}
-      
+
       //JS for AP-404
       $(".tickboxTable.sortableTable th").attr("aria-hidden","false"); //this removes aria-hidden = true for sortable tables, so a screen reader can detect them and the user can therefore sort them
 /*      $(".tickboxTable label").each(function(){
@@ -152,8 +153,8 @@ $( document ).ready(function() {
         $(this).text(screenReaderContent);
       });*/
       //End of JS for AP-404
-      
-      
+
+
 			//var table = $('table.sorting');
 			var table;
       $('th.dateSort, th.textSort, th.numberSort')
@@ -164,21 +165,21 @@ $( document ).ready(function() {
 							var th = $(this),
 									thIndex = th.index(),
 									inverse = false;
-							
+
 							th.attr("tabindex","0");
-							
+
 							th.on("keypress click",function(){
-								
+
 								table = th.parents("table");
-								
+
 								th.parent().children().removeClass("headerSortUp headerSortDown")
-								
+
 								if (inverse) {
 									th.addClass("headerSortUp")
 								} else {
 									th.addClass("headerSortDown")
 								}
-								
+
 								table.find('td').filter(function(){
 
 											return $(this).index() === thIndex;
@@ -189,19 +190,19 @@ $( document ).ready(function() {
 													return 0;
 
 											if(th.hasClass( "numberSort" )) {
-								
+
 								return Number($.text([a]).replace(/[^0-9.-]+/g,"")) > Number($.text([b]).replace(/[^0-9.-]+/g,"")) ?
 									inverse ? -1 : 1
 									: inverse ? 1 : -1;
-								
+
 							} else if(th.hasClass( "dateSort" )){
-								
+
 								return dateorder($.text([a])) > dateorder($.text([b])) ?
 									inverse ? -1 : 1
 									: inverse ? 1 : -1;
-								
+
 							} else {
-								
+
 								return $.text([a]) > $.text([b]) ?
 									inverse ? -1 : 1
 									: inverse ? 1 : -1;
@@ -210,29 +211,29 @@ $( document ).ready(function() {
 									}, function(){
 
 											// parentNode is the element we want to move
-											return this.parentNode; 
+											return this.parentNode;
 
 									});
 
 									inverse = !inverse;
-						
+
 							});
 
 					});
-				
+
 			jQuery.fn.sortElements = (function(){
-					
+
 					var sort = [].sort;
-					
+
 					return function(comparator, getSortable) {
-							
+
 							getSortable = getSortable || function(){return this;};
-							
+
 							var placements = this.map(function(){
-									
+
 									var sortElement = getSortable.call(this),
 											parentNode = sortElement.parentNode,
-											
+
 											// Since the element itself will change position, we have
 											// to have some way of storing it's original position in
 											// the DOM. The easiest way is to have a 'flag' node:
@@ -240,30 +241,30 @@ $( document ).ready(function() {
 													document.createTextNode(''),
 													sortElement.nextSibling
 											);
-									
+
 									return function() {
-											
+
 											if (parentNode === this) {
 													throw new Error(
 															"You can't sort elements if any one is a descendant of another."
 													);
 											}
-											
+
 											// Insert before flag:
 											parentNode.insertBefore(this, nextSibling);
 											// Remove flag:
 											parentNode.removeChild(nextSibling);
-											
+
 									};
-									
+
 							});
-						 
+
 							return sort.call(this, comparator).each(function(i){
 									placements[i].call(getSortable.call(this));
 							});
-							
+
 					};
-					
+
 			})();
 		}
 	});
