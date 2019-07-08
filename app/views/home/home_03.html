@@ -57,7 +57,7 @@ Apply for legal aid - Homepage
 
     <div class="hmcts-filter__header-action">
 
-    <button class="hmcts-filter__close" type="button">Close</button></div>
+</div>
 
   </div>
 
@@ -294,7 +294,7 @@ Apply for legal aid - Homepage
 
   <div class="hmcts-action-bar">
 
-    <div class="hmcts-action-bar__filter"><button class="govuk-button hmcts-button--secondary" type="button" aria-haspopup="true" aria-expanded="false">Show filter</button></div>
+    <div class="hmcts-action-bar__filter"></div>
 
 
 
@@ -869,31 +869,6 @@ Apply for legal aid - Homepage
 
   </div>
 
-  <script src="/node_modules/hmcts-frontend/vendor/jquery.js"></script>
-  <script src="/node_modules/hmcts-frontend/all.js"></script>
-  <script src="/node_modules/govuk-frontend/all.js"></script>
-  <script>window.GOVUKFrontend.initAll()</script>
-
-  <script>
-  new HMCTSFrontend.FilterToggleButton({
-    bigModeMediaQuery: '(min-width: 48.063em)',
-    startHidden: true,
-    toggleButton: {
-      container: $('.hmcts-action-bar__filter'),
-      showText: 'Show filter',
-      hideText: 'Hide filter',
-      classes: 'hmcts-button--secondary'
-    },
-    closeButton: {
-      container: $('.hmcts-filter__header-action'),
-      text: 'Close'
-    },
-    filter: {
-      container: $('.hmcts-filter')
-    }
-  });
-</script>
-
 
 
 </div>
@@ -931,4 +906,26 @@ Apply for legal aid - Homepage
     ]
   }
 }) }}
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  new HMCTSFrontend.FilterToggleButton({
+    bigModeMediaQuery: '(min-width: 48.063em)',
+    startHidden: true,
+    toggleButton: {
+      container: $('.hmcts-action-bar__filter'),
+      showText: 'Show filter',
+      hideText: 'Hide filter',
+      classes: 'hmcts-button--secondary'
+    },
+    closeButton: {
+      container: $('.hmcts-filter__header-action'),
+      text: 'Close'
+    },
+    filter: {
+      container: $('.hmcts-filter')
+    }
+  });
+</script>
 {% endblock %}
