@@ -18,7 +18,7 @@ Apply for legal aid - Homepage
 
 {% block content %}
 <style media="screen">
-.govuk-checkboxes--small .govuk-checkboxes__label::before{
+/*.govuk-checkboxes--small .govuk-checkboxes__label::before{
   top: 9px;
   left: 9px;
   width: 24px;
@@ -26,20 +26,48 @@ Apply for legal aid - Homepage
 }
 .govuk-checkboxes--small .govuk-checkboxes__label{
   padding-left: 24px;
+}*/
+
+.hmcts-action-bar__filter:after {
+  display: none;
 }
 
 </style>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-!-padding-top-4"></div>
+
+    <h1 class="govuk-heading-xl">Legal aid applications</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Make an application</h2>
+    <p class="govuk-body">Tell us the basic case details and check if your client receives benefits that qualify for legal aid.</p>
+
+    <a href="delegated_functions" class="govuk-button govuk-button__start ">
+      Start application
+    </a>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Find an application</h2>
+    <!-- <p class="govuk-body">Search existing legal aid applications.</p> -->
+
+    <a href="search" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c">
+      Search applications
+    </a>
+
+  </div>
+</div>
+
+<div class="govuk-!-padding-top-8"></div>
+
 <div class="app-example-page">
-
-
-
-
-
-
-
-
-
 
 <div class="hmcts-filter-layout">
 
@@ -84,9 +112,7 @@ Apply for legal aid - Homepage
 
           <ul class="hmcts-filter-tags">
 
-              <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Divorce</a></li>
-
-              <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Financial remedy</a></li>
+              <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Family law</a></li>
 
           </ul>
 
@@ -94,7 +120,7 @@ Apply for legal aid - Homepage
 
           <ul class="hmcts-filter-tags">
 
-              <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Application drafted</a></li>
+              <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Notified of delegation</a></li>
 
           </ul>
 
@@ -105,18 +131,9 @@ Apply for legal aid - Homepage
     <div class="hmcts-filter__options">
 
 
-
-
-
-
 <button type="submit" class="govuk-button">
   Apply filters
 </button>
-
-
-
-
-
 
 <div class="govuk-form-group">
   <label class="govuk-label govuk-label--m" for="keywords">
@@ -126,17 +143,6 @@ Apply for legal aid - Homepage
 
   <input class="govuk-input" id="keywords" name="keywords" type="text">
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="govuk-form-group">
@@ -152,47 +158,10 @@ Apply for legal aid - Homepage
 
   <div class="govuk-checkboxes govuk-checkboxes--small">
 
-
-
-
-
-
-
-
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="1" checked="">
       <label class="govuk-label govuk-checkboxes__label" for="type-1">
-        Divorce (18)
-      </label>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked="">
-      <label class="govuk-label govuk-checkboxes__label" for="type-2">
-        Financial Remedy (5)
-      </label>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-      <label class="govuk-label govuk-checkboxes__label" for="type-3">
-        Probate (2)
+        Family law (18)
       </label>
     </div>
 
@@ -202,17 +171,6 @@ Apply for legal aid - Homepage
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="govuk-form-group">
@@ -228,47 +186,31 @@ Apply for legal aid - Homepage
 
   <div class="govuk-checkboxes govuk-checkboxes--small">
 
-
-
-
-
-
-
-
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="status-1" name="status" type="checkbox" value="1" checked="">
       <label class="govuk-label govuk-checkboxes__label" for="status-1">
-        Application drafted
+        Notified of delegation
       </label>
     </div>
-
-
-
-
-
-
-
-
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
       <label class="govuk-label govuk-checkboxes__label" for="status-2">
-        Awaiting payment
+        Means incomplete
       </label>
     </div>
 
-
-
-
-
-
-
-
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="2">
+      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+        Merits incomplete
+      </label>
+    </div>
 
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="magistrate">
-      <label class="govuk-label govuk-checkboxes__label" for="status-3">
-        Petition paid
+      <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="magistrate">
+      <label class="govuk-label govuk-checkboxes__label" for="status-4">
+        Submitted
       </label>
     </div>
 
@@ -289,15 +231,10 @@ Apply for legal aid - Homepage
 </div>
 
   </div>
-
+<h3 class="govuk-heading-m">Current applications</h3>
   <div class="hmcts-filter-layout__content">
-
   <div class="hmcts-action-bar">
-
     <div class="hmcts-action-bar__filter"></div>
-
-
-
 <div class="hmcts-menu">
   <div class="hmcts-menu__wrapper">
 
@@ -306,7 +243,7 @@ Apply for legal aid - Homepage
 
 
 
-<button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary ">
+<!-- <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary ">
   Reassign
 </button>
 
@@ -318,7 +255,7 @@ Apply for legal aid - Homepage
 
 <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary ">
   Archive
-</button>
+</button> -->
 
 
   </div>
@@ -335,20 +272,19 @@ Apply for legal aid - Homepage
       <table class="govuk-table">
 
 
+
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th class="govuk-table__header" scope="col">Case number</th>
+      <th class="govuk-table__header" scope="col">Name</th>
 
-      <th class="govuk-table__header" scope="col">Parties</th>
+      <th class="govuk-table__header" scope="col">Date</th>
 
-      <th class="govuk-table__header" scope="col">Type</th>
+      <th class="govuk-table__header" scope="col">Reference</th>
 
-      <th class="govuk-table__header" scope="col">Decision needed on</th>
+      <th class="govuk-table__header" scope="col">Status</th>
 
-      <th class="govuk-table__header" scope="col">Case received</th>
-
-      <th class="govuk-table__header" scope="col">Date of last event</th>
+      <th class="govuk-table__header" scope="col">Action</th>
 
     </tr>
   </thead>
@@ -356,507 +292,46 @@ Apply for legal aid - Homepage
   <tbody class="govuk-table__body">
 
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">John Smith v Jane Smith</td>
-
-
-
-      <td class="govuk-table__cell">Financial remedy</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Draft consent order</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
+      <td class="govuk-table__cell">David Francis</td>
+      <td class="govuk-table__cell">19 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Application submitted</td>
+      <td class="govuk-table__cell"><a href="read_only">View application</a></td>
     </tr>
-
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">Warren Sutton v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
+      <td class="govuk-table__cell">Gwen McCrae</td>
+      <td class="govuk-table__cell">19 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot" style="background-color:#f47738;"></span> Notified of delegation</td>
+      <td class="govuk-table__cell"><a href="#">Complete application</a></td>
     </tr>
-
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
-
-
-
-      <td class="govuk-table__cell">Alan Jones v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
+      <td class="govuk-table__cell">Patrice Sokda</td>
+      <td class="govuk-table__cell">19 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot"></span> In progress</td>
+      <td class="govuk-table__cell"><a href="#">Return to application</a></td>
     </tr>
-
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
-
-
-
-      <td class="govuk-table__cell">Jennifer Langley v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
+      <td class="govuk-table__cell">Rita Patel</td>
+      <td class="govuk-table__cell">18 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot"></span> Client details complete</td>
+      <td class="govuk-table__cell"><a href='#'>Return to application</a></td>
     </tr>
-
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00150</a></th>
-
-
-
-      <td class="govuk-table__cell">Susan Francis v David Francis</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
+      <td class="govuk-table__cell">Steve Smith</td>
+      <td class="govuk-table__cell">17 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot"></span> Means test complete</td>
+      <td class="govuk-table__cell"><a href="#">Return to application</a></td>
     </tr>
-
     <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00153</a></th>
-
-
-
-      <td class="govuk-table__cell">John Smith v Jane Smith</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00156</a></th>
-
-
-
-      <td class="govuk-table__cell">Margaret Blake v William Blake</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">John Smith v Jane Smith</td>
-
-
-
-      <td class="govuk-table__cell">Financial remedy</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Draft consent order</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">Warren Sutton v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
-
-
-
-      <td class="govuk-table__cell">Alan Jones v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
-
-
-
-      <td class="govuk-table__cell">Jennifer Langley v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00150</a></th>
-
-
-
-      <td class="govuk-table__cell">Susan Francis v David Francis</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00153</a></th>
-
-
-
-      <td class="govuk-table__cell">John Smith v Jane Smith</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">BV18D00156</a></th>
-
-
-
-      <td class="govuk-table__cell">Margaret Blake v William Blake</td>
-
-
-
-      <td class="govuk-table__cell">Divorce</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Decree nisi application</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">FR1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">John Smith v Jane Smith</td>
-
-
-
-      <td class="govuk-table__cell">Financial remedy</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Draft consent order</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612322</a></th>
-
-
-
-      <td class="govuk-table__cell">Warren Sutton v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">20 Nov 2017</td>
-
-
-
-      <td class="govuk-table__cell">25 Jan 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612323</a></th>
-
-
-
-      <td class="govuk-table__cell">Alan Jones v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-
-      <th class="govuk-table__header" scope="row"><a href="#">SC1231612324</a></th>
-
-
-
-      <td class="govuk-table__cell">Jennifer Langley v DWP</td>
-
-
-
-      <td class="govuk-table__cell">PIP</td>
-
-
-
-      <td class="govuk-table__cell"><a href="#">Appellant’s answers</a></td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
-
-      <td class="govuk-table__cell">9 May 2018</td>
-
-
+      <td class="govuk-table__cell">Patty LaBelle</td>
+      <td class="govuk-table__cell">17 Mar 2019</td>
+      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
+      <td class="govuk-table__cell"><span class="dot"></span> Merits test complete</td>
+      <td class="govuk-table__cell"><a href="#">Return to application</a></td>
     </tr>
 
   </tbody>
