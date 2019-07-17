@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Alternative funding
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "injunction"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="office" method="post" class="form">
+
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+      Confirm the Hitchcock, Jones and King office responsible for this application<!-- About the respondent -->
+      </h1>
+    </legend>
+<div class="govuk-!-padding-bottom-6"></div>
+
+
+  <!--  <strong>Office:</strong> City of London<br>
+    <strong>Legal Aid Agency account number:</strong> 2J234B</p>
+<div class="govuk-!-padding-bottom-2"></div> -->
+
+
+
+  <!--  <h2 class="govuk-heading-m">Is this correct?</h2> -->
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("online-banking","yes") }}>
+            <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+              City of London (account number: 2J234B)
+            </label></div>
+
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+      <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+        A different office
+      </label> </div>
+                    </div>
+                    </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
