@@ -21,6 +21,69 @@ Apply for legal aid - Homepage
 {% endblock %}
 
 {% block content %}
+
+<style media="screen">
+table .govuk-tag {
+  white-space: nowrap;
+  color: white;
+  background-color: #85994b;
+  border: 2px solid #85994b;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: none;
+}
+.inprogress{
+  background-color: #005ea5 !important;
+  border-color: #005ea5 !important;
+}
+.granted{
+  background-color: #0b0c0c !important;
+  border-color: #0b0c0c !important;
+}
+
+.col_bespoke{
+  width:auto;
+}
+.govuk-table__header{
+  color: #0b0c0c;
+  background-color: #dee0e2;
+  border: 1px solid #bfc1c3;
+  box-shadow: 0 2px 0 #b5babe;
+  padding-left: 10px;
+  text-align: left;
+}
+.th_bespoke{
+  padding-right: 15px;
+  position: relative;
+}
+.th_bespoke::before{
+  /*down*/
+  content:" \25bc";
+  position: absolute;
+  right: -1px;
+  top: 11px;
+  font-size: 0.6em;
+}
+.th_bespoke::after{
+  /*up*/
+  content:" \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.6em;
+}
+.th_bespoke_hover:hover{
+  background-color: #c8cacb;
+  cursor:pointer;
+}
+.govuk-table__head{
+  position: relative;
+}
+.govuk-table__cell{
+  padding-left: 10px;
+}
+</style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -35,7 +98,7 @@ Apply for legal aid - Homepage
       <div class="govuk-form-group">
         <div class="govuk-!-padding-top-4"></div>
         <label class="govuk-label" for="search">
-          Search by applicant name or application reference number
+Search by applicant surname or LAA reference number
         </label>
         <input class="govuk-input govuk-!-width-two-thirds" id="search" name="search" type="text">
       </div>
@@ -63,20 +126,25 @@ Apply for legal aid - Homepage
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="col">Name</th>
-      <th class="govuk-table__header" scope="col">Date</th>
-      <th class="govuk-table__header" scope="col">Case reference</th>
-      <th class="govuk-table__header" scope="col">Status</th>
-      <th class="govuk-table__header" scope="col"></th>
+      <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><span class="th_bespoke">Name</span>
+      </th>
+      <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Start date <img src="/public/images/filter_icon.svg" style=""></th>
+      <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">LAA Ref</span></th>
+      <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Certificate type</span></th>
+      <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold"  scope="col" style="padding-right:10px !important; text-align:right !important"><span>Status</span></th>
     </tr>
   </thead>
+
   <tbody class="govuk-table__body">
+
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">David Francis</td>
+      <td class="govuk-table__cell"><a href="">David Francis</a></td>
       <td class="govuk-table__cell">19 Mar 2019</td>
-      <td class="govuk-table__cell">2018/LAA/4ewrgfdd</td>
-      <td class="govuk-table__cell"><span class="dot" style="background-color:#005ea5;"></span> Application submitted</td>
-      <td class="govuk-table__cell"><a href="read_only">View application</a></td>
+      <td class="govuk-table__cell">L-123-ABC</td>
+      <td class="govuk-table__cell">Substantive</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag inprogress">
+        In progress
+      </strong></td>
     </tr>
   </tbody>
 </table>
