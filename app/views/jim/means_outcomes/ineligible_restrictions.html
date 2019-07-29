@@ -1,0 +1,295 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "check_answers"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">We need to check if John Doe is eligible for legal aid</h1>
+    </header>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
+
+          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
+            <p style="color: #fff;">
+            Your told us there are legal restrictions preventing your client from selling or borrowing against their assets.</p>
+
+            <p style="color: #fff;">
+Your client's total capital exceeds the legal aid threshold, but they may still be eligible depending on the restrictions on their assets.</p>
+
+<p style="color: #fff;">
+We'll check the details you provided and let you know if your client is eligible.</p>
+
+          <!--  <ul class="govuk-list govuk-list--bullet">
+            <li style="color: #fff;">bank accounts</li>
+            <li style="color: #fff;">savings, investments and other capital</li>
+            </ul> -->
+          </li>
+
+        </ul>
+
+        <div class="govuk-!-padding-bottom-4"></div>
+
+        <a href="continue_with_application" role="button" class="govuk-button white-button right">
+          Continue</a>
+      <!--  <a href=#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Breakdown of your client's capital
+        </span>
+      </summary>
+      <br>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Property</h2>
+        </div>
+      </div>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Property owned</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+          </tr>
+        <!--  <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Estimated value</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£145,000.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Outstanding mortgage amount</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£127,345.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Owned with anyone else</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes, a friend, family member or other person</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Percentage owned</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">40%</td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <div class="govuk-!-padding-bottom-2"></div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Vehicles</h2>
+        </div>
+      </div>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Vehicle owned</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+          </tr>
+        <!--  <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Estimated value</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Outstanding payments</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Date of purchase</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">19 April 2008</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">In regular use</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+          </tr> -->
+        </table>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Savings and investments</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!-- <p><a class="govuk-link" style="float:right;" href="#">Change</a></p> -->
+          </div>
+        </div>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Money in accounts your client does not access online</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Money your client does not keep in a bank account</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Access to another person's bank account</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">National Savings Certificates and Premium Bonds</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Shares in a PLC (public limited company)</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">PEPs, unit trusts, capital bonds and government stocks</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Life assurance and endowment policies not linked to a mortgage</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Other assets</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!-- <p><a class="govuk-link" style="float:right;" href="other_capital_select">Change</a></p> -->
+          </div>
+        </div>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Valuable items worth more than £500</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home estimated value</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home outstanding mortgage amount</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home percentage owned</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Timeshare</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Land</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Money or assets from the estate of a person who has died</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Money owed to your client</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Interest in a trust</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Restrictions</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!-- <p><a class="govuk-link" style="float:right;" href="capital_restrictions_select">Change</a></p> -->
+          </div>
+        </div>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Restrictions on your client's assets</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+              asdgasdg
+            </tr>
+          </tbody>
+        </table>
+    </details>
+
+  <button type="submit" class="govuk-button">
+    Continue
+  </button>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
