@@ -34,7 +34,7 @@ Apply for legal aid - Other capital
 
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client -->
-                Which types of savings or investments does your client have?
+                Which accounts, savings or investments does your client have?
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
@@ -78,27 +78,60 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Money in bank, building society, Post Office and ISA accounts
+                    Current account
                   </label>
-                <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       Include bank, building society, Post Office and ISA accounts.
                   </span> -->
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="property-value">
-                      <!--  Enter the total amount -->
-                      <p>Enter the total 'residual balance' in all accounts (the balance just before your client's last income or benefits payment)</p>
-                      <!--  <ul class="govuk-list govuk-list--bullet">
-                        <li>the total amount in all accounts just before their last income or benefits payment</li>
-                        </ul> -->
+                      <p>Enter either:</p>
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>the balance just before your client's last salary or benefits payment</li>
+                          <li>the lowest balance in the previous month (if they have no income)</li>
+                          </ul>
+
+                    <!--  <p>Enter the balance just before your client's last income payment
+                        <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 0px">
+                            Add balances if your client has more than one current account</span>
+                          </p> -->
+
+                    <!--   <ul class="govuk-list govuk-list--bullet">
+                        <li>the total amount in all accounts just before your client's last salary or benefits payment</li>
+                        </ul>  -->
                       </label>
-
-
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
                     <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="property-value" name="property-value" type="text">
                   </div>
                 </div>
+
+
+                <div class="govuk-checkboxes" data-module="checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="second-property2" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("second-property2","yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
+                      Savings account
+                    </label>
+                <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                        Include ISA accounts
+                    </span> -->
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="property-value">
+                        <!--  Enter the total amount -->
+                        Enter the current balance
+                        <!--  <ul class="govuk-list govuk-list--bullet">
+                          <li>the total amount in all accounts just before their last income or benefits payment</li>
+                          </ul> -->
+                        </label>
+                      <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                      <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="property-value" name="property-value" type="text">
+                    </div>
+                  </div>
+
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
@@ -106,7 +139,7 @@ Apply for legal aid - Other capital
                     Money not in a bank account
                   </label>
                <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, cash kept at home.
+                      For example, cash kept at home
                   </span>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
@@ -123,15 +156,15 @@ Apply for legal aid - Other capital
 
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3a" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3a" {{ checked("antiques","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3a">
                     Access to another person's bank account
                   </label>
                <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, they're the signatory on a child's account.
+                      For example, a signatory on a child's account
                   </span>
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3a">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="antiques-value">
                       Enter the estimated total in all accounts
@@ -196,7 +229,7 @@ Apply for legal aid - Other capital
                     Life assurance and endowment policies not linked to a mortgage
                   </label>
                   <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Do not include policies that only pay out on death.
+                      Do not include policies that only pay out on death
                   </span>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-7">
