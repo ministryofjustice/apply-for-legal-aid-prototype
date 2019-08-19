@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid -
+Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,37 +16,52 @@ Apply for legal aid -
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
-      href: "check_answers_merits"
-  }) }}
+  text: "Back",
+  href: "check_answers"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Declaration</h1>
 
-    <form action="application_submitted" method="post" novalidate>
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">You cannot apply using this service</h1>
+    </header>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
-    <p class="govuk-body">By submitting this application, you agree that:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>you've been instructed by John Doe <!-- ('your client') --> to represent them</li>
- <li>you've gone through the application with your client</li>
-<!-- <li>your client knows they may have to repay the legal costs if they keep or gain property or money at the end of their case (known as the 'statutory charge')</li>
-<li>you've explained the 'statutory charge' to your client</li> -->
-  <li>your client knows they may have to repay legal costs if they keep or gain property or money at the end of their case (the 'statutory charge')
-<li>the information you've provided is complete and correct</li>
-</ul>
+          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
+            <p style="color: #fff;">
+            We currently only accept applications for clients who receive 'passported' benefits.</p>
 
-<br>
-        <button type="submit" class="govuk-button">
-          Agree and submit
-        </button>
+         <p style="color: #fff;">You need to complete this application in CCMS.</p>
+          <!--  <ul class="govuk-list govuk-list--bullet">
+            <li style="color: #fff;">bank accounts</li>
+            <li style="color: #fff;">savings, investments and other capital</li>
+            </ul> -->
+          </li>
 
-    </form>
+        </ul>
+
+        <div class="govuk-!-padding-bottom-4"></div>
+
+        <a href="continue_with_application" role="button" class="govuk-button white-button right">
+          Go to CCMS</a>
+      <!--  <a href=#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
+        <p style="color: #fff;"><a href="home">Back to my applications</a></p>
+
+
+      </div>
+    </div>
   </div>
-</div>
+
 
 {% endblock %}
 

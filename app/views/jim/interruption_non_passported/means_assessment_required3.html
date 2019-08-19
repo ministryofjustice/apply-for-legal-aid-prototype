@@ -4,7 +4,7 @@
 {% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid
+Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,60 +15,57 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
+  {{ govukBackLink({
+  text: "Back",
+  href: "check_answers"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
 
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">You need to use CCMS for this application</h1>
+    </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-panel govuk-panel--confirmation">
-          <h2 class="govuk-panel__title">
-            Application complete
-          </h2>
-          <div class="govuk-panel__body">
-            Your case reference number is
-            <br><strong>L-23A-56D</strong>
-          </div>
-        </div>
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
-<div class="govuk-!-padding-top-4"></div>
-
-      <!--  <h3 class="govuk-heading-m">We've sent your client a secure link</h3>
-
-        <p class="govuk-body">Your client can use the link to start the financial assessment from home or another location.</p> -->
-
-        <p class="govuk-body">We've sent you a confirmation email.</p>
+          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
 
 
 
-        <h3 class="govuk-heading-m">What happens next</h3>
 
-          <p class="govuk-body">You need to:</p>
+         <p style="color: #fff;">We checked with the DWP and your client does not receive:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>print the completed application</li>
-            <li>get your client to sign it</li>
-            <li>keep it on file</li>
+            <li style="color: #fff;">Income Support</li>
+            <li style="color: #fff;">income-based Employment and Support Allowance (ESA)</li>
+            <li style="color: #fff;">income-based Jobseeker’s Allowance (JSA)</li>
+            <li style="color: #fff;">State Pension Guarantee Credit</li>
+            <li style="color: #fff;">Universal Credit</li>
+
             </ul>
+          </li>
+        </ul>
 
-        <p class="govuk-body">We'll check your application to see if your client is entitled to legal aid.</p>
-        <p class="govuk-body">We'll let you know our decision in CCMS.</p>
+<p style="color: #fff;">We currently only accept applications for people receiving one of these benefits.</p>
 
-<br>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-<a href="application_completed" role="button" class="govuk-button">
-View completed application
-</a>
+        <a href="continue_with_application" role="button" class="govuk-button white-button right">
+          Apply in CCMS</a>
+      <!--  <a href=#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
 
-<a href="dashboard_2" role="button" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; margin-left:10px">
-  Back to your applications
-</a>
+        <p style="color: #fff;"><a href="home">Back to my applications</a></p>
 
-    </div>
-  </div>
+      </div>
 
-</div>
+
 
 {% endblock %}
 
