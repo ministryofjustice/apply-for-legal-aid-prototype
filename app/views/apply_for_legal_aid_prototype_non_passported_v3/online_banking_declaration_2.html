@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid -
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "online_banking_radios"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">
+           About the online financial assessment
+         </h1>
+
+      <!--  <p class="govuk-body">We'll send your client a link to complete the assessment at home or another location.</p> -->
+
+       <p class="govuk-body">Your client will need to:</p>
+
+          <!--  <p class="govuk-body">They'll need to:</p> -->
+            <ul class="govuk-list govuk-list--bullet">
+            <li>sign in to online banking</li>
+            <!-- <li>give us temporary access to all of their bank accounts</li> -->
+            <li>authorise us to download 3 months of bank transactions from all of their <!-- bank --> accounts</li>
+            <li>answer questions about their income, regular costs and assets</li>
+          <!--  <li>share all bank accounts, including any in joint names or with no money</li> -->
+            </ul>
+
+            <h2 class="govuk-heading-m">How we use your client's details</h2>
+
+
+        <!-- <p class="govuk-body">We:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>download 3 months of bank transactions</li>
+                <Li>only use the information for the legal aid application</Li>
+              <li>automatically end the bank connection after one hour</li>
+                <li>do not save any sign in details</li>
+              </ul> -->
+
+            <p class="govuk-body"> <!-- We download 3 months of bank transactions and only use the information for the legal aid application. -->
+            We only use your client's transaction history for the legal aid application.</p>
+
+            <!--  <div class="govuk-inset-text">
+                 <p class="govuk-body">We do not save sign in details.</p>
+               </div> -->
+
+
+               <p class="govuk-body">We do not save any sign in details.</p>
+
+            <h2 class="govuk-heading-m">Give your client access to the financial assessment</h2>
+
+            <p class="govuk-body">Enter your client's email address and we'll send them a secure link to the assessment.</p>
+
+            <div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+               Email address
+             </label>
+             <span id="email-hint" class="govuk-hint">
+               <!-- We will use this to send your client information about the case.
+            If your client needs to complete a financial assessment we'll send an email to this address
+            We'll send your client a secure link if they need to complete a financial assessment
+            We'll use this to send your client instructions on how to complete a financial assessment if required
+            We'll send your client a secure link to an online financial assessment if they need to complete one
+            We'll use this to send your client a secure link if they need to complete a financial assessment
+            We'll send your client a link to our service if they need to answer questions about their financial situation. -->
+
+             </span>
+             <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
+            </div>
+
+
+        <!--    <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px;">
+                <dd class="app-check-your-answers__answer">
+                  johndoe@gmail.com
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="client_details">
+                    Change <span class="govuk-visually-hidden">proceeding</span>
+                  </a>
+                </dd>
+           </dl> -->
+
+            <a href="confirmation_page" role="button" class="govuk-button">
+              Send link
+            </a>
+
+            <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+
+        </div>
+      </div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
