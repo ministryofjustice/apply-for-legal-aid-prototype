@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "prospects_of_success"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which one best describes your Asian or Asian British background?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group" name="ethnic-group" type="radio" value="bangladeshi">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group">
+          Bangladeshi
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="chinese">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-2">
+          Chinese
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-3" name="ethnic-group" type="radio" value="indian">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-3">
+          Indian
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-4" name="ethnic-group" type="radio" value="pakistani">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-4">
+          Pakistani
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-5" name="ethnic-group" type="radio" value="another-asian-background" data-aria-controls="conditional-ethnic-group-5">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-5">
+          Another Asian background
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-5">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ethnicity-asian-other">
+            Your Asian background (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-asian-other" name="ethnicity-asian-other" type="text">
+        </div>
+
+      </div>
+      <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-7" name="ethnic-group" type="radio" value="prefer-not-to-say">
+        <label class="govuk-label govuk-radios__label govuk-label" for="ethnic-group-7">
+          Prefer not to say
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      <a class="govuk-button" href="declaration" role="button">
+        Continue
+      </a>
+
+    <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+         Save and come back later
+       </a> -->
+
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

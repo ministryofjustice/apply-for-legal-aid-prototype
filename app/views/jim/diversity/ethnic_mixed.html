@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "prospects_of_success"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which one best describes your Mixed or Multiple ethnic groups background?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group" name="ethnic-group" type="radio" value="asian-and-white">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group">
+          Asian and White
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="black-african-and-white">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-2">
+          Black African and White
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-3" name="ethnic-group" type="radio" value="black-caribbean-and-white">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-3">
+          Black Caribbean and White
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-4" name="ethnic-group" type="radio" value="another-mixed-background" data-aria-controls="conditional-ethnic-group-4">
+        <label class="govuk-label govuk-radios__label" for="ethnic-group-4">
+          Another Mixed background
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-4">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ethnicity-white-other">
+            Your Mixed background (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-white-other" name="ethnicity-white-other" type="text">
+        </div>
+
+      </div>
+      <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ethnic-group-6" name="ethnic-group" type="radio" value="prefer-not-to-say">
+        <label class="govuk-label govuk-radios__label govuk-label" for="ethnic-group-6">
+          Prefer not to say
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      <a class="govuk-button" href="declaration" role="button">
+        Continue
+      </a>
+
+    <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+         Save and come back later
+       </a> -->
+
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
