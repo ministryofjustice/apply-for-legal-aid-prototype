@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers - Merits
 
   {{ govukBackLink({
     text: "Back",
-      href: "prospects_of_success"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -30,7 +30,7 @@ Apply for legal aid - Check your answers - Merits
         Which one best describes your background?
       </h1>
     </legend>
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios govuk-radios" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="ethnic-group" name="ethnic-group" type="radio" value="arab">
         <label class="govuk-label govuk-radios__label" for="ethnic-group">
@@ -38,20 +38,20 @@ Apply for legal aid - Check your answers - Merits
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="another-ethnic-background" data-aria-controls="conditional-ethnic-group-2">
+        <input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="another-background" data-aria-controls="conditional-ethnic-group-2">
         <label class="govuk-label govuk-radios__label" for="ethnic-group-2">
           Another ethnic background
         </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-2">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="ethnicity-mixed-other">
-            Your ethnic background (optional)
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-mixed-other" name="ethnicity-mixed-other" type="text">
         </div>
-
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-2">
+          <div class="govuk-form-group">
+           <label class="govuk-label" for="ethnicity-other">
+            Your ethnic background (optional)
+           </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-other" name="ethnicity-other" type="text">
+        </div>
       </div>
+
       <div class="govuk-radios__divider">or</div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="ethnic-group-4" name="ethnic-group" type="radio" value="prefer-not-to-say">
@@ -63,7 +63,7 @@ Apply for legal aid - Check your answers - Merits
   </fieldset>
 </div>
 
-      <a class="govuk-button" href="declaration" role="button">
+      <a class="govuk-button" href="sex" role="button">
         Continue
       </a>
 

@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers - Merits
 
   {{ govukBackLink({
     text: "Back",
-      href: "prospects_of_success"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -30,7 +30,7 @@ Apply for legal aid - Check your answers - Merits
         Which one best describes your Mixed or Multiple ethnic groups background?
       </h1>
     </legend>
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios govuk-radios" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="ethnic-group" name="ethnic-group" type="radio" value="asian-and-white">
         <label class="govuk-label govuk-radios__label" for="ethnic-group">
@@ -54,16 +54,16 @@ Apply for legal aid - Check your answers - Merits
         <label class="govuk-label govuk-radios__label" for="ethnic-group-4">
           Another Mixed background
         </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-4">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="ethnicity-white-other">
-            Your Mixed background (optional)
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-white-other" name="ethnicity-white-other" type="text">
         </div>
-
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-4">
+          <div class="govuk-form-group">
+           <label class="govuk-label" for="ethnicity-mixed-other">
+            Your Mixed background (optional)
+           </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-mixed-other" name="ethnicity-mixed-other" type="text">
+        </div>
       </div>
+
       <div class="govuk-radios__divider">or</div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="ethnic-group-6" name="ethnic-group" type="radio" value="prefer-not-to-say">
@@ -75,7 +75,7 @@ Apply for legal aid - Check your answers - Merits
   </fieldset>
 </div>
 
-      <a class="govuk-button" href="declaration" role="button">
+      <a class="govuk-button" href="ethnic_white" role="button">
         Continue
       </a>
 
