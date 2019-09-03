@@ -24,37 +24,35 @@ Apply for legal aid - Check your answers - Merits
 {% block content %}
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+  <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Do you consider yourself to have a disability?
+        What year were you born?
       </h1>
     </legend>
+
+    <span id="passport-issued-hint" class="govuk-hint">
+     For example, 1975.
+   </span>
+   <div class="govuk-date-input" id="passport-issued">
+     <div class="govuk-date-input__item">
+       <div class="govuk-form-group">
+         <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+           Year
+         </label>
+         <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+       </div>
+     </div>
+     </div>
+
+<br>
+
+
     <div class="govuk-radios govuk-radios" data-module="radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="disability" name="disability" type="radio" value="another-black-background" data-aria-controls="conditional-disability">
-        <label class="govuk-label govuk-radios__label" for="disability">
-          Yes
-        </label>
-        </div>
-        <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disability">
-          <div class="govuk-form-group">
-           <label class="govuk-label" for="disability">
-            Describe your disability (optional)
-           </label>
-           <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
-        </div>
-      </div> -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="disability-1" name="disability" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="disability-2">
-          No
-        </label>
-      </div>
       <div class="govuk-radios__divider">or</div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="disability-2" name="disability" type="radio" value="prefer-not-to-say">
-        <label class="govuk-label govuk-radios__label govuk-label" for="disability-3">
+        <input class="govuk-radios__input" id="ethnic-group-7" name="ethnic-group" type="radio" value="prefer-not-to-say">
+        <label class="govuk-label govuk-radios__label govuk-label" for="ethnic-group-7">
           Prefer not to say
         </label>
       </div>
@@ -62,7 +60,7 @@ Apply for legal aid - Check your answers - Merits
   </fieldset>
 </div>
 
-      <a class="govuk-button" href="disability_yes" role="button">
+      <a class="govuk-button" href="ethnic_group" role="button">
         Continue
       </a>
 
