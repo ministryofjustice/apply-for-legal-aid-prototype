@@ -24,18 +24,26 @@ Apply for legal aid - Check your answers - Merits
 {% block content %}
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Are your day-to-day activities limited because of a health problem or disability?
+        Do you consider yourself to have a disability?
       </h1>
     </legend>
     <div class="govuk-radios govuk-radios" data-module="radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="disability" name="disability" type="radio" value="yes">
+        <input class="govuk-radios__input" id="disability" name="disability" type="radio" value="another-black-background" data-aria-controls="conditional-disability">
         <label class="govuk-label govuk-radios__label" for="disability">
           Yes
         </label>
+        </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disability">
+          <div class="govuk-form-group">
+           <label class="govuk-label" for="disability">
+            Describe your disability (optional)
+           </label>
+           <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+        </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="disability-1" name="disability" type="radio" value="no">
@@ -54,7 +62,7 @@ Apply for legal aid - Check your answers - Merits
   </fieldset>
 </div>
 
-      <a class="govuk-button" href="disability_yes" role="button">
+      <a class="govuk-button" href="sexuality" role="button">
         Continue
       </a>
 

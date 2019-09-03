@@ -27,9 +27,82 @@ Apply for legal aid - Check your answers - Merits
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Which one best describes your disability?
+        What does your disability cause difficulty with?
       </h1>
     </legend>
+      <!--  <span id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </span> -->
+          <div class="govuk-checkboxes" data-module="checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Vision (for example, due to blindness or partial sight)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+              Hearing (for example, due to deafness or partial hearing)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Mobility (for example, walking, climbing stairs or lifting things)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Learning or concentrating or remembering
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Mental health
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Stamina or breathing difficulties
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Social or behavioural issues (for example, autism or Asperger's Syndrome)
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+              Something else
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="antiques-value">
+                Tell us how your disability affects you (optional)
+              </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-asian-other" name="ethnicity-asian-other" type="text">
+            </div>
+</div>
+
+
+
+  <div class="govuk-radios__divider">or</div>
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+      Prefer not to say
+    </label>
+  </div>
+</div>
+<!-- radios
     <div class="govuk-radios govuk-radios" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="disability" name="disability" type="radio" value="bangladeshi">
@@ -97,9 +170,12 @@ Apply for legal aid - Check your answers - Merits
           Prefer not to say
         </label>
       </div>
+      -->
+
+
     </div>
   </fieldset>
-</div>
+
 
       <a class="govuk-button" href="sexuality" role="button">
         Continue
