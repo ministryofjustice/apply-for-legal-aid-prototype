@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
-{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "back-link/macro.njk" import govukBackLink %}
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Check your answers - Merits
@@ -29,7 +29,7 @@ Apply for legal aid - Check your answers - Merits
   <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Do you consider your client to have a disability?
+        Do you consider yourself to have a disability?
       </h1>
     </legend>
     <div class="govuk-radios govuk-radios" data-module="radios">
