@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
 {% block pageTitle %}
   Task list
 {% endblock %}
@@ -19,19 +22,15 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="eligibility-completed">
-                  Check eligibility
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
+                Check eligibility
+              </a>
               <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-completed">
-                  Read declaration
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Read declaration
+              </a>
               <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
             </li>
           </ul>
@@ -42,41 +41,31 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-completed">
-                  Company information
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
+                Company information
+              </a>
               <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-completed">
-                  Your contact details
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
+                Your contact details
+              </a>
               <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  List convictions
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#">
+                List convictions
+              </a>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  Provide financial evidence
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#">
+                Provide financial evidence
+              </a>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
-                  Give medical information
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#" aria-describedby="medical-information-completed">
+                Give medical information
+              </a>
               <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">Completed</strong>
             </li>
           </ul>
@@ -87,11 +76,9 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  Submit and pay
-                </a>
-              </span>
+              <a class="app-task-list__task-name" href="#">
+                Submit and pay
+              </a>
             </li>
           </ul>
         </li>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
-{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Agree bank access
@@ -52,7 +52,7 @@ Apply for legal aid - Agree bank access
   <div class="govuk-grid-column-two-thirds">
 
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
       classes: "govuk-radios--small",
