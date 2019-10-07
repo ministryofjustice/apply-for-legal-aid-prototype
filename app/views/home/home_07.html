@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Homepage
@@ -31,6 +31,12 @@ Apply for legal aid - Homepage
   padding-bottom: 0px;
 }
 
+.moj-badge{
+  text-transform: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
 table .govuk-tag {
   white-space: nowrap;
   color: white;
@@ -54,11 +60,13 @@ table .govuk-tag {
 }
 .govuk-table__header{
   color: #0b0c0c;
-  background-color: #dee0e2;
+  /*background-color: #dee0e2;*/
+  background-color: #f3f2f1;
   border: 1px solid #bfc1c3;
   box-shadow: 0 2px 0 #b5babe;
   padding-left: 10px;
   text-align: left;
+  font-weight: 100;
 }
 .th_bespoke{
   padding-right: 15px;
@@ -121,106 +129,117 @@ table .govuk-tag {
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m">Current applications
+    <h3 class="govuk-heading-m">Current applications &nbsp;
+      <!-- <a href="search" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; display:inline; margin:0px 0px 20px 30px">
+      <img src="/public/images/search_icon.svg" alt="" style="height:24px; margin:0px 0px 0px 0px !important; position:relative; top:5px" />
+      <span >Search applications</span></a> -->
+      <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1" data-module="govuk-button">
+        Search applications
+      </button>
     </h3>
-  </div>
-  <div class="govuk-grid-column-one-third" style="">  <a href="search" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; display:inline; margin:0px 0px 20px 0px; padding:15px 15px 5px 10px; float:right">
-    <img src="/public/images/search_icon.svg" alt="" style="height:20px; margin:-30px 5px 0px 0px !important;" />
-    <span >Search applications</span></a></div>
   </div>
 
   <!-- <div class="govuk-!-padding-top-3"></div> -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table">
 
-  <table class="govuk-table">
 
 
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><span class="th_bespoke">Name</span>
+            </th>
+            <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Start date <img src="/public/images/filter_icon.svg" style=""></th>
+            <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">LAA Ref</span></th>
+            <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Certificate type</span></th>
+            <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:right !important"><span  class="th_bespoke">Status</span></th>
+          </tr>
+        </thead>
 
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><span class="th_bespoke">Name</span>
-        </th>
-        <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Start date <img src="/public/images/filter_icon.svg" style=""></th>
-        <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">LAA Ref</span></th>
-        <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Certificate type</span></th>
-        <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold"  scope="col" style="padding-right:10px !important; text-align:right !important"><span  class="th_bespoke">Status</span></th>
-      </tr>
-    </thead>
+        <tbody class="govuk-table__body">
 
-    <tbody class="govuk-table__body">
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">David Francis</a></td>
-        <td class="govuk-table__cell">19 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Substantive</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag inprogress">
-          In progress
-        </strong></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">Gwen McCrae</a></td>
-        <td class="govuk-table__cell">19 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Substantive</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag inprogress">
-          In progress
-        </strong></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">Patrice Sokda</a></td>
-        <td class="govuk-table__cell">19 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Emergency<br><span class="govuk-body-s">Substantive due: DD/MM/YYYY</span></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-          Submitted
-        </strong></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
-        <td class="govuk-table__cell">18 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Substantive</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-          Submitted
-        </strong></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">Steve Smith</a></td>
-        <td class="govuk-table__cell">17 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Substantive</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag inprogress">
-          In progress
-        </strong></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="">Patty LaBelle</a></td>
-        <td class="govuk-table__cell">17 Mar 2019</td>
-        <td class="govuk-table__cell">L-123-ABC</td>
-        <td class="govuk-table__cell">Substantive</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag granted">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">David Francis</a></td>
+            <td class="govuk-table__cell">19 Mar 2019</td>
+            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">Substantive</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
+              In progress
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Gwen McCrae</a></td>
+            <td class="govuk-table__cell">19 Mar 2019</td>
+            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">Substantive</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
+              In progress
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Patrice Sokda</a></td>
+            <td class="govuk-table__cell">19 Mar 2019</td>
+            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">Emergency<br><span class="govuk-body-s">Substantive due: DD/MM/YYYY</span></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
+              Submitted
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+            <td class="govuk-table__cell">18 Mar 2019</td>
+            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">Substantive</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
+              Submitted
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Steve Smith</a></td>
+            <td class="govuk-table__cell">17 Mar 2019</td>
+            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">Substantive</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
+              In progress
+            </strong></td>
+          </tr>
+          <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="">Patty LaBelle</a></td>
+          <td class="govuk-table__cell">17 Mar 2019</td>
+          <td class="govuk-table__cell">L-123-ABC</td>
+          <td class="govuk-table__cell">Substantive</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag granted">
           Granted
         </strong></td>
-      </tr>
+      </tr> -->
 
     </tbody>
   </table>
-
-  <div class="govuk-body pagination__summary">Showing 1 &ndash; 3 of 3 results</div>
-  <ul class="govuk-body pagination">
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
-    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 3, current page">3</a></li>
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
-    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
-  </ul>
-
-
+</div>
 </div>
 
-</div>
+<nav class="moj-pagination" id="pagination-label">
+
+<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+<ul class="moj-pagination__list">
+<li class="moj-pagination__item  moj-pagination__item--prev">
+  <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+
+<li class="moj-pagination__item moj-pagination__item--active">2</li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+<li class="moj-pagination__item  moj-pagination__item--next">
+  <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+</ul>
+<p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p>
+</nav> 
 
 {% endblock %}
 

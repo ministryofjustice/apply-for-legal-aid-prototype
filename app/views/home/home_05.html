@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% from "phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Homepage
@@ -28,7 +28,7 @@ height: 24px;
 padding-left: 24px;
 }*/
 
-.hmcts-action-bar__filter:after {
+.moj-action-bar__filter:after {
   display: none;
 }
 
@@ -116,39 +116,39 @@ padding-left: 24px;
     </div>
   </div>
 
-  <div class="hmcts-filter-layout">
+  <div class="moj-filter-layout">
 
-    <div class="hmcts-filter-layout__filter">
+    <div class="moj-filter-layout__filter">
 
 
 
-      <div class="hmcts-filter hmcts-hidden" tabindex="-1">
+      <div class="moj-filter moj-hidden" tabindex="-1">
 
-        <div class="hmcts-filter__header">
+        <div class="moj-filter__header">
 
-          <div class="hmcts-filter__header-title">
+          <div class="moj-filter__header-title">
             <h2 class="govuk-heading-m">Filter</h2>
           </div>
 
-          <div class="hmcts-filter__header-action">
+          <div class="moj-filter__header-action">
 
           </div>
 
         </div>
 
-        <div class="hmcts-filter__content">
+        <div class="moj-filter__content">
 
 
 
-          <!-- <div class="hmcts-filter__selected"> -->
+          <!-- <div class="moj-filter__selected"> -->
 
-          <!-- <div class="hmcts-filter__selected-heading"> -->
+          <!-- <div class="moj-filter__selected-heading"> -->
 
-          <!-- <div class="hmcts-filter__heading-title">
+          <!-- <div class="moj-filter__heading-title">
           <h2 class="govuk-heading-m">Selected filters</h2>
         </div>
 
-        <div class="hmcts-filter__heading-action">
+        <div class="moj-filter__heading-action">
         <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
       </div> -->
 
@@ -157,17 +157,17 @@ padding-left: 24px;
 
       <!-- <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
 
-      <ul class="hmcts-filter-tags">
+      <ul class="moj-filter-tags">
 
-      <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Family law</a></li>
+      <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Family law</a></li>
 
     </ul>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
 
-    <ul class="hmcts-filter-tags">
+    <ul class="moj-filter-tags">
 
-    <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Notified of delegation</a></li>
+    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Notified of delegation</a></li>
 
   </ul> -->
 
@@ -175,7 +175,7 @@ padding-left: 24px;
   <!-- </div> -->
 
 
-  <div class="hmcts-filter__options">
+  <div class="moj-filter__options">
 
 
     <!-- <button type="submit" class="govuk-button">
@@ -227,7 +227,7 @@ Family law (18)
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
       Status
-      <div class="hmcts-filter__heading-action" style="position:relative; left:10px; top: 10px">
+      <div class="moj-filter__heading-action" style="position:relative; left:10px; top: 10px">
         <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
       </div>
 
@@ -282,23 +282,23 @@ Family law (18)
 
 </div>
 <!-- <h3 class="govuk-heading-m">Current applications</h3> -->
-<div class="hmcts-filter-layout__content">
-  <div class="hmcts-action-bar">
-    <div class="hmcts-action-bar__filter"></div>
-    <div class="hmcts-menu">
-      <div class="hmcts-menu__wrapper">
+<div class="moj-filter-layout__content">
+  <div class="moj-action-bar">
+    <div class="moj-action-bar__filter"></div>
+    <div class="moj-menu">
+      <div class="moj-menu__wrapper">
 
 
 
 
 
 
-        <!-- <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary ">
+        <!-- <button type="submit" class="govuk-button moj-menu__item moj-button--secondary ">
         Reassign
       </button> -->
       <a href="search" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c;">
         <img src="/public/images/search_icon.svg" alt="" style="height:20px; margin:-5px 5px -5px 0px !important; padding:0px !important" />
-         Find an application</a>
+        Find an application</a>
 
 
 
@@ -306,23 +306,23 @@ Family law (18)
 
 
 
-        <!-- <button type="submit" class="govuk-button hmcts-menu__item hmcts-button--secondary ">
+        <!-- <button type="submit" class="govuk-button moj-menu__item moj-button--secondary ">
         Archive
       </button> -->
 
 
     </div>
   </div>
-<p class="govuk-body"style="margin-top:-20px">
-  1 filter active
-</p>
+  <p class="govuk-body"style="margin-top:-20px">
+    1 filter active
+  </p>
 
 
 </div>
 
-<div class="hmcts-scrollable-pane">
+<div class="moj-scrollable-pane">
 
-  <div class="hmcts-scrollable-pane__wrapper">
+  <div class="moj-scrollable-pane__wrapper">
 
     <table class="govuk-table">
 
@@ -331,12 +331,12 @@ Family law (18)
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><span class="th_bespoke">Name</span>
-        </th>
-        <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
-        <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Reference</span></th>
-        <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Status</span></th>
-      </tr>
-    </thead>
+          </th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Reference</span></th>
+          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Status</span></th>
+        </tr>
+      </thead>
 
       <tbody class="govuk-table__body">
 
@@ -391,9 +391,9 @@ Family law (18)
     </ul>
 
 
-    </div>
-
   </div>
+
+</div>
 
 </div>
 </div>
@@ -441,21 +441,21 @@ Family law (18)
 
 {% block pageScripts %}
 <script>
-new HMCTSFrontend.FilterToggleButton({
+new MOJFrontend.FilterToggleButton({
   bigModeMediaQuery: '(min-width: 48.063em)',
   startHidden: true,
   toggleButton: {
-    container: $('.hmcts-action-bar__filter'),
+    container: $('.moj-action-bar__filter'),
     showText: 'Show filter',
     hideText: 'Hide filter',
-    classes: 'hmcts-button--secondary'
+    classes: 'govuk-button--secondary'
   },
   closeButton: {
-    container: $('.hmcts-filter__header-action'),
+    container: $('.moj-filter__header-action'),
     text: 'Close'
   },
   filter: {
-    container: $('.hmcts-filter')
+    container: $('.moj-filter')
   }
 });
 </script>
