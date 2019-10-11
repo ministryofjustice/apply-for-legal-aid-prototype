@@ -34,12 +34,20 @@ th:first-child {
 .govuk-heading-m{
   font-size: 19px;
 }
-.app-check-your-answers__question{
+.app-check-your-answers__question {
   font-size: 16px;
 }
 .app-check-your-answers__answer{
   font-size: 16px;
 }
+.govuk-summary-list__key {
+  font-size: 16px;
+}
+.govuk-summary-list__value {
+  font-size: 16px;
+}
+
+
 .govuk-table__cell{
   font-size: 16px;
 }
@@ -76,7 +84,7 @@ th:first-child {
 <div class="govuk-grid-row" style="width:80%">
   <div class="print-header">
     <div class="header-info">
-      <p>Client: <strong>John Doe</strong> &nbsp; LAA reference: <strong>L-23A-56D</strong> &nbsp; <span class="pagination"> <i>[Page <strong>1 of 3</strong>]</i></span>
+      <p>Client: <strong>John Doe</strong> &nbsp; LAA reference: <strong>L-23A-56D</strong> &nbsp; CCMS reference: <strong>123456789012</strong><span class="pagination"> <i>[Page <strong>1 of 3</strong>]</i></span>
       </p>
     </div>
   </div>
@@ -89,159 +97,118 @@ th:first-child {
       Application for civil legal aid certificate
     </h1>
 
-    <!-- <p>Client: <strong>John Doe</strong>
-    <br>Case reference: <strong>L-23A-56D</strong>
-  </p> -->
+    <h2 class="govuk-heading-l">
+      Client details
+    </h2>
 
-  <h2 class="govuk-heading-l">
-    Client details
-  </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          John
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Doe
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 1980
+        </dd>
 
-  <dl class="app-check-your-answers app-check-your-answers--long">
-    <div class="app-check-your-answers__contents">
-      <dt class="app-check-your-answers__question">
-        First name
-      </dt>
-      <dd class="app-check-your-answers__answer">
-        John
-      </dd>
-      <dd class="app-check-your-answers__change">
-        <!-- <a href="client_details#firstname">
-        Change <span class="govuk-visually-hidden">first name</span>
-      </a> -->
-    </dd>
-  </div>
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      Last name
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      Doe
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="client_details#lastname">
-      Change <span class="govuk-visually-hidden">last name</span>
-    </a> -->
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Date of birth
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    1 January 1980
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="client_details#dob-day">
-    Change <span class="govuk-visually-hidden">dob</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    National Insurance number
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    QQ123456C
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="client_details#national-insurance-number">
-    Change <span class="govuk-visually-hidden">national insurance number</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Email address
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    john.doe@email.com
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="client_details#national-insurance-number">
-    Change <span class="govuk-visually-hidden">email address</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Correspondence address
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    1 Main Street<br/>London<br/>{{ data['postcode'] }}
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="postcode_finder#postcode">
-    Change <span class="govuk-visually-hidden">correspondance address</span>
-  </a> -->
-</dd>
-</div>
-</dl>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          john.doe@email.com
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondence address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 Main Street<br/>London<br/>{{ data['postcode'] }}
+        </dd>
 
-<div class="govuk-!-padding-bottom-2"></div>
+      </div>
+    </dl>
 
-<h2 class="govuk-heading-m">
-  What you're applying for
-</h2>
+    <h2 class="govuk-heading-m">
+      What you're applying for
+    </h2>
 
-<dl class="app-check-your-answers app-check-your-answers--long">
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      <!-- What does your client want legal aid for? --> Proceeding
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      Non-molestation order{{ data['...'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="search#search">
-      Change <span class="govuk-visually-hidden">proceeding</span>
-    </a> -->
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Certificate
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    Emergency
-  </dd>
-  <dd class="app-check-your-answers__change">
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Form of service
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    Full representation
-  </dd>
-  <dd class="app-check-your-answers__change">
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Costs you can incur
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    £1,350
-  </dd>
-  <dd class="app-check-your-answers__change">
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Work you can do
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    All steps up to and including the hearing on 21 July 2019
-  </dd>
-  <dd class="app-check-your-answers__change">
-  </dd>
-</div>
-</dl>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9" >
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <!-- What does your client want legal aid for? --> Proceeding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Non-molestation order{{ data['...'] }}
+        </dd>
 
-<div class="govuk-!-padding-bottom-6"></div>
-
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Certificate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Emergency
+        </dd>
+        <dd class="app-check-your-answers__change">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Form of service
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Full representation
+        </dd>
+        <dd class="app-check-your-answers__change">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Costs you can incur
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1,350
+        </dd>
+        <dd class="app-check-your-answers__change">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Work you can do
+        </dt>
+        <dd class="govuk-summary-list__value">
+          All steps up to and including the hearing on 21 July 2019
+        </dd>
+        <dd class="app-check-your-answers__change">
+        </dd>
+      </div>
+    </dl>
 
 <table class="govuk-table">
 
@@ -532,61 +499,34 @@ th:first-child {
 
 <div class="govuk-!-padding-bottom-6"></div>
 
+
 <h2 class="govuk-heading-l">
   Merits
 </h2>
 
-<dl class="app-check-your-answers app-check-your-answers--long">
-  <div class="app-check-your-answers__contents">
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
 
-    <dt class="app-check-your-answers__question">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Date your client told you about the latest domestic abuse incident
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       2 April 2019{{ data['...'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="#">
-      Change <span class="govuk-visually-hidden">blank</span>
-    </a> -->
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Date the incident occurred
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    1 April 2019{{ data['...'] }}
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="#">
-    Change <span class="govuk-visually-hidden">blank</span>
-  </a> -->
-</dd>
-</div>
-<!-- <div class="app-check-your-answers__contents">
-<dt class="app-check-your-answers__question">
-What happened during the incident?
-</dt>
-<dd class="app-check-your-answers__answer">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex lorem, ullamcorper quis porttitor eleifend, feugiat quis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dictum ac tellus semper eleifend.
-</dd>
-<dd class="app-check-your-answers__change">
-<a href="#">
-Change <span class="govuk-visually-hidden">blank</span>
-</a>
-</dd>
-</div> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Date the incident occurred
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 April 2019{{ data['...'] }}
+    </dd>
+  </div>
 </dl>
-
-<div class="govuk-!-padding-bottom-2"></div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Respondent details</h2>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <!-- <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p> -->
   </div>
 </div>
 
@@ -618,59 +558,33 @@ Change <span class="govuk-visually-hidden">blank</span>
 <h2 class="govuk-heading-m">
   Case details
 </h2>
-<dl class="app-check-your-answers app-check-your-answers--long">
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Statement of case
     </dt>
-    <dd class="app-check-your-answers__answer">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <dd class="govuk-summary-list__value">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat. <a href="#">Show more</a>
     </dd>
-    <!-- <dd class="app-check-your-answers__change">
-    <a href="statement_1">
-    Change <span class="govuk-visually-hidden">blank</span>
-  </a>
-</dd> -->
-</div>
-</dl>
-
-<!-- <div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-</div> -->
-
-<dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Chance of a successful outcome 50% or better
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       No{{ data['...'] }}
     </dd>
-    <!-- <dd class="app-check-your-answers__change">
-    <a href="prospects_of_success">
-    Change <span class="govuk-visually-hidden">blank</span>
-  </a>
-</dd> -->
-</div>
-
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Chance of a successful outcome
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    Borderline{{ data['...'] }}
-  </dd>
-  <!-- <dd class="app-check-your-answers__change">
-  <a href="prospects_less_than_50">
-  Change <span class="govuk-visually-hidden">blank</span>
-</a>
-</dd> -->
-
-
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Chance of a successful outcome
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Borderline{{ data['...'] }}
+    </dd>
+  </div>
 </dl>
+</div>
 
 <div class="govuk-!-padding-bottom-6"></div>
 

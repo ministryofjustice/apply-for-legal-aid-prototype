@@ -152,6 +152,7 @@ table .govuk-tag {
             </th>
             <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Start date <img src="/public/images/filter_icon.svg" style=""></th>
             <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">LAA Ref</span></th>
+            <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">CCMS Ref</span></th>
             <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Certificate type</span></th>
             <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:right !important"><span  class="th_bespoke">Status</span></th>
           </tr>
@@ -163,6 +164,7 @@ table .govuk-tag {
             <td class="govuk-table__cell"><a href="">David Francis</a></td>
             <td class="govuk-table__cell">19 Mar 2019</td>
             <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">123456789012</td>
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
@@ -172,6 +174,7 @@ table .govuk-tag {
             <td class="govuk-table__cell"><a href="">Gwen McCrae</a></td>
             <td class="govuk-table__cell">19 Mar 2019</td>
             <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">123456789012</td>
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
@@ -181,6 +184,7 @@ table .govuk-tag {
             <td class="govuk-table__cell"><a href="">Patrice Sokda</a></td>
             <td class="govuk-table__cell">19 Mar 2019</td>
             <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">123456789012</td>
             <td class="govuk-table__cell">Emergency<br><span class="govuk-body-s">Substantive due: DD/MM/YYYY</span></td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
               Submitted
@@ -190,6 +194,7 @@ table .govuk-tag {
             <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
             <td class="govuk-table__cell">18 Mar 2019</td>
             <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">123456789012</td>
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
               Submitted
@@ -199,6 +204,7 @@ table .govuk-tag {
             <td class="govuk-table__cell"><a href="">Steve Smith</a></td>
             <td class="govuk-table__cell">17 Mar 2019</td>
             <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">123456789012</td>
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
@@ -208,6 +214,7 @@ table .govuk-tag {
           <td class="govuk-table__cell"><a href="">Patty LaBelle</a></td>
           <td class="govuk-table__cell">17 Mar 2019</td>
           <td class="govuk-table__cell">L-123-ABC</td>
+          <td class="govuk-table__cell">123456789012</td>
           <td class="govuk-table__cell">Substantive</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag granted">
           Granted
@@ -221,25 +228,25 @@ table .govuk-tag {
 
 <nav class="moj-pagination" id="pagination-label">
 
-<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
 
-<ul class="moj-pagination__list">
-<li class="moj-pagination__item  moj-pagination__item--prev">
-  <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
-</li>
+  <ul class="moj-pagination__list">
+    <li class="moj-pagination__item  moj-pagination__item--prev">
+      <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+    </li>
 
-<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
 
-<li class="moj-pagination__item moj-pagination__item--active">2</li>
+    <li class="moj-pagination__item moj-pagination__item--active">2</li>
 
-<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
 
-<li class="moj-pagination__item  moj-pagination__item--next">
-  <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
-</li>
-</ul>
-<p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p>
-</nav> 
+    <li class="moj-pagination__item  moj-pagination__item--next">
+      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+    </li>
+  </ul>
+  <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p>
+</nav>
 
 {% endblock %}
 
