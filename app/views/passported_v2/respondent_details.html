@@ -43,7 +43,7 @@ Apply for legal aid - Alternative funding
   <!--  <h2 class="govuk-heading-m">H2</h2> -->
 
 <h2 class="govuk-heading-m">Does the respondent have the mental capacity to understand the terms of a court order?</h2>
-    <div class="govuk-radios govuk-radios--inline" data-module="radios">
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
@@ -57,7 +57,7 @@ Apply for legal aid - Alternative funding
           No
         </label>
       </div>
-      <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
         <div class="govuk-form-group" style="padding-top:60px;">
           <label class="govuk-label" for="contact-by-email">
             Tell us why you think the court would enforce a breach of an order
@@ -70,20 +70,20 @@ Apply for legal aid - Alternative funding
 
 
       <h2 class="govuk-heading-m">Has a warning letter been sent to the respondent?</h2>
-      <div class="govuk-radios govuk-radios--inline" data-module="radios">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          <input class="govuk-radios__input" id="how-contacted-conditional-3" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("attempts-to-settle","yes") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          <input class="govuk-radios__input" id="how-contacted-conditional-4" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-4" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
             No
           </label>
         </div>
-        <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-4">
           <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
               Tell us why a warning letter has not been sent
@@ -96,20 +96,20 @@ Apply for legal aid - Alternative funding
 <div class="govuk-!-padding-bottom-6"></div>
       <h2 class="govuk-heading-m">Have the police been notified?</h2>
 
-      <div class="govuk-radios govuk-radios--inline" data-module="radios">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          <input class="govuk-radios__input" id="how-contacted-conditional-5" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-5" {{ checked("attempts-to-settle","yes") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          <input class="govuk-radios__input" id="how-contacted-conditional-6" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-6" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-6">
             No
           </label>
         </div>
-        <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-6">
           <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
               Tell us why the police have not been notified
@@ -122,23 +122,23 @@ Apply for legal aid - Alternative funding
 
       <div class="govuk-!-padding-bottom-6"></div>
         <h2 class="govuk-heading-m">Have bail conditions been set?</h2>
-        <div class="govuk-radios govuk-radios--inline" data-module="radios">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            <input class="govuk-radios__input" id="how-contacted-conditional-7" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-7" {{ checked("attempts-to-settle","yes") }}>
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-7">
               Yes
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+            <input class="govuk-radios__input" id="how-contacted-conditional-8" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-8" {{ checked("attempts-to-settle","no") }}>
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-8">
               No
             </label>
           </div>
 
-          <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-7">
             <div class="govuk-form-group" style="padding-top:60px;">
               <label class="govuk-label" for="contact-by-email">
               Give details of the bail conditions, including the date they're likely to end
@@ -147,7 +147,7 @@ Apply for legal aid - Alternative funding
             </div>
           </div>
 
-          <div class="govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-8">
             <div class="govuk-form-group" style="padding-top:60px;">
               <label class="govuk-label" for="contact-by-email">
               Tell us why bail conditions have not been set
