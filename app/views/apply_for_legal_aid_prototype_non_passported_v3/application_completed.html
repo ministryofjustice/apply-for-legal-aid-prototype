@@ -515,32 +515,54 @@ th:first-child {
 <h2 class="govuk-heading-m">
   Case details
 </h2>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    <dt class="govuk-summary-list__key govuk-!-width-full">
       Statement of case
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat. <a href="#">Show more</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Chance of a successful outcome 50% or better
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No{{ data['...'] }}
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Chance of a successful outcome
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Borderline{{ data['...'] }}
-    </dd>
-  </div>
-</dl>
+      <br><span style="font-weight: normal;">
+        <a href="#">statement_of_case_1.pdf (100kb)</a><br>
+        <a href="#">statement_of_case_2.pdf (200kb)</a><br><br>Statement of case free text answers should run full column width (underneath the 'Change' link) but I do not know how to do it in the prototype.</span></dt>
+        <!-- <dd class="govuk-summary-list__actions"><a href="" <="" dd="">
+        </a><a href="statement_1">
+          Change <span class="govuk-visually-hidden">blank</span>
+        </a> -->
+      </dd>
+    </div>
+
+  </dl>
+
+  <dl class="govuk-summary-list">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is the chance of a successful outcome 50% or better
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No{{ data['...'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a href="prospects_of_success">
+          Change <span class="govuk-visually-hidden">blank</span>
+        </a> -->
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        What is the chance of a successful outcome?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Borderline{{ data['...'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <!-- <a href="prospects_less_than_50">
+          Change <span class="govuk-visually-hidden">blank</span>
+        </a> -->
+      </dd>
+    </div>
+
+  </dl>
 </div>
 
 
