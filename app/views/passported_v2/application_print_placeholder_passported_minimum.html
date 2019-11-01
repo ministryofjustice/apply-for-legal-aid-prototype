@@ -52,132 +52,59 @@ th:first-child {
       Client details
     </h2>
 
-    <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          First name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          John
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <!-- <a href="client_details#firstname">
-          Change <span class="govuk-visually-hidden">first name</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="app-check-your-answers__contents">
-      <dt class="app-check-your-answers__question">
-        Last name
-      </dt>
-      <dd class="app-check-your-answers__answer">
-        Doe
-      </dd>
-      <dd class="app-check-your-answers__change">
-        <!-- <a href="client_details#lastname">
-        Change <span class="govuk-visually-hidden">last name</span>
-      </a> -->
-    </dd>
-  </div>
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      Date of birth
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      1 January 1980
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="client_details#dob-day">
-      Change <span class="govuk-visually-hidden">dob</span>
-    </a> -->
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    National Insurance number
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    QQ123456C
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="client_details#national-insurance-number">
-    Change <span class="govuk-visually-hidden">national insurance number</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Email address
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    john.doe@email.com
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="client_details#national-insurance-number">
-    Change <span class="govuk-visually-hidden">email address</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Correspondence address
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    1 Main Street<br/>London<br/>{{ data['postcode'] }}
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!-- <a href="postcode_finder#postcode">
-    Change <span class="govuk-visually-hidden">correspondance address</span>
-  </a> -->
-</dd>
-</div>
-</dl>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">First name</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">John</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Last name</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Date of birth</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1 January 1980</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">National Insurance number</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">QQ123456C</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Email address</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">john.doe@email.com</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Correspondence address</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1 Main Street<br>London<br>{{ data['postcode'] }}</td>
+        </tr>
+      </tbody>
+    </table>
 
 <h2 class="govuk-heading-m">
   What you're covered for
 </h2>
 
-<dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 60px;">
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      Proceeding
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      Non-molestation order{{ data['...'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <!-- <a href="search#search">
-      Change <span class="govuk-visually-hidden">proceeding</span>
-    </a> -->
-  </dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Costs you can incur
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    £5,000
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!--  <a href="search#search">
-    Change <span class="govuk-visually-hidden">proceeding</span>
-  </a> -->
-</dd>
-</div>
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
-    Work you can do
-  </dt>
-  <dd class="app-check-your-answers__answer">
-    Injunction FLA to final hearing
-  </dd>
-  <dd class="app-check-your-answers__change">
-    <!--  <a href="search#search">
-    Change <span class="govuk-visually-hidden">proceeding</span>
-  </a> -->
-</dd>
-</div>
-</dl>
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Form of service</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Full representation</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Proceeding</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Non-molestation order</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Costs you can incur</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Work you can do</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Injunction FLA to final hearing</td>
+    </tr>
+  </tbody>
+</table>
 <table class="govuk-table" style="margin-bottom: 15px;">
 
   <h2 class="govuk-heading-l">
@@ -305,8 +232,6 @@ th:first-child {
 
 
 <div class="govuk-!-padding-bottom-6"></div>
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Vehicles</h2>
@@ -625,7 +550,7 @@ Change <span class="govuk-visually-hidden">blank</span>
 
 </dl>
 <h3 class="govuk-heading-l">Client declaration</h3>
-<p>
+<p class="govuk-body">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 <h3 class="govuk-heading-s">Client signature:</h3>
