@@ -26,13 +26,13 @@ Apply for legal aid - Check client financial assessment
 
 <style media="screen">
 td:first-child {
-  font-weight: normal
+  font-weight: bold;
 }
 th {
-  font-weight: normal !important;
+  font-weight: bold !important;
 }
 dt:first-child{
-  font-weight: normal
+  font-weight: bold;
 }
 .app-task-list__items{
   padding-left:0px;:
@@ -197,7 +197,7 @@ dt:first-child{
     <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="app-details">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m">Client details</h2>
+          <h2 class="govuk-heading-l">Client details</h2>
         </div>
         <div class="govuk-grid-column-one-third">
           <p><a class="govuk-link" style="float:right;" href="client_details">Change</a></p>
@@ -272,7 +272,7 @@ dt:first-child{
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s">What you are covered for</h2>
+        <h2 class="govuk-heading-m">What you are covered for</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="what_youre_covered_for">Change</a></p>
@@ -315,10 +315,10 @@ dt:first-child{
     <table class="govuk-table" style="margin-bottom: 15px;">
 
 
-      <h2 class="govuk-heading-m">Means assessment</h2>
+      <h2 class="govuk-heading-l">Means assessment</h2>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-s">Income</h2>
+          <h2 class="govuk-heading-m">Income</h2>
         </div>
         <div class="govuk-grid-column-one-third">
           <p><a class="govuk-link" style="float:right;" href="types_of_income">Change</a></p>
@@ -362,7 +362,7 @@ dt:first-child{
     <table class="govuk-table" style="margin-bottom: 15px;">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-s">Regular payments</h2>
+          <h2 class="govuk-heading-m">Regular payments</h2>
         </div>
         <div class="govuk-grid-column-one-third">
           <p><a class="govuk-link" style="float:right;" href="types_of_outgoing">Change</a></p>
@@ -393,9 +393,9 @@ dt:first-child{
     <div class="govuk-!-padding-bottom-8"></div>
 
 
-    <!-- <h2 class="govuk-heading-m">Assets</h2> -->
+    <!-- <h2 class="govuk-heading-l">Assets</h2> -->
 
-    <h2 class="govuk-heading-s">Property</h2>
+    <h2 class="govuk-heading-m">Property</h2>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -469,7 +469,7 @@ dt:first-child{
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s">Savings and investments</h2>
+        <h2 class="govuk-heading-m">Savings and investments</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="savings_investments_select">Change</a></p>
@@ -513,7 +513,7 @@ dt:first-child{
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s">Items of value</h2>
+        <h2 class="govuk-heading-m">Items of value</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="other_capital_select">Change</a></p>
@@ -573,7 +573,7 @@ dt:first-child{
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s">Do any restrictions apply?</h2>
+        <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="capital_restrictions_select">Change</a></p>
@@ -609,56 +609,40 @@ dt:first-child{
       </tbody>
     </table>
 
-    <h2 class="govuk-heading-m">
+    <h2 class="govuk-heading-l">
       Merits assessment
     </h2>
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="govuk-summary-list__row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Latest incident details</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <p><a class="govuk-link" style="float:right;" href="injunction">Change</a></p>
+      </div>
+    </div>
 
-        <dt class="govuk-summary-list__key">
-          When did your client tell you about the latest domestic abuse incident?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          2 April 2019{{ data['...'] }}
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="injunction">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          When did the latest incident occur?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          1 April 2019{{ data['...'] }}
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="injunction_date_details">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What happened during the incident?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex lorem, ullamcorper quis porttitor eleifend, feugiat quis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dictum ac tellus semper eleifend.
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>When did your client contact you about the latest domestic abuse incident?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>When did the incident occur?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+    <br>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s">Respondent details</h2>
+        <h2 class="govuk-heading-m">Respondent details</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p>
@@ -668,20 +652,20 @@ dt:first-child{
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Does the respondent have the mental capacity to understand the terms of a court order?</th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Does the respondent have the mental capacity to understand the terms of a court order?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Has a warning letter been sent to the respondent?</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric" >Yes</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Have the police been notified?</th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Has a warning letter been sent to the respondent?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Have bail conditions been set?</th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have the police been notified?</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have bail conditions been set?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
       </tbody>
@@ -689,76 +673,70 @@ dt:first-child{
 
     <br>
 
-
-    <h2 class="govuk-heading-s">
+    <h2 class="govuk-heading-m">
       Case details
     </h2>
-    <dl class="app-check-your-answers app-check-your-answers--long">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-!-width-full">
           Statement of case
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex lorem, ullamcorper quis porttitor eleifend, feugiat quis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dictum ac tellus semper eleifend. Sed sit amet augue accumsan, volutpat risus vel, pellentesque elit.
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="statement_1">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
+          <br><span style="font-weight: normal;">
+            <a href="#">statement_of_case_1.pdf (100kb)</a><br>
+            <a href="#">statement_of_case_2.pdf (200kb)</a><br><br>Statement of case free text answers should run full column width (underneath the 'Change' link) but I do not know how to do it in the prototype.</span></dt>
+            <dd class="govuk-summary-list__actions"><a href="" <="" dd="">
+              </a><a href="statement_1">
+                Change <span class="govuk-visually-hidden">blank</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
 
     <dl class="govuk-summary-list">
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Estimated legal costs
+          Is the chance of a successful outcome 50% or better
         </dt>
         <dd class="govuk-summary-list__value">
-          £ XXXX
+          No{{ data['...'] }}
         </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="costs">
-            Change<span class="govuk-visually-hidden"> name</span>
+        <dd class="govuk-summary-list__actions">
+          <a href="prospects_of_success">
+            Change <span class="govuk-visually-hidden">blank</span>
           </a>
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Prospects of success
+          What is the chance of a successful outcome?
         </dt>
         <dd class="govuk-summary-list__value">
-          50% or better{{ data['...'] }}
+          Borderline{{ data['...'] }}
         </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="prospects_of_success">
-            Change<span class="govuk-visually-hidden"> name</span>
+        <dd class="govuk-summary-list__actions">
+          <a href="prospects_less_than_50">
+            Change <span class="govuk-visually-hidden">blank</span>
           </a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client declaration
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Read & agreed {{ data['...'] }}
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a class="govuk-link" href="check_answers_merits">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
+
     </dl>
-    <!-- <h3 class="govuk-heading-m">Client declaration</h3>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <h3 class="govuk-heading-s">Client signature:</h3>
-  <h3 class="govuk-heading-s">Date:</h3> -->
-</div>
-</section>
-</div>
+
+    <a href="declaration" class="govuk-button govuk-!-margin-right-2">
+      Continue to declaration
+    </a>
+    <a href="../home/home_07" class="govuk-button govuk-button--secondary">
+    Come back later
+    </a>
+    </div>
+
+  </div>
+
+  </section>
+
 <div class="side-profile">
   {% include "includes/aside_06_not_passported.html" %}
 </div>

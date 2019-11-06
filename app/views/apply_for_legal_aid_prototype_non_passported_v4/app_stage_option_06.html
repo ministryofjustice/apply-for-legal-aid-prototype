@@ -26,13 +26,13 @@ Apply for legal aid - Check client financial assessment
 
 <style media="screen">
 td:first-child {
-  font-weight: normal
+  font-weight: bold
 }
 th {
-  font-weight: normal !important;
+  font-weight: bold !important;
 }
 dt:first-child{
-  font-weight: normal
+  font-weight: bold
 }
 .app-task-list__items{
   padding-left:0px;:
@@ -101,7 +101,7 @@ dt:first-child{
                 <!-- <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Bank account details
               </a> -->
-              Bank account details
+              <p class="govuk-body-s" style="display:inline">Bank account details</p>
               <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Passported</strong>
             </li>
             <li class="app-task-list__item">
@@ -651,9 +651,18 @@ dt:first-child{
 
       </dl>
 
+      <a href="declaration" class="govuk-button govuk-!-margin-right-2">
+        Continue to declaration
+      </a>
+      <a href="../home/home_07" class="govuk-button govuk-button--secondary">
+      Come back later
+      </a>
+      </div>
+
 </div>
+
 </section>
-</div>
+
 <div class="side-profile">
   {% include "includes/aside.html" %}
 </div>
