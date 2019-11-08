@@ -27,7 +27,7 @@ Apply for legal aid - Check your answers - Merits
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Which one best describes your background?
+        Which one best describes your client's background?
       </h1>
     </legend>
       <div class="govuk-radios govuk-radios" data-module="radios">
@@ -37,6 +37,7 @@ Apply for legal aid - Check your answers - Merits
           Arab
         </label>
       </div>
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="ethnic-group-2" name="ethnic-group" type="radio" value="another-background" data-aria-controls="conditional-ethnic-group-2">
         <label class="govuk-label govuk-radios__label" for="ethnic-group-2">
@@ -46,10 +47,11 @@ Apply for legal aid - Check your answers - Merits
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnic-group-2">
           <div class="govuk-form-group">
            <label class="govuk-label" for="ethnicity-other">
-            Your ethnic background (optional)
+            Your client's ethnic background (optional)
            </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-other" name="ethnicity-other" type="text">
         </div>
+      </div>
       </div>
 
       <div class="govuk-radios__divider">or</div>

@@ -27,7 +27,7 @@ Apply for legal aid - Check your answers - Merits
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        What does your disability cause difficulty with?
+        What does your client's disability cause difficulty with?
       </h1>
     </legend>
       <!--  <span id="waste-hint" class="govuk-hint">
@@ -77,6 +77,7 @@ Apply for legal aid - Check your answers - Merits
             </label>
           </div>
 
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
             <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
@@ -85,13 +86,13 @@ Apply for legal aid - Check your answers - Merits
           </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="antiques-value">
-                Tell us how your disability affects you (optional)
+              <label class="govuk-label" for="antiques">
+                Tell us how your client's disability affects them (optional)
               </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="ethnicity-asian-other" name="ethnicity-asian-other" type="text">
             </div>
-</div>
-
+          </div>
+          </div>
 
 
   <div class="govuk-radios__divider">or</div>
