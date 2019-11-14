@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "capital_restrictions"
+      href: "other_capital_select"
   }) }}
 {% endblock %}
 
@@ -29,78 +29,48 @@ Apply for legal aid - Other capital
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  <!-- What restrictions apply to your property or other assets? // property, savings or investments, or valuable items
-                  Restrictions on your property or other assets -->
-                  Do any of the following restrictions apply to your property or other assets?
-
+            <!--   Is there any reason why you cannot sell of borrow against your assets to help pay for legal aid?
+               Are you subject to any legal restrictions that mean you cannot access your assets?
+               Are there any legal restrictions that prevent you from selling or borrowing against your assets?
+               Do any legal restrictions prevent you from selling or borrowing against your assets?
+               Does anything prevent you from selling or borrowing against your assets? -->
+               Are there any legal restrictions that prevent you from selling or borrowing against your assets?
                 </h1>
               </legend>
+      <div class="govuk-!-padding-bottom-6"></div>
 
-              <div class="govuk-!-padding-bottom-6"></div>
-
-
-<p class="govuk-body">We need to know if there is any reason why you cannot sell your assets to help pay for your legal aid.</p>
-            <!--  <span id="citizenship-conditional-hint" class="govuk-body">
-                We will consider any restrictions when assessing your client's financial situation.
-              </span> -->
-
-              <div class="govuk-!-padding-bottom-4"></div>
-
-        <!--  <h2 class="govuk-heading-m">Select all that apply</h2> -->
+      <p class="govuk-body">For example:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you're bankrupt</li>
+        <li>your home has been repossessed</li>
+        <li>your assets are the subject of dispute in other legal proceedings</li>
+      </ul>
 
 
-              <div class="govuk-checkboxes" data-module="checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Repossession or deferred interest in a property <!-- or I'm paying 'deferred interest' on a property -->
-                  </label>
-                </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+                        <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="investments" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("investments","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                    Subject of dispute in other legal proceedings
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    Foreign exchange controls
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    Restraint or freezing order
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="premium-bonds" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("premium-bonds","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
-                    Bankruptcy
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
-                    Held overseas
-                  </label>
-                </div>
-
-                <p class="govuk-body">or</p>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="onlinebank-1">
+                        <!-- Tell us which assets are affected and why --> Tell us which assets you cannot sell or borrow against, and why
+                          </label>
+                        <textarea class="govuk-textarea" id="more-detail" name="statement" rows="8" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+                        </div>
+                      </div>
 
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                    None of these apply
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+                    No
                   </label>
                 </div>
 
@@ -113,9 +83,7 @@ Apply for legal aid - Other capital
             Save and continue
           </button>
 
-        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a> -->
+
 
         </form>
       </div>

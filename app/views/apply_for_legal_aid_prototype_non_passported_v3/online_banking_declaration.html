@@ -67,18 +67,30 @@
 
             <h2 class="govuk-heading-m">Give your client access to the financial assessment</h2>
 
-            <p class="govuk-body">When you click 'Send link' we'll send your client a secure link to the assessment using this email address:</p>
+  <!--  <p class="govuk-body">When you click 'Send link' we'll send your client a secure link to the assessment to this email address:</p> -->
 
-            <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px;">
-                <dd class="app-check-your-answers__answer">
-                  johndoe@gmail.com
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="client_details">
-                    Change <span class="govuk-visually-hidden">proceeding</span>
-                  </a>
-                </dd>
-           </dl>
+    <p class="govuk-body">Enter your client's email address and we'll send them a secure link to the assessment.</p>
+
+
+    <div class="govuk-form-group">
+<label class="govuk-label" for="email">
+  Email address
+</label>
+<input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+</div>
+
+          <!--   <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                johndoe@gmail.com
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="client_details#firstname">
+                  Change <span class="govuk-visually-hidden">first name</span>
+                </a>
+              </dd>
+            </div>
+            </dl> -->
 
             <a href="confirmation_page" role="button" class="govuk-button">
               Send link
