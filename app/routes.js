@@ -419,6 +419,21 @@ router.post('/jim/office_select/v2/office', function (req, res) {
   }
 })
 
+// Non-passported - substantive yes or no
+router.post('/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/online_banking_radios')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line

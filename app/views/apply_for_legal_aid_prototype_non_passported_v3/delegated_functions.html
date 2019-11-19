@@ -25,7 +25,7 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="applicant_type" method="post" class="form">
+        <form action="what_youre_covered_for" method="post" class="form">
 
 
         <div class="govuk-form-group">
@@ -41,7 +41,7 @@ Apply for legal aid - Alternative funding
       Have you already started work because your client needed urgent representation?
       Have you already started proceedings because your client needs urgent representation?
        -->
-       Are you using delegated functions for this case?
+       Have you used delegated functions?
       </h1>
     </legend>
     <!-- <p class="govuk-body">
@@ -54,7 +54,7 @@ Apply for legal aid - Alternative funding
 
     <div class="govuk-!-padding-bottom-4"></div>
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
@@ -63,10 +63,10 @@ Apply for legal aid - Alternative funding
       </div>
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
         <label class="govuk-label" for="how-contacted-conditional-1">
-          Enter the date you started work
+          Date you used delegated functions
         </label>
         <span id="dob-hint" class="govuk-hint">
-      For example, 31 3 1980.
+      For example, 31 3 1980
     </span>
     <div class="govuk-date-input" id="dob">
       <div class="govuk-date-input__item">
