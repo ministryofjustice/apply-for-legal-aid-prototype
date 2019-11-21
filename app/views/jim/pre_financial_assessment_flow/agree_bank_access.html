@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "bank_access_information"
   }) }}
 {% endblock %}
 
@@ -25,32 +25,43 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="no_online_banking_use_ccms" method="post" class="form">
+        <form action="complete_assessment_with_solicitor" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client use online banking?
+                  Do you agree to share your bank transactions with us?
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
+              <div class="govuk-!-padding-bottom-4"></div>
 
-              <div class="govuk-radios">
+              <p class="govuk-body">We need your permission to download and view your bank transactions from the past 3 months.
+
+              <p class="govuk-body govuk-inset-text">
+                We only use your bank transactions to support your legal aid application. We do not use the information for anything else.
+              </p>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                     Yes
-
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
+                  <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-2">
                     No
-
                   </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="onlinebank-2">
+                    You cannot use this service to complete the financial assessment if you do not share your bank transactions with us.
+                    </label>
+                  </div>
                 </div>
               </div>
             </fieldset>

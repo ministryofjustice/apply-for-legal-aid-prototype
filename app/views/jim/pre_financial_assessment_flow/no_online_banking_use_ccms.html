@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "check_answers"
+  href: "online_banking_radios"
 }) }}
 
 {% endblock %}
@@ -27,7 +27,7 @@ Apply for legal aid - Confirmation page
 
   <div class="flash-card">
     <header>
-      <h1 class="govuk-heading-l"> John Doe must complete a financial assessment <!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+      <h1 class="govuk-heading-l">You need to continue this application in CCMS</h1>
     </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -35,35 +35,35 @@ Apply for legal aid - Confirmation page
           <li>
 
           <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
-            <p style="color: #fff;">
-            This is because they do not get benefits that qualify for legal aid.</p>
+         <p style="color: #fff;">Your client must use online banking so they can share their bank transactions with us.</p>
+
+         <p style="color: #fff;">We've saved the details you already entered.</p>
+
+
+        <!--  <ul class="govuk-list govuk-list--bullet">
+            <li style="color: #fff;">Employment and Support Allowance (ESA)</li>
+            <li style="color: #fff;">Income Support</li>
+            <li style="color: #fff;">Jobseeker’s Allowance (JSA)</li>
+            <li style="color: #fff;">Pension Credit (Guarantee Credit)</li>
+            <li style="color: #fff;">Universal Credit</li>
+            </ul>
           </li>
-
-          <li>
-
-            <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px;">What happens next</h2>
-      <!--  <p style="color: #fff;">Your client will need to answer questions about their financial situation.</p> -->
-
-            <p style="color: #fff;">We'll ask you to give your client access to the online assessment which they can complete at home or another location.
-              <!-- We'll ask you to give your client access to an online questionnaire which they can complete at home or another location. -->
-            </p>
-
-          <!--  <p style="color: #fff;">We'll let you know when they've completed it so you can continue the application.</p> -->
-          </li>
-
         </ul>
+
+<p style="color: #fff;">We currently only accept applications for people receiving one of these benefits.</p> -->
 
         <div class="govuk-!-padding-bottom-4"></div>
 
-        <a href="online_banking_radios" role="button" class="govuk-button white-button right">
-          Continue</a>
-        <a href=#" role="button" class="govuk-button draft-button">
+        <a href="#" role="button" class="govuk-button white-button right">
+          Continue in CCMS</a>
+      <!--  <a href=#" role="button" class="govuk-button draft-button">
           Save and come back later
-        </a>
+        </a> -->
+
+        <p style="color: #fff;"><a href="#">Back to my applications</a></p>
 
       </div>
-    </div>
-  </div>
+
 
 
 {% endblock %}

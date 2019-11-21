@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "provider_means_summary"
+  href: "benefits"
 }) }}
 
 {% endblock %}
@@ -37,7 +37,6 @@ Apply for legal aid - Income start page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
 
 <!-- <p class="gov-body">
@@ -51,8 +50,6 @@ Your client told us they receive the types of income listed below. You need to:
 <li>go through their bank transactions from the past 3 months</li>
 <li>add payments they received to each income category</li>
 </ul>
-
-
 
       <ol class="app-task-list">
         <li>
@@ -184,6 +181,66 @@ Your client told us they receive the types of income listed below. You need to:
             </span> -->
           </h2>
           <ul class="app-task-list__items">
+            <table class="govuk-table" style="margin-bottom:0px;">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Date</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">27 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">21 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">16 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">07 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">27 Dec 2018</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">21 Dec 2018</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              </tbody>
+              </table>
             <li class="app-task-list__item">
               <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
                 Add benefits payments
@@ -197,7 +254,7 @@ Your client told us they receive the types of income listed below. You need to:
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
+              <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
                 Add payments from family or friends
               </a>
             </li>
@@ -225,7 +282,7 @@ Your client told us they receive the types of income listed below. You need to:
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="provider_means_summary" role="button" class="govuk-button">
+        <a href="outgoings" role="button" class="govuk-button">
           Save and continue
         </a>
 

@@ -434,6 +434,96 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/delegated_function
   }
 })
 
+// Client doesn't use online banking - continue in ccms
+router.post('/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/online_banking_declaration')
+  }
+})
+
+// Client doesn't use online banking - continue in ccms (Jim's miscellany)
+router.post('/jim/pre_financial_assessment_flow/no_online_banking_use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/pre_financial_assessment_flow/no_online_banking_use_ccms')
+  } else {
+    res.redirect('/jim/pre_financial_assessment_flow/online_banking_declaration')
+  }
+})
+
+// Client doesn't agree to share transactions - continue with solicitor (Jim's miscellany)
+router.post('/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor')
+  } else {
+    res.redirect('/jim/pre_financial_assessment_flow/bank_select_03')
+  }
+})
+
+// Client doesn't agree to share transactions v2 - continue with solicitor (Jim's miscellany)
+router.post('/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor')
+  } else {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/bank_select_03')
+  }
+})
+
+// Client doesn't use online banking v2 - continue in ccms (Jim's miscellany)
+router.post('/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms')
+  } else {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/client_agree_share')
+  }
+})
+
+// Client doesn't agree to share transactions v2 - continue in ccms (Jim's miscellany)
+router.post('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms')
+  } else {
+    res.redirect('/jim/pre_financial_assessment_flow_v2/online_banking_declaration')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line

@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "online_banking_radios"
   }) }}
 {% endblock %}
 
@@ -25,17 +25,21 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="no_online_banking_use_ccms" method="post" class="form">
+        <form action="client_not_sharing_transactions_use_ccms" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client use online banking?
+                  Does your client agree to share their financial data with us?
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <p class="govuk-body">We need your client's permission to view their bank transactions from the past 3 months.</p>
+
+              <p class="govuk-body">We'll ask them to share this with us using <a href="https://www.openbanking.org.uk/customers/what-is-open-banking/">open banking</a>.</p>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">

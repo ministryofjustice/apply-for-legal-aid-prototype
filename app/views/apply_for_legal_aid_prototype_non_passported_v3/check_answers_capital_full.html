@@ -39,15 +39,16 @@ th:first-child {
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Accounts</h2>
+        <h2 class="govuk-heading-l">Bank accounts</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <!-- <p><a class="govuk-link" style="float:right;" href="citizen_accounts">Change</a></p> -->
       </div>
     </div>
 
-    <table class="govuk-table">
+    <h2 class="govuk-heading-m">Account 1</h2>
 
+  <!--  <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header" scope="col">Type</th>
@@ -63,7 +64,36 @@ th:first-child {
         </tr>
         <tr><td style="padding-top:10px"><a class="govuk-link" href="citizen_accounts">Add another account</a></td> </tr>
       </tbody>
+    </table> -->
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Bank</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Mock Bank</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Account holder</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">John Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Account number</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">12345678</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Sort code</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">01-21-31</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Balance</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£205.79</td>
+        </tr>
+        <tr><td style="padding-top:10px"><a class="govuk-link" href="citizen_accounts">Add another account</a></td> </tr>
+      </tbody>
     </table>
+
+
+
 
     <div class="govuk-!-padding-bottom-3"></div>
 
@@ -326,6 +356,32 @@ th:first-child {
 <div class="govuk-!-padding-bottom-3"></div>
 
 <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Restrictions on your assets</h2>
+</div>
+</div>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+<div class="govuk-summary-list__row govuk-summary-list--no-border normal-word-break" id="app-check-your-answers__restrictions">
+ <dt class="govuk-summary-list__key govuk-!-width-one-half">
+  Are there any legal restrictions that prevent you from selling or borrowing against your assets?
+ </dt>
+ <dd class="govuk-summary-list__value">
+   Yes
+ </dd>
+   <dd class="govuk-summary-list__actions">
+       <a class="govuk-link change-link" href="/providers/applications/52f1a751-6026-424d-b20c-54a5d9956b49/restrictions">
+         Change<span class="govuk-visually-hidden"> Restrictions on your client's assets</span></a>
+       </dd>
+     </div>
+   </dl>
+
+ <div class="govuk-body wrap-text govuk-!-margin-bottom-0">
+   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+ </div>
+
+
+<!--<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
   </div>
@@ -361,7 +417,7 @@ th:first-child {
       <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 <div class="govuk-!-padding-bottom-6"></div>
 
