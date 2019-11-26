@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="use_ccms" method="post" class="form">
+        <form action="online_banking_declaration" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -66,7 +66,7 @@ Apply for legal aid - Other capital
                      They need to sign in to <a href="https://www.openbanking.org.uk/">open banking</a> to share their financial data with us
                  </span> -->
                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                        They'll need to sign in to online banking and share financial data from all of their accounts to complete the financial assessment
+                        They'll need to sign in to online banking and share their financial data with us <!-- from all of their accounts  to complete the financial assessment -->
                     </span>
                </div>
 
@@ -81,7 +81,7 @@ Apply for legal aid - Other capital
                    </span>
                  </div>
 
-               <div class="govuk-checkboxes__item">
+          <!--     <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
                    Your client can provide details of their capital
@@ -89,7 +89,7 @@ Apply for legal aid - Other capital
               <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                      They'll need to tell us the values of any property, savings or other assets they have
                  </span>
-               </div>
+               </div> -->
 
                <p class="govuk-body">or</p>
 
@@ -104,13 +104,15 @@ Apply for legal aid - Other capital
             </fieldset>
           </div>
 
+          <p class="govuk-body"><a href="use_ccms">If boxes are not checked</a></p>
+
           <button type="submit" class="govuk-button">
             Save and continue
           </button>
 
-        <!--   <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
-          </a> -->
+          </a>
         </form>
       </div>
     </div>

@@ -524,6 +524,36 @@ router.post('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactio
   }
 })
 
+// Client doesn't agree to share transactions - provider completes means test
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
+  }
+})
+
+// Client doesn't agree to share transactions - provider completes means test
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line

@@ -1,0 +1,471 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "capital_restrictions_select"
+}) }}
+{% endblock %}
+
+{% block content %}
+<style media="screen">
+.app-check-your-answers__question{
+  /*font-weight: normal;*/
+}
+th:first-child {
+  font-weight: bold;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Bank accounts</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <!-- <p><a class="govuk-link" style="float:right;" href="citizen_accounts">Change</a></p> -->
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Account 1</h2>
+
+  <!--  <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Type</th>
+          <th class="govuk-table__header" scope="col">Account number</th>
+          <th class="govuk-table__header " scope="col">Sort code</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Mock TRANSACTION ACCOUNT 1</td>
+          <td class="govuk-table__cell">10000000</td>
+          <td class="govuk-table__cell">01-21-31</td>
+        </tr>
+        <tr><td style="padding-top:10px"><a class="govuk-link" href="citizen_accounts">Add another account</a></td> </tr>
+      </tbody>
+    </table> -->
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Bank</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Mock Bank</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Account holder</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">John Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Account number</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">12345678</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Sort code</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">01-21-31</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row">Balance</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£205.79</td>
+        </tr>
+        <tr><td style="padding-top:10px"><a class="govuk-link" href="citizen_accounts">Add another account</a></td> </tr>
+      </tbody>
+    </table>
+
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Regular income types</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="types_of_income">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Salary or wages</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Benefits</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Financial help from friends or family</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Maintenance payments for you or your children</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Income from a property or lodger</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Money from a student loan or grant</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Income from a State, work or private pension</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Regular payments types</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="types_of_outgoing">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Rent or mortgage payments</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Childcare costs to a nursery or registered provider</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Maintenance payments for children or an ex-partner</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Payments towards legal aid in a criminal case</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<h2 class="govuk-heading-m">
+  Property
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does you own the home you live in?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes, owned outright
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How much is your home worth?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £250,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the outstanding mortgage on your home?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £180,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does your own your home with anyone else?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes, with a partner or ex-partner
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What % share of your home do you legally own?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50%
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Savings and investments</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="savings_investments_select">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Money in accounts you do not access with online banking</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£535.72</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Money you do not keep in a bank account</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£745</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Signatory on a child's or other person's bank account</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£1,280.72</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">National Savings Certificates and Premium Bonds</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£2,657</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Shares in a PLC (public limited company)</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£1,345</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">PEPs, unit trusts, capital bonds and government stocks</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£256</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Life assurance and endowment policies not linked to a mortgage</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£45,687</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Other assets</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="other_capital_select">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Any valuable items worth more than £500</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£256</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home estimated value</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£67,535.72</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home outstanding mortgage amount</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£745</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home percentage owned</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">12%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Timeshare</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£2,657</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Land</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£1,345</td>
+    </tr>
+
+  <!--  <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Car, van or motorcycle less than 3 years old</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£45</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Classic car purchased as an investment</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£87</td>
+    </tr> -->
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Money or assets from the estate of a person who has died</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Money owed to you, including from a private mortgage</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£45,687</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Interest in a trust</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£1</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Restrictions on your assets</h2>
+</div>
+</div>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+<div class="govuk-summary-list__row govuk-summary-list--no-border normal-word-break" id="app-check-your-answers__restrictions">
+ <dt class="govuk-summary-list__key govuk-!-width-one-half">
+  Are there any legal restrictions that prevent you from selling or borrowing against your assets?
+ </dt>
+ <dd class="govuk-summary-list__value">
+   Yes
+ </dd>
+   <dd class="govuk-summary-list__actions">
+       <a class="govuk-link change-link" href="/providers/applications/52f1a751-6026-424d-b20c-54a5d9956b49/restrictions">
+         Change<span class="govuk-visually-hidden"> Restrictions on your client's assets</span></a>
+       </dd>
+     </div>
+   </dl>
+
+ <div class="govuk-body wrap-text govuk-!-margin-bottom-0">
+   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+ </div>
+
+
+<!--<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Do any restrictions apply?</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="capital_restrictions_select">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Repossession or deferred interest in a property</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Subject matter of dispute in other legal proceedings</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Foreign exchange controls</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Restraint or freezing order</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Bankruptcy</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Held overseas</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+<!-- <h2 class="govuk-heading-m">What happens next</h2>
+
+<p class="govuk-body">
+Your solicitor will now need to complete a merits assessment for the proceeding you are applying for.
+</p> -->
+
+<a href="citizen_declaration" class="govuk-button" href="#" role="button">
+  Save and continue
+</a>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
