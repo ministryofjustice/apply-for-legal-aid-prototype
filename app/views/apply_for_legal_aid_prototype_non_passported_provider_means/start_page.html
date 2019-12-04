@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid
+Apply for legal aid - Homepage
 {% endblock %}
 
 {% block header %}
@@ -21,25 +20,9 @@
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
-      text: "prototype"
+      text: "Prototype"
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
   }) }}
 
 {% endblock %}
@@ -68,8 +51,9 @@
 
         <ul class="govuk-list govuk-list--bullet">
           <li>has a National Insurance number</li>
-          <li>is single (unless their partner is the respondent)</li>
-          <li>uses online banking for all of their bank accounts</li>
+          <li>is single (unless their partner is the opponent)</li>
+        <!--  <li>uses online banking for all of their bank accounts</li>
+          <li>agrees to share 3 months of bank transactions with us</li> -->
         </ul>
 
       <!--  <p class="govuk-body"><a href="https://www.gov.uk/check-legal-aid">Check if you can get legal aid</a> for help with civil cases.</p> -->

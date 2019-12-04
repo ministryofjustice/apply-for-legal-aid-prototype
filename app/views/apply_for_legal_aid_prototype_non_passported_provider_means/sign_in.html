@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
@@ -17,25 +18,14 @@
   }) }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-
-{% endblock %}
-
 {% block content %}
-
 
     <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Sign in</h1>
 
-<p class="govuk-body">By signing in to the Legal Aid Agency portal you accept our <a href="#">terms and conditions</a>.</p>
+<p class="govuk-body">By signing in to the Legal Aid Agency (LAA) portal you accept our <a href="#">terms and conditions</a>.</p>
         <fieldset class="govuk-fieldset">
 
 

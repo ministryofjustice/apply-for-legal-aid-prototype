@@ -31,22 +31,22 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
-            </legend>
+          <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
+            </legend> -->
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="firstname">
-                First name
+                Full name
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
             </div>
 
-            <div class="govuk-form-group">
+          <!--  <div class="govuk-form-group">
                 <label class="govuk-label" for="lastname">
                 Last name
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
-            </div>
+            </div> -->
 
           </fieldset>
         </div>
@@ -55,8 +55,9 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
-              </legend>
+              <label class="govuk-label" for="dateofbirth">
+              Date of birth
+              </label>
               <span id="dob-hint" class="govuk-hint">
                 For example, 31 3 1980
               </span>
@@ -92,8 +93,8 @@ Apply for legal aid - Client details
           <div class="govuk-!-padding-bottom-2"></div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="national-insurance-number">
-              National Insurance number
+            <label class="govuk-label" for="nino">
+            National Insurance Number
             </label>
             <span id="national-insurance-number-hint" class="govuk-hint">
               For example, ‘QQ 12 34 56 C’ <!--. We use this to check your client's benefits status with the Department for Work Pensions. -->
@@ -104,9 +105,9 @@ Apply for legal aid - Client details
            <div class="govuk-!-padding-bottom-2"></div>
 
          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="email-address">
-              Email address
-            </label>
+           <label class="govuk-label" for="email">
+           Email address
+           </label>
             <span id="email-hint" class="govuk-hint">
               <!-- We will use this to send your client information about the case.
 If your client needs to complete a financial assessment we'll send an email to this address
@@ -114,7 +115,7 @@ We'll send your client a secure link if they need to complete a financial assess
 We'll use this to send your client instructions on how to complete a financial assessment if required
 We'll send your client a secure link to an online financial assessment if they need to complete one
 We'll use this to send your client a secure link if they need to complete a financial assessment -->
-We'll send your client a link to our service if they need to have a financial assessment
+We'll send your client a link to our service if we need to check their financial eligibility
             </span>
             <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
           </div>
