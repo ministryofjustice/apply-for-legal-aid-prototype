@@ -554,6 +554,22 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
   }
 })
 
+// Dependants - v4 NP flow
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_one_age')
+  }
+})
+
+
 
 
 // Add your routes here - above the module.exports line
