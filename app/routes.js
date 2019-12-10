@@ -553,9 +553,9 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
   }
 })
-
+<!--
 // Dependants - v4 NP flow
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing', function (req, res) {
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -563,12 +563,12 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing')
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings')
   } else {
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_one_age')
   }
 })
-
+ -->
 
 
 
