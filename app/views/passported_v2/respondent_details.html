@@ -103,12 +103,23 @@ Apply for legal aid - Alternative funding
             Yes
           </label>
         </div>
+
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="how-contacted-conditional-6" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-6" {{ checked("attempts-to-settle","no") }}>
           <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-6">
             No
           </label>
         </div>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
+          <div class="govuk-form-group" style="padding-top:60px;">
+            <label class="govuk-label" for="contact-by-email">
+              Tell us what action they've taken (if any), including dates and the outcome
+            </label>
+            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+          </div>
+        </div>
+
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-6">
           <div class="govuk-form-group" style="padding-top:60px;">
             <label class="govuk-label" for="contact-by-email">
