@@ -28,38 +28,32 @@ href: "/client_details"
 
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
     <h1 class="govuk-fieldset__heading">
-      What % share of their home does your client legally own?
+      How much is your home worth?
     </h1>
   </legend>
-  <div class="govuk-!-padding-bottom-6"></div>
 
+  <div class="govuk-!-padding-bottom-8"></div>
 
-      <form action="vehicles" id="mock-address-lookup" method="post" class="form">
+      <form action="postcode_finder_2" id="mock-address-lookup" method="post" class="form">
 
 
 
 <div class="address-lookup-step1">
         <div class="govuk-form-group">
-
-          <!--  <label class="govuk-label" for="address-postcode">
-            Enter the estimated percentage share you own
-          </label> -->
-
+            <label class="govuk-label" for="address-postcode">
+            Enter the estimated value of your home
+            </label>
             <span id="postcode-hint" class="govuk-hint">
-              Your client's name must be on the property deeds, lease, freehold or mortgage
+              You can use property websites to find the estimated value.
             </span>
 
-            <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">%</span>
+            <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
             <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="contact-by-email" name="contact-by-email" type="email">
           <!-- <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"> -->
 
         </div>
 
-        <input class="govuk-button" type="submit" value="Save and continue">
-
-        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-          Save and come back later
-        </a>
+        <input class="govuk-button" type="submit" value="Continue">
 
 </div>
 
@@ -117,14 +111,6 @@ href: "/client_details"
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -132,7 +118,11 @@ href: "/client_details"
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {

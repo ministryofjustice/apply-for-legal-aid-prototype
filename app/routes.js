@@ -553,7 +553,7 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
   }
 })
-<!--
+
 // Dependants - v4 NP flow
 router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings', function (req, res) {
   // Get the answer from session data
@@ -568,7 +568,22 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoi
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_one_age')
   }
 })
- -->
+
+// Dependants - v4 NP flow
+router.post('/passported_v2/delegated_functions_confirmation', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/passported_v2/delegated_functions_confirmation')
+  } else {
+    res.redirect('/passported_v2/assessment_start')
+  }
+})
+
 
 
 
