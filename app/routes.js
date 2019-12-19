@@ -584,7 +584,50 @@ router.post('/passported_v2/delegated_functions_confirmation', function (req, re
   }
 })
 
+// DF - notification more than 5 days after starting application v1
+router.post('/jim/delegated_functions/notification/v1/delegated_functions_2', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
 
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/notification/v1/what_youre_covered_for')
+  } else {
+    res.redirect('/jim/delegated_functions/notification/v1/delegated_functions_2')
+  }
+})
+
+// DF - notification more than 5 days after starting application v2
+router.post('/jim/delegated_functions/notification/v2/late_notification', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/notification/v2/what_youre_covered_for')
+  } else {
+    res.redirect('/jim/delegated_functions/notification/v2/late_notification')
+  }
+})
+
+// DF - notification more than 5 days after starting application v3
+router.post('/jim/delegated_functions/notification/v3/delegated_functions_2', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/notification/v3/what_youre_covered_for')
+  } else {
+    res.redirect('/jim/delegated_functions/notification/v3/delegated_functions_2')
+  }
+})
 
 
 // Add your routes here - above the module.exports line
