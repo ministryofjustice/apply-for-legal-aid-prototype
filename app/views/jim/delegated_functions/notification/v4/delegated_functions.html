@@ -16,7 +16,7 @@ Apply for legal aid - Does your client use online banking
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
+    text: "Home",
       href: "home_v2"
   }) }}
 {% endblock %}
@@ -25,7 +25,7 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="late_notification" method="post" class="form">
+        <form action="delegated_functions_2" method="post" class="form">
 
 
         <div class="govuk-form-group">
@@ -52,40 +52,6 @@ Apply for legal aid - Does your client use online banking
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
           Yes
         </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-        <label class="govuk-label" for="how-contacted-conditional-1">
-          Date you used delegated functions <!-- Date you granted legal aid -->
-        </label>
-        <span id="dob-hint" class="govuk-hint">
-      For example, 18 4 2019
-    </span>
-    <div class="govuk-date-input" id="dob">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day-2">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month-2">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month-2" name="dob-month-2" type="number" pattern="[0-9]*" value="{{ data['dob-month-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year-2">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year-2" name="dob-year-2" type="number" pattern="[0-9]*" value="{{ data['dob-year-2'] }}">
-        </div>
-      </div>
-    </div>
       </div>
 
       <div class="govuk-radios__item">

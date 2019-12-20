@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
   {{ govukBackLink({
     text: "Back",
-      href: "delegated_functions"
+      href: "delegated_functions_2"
   }) }}
 {% endblock %}
 
@@ -25,11 +25,10 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Tell us why you started this application more than 5 working days after using delegated functions</h1>
+        <h1 class="govuk-heading-l">You used delegated functions more than 5 working days before starting this application</h1>
 
-        <!--  You used delegated functions more than 5 working days before starting this application
 
-          <p class="govuk-body">We require legal aid providers to tell us they've used delegated functions within 5 working days.</p> -->
+        <!--  <p class="govuk-body">You need to start legal aid applications within 5 working days of using delegated functions.</p> -->
 
         <form action="what_youre_covered_for" method="post" novalidate>
 
@@ -38,9 +37,7 @@ Apply for legal aid - Statement of case
                 Tell us why you started this application more than 5 working days after you used delegated functions
                 </label> -->
 
-                <label class="govuk-label" for="more-detail">
-    Reason
-  </label>
+                <label class="govuk-label" for="more-detail">Enter a reason</label>
             <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
 
             </div>

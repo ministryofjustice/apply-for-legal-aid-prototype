@@ -629,6 +629,21 @@ router.post('/jim/delegated_functions/notification/v3/delegated_functions_2', fu
   }
 })
 
+// DF - notification more than 5 days after starting application v4
+router.post('/jim/delegated_functions/notification/v4/delegated_functions_2', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/delegated_functions/notification/v4/what_youre_covered_for')
+  } else {
+    res.redirect('/jim/delegated_functions/notification/v4/delegated_functions_2')
+  }
+})
+
 
 // Add your routes here - above the module.exports line
 module.exports = router

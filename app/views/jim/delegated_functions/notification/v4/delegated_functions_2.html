@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "home_v2"
+      href: "delegated_functions"
   }) }}
 {% endblock %}
 
@@ -32,31 +32,11 @@ Apply for legal aid - Does your client use online banking
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      <!--  Have you exercised delegated functions?
-      Have you started work on this case yet?
-      Have you used delegated functions to start work on this case?
-      Have you already started work on this case using delegated functions?
-      Have you used delegated functions to grant legal aid to your client?
-      Have you used delegated functions for this application? -->
-      Have you used delegated functions?
+When did you use delegated functions?
       </h1>
     </legend>
 
-  <!--  <span id="how-contacted-conditional-hint" class="govuk-hint">
-      If yes the date must be within 5 days of submission
-    </span> -->
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="onlinebank" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-        <label class="govuk-label" for="how-contacted-conditional-1">
-          Date you used delegated functions <!-- Date you granted legal aid -->
-        </label>
         <span id="dob-hint" class="govuk-hint">
       For example, 18 4 2019
     </span>
@@ -86,15 +66,7 @@ Apply for legal aid - Does your client use online banking
         </div>
       </div>
     </div>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-          No
-        </label>
-        </fieldset>
-      </div>
+    </div>
 
       <button type="submit" class="govuk-button">
         Save and continue
