@@ -31,7 +31,7 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client have any savings accounts?
+                  Does your client have a savings account?
                 </h1>
               </legend>
 
@@ -40,24 +40,17 @@ Apply for legal aid - Property and mortgage
                 This includes cars, vans or motorcycles.
               </span> -->
 
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("property","yes") }}>
-                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="contact-by-email">
-                          Number of savings accounts
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                      </div>
-                    </div>
+            <div class="govuk-radios govuk-radios--inline">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
+                  <input class="govuk-radios__input" id="property-1" name="vproperty" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
