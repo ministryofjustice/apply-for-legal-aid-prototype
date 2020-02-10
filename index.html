@@ -1,0 +1,206 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Prototypes and explorations
+      <span class="govuk-caption-xl"></span>
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-m">Non-passported journey</h2>
+    <h2 class="govuk-heading-s">Current version</h2>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="/apply_for_legal_aid_prototype_non_passported_provider_means/start_page">Version 4</a>: capital questions shifted from client to provider</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Previous versions</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/non_passported_v1/start_page">Version 1</a></li>
+      <li><a href="/apply_for_legal_aid_prototype/start_page">Version 2</a></li>
+      <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/start_page">Version 3</a></li>
+      <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/citizen_start_page">Skip to citizen start page</a></li>
+      <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/citizen_accounts">Skip to citizen accounts</a></li>
+      <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/provider_means_summary">Skip to provider means summary</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Passported journey</h2>
+
+    <h2 class="govuk-heading-s">Current version</h2>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="/passported_v2/start_page">Version 2</a>: client details at the start of flow, proccedings, capital questions, merits</li>
+  </ul>
+
+    <h2 class="govuk-heading-s">Previous versions</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/start_page">Version 1</a>: proceedings at the start of flow, capital questions, first attempt at simple merits</li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-m">Explorations</h2>
+
+    <h3 class="govuk-heading-s">Stevey's explorations</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>(Non Passported) Results: Eligible With Contribution<br><a href="stevey/eligible_with_contribution-test-v4">Version 01</a>
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Jim's miscellany</h3>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Delegated functions notification: <a href="/jim/delegated_functions/notification/v1/delegated_functions">v1</a> / <a href="/jim/delegated_functions/notification/v2/delegated_functions">v2</a> / <a href="/jim/delegated_functions/notification/v3/delegated_functions">v3</a> / <a href="/jim/delegated_functions/notification/v4/delegated_functions">v4</a></li>
+            <li>CYA abridged answers: <a href="/jim/cya_abridged_questions/non_passported/check_answers">client details</a> / <a href="/jim/cya_abridged_questions/non_passported/check_answers_citizen">citizen section</a> / <a href="/jim/cya_abridged_questions/non_passported/check_answers_capital_full">capital</a> / <a href="/jim/cya_abridged_questions/non_passported/check_answers_merits">merits</a></li>
+            <li>Disregarded benefits: <a href="/jim/disregarded_benefits/benefits_select">benefits select screen only</a> / <a href="/jim/disregarded_benefits/types_of_income">client selects then provider sees</a> / <a href="/jim/disregarded_benefits/income">income 'homepage' select</a></li>
+            <li><a href="/jim/new_upload_pattern/statement">New upload pattern</a></li>
+            <li>Online banking questions: <a href="/jim/online_banking/online_banking">v1</a> / <a href="/jim/online_banking/online_banking2">v2</a></li>
+            <li>Opponent details: <a href="/jim/opponent_details/incident_date">new flow</a> / <a href="/jim/opponent_details/statement">statement page</a></li>
+            <li>Pre-financial assessment checklist: <a href="/jim/pre_open_banking_checklist/means_assessment_required">v1</a></li>
+            <li>Pre-financial assessment flow (provider and client): <a href="/jim/pre_financial_assessment_flow/means_assessment_required">v1</a> / <a href="/jim/pre_financial_assessment_flow_v2/means_assessment_required">v2</a></li>
+            <li>Savings/investments improvements: <a href="/jim/savings_investments_improvements/v1/current_account">v1</a> / <a href="/jim/savings_investments_improvements/v2/current_account">v2</a> / <a href="/jim/savings_investments_improvements/v3/current_account">v3</a> / <a href="/jim/savings_investments_improvements/v4/current_account">v4 (DF)</a></li>
+            <li>Statement: <a href="/jim/statement/statement_split/statement_select">2 separate questions</a> / <a href="/jim/statement/statement_split/statement_reveal">text box reveal</a></li>
+            <li>Transaction selection: <a href="/jim/transactions/income">incoming</a> / <a href="/jim/transactions/outgoings">outgoing</a></li>
+            <li>Truelayer errors: <a href="/error_pages/truelayer/agree_bank_access">pre-Truelayer authorisation</a></li>
+
+          </ul>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                <strong>Jim's miscellany (archived)</strong></span></summary>
+
+                <div class="panel panel-border-narrow">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Applicant must apply in CCMS <a href="/jim/interruption_non_passported/means_assessment_required2">v1</a><!-- / <a href="/jim/transactions/outgoings">outgoing</a> --> / <a href="/jim/interruption_non_passported/means_assessment_required3">v2</a> / <a href="/jim/interruption_non_passported/means_assessment_required4">v3</a></li>
+                    <li>'Before you continue' content: <a href="/jim/passported_what_happens_next/passported">brought forward</a>; <a href="/passported_v2/assessment_start">current</a></li>
+                    <li>Capital gateway radios: <a href="/jim/capital_flow/savings_investments">V1 (hint text)</a>; <a href="/jim/capital_flow/v2/savings_investments">V2 (hidden text)</a></li>
+                    <li>Capital questions: <a href="/jim/capital_none_of_the_above/savings_investments_select">'none of the above' checkbox added</a>; <a href="/jim/capital_flow/v3/types_of_income">complete applicant flow</a></li>
+                    <li>Car capital questions: <a href="/jim/car_capital_questions/vehicles">provider v1</a>; <a href="/jim/car_capital_questions_v2/vehicles">v2</a> and <a href="/jim/citizen_car_capital_questions/vehicles">applicant</a>; / <a href="/jim/car_owned_outright/vehicles">owned outright</a>; <a href="/jim/car_owned_financing/vehicles">financing</a>; <a href="/jim/car_owned_none/vehicles">none</a> / <a href="/jim/car_checkbox/other_capital">Car capital checkbox</a></li>
+                    <li>Delegated functions: <a href="/jim/delegated_functions/home">v1</a> / <a href="/jim/delegated_functions/v2/home">v2</a> / <a href="/jim/delegated_functions/v3/home">v3</a></li>
+                    <li>Dependants: <!-- <a href="/jim/dependants/v1/dependants">v1</a>; <a href="/jim/dependants/v2/dependants">v2</a>; <a href="/jim/dependants/v3/dependants">v3</a>; -->v4 <a href="/jim/dependants/v4/dependants">passported</a> / <a href="/jim/dependants/non_passported/dependants">non-passported</a> <!-- ; <a href="/jim/dependants/v5/dependants">v5</a> -->/ <a href="/jim/dependants/check_answers">check your answers</a></li>
+                    <li><a href="/jim/diversity/ethnic_group">Equality/diversity survey</a>
+                    <li>Error pages: <a href="/error_pages/link_expired">link expired</a>; <a href="/error_pages/page_not_found2">url entered incorrectly</a>; <a href="/error_pages/service_down">service down</a>; <a href="/error_pages/server_error">server error</a>; <a href="/error_pages/already_submitted">financial assessment already submitted</a></li>
+                    <li>Incoming/outgoing transactions select: <a href="/jim/transactions_select/income_summary">answers in accordions</a></li>
+                    <li>Initial income/outgoings questions (applicant): <a href="/jim/incomings_outgoings_radios/types_of_income_yes_no">Yes/No radios w/ full list</a>; <a href="/jim/incomings_outgoings_list/types_of_income">select from list</a></li>
+                    <li>Latest incident dates: <a href="/jim/latest_incident_dates/latest_incident_dates_v1">V1</a>; <a href="/jim/latest_incident_dates/latest_incident_dates_v2">V2</a></li>
+                    <li><a href="/jim/privacy">Privacy statement</a></li>
+                    <li>Limitations: <a href="/jim/limitations/search">search proceedings page</a>; <a href="/jim/limitations/limitations2">separate page</a></li>
+                    <li>Means outcomes (passported): <a href="/jim/means_outcomes/eligible_no_contribution">eligible no contribution</a> / <a href="/jim/means_outcomes/eligible_with_contribution">eligible with contributions</a> / <a href="/jim/means_outcomes/eligible_with_contributions_restrictions">eligible with contributions (restrictions)</a> / <a href="/jim/means_outcomes/ineligible">ineligible</a> / <a href="/jim/means_outcomes/ineligible_restrictions">ineligible restrictions</a> / <a href="/jim/means_outcomes/ineligible_second_home_1">ineligible second home</a></li>
+                    <li>Prospects of success: <a href="/jim/prospects_of_success/prospects">2 pages and less radios</a></li>
+                    <li>Provider office select: <a href="/jim/office_select/start_page">V1</a>; <a href="/jim/office_select/v2/start_page">V2</a></li>
+                    <li>Statement of case: <a href="/jim/statement/statement">no upload or text error</a>; <a href="/jim/statement_split/statement_select">download and free text separate pages</a></li>
+                    <li>Restrictions: checkboxes with help text <a href="/jim/restrictions/restrictions_passported">passported</a> / <a href="/jim/restrictions/restrictions_non_passported">non-passported</a>; Yes/No with free text <a href="/jim/restrictions/restrictions">non-passported</a> / <a href="/jim/restrictions/restrictions_pp">passported</a></li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    <strong>Justin's explorations</strong></span></summary>
+
+                    <div class="panel panel-border-narrow">
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Homepage for MVP<br><a href="/home/home_01">Version 01</a>
+                          <br><a href="/home/home_02">Version 02</a>
+                          <br><a href="/home/home_03">Version 03</a>
+                          <br><a href="/home/home_04">Version 04</a>
+                          <br><a href="/home/home_05">Version 05</a>
+                          <br><a href="/home/home_06">Version 06</a>
+                          <br><a href="/home/home_07">Version 07</a>
+                          <br><a href="/home/home_08">Version 08</a></li>
+                        </ul>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Final application submit flow<br><a href="/final_app_submit/check_answers_merits_02">Version 1</a></li>
+                        </ul>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Final application to sign flow<br><a href="/apply_for_legal_aid_prototype_non_passported_v3/application_submitted">Version 1</a></li>
+                        </ul>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Categorised transactions<br><a href="/assigned_to/benefits_v1">Version 1</a><br><a href="/assigned_to/benefits_v2">Version 2</a></li>
+                        </ul>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Bank selection screen options<br><a href="apply_for_legal_aid_prototype_non_passported_v3/bank_select_01">Version 1</a><br>
+                            <a href="apply_for_legal_aid_prototype_non_passported_v3/bank_select_02">Version 2</a><br>
+                            <a href="apply_for_legal_aid_prototype_non_passported_v3/bank_select_03">Version 3</a><br>
+                          </li>
+                        </ul>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Post MVP design explorations<br><a href="/apply_for_legal_aid_prototype_non_passported_v4/index_post_MVP">Index</a></li>
+                        </ul>
+                    </div>
+                  </details>
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    <strong>Malcolm's work</strong></span></summary>
+
+                    <div class="panel panel-border-narrow">
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Malcolm's sorting stuff: <a href="/malcolm/salary3.html" target="_blank">Sorting table page</a></li>
+                        <li>Malcolm's dashboards: <a href="/malcolm/dashboard.html" target="_blank">Dashboard</a></li>
+                        <li>Malcolm's alternative table layout: <a href="/malcolm/salary3grid.html" target="_blank">Grid-layout table page</a></li>
+
+                      </ul>
+                    </div>
+                  </details>
+
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            <strong>Simon's explorations</strong></span></summary>
+
+            <div class="panel panel-border-narrow">
+              <h2 class="govuk-heading-s">Delegated + substantive prototypes</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/delegated_functions/home_v1">Delegated functions V1</a><br>Separate "Start application" & "Notify" buttons (All Domestic abuse proceedings)</li>
+                <li><a href="/delegated_functions/v2/home_v2">Delegated functions V2</a><br>DF notification and application 1 button, 1 flow (All Domestic abuse proceedings)</li>
+              </ul>
+            </div>
+
+            <div class="panel panel-border-narrow">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/merits_flow/legal_help">Merits flow - Non-mole order</a> - Merits flow only</li>
+                <li><a href="/footer/feedback">Footer - Feedback page</a></li>
+                <li><a href="/footer/contact">Footer - Contact page</a></li>
+                <li><a href="/proceeding_flow/dashboard">Client details & proceedings - Initial pages flow</a></li>
+                <li><a href="/error_pages/page_not_found">Error page - Page not found</a></li>
+                <li><a href="/capital_check_your_answers/check_answers_capital_home">Capital check your answers page</a></li>
+                <li><a href="/means_pages/means_home">Means pages</a></li>
+                <li><a href="/limitations/limitations">Initial limitations ideas</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                <strong>Eve's work</strong></span></summary>
+
+                <div class="panel panel-border-narrow">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Provider 'means' review <a href="/provider_means/provisional_result_v7.html" target="_blank">Summary page</a></li>
+                    <li>Provider 'means' review <a href="/provider_means/incoming_transactions_list_v9.html" target="_blank">Transaction list</a></li>
+                  </ul>
+                </div>
+              </details>
+
+
+        </div>
+      </div>
+
+
+      {% endblock %}
