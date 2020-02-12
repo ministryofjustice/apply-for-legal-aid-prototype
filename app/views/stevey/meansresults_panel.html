@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<!--  {{ govukBackLink({
+  text: "Back",
+  href: "check_answers_capital_full"
+}) }} -->
+
+{% endblock %}
+
+{% block content %}
+
+    <h3 class="govuk-heading-s">Means assessment - Eligible result #1</h3>
+    <p>Eligible with zero contribution from income AND zero contribution from capital.</p>
+
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">John Doe could be eligible for legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            Based on their financial situation, your client may not have to pay towards legal aid. </p>
+
+            <p style="color: #fff;">You still need to provide details of the case before we can grant legal aid.
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+    <h3 class="govuk-heading-s">Means assessment - Eligible result #2</h3>
+        <p>Eligible with ‘£x’ contribution from income and  ‘£x’ contribution from capital</p>
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">John Doe may need to pay towards legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            We've calculated that your client should pay:
+<p style="color: #fff;">
+• a £4,500 lump sum based on their capital<!-- This is because they have £425.50 in disposable income. --></p>
+
+          <p style="color: #fff;">
+      <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
+      You still need to provide details of the case before we can grant legal aid.
+
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+    <h3 class="govuk-heading-s">Means assessment - Eligible result #3</h3>
+        <p>Eligible with ‘£x’ contribution from income and zero contribution from capital</p>
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">John Doe may need to pay towards legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            We've calculated that your client should pay:
+<p style="color: #fff;">
+• a £4,500 lump sum based on their capital<!-- This is because they have £425.50 in disposable income. --></p>
+
+          <p style="color: #fff;">
+      <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
+      You still need to provide details of the case before we can grant legal aid.
+
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+    <h3 class="govuk-heading-s">Means assessment - Eligible result #4</h3>
+        <p>Eligible with zero contribution from income and ‘£x’ contribution from capital</p>
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">John Doe may need to pay towards legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            We've calculated that your client should pay:
+<p style="color: #fff;">
+• a £4,500 lump sum based on their capital<!-- This is because they have £425.50 in disposable income. --></p>
+
+          <p style="color: #fff;">
+      <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
+      You still need to provide details of the case before we can grant legal aid.
+
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
