@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "savings"
+      href: "vehicles_loan"
   }) }}
 {% endblock %}
 
@@ -25,49 +25,53 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_investments_select" method="post" class="form">
+        <form action="vehicles_regular_use" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Enter the total amount in each savings account
+                  Is your client's vehicle over 3 years old?
+                <!--  Did your client buy the vehicle more than 3 years ago? -->
                 </h1>
               </legend>
 
-            <!--   <span class="govuk-hint">
-                This includes cars, vans or motorcycles.
-              </span> -->
 
-              <div class="govuk-form-group">
-  <label class="govuk-label" for="width-5">
-    Savings account 1
-  </label>
-  <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-  <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
-</div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="width-7">
-    Savings account 2
-  </label>
-  <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-  <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
-</div>
+              <!--  <span class="govuk-hint">
+                  'Regular use' includes common journeys like driving to the shops or taking children to school.
+                    I includes use by your client's partner (if they have one)
+                  </span> -->
 
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+
+                  </label>
+                </div>
+
+
+              </div>
             </fieldset>
           </div>
-
-          <p class="govuk-body"><a href="#">Add another savings account</a></p>
-
 
           <button type="submit" class="govuk-button">
             Save and continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+
         </form>
       </div>
     </div>

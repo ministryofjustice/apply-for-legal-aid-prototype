@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "current_account_amount"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,13 +25,13 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_amount" method="post" class="form">
+        <form action="savings" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client have any savings accounts?
+                  Does your client have any current accounts?
                 </h1>
               </legend>
 
@@ -40,21 +40,23 @@ Apply for legal aid - Property and mortgage
                 This includes cars, vans or motorcycles.
               </span> -->
 
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional" {{ checked("property","yes") }}>
-                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="contact-by-email">
-                          Number of savings accounts
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional" {{ checked("property","yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                          Yes
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
                       </div>
-                    </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Enter the total in all accounts
+                          </label>
+                          <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-10" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
