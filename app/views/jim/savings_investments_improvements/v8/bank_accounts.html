@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "vehicles_loan"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,42 +25,72 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="vehicles_regular_use" method="post" class="form">
+        <form action="savings_investments_select" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is your client's vehicle over 3 years old?
-                <!--  Did your client buy the vehicle more than 3 years ago? -->
+                  Does your client have any bank accounts?
                 </h1>
               </legend>
 
+              <span class="govuk-hint">For example, current accounts, savings accounts, Post Office or Individual Savings Accounts (ISAs).</span>
+
+              <!-- <span class="govuk-hint">
+                This includes:</span>
+                <ul class="govuk-list govuk-list--bullet">
+                <span class="govuk-hint"><li>current accounts</li>
+                <li>savings accounts</li>
+                <li>Individual Savings Accounts (ISAs)</li>
+                <li>Post Office accounts</li></span>
+                </ul> -->
 
 
-              <!--  <span class="govuk-hint">
-                  'Regular use' includes common journeys like driving to the shops or taking children to school.
-                    I includes use by your client's partner (if they have one)
-                  </span> -->
 
-              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional" {{ checked("property","yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Enter the total amount in all accounts
+                          </label>
+                          <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                          <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                        </div>
+                      </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No
+                  </label>
+                </div>
+              </div>
+
+
+
+  <!--   <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
-
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     No
-
                   </label>
                 </div>
+              </div> -->
 
 
-              </div>
             </fieldset>
           </div>
 
@@ -68,10 +98,9 @@ Apply for legal aid - Property and mortgage
             Save and continue
           </button>
 
-         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-              Save and come back later
-            </a>
-
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
         </form>
       </div>
     </div>
