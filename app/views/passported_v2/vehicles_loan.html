@@ -17,21 +17,26 @@ Apply for legal aid - Costs
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/statement_1"
+      href: "vehicles_costs"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="vehicles_date" method="post" class="form">
 
-    <h1 class="govuk-heading-xl">Are there any <!-- outstanding --> payments left on the vehicle?</h1>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+Are there any <!-- outstanding --> payments left on the vehicle?</h1>
   <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Enter an amount
   </legend> -->
 
  <span class="govuk-hint">
-      Include any outstanding payments on loans, hire purchase (HP) or personal contract purchase (PCP) agreements
+      Include any outstanding payments on loans, hire purchase (HP) or personal contract purchase (PCP) agreements.
     </span>
 
 
@@ -67,7 +72,7 @@ Apply for legal aid - Costs
           </fieldset>
         </div>
 
-<div class="govuk-!-padding-bottom-6"></div>
+
 
 
 

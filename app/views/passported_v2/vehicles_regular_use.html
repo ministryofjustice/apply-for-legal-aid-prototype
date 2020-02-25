@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "vehicles_date"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="savings_investments_select_2" method="post" class="form">
+        <form action="bank_accounts" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -36,12 +36,17 @@ Apply for legal aid - Property and mortgage
               </legend>
 
 
+              <span class="govuk-hint">
 
-                <span class="govuk-hint">
-                    This includes use by your client's partner (if they have one)
-                  </span>
+              <!--  This means the vehicle is used for everyday things like shopping or driving children to school.<br>
+                This means it is used at least once a fortnight for routine things like shopping or driving children to school.<br> -->
+                This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.
+              <!--  'Regular use' includes common journeys like driving to the shops or taking children to school.<br>
+                'Regular use' means the vehicle is used for everyday activities like driving to the shops or taking children to school.<br>
+                <!--  I includes use by your client's partner (if they have one) -->
+                </span>
 
-              <div class="govuk-radios">
+              <div class="govuk-radios govuk-radios-">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
@@ -73,6 +78,8 @@ Apply for legal aid - Property and mortgage
         </form>
       </div>
     </div>
+
+
 
 {% endblock %}
 

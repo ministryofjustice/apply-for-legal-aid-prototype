@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "property_percent"
   }) }}
 {% endblock %}
 
@@ -35,11 +35,11 @@ Apply for legal aid - Property and mortgage
                 </h1>
               </legend>
               <span class="govuk-hint">
-                This includes car, vans or motorcycles
+                This includes car, vans or motorcycles.
               </span>
 
 
-              <div class="govuk-radios">
+              <div class="govuk-radios govuk-radios">
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
