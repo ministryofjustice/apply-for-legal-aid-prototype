@@ -16,25 +16,22 @@ Apply for legal aid - Client details
   }) }}
 
   {{ govukBackLink({
-    text: "Home",
-      href: "dashboard"
+    text: "Back",
+      href: "checklist"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="online_banking_declaration" method="post" class="form">
 
-      <form action="postcode_finder" method="post" novalidate>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-          <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
-            </legend> -->
-
-            <h1 class="govuk-heading-xl">Enter your client's email address</h1>
-
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">Enter your client's email address</h1>
+</legend>
 
          <div class="govuk-form-group">
            <label class="govuk-label" for="email">
@@ -47,7 +44,7 @@ We'll send your client a secure link if they need to complete a financial assess
 We'll use this to send your client instructions on how to complete a financial assessment if required
 We'll send your client a secure link to an online financial assessment if they need to complete one
 We'll use this to send your client a secure link if they need to complete a financial assessment -->
-We'll use this to send your client a link to the service.
+We'll use this to send your client a link to the service where they can share their financial information with us.
             </span>
             <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
           </div>
