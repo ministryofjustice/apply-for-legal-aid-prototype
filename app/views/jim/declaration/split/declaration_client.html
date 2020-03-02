@@ -28,7 +28,7 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "dashboard"
+      href: "check_answers"
   }) }}
 
 {% endblock %}
@@ -38,25 +38,36 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-
-
-        <h1 class="govuk-heading-xl">Declaration</h1>
+        <h1 class="govuk-heading-xl">Confirm the following before submitting your application</h1>
 
       <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
-<p class="govuk-body">By making this application, you agree that:</p>
+      <p class="govuk-body">Your client agrees that:</p>
 
-<ul class="govuk-list govuk-list--bullet">
-<li>your client has instructed you to represent them</li>
-<li>you'll go through all parts of the application with your client</li>
-<li>you'll provide complete and correct information</li>
+      <ul class="govuk-list govuk-list--bullet">
 
-</ul>
+      <li>they've instructed Hitchcock, Jones and King to represent them</li>
+      <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
+      <li>we can check their details with bank and credit reference agencies</li>
+      <li>they may have to pay towards legal aid</li>
+      <li>they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
+      <li>the information they’ve given is complete and correct</li>
+      <li>they’ll report any changes to their financial situation immediately</li>
+      </ul>
 
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
 
+      <p class="govuk-body" style="padding-left: 60px;">
+
+      <strong>If your client gives wrong or incomplete information, or they do not report changes, they may:</p>
+      <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+      <strong><li>be prosecuted</li>
+      <li>need to pay a financial penalty</li>
+      <li>have their legal aid stopped and have to pay back the costs</li></strong>
+      </ul>
 <br>
-  <a href="client_details" role="button" class="govuk-button right">
-    Agree and continue
+  <a href="application_submitted" role="button" class="govuk-button right">
+    Agree and submit
   </a>
 
   <a role="button" class="govuk-button draft-button">

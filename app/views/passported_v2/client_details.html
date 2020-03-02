@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Home",
-      href: "/passported_v2/dashboard"
+      href: "declaration_provider"
   }) }}
 {% endblock %}
 
@@ -31,8 +31,8 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
-            </legend>
+          <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Full name
+            </legend> -->
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="firstname">
@@ -47,18 +47,16 @@ Apply for legal aid - Client details
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
             </div>
-
           </fieldset>
         </div>
 
-        <div class="govuk-!-padding-bottom-2"></div>
-
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
-              </legend>
+              <label class="govuk-label" for="dob">
+              Date of date
+              </label>
               <span id="dob-hint" class="govuk-hint">
-                For example, 31 3 1980
+                For example, 31 3 1980.
               </span>
               <div class="govuk-date-input" id="dob">
                 <div class="govuk-date-input__item">
@@ -92,16 +90,14 @@ Apply for legal aid - Client details
           <div class="govuk-!-padding-bottom-2"></div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="national-insurance-number">
-              National Insurance number
+            <label class="govuk-label" for="ni">
+            National Insurance number
             </label>
             <span id="national-insurance-number-hint" class="govuk-hint">
-              For example, ‘QQ 12 34 56 C’
+              For example, ‘QQ 12 34 56 C’.
             </span>
             <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['national-insurance-number'] }}">
           </div>
-
-           <div class="govuk-!-padding-bottom-2"></div>
 
         <!--   <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="email-address">

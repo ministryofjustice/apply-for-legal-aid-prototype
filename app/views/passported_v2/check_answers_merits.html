@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers - Merits
 
   {{ govukBackLink({
     text: "Back",
-      href: "prospects_of_success"
+      href: "prospects_less_than_50"
   }) }}
 {% endblock %}
 
@@ -26,7 +26,7 @@ Apply for legal aid - Check your answers - Merits
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Check your answers
+        Check your answers and submit application
       </h1>
 
     <!--  <h2 class="govuk-heading-m">
@@ -130,7 +130,7 @@ Apply for legal aid - Check your answers - Merits
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          What you're covered for
+          What you're applying for
         </span>
       </h2>
     </div>
@@ -222,10 +222,11 @@ Apply for legal aid - Check your answers - Merits
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Your client's financial situation
+          Client capital
         </span>
       </h2>
     </div>
+
     <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -394,7 +395,7 @@ Apply for legal aid - Check your answers - Merits
      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
-           When did your client contact you about the latest domestic abuse details?
+           Date your client contacted you about the latest incident
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -407,7 +408,7 @@ Apply for legal aid - Check your answers - Merits
        </div>
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           When did the incident occur?
+           Date the incident occurred
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -422,12 +423,12 @@ Apply for legal aid - Check your answers - Merits
 <br>
 
        <h2 class="govuk-heading-m">
-         Respondent details
+         Opponent details
        </h2>
        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
-           Does the respondent have the mental capacity to understand the terms of a court order?
+           Can understand terms of an order
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -440,7 +441,7 @@ Apply for legal aid - Check your answers - Merits
        </div>
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           Has a warning letter been sent to the respondent?
+           Warning letter has been sent
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -453,7 +454,7 @@ Apply for legal aid - Check your answers - Merits
        </div>
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           Have the police been notified?
+           Police have been notified
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -466,7 +467,7 @@ Apply for legal aid - Check your answers - Merits
        </div>
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           Have bail conditions been set?
+           Bail conditions have been set
          </dt>
         <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -497,22 +498,10 @@ Apply for legal aid - Check your answers - Merits
            </a>
          </dd>
        </div>
+
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
-           What are the estimated legal costs of doing the work
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-        <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Is the chance of a successful outcome 50% or better?
+           Chance of a successful outcome 50% or better?
          </dt>
          <dd class="govuk-summary-list__value">
            {{ data['...'] }}
@@ -531,6 +520,33 @@ Apply for legal aid - Check your answers - Merits
       </div>
       </div>
 
+      <h2 class="govuk-heading-l">Confirm the following</h2>
+
+      <p class="govuk-body">Your client agrees that:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+      <li>they've instructed Hitchcock, Jones and King to represent them</li>
+      <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
+      <li>we can check their details with bank and credit reference agencies</li>
+      <li>they may have to pay towards legal aid</li>
+      <li>they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
+      <li>the information they’ve given is complete and correct</li>
+      <li>they’ll report any changes to their financial situation immediately</li>
+      </ul>
+
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
+
+      <p class="govuk-body" style="padding-left: 60px;">
+
+      <strong>If your client gives wrong or incomplete information, or they do not report changes, they may:</p>
+      <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+      <strong><li>be prosecuted</li>
+      <li>need to pay a financial penalty</li>
+      <li>have their legal aid stopped and have to pay back the costs</li></strong>
+      </ul>
+
 
 
 <!--  <h2 class="govuk-heading-m">Complete your application</h2>
@@ -544,9 +560,9 @@ Apply for legal aid - Check your answers - Merits
         <li>to the best of my knowledge, the information your client has given you is complete and correct</li>
         </ul> -->
 
-
-      <a class="govuk-button" href="declaration_provider" role="button">
-        Save and continue
+<br>
+      <a class="govuk-button" href="confirmation_page" role="button">
+        Agree and submit
       </a>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">

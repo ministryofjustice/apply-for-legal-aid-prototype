@@ -17,7 +17,7 @@ Apply for legal aid - Alternative funding
 
   {{ govukBackLink({
     text: "Back",
-      href: "injunction"
+      href: "incident_date"
   }) }}
 {% endblock %}
 
@@ -32,7 +32,7 @@ Apply for legal aid - Alternative funding
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Respondent details <!-- About the respondent -->
+      Opponent details <!-- About the opponent -->
       </h1>
     </legend>
     <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
@@ -42,7 +42,7 @@ Apply for legal aid - Alternative funding
 
   <!--  <h2 class="govuk-heading-m">H2</h2> -->
 
-<h2 class="govuk-heading-m">Does the respondent have the mental capacity to understand the terms of a court order?</h2>
+<h2 class="govuk-heading-m">Does the opponent have the mental capacity to understand the terms of a court order?</h2>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -69,7 +69,7 @@ Apply for legal aid - Alternative funding
 <div class="govuk-!-padding-bottom-6"></div>
 
 
-      <h2 class="govuk-heading-m">Has a warning letter been sent to the respondent?</h2>
+      <h2 class="govuk-heading-m">Has a warning letter been sent to the opponent?</h2>
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="how-contacted-conditional-3" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("attempts-to-settle","yes") }}>
