@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "property"
+      href: "/passported_v2/assessment_start"
   }) }}
 {% endblock %}
 
@@ -25,71 +25,58 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="statement_upload" method="post" novalidate>
+        <form action="current_account_amount" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  <!-- Provide a --> Enter a statement of case
+                  Does your client have any other current accounts
                 </h1>
               </legend>
 
-              <div class="govuk-!-padding-bottom-3"></div>
+
+            <!--   <span class="govuk-hint">
+                This includes cars, vans or motorcycles.
+              </span> -->
 
 
-              <p class="govuk-body">You must provide a summary of the case details to support your application.</p>
-
-              <!--  <ul class="govuk-list govuk-list--bullet">
-                  <li>what has happened in the case so far</li>
-                  <li>about any other people involved and their relationship to your client</li>
-                  <li>why the current proceedings are necessary</li>
-                  <li>how many people you're representing</li>
-                  <li>if anyone else might be able to fund the case</li>
-               <li>any other information relevant to the case</li>
-              </ul> -->
-
-
-
-<label class="govuk-heading-m">Select a method</label>
-
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="property-1">
-                    Upload a file
-                  </label>
-                </div>
-
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                          Yes
+                        </label>
+                      </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
-                    Enter text
+                    No
                   </label>
                 </div>
               </div>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
+
             </fieldset>
           </div>
-<br>
-        <!--  <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                What counts as savings or investments?
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-               <p class="govuk-body">We need to know if your client has:</p>
-                 <ul class="govuk-list govuk-list--bullet">
-               <li>bank, building society, Post Office or ISA accounts</li>
-               <li>cash savings</li>
-               <li>power of attorney, for example over a Junior ISA</li>
-               <li>National Savings Certificates or Premium Bonds</li>
-               <li>shares in a public limited company (PLC)</li>
-               <li>personal equity plans (PEPs), unit trusts, capital bonds or government stocks</li>
-               <li>life assurance or endowment policies not linked to a mortgage</li>
-            </div>
-          </details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue

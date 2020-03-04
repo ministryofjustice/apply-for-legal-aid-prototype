@@ -267,21 +267,6 @@ router.post('/passported_v2/prospects_less_than_50', function (req, res) {
   }
 })
 
-// Statement of case (select upload or enter)
-router.post('/jim/statement_split/statement_upload', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let over18 = req.session.data['property']
-
-  if (over18 === 'no') {
-    res.redirect('/jim/statement_split/statement_enter')
-  } else {
-    res.redirect('/jim/statement_split/statement_upload')
-  }
-})
-
 
 // Passported property v2 - property
 router.post('/passported_v2/property_amount', function (req, res) {
@@ -388,6 +373,22 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_tha
     res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/check_answers_merits')
   }
 })
+
+// Statement select
+router.post('/jim/statement/split/statement_enter', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['vehicles']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/statement/split/statement_enter')
+  } else {
+    res.redirect('/jim/statement/split/statement_upload')
+  }
+})
+
 
 // Provider office select
 router.post('/jim/office_select/office', function (req, res) {
@@ -644,6 +645,20 @@ router.post('/jim/delegated_functions/notification/v4/delegated_functions_2', fu
   }
 })
 
+// Statement of case (select upload or enter)
+router.post('/jim/statement_split/statement_upload', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/statement_split/statement_upload')
+  } else {
+    res.redirect('/jim/statement_split/statement_enter')
+  }
+})
 
 // Add your routes here - above the module.exports line
 module.exports = router
