@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Application overview
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Home",
+      href: "/dashboard_2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds app-column-minimum">
+
+
+      <h1 class="govuk-heading-l">
+        {{ data['firstname'] }} {{ data['lastname'] }}
+          <span class="govuk-heading-m">2018/LAA/4ewrgfdd </span>
+      </h1>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Client details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="client_details" aria-describedby="eligibility-completed">
+                Full name, date of birth and national insurance number
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="postcode_finder" aria-describedby="read-declaration-completed">
+                Correspondance address
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">
+                Completed
+              </strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Capital assessment
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="property" aria-describedby="company-information-completed">
+                House or mortgage
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="capital" aria-describedby="contact-details-completed">
+                Savings, bonds, stocks and shares
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="other_capital_alt" aria-describedby="medical-information-completed">
+                Anything else that can contribute to the legal costs
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Merits assessment
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="statement_1" aria-describedby="medical-information-completed">
+                Statement of case
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="attempts_settle" aria-describedby="medical-information-completed">
+                Attempts to settle
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="costs" aria-describedby="medical-information-completed">
+                Costs
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="prospects_of_success" aria-describedby="medical-information-completed">
+                Prospects of success
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="declaration" aria-describedby="medical-information-completed">
+                Declaration
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">
+                Completed
+              </strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <a href="dashboard_2" role="button" class="govuk-button right">
+        Back to applications
+      </a>
+
+    </div>
+  </div>
+
+{% endblock %}
