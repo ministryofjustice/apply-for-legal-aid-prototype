@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "prospects_less_than_50"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers: case merits
+      </h1>
+
+    <!--  <h2 class="govuk-heading-m">
+        Scope of legal aid
+      </h2> -->
+
+     <h2 class="govuk-heading-m">
+       Latest incident details
+     </h2>
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+           Date your client contacted you about the latest incident
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Date the incident occurred
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       </dl>
+
+
+       <h2 class="govuk-heading-m">
+         Opponent details
+       </h2>
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+           Can understand terms of an order
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Warning letter has been sent
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Police have been notified
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+        <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Bail conditions have been set
+         </dt>
+        <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+     </dl>
+
+
+     <h2 class="govuk-heading-m">
+       Case details
+     </h2>
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+           Statement of case
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Chance of a successful outcome 50% or better?
+         </dt>
+         <dd class="govuk-summary-list__value">
+           {{ data['...'] }}
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       </dl>
+
+       <div class="govuk-grid-row">
+       <div class="govuk-grid-column-full">
+         <p>{{ data['statement'] }}</p>
+      </div>
+      </div>
+
+
+
+
+<!--  <h2 class="govuk-heading-m">Complete your application</h2>
+
+
+        <p class="govuk-body">But submitting this application, you confirm that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>you're authorised to provide legal representation under a contract with the Legal Aid Agency</li>
+        <li>you've gone through all parts of the application with my client</li>
+        <li>to the best of my knowledge, the information your client has given you is complete and correct</li>
+        </ul> -->
+
+      <a class="govuk-button" href="tasklist5" role="button">
+      Save and continue
+      </a>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Profile
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "dashboard"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Your profile</h1>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-visually-hidden">Your profile</caption>
+  <thead class="govuk-table__head">
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Name</td>
+      <td class="govuk-table__cell">John Doe</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Email address</td>
+      <td class="govuk-table__cell">John.Doe@solicitors.com</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Role</td>
+      <td class="govuk-table__cell">Admin</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Account number</td>
+      <td class="govuk-table__cell">1A234B:3D456G:2S345T</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

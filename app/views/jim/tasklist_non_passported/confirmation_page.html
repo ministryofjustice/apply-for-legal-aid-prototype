@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h2 class="govuk-panel__title">
+            Application created
+          </h2>
+          <div class="govuk-panel__body">
+            Your case reference is
+            <br><strong>L-1DU-D0W</strong>
+          </div>
+        </div>
+
+<div class="govuk-!-padding-top-4"></div>
+
+      <!--  <h3 class="govuk-heading-m">We've sent your client a secure link</h3>
+
+        <p class="govuk-body">Your client can use the link to start the financial assessment from home or another location.</p> -->
+
+        <p class="govuk-body">We've sent an email to johndoe@gmail.com.</p>
+
+
+
+        <h3 class="govuk-heading-m">What happens next</h3>
+
+      <!--  <p class="govuk-body">
+          We'll return your client's completed assessment to you so you can check if they're eligible for legal aid.
+        </p>
+
+        <p class="govuk-body">
+            We'll use your client's answers to check if they can get legal aid.
+          </p> -->
+
+          <p class="govuk-body">
+              You can continue your application once your client has shared their financial information.</p>
+            </p>
+
+          <!--  <ul class="govuk-list govuk-list--bullet">
+            <li>shared their bank transactions</li>
+            <li>told us about their income and regular payments</li>
+            </ul> -->
+
+            <p class="govuk-body">
+                We'll let you know once they've done this.</p>
+              </p>
+<br>
+
+<a href="tasklist4" role="button" class="govuk-button">
+  Continue
+</a>
+
+<a href="citizen_start_page" role="button" class="govuk-button" style="background-color: #b10e1e;">
+  Go to citizen journey
+</a>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

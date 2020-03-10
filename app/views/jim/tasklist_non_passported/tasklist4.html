@@ -1,0 +1,317 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "dashboard"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Apply for legal aid
+    </h1>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Start your application
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="declaration_provider" aria-describedby="eligibility-completed">
+                Read declaration
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="client_details" aria-describedby="eligibility-completed">
+                Client details
+              </a>
+            </span>
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="search" aria-describedby="eligibility-completed">
+                Select a proceeding
+              </a>
+            </span>
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="delegated_functions" aria-describedby="eligibility-completed">
+                Delegated functions
+              </a>
+            </span>
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="what_youre_covered_for" aria-describedby="read-declaration-completed">
+                Cost and scope limitations
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="check_answers" aria-describedby="read-declaration-completed">
+                Check your answers
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Prepare for financial assessment
+        </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="checklist" aria-describedby="company-information-completed">
+              Check you can use this service
+            </a>
+          </span>
+           <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+        </li>
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="email_address" aria-describedby="contact-details-completed">
+              Client email address
+            </a>
+          </span>
+           <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
+        </li>
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="online_banking_declaration">
+              Give your client access
+            </a>
+          </span>
+          <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong> 
+        </li>
+      </ul>
+    </li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Client capital
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="income" aria-describedby="company-information-completed">
+                Income
+              </a>
+            </span>
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="dependants" aria-describedby="company-information-completed">
+                Dependants
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="outgoings" aria-describedby="company-information-completed">
+                Outgoings
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="property" aria-describedby="company-information-completed">
+                Property
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="vehicles" aria-describedby="contact-details-completed">
+                Vehicles
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="savings_investments_select">
+                Savings and investments
+              </a>
+            </span>
+          <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="other_capital_select" aria-describedby="medical-information-completed">
+                Other assets
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="check_answers_capital" aria-describedby="read-declaration-completed">
+                Check your answers
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4. </span> Case merits
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="incident_date">
+                Latest incident details
+              </a>
+            </span>
+          <!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="respondent_details">
+                Opponent details
+              </a>
+            </span>
+<!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="statement_1">
+                Statement of case
+              </a>
+            </span>
+<!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="prospects">
+                Chances of success
+              </a>
+            </span>
+<!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="check_answers_merits">
+                Check your answers
+              </a>
+            </span>
+<!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+        </ul>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">5. </span> Apply
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="declaration_client">
+                Read declaration and submit
+              </a>
+            </span>
+            <!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="declaration_client">
+                Print and sign application
+              </a>
+            </span>
+            <!--  <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> -->
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+  </div>
+  <div class="side-profile">
+    {% include "includes/aside_np.html" %}
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
