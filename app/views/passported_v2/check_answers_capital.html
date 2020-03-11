@@ -129,7 +129,102 @@ Apply for legal aid - Check your answers - Merits
         </span>
       </h2>
     </div>
+
+
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <h2 class="govuk-heading-m">
+        Emergency certificate
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+            Proceeding
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Non-molestation order{{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Form of service
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Full representation{{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <!--  <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Costs you can incur
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £1,350{{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <!--  <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Work you can do
+          </dt>
+          <dd class="govuk-summary-list__value">
+            All steps up to and including the hearing on 21 July 2019.
+    {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <!--  <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a> -->
+          </dd>
+        </div>
+        <!-- <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Delegated functions
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            No{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Client involvement type
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Applicant{{ data['...'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="search#search">
+              Change <span class="govuk-visually-hidden">proceeding</span>
+            </a>
+          </dd>
+        </div> -->
+     </dl>
+
+
+
+      <h2 class="govuk-heading-m">
+        Substantive certificate
+      </h2>
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
            <div class="govuk-summary-list__row">
              <dt class="govuk-summary-list__key">
@@ -215,8 +310,12 @@ Apply for legal aid - Check your answers - Merits
   </div>
 </div>
 
+<h2 class="govuk-heading-l">
+  Client capital
+</h2>
+
         <h2 class="govuk-heading-m">
-          Property, savings and other assets
+          Property
         </h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -225,7 +324,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own the home they live in?
           </dt>
           <dd class="govuk-summary-list__value">
-            Yes, with a mortgage or loan{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -238,7 +337,7 @@ Apply for legal aid - Check your answers - Merits
             How much is your client's home worth?
           </dt>
           <dd class="govuk-summary-list__value">
-            £145,000{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -251,7 +350,7 @@ Apply for legal aid - Check your answers - Merits
             What is the outstanding mortgage on your client's home?
           </dt>
           <dd class="govuk-summary-list__value">
-            £127,345{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -264,7 +363,27 @@ Apply for legal aid - Check your answers - Merits
             Does your client own their home with anyone else?
           </dt>
           <dd class="govuk-summary-list__value">
-            No, sole owner{{ data['...'] }}
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Vehicles
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+            Does your client own a vehicle?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -274,10 +393,10 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Which types of savings or investments does your client have?
+            What is the estimated value of the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            Savings account £1,234{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -287,10 +406,10 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Which types of assets does your client have?
+            Are there any payments left on the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            -{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -298,12 +417,271 @@ Apply for legal aid - Check your answers - Merits
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Did your client buy the vehicle over 3 years ago?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the vehicle in regular use?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Bank accounts
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+            Current account
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Savings account
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Savings and investments
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cash kept at home or another location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Access to another person's bank account
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Savings Certificates and Premium Bonds
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Shares in a PLC
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unit trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Fixed interest security
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Life assurance or endowment policies
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Other assets
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Valuable items worth more than £500
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Second property or holiday home
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Timeshare property
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Land
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Money or assets from the estate of a person who has died
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Money owed to them, including from a private mortgage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Interest in a trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+        Restrictions
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Are there any legal restrictions that prevent your client from selling or borrowing against their assets?
           </dt>
           <dd class="govuk-summary-list__value">
-            -{{ data['...'] }}
+            {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
