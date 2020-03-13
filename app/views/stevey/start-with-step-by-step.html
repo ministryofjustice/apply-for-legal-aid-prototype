@@ -14,9 +14,16 @@
     Apply for legal aid
   </a>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}     {{ govukBackLink({
+      text: "Back",
+      href: "check_answers_capital_full"
+    }) }}{% block content %}
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+
 
     <h1 class="govuk-heading-xl">
       Declaration
