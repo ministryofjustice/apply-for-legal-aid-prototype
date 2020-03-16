@@ -17,43 +17,38 @@ html: 'This is a new service – your <a class="govuk-link" href="">feedback</a>
 
 {{ govukBackLink({
 text: "Back",
-href: "/client_details"
+href: "property_ownership"
 }) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-    <h1 class="govuk-fieldset__heading">
-      What <!-- percentage --> share of their home does your client legally own?
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="vehicles" method="post" class="form">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+      What % share of their home does your client legally own?
     </h1>
   </legend>
-  <div class="govuk-!-padding-bottom-6"></div>
-
 
       <form action="vehicles" id="mock-address-lookup" method="post" class="form">
-
-
-
-<div class="address-lookup-step1">
-        <div class="govuk-form-group">
 
           <!--  <label class="govuk-label" for="address-postcode">
             Enter the estimated percentage share you own
           </label> -->
 
             <span id="postcode-hint" class="govuk-hint">
-              Their name must be on the property deeds, lease, freehold or mortgage
+              Your client's name must be on the property deeds, lease, freehold or mortgage.
             </span>
 
             <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">%</span>
             <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="contact-by-email" name="contact-by-email" type="email">
           <!-- <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"> -->
-
-        </div>
+</div>
+          </fieldset>
 
         <input class="govuk-button" type="submit" value="Save and continue">
 
@@ -61,53 +56,8 @@ href: "/client_details"
           Save and come back later
         </a>
 
-</div>
-
-          </div>
-          </div>
-
-
-<!--
-        <div class="address-lookup-step2">
-          <div class="govuk-form-group">
-
-            <label class="govuk-label" for="address-postcode">
-            Postcode
-            <p class="govuk-body govuk-!-font-weight-bold" style="padding-top:4px;"><a>W1A 1AA</a> &nbsp <a class="govuk-body change-link" id="change-address" >Change</a></p>
-
-          </label>
-
-
-              <div class="govuk-!-padding-bottom-2"></div>
-
-            <label class="govuk-label" for="event-address">Select an address</label>
-            <select class="govuk-select govuk-!-width-one-half" id="event-address" name="event-addresst">
-              <option>5 addresses found</option>
-              <option>1 Main Street, London, W1A 1AA </option>
-              <option>2 Main Street, London, W1A 1AA </option>
-              <option>3 Main Street, London, W1A 1AA </option>
-              <option>4 Main Street, London, W1A 1AA </option>
-              <option>5 Main Street, London, W1A 1AA </option>
-            </select>
-
-          </div>
-
-          <p>
-            <a class="govuk-link" href="manual_address">I can't find the address in the list</a>
-          </p>
-
-
-
-          <div class="govuk-form-group">
-            <input class="govuk-button" type="submit" value="Continue">
-          </div>
-        </div>
-
-
-
-</form>
-
-    </div> -->
+      </form>
+  </div>
   </div>
 {% endblock %}
 

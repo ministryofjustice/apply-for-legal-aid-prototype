@@ -17,23 +17,27 @@ Apply for legal aid - Costs
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/statement_1"
+      href: "vehicles"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="vehicles_loan" method="post" class="form">
 
-    <h1 class="govuk-heading-xl">What is the estimated value of the vehicle?</h1>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is the estimated value of the vehicle?
+      </h1>
+    </legend>
+    <span class="govuk-hint">
+      You can use car valuation websites to find this out.
 
-    <span id="postcode-hint" class="govuk-hint">
-      You can use car valuation websites to find this out
     </span>
-
-    <form action="vehicles_loan" method="post" novalidate>
-      <div class="govuk-form-group">
 
 
         <!--  <span id="postcode-hint" class="govuk-hint">

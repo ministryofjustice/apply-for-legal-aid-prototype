@@ -7,17 +7,6 @@
 Apply for legal aid - Property and mortgage
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -36,17 +25,15 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="property_amount" method="get" class="form">
+        <form action="property_amount" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client own the home that they live in?
+                  Does your client own the home they live in?
                 </h1>
               </legend>
-
-                <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
@@ -78,14 +65,9 @@ Apply for legal aid - Property and mortgage
             Save and continue
           </button>
 
-
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-
-          <p class="govuk-body"><a href="vehicles">Skip property</a></p>
-
-
         </form>
       </div>
     </div>
@@ -98,6 +80,14 @@ Apply for legal aid - Property and mortgage
           items: [
             {
               href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
               text: "Contact"
             },
             {
@@ -105,11 +95,7 @@ Apply for legal aid - Property and mortgage
               text: "Feedback"
             },
             {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              href: "#",
               text: "Terms and conditions"
             },
             {
