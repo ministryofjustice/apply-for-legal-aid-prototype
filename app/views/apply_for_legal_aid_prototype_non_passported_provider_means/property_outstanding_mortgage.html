@@ -17,7 +17,7 @@ Apply for legal aid -
 
   {{ govukBackLink({
     text: "Back",
-      href: "statement_1"
+      href: "property_amount"
   }) }}
 {% endblock %}
 
@@ -25,17 +25,17 @@ Apply for legal aid -
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-xl">What is the outstanding mortgage on your client's home?</h1>
-
-    <form action="property_ownership" method="post" novalidate>
+    <form action="property_ownership" method="post" class="form">
       <div class="govuk-form-group">
-
-
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is the outstanding mortgage on your client's home?</h1>
+            </legend>
       <!--  <h2 class="govuk-heading-m">Enter the outstanding mortgage amount</h2> -->
 
           <span id="postcode-hint" class="govuk-hint">
-            Check the statement from your mortgage provider or lender
+            Check the statement from your client's mortgage provider or lender.
           </span>
 
 

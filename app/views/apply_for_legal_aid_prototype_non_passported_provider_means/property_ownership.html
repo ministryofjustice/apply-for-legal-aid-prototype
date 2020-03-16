@@ -17,25 +17,24 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "outgoings_summary"
+      href: "property_outstanding_mortgage"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="property_percent" method="get" class="form">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Does your client own the home with anyone else?
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="property_percent" method="post" class="form">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                  Does your client own their home with anyone else?
                 </h1>
               </legend>
 
-                <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
