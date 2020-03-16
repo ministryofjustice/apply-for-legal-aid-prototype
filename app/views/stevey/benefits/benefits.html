@@ -4,483 +4,657 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Types of income
+Apply for legal aid - Salary statement
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
-  {{ govukBackLink({
-    text: "Back",
-      href: "citizen_accounts"
-  }) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "/apply_for_legal_aid_prototype_non_passported_provider_means/salary_selected"
+}) }}
 {% endblock %}
 
 {% block content %}
+<style media="screen">
+table .govuk-tag {
+white-space: nowrap;
+  /*background-color: black;*/
+  color: #005ea5;
+  background-color: white;
+  border: 2px solid #005ea5;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: none;
+}
+.dot{
+  background-color:#005ea5;
+}
+.col_bespoke{
+  width:15%;
+}
+.govuk-table__header{
+  color: #0b0c0c;
+  background-color: #dee0e2;
+  border: 1px solid #bfc1c3;
+  box-shadow: 0 2px 0 #b5babe;
+  padding-left: 10px;
+  text-align: left;
+}
+.th_bespoke{
+  padding-right: 15px;
+  position: relative;
+}
+.th_bespoke::before{
+  /*down*/
+  content:" \25bc";
+  position: absolute;
+  right: -1px;
+  top: 11px;
+  font-size: 0.6em;
+}
+.th_bespoke::after{
+  /*up*/
+  content:" \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.6em;
+}
+.th_bespoke_hover:hover{
+  background-color: #c8cacb;
+  cursor:pointer;
+}
+.govuk-table__head{
+  position: relative;
+}
+.govuk-table__cell{
+  padding-left: 10px;
+}
+
+</style>
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="types_of_outgoing" method="post" class="form">
+  <div class="govuk-grid-column-full">
+    <form action="/apply_for_legal_aid_prototype_non_passported_provider_means/benefits_selected" method="post" novalidate>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Which types of benefits do you receive?
-                </h1>
-              </legend>
+      <h1 class="govuk-heading-xl">
+        Select benefits payments
+      </h1>
 
-               <span class="govuk-hint">Select all that apply.</span>
+      <div class="govuk-inset-text">Select every benefits payment your client received in the past 3 months.</div>
 
-              <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-!-padding-bottom-4"></div>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption" style="padding-bottom:10px;">1 January 2019 to 31 January 2019</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
 
-              <!--  <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-1" name="salary" type="checkbox" value="yes" data-aria-controls="income-conditional-1" {{ checked("salary","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-1">
-                    Salary or wages
-                  </label>
-                </div> -->
-
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col"><span >Select all</span>
+          </th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
+          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Amount</span></th>
+          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+            </div></td>
+            <td class="govuk-table__cell">29 Jan 2019</td>
+            <td class="govuk-table__cell">Work and child TC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">27 Jan 2019</td>
+            <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+              Salary
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">25 Jan 2019</td>
+            <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">23 Jan 2019</td>
+            <td class="govuk-table__cell">Work and child TC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">21 Jan 2019</td>
+            <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£116.40</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+              Salary
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+              <td class="govuk-table__cell">21 Jan 2019</td>
+              <td class="govuk-table__cell">Cash in Nationwide 21Jan</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                    Attendance Allowance
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                    All work related requirements
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                    Armed forces independence payment <!-- for you or your children -->
-                  </label>
-                <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, payments from an ex-partner to you or any children
-                  </span> -->
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                    Bereavement Allowance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-5" name="student-loan" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-5" {{ checked("student-loan","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-5">
-                     Bereavement Payment
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Carer’s Allowance
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Child Benefit
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Child Maintenance Deduction
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Child support maintenance
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Child tax credit
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Constant Attendance Allowance
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Contribution to Maintenance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Cold Weather Payment 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Council Tax Benefit
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Direct Credit Transfer 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Disability living allowance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Enhanced Disability Premium 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Employment and Support Allowance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Exceptionally Severe Disablement Allowance
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Financial Assistance Scheme 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Flat Rate Maintenance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Guardian’s Allowance 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Guaranteed Minimum Pension 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Graduated Retirement Benefit 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Housing benefit 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Housing Costs Contribution 
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Industrial Death Benefit
-                  </label>
-                </div>
-
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                     Industrial Injuries Benefit 
-                      </label>
-                  </div>
-
+                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                </div></td>
+                <td class="govuk-table__cell">19 Jan 2019</td>
+                <td class="govuk-table__cell">Sky digital reversal of 19-01</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                       Industrial Injuries Disablement Benefit 
-                        </label>
-                    </div>
-
+                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                  </div></td>
+                  <td class="govuk-table__cell">17 Jan 2019</td>
+                  <td class="govuk-table__cell">Work and child TC</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                  </td>
+                  <td class="govuk-table__cell">16 Jan 2019</td>
+                  <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£136.31</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+                    Salary
+                  </strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                      <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                         Jobseeker’s Allowance  
-                          </label>
-                      </div>
-
+                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                    </div></td>
+                    <td class="govuk-table__cell">16 Jan 2019</td>
+                    <td class="govuk-table__cell">Cash in Nationwide 16Jan</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£130.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                           Maternity Allowance  
-                            </label>
-                        </div>
-
+                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                      </div></td>
+                      <td class="govuk-table__cell">15 Jan 2019</td>
+                      <td class="govuk-table__cell">Cash in Nationwide 15Jan</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                             Personal Independence Payment  
-                              </label>
-                          </div>
-
+                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                        </div></td>
+                        <td class="govuk-table__cell">11 Jan 2019</td>
+                        <td class="govuk-table__cell">Work and child TC</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                               Payment on Account of Benefit  
-                                </label>
-                            </div>
-
+                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                          </div></td>
+                          <td class="govuk-table__cell">7 Jan 2019</td>
+                          <td class="govuk-table__cell">Child benefit</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                          </td>
+                          <td class="govuk-table__cell">7 Jan 2019</td>
+                          <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+                            Salary
+                          </strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                 Retirement Allowance  
-                                  </label>
-                              </div>
+                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                            </div>
+                            <td class="govuk-table__cell">3 Jan 2019</td>
+                            <td class="govuk-table__cell">Work and child TC</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                          </tr>
+                        </tbody>
+                      </table>
 
-                              <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                   Reduced earnings Allowance  
-                                    </label>
-                                </div>
+                      <div class="govuk-!-padding-bottom-6"></div>
 
+                      <!-- <table class="govuk-table">
+                        <caption class="govuk-table__caption" style="padding-bottom:10px;">1 December 2018 to 31 December 2018</caption>
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                              Select all
+                            </a>
+                          </th>
+                          <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+                          <th class="govuk-table__header" scope="col">Description </th>
+                          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount </th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                            </div></td>
+                            <td class="govuk-table__cell">29/12/2018</td>
+                            <td class="govuk-table__cell">Work and child TC</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+
+                              <td class="govuk-table__cell">27/12/2018</td>
+                              <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                     Severe Disablement Allowance  
-                                      </label>
-                                  </div>
-
+                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                </div></td>
+                                <td class="govuk-table__cell">25/12/2018</td>
+                                <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
                                   <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                    <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                       State Second Pension   
-                                        </label>
-                                    </div>
+                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                  </div></td>
+                                  <td class="govuk-table__cell">23/12/2018</td>
+                                  <td class="govuk-table__cell">Work and child TC</td>
+                                  <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell">
 
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                      <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                         Severe Disability Premium   
-                                          </label>
-                                      </div>
-
+                                    <td class="govuk-table__cell">21/12/2018</td>
+                                    <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£116.40</td>
+                                  </tr>
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">
                                       <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                        <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                           Social Fund   
-                                            </label>
-                                        </div>
-
+                                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                      </div></td>
+                                      <td class="govuk-table__cell">21/12/2018</td>
+                                      <td class="govuk-table__cell">Cash in Nationwide 21Jan</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell">
                                         <div class="govuk-checkboxes__item">
-                                          <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                          <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                             Social Fund Funeral Payment   
-                                              </label>
-                                          </div>
-
+                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                        </div></td>
+                                        <td class="govuk-table__cell">19/12/2018</td>
+                                        <td class="govuk-table__cell">Sky digital reversal of 19-01</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">
                                           <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                            <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                               Statutory Maternity Pay    
-                                                </label>
-                                            </div>
-
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                 State Pension Credit    
-                                                  </label>
-                                              </div>
+                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                          </div></td>
+                                          <td class="govuk-table__cell">17/12/2018</td>
+                                          <td class="govuk-table__cell">Work and child TC</td>
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell">
+                                            <td class="govuk-table__cell">16/12/2018</td>
+                                            <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric">£136.31</td>
+                                          </tr>
+                                          <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell">
                                               <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                   Statutory Sick Pay    
-                                                    </label>
-                                                </div>
+                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                              </div></td>
+                                              <td class="govuk-table__cell">16/12/2018</td>
+                                              <td class="govuk-table__cell">Cash in Nationwide 16Jan</td>
+                                              <td class="govuk-table__cell govuk-table__cell--numeric">£130.00</td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                              <td class="govuk-table__cell">
                                                 <div class="govuk-checkboxes__item">
-                                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                     Sure Start Maternity Grant    
-                                                      </label>
-                                                  </div>
+                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                </div></td>
+                                                <td class="govuk-table__cell">15/12/2018</td>
+                                                <td class="govuk-table__cell">Cash in Nationwide 15Jan</td>
+                                                <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+                                              </tr>
+                                              <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
                                                   <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                    <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                       Tax Credit    
-                                                        </label>
-                                                    </div>
+                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                  </div></td>
+                                                  <td class="govuk-table__cell">11/12/2018</td>
+                                                  <td class="govuk-table__cell">Work and child TC</td>
+                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                </tr>
+                                                <tr class="govuk-table__row">
+                                                  <td class="govuk-table__cell">
                                                     <div class="govuk-checkboxes__item">
-                                                      <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                      <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                         Universal Credit    
-                                                          </label>
-                                                      </div>
-                                                      <div class="govuk-checkboxes__item">
-                                                        <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                        <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                           Unemployability Supplement    
-                                                            </label>
-                                                        </div>
+                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                    </div></td>
+                                                    <td class="govuk-table__cell">07/12/2018</td>
+                                                    <td class="govuk-table__cell">Child benefit</td>
+                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                                                  </tr>
+                                                  <tr class="govuk-table__row">
+                                                    <td class="govuk-table__cell">
+                                                      <td class="govuk-table__cell">07/12/2018</td>
+                                                      <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                      <td class="govuk-table__cell">
                                                         <div class="govuk-checkboxes__item">
-                                                          <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                          <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                             War Widows Pension   
-                                                              </label>
-                                                          </div>
+                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                        </div>
+                                                        <td class="govuk-table__cell">03/12/2018</td>
+                                                        <td class="govuk-table__cell">Work and child TC</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+
+                                                  <div class="govuk-!-padding-bottom-6"></div> -->
+
+                                                  <!-- <table class="govuk-table">
+                                                    <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 30 November 2018</caption>
+                                                    <thead class="govuk-table__head">
+                                                      <tr class="govuk-table__row">
+                                                        <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                                                          Select all
+                                                        </a>
+                                                      </th>
+                                                      <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+                                                      <th class="govuk-table__header" scope="col">Description </th>
+                                                      <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount </th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                      <td class="govuk-table__cell">
+                                                        <div class="govuk-checkboxes__item">
+                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                        </div></td>
+                                                        <td class="govuk-table__cell">29/11/2018</td>
+                                                        <td class="govuk-table__cell">Work and child TC</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                      </tr>
+                                                      <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell">
                                                           <div class="govuk-checkboxes__item">
-                                                            <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                            <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                               Widowed Mother’s Allowance    
-                                                                </label>
-                                                            </div>
+                                                            <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
+
+                                                          </div></td>
+                                                          <td class="govuk-table__cell">27/11/2018</td>
+                                                          <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+                                                        </tr>
+                                                        <tr class="govuk-table__row">
+                                                          <td class="govuk-table__cell">
                                                             <div class="govuk-checkboxes__item">
-                                                              <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                                 Widow’s Pension    
-                                                                  </label>
-                                                              </div>
+                                                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                            </div></td>
+                                                            <td class="govuk-table__cell">25/11/2018</td>
+                                                            <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                                          </tr>
+                                                          <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell">
                                                               <div class="govuk-checkboxes__item">
-                                                                <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                                <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                                   Widowed Parent’s Allowance    
-                                                                    </label>
-                                                                </div>
+                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                              </div></td>
+                                                              <td class="govuk-table__cell">23/11/2018</td>
+                                                              <td class="govuk-table__cell">Work and child TC</td>
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
+                                                            </tr>
+                                                            <tr class="govuk-table__row">
+                                                              <td class="govuk-table__cell">
                                                                 <div class="govuk-checkboxes__item">
-                                                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                                     Work–related activity component    
-                                                                      </label>
-                                                                  </div>
+                                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                </div></td>
+                                                                <td class="govuk-table__cell">21/11/2018</td>
+                                                                <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£116.40</td>
+                                                              </tr>
+                                                              <tr class="govuk-table__row">
+                                                                <td class="govuk-table__cell">
                                                                   <div class="govuk-checkboxes__item">
-                                                                    <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                                    <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                                       Working tax credit    
-                                                                        </label>
-                                                                    </div>
+                                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                  </div></td>
+                                                                  <td class="govuk-table__cell">21/11/2018</td>
+                                                                  <td class="govuk-table__cell">Cash in Nationwide 21Jan</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+                                                                </tr>
+                                                                <tr class="govuk-table__row">
+                                                                  <td class="govuk-table__cell">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                    </div></td>
+                                                                    <td class="govuk-table__cell">19/11/2018</td>
+                                                                    <td class="govuk-table__cell">Sky digital reversal of 19-01</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                                                  </tr>
+                                                                  <tr class="govuk-table__row">
+                                                                    <td class="govuk-table__cell">
+                                                                      <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                      </div></td>
+                                                                      <td class="govuk-table__cell">17/11/2018</td>
+                                                                      <td class="govuk-table__cell">Work and child TC</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                    </tr>
+                                                                    <tr class="govuk-table__row">
+                                                                      <td class="govuk-table__cell">
+                                                                        <div class="govuk-checkboxes__item">
+                                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                        </div></td>
+                                                                        <td class="govuk-table__cell">16/11/2018</td>
+                                                                        <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£136.31</td>
+                                                                      </tr>
+                                                                      <tr class="govuk-table__row">
+                                                                        <td class="govuk-table__cell">
+                                                                          <div class="govuk-checkboxes__item">
+                                                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                          </div></td>
+                                                                          <td class="govuk-table__cell">16/11/2018</td>
+                                                                          <td class="govuk-table__cell">Cash in Nationwide 16Jan</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£130.00</td>
+                                                                        </tr>
+                                                                        <tr class="govuk-table__row">
+                                                                          <td class="govuk-table__cell">
+                                                                            <div class="govuk-checkboxes__item">
+                                                                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                            </div></td>
+                                                                            <td class="govuk-table__cell">15/11/2018</td>
+                                                                            <td class="govuk-table__cell">Cash in Nationwide 15Jan</td>
+                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+                                                                          </tr>
+                                                                          <tr class="govuk-table__row">
+                                                                            <td class="govuk-table__cell">
+                                                                              <div class="govuk-checkboxes__item">
+                                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                              </div></td>
+                                                                              <td class="govuk-table__cell">11/11/2018</td>
+                                                                              <td class="govuk-table__cell">Work and child TC</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                            </tr>
+                                                                            <tr class="govuk-table__row">
+                                                                              <td class="govuk-table__cell">
+                                                                                <div class="govuk-checkboxes__item">
+                                                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                                </div></td>
+                                                                                <td class="govuk-table__cell">07/11/2018</td>
+                                                                                <td class="govuk-table__cell">Child benefit</td>
+                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                                                                              </tr>
+                                                                              <tr class="govuk-table__row">
+                                                                                <td class="govuk-table__cell">
+                                                                                  <div class="govuk-checkboxes__item">
+                                                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                                  </div></td>
+                                                                                  <td class="govuk-table__cell">07/11/2018</td>
+                                                                                  <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
+                                                                                </tr>
+                                                                                <tr class="govuk-table__row">
+                                                                                  <td class="govuk-table__cell">
+                                                                                    <div class="govuk-checkboxes__item">
+                                                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                                    </div>
+                                                                                    <td class="govuk-table__cell">03/11/2018</td>
+                                                                                    <td class="govuk-table__cell">Work and child TC</td>
+                                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                                  </tr>
+                                                                                </tbody>
+                                                                              </table> -->
+
+                                                                              <button type="submit" class="govuk-button">
+                                                                                Save and continue
+                                                                              </button>
+
+                                                                              <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                                                                                Save and come back later
+                                                                              </a>
+
+                                                                            </form>
+
+                                                                          </div>
+                                                                        </div>
 
 
-             <p class="govuk-body">or</p>
+                                                                        {% endblock %}
 
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                    <!-- I receive none of these types of income --> None of these
-                  </label>
-                </div>
-              </div>
-
-
-
-            </fieldset>
-          </div>
-
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-
-        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a> -->
-
-        </form>
-      </div>
-    </div>
-
-{% endblock %}
-
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}
+                                                                        {% block footer %}
+                                                                        {{ govukFooter({
+                                                                          meta: {
+                                                                            items: [
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Help"
+                                                                            },
+                                                                            {
+                                                                              href: "https://www.gov.uk/help/cookies",
+                                                                              text: "Cookies"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Contact"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Feedback"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Terms and conditions"
+                                                                            },
+                                                                            {
+                                                                              href: "https://mojdigital.blog.gov.uk/",
+                                                                              text: "MOJ Digital Services"
+                                                                            },
+                                                                            {
+                                                                              href: "/prototype-admin/clear-data",
+                                                                              text: "Clear data"
+                                                                            }
+                                                                            ]
+                                                                          }
+                                                                        }) }}
+                                                                        {% endblock %}
