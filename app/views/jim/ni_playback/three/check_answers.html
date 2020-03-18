@@ -39,7 +39,7 @@ Apply for legal aid - Check your answers
            First name
          </dt>
          <dd class="govuk-summary-list__value">
-           John{{ data['firstname'] }}
+           {{ data['firstname'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#firstname">
@@ -52,7 +52,7 @@ Apply for legal aid - Check your answers
            Last name
          </dt>
          <dd class="govuk-summary-list__value">
-           Doe{{ data['lastname'] }}
+           {{ data['lastname'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#lastname">
@@ -78,7 +78,7 @@ Apply for legal aid - Check your answers
            National Insurance number
          </dt>
          <dd class="govuk-summary-list__value">
-           QQ 12 34 56 C{{ data['national-insurance-number'] }}
+           {{ data['national-insurance-number'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#national-insurance-number">
@@ -91,7 +91,7 @@ Apply for legal aid - Check your answers
            Email address
          </dt>
          <dd class="govuk-summary-list__value">
-           johndoe@email.com{{ data['email-address'] }}
+           {{ data['email-address'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#email-address">
@@ -104,7 +104,7 @@ Apply for legal aid - Check your answers
            Correspondence address
          </dt>
          <dd class="govuk-summary-list__value">
-           1 Main Street<br/>London<br/>SE1 2AB{{ data['postcode'] }}
+           1 Main Street<br/>London<br/>{{ data['postcode'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="postcode_finder#postcode">
@@ -226,7 +226,7 @@ As to proceedings under Part IV Family Law Act 1996 limited to all steps up to a
     <h2 class="govuk-heading-m">What happens next</h2>
 
       <p class="govuk-body">
-        We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
+        We'll check with the Department for Work and Pensions (DWP) to see if your client receives benefits that qualify for legal aid.
       </p><br>
 
       <a class="govuk-button" href="means_assessment_required" role="button">
