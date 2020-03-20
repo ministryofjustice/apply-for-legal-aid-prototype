@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "financial_help_selected"
   }) }}
 {% endblock %}
 
@@ -25,23 +25,29 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="dependant_over_16_adult_capital" method="post" class="form">
+        <form action="outgoings" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <!--  <span class="govuk-caption-xl">Dependant 1</span> -->                <h1 class="govuk-fieldset__heading">
-                  Does Joe Doe receive any income?
+                <h1 class="govuk-fieldset__heading">
+                  Does your client have any dependants?
               <!--  Does anyone depend on you for financial support? -->
                 </h1>
               </legend>
 
-              <div class="govuk-!-padding-bottom-6"></div>
+            <!--  <p class="govuk-body">A dependant is be a child or adult who lives with your client and depends on them for financial support.</p>
+               This includes anyone who depends on you for financial support. -->
 
+              <p class="govuk-body">A dependant is a child or adult who:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>lives with your client</li>
+                    <li>depends on your client for financial support</li>
+                    </ul>
 
+              <div class="govuk-inset-text">Do not include your client's partner if they have one.</div>
 
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                 <div class="govuk-radios__item">
 
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -49,20 +55,45 @@ Apply for legal aid - Property and mortgage
                     Yes
                   </label>
                 </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
                   <label class="govuk-label" for="how-contacted-conditional-1">
-                    Enter the amount they get each month
+                    How many dependants do you have?
                   </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                  <span id="dob-hint" class="govuk-hint">
+                For example, 31 3 1980.
+              </span>
+              <div class="govuk-date-input" id="dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
 
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
+                  </div>
                 </div>
+              </div>
+                </div> -->
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                     No
                   </label>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
 
 
             </fieldset>
@@ -75,6 +106,9 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+
+          <p class="govuk-body"><a href="outgoings">Skip dependants</a></p>
+
 
         </form>
       </div>
