@@ -37,7 +37,7 @@ Apply for legal aid - Income start page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
+    <h1 class="govuk-heading-xl">Sort your client's transactions into categories</h1>
 
 <!-- <p class="gov-body">
   Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
@@ -210,7 +210,7 @@ Your client told us they receive the types of income listed below. You need to:
               </tbody>
               </table>
             <li class="app-task-list__item">
-              <a class="govuk-body" href="incoming/benefits" aria-describedby="eligibility-completed">
+              <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
                 Add benefits payments
               </a>
             </li>
@@ -218,7 +218,42 @@ Your client told us they receive the types of income listed below. You need to:
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Financial help from friends or family
+            <span class="app-task-list__section-number">2. </span> Disregarded: Universal Credit advance payments
+          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                This benefit is excluded from the gross income calculation, but you still need to select each payment.
+            </span> -->
+          </h2>
+          <ul class="app-task-list__items">
+            <table class="govuk-table" style="margin-bottom:0px;">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Date</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">25 Jan 2019</td>
+                <td class="govuk-table__cell">Universal Credit advance</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£144.00</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              </tbody>
+              </table>
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="ucap" aria-describedby="eligibility-completed">
+                Add Universal Credit advance payments
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
           </h2>
           <ul class="app-task-list__items">
             <table class="govuk-table" style="margin-bottom:0px;">
@@ -258,7 +293,7 @@ Your client told us they receive the types of income listed below. You need to:
               </tbody>
               </table>
             <li class="app-task-list__item">
-              <a class="govuk-body" href="incoming/financial_help" aria-describedby="eligibility-completed">
+              <a class="govuk-body" href="financial_help_list" aria-describedby="eligibility-completed">
                 Add payments from family or friends
               </a>
             </li>

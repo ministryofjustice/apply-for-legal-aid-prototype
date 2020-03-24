@@ -28,7 +28,7 @@ Apply for legal aid - Salary statement
 
 {{ govukBackLink({
   text: "Back",
-  href: "/apply_for_legal_aid_prototype_non_passported_provider_means/salary_selected"
+  href: "/apply_for_legal_aid_prototype_non_passported_provider_means/benefits_selected"
 }) }}
 {% endblock %}
 
@@ -93,13 +93,13 @@ white-space: nowrap;
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="ucap_selected" method="post" novalidate>
+    <form action="financial_help_selected" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
-        Select Universal Credit advance payments
+        Select payments from friends or family
       </h1>
 
-      <div class="govuk-inset-text">Select every Universal Credit advance payment your client received in the past 3 months.</div>
+      <div class="govuk-inset-text">Select every payment from friends or family your client received in the past 3 months.</div>
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
@@ -153,14 +153,13 @@ white-space: nowrap;
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
+            </td>
             <td class="govuk-table__cell">25 Jan 2019</td>
             <td class="govuk-table__cell">Universal Credit advance</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£144.00</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£144</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Disregarded
+            </strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -622,7 +621,6 @@ white-space: nowrap;
                                                                               <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
                                                                                 Save and come back later
                                                                               </a>
-
 
                                                                             </form>
 

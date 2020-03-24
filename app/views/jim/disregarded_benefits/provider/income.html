@@ -40,7 +40,7 @@ Apply for legal aid - Income start page
   <!--  <p class="gov-body">
     <a href="outgoings">Go to outgoings</a>
     </p> -->
-    <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
+    <h1 class="govuk-heading-xl">Sort your client's transactions into categories</h1>
 
 <!-- <p class="gov-body">
   Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
@@ -52,8 +52,8 @@ You client said they receive the types of income listed below.</p> -->
 <p class="gov-body">You need to:
 </p>
 <ul class="govuk-list govuk-list--bullet">
-<li>go through their transactions from the past 3 months</li>
-<li>add the payments they received to the relevant category</li>
+<li>go through your client's transactions from the past 3 months</li>
+<li>add the payments they received to each category below</li>
 </ul>
 
 
@@ -68,28 +68,28 @@ Add income your client received from 1 November 2018 to 31 January 2019</h2>
 
 
       <ol class="app-task-list">
-        <li>
+      <!--  <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Salary or wages
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="govuk-body" href="incoming/salary" aria-describedby="eligibility-completed">
-                Add salary or wage payments <!-- Select payments from your bank statement -->
+                Add salary or wage payments
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Benefits
+            <span class="app-task-list__section-number">1. </span> Benefits
           <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
                 For example, Universal Credit or Child Benefit.
             </span> -->
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="govuk-body" href="incoming/benefits" aria-describedby="eligibility-completed">
+              <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
                 Add benefits payments <!-- Select payments from your bank statement -->
               </a>
             </li>
@@ -97,10 +97,10 @@ Add income your client received from 1 November 2018 to 31 January 2019</h2>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Universal Credit advance payments
-            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            <span class="app-task-list__section-number">2. </span> Disregarded: Universal Credit advance payments
+          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
                 This benefit is excluded from the gross income calculation, but you still need to select each payment.
-            </span>
+            </span> -->
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -112,11 +112,11 @@ Add income your client received from 1 November 2018 to 31 January 2019</h2>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Financial help from friends or family
+            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="govuk-body" href="incoming/financial_help" aria-describedby="eligibility-completed">
+              <a class="govuk-body" href="financial_help_list" aria-describedby="eligibility-completed">
                 Add payments from family or friends <!-- Select payments from your bank statement -->
               </a>
             </li>

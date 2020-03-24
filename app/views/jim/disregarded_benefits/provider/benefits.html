@@ -42,11 +42,11 @@ Apply for legal aid - Types of income
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client receive any of the following benefits?
+                  Does your client receive any of the following disregarded benefits?
                 </h1>
               </legend>
 
-            <!--  <p class="govuk-body">These benefits are not included in your client's means calculation.</p> -->
+          <!--  <div class="govuk-inset-text">These benefits are not included in the financial eligibility calculation.</div> -->
 
                <span class="govuk-hint">Select all that apply.</span>
 
@@ -177,8 +177,12 @@ Apply for legal aid - Types of income
     </span>
   </summary>
   <div class="govuk-details__text">
-  These types of benefits are excluded from the financial eligibility calculation.<br><br>
-  If your client receives any of these benefits, you'll need to select the payments from their bank transactions so we'll know what to exclude from the calculation.
+  <!--  These benefits do not have bank statement abbreviations so we cannot automatically identify them.<br><br> -->
+We cannot automatically identify these disregarded benefits from your client's bank transactions.<br><br>
+If your client receives any of these, you'll need to select each payment from a list of their transactions.<br><br>
+
+  <!-- These types of benefits are excluded from the financial eligibility calculation.<br><br>
+  If your client receives any of these benefits, you'll need to select the payments from their bank transactions so we'll know what to exclude from the calculation. -->
   </div>
 </details>
 
@@ -186,9 +190,9 @@ Apply for legal aid - Types of income
             Save and continue
           </button>
 
-        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
-          </a> -->
+          </a>
 
         </form>
       </div>
