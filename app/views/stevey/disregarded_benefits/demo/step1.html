@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "incoming/benefits"
+  href: "step0"
 }) }}
 
 {% endblock %}
@@ -111,6 +111,26 @@ Apply for legal aid - Income start page
                   Remove
                 </a></td>
               </tr>
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">20 Jan 2019</td>
+                  <td class="govuk-table__cell">Social Fund</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                    Remove
+                  </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">20 Jan 2019</td>
+                  <td class="govuk-table__cell">Personal Independent Payment</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£55.65</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                    Remove
+                  </a></td>
+                </tr>
+
+
               </tbody>
               </table>
             <li class="app-task-list__item">
@@ -123,60 +143,12 @@ Apply for legal aid - Income start page
         <li>
 
 
-          <ol class="app-task-list">
-            <li>
-              <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">2. </span> Disregarded Benefits
-              <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                    For example, Universal Credit or Child Benefit.
-                </span> -->
-              </h2>
-              <ul class="app-task-list__items">
-                <table class="govuk-table" style="margin-bottom:0px;">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th class="govuk-table__header" scope="col">Date</th>
-                      <th class="govuk-table__header" scope="col">Description</th>
-                      <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-                      <th class="govuk-table__header" scope="col"></th>
-                    </tr>
-                  </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">27 Jan 2019</td>
-                    <td class="govuk-table__cell">Social Fund</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                      Remove
-                    </a></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">26 Jan 2019</td>
-                    <td class="govuk-table__cell">Personal Independent Payment</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£55.65</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                      Remove
-                    </a></td>
-                  </tr>
 
-
-
-
-                  </tbody>
-                  </table>
-                <li class="app-task-list__item">
-                  <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
-                    View statements and add transactions
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
 
 
 
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Disregarded: Universal Credit advance payments
+            <span class="app-task-list__section-number">2. </span> Disregarded (unaccounted for)
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -189,7 +161,7 @@ Apply for legal aid - Income start page
         <li>
 
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Financial help from friends or family
+            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
