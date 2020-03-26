@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "provider_continue_application"
+  href: "benefits"
 }) }}
 
 {% endblock %}
@@ -36,25 +36,22 @@ Apply for legal aid - Income start page
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-  <!--  <p class="gov-body">
-    <a href="outgoings">Go to outgoings</a>
-    </p> -->
-    <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
+      <div class="govuk-grid-column-two-thirds">
 
-<!-- <p class="gov-body">
-  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
-</p>
-
-<p class="gov-body">
-You client said they receive the types of income listed below.</p>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Sort your client's income into categories
+      </h1>
+    </legend>
 
 <p class="gov-body">You need to:
-</p> -->
-<ol class="govuk-list govuk-list--number">
-<li>View your client's bank statements.</li>
-<li>Add transactions to each income category one at a time.</li>
-</ol>
+</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>view your client's bank statements</li>
+<li>add the relevant transactions to each category one at a time</li>
+</ul>
 
 
 <!--  <p class="gov-body">
@@ -84,23 +81,83 @@ Add income your client received from 1 November 2018 to 31 January 2019</h2>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Benefits
           <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                For example, Universal Credit or Child Benefit.
+                We identified these transactions from your client's bank statements.
             </span> -->
           </h2>
           <ul class="app-task-list__items">
+            <table class="govuk-table" style="margin-bottom:0px;">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Date</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">29 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">23 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">17 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">11 Jan 2019</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">7 Jan 2019</td>
+                <td class="govuk-table__cell">Child benefit</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">3 Jan 2018</td>
+                <td class="govuk-table__cell">Work and child TC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              </tbody>
+              </table>
             <li class="app-task-list__item">
               <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
-                View statements and add transactions <!-- Select payments from your bank statement -->
+                View statements and add transactions
               </a>
             </li>
           </ul>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Disregarded: Universal Credit advance payments
-          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                This benefit is excluded from the gross income calculation, but you still need to select each payment.
-            </span> -->
+            <span class="app-task-list__section-number">2. </span> Universal Credit advance payments
+          <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                We cannot identify this type of benefit from bank statements.
+            </span>
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">

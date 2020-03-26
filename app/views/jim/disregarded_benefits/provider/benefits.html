@@ -42,7 +42,7 @@ Apply for legal aid - Types of income
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client receive any of the following disregarded benefits?
+                  Does your client receive any of the following benefits?
                 </h1>
               </legend>
 
@@ -62,7 +62,7 @@ Apply for legal aid - Types of income
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                    Budgeting Loan
+                    Budgeting Loans
                   </label>
               <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       For example, Universal Credit or Child Benefit.
@@ -177,9 +177,10 @@ Apply for legal aid - Types of income
     </span>
   </summary>
   <div class="govuk-details__text">
-  <!--  These benefits do not have bank statement abbreviations so we cannot automatically identify them.<br><br> -->
-We cannot automatically identify these benefits from your client's bank statements.<br><br>
-If your client receives any of these, you'll need to select each payment from a list of their transactions.<br><br>
+  <!--  These benefits do not have bank statement abbreviations so we cannot automatically identify them.<br><br>
+These benefits do not have bank statement abbreviations so we cannot automatically identify them.-->
+We cannot automatically identify these benefits from bank statements.<br><br>
+If your client receives any of them, you'll need to select the relevant transactions from their bank statements.<br><br>
 
   <!-- These types of benefits are excluded from the financial eligibility calculation.<br><br>
   If your client receives any of these benefits, you'll need to select the payments from their bank transactions so we'll know what to exclude from the calculation. -->

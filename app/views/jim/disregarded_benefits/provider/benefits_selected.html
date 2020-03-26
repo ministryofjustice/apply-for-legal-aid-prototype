@@ -36,32 +36,30 @@ Apply for legal aid - Income start page
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
+      <div class="govuk-grid-column-two-thirds">
 
-<!-- <p class="gov-body">
-  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
-</p> -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Sort your client's income into categories
+      </h1>
+    </legend>
 
-<!-- <p class="gov-body">
-Your client told us they receive the types of income listed below. You need to:
+<p class="gov-body">You need to:
 </p>
 <ul class="govuk-list govuk-list--bullet">
-<li>go through their bank transactions from the past 3 months</li>
-<li>add payments they received to each income category</li>
-</ul> -->
+<li>view your client's bank statements</li>
+<li>add the relevant transactions to each category one at a time</li>
+</ul>
 
-<ol class="govuk-list govuk-list--number">
-<li>View your client's bank statements.</li>
-<li>Add transactions to each income category one at a time.</li>
-</ol>
       <ol class="app-task-list">
 
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Benefits
           <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                For example, Universal Credit or Child Benefit.
+                We identified these transactions from your client's statements.
             </span> -->
           </h2>
           <ul class="app-task-list__items">
@@ -134,10 +132,10 @@ Your client told us they receive the types of income listed below. You need to:
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Disregarded: Universal Credit advance payments
-          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                This benefit is excluded from the gross income calculation, but you still need to select each payment.
-            </span> -->
+            <span class="app-task-list__section-number">2. </span> Universal Credit advance payments
+            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                  We cannot identify this type of benefit from bank statements.
+              </span>
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
