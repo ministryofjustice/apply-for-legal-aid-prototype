@@ -54,12 +54,11 @@ Apply for legal aid - Income start page
 </ul>
 
       <ol class="app-task-list">
-
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Benefits
           <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                We identified these transactions from your client's statements.
+                For example, Universal Credit or Child Benefit.
             </span> -->
           </h2>
           <ul class="app-task-list__items">
@@ -133,14 +132,34 @@ Apply for legal aid - Income start page
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Universal Credit advance payments
-            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                  We cannot identify this type of benefit from bank statements.
-              </span>
+          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                This benefit is excluded from the gross income calculation, but you still need to select each payment.
+            </span> -->
           </h2>
           <ul class="app-task-list__items">
+            <table class="govuk-table" style="margin-bottom:0px;">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Date</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">25 Jan 2019</td>
+                <td class="govuk-table__cell">Universal Credit advance</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£144.00</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              </tbody>
+              </table>
             <li class="app-task-list__item">
               <a class="govuk-body" href="ucap" aria-describedby="eligibility-completed">
-                View statements and add transactions <!-- Select payments from your bank statement -->
+                View statements and add transactions
               </a>
             </li>
           </ul>
@@ -160,7 +179,7 @@ Apply for legal aid - Income start page
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income2" aria-describedby="eligibility-completed">
-              Add another type of income
+              Add or remove income category
             </a>
           </h2>
         </li>
@@ -179,7 +198,7 @@ Apply for legal aid - Income start page
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="dependants" role="button" class="govuk-button">
+        <a href="income_error" role="button" class="govuk-button">
           Save and continue
         </a>
 

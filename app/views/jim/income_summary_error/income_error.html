@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "incoming/benefits"
+  href: "income"
 }) }}
 
 {% endblock %}
@@ -37,6 +37,20 @@ Apply for legal aid - Income start page
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#error">Add transactions to this category</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
@@ -53,13 +67,35 @@ Apply for legal aid - Income start page
 <li>add the relevant transactions to each category one at a time</li>
 </ul>
 
-      <ol class="app-task-list">
 
+<!--  <p class="gov-body">
+  Add payments from your client's last 3 months of bank statements to each category below.
+  </p>
+
+Add incoming payments from your client's last 3 months of bank statements to each category
+Add income your client received from 1 November 2018 to 31 January 2019</h2>
+    <h2 class="govuk-heading-m">Add income from your bank statements for each category</h2>
+ Add income for the last 3 months to each category -->
+
+
+      <ol class="app-task-list">
+      <!--  <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Salary or wages
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="incoming/salary" aria-describedby="eligibility-completed">
+                Add salary or wage payments
+              </a>
+            </li>
+          </ul>
+        </li> -->
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Benefits
           <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                We identified these transactions from your client's statements.
+                We identified these transactions from your client's bank statements.
             </span> -->
           </h2>
           <ul class="app-task-list__items">
@@ -133,9 +169,9 @@ Apply for legal aid - Income start page
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Universal Credit advance payments
-            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                  We cannot identify this type of benefit from bank statements.
-              </span>
+          <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                We cannot identify this type of benefit from bank statements.
+            </span>
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -146,21 +182,74 @@ Apply for legal aid - Income start page
           </ul>
         </li>
         <li>
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="dob-hint error" role="group">
+
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">3. </span> Financial help from friends or family
           </h2>
           <ul class="app-task-list__items">
+            <span id="error" class="govuk-error-message">
+              Add transactions to this category
+            </span>
             <li class="app-task-list__item">
               <a class="govuk-body" href="financial_help_list" aria-describedby="eligibility-completed">
-                View statements and add transactions
+                View statements and add transactions <!-- Select payments from your bank statement -->
               </a>
             </li>
           </ul>
+        </fieldset>
+        </div>
         </li>
+      <!--  <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4. </span> Maintenance payments from an ex-partner
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a class="govuk-body" href="incoming/maintenance" aria-describedby="eligibility-completed">
+              Add maintenance payments
+            </a>
+          </li>
+        </ul>
+      </li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">5. </span> Income from a property or lodger
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="incoming/property" aria-describedby="eligibility-completed">
+            Add income from a property or lodger
+          </a>
+        </li>
+      </ul>
+    </li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">6. </span> Income from a student loan or grant
+    </h2>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="govuk-body" href="incoming/student" aria-describedby="eligibility-completed">
+          Add student finance payments
+        </a>
+      </li>
+    </ul>
+  </li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">7. </span> Income from a pension
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <a class="govuk-body" href="incoming/pension" aria-describedby="eligibility-completed">
+        Add pension payments
+      </a>
+    </li>
+  </ul>
+</li> -->
+<br>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income2" aria-describedby="eligibility-completed">
-              Add another type of income
+            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income" aria-describedby="eligibility-completed">
+              Add or remove income category
             </a>
           </h2>
         </li>
