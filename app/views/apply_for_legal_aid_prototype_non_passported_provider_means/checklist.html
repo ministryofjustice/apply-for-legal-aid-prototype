@@ -39,7 +39,16 @@ Apply for legal aid - Other capital
                 </h1>
               </legend>
 
+<!--  <p class="govuk-body">
+                We need your client's bank statements from the past 3 months to help us check if they qualify financially for legal aid.</p>
 
+                <h2 class="govuk-heading-m">How we do this</h2>
+
+                <ol class="govuk-list govuk-list--number">
+                  <li>We give your client access to the Apply for legal aid service.</li>
+                  <li>We ask them to sign in to online banking and give us temporary access to their bank accounts.</li>
+                  <li>We download 3 months of bank statements.</li>
+                  </ol>
 
   <!--  <p class="govuk-body">To continue this application in this service your client will need to:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -50,7 +59,7 @@ Apply for legal aid - Other capital
 
         <p class="govuk-body">You must agree with the following statements to continue this application in this service.</p>
 
-        <!-- <p class="govuk-body">You must agree with the following statements to continue using this service for this application.</p>
+         <p class="govuk-body">You must agree with the following statements to continue using this service for this application.</p>
 
             <h2 class="govuk-heading-m">Select all that apply</h2> -->
 
@@ -63,22 +72,24 @@ Apply for legal aid - Other capital
                    Your client uses online banking
                  </label>
               <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                     They need to sign in to <a href="https://www.openbanking.org.uk/">open banking</a> to share their financial data with us
-                 </span> -->
+                     They'll need to sign in to online banking and share their bank account information with us.
+                 </span>
                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                        We will connect them to their online banking using a secure third-party service. <!-- from all of their accounts  to complete the financial assessment -->
-                    </span>
+                   We need temporary access to their bank accounts to download their bank statements from the past 3 months.
+
+                       We'll connect them to their online banking using a secure third-party service. from all of their accounts  to complete the financial assessment
+                    </span> -->
                </div>
 
                <div class="govuk-checkboxes" data-module="checkboxes">
                  <div class="govuk-checkboxes__item">
                    <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="second-property2" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("second-property2","yes") }}>
                    <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                     Your client agrees to share their bank account information with us
+                     Your client agrees to give us temporary access to their bank accounts
                    </label>
-                <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                    We need to see their bank transactions from the past 3 months to help calculate their financial eligibility.
-                   </span> -->
+                 <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                  We'll download 3 months of bank statements to help us check if your client qualifies financially for legal aid.
+                   </span>
                  </div>
 
           <!--     <div class="govuk-checkboxes__item">
@@ -118,7 +129,7 @@ Apply for legal aid - Other capital
       </div>
     </div>
 
-    <p class="govuk-body"><a href="use_ccms">(if boxes are not checked)</a></p>
+    <p class="govuk-body"><a href="use_ccms">(if both boxes are not checked)</a></p>
 
 
 {% endblock %}

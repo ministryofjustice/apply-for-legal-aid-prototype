@@ -25,23 +25,35 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post" class="form">
+        <form action="use_ccms" method="post" class="form">
 
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Can your client use open banking to share financial information with us?
+      Does your client agree with all of the following?
       </h1>
     </legend>
     <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
       Select one option
-    </span> -->
-<div class="govuk-!-padding-bottom-4"></div>
+    </span>
 
+    <p class="govuk-body">Open banking lets users securely share their financial data with authorised third parties.</p> -->
 
-<details class="govuk-details">
+    <ol class="govuk-list govuk-list--number">
+      <li>They use online banking for all of their bank accounts.</li>
+      <li>They'll give the LAA temporary access to their bank accounts.</li>
+      <li>The LAA can download their bank statements from the past 3 months.</li>
+      </ol>
+
+      <div class="govuk-inset-text">
+        We only use your client's financial information to support their application.<br><br>
+
+        We do not save your client's sign in details.
+      </div>
+
+<!-- <details class="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
         What is open banking?
@@ -54,8 +66,8 @@ Apply for legal aid - Alternative funding
          <li>sign in to their online banking</li>
          <li>authorise us to download bank statements covering the past 3 months</li>
          </ul>
-      <!--  <p class="govuk-body">They'll need to authorise us to download 3 months of bank statements.</p>
-      <p class="govuk-body">We will not save your client's sign-in details.</p> -->
+        <p class="govuk-body">They'll need to authorise us to download 3 months of bank statements.</p>
+      <p class="govuk-body">We will not save your client's sign-in details.</p>
     </div>
   </details>
 
@@ -68,18 +80,18 @@ Apply for legal aid - Alternative funding
             <label class="govuk-label govuk-radios__label" for="onlinebank-1">
               Yes
             </label></div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1" style="padding-top:10px;">
+          <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1" style="padding-top:10px;">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="onlinebank-1">
                   <p class="govuk-body">Your client will need to:</p>
                   <ul class="govuk-list govuk-list--bullet">
                     <li>use online banking</li>
                     <li>know the sign-in details for all of their bank accounts</li>
-                  <!--  <li>authorise us to download bank statements covering the past 3 months</li> -->
+                  <li>authorise us to download bank statements covering the past 3 months</li>
                   </ul>
                 </label>
               </div>
-            </div>
+            </div> -->
 
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
