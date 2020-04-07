@@ -28,7 +28,7 @@ Apply for legal aid - Types of income
 
   {{ govukBackLink({
     text: "Back",
-      href: "step"
+      href: "citizen_accounts"
   }) }}
 {% endblock %}
 
@@ -36,17 +36,17 @@ Apply for legal aid - Types of income
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="step1" method="post" class="form">
+        <form action="delegated_functions" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client receive any of the following benefits?
+                  Which types of income do you receive?
                 </h1>
               </legend>
 
-          <!--  <div class="govuk-inset-text">These benefits are not included in the financial eligibility calculation.</div> -->
+            <!--  <p class="govuk-body"></p> -->
 
                <span class="govuk-hint">Select all that apply.</span>
 
@@ -62,27 +62,27 @@ Apply for legal aid - Types of income
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                    Budgeting Loan
+                    Benefits
                   </label>
-              <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+               <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       For example, Universal Credit or Child Benefit.
-                  </span> -->
+                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                    Care in the Community direct payments
+                    Financial help from friends or family
                   </label>
-                <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       For example, money from a family member for rent or bills.
-                  </span> -->
+                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                    Earnings Top-up (ETU) <!-- for you or your children -->
+                    Maintenance payments <!-- for you or your children -->
                   </label>
                 <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       For example, payments from an ex-partner to you or any children
@@ -92,68 +92,26 @@ Apply for legal aid - Types of income
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                    Fostering allowance
-                  <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                          Welsh Independent Living Grant
-                      </span> -->
+                    Income from a property or lodger
+                  </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-5" name="student-loan" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-5" {{ checked("student-loan","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-5">
-                     Grenfell Tower fire compensation payments
+                     Student loan or grant
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Independent Living Funds payments
+                     Pension
                   </label>
-              <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Welsh Independent Living Grant
-                  </span> -->
+                <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                      Include State, workplace and personal pensions.
+                  </span>
                 </div>
-
-                                <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                     Special education needs (SEN) direct payments
-                                  </label>
-                            <!--    <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                                      Include State, workplace and personal pensions.
-                                  </span> -->
-                                </div>
-
-                                                <div class="govuk-checkboxes__item">
-                                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                     Universal Credit advance payments
-                                                  </label>
-                                              <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                                                      Include State, workplace and personal pensions.
-                                                  </span> -->
-                                                </div>
-
-                                                                <div class="govuk-checkboxes__item">
-                                                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                     War pension
-                                                                  </label>
-                                                                <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                                                                      Include all types.
-                                                                  </span>
-                                                                </div>
-
-                                                                <div class="govuk-checkboxes__item">
-                                                                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                                                                     Welsh Independent Living Grant
-                                                                  </label>
-                                                                <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-
-                                                                  </span> -->
-                                                                </div>
              <p class="govuk-body">or</p>
 
 
@@ -164,9 +122,6 @@ Apply for legal aid - Types of income
                   </label>
                 </div>
               </div>
-
-
-
             </fieldset>
           </div>
 
@@ -177,18 +132,19 @@ Apply for legal aid - Types of income
     </span>
   </summary>
   <div class="govuk-details__text">
-We cannot automatically identify these benefits from bank statements.<br><br>
-If your client receives any of them, you'll need to select the relevant transactions from their bank statements.
+  Your solicitor will look at your bank statements and put your transactions into the categories you select.<br><br>
+
+  We use this to calculate if you qualify financially for legal aid.
   </div>
 </details>
 
           <button type="submit" class="govuk-button">
-            Save and continue
+            Continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
-          </a>
+          </a> -->
 
         </form>
       </div>

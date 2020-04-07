@@ -17,7 +17,7 @@ Apply for legal aid - Alternative funding
 
   {{ govukBackLink({
     text: "Back",
-      href: "client_details_notify"
+      href: "types_of_income"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="what_youre_covered_for" method="post" class="form">
+        <form action="income" method="post" class="form">
 
 
         <div class="govuk-form-group">
@@ -41,7 +41,7 @@ Apply for legal aid - Alternative funding
       Have you already started work because your client needed urgent representation?
       Have you already started proceedings because your client needs urgent representation?
        -->
-       Have you used delegated functions?
+       Does your client recieve any disregarded benefits?
       </h1>
     </legend>
     <!-- <p class="govuk-body">
@@ -52,6 +52,8 @@ Apply for legal aid - Alternative funding
       For example, you've already started work because your client needed emergency representation. -->
     </span>
 
+
+
     <div class="govuk-!-padding-bottom-4"></div>
 
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -61,40 +63,7 @@ Apply for legal aid - Alternative funding
           Yes
         </label>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-        <label class="govuk-label" for="how-contacted-conditional-1">
-          Date you used delegated functions
-        </label>
-        <span id="dob-hint" class="govuk-hint">
-      For example, 31 3 1980.
-    </span>
-    <div class="govuk-date-input" id="dob">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day-2">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month-2">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month-2" name="dob-month-2" type="number" pattern="[0-9]*" value="{{ data['dob-month-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year-2">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year-2" name="dob-year-2" type="number" pattern="[0-9]*" value="{{ data['dob-year-2'] }}">
-        </div>
-      </div>
-    </div>
-      </div>
+
 
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
@@ -104,12 +73,41 @@ Apply for legal aid - Alternative funding
         </fieldset>
       </div>
 
+
+      <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    What are disregarded benefits?
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+    These types of benefits are excluded from the financial eligibility calculation.  If your client receives any of these benefits, you’ll need to select the payments from their bank transactions so we’ll know what to exclude from the calculation. These include:
+<ul>
+<li>Attendance Allowance</li>
+<li>Armed forces independence payment</li>
+<li>Carer’s Allowance</li>
+<li>Council Tax Benefit</li>
+<li>Disability living allowance</li>
+<li>Exceptionally Severe Disablement Allowance</li>
+<li>Housing benefit</li>
+<li>Personal Independence Payment</li>
+<li> Payment on Account of Benefit</li> 
+<li>Severe Disablement Allowance</li>
+<li>Social Fund</li>
+<li> Social Fund Funeral Payment</li>  
+<li>War Widows Pension </li>
+<li>Widow’s Pension </li>
+</ul>
+
+    </div>
+    </details>
+
       <button type="submit" class="govuk-button">
-        Continue
+        Save and continue
       </button>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save as draft
+        Save and come back later
       </a>
 
       </form>
