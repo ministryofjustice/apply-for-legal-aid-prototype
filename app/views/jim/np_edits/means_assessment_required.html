@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "means_assessment_required"
+  href: "check_answers"
 }) }}
 
 {% endblock %}
@@ -27,38 +27,25 @@ Apply for legal aid - Confirmation page
 
   <div class="flash-card">
     <header>
-      <h1 class="govuk-heading-l">We need to check your client's financial eligibility<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+      <h1 class="govuk-heading-l">Your client does not get benefits that qualify for legal aid<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
     </header>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
         <ul class="how-to-renew" data-id="how-to-renew-uk">
-
           <li>
-          <!--  <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px;">What happens next <!-- How we check financial eligibility </h2>
-        <p style="color: #fff;">Your client will need to answer questions about their financial situation.</p>
 
-      <p style="color: #fff;">We need to check if your client qualifies financially for legal aid.</p> -->
+            <p style="color: #fff;">We used these details to check their benefits status with the DWP:</p>
 
-      <p style="color: #fff;">Your client needs to:</p>
+        <!--    <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">Your client's details</h2> -->
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li style="color: #fff;">use online banking</li>
-        <li style="color: #fff;">agree to share their bank account information with us</li>
-          </ul>
+          <p style="color: #fff;">
+          <strong>Name:</strong> John Doe<br>
+          <strong>Date of birth:</strong> 1 January 1980<br>
+          <strong>National Insurance number:</strong> QQ 12 34 56 C</p>
 
-  <p style="color: #fff;">If they do, we'll give them access to the service and ask them to:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-           <li style="color: #fff;">sign in to their online banking</li>
-          <li style="color: #fff;">give us one-time access to their bank accounts</li>
-           </ul>
-
-      <p style="color: #fff;">We'll download their bank statements from the past 3 months.</p>
-
-      <p style="color: #fff;">When you continue the application you'll need to put their bank transactions into categories.</p>
-
+          <p style="color: #fff;"><a href="client_details">I entered these details incorrectly</a></p>
           </li>
-        </ul>
+          <li>
 
 <!-- <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">What happens next</h2>
         <p style="color: #fff;">We'll check if you can continue your application using this service.</p> -->
@@ -69,7 +56,7 @@ Apply for legal aid - Confirmation page
 
         <div class="govuk-!-padding-bottom-4"></div>
 
-        <a href="checklist" role="button" class="govuk-button white-button right">
+        <a href="check" role="button" class="govuk-button white-button right">
           Continue</a>
       <!--  <a href="#" role="button" class="govuk-button draft-button">
           Save and come back later
