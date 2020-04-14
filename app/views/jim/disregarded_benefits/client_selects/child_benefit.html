@@ -28,7 +28,7 @@ Apply for legal aid - Salary statement
 
 {{ govukBackLink({
   text: "Back",
-  href: "ucap_selected"
+  href: "/apply_for_legal_aid_prototype_non_passported_provider_means/salary_selected"
 }) }}
 {% endblock %}
 
@@ -93,34 +93,13 @@ white-space: nowrap;
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="financial_help_selected" method="post" novalidate>
+    <form action="income_2" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
-        Select payments from friends or family
+        Select Child Benefit payments
       </h1>
 
-      <div class="govuk-inset-text">Select every payment your client received from friends or family in the past 3 months.</div>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Not sure which payments to select?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="gov-body">Payments from friends or family count as income if they are all of the following:</p>
-         <ul class="govuk-list govuk-list--bullet">
-
-        <li>regular (for example, two or more over £30 in the last month)</li>
-        <li>from the same person</li>
-        <li>gifts (your client does not need to repay them)</li>
-        <li>meant for living expenses (for example, housing costs)</li>
-        </ul>
-        </div>
-      </details>
-
-
-      <!-- <div class="govuk-inset-text">Select every payment from friends or family your client received in the past 3 months.</div> -->
+      <div class="govuk-inset-text">Select every Child Benefit payment your client received in the past 3 months.</div>
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
@@ -141,13 +120,14 @@ white-space: nowrap;
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-          </td>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+            </div></td>
             <td class="govuk-table__cell">29 Jan 2019</td>
-            <td class="govuk-table__cell">Work and child TC</td>
+            <td class="govuk-table__cell">Child Benefit</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-            Benefits
-            </strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -158,15 +138,16 @@ white-space: nowrap;
             <td class="govuk-table__cell">27 Jan 2019</td>
             <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><!-- <strong class="govuk-tag">
+              Salary
+            </strong> --></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div>
-            </td>
+              </div></td>
             <td class="govuk-table__cell">25 Jan 2019</td>
             <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
@@ -174,23 +155,25 @@ white-space: nowrap;
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-            </td>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
             <td class="govuk-table__cell">25 Jan 2019</td>
-            <td class="govuk-table__cell">Universal Credit advance</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£144</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-            Benefits
-            </strong></td>
+            <td class="govuk-table__cell">Disability Living Allowance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-            </td>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
             <td class="govuk-table__cell">23 Jan 2019</td>
-            <td class="govuk-table__cell">Work and child TC</td>
+            <td class="govuk-table__cell">Child Benefit</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-            Benefits
-            </strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -227,13 +210,14 @@ white-space: nowrap;
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  </td>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                  </div></td>
                   <td class="govuk-table__cell">17 Jan 2019</td>
-                  <td class="govuk-table__cell">Work and child TC</td>
+                  <td class="govuk-table__cell">Child Benefit</td>
                   <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                  Benefits
-                  </strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -270,24 +254,15 @@ white-space: nowrap;
                     </tr>
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell">
-                        </td>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                        </div></td>
                         <td class="govuk-table__cell">11 Jan 2019</td>
-                        <td class="govuk-table__cell">Work and child TC</td>
+                        <td class="govuk-table__cell">Child Benefit</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                        Benefits
-                        </strong></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                       </tr>
-                      <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                          </td>
-                          <td class="govuk-table__cell">7 Jan 2019</td>
-                          <td class="govuk-table__cell">Child benefit</td>
-                          <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
-                          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                          Benefits
-                          </strong></td>
-                        </tr>
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell">
                             <div class="govuk-checkboxes__item">
@@ -300,13 +275,15 @@ white-space: nowrap;
                           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                         <tr class="govuk-table__row">
-                          <td class="govuk-table__cell"></td>
+                          <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                            </div>
                             <td class="govuk-table__cell">3 Jan 2019</td>
-                            <td class="govuk-table__cell">Work and child TC</td>
+                            <td class="govuk-table__cell">Child Benefit</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                            Benefits
-                            </strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                           </tr>
                         </tbody>
                       </table>
