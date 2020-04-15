@@ -1,0 +1,213 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Does your client use online banking
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "means_assessment_required"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your application</h1>
+
+  <h2 class="govuk-heading-m">Client details</h2>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__first_name">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    First name
+  </dt>
+  <dd class="govuk-summary-list__value align-text-right">
+    Test
+  </dd>
+</div>
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__last_name">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Last name
+  </dt>
+  <dd class="govuk-summary-list__value align-text-right">
+    WorkingTogetherGroup
+  </dd>
+</div>
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__date_of_birth">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Date of birth
+  </dt>
+  <dd class="govuk-summary-list__value align-text-right">
+     1 January 1990
+  </dd>
+</div>
+
+
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__national_insurance_number">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    National Insurance number
+  </dt>
+  <dd class="govuk-summary-list__value align-text-right">
+    JA293483B
+  </dd>
+</div>
+
+
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__address">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Correspondence address
+  </dt>
+  <dd class="govuk-summary-list__value align-text-right">
+    Buckingham Palace<br>London<br>SW1A 1AA
+  </dd>
+</div>
+
+</dl>
+
+
+  <h2 class="govuk-heading-m">What you&#39;re applying for</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__proceeding_type">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Proceeding
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Non-molestation order
+  </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+</div>
+
+
+
+<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__used_delegated_functions">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Have you used delegated functions?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    No
+  </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+</div>
+
+
+
+</dl>
+
+
+
+  <h2 class="govuk-heading-m">Covered under a substantive certificate</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__form_of_service">
+  <dt class="govuk-summary-list__key">
+    Form of service
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Full representation
+  </dd>
+</div>
+
+  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__incurrable_costs">
+  <dt class="govuk-summary-list__key">
+    Costs you can incur
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £25,000
+  </dd>
+</div>
+
+  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__allowable_work">
+  <dt class="govuk-summary-list__key">
+    Work you can do
+  </dt>
+  <dd class="govuk-summary-list__value">
+    As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
+  </dd>
+</div>
+
+</dl>
+
+
+  <h2 class="govuk-heading-m">What happens next</h2>
+
+  <p class="govuk-body">
+We'll tell you when your client has shared their bank account information with us.
+</p>
+
+<form action="/providers/applications" accept-charset="UTF-8" method="get"><input type="submit" name="continue_button" value="Back to your applications" id="continue" class="govuk-button form-button" data-disable-with="Back to your applications" />
+
+</form>
+
+  </div>
+</div>
+
+      </main>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
