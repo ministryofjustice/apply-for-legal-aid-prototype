@@ -1,0 +1,322 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "dependants"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="app-example-page">
+
+       <div class="moj-add-another">
+
+       <h2 class="govuk-heading-xl moj-add-another__heading" tabindex="-1">Enter your client's dependant's details</h1>
+
+       <form method="post">
+
+         <fieldset class="govuk-fieldset moj-add-another__item">
+
+       <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--m">
+
+         Dependant 1
+
+       </legend>
+
+
+
+
+
+     <div class="govuk-form-group">
+       <label class="govuk-label govuk-!-font-weight-bold" for="person[0][first_name]">
+         First name
+       </label>
+
+
+       <input class="govuk-input" id="person[0][first_name]" name="person[0][first_name]" type="text" data-name="person[%index%][first_name]" data-id="person[%index%][first_name]">
+     </div>
+
+
+
+
+     <div class="govuk-form-group">
+       <label class="govuk-label govuk-!-font-weight-bold" for="person[0][last_name]">
+         Last name
+       </label>
+
+
+       <input class="govuk-input" id="person[0][last_name]" name="person[0][last_name]" type="text" data-name="person[%index%][last_name]" data-id="person[%index%][last_name]">
+     </div>
+
+
+
+
+
+
+
+
+
+
+     <div class="govuk-form-group">
+     <fieldset class="govuk-fieldset" aria-describedby="date-of-birth-hint" role="group">
+
+       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+         Date of birth
+
+       </legend>
+
+
+       <span id="date-of-birth-hint" class="govuk-hint">
+         For example, 31 3 1980
+       </span>
+
+
+       <div class="govuk-date-input" id="date-of-birth">
+
+         <div class="govuk-date-input__item">
+           <div class="govuk-form-group">
+             <label class="govuk-label govuk-date-input__label" for="person[0][dob][day]">
+               Day
+             </label>
+
+
+             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="person[0][dob][day]" name="person[0][dob][day]" type="number" pattern="[0-9]*" data-name="person[%index%][dob][day]" data-id="person[%index%][dob][day]">
+           </div>
+         </div>
+
+         <div class="govuk-date-input__item">
+           <div class="govuk-form-group">
+             <label class="govuk-label govuk-date-input__label" for="person[0][dob][month]">
+               Month
+             </label>
+
+
+             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="person[0][dob][month]" name="person[0][dob][month]" type="number" pattern="[0-9]*" data-name="person[%index%][dob][month]" data-id="person[%index%][dob][month]">
+           </div>
+         </div>
+
+         <div class="govuk-date-input__item">
+           <div class="govuk-form-group">
+             <label class="govuk-label govuk-date-input__label" for="person[0][dob][year]">
+               Year
+             </label>
+
+
+             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="person[0][dob][year]" name="person[0][dob][year]" type="number" pattern="[0-9]*" data-name="person[%index%][dob][year]" data-id="person[%index%][dob][year]">
+           </div>
+         </div>
+
+<br></br>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+           <br></br>Is this dependant a child or an adult?
+            </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                      Child
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      Adult
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+             <br></br>Is this dependant in full-time education or training?
+              </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changed-name">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+
+
+
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                   <br></br>Does this dependant receive any income?
+                    </legend>
+
+
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Enter the amount they get each month
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                        </div>
+
+
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                          No
+                        </label>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                         <br></br>Does this dependant have assets worth more than £8,000?
+                          </legend>
+
+
+
+                          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                  Enter the total asset value
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                              </div>
+
+
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                                No
+                              </label>
+                            </div>
+
+
+
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+
+            </div>
+
+
+         <div class="moj-button-action">
+
+
+     <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+       Add another dependant
+     </button>
+
+         </div>
+
+         <div class="moj-button-action">
+
+
+
+<br></br>
+
+           <button type="submit" class="govuk-button">
+             Save and continue
+           </button>
+
+           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+             Save and come back later
+           </a>
+
+         </div>
+
+       </form>
+
+     </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
