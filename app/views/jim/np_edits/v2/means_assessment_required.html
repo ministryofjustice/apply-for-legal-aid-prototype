@@ -27,25 +27,46 @@ Apply for legal aid - Confirmation page
 
   <div class="flash-card">
     <header>
-      <h1 class="govuk-heading-l">Your client does not get benefits that qualify for legal aid<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+      <h1 class="govuk-heading-l">We need to check your client's financial eligibility<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
     </header>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-two-thirds">
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
 
-            <p style="color: #fff;">We used the following details to check their benefits status with the DWP:</p>
+            <p style="color: #fff;">
+            This is because they do not get benefits that qualify for legal aid.</p>
 
-        <!--    <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">Your client's details</h2> -->
+            <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How we checked your client's benefits status
+        </span>
+      </summary>
 
-          <p style="color: #fff;">
-          <strong>Name:</strong> John Doe<br>
-          <strong>Date of birth:</strong> 1 January 1980<br>
-          <strong>National Insurance number:</strong> QQ 12 34 56 C</p>
+      <p style="color: #fff;">We used the following details to check your client's benefits status with the DWP:</p>
 
-          <p style="color: #fff;"><a href="client_details">Change these details</a></p>
-          </li>
-          <li>
+      <p style="color: #fff;">
+      <strong>Name:</strong> John Doe<br>
+      <strong>Date of birth:</strong> 1 January 1980<br>
+      <strong>National Insurance number:</strong> QQ 12 34 56 C</p>
+
+      <p style="color: #fff;"><a href="client_details">Change these details</a> if you entered them incorrectly.</p>
+    </details>
+
+            <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px;">What your client has to do <!-- How we check financial eligibility --></h2>
+      <!--  <p style="color: #fff;">Your client will need to answer questions about their financial situation.</p> -->
+
+      <ol class="govuk-list govuk-list--number">
+
+          <li style="color: #fff;">Access the service using the link we'll send to them in an email.</li>
+           <li style="color: #fff;">Sign in to online banking.</li>
+           <li style="color: #fff;">Give us one-time access to their bank accounts so we can download 3 months of bank statements.</li>
+           <li style="color: #fff;">Tell us which types of income they receive and regular payments they make.</li>
+           <!--  <li style="color: #fff;">can answer questions about their property, savings and other assets</li> -->
+           </ol>
+
+
 
 <!-- <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">What happens next</h2>
         <p style="color: #fff;">We'll check if you can continue your application using this service.</p> -->
@@ -56,7 +77,7 @@ Apply for legal aid - Confirmation page
 
         <div class="govuk-!-padding-bottom-4"></div>
 
-        <a href="check" role="button" class="govuk-button white-button right">
+        <a href="checklist" role="button" class="govuk-button white-button right">
           Continue</a>
       <!--  <a href="#" role="button" class="govuk-button draft-button">
           Save and come back later

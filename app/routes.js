@@ -660,5 +660,35 @@ router.post('/jim/statement_split/statement_upload', function (req, res) {
   }
 })
 
+// NP client consent v1
+router.post('/jim/np_edits/v1/use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/np_edits/v1/use_ccms')
+  } else {
+    res.redirect('/jim/np_edits/v1/email_address')
+  }
+})
+
+// NP client consent v3
+router.post('/jim/np_edits/v3/use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/np_edits/v3/use_ccms')
+  } else {
+    res.redirect('/jim/np_edits/v3/email_address')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
