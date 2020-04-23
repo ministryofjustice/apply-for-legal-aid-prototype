@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "means_assessment_required"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="email_address" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+
+                <!--  Does your client have any savings or investments?
+                  Savings and investments - select any that apply to your client -->
+                  What your client has to do
+                <!--  Your savings and investments -->
+                </h1>
+              </legend>
+
+              <ol class="govuk-list govuk-list--number">
+
+                  <li>Access the service using the link we'll send to them in an email.</li>
+                   <li>Sign in to online banking.</li>
+                   <li>Give us one-time access to their bank accounts so we can download 3 months of bank statements.</li>
+                   <li>Tell us which types of income they receive and regular payments they make.</li>
+                   <!--  <li style="color: #fff;">can answer questions about their property, savings and other assets</li> -->
+                   </ol>
+
+            <h2 class="govuk-heading-m">Check if your client can use the service</h2>
+
+            <!--  <span class="govuk-hint">Select all that apply.</span> -->
+
+             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
+                 <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+                   Your client uses online banking
+                 </label>
+              <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                     They need to sign in to <a href="https://www.openbanking.org.uk/">open banking</a> to share their financial data with us
+                 </span>
+                 <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                        They'll need to sign in to online banking and share their financial data with us.
+                    </span> -->
+               </div>
+
+               <div class="govuk-checkboxes" data-module="checkboxes">
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="second-property2" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("second-property2","yes") }}>
+                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
+                     Your client will give us one-time access to their bank accounts
+                   </label>
+              <!--   <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                    We need to download their bank statements from the past 3 months.
+                   </span> -->
+                 </div>
+
+          <!--     <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
+                 <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                   Your client can provide details of their capital
+                 </label>
+              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                     They'll need to tell us the values of any property, savings or other assets they have
+                 </span>
+               </div>
+
+               <p class="govuk-body">or</p>
+
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
+                 <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
+                   None of these
+                 </label>
+               </div> -->
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <p class="govuk-body"><a href="use_ccms">(if both boxes are not checked)</a></p>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
