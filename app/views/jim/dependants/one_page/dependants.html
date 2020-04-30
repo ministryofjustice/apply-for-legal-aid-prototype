@@ -29,6 +29,11 @@ Apply for legal aid - Client details
 
       <form action="check_answers_1" method="post" novalidate>
 
+        <!-- <p class="govuk-body">A dependant is a child or adult who lives with your client and depends on them for financial support.</p>
+
+
+        <div class="govuk-inset-text">Do not include your client's partner (if they have one).</div> -->
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">Dependant 1
@@ -98,7 +103,7 @@ Apply for legal aid - Client details
                     Child dependant
                   </label>
                   <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                    For example, your client's child, grandchild, niece or nephew.
+                    For example, your child, grandchild, niece or nephew.
                   </span>
                 </div>
                 <div class="govuk-radios__item">
@@ -107,7 +112,7 @@ Apply for legal aid - Client details
                     Adult dependant
                   </label>
                   <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-                    For example, your client's parent, grandparent, aunt or uncle.
+                    For example, a parent, a grandparent, aunt or uncle.
                   </span>
                 </div>
               </div>
@@ -160,6 +165,7 @@ Apply for legal aid - Client details
           </label>
           <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
         </div>
+
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
@@ -167,9 +173,12 @@ Apply for legal aid - Client details
           No
         </label>
       </div>
+
     </div>
   </fieldset>
 </div>
+
+
 
 
 <div class="govuk-form-group">
@@ -179,33 +188,42 @@ Apply for legal aid - Client details
         Do they have assets worth more than £8,000?
       </h1>
     </legend>
-  <!--  <span id="how-contacted-conditional-hint" class="govuk-hint">
-      For example, property, savings or shares.
-    </span> -->
+    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      For example, property, cash savings or shares.
+    </span>
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted-2" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-3">
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
           Yes
         </label>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-phone">
             Enter the total asset value
           </label>
           <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
         </div>
-      </div>
+        </div>
+
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted-2" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-4">
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
           No
         </label>
       </div>
+
+      </div>
+
+
+
     </div>
-  </fieldset>
+
+    </div>
+
 </div>
 
 
