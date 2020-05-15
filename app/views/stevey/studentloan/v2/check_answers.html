@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "property_amount"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+    <!--  <h2 class="govuk-heading-m">
+        Scope of legal aid
+      </h2> -->
+
+
+
+     <h2 class="govuk-heading-m">
+       Student loan or grant
+     </h2>
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Do you recieve money from a student loan or grant?
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Yes
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="property">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           How much is your student loan or grant?
+         </dt>
+         <dd class="govuk-summary-list__value">
+           £9800
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="property_amount">
+             Change <span class="govuk-visually-hidden">blank</span>
+           </a>
+         </dd>
+       </div>
+
+      
+       </dl>
+
+       <div class="govuk-grid-row">
+       <div class="govuk-grid-column-full">
+         <p>{{ data['statement'] }}</p>
+      </div>
+      </div>
+
+
+<!--  <h2 class="govuk-heading-l">Client declaration</h2>
+
+  <p class="govuk-body">Your client agrees that:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>they've instructed [provider] to represent them</li>
+<li>the Legal Aid Agency (LAA) can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
+<li>the LAA can check their details with bank and credit reference agencies</li>
+<li>they may have to pay towards legal aid</li>
+<li>they may have to repay legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
+<li>any information they’ve given is complete and correct</li>
+<li>they’ll report any changes to their financial situation immediately</li>
+</ul>
+
+<div class="govuk-warning-text">
+<span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
+
+<p class="govuk-body" style="padding-left: 60px;">
+
+<strong>If your client gives wrong or incomplete information, or they do not report changes, they may:</p>
+<ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+<strong><li>be prosecuted</li>
+<li>need to pay a financial penalty</li>
+<li>have their legal aid stopped and have to pay back the costs</li></strong>
+<!-- <li>have to pay more for your legal aid</li>
+</ul>
+
+-->
+
+
+      <a class="govuk-button" href="nonpassported_meansresults" role="button">
+        Submit application
+      </a>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+  {{ govukFooter({
+  meta: {
+      items: [
+        {
+          href: "#",
+          text: "Help"
+        },
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        {
+          href: "#",
+          text: "Feedback"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "https://mojdigital.blog.gov.uk/",
+          text: "MOJ Digital Services"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+  {% endblock %}
