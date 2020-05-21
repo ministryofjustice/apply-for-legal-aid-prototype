@@ -29,7 +29,7 @@ Apply for legal aid - Check your answers - Merits
         Check your answers
       </h1>
 
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <!--  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -161,7 +161,7 @@ Apply for legal aid - Check your answers - Merits
           <dd class="govuk-summary-list__actions">
           <!--  <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -174,7 +174,7 @@ Apply for legal aid - Check your answers - Merits
           <dd class="govuk-summary-list__actions">
           <!--  <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -188,7 +188,7 @@ Apply for legal aid - Check your answers - Merits
           <dd class="govuk-summary-list__actions">
           <!--  <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
         <!-- <div class="app-check-your-answers__contents">
@@ -216,7 +216,7 @@ Apply for legal aid - Check your answers - Merits
               Change <span class="govuk-visually-hidden">proceeding</span>
             </a>
           </dd>
-        </div> -->
+        </div>
      </dl>
 
 
@@ -247,9 +247,9 @@ Apply for legal aid - Check your answers - Merits
           Full representation{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <!--  <a href="search#search">
+           <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -260,9 +260,9 @@ Apply for legal aid - Check your answers - Merits
             £5,000{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <!--  <a href="search#search">
+         <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -274,12 +274,12 @@ Apply for legal aid - Check your answers - Merits
     {{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <!--  <a href="search#search">
+          <a href="search#search">
               Change <span class="govuk-visually-hidden">proceeding</span>
-            </a> -->
+            </a>
           </dd>
         </div>
-        <!-- <div class="app-check-your-answers__contents">
+       <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Delegated functions
           </dt>
@@ -304,15 +304,15 @@ Apply for legal aid - Check your answers - Merits
               Change <span class="govuk-visually-hidden">proceeding</span>
             </a>
           </dd>
-        </div> -->
+        </div>
      </dl>
     </div>
   </div>
-</div>
+</div> -->
 
-<h2 class="govuk-heading-l">
+<!-- <h2 class="govuk-heading-l">
   Client capital
-</h2>
+</h2> -->
 
         <h2 class="govuk-heading-m">
           Property
@@ -324,7 +324,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own the home they live in?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            Yes, with a mortgage or loan{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -337,7 +337,7 @@ Apply for legal aid - Check your answers - Merits
             How much is your client's home worth?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            £200,000{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -350,7 +350,7 @@ Apply for legal aid - Check your answers - Merits
             What is the outstanding mortgage on your client's home?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            £100,000{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -363,7 +363,20 @@ Apply for legal aid - Check your answers - Merits
             Does your client own their home with anyone else?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            Yes, with a partner or ex-partner{{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What % share of their home does your client legally own?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            50%{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -383,7 +396,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own a vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            Yes{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -396,7 +409,7 @@ Apply for legal aid - Check your answers - Merits
             What is the estimated value of the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            £4,000{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -409,7 +422,7 @@ Apply for legal aid - Check your answers - Merits
             Are there any payments left on the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            £2,000{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -422,7 +435,7 @@ Apply for legal aid - Check your answers - Merits
             Did your client buy the vehicle over 3 years ago?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            Yes{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -435,7 +448,7 @@ Apply for legal aid - Check your answers - Merits
             Is the vehicle in regular use?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+            Yes{{ data['...'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">

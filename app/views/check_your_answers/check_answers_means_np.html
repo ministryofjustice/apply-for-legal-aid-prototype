@@ -37,7 +37,7 @@ th:first-child {
       Check your answers
     </h1>
 
-    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <!-- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -189,11 +189,11 @@ th:first-child {
      </dl>
     </div>
   </div>
-  </div>
+  </div> -->
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l">Client income</h2>
+      <h2 class="govuk-heading-m">Income your client receives</h2>
     </div>
     <div class="govuk-grid-column-one-third">
       <p><a class="govuk-link" style="float:right;" href="income">Change</a></p>
@@ -223,205 +223,267 @@ th:first-child {
         <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
       </tr>
       <tr class="govuk-table__row">
-        <th class="govuk-table__cell govuk-body" scope="row">Student loan or grant</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
         <th class="govuk-table__cell govuk-body" scope="row">Pension</th>
         <td class="govuk-table__cell govuk-table__cell--numeric">£442</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="govuk-!-padding-bottom-3"></div>
 
+  <h2 class="govuk-heading-m">
+    Student finance
+  </h2>
 
-    <h1 class="govuk-heading-l">
-      Dependants
-    </h1>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Dependant 1</h2>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do you get student finance?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#firstname">
+          Change <span class="govuk-visually-hidden">first name</span>
+        </a>
+      </dd>
     </div>
-    <div class="govuk-grid-column-one-third">
-      <p><a class="govuk-link" style="float:right;" href="#">Remove dependant</a></p>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How much student finance will you get this academic year?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £9,800
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#lastname">
+          Change <span class="govuk-visually-hidden">last name</span>
+        </a>
+      </dd>
     </div>
+
+  </dl>
+
+  <h2 class="govuk-heading-m">
+    Dependants
+  </h2>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does your client have any dependants?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes{{ data['firstname'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="dependants">
+          Change <span class="govuk-visually-hidden">first name</span>
+        </a>
+      </dd>
     </div>
 
-    <!-- <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Do you have any dependants?
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          Yes{{ data['...'] }}
-        </dd>
-        <dd class="app-check-your-answers__change">
-          <a href="/jim/dependants/v4/dependants">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-           </dl> -->
+ </div>
+</div>
 
-           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-               <div class="govuk-summary-list__row">
-                 <dt class="govuk-summary-list__key">
-               Name
-             </dt>
-             <dd class="govuk-summary-list__value">
-               Jane Doe
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a href="#">
-                 Change <span class="govuk-visually-hidden">blank</span>
-               </a>
-             </dd>
-           </div>
 
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Date of birth
-             </dt>
-            <dd class="govuk-summary-list__value">
-               12 October 2001
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a href="#">
-                 Change <span class="govuk-visually-hidden">blank</span>
-               </a>
-             </dd>
-           </div>
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
 
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Relationship to client
-             </dt>
-             <dd class="govuk-summary-list__value">
-               Child relative{{ data['...'] }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a href="#">
-                 Change <span class="govuk-visually-hidden">blank</span>
-               </a>
-             </dd>
-           </div>
 
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               In full-time education or training
-             </dt>
-            <dd class="govuk-summary-list__value">
-               No{{ data['...'] }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a href="#">
-                 Change <span class="govuk-visually-hidden">blank</span>
-               </a>
-             </dd>
-           </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Dependant 1</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="client_details_2">Change</a></p>
+  </div>
+  </div>
 
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Income
-             </dt>
-             <dd class="govuk-summary-list__value">
-               None
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a href="#">
-                 Change <span class="govuk-visually-hidden">blank</span>
-               </a>
-             </dd>
-           </div>
-        </dl>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Jeff Doe{{ data['firstname'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#firstname">
+           <span class="govuk-visually-hidden">first name</span>
+        </a>
+      </dd>
+    </div>
 
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Dependant 2</h2>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <p><a class="govuk-link" style="float:right;" href="#">Remove dependant</a></p>
-        </div>
-        </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 January 1980
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#dob-day">
+          <span class="govuk-visually-hidden">dob</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Relationship to client
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Adult relative{{ data['national-insurance-number'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#national-insurance-number">
+          <span class="govuk-visually-hidden">national insurance number</span>
+        </a>
+      </dd>
+    </div>
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        In full-time education or training
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes{{ data['email-address'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#email-address">
+          <span class="govuk-visually-hidden">email address</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Income
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No{{ data['postcode'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="postcode_finder#postcode">
+          <span class="govuk-visually-hidden">correspondance address</span>
+        </a>
+      </dd>
+    </div>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-             Name
-           </dt>
-          <dd class="govuk-summary-list__value">
-             Joe Doe
-           </dd>
-           <dd class="govuk-summary-list__actions">
-             <a href="#">
-               Change <span class="govuk-visually-hidden">blank</span>
-             </a>
-           </dd>
-         </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Assets worth more than £8,000
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No{{ data['postcode'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="postcode_finder#postcode">
+          <span class="govuk-visually-hidden">correspondance address</span>
+        </a>
+      </dd>
+    </div>
 
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-             Date of birth
-           </dt>
-          <dd class="govuk-summary-list__value">
-             10 May 1967
-           </dd>
-            <dd class="govuk-summary-list__actions">
-             <a href="#">
-               Change <span class="govuk-visually-hidden">blank</span>
-             </a>
-           </dd>
-         </div>
+ </div>
+</div>
 
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-            Relationship to client
-           </dt>
-          <dd class="govuk-summary-list__value">
-             Adult relative{{ data['...'] }}
-           </dd>
-           <dd class="govuk-summary-list__actions">
-             <a href="#">
-               Change <span class="govuk-visually-hidden">blank</span>
-             </a>
-           </dd>
-         </div>
 
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-             Income
-           </dt>
-          <dd class="govuk-summary-list__value">
-            £1,100
-           </dd>
-           <dd class="govuk-summary-list__actions">
-             <a href="#">
-               Change <span class="govuk-visually-hidden">blank</span>
-             </a>
-           </dd>
-         </div>
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
 
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-             Assets worth more than £8,000
-           </dt>
-          <dd class="govuk-summary-list__value">
-             £9,210{{ data['...'] }}
-           </dd>
-           <dd class="govuk-summary-list__actions">
-             <a href="#">
-               Change <span class="govuk-visually-hidden">blank</span>
-             </a>
-           </dd>
-         </div>
-      </dl>
-      <p class="govuk-body"><a href="#">Add another dependant</a></p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Dependant 2</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link"style="float:right;" href="client_details_2">Change</a></p>
+  </div>
+  </div>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Jill{{ data['firstname'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#firstname">
+          <span class="govuk-visually-hidden">first name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 January 1980
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#dob-day">
+          <span class="govuk-visually-hidden">dob</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Relationship to client
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Adult relative{{ data['national-insurance-number'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#national-insurance-number">
+          <span class="govuk-visually-hidden">national insurance number</span>
+        </a>
+      </dd>
+    </div>
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        In full-time education or training
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes{{ data['email-address'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="client_details#email-address">
+          <span class="govuk-visually-hidden">email address</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Income
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No{{ data['postcode'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="postcode_finder#postcode">
+          <span class="govuk-visually-hidden">correspondance address</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Assets worth more than £8,000
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No{{ data['postcode'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="postcode_finder#postcode">
+          <span class="govuk-visually-hidden">correspondance address</span>
+        </a>
+      </dd>
+    </div>
+    </dl>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Client outgoings</h2>
+          <h2 class="govuk-heading-m">Regular payments your client makes</h2>
         </div>
         <div class="govuk-grid-column-one-third">
           <p><a class="govuk-link" style="float:right;" href="outgoings">Change</a></p>
@@ -449,9 +511,9 @@ th:first-child {
         </tbody>
       </table>
 
-      <h1 class="govuk-heading-l">
-      Client capital
-      </h1>
+    <!--  <h1 class="govuk-heading-m">
+      Your client's capital
+      </h1> -->
 
 <h2 class="govuk-heading-m">
   Property
@@ -747,7 +809,9 @@ th:first-child {
 
    <h2 class="govuk-heading-m">What happens next</h2>
 
-   <p>We'll use your answers to calculate if your client's financial eligibility for legal aid.</p>
+   <p>We'll use your answers to check your client's financial eligibility for legal aid.</p>
+
+   <br>
 
 
 <a href="nonpassported_meansresults" class="govuk-button" href="#" role="button">
