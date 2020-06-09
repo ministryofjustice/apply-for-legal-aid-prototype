@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "vehicles_regular_use"
+      href: "types_of_income"
   }) }}
 {% endblock %}
 
@@ -29,17 +29,18 @@ Apply for legal aid - Other capital
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
 
                 <!--  Does your client have any savings or investments?
-                  Savings and investments - select any that apply to your client -->
-                Were any of the following types of income received as cash payments in the past 3 months?
+                  Savings and investments - select any that apply to your client
+                Were any of the following types of income received as cash payments in the past 3 months?  -->
+                Select income types you received in cash in the past 3 months
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
 
-              <p class="govuk-body">Cash payments are defined as...</p>
+              <p class="govuk-body">This means any payment you received in physical money (banknotes and coins).</p>
 
 
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
@@ -122,7 +123,7 @@ Apply for legal aid - Other capital
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   None of these
+                   I did not receive any of these types of income in cash
                  </label>
                </div>
 

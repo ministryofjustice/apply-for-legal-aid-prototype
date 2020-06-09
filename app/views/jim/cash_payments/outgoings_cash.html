@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "vehicles_regular_use"
+      href: "types_of_outgoing"
   }) }}
 {% endblock %}
 
@@ -33,11 +33,14 @@ Apply for legal aid - Other capital
                 <h1 class="govuk-fieldset__heading">
 
                 <!--  Does your client have any savings or investments?
-                  Savings and investments - select any that apply to your client -->
-              Did you make any of the following payments in cash in the past 3 months?
+                  Savings and investments - select any that apply to your client
+              Did you make any of the following payments in cash in the past 3 months? -->
+              Select any payments you made in cash in the past 3 months
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
+
+              <p class="govuk-body">This means any payment you made with physical money (banknotes and coins).</p>
 
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
 
@@ -102,7 +105,7 @@ Apply for legal aid - Other capital
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   None of these
+                   I did not make any of these payments in cash
                  </label>
                </div>
 
