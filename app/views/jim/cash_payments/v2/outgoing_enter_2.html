@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="regular_payments" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Add regular cash payments you receive
+                </h1>
+              </legend>
+            <!--  <span class="govuk-hint">
+                Cash means physical money like banknotes and coins.
+              </span> -->
+
+              <table class="govuk-table">
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header">Amount</th>
+    <th scope="col" class="govuk-table__header">Category</th>
+    <th scope="col" class="govuk-table__header">Frequency</th>
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">£200</td>
+    <td class="govuk-table__cell">Childcare costs</td>
+    <td class="govuk-table__cell">Weekly</td>
+  </tr>
+</tbody>
+</table>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Amount
+                </label>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+              <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Category
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="published">Benefits</option>
+                  <option value="updated" selected>Financial help from friends or family</option>
+                  <option value="views">Maintenance payments</option>
+                  <option value="comments">Income from a property or lodger</option>
+                  <option value="comments">Pension</option>
+                </select>
+              </div>
+
+           <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Frequency
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">Daily</option>
+    <option value="updated" selected>Weekly</option>
+    <option value="views">Monthly</option>
+  <!--  <option value="comments">Most comments</option> -->
+  </select>
+</div>
+
+<br>
+<a class="govuk-button govuk-button--secondary" href="income_enter_3">
+  Add another
+</a>
+
+            </fieldset>
+          </div>
+
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
