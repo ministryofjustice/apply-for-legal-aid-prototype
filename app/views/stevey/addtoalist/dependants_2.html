@@ -22,138 +22,86 @@ Apply for legal aid - Dependants
 {% endblock %}
 
 {% block content %}
-
-
-
+<h2 class="govuk-heading-m">You have added 1 dependant</h2>
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="client_details_2" method="post" class="form">
-          <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m">You've provided details for</h2>
-          </div>
-          <div class="govuk-grid-column-one-third">
-            <p></p>
-          </div>
-         </div>
+<div class="govuk-grid-column-two-thirds">
+<form action="client_details_2" method="post" class="form">
+<div class="govuk-grid-row">
+</div>
+
+
+<div class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Sarah Doe</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="client_details">Change<span class="govuk-visually-hidden"> name</span></a></dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="remove_2">
+        Remove<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
 
 
 
-         <dl class="govuk-summary-list">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Sarah Doe{{ data['firstname'] }}
-             </dt>
-             <dd class="govuk-summary-list__actions">
-               <a href="client_details#firstname">
-                  <span class="govuk-visually-hidden">first name</span>
-               </a>
-             </dd>
-            <dt class="govuk-summary-list__value">
-               2 February 2010
-             </dt>
-
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="client_details">
-                 Change<span class="govuk-visually-hidden"> date of birth</span>
-
-                 <dd class="govuk-summary-list__actions">
-                   <a class="govuk-link" href="remove_2">
-                     Delete<span class="govuk-visually-hidden"> date of birth</span>
-           </div>
-         </dl>
-
-         <div class="govuk-summary-list__row">
-
-             </a>
-           </dd>
-         </div>
-
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Does your client have any more dependants?
-              <!--  Does anyone depend on you for financial support? -->
-                </h1>
-              </legend>
-
-            <!--  <p class="govuk-body">A dependant is be a child or adult who lives with your client and depends on them for financial support.</p>
-               This includes anyone who depends on you for financial support. -->
-
-              <p class="govuk-body">A dependant is a child or adult who:</p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>lives with your client</li>
-                    <li>depends on your client for financial support</li>
-                    </ul>
-
-              <div class="govuk-inset-text">Do not include your client's partner (if they have one).</div>
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-                <div class="govuk-radios__item">
-
-                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    Yes
-                  </label>
-                </div>
-              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                  <label class="govuk-label" for="how-contacted-conditional-1">
-                    How many dependants do you have?
-                  </label>
-                  <span id="dob-hint" class="govuk-hint">
-                For example, 31 3 1980.
-              </span>
-              <div class="govuk-date-input" id="dob">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
-                  </div>
-                </div>
-              </div>
-                </div> -->
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    No
-                  </label>
 
 
 
-  <!--   <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    No
-                  </label>
-                </div>
-              </div> -->
-
-
-            </fieldset>
-          </div>
-
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
-
-
-        </form>
-      </div>
     </div>
+
+
+<div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                      Does your client have any more dependants?
+                  <!--  Does anyone depend on you for financial support? -->
+                    </h1>
+                  </legend>
+
+                <!--  <p class="govuk-body">A dependant is be a child or adult who lives with your client and depends on them for financial support.</p>
+                   This includes anyone who depends on you for financial support. -->
+
+                  <p class="govuk-body">A dependant is a child or adult who:</p>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>lives with your client</li>
+                        <li>depends on your client for financial support</li>
+                        </ul>
+
+                  <div class="govuk-inset-text">Do not include your client's partner (if they have one).</div>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                    <div class="govuk-radios__item">
+
+                      <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                        Yes
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        No
+                      </label>
+
+                    </fieldset>
+                  </div>
+
+                  <button type="submit" class="govuk-button">
+                    Save and continue
+                  </button>
+
+                  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                    Save and come back later
+                  </a>
+
+
+                </form>
+                </div>
+                </div>
+
 
 {% endblock %}
 
