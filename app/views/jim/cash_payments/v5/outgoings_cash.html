@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="other_capital_select" method="post" class="form">
+        <form action="outgoings_enter" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -35,7 +35,7 @@ Apply for legal aid - Other capital
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client
               Did you make any of the following payments in cash in the past 3 months? -->
-              Select any payment types you made in cash in the past 3 months
+              Select any regular payments you make in cash
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
@@ -72,15 +72,7 @@ Apply for legal aid - Other capital
                       For example, cash kept at home.
                   </span> -->
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      Total amount paid in the past 3 months
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  </div>
+
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
@@ -89,16 +81,7 @@ Apply for legal aid - Other capital
                   </label>
 
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                    Total amount paid in the past 3 months
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                </div>
-
+            
                <p class="govuk-body">or</p>
 
 
@@ -115,9 +98,12 @@ Apply for legal aid - Other capital
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
         </form>
       </div>
     </div>
