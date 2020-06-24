@@ -31,12 +31,20 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Income received in cash
+                  Add income received in cash
                 </h1>
               </legend>
             <!--  <span class="govuk-hint">
                 Cash means physical money like banknotes and coins.
               </span> -->
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Amount
+                </label>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+              <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+              </div>
 
               <div class="govuk-form-group">
                 <label class="govuk-label" for="sort">
@@ -47,14 +55,6 @@ Apply for legal aid - Property and mortgage
                   <option value="updated" selected>Financial help from friends or family</option>
                   <option value="views">Maintenance payments</option>
                 </select>
-              </div>
-
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Amount
-                </label>
-              <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-              <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
               </div>
 
               <div class="govuk-form-group">
@@ -96,7 +96,7 @@ Apply for legal aid - Property and mortgage
 
 <br>
 <a class="govuk-button govuk-button--secondary" href="income_enter_2">
-  Add another payment
+  Add another
 </a>
 
             </fieldset>
