@@ -1,0 +1,614 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Salary statement
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "income"
+}) }}
+{% endblock %}
+
+{% block content %}
+<style media="screen">
+table .govuk-tag {
+white-space: nowrap;
+  /*background-color: black;*/
+  color: #005ea5;
+  background-color: white;
+  border: 2px solid #005ea5;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: none;
+}
+.dot{
+  background-color:#005ea5;
+}
+.col_bespoke{
+  width:15%;
+}
+.govuk-table__header{
+  color: #0b0c0c;
+  background-color: #dee0e2;
+  border: 1px solid #bfc1c3;
+  box-shadow: 0 2px 0 #b5babe;
+  padding-left: 10px;
+  text-align: left;
+}
+.th_bespoke{
+  padding-right: 15px;
+  position: relative;
+}
+.th_bespoke::before{
+  /*down*/
+  content:" \25bc";
+  position: absolute;
+  right: -1px;
+  top: 11px;
+  font-size: 0.6em;
+}
+.th_bespoke::after{
+  /*up*/
+  content:" \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.6em;
+}
+.th_bespoke_hover:hover{
+  background-color: #c8cacb;
+  cursor:pointer;
+}
+.govuk-table__head{
+  position: relative;
+}
+.govuk-table__cell{
+  padding-left: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="income" method="post" novalidate>
+
+      <h1 class="govuk-heading-xl">
+        Select student finance
+      </h1>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+      <table class="govuk-table">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col"><span >Select all</span>
+          </th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
+          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Amount</span></th>
+          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">28 Jan 2019</td>
+            <td class="govuk-table__cell">Student loans company</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£1,250</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Student finance
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+
+            <td class="govuk-table__cell">27 Jan 2019</td>
+            <td class="govuk-table__cell">Attendance Allowance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£140.65</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Benefits
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              </td>
+            <td class="govuk-table__cell">27 Jan 2019</td>
+            <td class="govuk-table__cell">All work-related requirements</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£140.65</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Benefits
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">26 Jan 2019</td>
+            <td class="govuk-table__cell">Beverement Allowance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£70.60</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Benefits
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+</td>
+            <td class="govuk-table__cell">26 Jan 2019</td>
+            <td class="govuk-table__cell">Carer's Allowance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£70.60</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Benefits
+            </strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+</td>
+              <td class="govuk-table__cell">25 Jan 2019</td>
+              <td class="govuk-table__cell">Child Benefit</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£40.65</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+              Benefits
+              </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+</td>
+                <td class="govuk-table__cell">25 Jan 2019</td>
+                <td class="govuk-table__cell">Child Maintenance Deduction</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£56.00</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+                Benefits
+                </strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                  </div>  </td>
+                  <td class="govuk-table__cell">24 Jan 2019</td>
+                  <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£140.65</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                    </div></td>
+                  <td class="govuk-table__cell">24 Jan 2019</td>
+                  <td class="govuk-table__cell">Greggs</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">£8.50</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+</td>
+                    <td class="govuk-table__cell">23 Jan 2019</td>
+                    <td class="govuk-table__cell">Contribution to Maintenance</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+                    Benefits
+                    </strong></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+</td>
+                      <td class="govuk-table__cell">21 Jan 2019</td>
+                      <td class="govuk-table__cell">Housing Costs Contribution</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£32.50</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+                      Benefits
+                      </strong></td>
+                    </tr>
+
+                        </tbody>
+                      </table>
+
+                      <div class="govuk-!-padding-bottom-6"></div>
+
+                      <!-- <table class="govuk-table">
+                        <caption class="govuk-table__caption" style="padding-bottom:10px;">1 December 2018 to 31 December 2018</caption>
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                              Select all
+                            </a>
+                          </th>
+                          <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+                          <th class="govuk-table__header" scope="col">Description </th>
+                          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount </th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                            </div></td>
+                            <td class="govuk-table__cell">29/12/2018</td>
+                            <td class="govuk-table__cell">Work and child TC</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+
+                              <td class="govuk-table__cell">27/12/2018</td>
+                              <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                </div></td>
+                                <td class="govuk-table__cell">25/12/2018</td>
+                                <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                  </div></td>
+                                  <td class="govuk-table__cell">23/12/2018</td>
+                                  <td class="govuk-table__cell">Work and child TC</td>
+                                  <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell">
+
+                                    <td class="govuk-table__cell">21/12/2018</td>
+                                    <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£116.40</td>
+                                  </tr>
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                      </div></td>
+                                      <td class="govuk-table__cell">21/12/2018</td>
+                                      <td class="govuk-table__cell">Cash in Nationwide 21Jan</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell">
+                                        <div class="govuk-checkboxes__item">
+                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                        </div></td>
+                                        <td class="govuk-table__cell">19/12/2018</td>
+                                        <td class="govuk-table__cell">Sky digital reversal of 19-01</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">
+                                          <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                          </div></td>
+                                          <td class="govuk-table__cell">17/12/2018</td>
+                                          <td class="govuk-table__cell">Work and child TC</td>
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell">
+                                            <td class="govuk-table__cell">16/12/2018</td>
+                                            <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric">£136.31</td>
+                                          </tr>
+                                          <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell">
+                                              <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                              </div></td>
+                                              <td class="govuk-table__cell">16/12/2018</td>
+                                              <td class="govuk-table__cell">Cash in Nationwide 16Jan</td>
+                                              <td class="govuk-table__cell govuk-table__cell--numeric">£130.00</td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                              <td class="govuk-table__cell">
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                </div></td>
+                                                <td class="govuk-table__cell">15/12/2018</td>
+                                                <td class="govuk-table__cell">Cash in Nationwide 15Jan</td>
+                                                <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+                                              </tr>
+                                              <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                  <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                  </div></td>
+                                                  <td class="govuk-table__cell">11/12/2018</td>
+                                                  <td class="govuk-table__cell">Work and child TC</td>
+                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                </tr>
+                                                <tr class="govuk-table__row">
+                                                  <td class="govuk-table__cell">
+                                                    <div class="govuk-checkboxes__item">
+                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                    </div></td>
+                                                    <td class="govuk-table__cell">07/12/2018</td>
+                                                    <td class="govuk-table__cell">Child benefit</td>
+                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                                                  </tr>
+                                                  <tr class="govuk-table__row">
+                                                    <td class="govuk-table__cell">
+                                                      <td class="govuk-table__cell">07/12/2018</td>
+                                                      <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                      <td class="govuk-table__cell">
+                                                        <div class="govuk-checkboxes__item">
+                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                        </div>
+                                                        <td class="govuk-table__cell">03/12/2018</td>
+                                                        <td class="govuk-table__cell">Work and child TC</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+
+                                                  <div class="govuk-!-padding-bottom-6"></div> -->
+
+                                                  <!-- <table class="govuk-table">
+                                                    <caption class="govuk-table__caption" style="padding-bottom:10px;">1 November 2018 to 30 November 2018</caption>
+                                                    <thead class="govuk-table__head">
+                                                      <tr class="govuk-table__row">
+                                                        <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                                                          Select all
+                                                        </a>
+                                                      </th>
+                                                      <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+                                                      <th class="govuk-table__header" scope="col">Description </th>
+                                                      <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount </th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                      <td class="govuk-table__cell">
+                                                        <div class="govuk-checkboxes__item">
+                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                          <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                        </div></td>
+                                                        <td class="govuk-table__cell">29/11/2018</td>
+                                                        <td class="govuk-table__cell">Work and child TC</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                      </tr>
+                                                      <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell">
+                                                          <div class="govuk-checkboxes__item">
+                                                            <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
+
+                                                          </div></td>
+                                                          <td class="govuk-table__cell">27/11/2018</td>
+                                                          <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£108.24</td>
+                                                        </tr>
+                                                        <tr class="govuk-table__row">
+                                                          <td class="govuk-table__cell">
+                                                            <div class="govuk-checkboxes__item">
+                                                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                            </div></td>
+                                                            <td class="govuk-table__cell">25/11/2018</td>
+                                                            <td class="govuk-table__cell">Sky digital reversal of 25-01</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                                          </tr>
+                                                          <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell">
+                                                              <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                              </div></td>
+                                                              <td class="govuk-table__cell">23/11/2018</td>
+                                                              <td class="govuk-table__cell">Work and child TC</td>
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£165.55</td>
+                                                            </tr>
+                                                            <tr class="govuk-table__row">
+                                                              <td class="govuk-table__cell">
+                                                                <div class="govuk-checkboxes__item">
+                                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                </div></td>
+                                                                <td class="govuk-table__cell">21/11/2018</td>
+                                                                <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£116.40</td>
+                                                              </tr>
+                                                              <tr class="govuk-table__row">
+                                                                <td class="govuk-table__cell">
+                                                                  <div class="govuk-checkboxes__item">
+                                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                  </div></td>
+                                                                  <td class="govuk-table__cell">21/11/2018</td>
+                                                                  <td class="govuk-table__cell">Cash in Nationwide 21Jan</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
+                                                                </tr>
+                                                                <tr class="govuk-table__row">
+                                                                  <td class="govuk-table__cell">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                    </div></td>
+                                                                    <td class="govuk-table__cell">19/11/2018</td>
+                                                                    <td class="govuk-table__cell">Sky digital reversal of 19-01</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+                                                                  </tr>
+                                                                  <tr class="govuk-table__row">
+                                                                    <td class="govuk-table__cell">
+                                                                      <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                      </div></td>
+                                                                      <td class="govuk-table__cell">17/11/2018</td>
+                                                                      <td class="govuk-table__cell">Work and child TC</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                    </tr>
+                                                                    <tr class="govuk-table__row">
+                                                                      <td class="govuk-table__cell">
+                                                                        <div class="govuk-checkboxes__item">
+                                                                          <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                        </div></td>
+                                                                        <td class="govuk-table__cell">16/11/2018</td>
+                                                                        <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£136.31</td>
+                                                                      </tr>
+                                                                      <tr class="govuk-table__row">
+                                                                        <td class="govuk-table__cell">
+                                                                          <div class="govuk-checkboxes__item">
+                                                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                          </div></td>
+                                                                          <td class="govuk-table__cell">16/11/2018</td>
+                                                                          <td class="govuk-table__cell">Cash in Nationwide 16Jan</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£130.00</td>
+                                                                        </tr>
+                                                                        <tr class="govuk-table__row">
+                                                                          <td class="govuk-table__cell">
+                                                                            <div class="govuk-checkboxes__item">
+                                                                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                            </div></td>
+                                                                            <td class="govuk-table__cell">15/11/2018</td>
+                                                                            <td class="govuk-table__cell">Cash in Nationwide 15Jan</td>
+                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
+                                                                          </tr>
+                                                                          <tr class="govuk-table__row">
+                                                                            <td class="govuk-table__cell">
+                                                                              <div class="govuk-checkboxes__item">
+                                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                              </div></td>
+                                                                              <td class="govuk-table__cell">11/11/2018</td>
+                                                                              <td class="govuk-table__cell">Work and child TC</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                            </tr>
+                                                                            <tr class="govuk-table__row">
+                                                                              <td class="govuk-table__cell">
+                                                                                <div class="govuk-checkboxes__item">
+                                                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                                </div></td>
+                                                                                <td class="govuk-table__cell">07/11/2018</td>
+                                                                                <td class="govuk-table__cell">Child benefit</td>
+                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                                                                              </tr>
+                                                                              <tr class="govuk-table__row">
+                                                                                <td class="govuk-table__cell">
+                                                                                  <div class="govuk-checkboxes__item">
+                                                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+
+                                                                                  </div></td>
+                                                                                  <td class="govuk-table__cell">07/11/2018</td>
+                                                                                  <td class="govuk-table__cell">Greens Nurseries Ltd Salary</td>
+                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
+                                                                                </tr>
+                                                                                <tr class="govuk-table__row">
+                                                                                  <td class="govuk-table__cell">
+                                                                                    <div class="govuk-checkboxes__item">
+                                                                                      <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                                                                                      <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+                                                                                    </div>
+                                                                                    <td class="govuk-table__cell">03/11/2018</td>
+                                                                                    <td class="govuk-table__cell">Work and child TC</td>
+                                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                                                                                  </tr>
+                                                                                </tbody>
+                                                                              </table> -->
+
+                                                                              <button type="submit" class="govuk-button">
+                                                                                Save and continue
+                                                                              </button>
+
+                                                                              <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                                                                                Save and come back later
+                                                                              </a>
+
+
+                                                                            </form>
+
+                                                                          </div>
+                                                                        </div>
+
+
+                                                                        {% endblock %}
+
+                                                                        {% block footer %}
+                                                                        {{ govukFooter({
+                                                                          meta: {
+                                                                            items: [
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Help"
+                                                                            },
+                                                                            {
+                                                                              href: "https://www.gov.uk/help/cookies",
+                                                                              text: "Cookies"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Contact"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Feedback"
+                                                                            },
+                                                                            {
+                                                                              href: "#",
+                                                                              text: "Terms and conditions"
+                                                                            },
+                                                                            {
+                                                                              href: "https://mojdigital.blog.gov.uk/",
+                                                                              text: "MOJ Digital Services"
+                                                                            },
+                                                                            {
+                                                                              href: "/prototype-admin/clear-data",
+                                                                              text: "Clear data"
+                                                                            }
+                                                                            ]
+                                                                          }
+                                                                        }) }}
+                                                                        {% endblock %}

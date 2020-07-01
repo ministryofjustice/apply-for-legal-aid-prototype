@@ -1,0 +1,376 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "types_of_income"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Sort your client's income into categories</h1>
+
+<!-- <p class="gov-body">
+  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
+</p> -->
+
+
+<p class="gov-body">Your client told us they receive the following types of income.
+</p>
+<p class="gov-body">You need to:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>view your client's bank statements</li>
+<li>add transactions to each income category</li>
+</ul>
+
+
+<!--  <p class="gov-body">
+  Add payments from your client's last 3 months of bank statements to each category below.
+  </p>
+
+Add incoming payments from your client's last 3 months of bank statements to each category
+Add income your client received from 1 November 2018 to 31 January 2019</h2>
+    <h2 class="govuk-heading-m">Add income from your bank statements for each category</h2>
+ Add income for the last 3 months to each category -->
+
+
+ <ol class="app-task-list">
+ <!--  <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span> Salary or wages
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="incoming/salary" aria-describedby="eligibility-completed">
+           Add salary or wage payments
+         </a>
+       </li>
+     </ul>
+   </li> -->
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span> Benefits
+     <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+           We identified these transactions from your client's bank statements.
+       </span>
+     </h2>
+     <ul class="app-task-list__items">
+       <table class="govuk-table" style="margin-bottom:0px;">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th class="govuk-table__header" scope="col">Date</th>
+             <th class="govuk-table__header" scope="col">Description</th>
+             <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+             <th class="govuk-table__header" scope="col"></th>
+           </tr>
+         </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">27 Jan 2019</td>
+           <td class="govuk-table__cell">All work-related requirements</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£140.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">26 Jan 2019</td>
+           <td class="govuk-table__cell">Bereavement Allowance</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£70.60</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">25 Jan 2019</td>
+           <td class="govuk-table__cell">Child Benefit</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£40.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">25 Jan 2019</td>
+           <td class="govuk-table__cell">Child Maintenance Deduction</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£56.00</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">23 Jan 2019</td>
+           <td class="govuk-table__cell">Contribution to Maintenance</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">21 Jan 2018</td>
+           <td class="govuk-table__cell">Housing Costs Contribution</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£32.50</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         </tbody>
+         </table>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
+           View statements and add transactions
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"></span> Disregarded Benefits
+     <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+           We identified these transactions from your client's bank statements. These types of benefits are excluded from the financial eligibility calculation.
+       </span>
+     </h2>
+     <ul class="app-task-list__items">
+       <table class="govuk-table" style="margin-bottom:0px;">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th class="govuk-table__header" scope="col">Date</th>
+             <th class="govuk-table__header" scope="col">Description</th>
+             <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+             <th class="govuk-table__header" scope="col"></th>
+           </tr>
+         </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">27 Jan 2019</td>
+           <td class="govuk-table__cell">Attendance Allowance</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£140.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">26 Jan 2019</td>
+           <td class="govuk-table__cell">Carer’s Allowance</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£70.60</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">25 Jan 2019</td>
+           <td class="govuk-table__cell">Disability living allowance </td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">25 Jan 2019</td>
+           <td class="govuk-table__cell">Housing benefit </td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">23 Jan 2019</td>
+           <td class="govuk-table__cell">Severe Disablement Allowance</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">21 Jan 2019 </td>
+           <td class="govuk-table__cell">Social Fund</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         </tbody>
+         </table>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="disregardard_benefits_list" aria-describedby="eligibility-completed">
+           View statements and add transactions
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">3. </span> Universal Credit advance payments
+     <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+           We cannot identify this type of benefit from bank statements.
+       </span>
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="ucap" aria-describedby="eligibility-completed">
+           View statements and add transactions <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+     </ul>
+   </li>
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">3. </span> Financial help from friends or family
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="financial_help_list" aria-describedby="eligibility-completed">
+           View statements and add transactions <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+     </ul>
+   </li>
+
+
+
+
+ <!--  <h2 class="app-task-list__section">
+     <span class="app-task-list__section-number">4. </span> Maintenance payments from an ex-partner
+   </h2>
+   <ul class="app-task-list__items">
+     <li class="app-task-list__item">
+       <a class="govuk-body" href="incoming/maintenance" aria-describedby="eligibility-completed">
+         Add maintenance payments
+       </a>
+     </li>
+   </ul>
+ </li>
+ <h2 class="app-task-list__section">
+   <span class="app-task-list__section-number">5. </span> Income from a property or lodger
+ </h2>
+ <ul class="app-task-list__items">
+   <li class="app-task-list__item">
+     <a class="govuk-body" href="incoming/property" aria-describedby="eligibility-completed">
+       Add income from a property or lodger
+     </a>
+   </li>
+ </ul>
+</li>
+<h2 class="app-task-list__section">
+ <span class="app-task-list__section-number">6. </span> Income from a student loan or grant
+</h2>
+<ul class="app-task-list__items">
+ <li class="app-task-list__item">
+   <a class="govuk-body" href="incoming/student" aria-describedby="eligibility-completed">
+     Add student finance payments
+   </a>
+ </li>
+</ul>
+</li>
+<h2 class="app-task-list__section">
+<span class="app-task-list__section-number">7. </span> Income from a pension
+</h2>
+<ul class="app-task-list__items">
+<li class="app-task-list__item">
+ <a class="govuk-body" href="incoming/pension" aria-describedby="eligibility-completed">
+   Add pension payments
+ </a>
+</li>
+</ul>
+</li> -->
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income" aria-describedby="eligibility-completed">
+         Add another type of income
+       </a>
+     </h2>
+   </li>
+   <!-- <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
+         Add another type of income
+       </a>
+     </h2>
+   </li> -->
+ </ol>
+
+      <!-- <p class="govuk-body">
+          <a href="types_of_income3" class="govuk-link">Add another type of income</a>
+        </p> -->
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <a href="dependants" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
