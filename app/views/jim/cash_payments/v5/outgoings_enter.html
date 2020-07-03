@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "income"
+      href: "outgoing"
   }) }}
 {% endblock %}
 
@@ -25,54 +25,62 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="outgoings_cash" method="post" class="form">
+        <form action="outgoing_other" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Add regular payments you make in cash
+                  Enter cash payments you made in the past 3 months
                 </h1>
               </legend>
-            <!--  <span class="govuk-hint">
-                Cash means physical money like banknotes and coins.
-              </span> -->
+              <div class="govuk-inset-text">
+  Add one payment at a time. You can add more later.
+</div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Amount
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Amount
                 </label>
               <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
               <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
               </div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Category
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  Who did you pay?
                 </label>
-                <select class="govuk-select" id="sort" name="sort">
-                  <option value="published">Housing costs</option>
-                  <option value="updated" selected>Childcare costs</option>
-                </select>
+              <!--  <select class="govuk-select" id="sort" name="sort">
+                  <option value="published">Benefits</option>
+                  <option value="updated" selected>Financial help from friends or family</option>
+                  <option value="views">Maintenance payments</option>
+                  <option value="views">Income from property or lodger</option>
+                  <option value="views">Pension</option>
+                </select> -->
+                <span id="nationality-1-item-hint" class="govuk-hint">
+                For example, a landlord or childcare provider.
+                </span>
+                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+
               </div>
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                  <label class="govuk-label" for="sort">
+                  <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     Date received
                   </label>
                   <span id="passport-issued-hint" class="govuk-hint">
-                    For example, 31 1 2020.
+                    For example, 7 2020.
                   </span>
                   <div class="govuk-date-input" id="passport-issued">
-                    <div class="govuk-date-input__item">
+                  <!--  <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                           Day
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
                       </div>
-                    </div>
+                    </div> -->
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
@@ -92,15 +100,8 @@ Apply for legal aid - Property and mortgage
                   </div>
                 </fieldset>
               </div>
-
-
-<br>
-<a class="govuk-button govuk-button--secondary" href="outgoings_enter_2">
-  Add another
-</a>
             </fieldset>
           </div>
-
 
           <button type="submit" class="govuk-button">
             Continue

@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_income"
+      href: "income"
   }) }}
 {% endblock %}
 
@@ -25,41 +25,48 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="regular_payments" method="post" class="form">
+        <form action="income_other" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Add regular cash payments you received in the past 3 months
+                  Enter cash payments you received in the past 3 months
                 </h1>
               </legend>
-              <span class="govuk-hint">
-                You can add more later.
-              </span>
+              <div class="govuk-inset-text">
+  Add one payment at a time. You can add more later.
+</div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Amount
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Amount
                 </label>
               <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
               <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
               </div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Category
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  Who paid you?
                 </label>
-                <select class="govuk-select" id="sort" name="sort">
+              <!--  <select class="govuk-select" id="sort" name="sort">
                   <option value="published">Benefits</option>
                   <option value="updated" selected>Financial help from friends or family</option>
                   <option value="views">Maintenance payments</option>
-                </select>
+                  <option value="views">Income from property or lodger</option>
+                  <option value="views">Pension</option>
+                </select> -->
+                <span id="nationality-1-item-hint" class="govuk-hint">
+                For example, a friend of family member, or income from rent.
+                </span>
+                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+
               </div>
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                  <label class="govuk-label" for="sort">
+                  <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     Date received
                   </label>
                   <span id="passport-issued-hint" class="govuk-hint">
@@ -93,12 +100,6 @@ Apply for legal aid - Property and mortgage
                   </div>
                 </fieldset>
               </div>
-
-<br>
-<a class="govuk-button govuk-button--secondary" href="income_enter_2">
-  Add another
-</a>
-
             </fieldset>
           </div>
 

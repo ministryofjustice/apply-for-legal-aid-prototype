@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_income"
+      href: "types_of_outgoing"
   }) }}
 {% endblock %}
 
@@ -25,45 +25,18 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="income_enter" method="post" class="form">
+        <form action="outgoings_enter" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you receive any regular cash payments?
+                  Do you make regular cash payments?
                 </h1>
               </legend>
-            <!--  <span class="govuk-hint">
-              We need to know about any regular cash payments you receive that do not appear on your bank statements.
-            </span> -->
-
-            <p class="gov-body">We need to know if you get any physical currency (banknotes and coins):</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-          <li>regularly (at least once a month)</li>
-          <li>from the same source</li>
-          <li>for living expenses</li>
-         <li>that you do not have to repay</li>
-            </ul>
-
-
-            <!--  <details class="govuk-details">
-                     <summary class="govuk-details__summary">
-                       <span class="govuk-details__summary-text">
-                         Which payments should I select?
-                       </span>
-                     </summary>
-                     <div class="govuk-details__text">
-                       <p class="gov-body">Select payments that:</p>
-                       <ul class="govuk-list govuk-list--bullet">
-                 <li>are regular (at least one a month)</li>
-                 <li>come from the same person</li>
-                 <li>are for living expenses</li>
-                 <li>you're not expected to repay</li>
-                   </ul>
-                     </div>
-                   </details> -->
+              <span class="govuk-hint">
+                Cash means physical currency (banknotes and coins).<br><br>
+              </span>
 
 
               <div class="govuk-radios govuk-radios">
@@ -88,9 +61,12 @@ Apply for legal aid - Property and mortgage
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
         </form>
       </div>
