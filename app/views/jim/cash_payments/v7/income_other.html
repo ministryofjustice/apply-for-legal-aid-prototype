@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income_enter"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<table class="govuk-table">
+  <h2 class="govuk-heading-m">You've added 1 payment</h2>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-table__header">Amount</th>
+      <th scope="col" class="govuk-table__header govuk-table__header">Category</th>
+      <th scope="col" class="govuk-table__header govuk-table__header">Frequency or date</th>
+      <th scope="col" class="govuk-table__header govuk-table__header"></th>
+      <th scope="col" class="govuk-table__header govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell">$40</td>
+      <td class="govuk-table__cell govuk-table__cell">Financial help</td>
+      <td class="govuk-table__cell govuk-table__cell">23 Jun 2020</td>
+      <td class="govuk-table__cell govuk-table__cell"><a href="#">Change</a></td>
+      <td class="govuk-table__cell govuk-table__cell"><a href="#">Remove</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="income_enter_2" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Do you receive any other payments in cash?
+                </h1>
+              </legend>
+            <!--  <span class="govuk-hint">
+              We need to know about any regular cash payments you receive that do not appear on your bank statements.
+            </span>
+
+            <p class="gov-body">This means any physical currency (banknotes and coins) you get that is:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+          <li>regular (at least once a month)</li>
+          <li>from the same source</li>
+          <li>used for living expenses</li>
+         <li>not a loan</li>
+            </ul> -->
+
+            <!--  <details class="govuk-details">
+                     <summary class="govuk-details__summary">
+                       <span class="govuk-details__summary-text">
+                         Which payments should I select?
+                       </span>
+                     </summary>
+                     <div class="govuk-details__text">
+                       <p class="gov-body">Select payments that:</p>
+                       <ul class="govuk-list govuk-list--bullet">
+                 <li>are regular (at least one a month)</li>
+                 <li>come from the same person</li>
+                 <li>are for living expenses</li>
+                 <li>you're not expected to repay</li>
+                   </ul>
+                     </div>
+                   </details> -->
+
+
+              <div class="govuk-radios govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No
+                  </label>
+                </div>
+              </div>
+
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
