@@ -675,6 +675,21 @@ router.post('/jim/np_edits/v1/use_ccms', function (req, res) {
   }
 })
 
+// NP client consent v1
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/email_address')
+  }
+})
+
 // NP client consent v3
 router.post('/jim/np_edits/v3/use_ccms', function (req, res) {
   // Get the answer from session data

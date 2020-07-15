@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income_2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Enter payments you make in cash
+      </h1>
+
+      <p class="govuk-body">We need to know about every cash payment you made between 20 May 2020 and 19 July 2020.</p>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Category
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Housing costs</option>
+            <option value="updated" selected>Childcare</option>
+            <option value="views">Maintenance payments</option>
+          </select>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Amount
+          </label>
+          <input class="govuk-input govuk-input--width-15" id="width-10" name="width-10" type="text" value="£100">
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Frequency
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Once a week</option>
+            <option value="updated" selected>Once every 2 weeks</option>
+            <option value="views">Once every 4 weeks</option>
+            <option value="comments">Once a month</option>
+          </select>
+        </div>
+      <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10"><br>
+          </label>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Remove
+          </button>
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Category
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Housing costs</option>
+            <option value="updated" selected>Childcare</option>
+            <option value="views">Maintenance payments</option>
+          </select>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Amount
+          </label>
+          <input class="govuk-input govuk-input--width-15" id="width-10" name="width-10" type="text" value="£200">
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Frequency
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Once a week</option>
+            <option value="updated" selected>Once every 2 weeks</option>
+            <option value="views">Once every 4 weeks</option>
+            <option value="comments">Once a month</option>
+          </select>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label" for="width-10"><br>
+            </label>
+            <a class="govuk-button govuk-button--secondary" href="outgoings_2" role="button">
+              Remove
+            </a>
+          </div>
+        </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Category
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Housing costs</option>
+            <option value="updated" selected>Childcare</option>
+            <option value="views">Maintenance payments</option>
+          <!--  <option value="views">Income from property or lodger</option>
+            <option value="views">Pension</option> -->
+          </select>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Amount
+          </label>
+          <input class="govuk-input govuk-input--width-15" id="width-10" name="width-10" type="text">
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-15">
+            Frequency
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Once a week</option>
+            <option value="updated" selected>Once every 2 weeks</option>
+            <option value="views">Once every 4 weeks</option>
+            <option value="comments">Once a month</option>
+          </select>
+        </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+      <br>
+
+      <div>
+        <a class="govuk-button govuk-button--secondary" href="outgoings_3" role="button">
+          Add another
+        </a>
+      </div>
+
+
+      <a class="govuk-button" href="#" role="button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
