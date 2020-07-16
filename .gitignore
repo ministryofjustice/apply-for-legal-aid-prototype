@@ -13,3 +13,6 @@ node_modules
 node_modules
 node_modules
 npm-debug.log
+app/views/stevey/bankaccounts/citizen_accounts.html
+app/views/stevey/bankaccounts/citizen_accounts1.html
+app/views/stevey/bankaccounts/dependants_3.html
