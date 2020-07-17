@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Property and mortgage
+Apply for legal aid - Dependants
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "financial_help_selected"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="outgoings" method="post" class="form">
+        <form action="dependant_add" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -45,7 +45,7 @@ Apply for legal aid - Property and mortgage
                     <li>depends on your client for financial support</li>
                     </ul>
 
-              <div class="govuk-inset-text">Do not include your client's partner if they have one.</div>
+              <div class="govuk-inset-text">Do not include your client's partner (if they have one).</div>
 
               <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                 <div class="govuk-radios__item">
@@ -106,8 +106,6 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-
-          <p class="govuk-body"><a href="outgoings">Skip dependants</a></p>
 
 
         </form>
