@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "/passported_v2/assessment_start"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -25,61 +25,52 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="dependants_other3" method="post" class="form">
+        <form action="outgoings" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <!--  <span class="govuk-caption-xl">Dependant 1</span> -->
                 <h1 class="govuk-fieldset__heading">
-                  Does Joe Doe have assets worth more than £8,000?
-              <!--  Does anyone depend on you for financial support? -->
+                  Do you make regular cash payments?
                 </h1>
               </legend>
+              <p class="govuk-body">
+              <!--  We need to know about any regular cash payments you receive that do not appear on your bank statements.<br><br> -->
+                We need to know if you make any of the following payments in cash (banknotes and coins):
+              </p>
 
-              <div class="govuk-!-padding-bottom-6"></div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>rent, mortgage or board and lodgings</li>
+                <li>childcare payments</li>
+                <li>maintenance payments</li>
+                <li>payments towards legal aid in a criminal case</li>
+                </ul>
 
-              <span class="govuk-hint">
-              For example, property, cash savings or shares
-                </span>
+              <div class="govuk-radios govuk-radios">
 
-<div class="govuk-!-padding-bottom-2"></div>
-
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-
-                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                  <label class="govuk-label" for="how-contacted-conditional-1">
-                    Enter the total asset value
-                  </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-
-                </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
+                </div>
+              </div>
 
 
             </fieldset>
           </div>
 
           <button type="submit" class="govuk-button">
-            Save and continue
+            Continue
           </button>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
 
         </form>
       </div>

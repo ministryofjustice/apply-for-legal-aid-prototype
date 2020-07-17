@@ -1,0 +1,406 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "types_of_outgoing"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Enter cash payments you receive
+      </h1>
+
+      <div class="govuk-inset-text">We need to know about cash payments you received in the past 3 months.</div>
+
+      <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        20 June 2020 to 20 July 2020
+        </label>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+            Category
+          </label>
+          <p class="govuk-body">Benefits</p>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+            Amount
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+          <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+            Same amount each month?
+          </label>
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changed-name">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            No
+          </label>
+        </div>
+      </div>
+        </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body">Financial help</p>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changed-name-3">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-4" name="changed-name" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changed-name-4">
+            No
+          </label>
+        </div>
+      </div>
+        </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p class="govuk-body">Maintenance payments</p>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-5" name="changed-name" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changed-name-5">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-6" name="changed-name" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changed-name-6">
+            No
+          </label>
+        </div>
+      </div>
+        </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+
+  <br>
+
+      <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        19 May 2020 to 19 June 2020
+        </label>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Category
+            </label>
+            <p class="govuk-body">Benefits</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Amount
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Same amount each month?
+            </label>
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+        <!--  <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label" for="width-10">
+              Remove
+            </label>
+          </div> -->
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body">Financial help</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name-3">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-4" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-4">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+        <!--  <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label" for="width-10">
+              Remove
+            </label>
+          </div> -->
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body">Maintenance payments</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-5" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name-5">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-6" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-6">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+<br>
+      <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        20 June 2020 to 2020 July 2020
+        </label>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Category
+            </label>
+            <p class="govuk-body">Benefits</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Amount
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="width-10">
+              Same amount each month?
+            </label>
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+        <!--  <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label" for="width-10">
+              Remove
+            </label>
+          </div> -->
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body">Financial help</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name-3">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-4" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-4">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+        <!--  <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label" for="width-10">
+              Remove
+            </label>
+          </div> -->
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body">Maintenance payments</p>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-5" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name-5">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-6" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-6">
+              No
+            </label>
+          </div>
+        </div>
+          </div>
+
+      <!--  <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label" for="width-10">
+            Remove
+          </label>
+        </div> -->
+      </div>
+
+      <br>
+
+
+      <a class="govuk-button" href="outgoings" role="button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
