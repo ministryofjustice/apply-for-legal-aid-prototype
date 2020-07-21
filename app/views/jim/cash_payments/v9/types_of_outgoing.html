@@ -17,7 +17,7 @@ Apply for legal aid - Types of outgoing
 
   {{ govukBackLink({
     text: "Back",
-      href: "income_other_2"
+      href: "income_cash"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Types of outgoing
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="outgoings_cash" method="post" class="form">
+        <form action="regular_outgoings" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -41,10 +41,10 @@ Apply for legal aid - Types of outgoing
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-1" name="salary" type="checkbox" value="yes" data-aria-controls="income-conditional-1" {{ checked("salary","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-1">
-                    Rent, mortgage or board and lodgings
+                    Rent, mortgage or board and lodging
                   </label>
                 <!--  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                        For example, rent, mortgage or board and lodgings.
+                        For example, rent, mortgage or board and lodging.
                     </span> -->
                 </div>
 
