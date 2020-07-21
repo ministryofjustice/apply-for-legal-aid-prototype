@@ -24,61 +24,59 @@ Apply for legal aid - Check your answers
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        Enter payments you receive in cash
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Enter cash payments you received from family or friends in each of the past 3 months
       </h1>
 
-      <p class="govuk-body">We need to know about every cash payment you received between 20 May 2020 and 19 July 2020.</p>
+      <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Total received 14 June 2020 to 14 July 2020
+      </label>
 
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter">
-          <label class="govuk-label" for="width-15">
-            Category
-          </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="published">Benefits</option>
-            <option value="updated" selected>Help from family or friends</option>
-            <option value="views">Maintenance payments</option>
-          <!--  <option value="views">Income from property or lodger</option>
-            <option value="views">Pension</option> -->
-          </select>
-        </div>
-
-        <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-column-one-third">
           <label class="govuk-label" for="width-10">
             Amount
           </label>
           <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
         </div>
-
-        <div class="govuk-grid-column-one-quarter">
-          <label class="govuk-label" for="width-15">
-            Frequency
-          </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="published">Once a week</option>
-            <option value="updated" selected>Once every 2 weeks</option>
-            <option value="views">Once every 4 weeks</option>
-            <option value="comments">Once a month</option>
-          </select>
-        </div>
-
-      <!--  <div class="govuk-grid-column-one-quarter">
-          <label class="govuk-label" for="width-10">
-            Remove
-          </label>
-        </div> -->
       </div>
       <br>
+      <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Total received 13 May 2020 and 13 June 2020
+      </label>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <label class="govuk-label" for="width-10">
+            Amount
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
+        </div>
+        <br>
+
+        <label class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Total received 12 April 2020 and 12 May 2020
+        </label>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <label class="govuk-label" for="width-10">
+              Amount
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+          </div>
       <div>
-      <a class="govuk-button govuk-button--secondary" href="income_2" role="button">
-        Add another
-      </a>
+
+      </div>
       </div>
 
 
-      <a class="govuk-button" href="regular_outgoings" role="button">
+    <br>
+
+
+      <a class="govuk-button" href="types_of_outgoing" role="button">
         Continue
       </a>
 

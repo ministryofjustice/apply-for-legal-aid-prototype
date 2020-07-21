@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="other_capital_select" method="post" class="form">
+        <form action="housing" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -35,12 +35,12 @@ Apply for legal aid - Other capital
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client
               Did you make any of the following payments in cash in the past 3 months? -->
-              Which of these payments do you make in cash?
+              Select any payments you make in cash
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
 
-              <p class="govuk-body">Cash means physical money like banknotes and coins.</p>
+            <!--  <p class="govuk-body">Cash means physical money like banknotes and coins.</p> -->
 
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
 
@@ -66,38 +66,13 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Rent, mortgage or board and lodging
+                    Rent, mortgage or board and lodgings
                   </label>
               <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       For example, cash kept at home.
                   </span> -->
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
-                  <div class="govuk-form-group">
-                    <span id="account-number-hint" class="govuk-hint">
-                    Enter the total cash amount you paid in each of the past 3 months.
-                    </span>
-                    <label class="govuk-label" for="antiques-value">
-                      30 June 2020 to 30 July 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      29 May 2020 to 29 June 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      28 April 2020 to 28 May 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  </div>
+
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
@@ -105,32 +80,6 @@ Apply for legal aid - Other capital
                     Childcare payments
                   </label>
 
-                </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
-                  <div class="govuk-form-group">
-                    <span id="account-number-hint" class="govuk-hint">
-                    Enter the total cash amount you paid in each of the past 3 months.
-                    </span>
-                    <label class="govuk-label" for="antiques-value">
-                    30 June 2020 to 30 July 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                    29 May 2020 to 29 June 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                    28 April 2020 to 28 May 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
                 </div>
 
                <p class="govuk-body">or</p>
@@ -149,9 +98,12 @@ Apply for legal aid - Other capital
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
         </form>
       </div>
     </div>

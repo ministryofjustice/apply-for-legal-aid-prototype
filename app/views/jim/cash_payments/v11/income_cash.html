@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_outgoing"
+      href: "types_of_income"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="other_capital_select" method="post" class="form">
+        <form action="financial_help" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -34,13 +34,15 @@ Apply for legal aid - Other capital
 
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client
-              Did you make any of the following payments in cash in the past 3 months? -->
-              Which of these payments do you make in cash?
-                <!--  Your savings and investments -->
+                Were any of the following types of income received as cash payments in the past 3 months?
+                Did you receive any of the following types of income in cash in the past 3 months? -->
+                Select payments you receive in cash
+
                 </h1>
               </legend>
 
-              <p class="govuk-body">Cash means physical money like banknotes and coins.</p>
+              <p class="govuk-body">Cash means banknotes and coins.</p>
+
 
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
 
@@ -66,72 +68,26 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Rent, mortgage or board and lodging
+                    Benefits
                   </label>
-              <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, cash kept at home.
-                  </span> -->
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
-                  <div class="govuk-form-group">
-                    <span id="account-number-hint" class="govuk-hint">
-                    Enter the total cash amount you paid in each of the past 3 months.
-                    </span>
-                    <label class="govuk-label" for="antiques-value">
-                      30 June 2020 to 30 July 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      29 May 2020 to 29 June 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      28 April 2020 to 28 May 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                    Childcare payments
+                    Financial help from friends or family
                   </label>
+                </div>
 
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("classic-car","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                    Maintenance payments
+                  </label>
                 </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
-                  <div class="govuk-form-group">
-                    <span id="account-number-hint" class="govuk-hint">
-                    Enter the total cash amount you paid in each of the past 3 months.
-                    </span>
-                    <label class="govuk-label" for="antiques-value">
-                    30 June 2020 to 30 July 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                    29 May 2020 to 29 June 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                    28 April 2020 to 28 May 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                </div>
+
 
                <p class="govuk-body">or</p>
 
@@ -140,7 +96,7 @@ Apply for legal aid - Other capital
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
                    None of these
-                   <!-- I did not make any of these payments in cash -->
+                  <!-- I did not receive any of these types of income in cash -->
                  </label>
                </div>
 
