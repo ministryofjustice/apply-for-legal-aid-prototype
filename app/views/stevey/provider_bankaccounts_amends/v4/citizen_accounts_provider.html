@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Accounts
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="https://apply-for-legal-aid-prototype.herokuapp.com/">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="citizen_accounts_offline" method="post" class="form">
+
+        <h1 class="govuk-heading-xl">Your client's bank accounts</h1>
+
+     <!-- <p class="govuk-body">
+          We've downloaded 3 months of bank statements.
+        </p> -->
+        <div class="govuk-inset-text">
+          Balances were correct at 23:59 on 13 July 2020.
+        </div>
+
+
+        <p class="govuk-body">
+      <!--    We'll show you your statements so you can tell us more about your financial situation.
+      We'll ask your to sort your transactions (for example, salary or benefits payments) to help us understand your financial situation.
+      We'll ask your solicitor to sort your transactions into categories (for example, salary or benefits payments) to help us understand your financial situation. -->
+        </p>
+
+
+
+
+      <!--  <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">Account holder name</th>
+              <td class="govuk-table__cell">John Doe</td>
+              </tr>
+            <!--  <tr class="govuk-table__row">
+              <td class="govuk-table__header" scope="row">Account holder address</td>
+              <td class="govuk-table__cell">2 Denman Road, London SE15 5NP</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+      </div>
+      </div>
+
+        <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">Type</th>
+      <th scope="col" class="govuk-table__header">Balance</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Mock Bank Current Account</td>
+      <td class="govuk-table__cell">£205.79</td>
+    </tr>
+  </tbody>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Mock Bank Savings Account</td>
+      <td class="govuk-table__cell">£1,435</td>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Savings Offline</td>
+          <td class="govuk-table__cell">£5,005</td>
+
+
+</table>
+
+<h2 class="govuk-heading-m">Does your client have any other savings in accounts they cannot access online?</h2>
+
+<span class="govuk-hint">For example, savings in a Post Office savings account.</span>
+
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+    <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+      Yes
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+    <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+      No
+    </label>
+  </div>
+</div>
+
+      <!--  <div class="govuk-inset-text">
+You can add more bank accounts later if you need to.
+</div> -->
+<br>
+<button type="submit" class="govuk-button">
+  Continue
+</button>
+
+</form>
+</div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
