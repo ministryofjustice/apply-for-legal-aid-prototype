@@ -1,0 +1,490 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "check_answers_means_np"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">John Doe may need to pay towards legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            We've calculated that your client should pay:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+<li style="color: #fff;">£86.98 per month from their disposable income</li>
+<li style="color: #fff;">£4,500 from their disposable capital</li>
+  </ul>
+
+          <p style="color: #fff;">
+      <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
+      You still need to provide details of the case before we can grant legal aid.
+
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+
+<h1 class="govuk-heading-m">How we calculated your client's eligibility</h1>
+
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                Income calculation
+              </span>
+            </h2>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+
+
+              <h2 class="govuk-heading-m">Income</h2>
+
+            <!--  <span class="govuk-hint">
+                20 January 2020 to 20 February 2020
+                </span> -->
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Benefits
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£250.05</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Financial help from friends or family</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintenance payments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£425.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Income from property or lodger</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£300.00</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Pension</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total income</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£1025.05</td>
+              </tr>
+            </tbody>
+            </table>
+
+            <table class="govuk-table">
+            <tbody>
+
+
+              <h2 class="govuk-heading-m">Student finance</h2>
+
+            <!--  <span class="govuk-hint">
+                20 January 2020 to 20 February 2020
+                </span> -->
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Student finance
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£9,800</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Amount included in calculation</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£9,800</td>
+              </tr>
+            </tbody>
+            </table>
+
+            <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+              <h2 class="govuk-heading-m">Outgoings</h2>
+
+            <!--  <span class="govuk-hint">
+                20 January 2020 to 20 February 2020
+                </span> -->
+
+                <th scope="row" class="govuk-table__header">Housing costs
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£150.00</td>
+              </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Childcare costs</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintenance payments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Legal aid payments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0.00</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total outgoings</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£150.00</td>
+              </tr>
+            </tbody>
+            </table>
+
+            <table class="govuk-table">
+            <tbody>
+              <h2 class="govuk-heading-m">Deductions</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Dependants allowance
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£291.49</td>
+              </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Income from benefits excluded from calculation</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£45.05</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total deductions</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£336.54</td>
+              </tr>
+            </tbody>
+            </table>
+
+            <table class="govuk-table">
+            <tbody>
+    <h2 class="govuk-heading-m">Disposable income</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total income
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£1025.05</td>
+              </tr>
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total outgoings</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £150.00</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total deductions</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £336.54</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total disposable income</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£538.51</strong></td>
+              </tr>
+            </tbody>
+            </table>
+
+<br></br>
+
+
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+                Capital calculation
+              </span>
+            </h2>
+          </div>
+
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+
+                            <h2 class="govuk-heading-m">Property</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Value
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£150,000</td>
+              </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Outstanding mortgage</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £75,000</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Disregards and deductions</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £100,000</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Amount included in calculation</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+              </tr>
+            </tbody>
+            </table>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+
+                            <h2 class="govuk-heading-m">Vehicles</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Value
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£25,000</td>
+              </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Outstanding payments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £6,000</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Disregards and deductions</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">− £15,000</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Amount included in calculation</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+              </tr>
+            </tbody>
+            </table>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+
+                            <h2 class="govuk-heading-m">Savings and investments</h2>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Current accounts
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£205.79</td>
+              </tr>
+
+
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Savings accounts from an online bank</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£1,435</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Savings accounts from an offline bank</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total savings and investments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2140.79
+</td>
+              </tr>
+            </tbody>
+            </table>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+              <h2 class="govuk-heading-m">Other assets</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Valuable items worth more than £500
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total assets</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+            </tbody>
+            </table>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <table class="govuk-table">
+            <tbody>
+              <h2 class="govuk-heading-m">Disposable capital</h2>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Property
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+              </tr>
+
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Vehicles</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Savings and investments</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2140.79</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Other assets</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Total</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£7,500</strong></td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-bottom: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Pensioner disregard</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" >Total disposable capital</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£7,500</strong></td>
+              </tr>
+
+            </tbody>
+            </table>
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+
+            </div>
+        </div>
+      </div>
+
+        </details>
+
+      <a href="#" button type="submit" class="govuk-button">
+        Continue
+      </a>
+
+
+
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
