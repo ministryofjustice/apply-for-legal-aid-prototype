@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Accounts
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "citizen_accounts_updatebalance"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="citizen_accounts_offline" method="post" class="form">
+
+        <h1 class="govuk-heading-xl">Your client’s bank accounts</h1>
+
+        <p class="govuk-body">
+    Check with your client to see if the balances are still correct and update them if necessary.
+        </p>
+
+        <div class="govuk-inset-text">
+          The balances below were correct at 23:59 on 13 July 2020
+        </div>
+
+
+      </div>
+      </div>
+
+
+
+        <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Bank</th>
+      <th scope="col" class="govuk-table__header">Account type</th>
+      <th scope="col" class="govuk-table__header">Account number</th>
+      <th scope="col" class="govuk-table__header">Sort code</th>
+      <th scope="col" class="govuk-table__header">Balance</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Mock Bank</td>
+      <td class="govuk-table__cell">Current account</td>
+      <td class="govuk-table__cell">12345678</td>
+      <td class="govuk-table__cell">01-21-31</td>
+      <td class="govuk-table__cell">£205.79</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">
+
+   </a></td>
+
+   <tbody class="govuk-table__body">
+     <tr class="govuk-table__row">
+       <td class="govuk-table__cell">Mock Bank</td>
+       <td class="govuk-table__cell">Savings account</td>
+       <td class="govuk-table__cell">23456789</td>
+       <td class="govuk-table__cell">01-21-31</td>
+       <td class="govuk-table__cell">£2,000</td>
+       <td class="govuk-table__cell"><a class="govuk-link" href="citizen_accounts_provider_complete">
+      Update balance
+    </a></td>
+
+
+
+
+
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+      <!--  <div class="govuk-inset-text">
+You can add more bank accounts later if you need to.
+</div> -->
+<br>
+
+
+<button type="submit" class="govuk-button">
+  Save and continue
+</button>
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+
+</form>
+
+</form>
+</div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
