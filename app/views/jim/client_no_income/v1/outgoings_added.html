@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "provider_continue_application"
+  href: "types_of_outgoing_provider"
 }) }}
 
 {% endblock %}
@@ -40,20 +40,17 @@ Apply for legal aid - Income start page
   <!--  <p class="gov-body">
     <a href="outgoings">Go to outgoings</a>
     </p> -->
-    <h1 class="govuk-heading-xl">Your client's income</h1>
+    <h1 class="govuk-heading-xl">Your client's outgoings</h1>
 
 <!-- <p class="gov-body">
   Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
 </p> -->
 
-<p class="gov-body">Your client has told us they do not receive:
+<p class="gov-body">You need to:
 </p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>benefits</li>
-  <li>financial help from family or friends</li>
-  <li>maintenance payments</li>
-  <li>income from a property or lodger</li>
-  <li>pension payments</li>
+<li>view your client's bank statements</li>
+<li>add transactions to each category</li>
 </ul>
 
 
@@ -68,11 +65,97 @@ Add income your client received from 1 November 2018 to 31 January 2019</h2>
 
 
  <ol class="app-task-list">
+ <!--  <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span> Salary or wages
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="incoming/salary" aria-describedby="eligibility-completed">
+           Add salary or wage payments
+         </a>
+       </li>
+     </ul>
+   </li> -->
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span> Housing payments
+     </h2>
+     <ul class="app-task-list__items">
+
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="benefits_list" aria-describedby="eligibility-completed">
+           View statements and add transactions
+         </a>
+       </li>
+     </ul>
+   </li>
+
 
    <li>
      <h2 class="app-task-list__section">
-       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income_provider" aria-describedby="eligibility-completed">
-         Add a type of income
+       <span class="app-task-list__section-number">2. </span> Childcare payments
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="financial_help_list" aria-describedby="eligibility-completed">
+           View statements and add transactions <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+     </ul>
+   </li>
+
+
+
+
+ <!--  <h2 class="app-task-list__section">
+     <span class="app-task-list__section-number">4. </span> Maintenance payments from an ex-partner
+   </h2>
+   <ul class="app-task-list__items">
+     <li class="app-task-list__item">
+       <a class="govuk-body" href="incoming/maintenance" aria-describedby="eligibility-completed">
+         Add maintenance payments
+       </a>
+     </li>
+   </ul>
+ </li>
+ <h2 class="app-task-list__section">
+   <span class="app-task-list__section-number">5. </span> Income from a property or lodger
+ </h2>
+ <ul class="app-task-list__items">
+   <li class="app-task-list__item">
+     <a class="govuk-body" href="incoming/property" aria-describedby="eligibility-completed">
+       Add income from a property or lodger
+     </a>
+   </li>
+ </ul>
+</li>
+<h2 class="app-task-list__section">
+ <span class="app-task-list__section-number">6. </span> Income from a student loan or grant
+</h2>
+<ul class="app-task-list__items">
+ <li class="app-task-list__item">
+   <a class="govuk-body" href="incoming/student" aria-describedby="eligibility-completed">
+     Add student finance payments
+   </a>
+ </li>
+</ul>
+</li>
+<h2 class="app-task-list__section">
+<span class="app-task-list__section-number">7. </span> Income from a pension
+</h2>
+<ul class="app-task-list__items">
+<li class="app-task-list__item">
+ <a class="govuk-body" href="incoming/pension" aria-describedby="eligibility-completed">
+   Add pension payments
+ </a>
+</li>
+</ul>
+</li> -->
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income" aria-describedby="eligibility-completed">
+         Add or remove an income type
        </a>
      </h2>
    </li>

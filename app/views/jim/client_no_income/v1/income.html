@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "provider_continue_application"
+  href: "#"
 }) }}
 
 {% endblock %}
@@ -36,55 +36,57 @@ Apply for legal aid - Income start page
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="types_of_income_provider" method="post" class="form">
-
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
     <h1 class="govuk-heading-xl">Your client's income</h1>
 
-    <p class="gov-body">Your client has told us they do not receive:
-    </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>benefits</li>
-      <li>financial help from family or friends</li>
-      <li>maintenance payments</li>
-      <li>income from a property or lodger</li>
-      <li>pension payments</li>
-    </ul>
+<!-- <p class="gov-body">
+  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
+</p> -->
 
-<h1 class="govuk-heading-m">Is this correct?</h1>
+<p class="gov-body">Your client has told us they do not receive:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>benefits</li>
+  <li>financial help from family or friends</li>
+  <li>maintenance payments</li>
+  <li>income from a property or lodger</li>
+  <li>pension payments</li>
+</ul>
 
-              <div class="govuk-radios govuk-radios">
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
-                  </label>
-                </div>
+ <p class="gov-body">
+If this is not correct, you need to add each income type your client receives.
+  </p>
 
-              <!--  <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes, with financing (for example, hire purchase)
-                   <span class="govuk-hint">
-                  Includes hire purchase (HP) and personal purchase contract (PCP)
-                  </span>
-                  </label>
-                </div> -->
+ <ol class="app-task-list">
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income_provider" aria-describedby="eligibility-completed">
+         Add an income type
+       </a>
+     </h2>
+   </li>
+   <!-- <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
+         Add another type of income
+       </a>
+     </h2>
+   </li> -->
+ </ol>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="property-3">
-                    No
-                  </label>
-                </div>
-              </div>
+      <!-- <p class="govuk-body">
+          <a href="types_of_income3" class="govuk-link">Add another type of income</a>
+        </p> -->
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <button type="submit" class="govuk-button">
+        <a href="dependants" role="button" class="govuk-button">
           Save and continue
-        </button>
+        </a>
 
         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
           Save and come back later

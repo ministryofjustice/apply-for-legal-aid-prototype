@@ -690,8 +690,8 @@ router.post('/jim/np_edits/v3/use_ccms', function (req, res) {
   }
 })
 
-// Client no income selected
-router.post('/jim/client_no_income/types_of_income_provider', function (req, res) {
+// Client no income selected v1
+router.post('/jim/client_no_income/v2/types_of_income_provider', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -699,9 +699,24 @@ router.post('/jim/client_no_income/types_of_income_provider', function (req, res
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/client_no_income/types_of_income_provider')
+    res.redirect('/jim/client_no_income/v2/types_of_income_provider')
   } else {
-    res.redirect('/jim/client_no_income/dependants')
+    res.redirect('/jim/client_no_income/v2/dependants')
+  }
+})
+
+// Client no income selected v2
+router.post('/jim/client_no_income/v2/types_of_outgoing_provider', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/client_no_income/v2/types_of_outgoing_provider')
+  } else {
+    res.redirect('/jim/client_no_income/v2/property')
   }
 })
 

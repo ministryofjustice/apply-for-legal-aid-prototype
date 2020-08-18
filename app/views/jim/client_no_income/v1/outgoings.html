@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "dependants"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Your client's outgoings</h1>
+
+<!-- <p class="gov-body">
+  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
+</p> -->
+
+<p class="gov-body">Your client has told us they do not pay:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>housing costs</li>
+  <li>childcare costs</li>
+  <li>spousal or child maintenance</li>
+  <li>for legal aid in a criminal case</li>
+</ul>
+
+
+ <p class="gov-body">
+If this is not correct, you need to add each payment type your client makes.
+  </p>
+
+ <ol class="app-task-list">
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_outgoing_provider" aria-describedby="eligibility-completed">
+         Add a payment type
+       </a>
+     </h2>
+   </li>
+   <!-- <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
+         Add another type of income
+       </a>
+     </h2>
+   </li> -->
+ </ol>
+
+      <!-- <p class="govuk-body">
+          <a href="types_of_income3" class="govuk-link">Add another type of income</a>
+        </p> -->
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <a href="#" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
