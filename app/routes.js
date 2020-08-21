@@ -671,7 +671,7 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/use_cc
   if (over18 === 'no') {
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/email_address')
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/check')
   }
 })
 

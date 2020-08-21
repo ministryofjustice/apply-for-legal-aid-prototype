@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "consent"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="consent" method="post" class="form">
+        <form action="email_address" method="post" class="form">
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
@@ -39,7 +39,7 @@ Apply for legal aid - Other capital
               <ul class="govuk-list govuk-list--bullet">
                    <li>sign in to online banking using a secure third-party service</li>
                   <li>give us one-time access to their bank accounts so we can download 3 months of bank statements</li>
-                  <li>tell us which types of income they receive and regular payments they make</li>
+                  <li>tell us about their income and outgoings</li>
                    </ul>
 
               <p class="govuk-body">Once they've done this, you'll need to categorise their bank transactions so we can calculate their disposable income.</p>

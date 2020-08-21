@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "check"
+      href: "means_assessment_required"
   }) }}
 {% endblock %}
 
@@ -31,20 +31,22 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is the following correct?
-              <!--  Does anyone depend on you for financial support? -->
+                  Check if you can continue using this service
+              <!--  Is the following correct? -->
                 </h1>
               </legend>
 
-              <p class="govuk-body">Your client:</p>
+              <p class="govuk-body">You confirm that your client:</p>
 
               <ul class="govuk-list govuk-list--bullet">
-                <li>uses online banking for all of their bank accounts</li>
-                <li>will give the LAA one-time access to their bank accounts</li>
+                <li>uses online banking for all of their current accounts</li>
+                <li>agrees to give the LAA one-time access to their bank accounts</li>
                   </ul>
 
+                  <h2 class="govuk-heading-m">Is the above correct?</h2>
 
-              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+
+              <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
 
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
@@ -52,22 +54,6 @@ Apply for legal aid - Property and mortgage
                     Yes
                   </label>
                 </div>
-              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                  <label class="govuk-label" for="how-contacted-conditional-1">
-                    How many dependants do you have?
-                  </label>
-                  <span id="dob-hint" class="govuk-hint">
-                For example, 31 3 1980.
-              </span>
-              <div class="govuk-date-input" id="dob">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
-                  </div>
-                </div>
-              </div>
-                </div> -->
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
@@ -76,25 +62,27 @@ Apply for legal aid - Property and mortgage
                   </label>
 
 
-
-  <!--   <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    No
-                  </label>
-                </div>
-              </div> -->
-
-
             </fieldset>
           </div>
+
+        <!--  <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why does my client need to do this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">We'll give your client access to the service and ask them to:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>sign in to online banking using a secure third-party service</li>
+    <li>give us one-time access to their bank accounts so we can download 3 months of bank statements</li>
+    <li>tell us about their income and outgoings</li>
+    </ul>
+
+    <p class="govuk-body">Once they've done this, you'll need to categorise their bank transactions so we can calculate their disposable income.</p>
+  </div>
+</details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue
