@@ -720,5 +720,50 @@ router.post('/jim/client_no_income/v2/types_of_outgoing_provider', function (req
   }
 })
 
+// NP journey substantive yay/nay
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/consent')
+  }
+})
+
+// Student finance
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/loan_amount')
+  }
+})
+
+// Dependants yay or nay
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_add')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router

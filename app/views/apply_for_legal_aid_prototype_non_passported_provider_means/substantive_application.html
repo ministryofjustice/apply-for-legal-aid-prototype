@@ -35,29 +35,35 @@ Apply for legal aid - Does your client use online banking
          Do you want to make a substantive application now?
           </h1>
         </legend>
-<div class="govuk-!-padding-bottom-6"></div>
 
-
+        <p class="govuk-body">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</p>
 
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+            <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                     Yes
                   </label></div>
 
-
-
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+            <input class="govuk-radios__input" id="onlinebank-2" name="property" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
             <label class="govuk-label govuk-radios__label" for="onlinebank-2">
               No, I'll do it later
             </label> </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
             <div class="govuk-form-group">
               <label class="govuk-label" for="onlinebank-2">
-              <!--  By continuing you're notifying the Legal Aid Agency that you've used delegated functions.<br><br> -->You must submit a full application by 11 June 2019.
+              <p class="govuk-body">You must submit a full application by 11 June 2019.</p>
+
+              <p class="govuk-body">You’ll need to tell us about your client’s:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>income, outgoings and dependants (for clients who do not receive passporting benefits)</li>
+                <li>savings, investments and other capital</li>
+                </ul>
+
+                <p class="govuk-body">You’ll also need to provide details of the case.</p>
               </label>
             </div>
 
