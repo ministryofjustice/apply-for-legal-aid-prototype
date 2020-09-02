@@ -17,36 +17,47 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "vehicles_date"
+      href: "vehicles_regular_use"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="client_accounts" method="post" class="form">
+      <div class="govuk-grid-column-full">
+        <form action="savings_investments_select" method="post" class="form">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Is the vehicle in regular use?
-                </h1>
-              </legend>
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-two-thirds">
 
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                              <h1 class="govuk-fieldset__heading">
+                                Your client’s bank accounts
 
-              <span class="govuk-hint">
+                              <!--  Did your client buy the vehicle more than 3 years ago? -->
+                              </h1>
+                              </legend>
 
-              <!--  This means the vehicle is used for everyday things like shopping or driving children to school.<br>
-                This means it is used at least once a fortnight for routine things like shopping or driving children to school.<br> -->
-                This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.
-              <!--  'Regular use' includes common journeys like driving to the shops or taking children to school.<br>
-                'Regular use' means the vehicle is used for everyday activities like driving to the shops or taking children to school.<br>
-                <!--  I includes use by your client's partner (if they have one) -->
-                </span>
+                        <p class="govuk-body">Your client shared the following bank account information with us:</p>
 
-              <div class="govuk-radios govuk-radios-">
+                        <ul class="govuk-list govuk-list">
+                          <li><b>Account:</b> Mock Bank Current Account</a></li>
+                          <li><b>Balance:</b> £205.79</a></li>
+                        </ul>
+
+                        <ul class="govuk-list govuk-list">
+                          <li><b>Account:</b> Mock Bank Savings Account</a></li>
+                          <li><b>Balance:</b> £1,435</a></li>
+                        </ul>
+
+               <h2 class="govuk-heading-m">Does your client have any savings accounts they cannot access online?
+
+               </h2>
+               <span class="govuk-hint">For example, a Post Office savings account.</span>
+
+              <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
@@ -55,7 +66,7 @@ Apply for legal aid - Property and mortgage
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     No
 
@@ -78,8 +89,6 @@ Apply for legal aid - Property and mortgage
         </form>
       </div>
     </div>
-
-
 
 {% endblock %}
 
