@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "client_accounts"
+      href: "savings_investments_select"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <form action="cash" method="post" class="form">
+        <form action="other_capital_select" method="post" class="form">
 
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-two-thirds">
@@ -34,11 +34,11 @@ Apply for legal aid - Property and mortgage
                           <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                               <h1 class="govuk-fieldset__heading">
-                                Does your client have access to anyone else's bank accounts?
+                                Does your client have any life insurance or endowment policies?
                               </h1>
                               </legend>
 
-               <span class="govuk-hint">For example, they're the signatory on a child's bank account.</span>
+               <span class="govuk-hint">Do not include policies that only pay out on death.</span>
 
 
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -51,7 +51,7 @@ Apply for legal aid - Property and mortgage
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email">
-            Enter the total amount in all accounts
+            Enter the total value of all policies owned
           </label>
           <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
           <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
