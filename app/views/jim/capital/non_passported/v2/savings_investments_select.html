@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "savings_amount"
+      href: "cash"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="other_capital_select" method="post" class="form">
+        <form action="insurance" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -34,7 +34,7 @@ Apply for legal aid - Other capital
 
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client -->
-                Which of the following types of capital does your client have?
+                Which of these investments does your client have?
                 <!--  Your savings and investments -->
                 </h1>
               </legend>
@@ -42,42 +42,6 @@ Apply for legal aid - Other capital
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
 
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-
-              <!--  <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    Money in a savings account
-                  </label>
-
-                </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      Enter the total in all savings accounts.
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  </div> -->
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Cash kept at home or another location
-                  </label>
-              <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, cash kept at home.
-                  </span> -->
-                </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="antiques-value">
-                      Enter the total amount
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                  </div>
-                  </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("classic-car","yes") }}>
@@ -145,25 +109,6 @@ Apply for legal aid - Other capital
                     <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="policies-value" name="policies-value" type="text">
                   </div>
                 </div> -->
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-8" name="estates" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-8" {{ checked("estates","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-8">
-                    Life assurance or endowment policies
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Do not include policies that only pay out on death.
-                  </span>
-                </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-8">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="estates-value">
-                      Enter the total value of all owned
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="estates-value" name="estates-value" type="text">
-                  </div>
-                </div>
 
                <p class="govuk-body">or</p>
 
