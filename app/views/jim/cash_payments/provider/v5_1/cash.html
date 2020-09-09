@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "income"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Your client's other income and outgoings</h1>
+
+<p class="gov-body">Your client told us about the following payments. They will be included in the financial eligility calculation.
+
+<h1 class="govuk-heading-l">Cash payments</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Financial help from family or friends</h2>
+  </div>
+
+  </div>
+
+  <table class="govuk-table" style="margin-bottom:0px;">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col">Calendar month</th>
+        <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+       <!-- <th class="govuk-table__header scope="col"></th> -->
+      </tr>
+    </thead>
+     <tbody class="govuk-table__body">
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">30 Dec 2020 to 30 Jan 2021</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+         <!-- <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+       </tr>
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">29 Nov to 29 Dec 2020</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£150.00</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+       </tr>
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">28 Oct to 28 Nov 2020</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£30.00</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+       </tr>
+       </tbody>
+       </table>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Housing payments</h2>
+</div>
+
+</div>
+
+       <table class="govuk-table" style="margin-bottom:0px;">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th class="govuk-table__header" scope="col">Calendar month</th>
+             <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+            <!-- <th class="govuk-table__header scope="col"></th> -->
+           </tr>
+         </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">30 Dec 2020 to 30 Jan 2021</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">- £250.00</td>
+        <!--   <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">29 Nov to 29 Dec 2020</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">- £250.00</td>
+             <!--   <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">28 Oct to 28 Nov 2020</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">- £250.00</td>
+            <!--   <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Change</a></td> -->
+         </tr>
+         </tbody>
+         </table>
+
+         <div class="govuk-!-padding-bottom-6"></div>
+
+         <h1 class="govuk-heading-l">Student finance</h1>
+
+         <p class="gov-body">Your client will get £9,800 in student finance this academic year.
+         </p>
+         <div class="govuk-!-padding-bottom-6"></div>
+
+
+
+        <a href="dependants" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
