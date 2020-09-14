@@ -23,12 +23,12 @@ Apply for legal aid - Salary statement
   tag: {
     text: "prototype"
   },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  html: 'This is a new service – your <a class="govuk-link" href="income">feedback</a> will help us to improve it.'
 }) }}
 
 {{ govukBackLink({
   text: "Back",
-  href: "ucap_selected"
+  href: "income"
 }) }}
 {% endblock %}
 
@@ -93,7 +93,7 @@ white-space: nowrap;
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="financial_help_selected" method="post" novalidate>
+    <form action="income" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
         Select payments from friends or family
@@ -104,17 +104,19 @@ white-space: nowrap;
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Not sure which payments to select?
+            Which payments should you select?
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="gov-body">Payments from friends or family count as income if they are all of the following:</p>
+          <p class="gov-body">Select payments that are:</p>
          <ul class="govuk-list govuk-list--bullet">
 
-        <li>regular (for example, two or more in the last month)</li>
-        <li>from the same person</li>
-        <li>gifts (your client will not repay them)</li>
-        <li>used for living expenses (for example, housing costs)</li>
+
+
+   <li>regular (at least one a month)</li>
+   <li>from the same person</li>
+   <li>or living expenses</li>
+   <li>not loans</li>
         </ul>
         </div>
       </details>
@@ -285,7 +287,7 @@ white-space: nowrap;
                           <td class="govuk-table__cell">Child benefit</td>
                           <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
                           <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                          Benefits
+                          Disregarded
                           </strong></td>
                         </tr>
                         <tr class="govuk-table__row">
