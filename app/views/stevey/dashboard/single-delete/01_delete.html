@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Homepage
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<button class="govuk-button" data-toggle="modal" data-target="modal-default">Delete</button>
+<%= render "govuk_publishing_components/components/modal_dialogue", {
+  id: "modal-default"
+} do %>
+  <h1 class="govuk-heading-l">Do you want to delete the following application for David Franics, L-123-ABC?</h1>
+<% end %>
+
+<a role="button" style="margin-left: 15px;" a href="01_dashboard_deleted" class="govuk-button govuk-button--warning">
+  Yes, delete
+</a>
+
+<a role="button" style="margin-left: 15px;" a href="01_dashboard" class="govuk-button draft-button">
+  No
+</a>
+
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
