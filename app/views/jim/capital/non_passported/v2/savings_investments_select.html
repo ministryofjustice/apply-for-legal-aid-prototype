@@ -94,6 +94,22 @@ Apply for legal aid - Other capital
                   </div>
                 </div>
 
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-6" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-6" {{ checked("policies","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-6">
+                  Personal equity plans (PEPs)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-6">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="policies-value">
+                      Enter the total value
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="policies-value" name="policies-value" type="text">
+                  </div>
+                </div>
+
               <!--  <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="policies" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-7" {{ checked("policies","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
