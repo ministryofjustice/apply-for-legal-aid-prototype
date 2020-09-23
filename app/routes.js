@@ -780,5 +780,20 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/saving
   }
 })
 
+// Delete application
+router.post('/stevey/dashboard/multi-delete/04_dashboard_deleted', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/stevey/dashboard/multi-delete/04_dashboard')
+  } else {
+    res.redirect('/stevey/dashboard/multi-delete/04_dashboard_deleted')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
