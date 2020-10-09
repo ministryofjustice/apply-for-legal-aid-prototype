@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Accounts
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "agree_bank_access"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="other_bank_accounts" method="post" class="form">
+
+        <h1 class="govuk-heading-xl">You've successfully shared your bank transactions</h1>
+
+    <!-- <p class="govuk-body">
+          We've downloaded your bank statements from the last 3 months.
+        </p> -->
+
+        <h2 class="govuk-heading-m">Accounts</h2>
+
+
+                <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Bank</th>
+              <th scope="col" class="govuk-table__header">Account holder</th>
+              <th scope="col" class="govuk-table__header">Account number</th>
+              <th scope="col" class="govuk-table__header">Sort code</th>
+              <th scope="col" class="govuk-table__header">Balance</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Mock Bank</td>
+              <td class="govuk-table__cell">John Doe</td>
+              <td class="govuk-table__cell">13789837</td>
+              <td class="govuk-table__cell">01-21-31</td>
+              <td class="govuk-table__cell">£205.79</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Mock Bank</td>
+              <td class="govuk-table__cell">John Doe</td>
+              <td class="govuk-table__cell">25630981</td>
+              <td class="govuk-table__cell">01-21-31</td>
+              <td class="govuk-table__cell">£425.89</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body">
+             <a href="https://auth.truelayer.com/?response_type=code&amp;client_id=applyforlegalaidtest-uxqw&amp;nonce=2546921908&amp;scope=info%20accounts%20balance%20transactions%20cards%20direct_debits%20standing_orders%20products%20beneficiaries%20offline_access&amp;redirect_uri=https://apply-for-legal-aid-prototype.herokuapp.com/apply_for_legal_aid_prototype/citizen_accounts&amp;enable_mock=true&amp;enable_oauth_providers=true&amp;enable_open_banking_providers=false&amp;enable_credentials_sharing_providers=true">Add another bank account</a>
+           </p>
+
+      <!--  <div class="govuk-inset-text">
+You can add more bank accounts later if you need to.
+</div> -->
+<br>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+      </form>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

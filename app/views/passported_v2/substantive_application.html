@@ -35,9 +35,8 @@ Apply for legal aid - Does your client use online banking
          Do you want to make a substantive application now?
           </h1>
         </legend>
-<div class="govuk-!-padding-bottom-6"></div>
 
-
+      <div id="more-detail-hint" class="govuk-hint">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</div>
 
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -46,8 +45,6 @@ Apply for legal aid - Does your client use online banking
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                     Yes
                   </label></div>
-
-
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
@@ -70,7 +67,28 @@ Apply for legal aid - Does your client use online banking
     </div>
 
 
+
+
           </div>
+
+          <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          What you need to make a substantive application
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+          <p class="govuk-body">You’ll need to tell us about:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+          <li>your client's savings, investments and other capital</li>
+          <li>the details of the case</li>
+          </ul>
+
+          <p class="govuk-body">If your client does not receive passporting benefits, you'll also need to tell us about their income, outgoings and dependants.</p>
+
+          </div>
+          </details>
 
           <button type="submit" class="govuk-button">
             Save and continue
