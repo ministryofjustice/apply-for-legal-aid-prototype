@@ -811,7 +811,7 @@ router.post('/applicant_flow/complete_assessment_with_solicitor', function (req,
 })
 
 // Client uses online banking for other accounts (applicant staging)
-router.post('/applicant_flow/current_accounts', function (req, res) {
+router.post('/applicant_flow/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -819,9 +819,9 @@ router.post('/applicant_flow/current_accounts', function (req, res) {
   let over18 = req.session.data['otherbank']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow/offline_current_accounts')
+    res.redirect('/applicant_flow/types_of_income')
   } else {
-    res.redirect('/applicant_flow/bank_select')
+    res.redirect('/applicant_flow/offline_current_accounts')
   }
 })
 
