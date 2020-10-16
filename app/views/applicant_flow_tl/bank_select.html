@@ -1,0 +1,285 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Agree bank access
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "agree_bank_access"
+}) }}
+{% endblock %}
+
+{% block content %}
+<style media="screen">
+.expo_box{
+  border: 1px solid #0b0c0c;
+  cursor: pointer;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+31,ffffff+31,f8f8f8+31,f8f8f8+31,f8f8f8+31,f8f8f8+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ffffff 0%, #ffffff 31%, #ffffff 31%, #f8f8f8 31%, #f8f8f8 31%, #f8f8f8 31%, #f8f8f8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ffffff 0%,#ffffff 31%,#ffffff 31%,#f8f8f8 31%,#f8f8f8 31%,#f8f8f8 31%,#f8f8f8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ffffff 0%,#ffffff 31%,#ffffff 31%,#f8f8f8 31%,#f8f8f8 31%,#f8f8f8 31%,#f8f8f8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f8f8f8',GradientType=1 ); /* IE6-9 */
+}
+.expo_img_holder{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  margin: 0px 30px 0px 20px;
+}
+.expo_img{
+  width: 100%;
+}
+.expo_label{
+  /*margin-top: -10px !important;*/
+  vertical-align: 20px;
+}
+.govuk-radios__input + .govuk-radios__label::before {
+  top: 15px;
+  left: 10px;
+}
+
+.govuk-radios__input + .govuk-radios__label::after {
+  top:25px;
+  left: 20px
+}
+.govuk-radios__label {
+  /*padding: auto auto;*/
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
+            Select your bank
+          </h1>
+          <span class="govuk-hint">
+            Select one bank at a time. You'll be able to select more later if you have accounts with different banks.
+          </span>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_01" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_01">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/American_Express.svg" alt="" /></div>
+              <span class="expo_label">American Express
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_02" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_02">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/bank_of_scotland.svg" alt="" /></div>
+              <span class="expo_label">Bank of Scotland
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_03" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_03">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/barclays.svg" alt="" /></div>
+              <span class="expo_label">Barclays
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_04" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_04">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/barclaycard.svg" alt="" /></div>
+              <span class="expo_label">Barclaycard
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_05" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_05">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/coop.svg" alt="" /></div>
+              <span class="expo_label">Co-operative bank
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_06" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_06">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/first_direct.svg" alt="" /></div>
+              <span class="expo_label">First Direct
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_07" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_07">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/halifax.svg" alt="" /></div>
+              <span class="expo_label">Halifax
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_08" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_08">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/HSBC.svg" alt="" /></div>
+              <span class="expo_label">HSBC
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_09" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_09">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/lloyds.svg" alt="" /></div>
+              <span class="expo_label">Lloyds Bank
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_10" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_10">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/lloyds_business.svg" alt="" /></div>
+              <span class="expo_label">Lloyds Bank Business
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_11" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_11">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/metro_bank.svg" alt="" /></div>
+              <span class="expo_label">Metro Bank
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_12" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_12">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/monzo.svg" alt="" /></div>
+              <span class="expo_label">Monzo
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_13" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_13">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/nationwide.svg" alt="" /></div>
+              <span class="expo_label">Nationwide
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_14" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_14">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/rbs.svg" alt="" /></div>
+              <span class="expo_label">Royal Bank of Scotland
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_15" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_15">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/santander.svg" alt="" /></div>
+              <span class="expo_label">Santander
+              </span>
+            </label>
+          </div>
+
+          <div class="govuk-radios__item expo_box">
+            <input class="govuk-radios__input" style="text-align: center;" id="radio_16" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="radio_16">
+              <div class="expo_img_holder"><img class="expo_img" src="/public/images/starling.svg" alt="" /></div>
+              <span class="expo_label">Starling
+              </span>
+            </label>
+          </div>
+
+
+        </div>
+      </fieldset>
+    </div>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+      We'll connect you to your bank using TrueLayer so you can share your bank account information with the LAA.</p>
+    <a href="bank_loading" role="button" class="govuk-button">
+
+      Continue
+    </a>
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
