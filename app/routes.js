@@ -855,5 +855,80 @@ router.post('/applicant_flow/types_of_outgoing', function (req, res) {
   }
 })
 
+// Client doesn't agree to share transactions - applicant staging
+router.post('/applicant_flow_tl/complete_assessment_with_solicitor', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['onlinebank']
+
+  if (over18 === 'no') {
+    res.redirect('/applicant_flow_tl/complete_assessment_with_solicitor')
+  } else {
+    res.redirect('/applicant_flow_tl/bank_select')
+  }
+})
+
+// Client uses online banking for other accounts (applicant staging)
+router.post('/applicant_flow_tl/types_of_income', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['otherbank']
+
+  if (over18 === 'no') {
+    res.redirect('/applicant_flow_tl/types_of_income')
+  } else {
+    res.redirect('/applicant_flow_tl/offline_current_accounts')
+  }
+})
+
+// Offline current accounts (applicant staging)
+router.post('/applicant_flow_tl/complete_with_solicitor', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['current_account']
+
+  if (over18 === 'no') {
+    res.redirect('/applicant_flow_tl/types_of_income')
+  } else {
+    res.redirect('/applicant_flow_tl/complete_with_solicitor')
+  }
+})
+
+// Student finance
+router.post('/applicant_flow_tl/types_of_outgoing', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['property']
+
+  if (over18 === 'no') {
+    res.redirect('/applicant_flow_tl/types_of_outgoing')
+  } else {
+    res.redirect('/applicant_flow_tl/loan_amount')
+  }
+})
+
+// applicant employed v1
+router.post('/jim/applicant_employed/substantive_application', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['attempts-to-settle']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/applicant_employed/substantive_application')
+  } else {
+    res.redirect('/jim/applicant_employed/use_ccms')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
