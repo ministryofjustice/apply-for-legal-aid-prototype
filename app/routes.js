@@ -939,7 +939,7 @@ router.post('/jim/applicant_employed/delegated_functions', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/delegated_functions_confirmation')
+    res.redirect('/jim/applicant_employed/delegated_functions')
   } else {
     res.redirect('/jim/applicant_employed/employed')
   }
