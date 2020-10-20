@@ -25,17 +25,18 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="check" method="post" class="form">
+        <form action="use_ccms" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is your client employed?
+                  Check if you can continue using this service
+              <!--  Is the following correct? -->
                 </h1>
               </legend>
 
-          <!--    <p class="govuk-body">You agree that your client:</p>
+              <p class="govuk-body">You agree that your client:</p>
 
               <ul class="govuk-list govuk-list--bullet">
                 <li>uses online banking for all of their current accounts</li>
@@ -43,7 +44,7 @@ Apply for legal aid - Property and mortgage
                 <li>is not employed</li>
                   </ul>
 
-               <h2 class="govuk-heading-m">Is the above correct?</h2> -->
+                <!--  <h2 class="govuk-heading-m">Is the above correct?</h2> -->
 
 
               <div class="govuk-radios govuk-radios">
@@ -51,14 +52,14 @@ Apply for legal aid - Property and mortgage
 
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    Yes
+                    Yes, I agree
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    No
+                    No, I do not agree
                   </label>
 
 
