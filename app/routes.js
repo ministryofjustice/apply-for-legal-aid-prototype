@@ -939,9 +939,9 @@ router.post('/jim/applicant_employed/what_client_must_do', function (req, res) {
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/what_client_must_do')
-  } else {
     res.redirect('/jim/applicant_employed/use_ccms')
+  } else {
+    res.redirect('/jim/applicant_employed/what_client_must_do')
   }
 })
 
