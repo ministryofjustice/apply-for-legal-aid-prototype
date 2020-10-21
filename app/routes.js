@@ -915,7 +915,7 @@ router.post('/applicant_flow_tl/types_of_outgoing', function (req, res) {
   }
 })
 
-// applicant employed v1
+// applicant employed
 router.post('/jim/applicant_employed/substantive_application', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -925,6 +925,21 @@ router.post('/jim/applicant_employed/substantive_application', function (req, re
 
   if (over18 === 'no') {
     res.redirect('/jim/applicant_employed/substantive_application')
+  } else {
+    res.redirect('/jim/applicant_employed/use_ccms_employed')
+  }
+})
+
+// provider disagrees that client uses online banking / will share transactions
+router.post('/jim/applicant_employed/what_client_must_do', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['check']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/applicant_employed/what_client_must_do')
   } else {
     res.redirect('/jim/applicant_employed/use_ccms')
   }
