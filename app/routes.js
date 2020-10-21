@@ -916,7 +916,7 @@ router.post('/applicant_flow_tl/types_of_outgoing', function (req, res) {
 })
 
 // applicant employed v1
-router.post('/jim/applicant_employed/check', function (req, res) {
+router.post('/jim/applicant_employed/substantive_application', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -924,7 +924,7 @@ router.post('/jim/applicant_employed/check', function (req, res) {
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/check')
+    res.redirect('/jim/applicant_employed/substantive_application')
   } else {
     res.redirect('/jim/applicant_employed/use_ccms')
   }
