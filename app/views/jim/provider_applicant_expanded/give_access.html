@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid -
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "email_address"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="confirmation_page" method="post" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+          Give your client temporary access to the service
+         </h1>
+</legend>
+         <p class="govuk-body">We'll send your client a link to the service so they can:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+           <li>share their bank account details</li>
+           <li>tell us about their income and outgoings</li>
+           </ul>
+
+          <p class="govuk-body">The link will remain active for 7 days for security reasons. If your client does not access the service within 7 days they’ll need to request a new link.</p>
+
+<!--
+         <div class="govuk-form-group">
+         <label class="govuk-label" for="email">
+         Email address
+         </label>
+         <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+         </div>
+       -->
+
+    
+
+          <!--  <h2 class="govuk-heading-m">How we use your client's bank account</h2> -->
+
+  <!--  <p class="govuk-body">When you click 'Send link' we'll send your client a secure link to the assessment to this email address:</p> -->
+<h2 class="govuk-heading-m">
+  Your client's email address
+  </h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                johndoe@gmail.com
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="client_email_address">
+                  Change <span class="govuk-visually-hidden">first name</span>
+                </a>
+              </dd>
+            </div>
+            </dl>
+
+            <a href="confirmation_page" role="button" class="govuk-button">
+              Send link
+            </a>
+
+            <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+
+        </div>
+      </div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
