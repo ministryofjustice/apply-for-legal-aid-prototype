@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid
+Apply for legal aid -
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,52 +17,52 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "substantive_application"
+      href: "student_loan"
   }) }}
-
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-panel govuk-panel--confirmation">
-          <h2 class="govuk-panel__title">
-            You told us you've used delegated functions
-          </h2>
-          <div class="govuk-panel__body">
-            Your case reference number is
-            <br><strong>L-23A-56D</strong>
-          </div>
-        </div>
+        <form action="types_of_outgoing" method="get" class="form">
 
- <div class="govuk-!-padding-top-4"></div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  How much student finance will you get this academic year?
+                </h1>
+              </legend>
 
+             <span id="dob-hint" class="govuk-hint">
+                Check your student finance entitlement letter.
+              </span>
 
+              <div class="govuk-!-padding-bottom-4"></div>
 
+      <!--  <h2 class="govuk-heading-m">Enter the estimated value of your home</h2> -->
 
-     <h3 class="govuk-heading-m">What happens next</h3>
-
-      <!--   <div class="govuk-inset-text">
-         You must start a full application by 21 June 2019.
-        </div> -->
-
-          <!--  <p class="govuk-body">You can return to this application when you're ready to make a substantive application.</p> -->
-        <div class="govuk-inset-text">You must submit a substantive application by 11 November 2020.</div>
-
-
-<br>
-
-<a href="dashboard" role="button" class="govuk-button">
-  Back to your applications
-</a>
+      <label class="govuk-label" for="event-name">
+    Total amount
+  </label>
+  <!-- <span id="event-name-hint" class="govuk-hint">
+    Hint text
+  </span> -->
 
 
-    </div>
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+
+
+    </form>
   </div>
-
 </div>
 
 {% endblock %}

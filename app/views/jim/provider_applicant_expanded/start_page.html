@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl"><!-- Share your financial information with the Legal Aid Agency --> Your legal aid application</h1>
+
+        <p class="govuk-body">Name: <strong>John Doe</strong><br>
+          Case reference: <strong>L-1DU-D0W</strong><br>
+          Your solicitor: <strong>Hitchcock, Jones & King</strong></p>
+
+          <p class="govuk-body">We need to check if you qualify financially for legal aid.</p>
+
+          <h2 class="govuk-heading-m">How we do this</h2>
+
+          <p class="govuk-body">The Legal Aid Agency (LAA) needs one-time access to your bank account information so we can download 3 months of bank statements.</p>
+
+            <p class="govuk-body">We do this to see the kinds of payments you make and receive. This helps us work out if you can get free legal aid or you need to pay towards the costs.</p>
+
+            <p class="govuk-body">We use a trusted open banking provider called TrueLayer to safely access your bank account information.</p>
+
+            <p class="govuk-body">TrueLayer is regulated by the Financial Conduct Authority (FCA) and will not:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+
+            <li>access your data without your permission</li>
+            <li>ask for your online banking username and password</li>
+            <li>share your data with anyone other than the LAA</li>
+            <li>have ongoing access to your bank account information</li>
+
+            </ul>
+
+
+        <!--    <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+  What is open banking?</span>
+    </summary>
+    <div class="govuk-details__text">
+      Open banking is a secure way to share your financial information with organisations other than your bank.
+  </details>
+
+          <p class="govuk-body">We'll then ask your solicitor to sort your bank transactions into categories.</p> -->
+
+
+        <h2 class="govuk-heading-m">What you'll need</h2>
+
+        <p class="govuk-body">
+          Your online banking sign-in details.</p>
+
+        <a href="agree_bank_access" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+          Start
+        </a>
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
