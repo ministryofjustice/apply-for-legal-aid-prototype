@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "disregards"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+     <div class="govuk-grid-row">
+       <div class="govuk-grid-column-two-thirds">
+     <h2 class="govuk-heading-m">Payments from government schemes</h2>
+     </div>
+     <div class="govuk-grid-column-one-third">
+       <p><a class="govuk-link" style="float:right;" href="client_details_2">Change</a></p>
+     </div>
+     </div>
+
+     <dl class="govuk-summary-list">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           England Infected Blood Support Scheme
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="client_details#firstname">
+              <span class="govuk-visually-hidden">first name</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Vaccine Damage Payments Scheme
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="client_details#dob-day">
+             <span class="govuk-visually-hidden">dob</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Variant Creutzfeldt-Jakob disease (vCJD) Trust
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="client_details#national-insurance-number">
+             <span class="govuk-visually-hidden">national insurance number</span>
+           </a>
+         </dd>
+       </div>
+     <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Criminal Injuries Compensation Scheme
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Yes
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="client_details#email-address">
+             <span class="govuk-visually-hidden">email address</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           National Emergencies Trust (NET)
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="postcode_finder#postcode">
+             <span class="govuk-visually-hidden">correspondance address</span>
+           </a>
+         </dd>
+       </div>
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           We Love Manchester Emergency Fund
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="postcode_finder#postcode">
+             <span class="govuk-visually-hidden">correspondance address</span>
+           </a>
+         </dd>
+       </div>
+
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           The London Emergencies Trust
+         </dt>
+         <dd class="govuk-summary-list__value">
+           No
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="postcode_finder#postcode">
+             <span class="govuk-visually-hidden">correspondance address</span>
+           </a>
+         </dd>
+       </div>
+
+    </div>
+  </div>
+
+
+  <a class="govuk-button" href="check" role="button">
+    Save and continue
+  </a>
+
+  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+    Save and come back later
+  </a>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
