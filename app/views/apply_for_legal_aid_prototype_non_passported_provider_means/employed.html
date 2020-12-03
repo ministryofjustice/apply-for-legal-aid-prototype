@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "substantive_application"
+      href: "means_assessment_required"
   }) }}
 {% endblock %}
 
@@ -25,44 +25,18 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="use_ccms" method="post" class="form">
+        <form action="substantive_application" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Check if you can continue using this service
-              <!--  Is the following correct? -->
+                  Is your client employed?
                 </h1>
               </legend>
 
-              <p class="govuk-body">You agree that your client:</p>
+              <span class="govuk-hint">This includes full-time, part-time, casual, temporary and self-employment.</span>
 
-              <ul class="govuk-list govuk-list--bullet">
-                <li>uses online banking for all of their current accounts</li>
-                <li>will let a third-party service called TrueLayer collect 3 months of bank statements from their bank accounts and share them with the LAA</li>
-                <li>is not employed</li>
-                  </ul>
-
-                  <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What is TrueLayer?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-
-            <p class="govuk-body">TrueLayer is a trusted third-party financial service provider that acts as a messenger between your client's bank and the LAA.</p>
-            <p class="govuk-body">It provides a quick and secure way for your client to share bank statements with the LAA.</p>
-            <p class="govuk-body">They’re regulated by the Financial Conduct Authority (FCA) and will not:</p>
-            <ul class="govuk-list govuk-list--bullet">
-            <li>store your client's bank account details</li>
-            <li>see your client's online banking sign-in details</li>
-            <li>share your client's data with anyone other than the LAA</li>
-            <li>have ongoing access to your client's bank accounts</li>
-            </ul>
-          </div>
-        </details>
 
 
               <div class="govuk-radios govuk-radios">
@@ -70,14 +44,14 @@ Apply for legal aid - Property and mortgage
 
                   <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    Yes, I agree
+                    Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    No, I do not agree
+                    No
                   </label>
 
 
