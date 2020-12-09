@@ -9,6 +9,63 @@ router.get('/', function (req, res) {
 
 // Route for search proceeding list
 
+router.get('/multiple_proceedings/search', function (req, res) {
+
+  res.render('multiple_proceedings/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings/search_2', function (req, res) {
+
+  res.render('multiple_proceedings/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings/search_3', function (req, res) {
+
+  res.render('multiple_proceedings/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings_2/search', function (req, res) {
+
+  res.render('multiple_proceedings_2/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+
+router.get('/multiple_proceedings_2/search_2', function (req, res) {
+
+  res.render('multiple_proceedings_2/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+
+router.get('/multiple_proceedings_2/search_3', function (req, res) {
+
+  res.render('multiple_proceedings_2/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+
 router.get('/search', function (req, res) {
 
   res.render('search',
@@ -81,7 +138,7 @@ router.get('/delegated_functions/search_notify', function (req, res) {
 
 })
 
-router.get('/delegated_functions/v2/search', function (req, res) {
+router.get('/mp/search', function (req, res) {
 
   res.render('delegated_functions/v2/search',
     {

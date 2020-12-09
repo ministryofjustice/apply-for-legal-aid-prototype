@@ -29,7 +29,7 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "postcode_select"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -75,34 +75,37 @@ $('#search').hideseek({
 
       <div class="govuk-grid-row">
         <div id="proceedings-list" class="govuk-grid-column-full ">
-
-        {% for proceeding in proceedings -%}
-        <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
+          <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-grid-column-two-thirds">
 
-                <ul class="proceeding-list">
-                  <h3 class="govuk-body proceeding-item">{{proceeding.proceedingtype | capitalize}}</h3>
-                  <li class="govuk-caption-m proceeding__list-item">{{proceeding.categoryoflaw| capitalize}}</li>
-                  <li class="govuk-caption-m proceeding__list-item"> > {{proceeding.mattertype | capitalize}}</li>
-                </ul>
-            </div>
+              {% for proceeding in proceedings -%}
+              <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
 
-            <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
-                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="search_2">
-                    Select
-                </a>
-            </div>
+                <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
 
+                <ul class="proceeding-list" style="text">
+                    <div class="govuk-radios govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+    <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
+
+  </div>
+</div>
+</ul>
         </div>
-        {%- endfor %}
+
+
+              </div>
+              {%- endfor %}
+
+      </div>
+      </div>
+
+              </div>
 
     </div>
-</div>
-</div>
-
-
-<a class="govuk-button" href="#" role="button">
+<br>
+<a class="govuk-button" href="search_2" role="button">
   Save and continue
 </a>
 

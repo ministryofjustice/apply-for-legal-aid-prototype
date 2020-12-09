@@ -29,41 +29,60 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "search"
+      href: "search_2"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+ <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+  <h2 class="govuk-error-summary__title" id="nationality-error">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#name">You cannot select Application for a care order and Non-molestation order</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-    <h2 class="govuk-heading-m">You have added 1 proceeding</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m">You have added 1 proceeding</h2>
 
 
-    <div class="govuk-summary-list">
+        <div class="govuk-summary-list">
 <div class="govuk-summary-list__row">
 <dd class="govuk-summary-list__value">Non-molestation order</dd>
-<dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="remove_2">
-    Remove<span class="govuk-visually-hidden"> name</span>
-  </a>
-</dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="remove_2">
+        Remove<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
 </div>
-</div>
-        <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
-      </div>
+
+
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint nationality-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      What does your client want legal aid for?
+    </legend>
+    <label class="govuk-label" for="search">
+    Search for legal proceedings
+    </label>
+    <div id="nationality-hint" class="govuk-hint">
+      You can add multiple proceedings by name, category of law or matter type.
     </div>
+    <span id="nationality-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> You cannot select Application for a care order and Non-molestation order
+    </span>
+
 
     <div id="search-field" class="govuk-form-group">
-
-      <label class="govuk-heading-m" for="search">
-        Search for legal proceedings
-      </label>
-      <span class="govuk-hint">
-        <!-- For example by category of law, matter type or legal proceeding. -->
-        For example 'non-molestation order', or search by category of law or matter type
-      </span>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -74,38 +93,13 @@ $('#search').hideseek({
         </div>
       </div>
 
-      <div class="govuk-grid-row">
-        <div id="proceedings-list" class="govuk-grid-column-full ">
-          <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-grid-column-two-thirds">
-        {% for proceeding in proceedings -%}
-        <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
-          <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
-          <ul class="proceeding-list" style="text">
-              <div class="govuk-radios govuk-radios">
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-<label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} {{proceeding.mattertype | capitalize}}</label>
-
-</div>
-</div>
-</ul>
   </div>
 
+  </fieldset>
+</div>
 
-        </div>
-        {%- endfor %}
-      </div>
-      </div>
 
-              </div>
-
-    </div>
-
-<br>
-<a class="govuk-button" href="search_3" role="button">
+<a class="govuk-button" href="search_4" role="button">
   Save and continue
 </a>
 
