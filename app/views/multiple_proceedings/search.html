@@ -29,7 +29,7 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "search_4"
+      href: "postcode_select"
   }) }}
 {% endblock %}
 
@@ -50,42 +50,18 @@ $('#search').hideseek({
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-        <h2 class="govuk-heading-m">You have added 2 proceedings</h2>
-
-
-        <div class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-<dd class="govuk-summary-list__value">Non-molestation order</dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Remove<span class="govuk-visually-hidden"> name</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-  <dd class="govuk-summary-list__value">Occupation order</dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="remove">
-          Remove<span class="govuk-visually-hidden"> name</span>
-        </a>
-      </dd>
-    </div>
-</div>
-
         <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
       </div>
     </div>
 
     <div id="search-field" class="govuk-form-group">
 
-      <label class="govuk-label" for="search">
-      Search for legal proceedings
+      <label class="govuk-heading-m" for="search">
+        Search for legal proceedings
       </label>
       <span class="govuk-hint">
         <!-- For example by category of law, matter type or legal proceeding. -->
-        You can add multiple proceedings by name, category of law or matter type.
-
+        For example 'non-molestation order', or search by category of law or matter type
       </span>
 
       <div class="govuk-grid-row">
@@ -113,7 +89,7 @@ $('#search').hideseek({
             </div>
 
             <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
-                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="what_youre_covered_for">
+                <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="search_2">
                     Select
                 </a>
             </div>
@@ -126,7 +102,7 @@ $('#search').hideseek({
 </div>
 
 
-<a class="govuk-button" href="what" role="button">
+<a class="govuk-button" href="#" role="button">
   Save and continue
 </a>
 
