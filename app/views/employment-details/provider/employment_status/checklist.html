@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Other capital
+Apply for legal aid - Check you can continue
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "index"
+      href: "../../../index"
   }) }}
 {% endblock %}
 
@@ -44,32 +44,31 @@ Apply for legal aid - Other capital
                 <li>is able to provide three months worth of payslips as evidence of income earned through employment</li>
               </ul>
 
-                 <div class="govuk-form-group">
+               <div class="govuk-form-group govuk-!-padding-bottom-6">
                    <fieldset class="govuk-fieldset">
 
-                     <div class="govuk-!-padding-bottom-4"></div>
+                     <div class="govuk-!-padding-bottom-4">
 
                      <div class="govuk-radios">
                        <div class="govuk-radios__item">
-                         <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+                         <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes">
                          <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                            Yes, I agree
 
                          </label>
                        </div>
                        <div class="govuk-radios__item">
-                         <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" {{ checked("online-banking","no") }}>
+                         <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no">
                          <label class="govuk-label govuk-radios__label" for="onlinebank-2">
                            No, I do not agree
 
                          </label>
                        </div>
                      </div>
+                     </div>
                    </fieldset>
                  </div>
-
-
-          </div>
+            </fieldset>
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -78,12 +77,12 @@ Apply for legal aid - Other capital
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+          </div>
+
+          <p class="govuk-body"><a href="use_ccms">If no</a></p>
         </form>
       </div>
-    </div>
-
-    <p class="govuk-body"><a href="use_ccms">(if both boxes are not checked)</a></p>
-
+  </div>
 
 {% endblock %}
 

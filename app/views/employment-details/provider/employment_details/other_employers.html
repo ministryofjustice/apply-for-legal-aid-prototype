@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Property and mortgage
+Apply for legal aid - Dependants
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,60 +17,56 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "checklist"
+      href: "#"
   }) }}
 {% endblock %}
 
 {% block content %}
-
+<h2 class="govuk-heading-m">You have added 1 employer</h2>
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="check" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+  <form action="income_summary" method="post" class="form">
+    <div class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">Debenhams</dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add_employer">Change<span class="govuk-visually-hidden"> name</span></a></dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Remove<span class="govuk-visually-hidden"> name</span>
+                </a>
+            </dd>
+        </div>
+      </div>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-padding-bottom-4">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  What is your client's employment status?
+                  Does your client have any other employers?
+              <!--  Does anyone depend on you for financial support? -->
                 </h1>
               </legend>
 
-
-              <div class="govuk-radios govuk-radios govuk-!-margin-top-4">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                 <div class="govuk-radios__item">
 
-                  <input class="govuk-radios__input" id="employed-1" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("employed","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="employed-1">
-                    Employed
+                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="other_employers" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    Yes
                   </label>
                 </div>
 
-                <div class="govuk-radios__item">
-
-                  <input class="govuk-radios__input" id="employed-2" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("employed","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="employed-2">
-                    Self-employed
-                  </label>
-                </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="employed-3" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("employed","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="employed-3">
-                    A member of the armed forces
-                  </label>
-                </div>
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="employed-4" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("employed","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="employed-4">
-                    Not currently in employment
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    No
                   </label>
                 </div>
               </div>
 
-            </fieldset>
-          </div>
-
+          </fieldset>
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -79,13 +75,11 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+        </div>
+    </form>
+  </div>
+</div>
 
-        </form>
-
-        <p class="govuk-body"><a href="use_ccms">(if self-employed or a member of the armed forces)</a></p>
-
-      </div>
-    </div>
 
 {% endblock %}
 
