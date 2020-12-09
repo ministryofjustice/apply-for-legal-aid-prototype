@@ -70,7 +70,7 @@ $('#search').hideseek({
       </label>
       <span class="govuk-hint">
         <!-- For example by category of law, matter type or legal proceeding. -->
-        For example 'non-molestation order', or search by category of law or matter type
+        You can add multiple proceedings by name, category of law or matter type
       </span>
 
       <div class="govuk-grid-row">
@@ -95,7 +95,7 @@ $('#search').hideseek({
               <div class="govuk-radios govuk-radios">
   <div class="govuk-radios__item">
   <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-  <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} {{proceeding.mattertype | capitalize}}</label>
+  <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
 
   </div>
   </div>

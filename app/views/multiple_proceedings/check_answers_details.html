@@ -39,7 +39,7 @@ Apply for legal aid - Check your answers
            First name
          </dt>
          <dd class="govuk-summary-list__value">
-           John{{ data['firstname'] }}
+           John
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#firstname">
@@ -52,7 +52,7 @@ Apply for legal aid - Check your answers
            Last name
          </dt>
          <dd class="govuk-summary-list__value">
-           Doe{{ data['lastname'] }}
+           Doe
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#lastname">
@@ -78,7 +78,7 @@ Apply for legal aid - Check your answers
            National Insurance number
          </dt>
          <dd class="govuk-summary-list__value">
-           QQ 12 34 56 C{{ data['national-insurance-number'] }}
+           QQ 12 34 56 C
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#national-insurance-number">
@@ -91,7 +91,7 @@ Apply for legal aid - Check your answers
            Email address
          </dt>
          <dd class="govuk-summary-list__value">
-           johndoe@email.com{{ data['email-address'] }}
+           johndoe@email.com
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="client_details#email-address">
@@ -104,7 +104,7 @@ Apply for legal aid - Check your answers
            Correspondence address
          </dt>
          <dd class="govuk-summary-list__value">
-           1 Main Street<br/>London<br/>SE1 2AB{{ data['postcode'] }}
+           1 Main Street<br/>London<br/>SE1 2AB
          </dd>
          <dd class="govuk-summary-list__actions">
            <a href="postcode_finder#postcode">
@@ -116,7 +116,7 @@ Apply for legal aid - Check your answers
 <br>
 
     <h2 class="govuk-heading-m">
-      What you're applying for
+      What does your client want legal aid for?
     </h2>
 
   <dl class="govuk-summary-list">
@@ -125,129 +125,46 @@ Apply for legal aid - Check your answers
         Proceeding 1
       </dt>
       <dd class="govuk-summary-list__value">
-        Non-molestation order{{ data['...'] }}
+        Non-molestation order
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="search#search">
+        <a href="search_3">
           Change <span class="govuk-visually-hidden">proceeding</span>
         </a>
       </dd>
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Have you used delegated functions?
+        Proceeding 2
       </dt>
       <dd class="govuk-summary-list__value">
-        Yes
+        Child arrangements order (residence)
       </dd>
       <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
+        <a href="search_3">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Date you used delegated functions
-      </dt>
-      <dd class="govuk-summary-list__value">
-        18 November 2019
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
+        </a>
       </dd>
     </div>
  </dl>
 <br>
 
- <h2 class="govuk-heading-m">
-   Covered under an emergency certificate
- </h2>
-
- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__form_of_service">
-  <dt class="govuk-summary-list__key">
-    Form of service
-  </dt>
-  <dd class="govuk-summary-list__value">
-    Full representation
-  </dd>
-</div>
-  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__incurrable_costs">
-  <dt class="govuk-summary-list__key">
-    Costs you can incur
-  </dt>
-  <dd class="govuk-summary-list__value">
-    £1,350
-  </dd>
-</div>
-  <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__allowable_work">
-  <dt class="govuk-summary-list__key">
-    Work you can do
-  </dt>
-  <dd class="govuk-summary-list__value">
-    Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
-  </dd>
-</div>
-</dl>
-
 <h2 class="govuk-heading-m">
-  Covered under a substantive certificate
+  Delegated functions
 </h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
- <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__form_of_service">
- <dt class="govuk-summary-list__key">
-   Form of service
- </dt>
- <dd class="govuk-summary-list__value">
-   Full representation
- </dd>
-</div>
- <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__incurrable_costs">
- <dt class="govuk-summary-list__key">
-   Costs you can incur
- </dt>
- <dd class="govuk-summary-list__value">
-   £25,000
- </dd>
-</div>
- <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__allowable_work">
- <dt class="govuk-summary-list__key">
-   Work you can do
- </dt>
- <dd class="govuk-summary-list__value">
-As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).</dd>
-</div>
-</dl>
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Proceeding 2
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Occupation order{{ data['...'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="search#search">
-        Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Have you used delegated functions?
+      Have you used delegated functions for all proceedings?
     </dt>
     <dd class="govuk-summary-list__value">
       Yes
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!--  <a href="search#search">
+    <a href="delegated_functions">
         Change <span class="govuk-visually-hidden">proceeding</span>
-      </a> -->
+      </a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -255,79 +172,16 @@ As to proceedings under Part IV Family Law Act 1996 limited to all steps up to a
       Date you used delegated functions
     </dt>
     <dd class="govuk-summary-list__value">
-      18 November 2019
+      5 December 2020
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!--  <a href="search#search">
+    <a href="delegated_functions">
         Change <span class="govuk-visually-hidden">proceeding</span>
-      </a> -->
+      </a>
     </dd>
   </div>
 </dl>
 <br>
-
-<h2 class="govuk-heading-m">
- Covered under an emergency certificate
-</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__form_of_service">
-<dt class="govuk-summary-list__key">
-  Form of service
-</dt>
-<dd class="govuk-summary-list__value">
-  Full representation
-</dd>
-</div>
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__incurrable_costs">
-<dt class="govuk-summary-list__key">
-  Costs you can incur
-</dt>
-<dd class="govuk-summary-list__value">
-  £1,350
-</dd>
-</div>
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__allowable_work">
-<dt class="govuk-summary-list__key">
-  Work you can do
-</dt>
-<dd class="govuk-summary-list__value">
-  Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
-</dd>
-</div>
-</dl>
-
-<h2 class="govuk-heading-m">
-Covered under a substantive certificate
-</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__form_of_service">
-<dt class="govuk-summary-list__key">
- Form of service
-</dt>
-<dd class="govuk-summary-list__value">
- Full representation
-</dd>
-</div>
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__incurrable_costs">
-<dt class="govuk-summary-list__key">
- Costs you can incur
-</dt>
-<dd class="govuk-summary-list__value">
- £25,000
-</dd>
-</div>
-<div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__allowable_work">
-<dt class="govuk-summary-list__key">
- Work you can do
-</dt>
-<dd class="govuk-summary-list__value">
-As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).</dd>
-</div>
-</dl>
-
-
 
 
     <h2 class="govuk-heading-m">What happens next</h2>
@@ -336,7 +190,7 @@ As to proceedings under Part IV Family Law Act 1996 limited to all steps up to a
         We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
       </p><br>
 
-      <a class="govuk-button" href="#" role="button">
+      <a class="govuk-button" href="prospects" role="button">
         Save and continue
       </a>
 

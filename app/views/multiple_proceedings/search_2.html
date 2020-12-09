@@ -29,7 +29,7 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "search"
+      href: "other"
   }) }}
 {% endblock %}
 
@@ -38,14 +38,14 @@ $('#search').hideseek({
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-m">You have added 1 proceeding</h2>
+    <h2 class="govuk-heading-m">Selected proceedings</h2>
 
 
     <div class="govuk-summary-list">
 <div class="govuk-summary-list__row">
 <dd class="govuk-summary-list__value">Non-molestation order</dd>
 <dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="remove_2">
+  <a class="govuk-link" href="remove_non_mol">
     Remove<span class="govuk-visually-hidden"> name</span>
   </a>
 </dd>
@@ -62,7 +62,7 @@ $('#search').hideseek({
       </label>
       <span class="govuk-hint">
         <!-- For example by category of law, matter type or legal proceeding. -->
-        For example 'non-molestation order', or search by category of law or matter type
+        You can add multiple proceedings by name, category of law or matter type
       </span>
 
       <div class="govuk-grid-row">
@@ -87,7 +87,7 @@ $('#search').hideseek({
               <div class="govuk-radios govuk-radios">
 <div class="govuk-radios__item">
 <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-<label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} {{proceeding.mattertype | capitalize}}</label>
+<label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
 
 </div>
 </div>
@@ -105,7 +105,7 @@ $('#search').hideseek({
     </div>
 
 <br>
-<a class="govuk-button" href="search_3" role="button">
+<a class="govuk-button" href="other_2" role="button">
   Save and continue
 </a>
 
