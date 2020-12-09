@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Alternative funding
+Apply for legal aid - Does your client use online banking
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,43 +17,58 @@ Apply for legal aid - Alternative funding
 
   {{ govukBackLink({
     text: "Back",
-      href: "search_4"
+      href: "search"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="search_2" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
 
+    <h2 class="govuk-heading-m">You have added 1 proceeding</h2>
 
-        <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <div class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Non-molestation order</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="remove_2">
+    Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+</dd>
+</div>
+</div>
+
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Do you want to remove 'Occupation order'?<!-- About the respondent -->
+      Do you want to add another proceeding?
       </h1>
     </legend>
 
+    <form action="search_2" method="post" class="form">
 
 
-  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+    <div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("online-banking","yes") }}>
-            <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-              Yes
-            </label></div>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          Yes
+        </label>
+      </div>
 
 
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
-      <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-        No
-      </label> </div>
-                    </div>
-                    </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          No
+        </label>
+
+      </div>
+
+      <br><br>
 
       <button type="submit" class="govuk-button">
         Save and continue
