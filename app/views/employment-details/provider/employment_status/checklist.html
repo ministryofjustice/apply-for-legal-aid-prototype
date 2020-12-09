@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Check you can continue
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "../../../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="employment_status" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                Check if you can continue using this service
+                </h1>
+              </legend>
+
+              <p class="govuk-body govuk-!-margin-top-6">You agree that your client:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>uses online banking for all of their current accounts</li>
+                <li>will give a secure party service (TrueLayer) one-time access to their bank accounts to collect
+                  three months of bank statements</li>
+                <li>is able to provide three months worth of payslips as evidence of income earned through employment</li>
+              </ul>
+
+               <div class="govuk-form-group govuk-!-padding-bottom-6">
+                   <fieldset class="govuk-fieldset">
+
+                     <div class="govuk-!-padding-bottom-4">
+
+                     <div class="govuk-radios">
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes">
+                         <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+                           Yes, I agree
+                         </label>
+                       </div>
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no">
+                         <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+                           No, I do not agree
+                         </label>
+                       </div>
+                     </div>
+                     </div>
+                   </fieldset>
+                 </div>
+            </fieldset>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+          </div>
+
+          <p class="govuk-body"><a href="use_ccms">If no</a></p>
+        </form>
+      </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

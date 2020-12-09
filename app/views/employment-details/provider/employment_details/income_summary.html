@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "provider_means_summary"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Income summary</h1>
+
+<!-- <p class="gov-body">
+  Add payments your client received in the past 3 months to each category below. Select only the payments relevant to that category.
+</p> -->
+
+<p class="gov-body">
+Your client told us they receive the types of income listed below. You need to:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>add their employment details</li>
+<li>go through their bank transactions from the past 3 months</li>
+<li>add payments they received to each income category</li>
+</ul>
+
+
+<!--  <p class="gov-body">
+  Add payments from your client's last 3 months of bank statements to each category below.
+  </p>
+
+Add incoming payments from your client's last 3 months of bank statements to each category
+Add income your client received from 1 November 2018 to 31 January 2019</h2>
+    <h2 class="govuk-heading-m">Add income from your bank statements for each category</h2>
+ Add income for the last 3 months to each category -->
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Employment
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="payslips" aria-describedby="eligibility-completed">
+                View uploaded payslips
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="add_employer" aria-describedby="eligibility-completed">
+                Add employment details
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Benefits
+          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                For example, Universal Credit or Child Benefit.
+            </span> -->
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
+                Add benefits payments <!-- Select payments from your bank statement -->
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Financial help from friends or family
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
+                Add payments from family or friends <!-- Select payments from your bank statement -->
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income" aria-describedby="eligibility-completed">
+              Add another type of income
+            </a>
+          </h2>
+        </li>
+        <!-- <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
+              Add another type of income
+            </a>
+          </h2>
+        </li> -->
+      </ol>
+
+      <!-- <p class="govuk-body">
+          <a href="types_of_income3" class="govuk-link">Add another type of income</a>
+        </p> -->
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <a href="means_summary" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirm evidence of employment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "../../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="payslip_upload" method="post" class="form">
+
+            <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+
+                        Confirm that you are able to provide payslips
+                    </h1>
+                </legend>
+
+                <p class="govuk-hint govuk-!-margin-top-4">You need to provide payslips as evidence of income earned through employment.</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>If you are paid monthly, you will need to provide payslips for the previous three months.</li>
+                    <li>If you are paid weekly or fortnightly, you will need to provide the previous six payslips.</li>
+                </ul>
+
+                <p class="govuk-body">Confirm that you are able to provide payslips:</p>
+
+                <div class="govuk-radios govuk-radios govuk-!-margin-top-4">
+                    <div class="govuk-radios__item">
+
+                        <input class="govuk-radios__input" id="employed-1" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="employed-1">
+                            Yes, I am able to provide payslips as evidence of income earned through employment
+                        </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+
+                        <input class="govuk-radios__input" id="employed-2" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="employed-2">
+                            No, I am not able to provide payslips
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

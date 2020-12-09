@@ -1,12 +1,13 @@
 usage-data-config.json
 .env
 .sass-cache
-.DS_Store
 .start.pid
 .port.tmp
 public
 node_modules/*
 .tmuxp.*
+.idea/
+.DS_Store
 package-lock.json
 node_modules
 node_modules
