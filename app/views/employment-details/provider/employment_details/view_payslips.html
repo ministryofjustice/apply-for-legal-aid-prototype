@@ -28,7 +28,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "income_frequency"
+      href: "income_variation"
   }) }}
 {% endblock %}
 
@@ -36,52 +36,26 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="upcoming_changes" method="post" class="form">
+        <form action="employment_absence" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client receive any benefits in kind?
+                  Your client's income varies between payments
                 </h1>
               </legend>
 
-              <p class="govuk-hint govuk-!-margin-top-4">
-                This includes benefits such as company car, gym membership etc.
-              </p>
+              <div class="govuk-hint">We have calculated that your client's income varies by more than £60 between payments.</div>
+
+              <div class="govuk-form-group govuk-!-margin-top-4">
+                <label class="govuk-label" for="variation-reason">
+                  Please provide the reasons for this variation:
+                </label>
+                <textarea class="govuk-textarea" rows="5"  name="variation-reason" id="variation-reason"></textarea>
+              </div>
 
               <div class="govuk-!-padding-bottom-4"></div>
-
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="variation" name="variation" type="radio" value="yes" data-aria-controls="absence-conditional">
-                  <label class="govuk-label govuk-radios__label" for="variation">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="absence-conditional">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="benefits-description">
-                      Please describe the benefits your client receives:
-                    </label>
-                    <textarea class="govuk-textarea" id="benefits-description" name="benefits-description" rows="5"></textarea>
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="benefits-value">
-                      What is the total annual value of these benefits?
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="benefits-value"
-                           name="benefits-value" type="text">
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="income-variation-2" name="income-variation" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="income-variation-2">
-                    No
-                  </label>
-                </div>
-              </div>
 
             </fieldset>
           </div>
