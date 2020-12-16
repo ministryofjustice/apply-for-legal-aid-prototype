@@ -29,27 +29,36 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "#"
+      href: "search_2"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#name">Search and select a proceeding</a>
-      </li>
-    </ul>
-  </div>
-</div> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">You have added 2 proceedings</h2>
+
+
+    <div class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Non-molestation order</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="remove_non_mol">
+    Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Child arrangements order (residence)</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="remove_cao">
+    Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+</dd>
+</div>
+</div>
         <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
       </div>
     </div>
@@ -60,8 +69,7 @@ $('#search').hideseek({
         Search for legal proceedings
       </label>
       <span class="govuk-hint">
-        <!-- For example by category of law, matter type or legal proceeding. -->
-        For example 'non-molestation order', or search by category of law or matter type
+        Select one proceeding at a time. You can add more later.
       </span>
 
       <div class="govuk-grid-row">
@@ -77,35 +85,34 @@ $('#search').hideseek({
         <div id="proceedings-list" class="govuk-grid-column-full ">
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-grid-column-two-thirds">
+        {% for proceeding in proceedings -%}
+        <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
 
-              {% for proceeding in proceedings -%}
-              <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
+          <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
 
-                <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
-                <ul class="proceeding-list" style="text">
-                    <div class="govuk-radios govuk-radios">
+          <ul class="proceeding-list" style="text">
+              <div class="govuk-radios govuk-radios">
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-    <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
+  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
 
   </div>
-</div>
-</ul>
+  </div>
+  </ul>
+  </div>
+
+
         </div>
-
-
-              </div>
-              {%- endfor %}
-
+        {%- endfor %}
       </div>
       </div>
 
               </div>
 
     </div>
+
 <br>
-<a class="govuk-button" href="search_2" role="button">
+<a class="govuk-button" href="delegated_functions" role="button">
   Save and continue
 </a>
 
