@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Proceedings
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery.hideseek.min.js"></script>
+<script>
+$('#search').hideseek({
+    highlight: true,
+    min_chars: 3,
+    nodata: "No results found.",
+    hidden_mode: true
+});
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "combos"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
+      </div>
+    </div>
+
+
+    <table class="table-clickable govuk-table">
+      <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-1">
+                    &nbsp;
+                  <span class="visually-hidden">Non-molestation order</span>
+
+                </label>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-2">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-2">
+                    &nbsp;
+                  <span class="visually-hidden">Captain Marvel</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Captain Marvel</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-3">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-3">
+                    &nbsp;
+                  <span class="visually-hidden">Daredevil</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Daredevil</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-4">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-4">
+                    &nbsp;
+                  <span class="visually-hidden">Hulk</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Hulk</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-5">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-5">
+                    &nbsp;
+                  <span class="visually-hidden">Iron Man</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Iron Man</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-6">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-6">
+                    &nbsp;
+                  <span class="visually-hidden">Luke Cage</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Luke Cage</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-7">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-7">
+                    &nbsp;
+                  <span class="visually-hidden">Spider-Man</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Spider-Man</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell multiple-choice--hod">
+              <div class="govuk-checkboxes__item">
+                <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-8">
+                <label class="govuk-label govuk-checkboxes__label" for="radio-8">
+                    &nbsp;
+                  <span class="visually-hidden">Thor</span>
+
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Thor</td>
+          </tr>
+
+      </tbody>
+    </table>
+
+
+<a class="govuk-button" href="other" role="button">
+  Save and continue
+</a>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
