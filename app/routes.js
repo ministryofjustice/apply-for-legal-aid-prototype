@@ -9,46 +9,36 @@ router.get('/', function (req, res) {
 
 // Route for search proceeding list
 
-router.get('/multiple_proceedings/search', function (req, res) {
+router.get('/multiple_proceedings/v1/search', function (req, res) {
 
-  res.render('multiple_proceedings/search',
+  res.render('multiple_proceedings/v1/search',
     {
       proceedings: utils.getProceedings()
     })
 
 })
 
-router.get('/multiple_proceedings/search_2', function (req, res) {
+router.get('/multiple_proceedings/v1/search_2', function (req, res) {
 
-  res.render('multiple_proceedings/search_2',
+  res.render('multiple_proceedings/v1/search_2',
     {
       proceedings: utils.getProceedings()
     })
 
 })
 
-router.get('/multiple_proceedings/search_3', function (req, res) {
+router.get('/multiple_proceedings/v1/search_3', function (req, res) {
 
-  res.render('multiple_proceedings/search_3',
+  res.render('multiple_proceedings/v1/search_3',
     {
       proceedings: utils.getProceedings()
     })
 
 })
 
-router.get('/multiple_proceedings_2/search', function (req, res) {
+router.get('/multiple_proceedings/v2/search', function (req, res) {
 
-  res.render('multiple_proceedings_2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-
-})
-
-
-router.get('/multiple_proceedings_2/search_2', function (req, res) {
-
-  res.render('multiple_proceedings_2/search_2',
+  res.render('multiple_proceedings/v2/search',
     {
       proceedings: utils.getProceedings()
     })
@@ -56,9 +46,46 @@ router.get('/multiple_proceedings_2/search_2', function (req, res) {
 })
 
 
-router.get('/multiple_proceedings_2/search_3', function (req, res) {
+router.get('/multiple_proceedings/v2/search_2', function (req, res) {
 
-  res.render('multiple_proceedings_2/search_3',
+  res.render('multiple_proceedings/v2/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+
+router.get('/multiple_proceedings/v2/search_3', function (req, res) {
+
+  res.render('multiple_proceedings/v2/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings/v3/search_3', function (req, res) {
+
+  res.render('multiple_proceedings/v3/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings/v3/search_3', function (req, res) {
+
+  res.render('multiple_proceedings/v3/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
+
+router.get('/multiple_proceedings/v3/search_3', function (req, res) {
+
+  res.render('multiple_proceedings/v3/search_3',
     {
       proceedings: utils.getProceedings()
     })
