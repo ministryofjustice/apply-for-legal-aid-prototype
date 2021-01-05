@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "check_answers"
+  href: "agree_bank_access"
 }) }}
 
 {% endblock %}
@@ -26,48 +26,48 @@ Apply for legal aid - Confirmation page
 
 
   <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">We need to check your client's financial eligibility<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
-    </header>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-two-thirds">
+        <header>
+          <h1 class="govuk-heading-l">Contact your solicitor to continue your application</h1>
+        </header>
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
 
-            <p style="color: #fff;">This is because they do not get benefits that qualify for legal aid.</p>
+          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
+          <p style="color: #fff;">They will check whether you qualify for legal aid by asking about your finances.
+
+      <!--    <p style="color: #fff;">You'll need to give them:</p>
+         <ul class="govuk-list govuk-list--bullet">
+         <li style="color: #fff;">bank statements covering the past 3 months</li>
+         <li style="color: #fff;">information about your income and regular payments</li>
+        <li style="color: #fff;">details of your dependants (if you have any)</li>
+         </ul>  -->
+         </li>
+         </ul>
 
 
-            <p style="color: #fff;">We used the following details to check your client's benefits status with the DWP:</p>
-
-        <!--    <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">Your client's details</h2> -->
-
-          <p style="color: #fff;">
-          <strong>Name:</strong> John Doe<br>
-          <strong>Date of birth:</strong> 1 January 1980<br>
-          <strong>National Insurance number:</strong> QQ 12 34 56 C</p>
-
-          <p style="color: #fff;"><a href="client_details">Change these details</a></p>
+        <!--  <ul class="govuk-list govuk-list--bullet">
+            <li style="color: #fff;">Employment and Support Allowance (ESA)</li>
+            <li style="color: #fff;">Income Support</li>
+            <li style="color: #fff;">Jobseeker’s Allowance (JSA)</li>
+            <li style="color: #fff;">Pension Credit (Guarantee Credit)</li>
+            <li style="color: #fff;">Universal Credit</li>
+            </ul>
           </li>
-          <li>
-
-<!-- <h2 class="govuk-heading-m" style="padding-top: 10px; margin-bottom: 20px; color: #fff;">What happens next</h2>
-        <p style="color: #fff;">We'll check if you can continue your application using this service.</p> -->
-
-          </li>
-
         </ul>
 
-        <div class="govuk-!-padding-bottom-4"></div>
+<p style="color: #fff;">We currently only accept applications for people receiving one of these benefits.</p> -->
 
-        <a href="employed" role="button" class="govuk-button white-button right">
-          Continue</a>
-      <a href="#" role="button" class="govuk-button draft-button">
-          Save and come back later
-        </a>
+        <!-- <div class="govuk-!-padding-bottom-4"></div>
+
+        <a href="#" role="button" class="govuk-button white-button right">
+          Continue in CCMS</a>
+
+      <p style="color: #fff;"><a href="#">Back to my applications</a></p> -->
 
       </div>
-    </div>
-  </div>
+
 
 
 {% endblock %}

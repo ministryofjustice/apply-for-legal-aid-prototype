@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid - Citizen start page
+Apply for legal aid - Additional accounts
 {% endblock %}
 
 {% block header %}
@@ -28,48 +28,53 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "provider_means_calculation"
+      href: "additional_accounts"
   }) }}
-
 {% endblock %}
 
 {% block content %}
 
-
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <form action="types_of_income" method="get" class="form">
 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have current accounts you cannot access online?
+                </h1>
+              </legend>
 
+              <span id="citizenship-conditional-hint" class="govuk-hint">
+            Do not include savings accounts.
 
-        <h1 class="govuk-heading-xl">Provide details of the case</h1>
+              </span>
 
-      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
-<p class="govuk-body">We need to know if the merits of the case qualify for legal aid.</p>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additionalaccount-1" name="offline" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="additionalaccount-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additionalaccount-2" name="offline" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="additionalaccount-2">
+                    No
+                  </label>
+                </div>
+              </div>
 
-          <p class="govuk-body">You'll need to enter:</p>
+            </fieldset>
+          </div>
 
-<ul class="govuk-list govuk-list--bullet">
-<li>details about the latest domestic abuse incident</li>
-<li>information about the opponent</li>
- <li>a statement of case</li>
-<!-- <li>the estimated costs of doing the work</li> -->
-<li>the chances of a successful outcome</li>
-</ul>
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
 
-
-<br>
-  <a href="injunction" role="button" class="govuk-button right">
-    Continue
-  </a>
-
-  <a role="button" class="govuk-button draft-button">
-    Save and come back later
-  </a>
-
-
-
+        </form>
       </div>
-
     </div>
 
 {% endblock %}

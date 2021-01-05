@@ -174,6 +174,14 @@ router.get('/mp/search', function (req, res) {
 
 })
 
+router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search', function (req, res) {
+
+  res.render('apply_for_legal_aid_prototype_non_passported_provider_means/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+
+})
 
 // CAPITAL Branching
 router.get('/capital', function (req, res) {
@@ -624,20 +632,6 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/comple
   }
 })
 
-// Client doesn't agree to share transactions - provider completes means test
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let over18 = req.session.data['onlinebank']
-
-  if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income')
-  } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
-  }
-})
 
 // Dependants - v4 NP flow
 router.post('/passported_v2/delegated_functions_confirmation', function (req, res) {
@@ -755,7 +749,7 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/use_cc
   if (over18 === 'no') {
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/check')
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/substantive_application')
   }
 })
 
@@ -815,7 +809,7 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/delega
   if (over18 === 'no') {
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/consent')
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/check')
   }
 })
 
@@ -1043,6 +1037,37 @@ router.post('/jim/applicant_employed/delegated_functions', function (req, res) {
     res.redirect('/jim/applicant_employed/what_client_must_do')
   }
 })
+
+// client employed
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/consent', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['employed']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/consent')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms_employed')
+  }
+})
+
+// Additional accounts NP
+router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['accounts']
+
+  if (over18 === 'no') {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income')
+  } else {
+    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/offline_accounts')
+  }
+})
+
 
 // Add your routes here - above the module.exports line
 module.exports = router

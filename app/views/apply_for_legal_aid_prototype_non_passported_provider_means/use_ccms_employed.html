@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid
+Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,53 +16,48 @@
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
-      href: "substantive_application"
-  }) }}
+  text: "Back",
+  href: "employed"
+}) }}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
 
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">You need to complete this application in CCMS</h1>
+    </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-panel govuk-panel--confirmation">
-          <h2 class="govuk-panel__title">
-            You told us you've used delegated functions
-          </h2>
-          <div class="govuk-panel__body">
-            Your case reference number is
-            <br><strong>L-23A-56D</strong>
-          </div>
-        </div>
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
- <div class="govuk-!-padding-top-4"></div>
+          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
 
+         <p style="color: #fff;">As part of your client's assessment, they need to share their financial data with us using online banking.</p>
+
+         <p style="color: #fff;">We've saved your answers.</p> -->
+
+         <p style="color: #fff;">You cannot use this service if your client is employed.</p>
 
 
+<!-- <p style="color: #fff;">We currently only accept applications for people receiving one of these benefits.</p> -->
 
-     <h3 class="govuk-heading-m">What happens next</h3>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-      <!--   <div class="govuk-inset-text">
-         You must start a full application by 21 June 2019.
-        </div> -->
+        <a href="#" role="button" class="govuk-button white-button right">
+          Continue in CCMS</a>
+      <!--  <a href=#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
 
-     <p class="govuk-body">You must submit a substantive application by 10 November 2019.</p> 
+        <p style="color: #fff;"><a href="dashboard">Back to my applications</a></p>
 
-
-<br>
-
-<a href="dashboard" role="button" class="govuk-button">
-  Back to your applications
-</a>
+      </div>
 
 
-    </div>
-  </div>
-
-</div>
 
 {% endblock %}
 

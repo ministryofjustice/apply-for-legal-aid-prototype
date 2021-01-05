@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "laa_portal"
   }) }}
 {% endblock %}
 
@@ -25,57 +25,41 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="consent" method="post" class="form">
+        <form action="dashboard" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Is your client employed?
+                  Is 2M012V your office account number?
                 </h1>
               </legend>
 
-              <span class="govuk-hint">This includes full-time, part-time, casual, temporary and self-employment.</span>
+              <div class="govuk-!-padding-top-4"></div>
 
+            <!--   <span class="govuk-hint">
+                This includes cars, vans or motorcycles.
+              </span> -->
 
+              <div class="govuk-radios">
 
-              <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
-
-                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                    No
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No, another office is handling this application
                   </label>
-
+                </div>
+              </div>
 
             </fieldset>
           </div>
-
-        <!--  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Why does my client need to do this?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">We'll give your client access to the service and ask them to:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-    <li>sign in to online banking using a secure third-party service</li>
-    <li>give us one-time access to their bank accounts so we can download 3 months of bank statements</li>
-    <li>tell us about their income and outgoings</li>
-    </ul>
-
-    <p class="govuk-body">Once they've done this, you'll need to categorise their bank transactions so we can calculate their disposable income.</p>
-  </div>
-</details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -84,7 +68,6 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
-
         </form>
       </div>
     </div>

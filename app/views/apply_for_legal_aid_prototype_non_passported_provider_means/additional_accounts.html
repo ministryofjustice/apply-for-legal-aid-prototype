@@ -28,7 +28,7 @@ Apply for legal aid - Additional accounts
 
   {{ govukBackLink({
     text: "Back",
-      href: "other_bank_radios"
+      href: "citizen_accounts"
   }) }}
 {% endblock %}
 
@@ -36,29 +36,29 @@ Apply for legal aid - Additional accounts
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="get" class="form">
+        <form action="types_of_income" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have online access to your accounts with other banks?
+                  Do you have accounts with other banks?
                 </h1>
               </legend>
-              <div class="govuk-!-padding-bottom-4"></div>
-              <span id="citizenship-conditional-hint" class="govuk-hint">
+
+            <!--  <span id="citizenship-conditional-hint" class="govuk-hint">
                 If you do not, you will need to provide paper evidence for these accounts.
-              </span>
+              </span> -->
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="additionalaccount-1" name="additionalaccount" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="additionalaccount-1" name="accounts" type="radio" value="yes">
                   <label class="govuk-label govuk-radios__label" for="additionalaccount-1">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="additionalaccount-2" name="additionalaccount" type="radio" value="no">
+                  <input class="govuk-radios__input" id="additionalaccount-2" name="accounts" type="radio" value="no">
                   <label class="govuk-label govuk-radios__label" for="additionalaccount-2">
                     No
                   </label>
