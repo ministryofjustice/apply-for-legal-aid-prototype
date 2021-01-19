@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "statement"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Provide details of the case</h1>
+
+
+
+
+<!-- <h1 class="govuk-heading-l">Proceedings you're applying for</h1> -->
+
+ <ol class="app-task-list">
+
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span>Case details
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+
+         </span>
+
+     </h2>
+     <ul class="app-task-list__items">
+
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="opponent_name" aria-describedby="eligibility-completed">
+           Opponent's name
+         </a>
+         <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="statement" aria-describedby="eligibility-completed">
+           Statement of case
+         </a>
+         <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+     </ul>
+   </li>
+
+   <h1 class="govuk-heading-l">Proceedings you're applying for
+   </h1>
+   <div id="event-name-hint" class="govuk-hint">
+    Enter merits information for each proceeding.
+   </div>
+   <br>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">2. </span> Non-molestation order
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+
+         </span>
+     <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+
+       </span> -->
+     </h2>
+     <ul class="app-task-list__items">
+
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="incident_details" aria-describedby="eligibility-completed">
+           Add merits information
+         </a>
+       </li>
+     </ul>
+   </li>
+
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">3. </span> Prohibited steps order
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="laspo_pso" aria-describedby="eligibility-completed">
+           Add merits information <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">3. </span> Child arrangements order (residence)
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="laspo_cao" aria-describedby="eligibility-completed">
+           Add merits information <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="add_remove" aria-describedby="eligibility-completed">
+         Add or remove proceedings
+       </a>
+     </h2>
+   </li>
+
+  </ol>
+
+
+       <div class="govuk-!-padding-bottom-3"></div>
+
+        <a href="dependants" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

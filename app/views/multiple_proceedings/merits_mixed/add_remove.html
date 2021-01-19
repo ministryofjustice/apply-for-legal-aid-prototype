@@ -17,32 +17,53 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "delegated_functions"
+      href: "home_cao"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
 
+    <h2 class="govuk-heading-m">You have added 2 proceedings</h2>
 
-        <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <div class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Non-molestation order</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="remove_non_mol">
+    Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Occupation order</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="remove_cao">
+    Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+</dd>
+</div>
+</div>
+
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-      Confirm you used delegated functions on 21 February 2021
+      Do you want to add another proceeding?
       </h1>
     </legend>
 
+    <form action="home_oo" method="post" class="form">
 
+
+    <div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-          This date is correct
+          Yes
         </label>
       </div>
 
@@ -50,46 +71,12 @@ Apply for legal aid - Does your client use online banking
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-          I used delegated functions on a different date
+          No
         </label>
 
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-        <label class="govuk-label" for="how-contacted-conditional-2">
-          Date you used delegated functions <!-- Date you granted legal aid -->
-        </label>
-        <span id="dob-hint" class="govuk-hint">
-      For example, 18 4 2019.
-    </span>
-    <div class="govuk-date-input" id="dob">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day-2">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month-2">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month-2" name="dob-month-2" type="number" pattern="[0-9]*" value="{{ data['dob-month-2'] }}">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year-2">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year-2" name="dob-year-2" type="number" pattern="[0-9]*" value="{{ data['dob-year-2'] }}">
-        </div>
-      </div>
-    </div>
-      </div>
-      </fieldset>
-      </div>
+
+      <br><br>
 
       <button type="submit" class="govuk-button">
         Save and continue
