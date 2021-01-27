@@ -30,9 +30,11 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              Children covered by this proceeding
+              <span class="govuk-caption-xl">Prohibited steps order</span>
+              <h1 class="govuk-fieldset__heading">
+                Enter details of children covered by this proceeding
+              </h1>
             </legend>
 
           <!--  <div id="event-name-hint" class="govuk-hint">
@@ -45,6 +47,41 @@ Apply for legal aid - Client details
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
             </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="firstname">
+              Date of birth
+              </label>
+                <span id="dob-hint" class="govuk-hint">
+                  For example, 31 3 1980.
+                </span>
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                    </div>
+                  </div>
+                </div>
+                </div>
 
 
           </fieldset>

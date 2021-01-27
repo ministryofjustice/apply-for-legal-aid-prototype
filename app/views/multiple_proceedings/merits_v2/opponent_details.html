@@ -31,7 +31,6 @@ Apply for legal aid - Alternative funding
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-      <span class="govuk-caption-xl">Non-molestation order</span>
       <h1 class="govuk-fieldset__heading">
       Opponent details <!-- About the opponent -->
       </h1>
@@ -41,7 +40,14 @@ Apply for legal aid - Alternative funding
     </span> -->
 <div class="govuk-!-padding-bottom-3"></div>
 
-  <!--  <h2 class="govuk-heading-m">H2</h2> -->
+<h2 class="govuk-heading-m">What is the opponent's name?</h2>
+
+  <div class="govuk-form-group">
+      <label class="govuk-label" for="firstname">
+      Full name
+      </label>
+    <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+  </div>
 
 <h2 class="govuk-heading-m">Does the opponent have the mental capacity to understand the terms of a court order?</h2>
     <div class="govuk-radios govuk-radios" data-module="govuk-radios">

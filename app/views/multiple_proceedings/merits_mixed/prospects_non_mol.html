@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "home_pso"
+      href: "opponent_details"
   }) }}
 {% endblock %}
 
@@ -25,14 +25,14 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="children_cao" method="post" class="form">
+        <form action="prospects_less_than_50_non_mol" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <span class="govuk-caption-xl">Child arrangements order (residence)</span>
+                <span class="govuk-caption-xl">Non-molestation order</span>
                 <h1 class="govuk-fieldset__heading">
-                  Is this proceeding within scope of LASPO?
+                  Is the chance of a successful outcome 50% or better?
                 </h1>
               </legend>
 
@@ -42,37 +42,39 @@ Apply for legal aid - Property and mortgage
                 This includes cars, vans or motorcycles.
               </span> -->
 
-              <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios">
+
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="laspo-yes">
+                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="laspo-yes">
-                      Enter text
-                    </label>
-                    <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
-                  </div>
-                </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="laspo-no">
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="laspo-no">
-                      Enter text
-                    </label>
-                    <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
-                  </div>
-                </div>
               </div>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
 
 
             </fieldset>
