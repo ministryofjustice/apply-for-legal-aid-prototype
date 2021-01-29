@@ -183,6 +183,33 @@ router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search'
 
 })
 
+  router.get('/multiple_proceedings/merits_mixed/search', function (req, res) {
+
+    res.render('multiple_proceedings/merits_mixed/search',
+      {
+        proceedings: utils.getProceedings()
+      })
+
+})
+
+    router.get('/multiple_proceedings/merits_mixed/search_2', function (req, res) {
+
+      res.render('multiple_proceedings/merits_mixed/search_2',
+        {
+          proceedings: utils.getProceedings()
+        })
+
+})
+
+      router.get('/multiple_proceedings/merits_mixed/search_3', function (req, res) {
+
+        res.render('multiple_proceedings/merits_mixed/search_3',
+          {
+            proceedings: utils.getProceedings()
+          })
+
+})
+
 // CAPITAL Branching
 router.get('/capital', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
