@@ -1095,6 +1095,36 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
   }
 })
 
+// Not in scope of LASPO (PSO)
+router.post('/multiple_proceedings/proceedings_merits/use_ccms_pso', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['mental']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/proceedings_merits/use_ccms_pso')
+  } else {
+    res.redirect('/multiple_proceedings/proceedings_merits/children_pso')
+  }
+})
+
+// Not in scope of LASPO (CAO)
+router.post('/multiple_proceedings/proceedings_merits/use_ccms_cao', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['laspo']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/proceedings_merits/use_ccms_cao')
+  } else {
+    res.redirect('/multiple_proceedings/proceedings_merits/children_cao')
+  }
+})
+
 
 // Add your routes here - above the module.exports line
 module.exports = router
