@@ -183,32 +183,60 @@ router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search'
 
 })
 
-  router.get('/multiple_proceedings/merits_mixed/search', function (req, res) {
+  router.get('/multiple_proceedings/proceedings_merits/search', function (req, res) {
 
-    res.render('multiple_proceedings/merits_mixed/search',
+    res.render('multiple_proceedings/proceedings_merits/search',
       {
         proceedings: utils.getProceedings()
       })
 
 })
 
-    router.get('/multiple_proceedings/merits_mixed/search_2', function (req, res) {
+    router.get('/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
 
-      res.render('multiple_proceedings/merits_mixed/search_2',
+      res.render('multiple_proceedings/proceedings_merits/search_2',
         {
           proceedings: utils.getProceedings()
         })
 
 })
 
-      router.get('/multiple_proceedings/merits_mixed/search_3', function (req, res) {
+      router.get('/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
 
-        res.render('multiple_proceedings/merits_mixed/search_3',
+        res.render('multiple_proceedings/proceedings_merits/search_3',
           {
             proceedings: utils.getProceedings()
           })
 
+        })
+
+          router.get('/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
+
+            res.render('multiple_proceedings/proceedings_merits_grouped/search',
+              {
+                proceedings: utils.getProceedings()
+              })
+
+        })
+
+            router.get('/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
+
+              res.render('multiple_proceedings/proceedings_merits_grouped/search_2',
+                {
+                  proceedings: utils.getProceedings()
+                })
+
+        })
+
+              router.get('/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
+
+                res.render('multiple_proceedings/proceedings_merits_grouped/search_3',
+                  {
+                    proceedings: utils.getProceedings()
+                  })
+
 })
+
 
 // CAPITAL Branching
 router.get('/capital', function (req, res) {
