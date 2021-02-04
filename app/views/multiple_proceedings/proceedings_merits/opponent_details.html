@@ -46,20 +46,20 @@ Apply for legal aid - Alternative funding
 
 <div class="govuk-form-group">
 
-  <input class="govuk-input govuk-!-width-three-quarters" autocomplete="off" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+  <input class="govuk-input govuk-!-width-three-quarters" autocomplete="off" id="firstname" name="firstname" type="text">
 </div>
 
 <h2 class="govuk-heading-m">Does the opponent have the mental capacity to understand the terms of a court order?</h2>
     <div class="govuk-radios govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
           Yes
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2">
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
           No
         </label>
@@ -69,7 +69,7 @@ Apply for legal aid - Alternative funding
           <label class="govuk-label" for="contact-by-email">
             Tell us why you think the court would enforce a breach of an order
           </label>
-          <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+          <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
         </div>
       </div>
       </div>
@@ -79,13 +79,13 @@ Apply for legal aid - Alternative funding
       <h2 class="govuk-heading-m">Has a warning letter been sent to the opponent?</h2>
       <div class="govuk-radios govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-3" name="warning" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("attempts-to-settle","yes") }}>
+          <input class="govuk-radios__input" id="how-contacted-conditional-3" name="warning" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-3">
           <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-4" name="warning" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-4" {{ checked("attempts-to-settle","no") }}>
+          <input class="govuk-radios__input" id="how-contacted-conditional-4" name="warning" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-4">
           <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
             No
           </label>
@@ -95,7 +95,7 @@ Apply for legal aid - Alternative funding
             <label class="govuk-label" for="contact-by-email">
               Tell us why a warning letter has not been sent
             </label>
-            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ Apply for legal aid - Alternative funding
 
       <div class="govuk-radios govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-5" name="police" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-5" {{ checked("attempts-to-settle","yes") }}>
+          <input class="govuk-radios__input" id="how-contacted-conditional-5" name="police" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-5">
           <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
             Yes
           </label>
@@ -116,12 +116,12 @@ Apply for legal aid - Alternative funding
             <label class="govuk-label" for="contact-by-email">
               Tell us what action they've taken (if any), including dates and the outcome
             </label>
-            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="how-contacted-conditional-6" name="police" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-6" {{ checked("attempts-to-settle","no") }}>
+          <input class="govuk-radios__input" id="how-contacted-conditional-6" name="police" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-6">
           <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-6">
             No
           </label>
@@ -132,7 +132,7 @@ Apply for legal aid - Alternative funding
             <label class="govuk-label" for="contact-by-email">
               Tell us why the police have not been notified
             </label>
-            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+            <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@ Apply for legal aid - Alternative funding
         <div class="govuk-radios govuk-radios" data-module="govuk-radios">
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-7" name="bail" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-7" {{ checked("attempts-to-settle","yes") }}>
+            <input class="govuk-radios__input" id="how-contacted-conditional-7" name="bail" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-7">
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-7">
               Yes
             </label>
@@ -154,12 +154,12 @@ Apply for legal aid - Alternative funding
               <label class="govuk-label" for="contact-by-email">
               Give details of the bail conditions, including the date they're likely to end
               </label>
-              <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+              <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
             </div>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-8" name="bail" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-8" {{ checked("attempts-to-settle","no") }}>
+            <input class="govuk-radios__input" id="how-contacted-conditional-8" name="bail" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-8">
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-8">
               No
             </label>
@@ -170,7 +170,7 @@ Apply for legal aid - Alternative funding
               <label class="govuk-label" for="contact-by-email">
               Tell us why bail conditions have not been set
               </label>
-              <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+              <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
             </div>
           </div>
 
