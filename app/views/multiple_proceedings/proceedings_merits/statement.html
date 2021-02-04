@@ -32,14 +32,14 @@ Apply for legal aid - Statement of case
           <div class="govuk-form-group">
             <label class="govuk-label" for="more-detail">
 
-            <p class="govuk-body">You need to tell us:</p>
+            <p class="govuk-body">You need to provide details of:</p>
 
                 <ul class="govuk-list govuk-list--bullet">
-                  <li>details of the latest domestic abuse incident</li>
+                  <li>the latest domestic abuse incident</li>
                   <li>what has happened in the case so far</li>
-                  <li>about any other parties involved and their relationship to the applicant</li>
+                  <li>any other parties involved and their relationship to the applicant</li>
                   <li>why the current proceedings are necessary</li>
-                  <li>if anyone else might be able to fund this case</li>
+                  <li>anyone else who might be able to fund this case</li>
 </ul>
 
 
@@ -72,7 +72,7 @@ Apply for legal aid - Statement of case
 
 
             <div class="govuk-form-group">
-            <textarea class="govuk-textarea" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+            <textarea class="govuk-textarea" autocomplete="off" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
             </div>
 
           <button type="submit" class="govuk-button">

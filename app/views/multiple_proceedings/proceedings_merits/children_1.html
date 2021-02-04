@@ -43,7 +43,7 @@ Apply for legal aid - Client details
                           <label class="govuk-label" for="dateofbirth">
                           Full name
                           </label>
-                          <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+                          <input class="govuk-input govuk-!-width-three-quarters" autocomplete="off" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
                         </div>
 
                         <div class="govuk-form-group">
@@ -56,7 +56,7 @@ Apply for legal aid - Client details
                             <div class="govuk-date-input" id="dob">
                               <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                  <label class="govuk-label govuk-date-input__label" autocomplete="off" for="dob-day">
                                     Day
                                   </label>
                                   <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
@@ -64,7 +64,7 @@ Apply for legal aid - Client details
                               </div>
                               <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                  <label class="govuk-label govuk-date-input__label" autocomplete="off" for="dob-month">
                                     Month
                                   </label>
                                   <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
@@ -72,7 +72,7 @@ Apply for legal aid - Client details
                               </div>
                               <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                  <label class="govuk-label govuk-date-input__label" autocomplete="off" for="dob-year">
                                     Year
                                   </label>
                                   <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
