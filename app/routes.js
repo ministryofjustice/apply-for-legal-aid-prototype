@@ -1183,7 +1183,20 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
   }
 })
 
+// DWP check fail - use CCMS
+router.post('/jim/dwp_check/use_ccms', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
 
+  let over18 = req.session.data['evidence']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/dwp_check/use_ccms')
+  } else {
+    res.redirect('/jim/dwp_check/substantive_application')
+  }
+})
 
 // Add your routes here - above the module.exports line
 module.exports = router
