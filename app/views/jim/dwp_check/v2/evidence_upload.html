@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "benefits"
+  href: "evidence"
 }) }}
 {% endblock %}
 
@@ -25,30 +25,36 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="evidence" method="post" class="form">
+        <form action="substantive_application" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Provide evidence of receipt of passporting benefits
+                  Upload evidence that your client receives a passporting benefit
                 </h1>
               </legend>
 
-              <span class="govuk-hint">
-                    For example, a letter from the DWP.
-                </span>
 
-                <div class="govuk-form-group">
-                <label class="govuk-label" for="file-upload-1">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <span id="more-detail-hint" class="govuk-hint">
+              The maximum file size is 8MB. You can attach more than one file.</span>
+
+              <div class="govuk-form-group">
+              <!--  <label class="govuk-label" for="file-upload-1">
                   Upload a file
-                </label>
+                </label> -->
                 <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
               </div>
 
+
+
+
+
 </fieldset>
 </div>
-
 
   <button type="submit" class="govuk-button">
     Save and continue
