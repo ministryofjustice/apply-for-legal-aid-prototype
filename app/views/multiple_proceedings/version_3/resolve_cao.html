@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Confirmation page
+Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,45 +16,47 @@ Apply for legal aid - Confirmation page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "evidence"
-}) }}
-
+    text: "Back",
+      href: "children_cao"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">You need to use CCMS for this application<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
-    </header>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <ul class="how-to-renew" data-id="how-to-renew-uk">
-          <li>
+    <form action="prospects_cao" method="post" novalidate>
 
-            <p style="color: #fff;">
-            You'll be able to provide evidence that your client receives a passporting benefit in CCMS.</p>
-          </li>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
 
-        </ul>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Child arrangements order (residence)</span>
+            <h1 class="govuk-fieldset__heading">
+              What attempts have been made to settle the matter?
+            </h1>
+          </legend>
 
-        <div class="govuk-!-padding-bottom-4"></div>
-
-        <a href="#" role="button" class="govuk-button white-button right">
-          Apply in CCMS</a>
-
-          <p style="color: #fff;"><a href="#">Back to my applications</a></p>
-
-      <!--  <a href="#" role="button" class="govuk-button draft-button">
-          Save and come back later
-        </a> -->
-
-      </div>
-    </div>
+          <div id="event-name-hint" class="govuk-hint">
+    Tell us if correspondence or mediation has been tried, or if no attempts have been made.
   </div>
 
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" autocomplete="off" id="more-detail" name="statement" rows="8" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+      </div>
+    </div>
 
 {% endblock %}
 

@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "benefits"
+      href: "home_non_mol"
   }) }}
 {% endblock %}
 
@@ -25,34 +25,51 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="non_passported_route" method="post" class="form">
+        <form action="use_ccms_pso" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Do you have evidence that your client receives Universal Credit?
-                </h1>
+                <span class="govuk-caption-xl">Prohibited steps order</span>
+                <h2 class="govuk-heading-l">
+                  Is this proceeding within the scope of the Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO)?
+                </h2>
               </legend>
 
-           <span class="govuk-hint">
-                For example, a letter from the DWP.</span>
+            <!--   <span class="govuk-hint">
+                This includes cars, vans or motorcycles.
+              </span> -->
 
-              <div class="govuk-radios">
-
+              <div class="govuk-radios govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="evidence" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="laspo-yes">
                     Yes
                   </label>
                 </div>
+                <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="laspo-yes">
+                      Enter text
+                    </label>
+                    <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+                  </div>
+                </div> -->
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="evidence" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="property-3">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="laspo-no">
                     No
                   </label>
                 </div>
+              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="laspo-no">
+                      Enter text
+                    </label>
+                    <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+                  </div>
+                </div> -->
               </div>
 
 

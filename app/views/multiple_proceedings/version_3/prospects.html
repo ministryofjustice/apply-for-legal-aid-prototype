@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "benefits"
+      href: "check_answers_details"
   }) }}
 {% endblock %}
 
@@ -25,30 +25,33 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="non_passported_route" method="post" class="form">
+        <form action="prospects_less_than_50" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have evidence that your client receives Universal Credit?
+                  Is the chance of a successful outcome for all proceedings 50% or better?
                 </h1>
               </legend>
 
-           <span class="govuk-hint">
-                For example, a letter from the DWP.</span>
+              <div class="govuk-!-padding-top-4"></div>
+
+            <!--   <span class="govuk-hint">
+                This includes cars, vans or motorcycles.
+              </span> -->
 
               <div class="govuk-radios">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="evidence" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="evidence" type="radio" value="no">
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>

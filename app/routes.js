@@ -1199,7 +1199,7 @@ router.post('/jim/dwp_check/v1/use_ccms', function (req, res) {
 })
 
 // DWP check fail - use CCMS v2
-router.post('/jim/dwp_check/v2/use_ccms', function (req, res) {
+router.post('/jim/dwp_check/v2/non_passported_route', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1207,9 +1207,9 @@ router.post('/jim/dwp_check/v2/use_ccms', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/v2/use_ccms')
+    res.redirect('/jim/dwp_check/v2/non_passported_route')
   } else {
-    res.redirect('/jim/dwp_check/v2/evidence_upload')
+    res.redirect('/jim/dwp_check/v2/use_ccms')
   }
 })
 
