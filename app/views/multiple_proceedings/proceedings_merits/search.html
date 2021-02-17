@@ -74,18 +74,22 @@ $('#search').hideseek({
 
       <div class="govuk-grid-row">
         <div id="proceedings-list" class="govuk-grid-column-full ">
+
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-grid-column-two-thirds">
 
+
               {% for proceeding in proceedings -%}
+
               <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
                 <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
-
                 <ul class="proceeding-list" style="text">
+
                     <div class="govuk-radios govuk-radios">
   <div class="govuk-radios__item">
+
     <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+
     <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
 
   </div>
