@@ -1221,7 +1221,7 @@ router.post('/jim/dwp_check/v1/non_passported_route', function (req, res) {
   if (over18 === 'no') {
     res.redirect('/jim/dwp_check/v1/non_passported_route')
   } else {
-    res.redirect('/jim/dwp_check/v1/substantive_application')
+    res.redirect('/jim/dwp_check/v1/placeholder')
   }
 })
 
@@ -1237,6 +1237,21 @@ router.post('/jim/dwp_check/v2/non_passported_route', function (req, res) {
     res.redirect('/jim/dwp_check/v2/non_passported_route')
   } else {
     res.redirect('/jim/dwp_check/v2/use_ccms')
+  }
+})
+
+// DWP check fail - provider checks details
+router.post('/jim/dwp_check/v1/client_details', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['check']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/dwp_check/v1/client_details')
+  } else {
+    res.redirect('/jim/dwp_check/v1/benefits')
   }
 })
 

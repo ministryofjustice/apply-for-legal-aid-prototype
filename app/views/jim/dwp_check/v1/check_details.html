@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "evidence"
+      href: "non_passported"
   }) }}
 {% endblock %}
 
@@ -25,33 +25,56 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post" class="form">
+        <form action="client_details" method="post" class="form">
 
 
                 <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-         We need to check your client's financial eligibility for legal aid
+         Are the client details you entered correct?
           </h1>
         </legend>
 
-        <br>
-        <p class="govuk-body">This is because you said you do not have evidence that your client receives a passporting benefit.</p>
+      <!--  <p class="govuk-body">Your entered the following details:</p> -->
 
-            </div>
+        <p class="govuk-body">Name: <strong>John Doe</strong><br>
+        Date of birth: <strong>1 January 1980</strong><br>
+        National Insurance number: <strong>QQ 12 34 56 C</strong></p>
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="onlinebank-1" name="check" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+                    Yes, these details are correct
+                  </label></div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="onlinebank-2" name="check" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+            <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+              No, I need to change these details
+            </label> </div>
 
           </div>
+          </fieldset>
+        </div>
+
+    </div>
 
 
           </div>
-
 
           <button type="submit" class="govuk-button">
-          Continue
+            Save and continue
           </button>
 
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
+
+      </div>
+    </div>
 
 {% endblock %}
 
