@@ -1255,5 +1255,20 @@ router.post('/jim/dwp_check/v1/client_details', function (req, res) {
   }
 })
 
+// DF - multi proc
+router.post('/multiple_proceedings/df/v3/delegated_functions_select', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['df']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/df/v3/delegated_functions_select')
+  } else {
+    res.redirect('/multiple_proceedings/df/v3/delegated_functions_date')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
