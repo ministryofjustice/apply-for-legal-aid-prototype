@@ -1211,7 +1211,7 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
 })
 
 // DWP check fail - use CCMS v1
-router.post('/jim/dwp_check/v1/non_passported_route', function (req, res) {
+router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1219,14 +1219,14 @@ router.post('/jim/dwp_check/v1/non_passported_route', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/v1/non_passported_route')
+    res.redirect('/jim/dwp_check/radios/non_passported_route')
   } else {
-    res.redirect('/jim/dwp_check/v1/placeholder')
+    res.redirect('/jim/dwp_check/radios/placeholder')
   }
 })
 
 // DWP check fail - use CCMS v2
-router.post('/jim/dwp_check/v2/non_passported_route', function (req, res) {
+router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1234,14 +1234,14 @@ router.post('/jim/dwp_check/v2/non_passported_route', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/v2/non_passported_route')
+    res.redirect('/jim/dwp_check/radios/non_passported_route')
   } else {
-    res.redirect('/jim/dwp_check/v2/use_ccms')
+    res.redirect('/jim/dwp_check/radios/use_ccms')
   }
 })
 
-// DWP check fail - provider checks details
-router.post('/jim/dwp_check/v1/client_details', function (req, res) {
+// DWP check fail - radios provider checks details
+router.post('/jim/dwp_check/radios/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1249,9 +1249,39 @@ router.post('/jim/dwp_check/v1/client_details', function (req, res) {
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/v1/client_details')
+    res.redirect('/jim/dwp_check/radios/client_details')
   } else {
-    res.redirect('/jim/dwp_check/v1/benefits')
+    res.redirect('/jim/dwp_check/radios/benefits')
+  }
+})
+
+// DWP check fail - confirmation page provider checks details
+router.post('/jim/dwp_check/confirmation/client_details', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['check']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/dwp_check/confirmation/client_details')
+  } else {
+    res.redirect('/jim/dwp_check/confirmation/benefits')
+  }
+})
+
+// DWP check fail - confirmation page provider checks details
+router.post('/jim/dwp_check/cta/client_details', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['check']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/dwp_check/cta/client_details')
+  } else {
+    res.redirect('/jim/dwp_check/cta/benefits')
   }
 })
 

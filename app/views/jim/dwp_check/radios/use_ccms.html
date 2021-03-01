@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "check_answers"
+  href: "evidence"
 }) }}
 
 {% endblock %}
@@ -27,30 +27,29 @@ Apply for legal aid - Confirmation page
 
   <div class="flash-card">
     <header>
-      <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit</h1>
+      <h1 class="govuk-heading-l">You need to use CCMS for this application<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
     </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
 
-            <p style="color: #fff;">We need to check your client's financial eligibility for legal aid.</p>
-
+            <p style="color: #fff;">
+            You must have evidence that your client receives a passporting benefit to continue using this service.</p>
+          </li>
 
         </ul>
 
         <div class="govuk-!-padding-bottom-4"></div>
 
-        <a href="employed" role="button" class="govuk-button white-button right">
-          This is correct – continue</a>
-      <a href="#" role="button" class="govuk-button draft-button">
-          My client is passported
-        </a>
+        <a href="#" role="button" class="govuk-button white-button right">
+          Apply in CCMS</a>
 
+          <p style="color: #fff;"><a href="#">Back to my applications</a></p>
 
-      <!--  <div class="govuk-inset-text">
-        <p style="color: #fff;"><a href="check_details">My client receives a passporting benefit</a></p>
-        </div> -->
+      <!--  <a href="#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
 
       </div>
     </div>
