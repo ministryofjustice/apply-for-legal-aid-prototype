@@ -1300,8 +1300,38 @@ router.post('/multiple_proceedings/df/v3/delegated_functions_select', function (
   }
 })
 
-// DF same date
-router.post('/multiple_proceedings/df/v3/delegated_functions_date_all', function (req, res) {
+// DF all v1
+router.post('/multiple_proceedings/df/v1/delegated_functions_select', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['df']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/df/v1/delegated_functions_select')
+  } else {
+    res.redirect('/multiple_proceedings/df/v1/delegated_functions_date')
+  }
+})
+
+// DF all v1
+router.post('/multiple_proceedings/df/v2/delegated_functions_select', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['df']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/df/v2/delegated_functions_select')
+  } else {
+    res.redirect('/multiple_proceedings/df/v2/delegated_functions_date')
+  }
+})
+
+// DF same date v1
+router.post('/multiple_proceedings/df/v1/delegated_functions_date_all', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1309,9 +1339,39 @@ router.post('/multiple_proceedings/df/v3/delegated_functions_date_all', function
   let over18 = req.session.data['df-date']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v3/delegated_functions_date_all')
+    res.redirect('/multiple_proceedings/df/v1/delegated_functions_date_all')
   } else {
-    res.redirect('/multiple_proceedings/df/v3/what')
+    res.redirect('/multiple_proceedings/df/v1/what')
+  }
+})
+
+// DF same date v2
+router.post('/multiple_proceedings/df/v2/non_mol', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['df-date']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/df/v2/non_mol')
+  } else {
+    res.redirect('/multiple_proceedings/df/v2/what')
+  }
+})
+
+// DF same date v2
+router.post('/multiple_proceedings/df/v2/delegated_functions_date_all', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['df-date']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/df/v2/delegated_functions_date_all')
+  } else {
+    res.redirect('/multiple_proceedings/df/v2/what')
   }
 })
 
