@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "tasklist"
+  href: "evidence"
 }) }}
 {% endblock %}
 
@@ -25,30 +25,30 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post" class="form">
+        <form action="check_answers_evidence" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Upload gateway evidence
+                  Upload supporting evidence
                 </h1>
               </legend>
 
-              <p class="govuk-body">Use this page to provide evidence that supports your application, including:</p>
+              <p class="govuk-body">Use this page to provide evidence that supports your application like:</p>
               <ul class="govuk-list govuk-list--bullet">
-                <li>gateway evidence</li>
-              <!--  <li>your client's bank statements</li> -->
-                <li>evidence that your client receives a passporting benefit (if applicable)</li>
+                <li>gateway evidence for Section 8 proceedings</li>
+                <li>your client's bank statements</li>
+                <li>proof that your client receives a passporting benefit</li>
                 </ul>
 
 
                 <div class="govuk-form-group">
-                <label class="govuk-label" for="file-upload-1">
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m" for="file-upload-1">
                   Upload a file
                 </label>
                 <span id="more-detail-hint" class="govuk-hint">
-                The maximum file size is 8MB. You can attach more than one file.</span>
+                The maximum file size is 8MB. Upload files one at a time.</span>
                 <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
               </div>
 

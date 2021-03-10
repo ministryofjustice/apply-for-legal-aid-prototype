@@ -1375,5 +1375,20 @@ router.post('/multiple_proceedings/df/v2/delegated_functions_date_all', function
   }
 })
 
+// Gateway evidence required
+router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['gateway']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/gateway/v1/check_answers')
+  } else {
+    res.redirect('/multiple_proceedings/gateway/v1/evidence_upload')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
