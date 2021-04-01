@@ -1191,7 +1191,7 @@ router.post('/multiple_proceedings/proceedings_merits/use_ccms', function (req, 
   if (over18 === 'no') {
     res.redirect('/multiple_proceedings/proceedings_merits/use_ccms')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits/delegated_functions')
+    res.redirect('/multiple_proceedings/proceedings_merits/delegated_functions_select')
   }
 })
 
@@ -1209,6 +1209,8 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
     res.redirect('/multiple_proceedings/proceedings_merits_grouped/delegated_functions')
   }
 })
+
+
 
 // DWP check fail - use CCMS v1
 router.post('/jim/dwp_check/radios/employed', function (req, res) {
