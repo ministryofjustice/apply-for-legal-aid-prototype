@@ -1191,7 +1191,7 @@ router.post('/multiple_proceedings/proceedings_merits/use_ccms', function (req, 
   if (over18 === 'no') {
     res.redirect('/multiple_proceedings/proceedings_merits/use_ccms')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits/delegated_functions')
+    res.redirect('/multiple_proceedings/proceedings_merits/delegated_functions_select')
   }
 })
 
@@ -1210,8 +1210,10 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
   }
 })
 
+
+
 // DWP check fail - use CCMS v1
-router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
+router.post('/jim/dwp_check/radios/employed', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1219,7 +1221,7 @@ router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/radios/non_passported_route')
+    res.redirect('/jim/dwp_check/radios/employed')
   } else {
     res.redirect('/jim/dwp_check/radios/placeholder')
   }
@@ -1372,6 +1374,21 @@ router.post('/multiple_proceedings/df/v2/delegated_functions_date_all', function
     res.redirect('/multiple_proceedings/df/v2/delegated_functions_date_all')
   } else {
     res.redirect('/multiple_proceedings/df/v2/what')
+  }
+})
+
+// Gateway evidence required
+router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['gateway']
+
+  if (over18 === 'no') {
+    res.redirect('/multiple_proceedings/gateway/v1/check_answers')
+  } else {
+    res.redirect('/multiple_proceedings/gateway/v1/evidence_upload')
   }
 })
 

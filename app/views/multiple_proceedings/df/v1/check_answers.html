@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers
 
   {{ govukBackLink({
     text: "Back",
-      href: "what"
+      href: "delegated_functions_select"
   }) }}
 {% endblock %}
 
@@ -115,9 +115,15 @@ Apply for legal aid - Check your answers
     </dl>
 <br>
 
-    <h2 class="govuk-heading-m">
-      What does your client want legal aid for?
-    </h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Proceedings</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="proceedings">Change</a></p>
+  </div>
+</div>
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -128,9 +134,9 @@ Apply for legal aid - Check your answers
         Non-molestation order
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_2">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -141,9 +147,9 @@ Apply for legal aid - Check your answers
         Prohibited steps order
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_2">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -154,97 +160,66 @@ Apply for legal aid - Check your answers
         Child arrangements order (residence)
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_2">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
  </dl>
 <br>
 
-<h2 class="govuk-heading-m">
-  Delegated functions
-</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Delegated functions</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="delegated_functions_select">Change</a></p>
+  </div>
+</div>
+
 
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Have you used delegated functions for all proceedings?
+      Non-molestation order
     </dt>
     <dd class="govuk-summary-list__value">
-      Yes
+      3 Mar 2021
     </dd>
     <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions">
+  <!--  <a href="delegated_functions">
         Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
+      </a> -->
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Prohibited steps order
+    </dt>
+    <dd class="govuk-summary-list__value">
+      3 Mar 2021
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    <!-- <a href="delegated_functions_select">
+        Change <span class="govuk-visually-hidden">proceeding</span>
+      </a> -->
     </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Did you use delegated functions on the same date for all proceedings?
+      Child arrangements order (residence)
     </dt>
     <dd class="govuk-summary-list__value">
-      Yes, on 3 February 2021
+      Not used
     </dd>
     <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions_date">
+  <!--  <a href="delegated_functions_select">
         Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
+      </a> -->
     </dd>
   </div>
-  <!-- <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date you used delegated functions
-    </dt>
-    <dd class="govuk-summary-list__value">
-      5 December 2020
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions">
-        Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Which proceedings have you used delegated functions for?
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Non-molestation order<br>Prohibited steps order
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions_select">
-        Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date you used delegated functions for non-molestion order
-    </dt>
-    <dd class="govuk-summary-list__value">
-      3 February 2021
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions">
-        Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date you used delegated functions for prohibited steps order
-    </dt>
-    <dd class="govuk-summary-list__value">
-      22 November 2020
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    <a href="delegated_functions">
-        Change <span class="govuk-visually-hidden">proceeding</span>
-      </a>
-    </dd>
-  </div> -->
 </dl>
 <br>
 
