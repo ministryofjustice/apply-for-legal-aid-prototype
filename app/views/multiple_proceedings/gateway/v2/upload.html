@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "tasklist"
+  href: "gateway"
 }) }}
 {% endblock %}
 
@@ -25,72 +25,29 @@ Apply for legal aid - Statement of case
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Provide supporting documents</h1>
+        <h1 class="govuk-heading-xl">Upload gateway evidence</h1>
 
-        <form action="check_answers" method="get" novalidate>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-
-            <p class="govuk-body">Use this page to provide:</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>a statement of case</li>
-              <li>gateway evidence for Section 8 proceedings (if required)</li>
-              <li>evidence that your client receives a passporting benefit (if required)</li>
-              </ul>
-
-              <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What to include in a statement of case
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">You must tell us if:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-        <!--  <li>the latest domestic abuse incident</li>
-          <li>what has happened in the case so far</li> -->
-          <li>any other parties are involved and their relationship to the applicant</li>
-        <!--  <li>why the current proceedings are necessary</li> -->
-          <li>anyone else can help fund this case</li>
-  </ul>  </div>
-</details>
-
-
-
-            </label>
-          </div>
+        <form action="tasklist_2" method="get" novalidate>
 
 
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              You must provide all supporting documents now. You cannot do it after submitting your application.
+              You must upload all gateway evidence now. You cannot do it after submitting your application.
             </strong>
           </div>
 
-
-            <h2 class="govuk-heading-m">Upload a file
-            <span id="more-detail-hint" class="govuk-hint">
-            The maximum file size is 8MB. Upload one file at a time.</span>
-            </h2>
-            <div class="govuk-form-group">
-            <!--  <label class="govuk-label" for="file-upload-1">
-                Upload a file
-              </label> -->
-              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-            </div>
-<p class="govuk-body">or</p>
-
-            <h2 class="govuk-heading-m">Enter text</h2>
+          <div class="govuk-form-group">
+  <label class="govuk-label" for="file-upload-1">
+    Upload a file
+    <span id="more-detail-hint" class="govuk-hint">
+    The maximum file size is 8MB. Upload one file at a time.</span>
+  </label>
+  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+</div>
 
 
-            <div class="govuk-form-group">
-            <textarea class="govuk-textarea" autocomplete="off" id="more-detail" name="statement" rows="10" aria-describedby="more-detail-hint"></textarea>
-            </div>
 
           <button type="submit" class="govuk-button">
             Save and continue
