@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income_frequency"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="variation_reason" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Is your client's gross income variable?
+                </h1>
+              </legend>
+
+<!--              <p class="govuk-hint govuk-!-margin-top-4">-->
+<!--                Does your client's income tend to vary between payments?-->
+<!--              </p>-->
+
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="variation" name="variation" type="radio" value="yes" data-aria-controls="absence-conditional">
+                  <label class="govuk-label govuk-radios__label" for="variation">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="absence-conditional">
+                  <h4 class="govuk-heading-s">October</h4>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="income-1">
+                      Gross income
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="income-1" name="income-1" type="text">
+                  </div>
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="tax-1">-->
+<!--                      Tax-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="tax-1" name="tax-1" type="text">-->
+<!--                  </div>-->
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="ni-1">-->
+<!--                      NI-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="ni-1" name="ni-1" type="text">-->
+<!--                  </div>-->
+                  <h4 class="govuk-heading-s">November</h4>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="income-2">
+                      Gross income
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="income-2" name="income-2" type="text">
+                  </div>
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="tax-2">-->
+<!--                      Tax-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="tax-2" name="tax-2" type="text">-->
+<!--                  </div>-->
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="ni-2">-->
+<!--                      NI-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="ni-2" name="ni-2" type="text">-->
+<!--                  </div>-->
+                  <h4 class="govuk-heading-s">December</h4>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="income-3">
+                      Gross income
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="income-3" name="income-3" type="text">
+                  </div>
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="tax-3">-->
+<!--                      Tax-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="tax-3" name="tax-3" type="text">-->
+<!--                  </div>-->
+<!--                  <div class="govuk-form-group">-->
+<!--                    <label class="govuk-label" for="ni-3">-->
+<!--                      NI-->
+<!--                    </label>-->
+<!--                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>-->
+<!--                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="ni-3" name="ni-3" type="text">-->
+<!--                  </div>-->
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="income-variation-2" name="income-variation" type="radio">
+                  <label class="govuk-label govuk-radios__label" for="income-variation-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Upload payslips
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "other_employers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="income_summary" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                Provide payslips as evidence of your client's income earned through employment
+                </h1>
+              </legend>
+
+                <div class="govuk-!-padding-bottom-6"></div>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>If your client is paid monthly, they will need to provide payslips for the previous three months.</li>
+                  <li>If your client is paid weekly or fortnightly, you will need to provide the previous six payslips.</li>
+                </ul>
+
+              <h2 class="govuk-heading-m">You have uploaded 2 payslips</h2>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+<!--                  <form method="post" novalidate>-->
+                    <div class="govuk-grid-row">
+                    </div>
+
+                    <div class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">File One</dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="remove_1">
+                            Delete
+                          </a>
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dd class="govuk-summary-list__value">File Two</dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="remove_2">
+                              Delete
+                            </a>
+                          </dd>
+                        </div>
+                      </div>
+
+                    </div>
+<!--                  </form>-->
+                </div>
+              </div>
+
+
+                <label class="govuk-heading-m">Attach a file</label>
+              <!--  <span class="govuk-hint">
+                  You can upload a file or type (or copy and paste) text into the text box.
+                </span> -->
+                          <div class="govuk-form-group">
+                          <!--   <label class="govuk-label" for="file-upload-1">
+                              Upload a file
+                            </label> -->
+                            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                          </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
