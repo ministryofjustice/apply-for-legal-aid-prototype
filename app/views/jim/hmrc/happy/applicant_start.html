@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-padding-top-4"></div>
+
+        <h1 class="govuk-heading-xl"><!-- Share your financial information with the Legal Aid Agency --> Your legal aid application</h1>
+
+        <p class="govuk-body"><strong>Name:</strong> John Doe<br> <strong>Case reference:</strong> L-1DU-D0W<br><strong>Your solicitor:</strong> Hitchcock, Jones & King</p>
+
+          <p class="govuk-body">We need to check if you qualify financially for legal aid.</p>
+
+          <h2 class="govuk-heading-m">How we do this</h2>
+
+          <p class="govuk-body">We'll check your employment details with HM Revenue and Customs (HMRC).</p>
+
+         <p class="govuk-body">Any income you get from work will help us calculate if you can get legal aid or you need to pay towards the costs.</p>
+
+          <p class="govuk-body">We also need to check 3 months of your bank statements to see the kinds of payments you make and receive.</p>
+
+          <!--  <p class="govuk-body">This helps us work out if you can get legal aid or you need to pay towards the costs.</p> -->
+
+            <p class="govuk-body">We do this by securely collecting 3 months of your bank statements using a trusted third-party financial service provider called TrueLayer.</p>
+
+          <!--  <p class="govuk-body">You’ll also need to answer questions about the types of payments you make and receive.</p> -->
+
+        <h2 class="govuk-heading-m">What you'll need</h2>
+
+        <p class="govuk-body">
+          Your sign-in details for every bank account you use online banking for.</p>
+
+        <a class="govuk-button govuk-button--start govuk-!-margin-top-2" role="button" id="start" title="Start now" aria-label="Start now" href="income_summary">Start now <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 33 40" role="presentation" focusable="false"><path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path></svg></a>
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

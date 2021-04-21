@@ -39,7 +39,7 @@ Apply for legal aid - Income start page
       <div class="govuk-grid-column-two-thirds">
         <form action="types_of_income_provider" method="post" class="form">
 
-    <h1 class="govuk-heading-xl">Confirm your client receives none of the following income types</h1>
+    <h1 class="govuk-heading-xl">Your client's income</h1>
 
     <p class="gov-body">Your client said they do not receive:
     </p>
@@ -51,21 +51,21 @@ Apply for legal aid - Income start page
       <li>pension payments</li>
     </ul>
 
-<!-- <h1 class="govuk-heading-m">Is this correct?</h1> -->
+ <h1 class="govuk-heading-l">Is this correct?</h1>
 
               <div class="govuk-radios govuk-radios">
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
-                    This is correct
+                    Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
-                    My client receives one or more of these income types
+                    No, my client receives one or more of these
                   </label>
                 </div>
               </div>

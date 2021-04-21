@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers
 
   {{ govukBackLink({
     text: "Back",
-      href: "limitations"
+      href: "#"
   }) }}
 {% endblock %}
 
@@ -115,9 +115,15 @@ Apply for legal aid - Check your answers
     </dl>
 <br>
 
-    <h2 class="govuk-heading-m">
-      What does your client want legal aid for?
-    </h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Proceedings</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="proceedings">Change</a></p>
+  </div>
+</div>
 
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -128,9 +134,9 @@ Apply for legal aid - Check your answers
         Non-molestation order
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_3">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -141,9 +147,9 @@ Apply for legal aid - Check your answers
         Prohibited steps order
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_3">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -154,33 +160,12 @@ Apply for legal aid - Check your answers
         Child arrangements order (residence)
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="other_3">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
  </dl>
-<br>
-
-<h2 class="govuk-heading-m">
-  LASPO
-</h2>
-
-<dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Are all Section 8 proceedings within the scope of LASPO?
-  </dt>
-  <dd class="govuk-summary-list__value">
-    Yes
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="laspo">
-      Change <span class="govuk-visually-hidden">proceeding</span>
-    </a>
-  </dd>
-</div>
-</dl>
 <br>
 
 <div class="govuk-grid-row">
@@ -238,13 +223,18 @@ Apply for legal aid - Check your answers
 </dl>
 <br>
 
+
     <h2 class="govuk-heading-m">What happens next</h2>
 
       <p class="govuk-body">
-        We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
-      </p><br>
+        We'll check your client's:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>benefits status with the Department of Work and Pensions (DWP)</li>
+        <li>employment details with HM Revenue and Customs (HMRC)</li>
+      </ul>
+      <br>
 
-      <a class="govuk-button" href="home" role="button">
+      <a class="govuk-button" href="non_passported" role="button">
         Save and continue
       </a>
 
