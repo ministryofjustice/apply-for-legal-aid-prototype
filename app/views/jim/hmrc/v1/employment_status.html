@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Employment status
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "non_passported"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="employed" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What is your client's employment status?
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios govuk-!-margin-top-4">
+                <div class="govuk-radios__item">
+
+                  <input class="govuk-radios__input" id="employed-1" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("employed","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="employed-1">
+                    Employed
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+
+                  <input class="govuk-radios__input" id="employed-2" name="employed" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("self-employed","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="employed-2">
+                    Self-employed
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employed-3" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("armed-forces","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="employed-3">
+                    Member of the armed forces
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employed-4" name="employed" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("unemployed","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="employed-4">
+                    Not currently employed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+
+        <p class="govuk-body"><a href="use_ccms_employment">If 'self-employed' or 'armed forces' selected</a></p>
+       <p class="govuk-body"><a href="error">API fail</a></p>
+      <!--   <p class="govuk-body"><a href="open_banking_consent">not employed</a></p> -->
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
