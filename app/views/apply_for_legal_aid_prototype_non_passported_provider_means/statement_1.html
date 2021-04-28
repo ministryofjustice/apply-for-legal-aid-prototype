@@ -40,10 +40,7 @@ Apply for legal aid - Statement of case
                   <li>about any other parties involved and their relationship to the applicant</li>
                   <li>why the current proceedings are necessary</li>
                   <li>if anyone else might be able to fund this case</li>
-</ul>
-
-
-
+                </ul>
             </label>
           </div>
 
@@ -56,16 +53,34 @@ Apply for legal aid - Statement of case
             </strong>
           </div>
 
-            <h2 class="govuk-heading-m">Attach a file
-            <span id="more-detail-hint" class="govuk-hint">
-            The maximum file size is 8MB. You can attach more than one file.</span>
-            </h2>
-            <div class="govuk-form-group">
-            <!--  <label class="govuk-label" for="file-upload-1">
-                Upload a file
-              </label> -->
-              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-            </div>
+          <div class="moj-multi-file-upload">
+             <div class="moj-multi-file__uploaded-files moj-hidden">
+               <h2 class="govuk-heading-m">Files added</h2>
+               <div class="govuk-summary-list moj-multi-file-upload__list">
+
+               </div>
+             </div>
+
+             <div class="moj-multi-file-upload__upload">
+
+               <div class="govuk-form-group">
+                 <label class="govuk-label govuk-label--m" for="documents">
+                   Upload a file
+                   <span id="more-detail-hint" class="govuk-hint">
+                     The maximum file size is 8MB. Upload one file at a time.</span>
+                   </label>
+              
+
+                 <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+               </div>
+
+               <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                 Upload file
+               </button>
+
+             </div>
+           </div>
+
 <p class="govuk-body">or</p>
 
             <h2 class="govuk-heading-m">Enter text</h2>
