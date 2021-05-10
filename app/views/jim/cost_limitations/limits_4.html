@@ -72,7 +72,7 @@ $('#search').hideseek({
                 <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          Scope limitations
+          Scope limits
         </span>
       </summary>
       <div class="govuk-details__text">
@@ -89,7 +89,7 @@ $('#search').hideseek({
       </div>
     </details>
                 </th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search_3">
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                       Change<span class="govuk-visually-hidden">blank</span>
                     </a></td>
                 </tr>
@@ -107,7 +107,7 @@ $('#search').hideseek({
                       <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Scope limitations
+                Scope limits
               </span>
             </summary>
             <div class="govuk-details__text">
@@ -124,7 +124,7 @@ $('#search').hideseek({
             </div>
           </details>
                       </th>
-                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search_3">
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                             Change<span class="govuk-visually-hidden">blank</span>
                           </a></td>
                       </tr>
@@ -144,7 +144,7 @@ $('#search').hideseek({
               <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
-        Scope limitations
+        Scope limits
       </span>
     </summary>
     <div class="govuk-details__text">
@@ -161,7 +161,7 @@ $('#search').hideseek({
     </div>
     </details>
               </th>
-                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="search_3">
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                     Change<span class="govuk-visually-hidden">blank</span>
                   </a></td>
               </tr>
@@ -172,13 +172,57 @@ $('#search').hideseek({
       </div>
       </div>
 
-      <h2 class="govuk-heading-l">Cost limitations</h2>
+      <h2 class="govuk-heading-l">Cost limits</h2>
+
+      <h2 class="govuk-heading-m">Emergency certificate</h2>
 
 
-      <p class="govuk-body">Emergency certificate: <strong>£1,350</strong></p>
+
+      <p class="govuk-body">The default cost limit is <strong>£1,350</strong>.</p>
+
+      <h2 class="govuk-heading-s">Do you want to request a higher cost limit?</h2>
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="policies-value">
+              Enter an amount
+            </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="policies-value">
+    Enter a reason
+  </label>
+<textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
+" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+</div>
+</div>
 
 
-      <p class="govuk-body">Substantive certificate: <strong>£25,000</strong></p>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+            No
+          </label>
+        </div>
+        </div>
+        <br><br>
+
+
+      <h2 class="govuk-heading-m">Substantive certificate</h2>
+
+
+      <p class="govuk-body">The default cost limit is <strong>£25,000</strong>.</p>
 
       <div class="govuk-!-padding-bottom-4"></div>
 
