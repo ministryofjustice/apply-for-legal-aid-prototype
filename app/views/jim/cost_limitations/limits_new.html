@@ -29,31 +29,16 @@ $('#search').hideseek({
 
   {{ govukBackLink({
     text: "Back",
-      href: "costs"
+      href: "delegated_functions_select"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#name">Search and select a proceeding</a>
-      </li>
-    </ul>
-  </div>
-</div> -->
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          <!-- The costs and work you're covered for -->
-          What you're applying for
-
+          Scope and cost limits
             </h1>
           </div>
         </div>
@@ -61,40 +46,20 @@ $('#search').hideseek({
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-        <table class="govuk-table">
-            <h2 class="govuk-heading-l">Proceedings</h2>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__cell govuk-body" scope="row"><h2 class="govuk-heading-m">Non-molestation order</h2>
-              <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
-                <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li>
-                <br><br> -->
-                <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Scope limits
-        </span>
-      </summary>
-      <div class="govuk-details__text">
+            <h2 class="govuk-heading-l">Non-molestation order</h2>
+
+
         <h2 class="govuk-heading-m">Emergency certificate</h2>
         <p class="govuk-body">
           <strong>Form of service:</strong> Full representation<br><br>
-          <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+          <strong>Scope limit:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
         </p>
         <h2 class="govuk-heading-m">Substantive certificate</h2>
         <p class="govuk-body">
           <strong>Form of service:</strong> Full representation<br><br>
-          <strong>Work you can do:</strong>
+          <strong>Scope limit:</strong>
           As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).</p>
-      </div>
-    </details>
-                </th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                      Change<span class="govuk-visually-hidden">blank</span>
-                    </a></td>
-                </tr>
-              </tbody>
-            </table>
+
 
 
               <table class="govuk-table">
@@ -174,14 +139,52 @@ $('#search').hideseek({
 
       <h2 class="govuk-heading-l">Cost limits</h2>
 
-      <p class="govuk-body"><strong>Emergency certificate</strong>: £3,000</p>
+      <h2 class="govuk-heading-m">Emergency certificate</h2>
 
-      <p class="govuk-body"><strong>Substantive certificate</strong>: £25,000</p>
 
+
+      <p class="govuk-body">The default cost limit is <strong>£1,350</strong>.</p>
+
+      <h2 class="govuk-heading-s">Do you want to request a higher cost limit?</h2>
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="policies-value">
+              Enter an amount
+            </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+</div>
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+            No
+          </label>
+        </div>
+        </div>
+        <br><br>
+
+
+      <h2 class="govuk-heading-m">Substantive certificate</h2>
+
+
+      <p class="govuk-body">The default cost limit is <strong>£25,000</strong>.</p>
 
       <div class="govuk-!-padding-bottom-4"></div>
 
-<a class="govuk-button" href="check_answers" role="button">
+<a class="govuk-button" href="check_answers_details" role="button">
   Save and continue
 </a>
 
