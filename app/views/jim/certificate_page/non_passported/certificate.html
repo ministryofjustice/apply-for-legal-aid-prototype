@@ -45,11 +45,13 @@ th:first-child {
       <br>LAA reference: <strong>L-23A-56D</strong>
       <br>CCMS reference: <strong>123456789012</strong>
     </p>
-    <a href="application_print_placeholder_02" role="button" class="govuk-button">
+    <a href="print_view" role="button" class="govuk-button">
       Print application
     </a>
 
-
+    <h2 class="govuk-heading-l">
+      Basic case details
+    </h2>
 
     <h2 class="govuk-heading-m">
     Client details
@@ -71,7 +73,7 @@ th:first-child {
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">National Insurance number</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">QQ 12 34 56 C</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">JA293483A</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Email address</td>
@@ -79,7 +81,7 @@ th:first-child {
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Correspondence address</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">1 Main Street<br>London<br>SE1 2AB</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1 Main Street<br>London<br>SE1 5XO</td>
       </tr>
       </tbody>
       </table>
@@ -87,7 +89,7 @@ th:first-child {
       <div class="govuk-!-padding-bottom-6"></div>
 
      <h2 class="govuk-heading-m">
-       What does your client want legal aid for?
+       Proceedings
      </h2>
 
      <table class="govuk-table" style="margin-bottom: 15px;">
@@ -107,22 +109,22 @@ th:first-child {
        </tbody>
        </table>
 
-       <div class="govuk-!-padding-bottom-6"></div>
-
-      <h2 class="govuk-heading-m">
-        LASPO
-      </h2>
-
-      <table class="govuk-table" style="margin-bottom: 15px;">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Are all Section 8 proceedings within the scope of LASPO?</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-        </tr>
-          </tbody>
-        </table>
-
     <div class="govuk-!-padding-bottom-6"></div>
+
+    <h2 class="govuk-heading-m">
+      LASPO
+    </h2>
+
+    <table class="govuk-table" style="margin-bottom: 15px;">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Section 8 proceedings are in scope</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+      </tr>
+      </tbody>
+      </table>
+
+   <div class="govuk-!-padding-bottom-6"></div>
 
     <h2 class="govuk-heading-m">
       Delegated functions
@@ -154,7 +156,7 @@ th:first-child {
       <table class="govuk-table" style="margin-bottom: 15px;">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Do you want to request a higher cost limit?</td>
+          <td class="govuk-table__cell">Request a higher cost limit</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
@@ -188,7 +190,7 @@ th:first-child {
           <td class="govuk-table__cell">Financial help from friends or family</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">£150</td>
         </tr>
-        <tr class="govuk-table__row">
+      <!--  <tr class="govuk-table__row">
           <td class="govuk-table__cell">Maintenance payments</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
         </tr>
@@ -203,7 +205,7 @@ th:first-child {
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Student finance</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
@@ -220,14 +222,14 @@ th:first-child {
           <td class="govuk-table__cell" scope="row">Childcare payments</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">£368</td>
         </tr>
-        <tr class="govuk-table__row">
+      <!--  <tr class="govuk-table__row">
           <td class="govuk-table__cell" scope="row">Maintenance payments</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" scope="row">Payments towards legal aid in a criminal case</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
@@ -247,7 +249,7 @@ th:first-child {
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-body" scope="row">Property owned</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">Yes, owned outright</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes, with a mortgage or loan</td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-body" scope="row">Estimated value</th>
@@ -258,12 +260,12 @@ th:first-child {
           <td class="govuk-table__cell govuk-table__cell--numeric">£127,345</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Owned with anyone else</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">Yes, a friend, family member or other person</td>
+          <th class="govuk-table__cell govuk-body" scope="row">Owned with</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">A partner or ex-partner</td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-body" scope="row">Percentage owned</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">40%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">50%</td>
         </tr>
       </tbody>
     </table>
@@ -449,7 +451,7 @@ th:first-child {
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Your client cannot sell or borrow against their assets </th>
+            <th class="govuk-table__cell govuk-body" scope="row">Your client can sell or borrow against their assets </th>
             <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
           </tr>
         </tbody>
@@ -457,189 +459,185 @@ th:first-child {
 
       <div class="govuk-!-padding-bottom-6"></div>
 
-<h2 class="govuk-heading-l">
-  General case details
-</h2>
+      <h2 class="govuk-heading-l">
+        Merits
+      </h2>
 
-<h2 class="govuk-heading-m">Latest domestic abuse incident details</h2>
+      <h2 class="govuk-heading-m">Latest domestic abuse incident details</h2>
 
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">When did your client contact you about the latest incident?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">10 Dec 2019</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">When did the incident occur?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2019</td>
-    </tr>
-  </tbody>
-</table>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Date your client contacted you</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">10 Dec 2019</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Date the incident occurred</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2019</td>
+          </tr>
+        </tbody>
+      </table>
 
-<div class="govuk-!-padding-bottom-6"></div>
+      <div class="govuk-!-padding-bottom-6"></div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Opponent details</h2>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <!-- <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p> -->
-  </div>
-</div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Opponent details</h2>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <!-- <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p> -->
+        </div>
+      </div>
 
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">What is the opponent's name?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Rex Smith</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Does the opponent have the mental capacity to understand the terms of a court order?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Has a warning letter been sent to the opponent?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric" >Yes</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Have the police been notified?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Have bail conditions been set?</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-  </tbody>
-</table>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Name</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Rex Smith</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Can understand the terms of a court order</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">A warning letter been sent</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric" >Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Police have been notified</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Bail conditions been set</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+          </tr>
+        </tbody>
+      </table>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Children involved in the application</h2>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <!-- <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p> -->
-  </div>
-</div>
+      <div class="govuk-!-padding-bottom-6"></div>
 
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Name<br>Date of birth</br></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Sarah Doe<br>1 Jan 2013</br></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Name<br>Date of birth</br></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Joe<br>20 Mar 2015</br></td>
-    </tr>
-  </tbody>
-</table>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Children involved</h2>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <!-- <p><a class="govuk-link" style="float:right;" href="injunction_details">Change</a></p> -->
+        </div>
+      </div>
 
-<div class="govuk-!-padding-bottom-6"></div>
-
-<h2 class="govuk-heading-m">
-  Statement of case
-</h2>
-
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Provide a statement of case</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">statement_of_case_1.pdf (100kb)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="govuk-!-padding-bottom-6"></div>
-
-<h2 class="govuk-heading-l">
-  Proceedings
-</h2>
-
-
-<h2 class="govuk-heading-m">
-  Non-molestation order
-</h2>
-
-<table class="govuk-table" style="margin-bottom: 15px;">
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Is the chance of a successful outcome 50% or better?</td>
-    <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-  </tr>
-  </tbody>
-  </table>
-
-  <div class="govuk-!-padding-bottom-6"></div>
-
-  <h2 class="govuk-heading-m">
-    Prohibited steps order
-  </h2>
-
-  <table class="govuk-table" style="margin-bottom: 15px;">
-  <tbody class="govuk-table__body">
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Which children are covered under this proceeding?</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Sarah Doe<br>Joe Doe</br></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">What attempts have been made to settle the matter?</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Is the chance of a successful outcome 50% or better?</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-    </tbody>
-    </table>
-
-    <div class="govuk-!-padding-bottom-6"></div>
-
-    <h2 class="govuk-heading-m">
-      Child arrangements order (residence)
-    </h2>
-
-    <table class="govuk-table" style="margin-bottom: 15px;">
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Which children are covered under this proceeding?</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">Sarah Doe<br>Joe Doe</br></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">What attempts have been made to settle the matter?</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Is the chance of a successful outcome 50% or better?</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-      </tr>
-      </tbody>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Child 1</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Sarah</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Child 2</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Joe</td>
+          </tr>
+        </tbody>
       </table>
 
       <div class="govuk-!-padding-bottom-6"></div>
 
       <h2 class="govuk-heading-m">
-        Supporting evidence
+        Statement of case
       </h2>
 
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Do you need to provide supporting evidence?</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Supporting evidence</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">supporting_evidence.pdf (200kb)</a><br><a href="#">supporting_evidence.pdf (200kb)</a></br><a href="#">supporting_evidence.pdf (200kb)</a></br><a href="#">supporting_evidence.pdf (200kb)</a></br><a href="#">supporting_evidence.pdf (200kb)</a></br></td>
+            <td><a href="#">statement_of_case_1.pdf (100kb)</a></td>
           </tr>
         </tbody>
       </table>
 
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <h2 class="govuk-heading-m">
+        Non-molestation order
+      </h2>
+
+      <table class="govuk-table" style="margin-bottom: 15px;">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Chance of a successful outcome</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">50% or better</td>
+        </tr>
+        </tbody>
+        </table>
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <h2 class="govuk-heading-m">
+          Prohibited steps order
+        </h2>
+
+        <table class="govuk-table" style="margin-bottom: 15px;">
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Children covered</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Sarah</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Attempts to settle</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Chance of a successful outcome</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">50% or better</td>
+          </tr>
+          </tbody>
+          </table>
+
+          <div class="govuk-!-padding-bottom-6"></div>
+
+          <h2 class="govuk-heading-m">
+            Child arrangements order (residence)
+          </h2>
+
+          <table class="govuk-table" style="margin-bottom: 15px;">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Children covered</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Sarah</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Attempts to settle</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Chance of a successful outcome</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">50% or better</td>
+            </tr>
+            </tbody>
+            </table>
+
+            <div class="govuk-!-padding-bottom-6"></div>
+
+            <h2 class="govuk-heading-m">
+              Supporting evidence
+            </h2>
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  <td><a href="#">supporting_evidence.pdf (200kb)</a></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+
+     <div class="govuk-!-padding-bottom-6"></div>
+
+
 <div class="govuk-grid-column-two-thirds">
-  <a href="application_print_placeholder_02" role="button" class="govuk-button">
+  <a href="print_view" role="button" class="govuk-button">
     Print application
   </a>
-  <a href="dashboard_2" role="button" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; margin-left:10px;">
+  <a href="#" role="button" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; margin-left:10px;">
     Back to your applications
   </a>
 </div>
