@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Dependants
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "dependant_add_1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<h2 class="govuk-heading-xl">You have added 1 dependant</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/prototype-admin/clear-data" method="post" class="form">
+    <div class="govuk-grid-row"></div>
+
+    <div class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">{{ data['dependant_name_1'] }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="remove_2">
+            Remove<span class="govuk-visually-hidden">{{ data['dependant_name_1'] }}</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">{{ data['dependant_name_2'] }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="remove_2">
+            Remove<span class="govuk-visually-hidden">{{ data['dependant_name_2'] }}</span>
+          </a>
+        </dd>
+      </div>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Does your client have any other dependants?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+          <div class="govuk-radios__item">
+
+            <input class="govuk-radios__input" id="has-other-dependants-true" name="has-other-dependants" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="has-other-dependants-true">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="has-other-dependants-false" name="has-other-dependants" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="has-other-dependants-false">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <button type="submit" class="govuk-button">
+      Save and continue
+    </button>
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
