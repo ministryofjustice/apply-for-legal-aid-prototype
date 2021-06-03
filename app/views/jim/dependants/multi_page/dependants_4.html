@@ -17,7 +17,7 @@ Apply for legal aid - Dependants
 
   {{ govukBackLink({
     text: "Back",
-      href: "dependant_add_3"
+      href: "dependant_child_18_plus"
   }) }}
 {% endblock %}
 
@@ -31,6 +31,14 @@ Apply for legal aid - Dependants
 
 
 <div class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+  <dd class="govuk-summary-list__value">Bobby Doe</dd>
+  <dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="#">
+  Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+  </dd>
+  </div>
 <div class="govuk-summary-list__row">
 <dd class="govuk-summary-list__value">Sue Doe</dd>
 <dd class="govuk-summary-list__actions">
@@ -41,14 +49,6 @@ Remove<span class="govuk-visually-hidden"> name</span>
 </div>
 <div class="govuk-summary-list__row">
 <dd class="govuk-summary-list__value">Jeff Doe</dd>
-<dd class="govuk-summary-list__actions">
-<a class="govuk-link" href="#">
-Remove<span class="govuk-visually-hidden"> name</span>
-</a>
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dd class="govuk-summary-list__value">Bobby Doe</dd>
 <dd class="govuk-summary-list__actions">
 <a class="govuk-link" href="#">
 Remove<span class="govuk-visually-hidden"> name</span>
@@ -96,7 +96,7 @@ Remove<span class="govuk-visually-hidden"> name</span>
                     </fieldset>
                   </div>
 
-                  <a type="submit" href="cya" class="govuk-button">
+                  <a type="submit" href="dependant_adult" class="govuk-button">
                     Save and continue
                   </a>
 

@@ -17,12 +17,12 @@ Apply for legal aid - Dependants
 
   {{ govukBackLink({
     text: "Back",
-      href: "dependant_child_16_18"
+      href: "dependant_adult"
   }) }}
 {% endblock %}
 
 {% block content %}
-<h2 class="govuk-heading-xl">You have added 2 dependants</h2>
+<h2 class="govuk-heading-xl">You have added 4 dependants</h2>
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 <form method="post" novalidate>
@@ -31,31 +31,39 @@ Apply for legal aid - Dependants
 
 
 <div class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-<dd class="govuk-summary-list__value">Bobby Doe</dd>
-<dd class="govuk-summary-list__actions">
-</dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Remove<span class="govuk-visually-hidden"> name</span>
-      </a>
-    </dd>
+  <div class="govuk-summary-list__row">
+  <dd class="govuk-summary-list__value">Bobby Doe</dd>
+  <dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="#">
+  Remove<span class="govuk-visually-hidden"> name</span>
+  </a>
+  </dd>
   </div>
-
-
-      <dd class="govuk-summary-list__value">
-        Sue Doe
-      </dd>
-
-      <dd class="govuk-summary-list__actions">
-        </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Remove<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Sue Doe</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="#">
+Remove<span class="govuk-visually-hidden"> name</span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Jeff Doe</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="#">
+Remove<span class="govuk-visually-hidden"> name</span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dd class="govuk-summary-list__value">Russell Doe</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="#">
+Remove<span class="govuk-visually-hidden"> name</span>
+</a>
+</dd>
+</div>
+</div>
 
 <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -96,7 +104,7 @@ Apply for legal aid - Dependants
                     </fieldset>
                   </div>
 
-                  <a type="submit" href="dependant_child_18_plus" class="govuk-button">
+                  <a type="submit" href="cya" class="govuk-button">
                     Save and continue
                   </a>
 
