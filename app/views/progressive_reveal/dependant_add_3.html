@@ -1,0 +1,304 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "has_other_dependants_2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Enter dependant details</h1>
+
+      <form action="has_other_dependants_3" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+                <label class="govuk-fieldset__legend govuk-fieldset__legend--m" for="dependant_name_4">
+                Name
+                </label>
+              <input class="govuk-input govuk-!-width-three-quarters" id="dependant_name_4" name="dependant_name_4" type="text" value="{{ data['dependant_name_4'] }}">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
+              </legend>
+              <span id="dob-hint" class="govuk-hint">
+                For example, 31 3 1980.
+              </span>
+              <div class="govuk-date-input" id="dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-!-padding-bottom-2"></div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="relationship-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  What is their relationship to your client?
+                </h1>
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-child" name="relationship" type="radio" aria-describedby="relationship-child-hint">
+                  <label class="govuk-label govuk-radios__label govuk-label--s" for="relationship-child">
+                    Child dependant
+                  </label>
+                  <span id="relationship-child-hint" class="govuk-hint govuk-radios__hint">
+                    For example, your client's child, grandchild, niece or nephew.
+                  </span>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-adult" name="relationship" type="radio" value="govuk-verify" aria-describedby="relationship-adult-hint">
+                  <label class="govuk-label govuk-radios__label govuk-label--s" for="relationship-adult">
+                    Adult dependant
+                  </label>
+                  <span id="relationship-adult-hint" class="govuk-hint govuk-radios__hint">
+                    For example, a parent, grandparent, aunt or uncle.
+                  </span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        <div class="govuk-form-group" style="display: none;" id="education-question">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Are they in full-time education or training?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="education-yes" name="education" type="radio">
+                <label class="govuk-label govuk-radios__label" for="education-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="education-no" name="education" type="radio">
+                <label class="govuk-label govuk-radios__label" for="education-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group" style="display: none;" id="income-question">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Do they receive any income?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="income-yes" name="income" type="radio" value="email" data-aria-controls="income-conditional">
+                <label class="govuk-label govuk-radios__label" for="income-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="income-conditional">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="income-conditional">
+                    Enter the amount they get each month
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="income-value" name="income-value">
+                </div>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="income-no" name="income" type="radio">
+                <label class="govuk-label govuk-radios__label" for="income-no">
+                  No
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group" style="display: none;" id="assets-question">
+          <fieldset class="govuk-fieldset" aria-describedby="assets-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Do they have assets worth more than £8,000?
+              </h1>
+            </legend>
+            <span id="assets-hint" class="govuk-hint">
+              For example, property, cash savings or shares.
+            </span>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="assets-yes" type="radio" data-aria-controls="conditional-assets">
+                <label class="govuk-label govuk-radios__label" for="assets-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-assets">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="assets-value">
+                    Enter the total asset value
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="assets-value" name="assets-value">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="assets-no" name="assets-no" type="radio">
+                <label class="govuk-label govuk-radios__label" for="assets-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+
+      </div>
+    </div>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    let educationQuestion = document.querySelector("#education-question")
+    let incomeQuestion = document.querySelector("#income-question")
+    let assetsQuestion = document.querySelector("#assets-question")
+
+    function hide(elem) {
+      elem.style.display = 'none'
+    }
+
+    function show(elem) {
+      elem.style.display = 'block'
+    }
+
+    document.querySelector("#relationship-child").addEventListener('click', (e) => {
+      let currentDate = new Date();
+      let currentYear = currentDate.getFullYear()
+      let dobYear = document.querySelector("#dob-year")
+      let dobYearVal = parseInt(dobYear.value)
+      let age = currentYear - dobYearVal
+      if (age >= 18) {
+        // need to ask about income and education
+        hide(assetsQuestion)
+        show(educationQuestion)
+        show(incomeQuestion)
+      } else if (age >= 16) {
+        // only need to ask about income
+        hide(educationQuestion)
+        hide(assetsQuestion)
+        show(incomeQuestion)
+      } else {
+        // if 15 and under don't need to ask anything
+        hide(educationQuestion)
+        hide(incomeQuestion)
+        hide(assetsQuestion)
+      }
+    })
+
+    // need to ask about income and assets
+    document.querySelector("#relationship-adult").addEventListener('click', (e) => {
+      hide(educationQuestion)
+      show(incomeQuestion)
+      show(assetsQuestion)
+    })
+  })
+
+</script>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

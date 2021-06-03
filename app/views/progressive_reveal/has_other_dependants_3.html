@@ -17,15 +17,15 @@ Apply for legal aid - Dependants
 
   {{ govukBackLink({
     text: "Back",
-      href: "dependant_add_2"
+      href: "dependant_add_3"
   }) }}
 {% endblock %}
 
 {% block content %}
-<h2 class="govuk-heading-xl">You have added 3 dependants</h2>
+<h2 class="govuk-heading-xl">You have added 4 dependants</h2>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="dependant_add_3" method="post" class="form">
+    <form action="/prototype-admin/clear-data" method="post" class="form">
     <div class="govuk-grid-row"></div>
 
     <div class="govuk-summary-list">
@@ -50,6 +50,14 @@ Apply for legal aid - Dependants
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="remove_2">
             Remove<span class="govuk-visually-hidden">{{ data['dependant_name_3'] }}</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">{{ data['dependant_name_4'] }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="remove_2">
+            Remove<span class="govuk-visually-hidden">{{ data['dependant_name_4'] }}</span>
           </a>
         </dd>
       </div>
