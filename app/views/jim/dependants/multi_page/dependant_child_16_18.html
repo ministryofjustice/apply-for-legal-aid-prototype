@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "dependant_add"
+      href: "dependant_add_2"
   }) }}
 {% endblock %}
 
@@ -25,42 +25,15 @@ Apply for legal aid - Client details
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Dependant 1: Sue Doe</h1>
+      <h1 class="govuk-heading-xl">Dependant 2: Sue Doe</h1>
 
-      <form action="dependants_2" method="post" novalidate>
-
-
-
-
-  <div class="govuk-form-group">
-<fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-<h1 class="govuk-fieldset__heading">
-  Is Sue Doe in full-time education or training?
-</h1>
-</legend>
-<div class="govuk-radios">
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-    Yes
-  </label>
-</div>
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-    No
-  </label>
-</div>
-</div>
-</fieldset>
-</div>
+      <form action="dependants_3" method="post" novalidate>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h1 class="govuk-fieldset__heading">
-        Does Sue Doe receive any income?
+        Do they receive any income?
       </h1>
     </legend>
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
