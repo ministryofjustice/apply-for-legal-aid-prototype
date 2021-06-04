@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "employment_status"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="flash-card">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <header>
+          <h1 class="govuk-heading-l">We've successfully retrieved your client's employment details from HMRC</h1>
+        </header>
+        <form action="check_details" method="post" class="form">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
+            <p style="color: #fff;">We'll use this to help calculate your client's financial eligibility.</p>
+
+
+
+          <!--  <div class="govuk-radios govuk-radios">
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="passported" type="radio" value="yes">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name">
+         Yes
+       </label>
+     </div>
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="changed-name-2" name="passported" type="radio" value="no">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name-2">
+         No, my client receives a passporting benefit
+       </label>
+     </div>
+   </div> -->
+        </ul>
+
+        <div class="govuk-!-padding-bottom-4"></div>
+        <a href="income_summary" role="button" class="govuk-button white-button right">
+          Continue</a>
+
+
+
+          </form>
+      </div>
+    </div>
+  </div>
+
+<br></br>
+
+              <table class="govuk-table">
+                  <h2 class="govuk-heading-m">We’ve calculated this info as...</h2>
+
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                           <div class="govuk-summary-list__row">
+                             <dt class="govuk-summary-list__key">
+                               Gross monthly
+                             </dt>
+                             <dd class="govuk-summary-list__value">
+                               £1,000
+                             </dd>
+                             <dd class="govuk-summary-list__actions">
+                               <a class="govuk-link" href="costs">
+                                 Edit<span class="govuk-visually-hidden"> name</span>
+                               </a>
+                             </dd>
+                           </div>
+
+                         </dl>
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
