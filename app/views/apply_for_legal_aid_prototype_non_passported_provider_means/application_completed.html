@@ -49,10 +49,6 @@ th:first-child {
       Print application
     </a>
 
-    <h2 class="govuk-heading-l">
-      Basic case details
-    </h2>
-
     <h2 class="govuk-heading-m">
     Client details
     </h2>
@@ -236,6 +232,66 @@ th:first-child {
     <div class="govuk-!-padding-bottom-6"></div>
 
     <h2 class="govuk-heading-l">
+      Dependants
+    </h2>
+
+    <table class="govuk-table" style="margin-bottom: 15px;">
+      <h2 class="govuk-heading-m">Dependant 1</h2>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Name</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Bobby Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Date of birth</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1 January 2005</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Relationship to your client</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Child relative</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">In full-time education or training</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Receives income</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    <table class="govuk-table" style="margin-bottom: 15px;">
+      <h2 class="govuk-heading-m">Dependant 2</h2>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Name</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Sue Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Date of birth</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1 January 1988</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Relationship to your client</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Adult relative</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Receives income</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Has assets worth more than £8,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    <h2 class="govuk-heading-l">
       Your client's capital
     </h2>
 
@@ -248,7 +304,7 @@ th:first-child {
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Property owned</th>
+          <th class="govuk-table__cell govuk-body" scope="row">Owns the home they live in</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes, with a mortgage or loan</td>
         </tr>
         <tr class="govuk-table__row">
@@ -256,15 +312,15 @@ th:first-child {
           <td class="govuk-table__cell govuk-table__cell--numeric">£145,000</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Outstanding mortgage amount</th>
+          <th class="govuk-table__cell govuk-body" scope="row">Outstanding mortgage</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">£127,345</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Owned with</th>
+          <th class="govuk-table__cell govuk-body" scope="row">Owns with anyone else</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">A partner or ex-partner</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Percentage owned</th>
+          <th class="govuk-table__cell govuk-body" scope="row">Percentage share owned</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">50%</td>
         </tr>
       </tbody>
@@ -281,7 +337,7 @@ th:first-child {
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Vehicle owned</th>
+          <th class="govuk-table__cell govuk-body" scope="row">Owns a vehicle</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
@@ -293,7 +349,7 @@ th:first-child {
           <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row">Date of purchase</th>
+          <th class="govuk-table__cell govuk-body" scope="row">More than 3 years old</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">19 April 2008</td>
         </tr>
         <tr class="govuk-table__row">
@@ -304,7 +360,24 @@ th:first-child {
 
       <div class="govuk-!-padding-bottom-6"></div>
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Bank accounts</h2>
+        </div>
+      </div>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Has savings accounts they cannot access online</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Amount in offline savings accounts</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+          </tr>
+        </table>
 
+        <div class="govuk-!-padding-bottom-6"></div>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -356,7 +429,7 @@ th:first-child {
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Items worth more than £500</th>
+            <th class="govuk-table__cell govuk-body" scope="row">Items worth £500 or more</th>
             <td class="govuk-table__cell govuk-table__cell--numeric">£656</td>
           </tr>
           <tr class="govuk-table__row">
@@ -368,7 +441,7 @@ th:first-child {
             <td class="govuk-table__cell govuk-table__cell--numeric">£745</td>
           </tr>
           <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home: percentage owned</th>
+            <th class="govuk-table__cell govuk-body" scope="row">Second property or holiday home: % owned</th>
             <td class="govuk-table__cell govuk-table__cell--numeric">12%</td>
           </tr>
           <tr class="govuk-table__row">
@@ -404,7 +477,9 @@ th:first-child {
         </div>
       </div>
 
-      <table class="govuk-table">
+<p>None</p>
+
+  <!--  <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th class="govuk-table__cell govuk-body" scope="row">England Infected Blood Support Scheme</th>
@@ -443,13 +518,13 @@ th:first-child {
             <td class="govuk-table__cell govuk-table__cell--numeric">£1</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
 
       <div class="govuk-!-padding-bottom-6"></div>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m">Restrictions</h2>
+          <h2 class="govuk-heading-m">Restrictions on your client's assets</h2>
         </div>
         <div class="govuk-grid-column-one-third">
           <!-- <p><a class="govuk-link" style="float:right;" href="capital_restrictions_select">Change</a></p> -->
@@ -459,7 +534,7 @@ th:first-child {
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th class="govuk-table__cell govuk-body" scope="row">Your client can sell or borrow against their assets </th>
+            <th class="govuk-table__cell govuk-body" scope="row">Prohibited from selling or borrowing against assets  </th>
             <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
           </tr>
         </tbody>
