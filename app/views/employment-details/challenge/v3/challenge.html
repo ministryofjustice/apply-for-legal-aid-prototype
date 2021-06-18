@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Does your client use online banking
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "income"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="#" method="post" class="form">
+
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+Income from work</h1>
+    </legend>
+    <br>
+
+  <!--  <p class="gov-body">HMRC told us your client has a gross monthly income of £3,200.</p> -->
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+What is your client's gross monthly income from work?
+</legend>
+
+    <div class="govuk-form-group">
+
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+Give details of your client's employment
+</legend>
+
+<!-- <span class="govuk-hint">Give details of any cash in hand pay, zero-hours contracts, or if your client has recently started or ended work.</span>  -->
+ <span class="govuk-hint">Tell us if your client gets cash in hand pay, has any zero-hours contracts, or if they've recently started or ended employment.</span>
+
+
+
+<div class="govuk-form-group">
+<textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
+" aria-describedby="more-detail-hint"></textarea>
+</div>
+      </div>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      Do you have evidence to support this?
+      </legend>
+
+      <span class="govuk-hint">For example, a payslip. You’ll need to upload this before you submit your application.</span>
+
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            No
+          </label></div>
+
+<br></br>
+      <a href="income_other_update" role="button" class="govuk-button">
+        Save and continue
+      </a>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
