@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "income"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Review your client's other income</h1>
+
+    <h2 class="govuk-heading-l">Income from work (provided by HMRC)</h2>
+
+  <!--  <span class="govuk-hint">HMRC shared this information with us.</span>
+
+   <div class="govuk-inset-text">
+  HMRC shared this information with us.
+</div> -->
+
+     <p class="gov-body"><strong>£3,000</strong> per month before tax.</p>
+
+
+    <h2 class="govuk-heading-m">Is this correct?</h2>
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="policies-value">
+            How much does your client earn each month before tax?
+          </label>
+    <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+    </div>
+    </div>
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="policies-value">
+    Provide details of your client's employment
+    </label>
+    <span class="govuk-hint">For example, tell us if your client gets cash in hand pay, has zero-hours contracts, or has recently started or ended employment.
+    <!--  <br><br>You will need to upload evidence of this later on. -->
+    </span>
+
+
+    <textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
+    " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+    </div>
+
+    <div class="govuk-inset-text">
+    You'll need to upload evidence of your client's employment before you submit your application.
+    </div>
+
+  <!--  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I have evidence of my client's employment
+        </label>
+        <span class="govuk-hint" style="padding-left: 15px">You can upload this evidence later on.</span>
+      </div>
+    </div>
+  </fieldset>
+</div -->
+
+    </div>
+      </div>
+      <br><br>
+
+
+
+    <h3 class="govuk-heading-l">Student finance</h3>
+
+    <!-- <span class="govuk-hint">You do not need to categorise this transaction if it appears on your client's bank statements.</span>
+
+    <p class="gov-body">Your client told us they'll get <strong>£9,800</strong> in student finance this academic year.</p> -->
+
+    <p class="gov-body"><strong>£9,800</strong> this academic year.</p>
+
+
+     <h2 class="govuk-heading-l">Cash payments
+    </h2>
+    <span class="govuk-hint">This means physical cash like bank notes and coins.</span>
+
+    <h2 class="govuk-heading-m">Financial help from family or friends
+   </h2>
+     <table class="govuk-table" style="margin-bottom:0px;">
+       <thead class="govuk-table__head">
+         <tr class="govuk-table__row">
+           <th class="govuk-table__header" scope="col">Month</th>
+           <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+         </tr>
+       </thead>
+     <tbody class="govuk-table__body">
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">Dec 2020 to Jan 2021</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+       </tr>
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">Nov to Dec 2020</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+       </tr>
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell">Oct to Nov 2020</td>
+         <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
+       </tr>
+       <tr class="govuk-table__row">
+         <td class="govuk-table__cell"><strong>Total</strong></td>
+         <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
+
+       </tr>
+       </tbody>
+       </table>
+
+       <div class="govuk-!-padding-bottom-6"></div>
+
+
+        <a href="results" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

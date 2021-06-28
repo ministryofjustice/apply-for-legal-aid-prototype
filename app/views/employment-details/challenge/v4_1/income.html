@@ -40,20 +40,15 @@ Apply for legal aid - Income start page
   <!--  <p class="gov-body">
     <a href="outgoings">Go to outgoings</a>
     </p> -->
-    <h1 class="govuk-heading-xl">Your client's income</h1>
+    <h1 class="govuk-heading-xl">Sort your client's bank transactions into categories</h1>
 
-<h1 class="govuk-heading-l">Add bank transactions to each income category</h1>
-
- <p class="gov-body">Your client told us they receive the following types of income.</p>
+ <p class="gov-body">Your client told us the types of income they receive.</p>
 
 <p class="gov-body">
-You need to:
-</p>
+You need to view your client's bank statements and assign transactions to the relevant category.</p>
 
-<ul class="govuk-list govuk-list--bullet">
-<li>view your client's bank statements</li>
-<li>add transactions to the relevant category</li>
-</ul>
+<div class="govuk-inset-text">
+Some transactions may have been automatically assigned.</div>
 
  <ol class="app-task-list">
  <!--  <li>
@@ -74,13 +69,8 @@ You need to:
        <span class="app-task-list__section-number">1. </span> Benefits <!--<button class="govuk-button govuk-button--secondary" style="margin-left: 335px;" data-module="govuk-button">
 Remove category
 </button> -->
-       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-             Add transactions that have not been automatically identified here.
-         </span>
 
-     <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-           We identified these transactions from your client's bank statements.
-       </span> -->
+
      </h2>
      <ul class="app-task-list__items">
     <!--   <table class="govuk-table" style="margin-bottom:0px;">
@@ -154,9 +144,7 @@ Remove category
    <li>
      <h2 class="app-task-list__section">
        <span class="app-task-list__section-number"></span> Disregarded benefits
-     <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-           Add transactions that have not been automatically identified here.
-       </span>
+
      </h2>
      <ul class="app-task-list__items">
        <li class="app-task-list__item">
@@ -225,115 +213,14 @@ Remove category
     <li>
       <h2 class="app-task-list__section">
         <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income_provider" aria-describedby="eligibility-completed">
-          Add another type of income
+          Add another income type
         </a>
       </h2>
    </li>
-
  </ol>
+ <br>
 
- <hr>
-
- <div class="govuk-!-padding-bottom-4"></div>
-
- <h2 class="govuk-heading-l">Other income</h2>
-
-<!-- <p class="gov-body">
-  The following will be included in your client's financial eligibility calculation.
-</p> -->
-
-<h2 class="govuk-heading-m">Income from work</h2>
-
- <p class="gov-body">HMRC told us your client's gross monthly income from work is <strong>£1,000</strong>.</p>
-
-
-<h2 class="govuk-heading-s">Is this correct?</h2>
-
-<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
-    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-      Yes
-    </label>
-  </div>
-
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-      No
-    </label>
-  </div>
-  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="policies-value">
-        Enter your client's gross monthly income from work
-      </label>
-<div class="govuk-input__wrapper">
-<div class="govuk-input__prefix" aria-hidden="true">£</div>
-<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
-</div>
-</div>
-<div class="govuk-form-group">
-<label class="govuk-label" for="policies-value">
-Provide details of your client's employment
-</label>
-<span class="govuk-hint">For example, tell us if your client gets cash in hand pay, has zero-hours contracts, or has recently started or ended employment.</span>
-
-
-<textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
-" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
-</div>
-</div>
-  </div>
-  <br><br>
-
-
-
-<h3 class="govuk-heading-m">Student finance</h3>
-
-<!-- <span class="govuk-hint">You do not need to categorise this transaction if it appears on your client's bank statements.</span>
-
-<p class="gov-body">Your client told us they'll get <strong>£9,800</strong> in student finance this academic year.</p> -->
-
-<p class="gov-body"><strong>£9,800</strong> this academic year.</p>
-
-
- <h2 class="govuk-heading-m">Physical cash: help from family or friends
-</h2>
-<span class="govuk-hint">For eaxmple, bank notes and coins.</span>
- <table class="govuk-table" style="margin-bottom:0px;">
-   <thead class="govuk-table__head">
-     <tr class="govuk-table__row">
-       <th class="govuk-table__header" scope="col">Month</th>
-       <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-     </tr>
-   </thead>
- <tbody class="govuk-table__body">
-   <tr class="govuk-table__row">
-     <td class="govuk-table__cell">December 2020 to January 2021</td>
-     <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
-   </tr>
-   <tr class="govuk-table__row">
-     <td class="govuk-table__cell">November to December 2020</td>
-     <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
-   </tr>
-   <tr class="govuk-table__row">
-     <td class="govuk-table__cell">October to November 2020</td>
-     <td class="govuk-table__cell govuk-table__cell--numeric">£60.00</td>
-   </tr>
-   <tr class="govuk-table__row">
-     <td class="govuk-table__cell"><strong>Total</strong></td>
-     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360.00</strong></td>
-
-   </tr>
-   </tbody>
-   </table>
-
-   <div class="govuk-!-padding-bottom-6"></div>
-
-
-
-        <a href="results" role="button" class="govuk-button">
+        <a href="other_income" role="button" class="govuk-button">
           Save and continue
         </a>
 
