@@ -61,34 +61,47 @@ Apply for legal aid - Income start page
   " aria-describedby="more-detail-hint"></textarea>
   </div>
 
-  <!-- <h2 class="govuk-heading-m">Do you have evidence?</h2>
+ <h2 class="govuk-heading-m">Do you have evidence of your client's employment?</h2>
 
-  <span class="govuk-hint">For example, payslips. You'll need to upload this later on.</span>
+  <span class="govuk-hint">For example, payslips.</span>
 
-  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+  <div class="govuk-radios govuk-radios" data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
-      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+      <input class="govuk-radios__input" id="how-contacted-conditional-5" name="police" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-5" {{ checked("attempts-to-settle","yes") }}>
+      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
         Yes
       </label>
     </div>
 
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contact-by-email">
+          A caseworker will request this evidence after you've submitted your application.
+        </label>
+      </div>
+    </div>
+
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+      <input class="govuk-radios__input" id="how-contacted-conditional-6" name="police" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-6" {{ checked("attempts-to-settle","no") }}>
+      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-6">
         No
       </label>
     </div>
 
-  </div> -->
-  <div class="govuk-inset-text">
-  You'll need to upload evidence of your client's employment before you submit your application.
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-6">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contact-by-email">
+          Tell us why you do not have evidence of your client's employment
+        </label>
+        <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint">{{ data['no-more-detail'] }}</textarea>
+      </div>
+    </div>
   </div>
 
     </div>
     </div>
 
-
+<div class="govuk-!-padding-bottom-3"></div>
 
         <a href="cya" role="button" class="govuk-button">
           Save and continue
