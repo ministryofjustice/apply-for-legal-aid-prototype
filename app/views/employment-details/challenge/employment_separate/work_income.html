@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "income"
+  href: "continue"
 }) }}
 
 {% endblock %}
@@ -40,20 +40,47 @@ Apply for legal aid - Income start page
   <!--  <p class="gov-body">
     <a href="outgoings">Go to outgoings</a>
     </p> -->
-    <h1 class="govuk-heading-xl">Review your client's other income</h1>
-
-    <h2 class="govuk-heading-l">Income from work (provided by HMRC)</h2>
-
-  <!--  <span class="govuk-hint">HMRC shared this information with us.</span>
-
-   <div class="govuk-inset-text">
-  HMRC shared this information with us.
-</div> -->
-
-     <p class="gov-body"><strong>£3,000</strong> per month before tax.</p>
+    <h1 class="govuk-heading-xl">Employment income for John Doe</h1>
 
 
-    <h2 class="govuk-heading-m">Is this correct?</h2>
+  <!-- <h2 class="govuk-heading-l">Employment income for John Doe</h2> -->
+
+   <span class="govuk-hint">HMRC shared this information with us.</span>
+
+   <table class="govuk-table">
+   <tbody>
+     <tr class="govuk-table__row">
+       <th scope="row" class="govuk-table__header">Monthly income
+       <!--  <span class="govuk-hint">
+         You can upload your receipt as a scanned copy or photo of the original
+         </span> -->
+       </th>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£x</td>
+     </tr>
+
+     <tr class="govuk-table__row">
+       <th scope="row" class="govuk-table__header">Benefits in kind</th>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£x</td>
+     </tr>
+
+     <tr class="govuk-table__row">
+       <th scope="row" class="govuk-table__header">National Insurance</th>
+       <td class="govuk-table__cell govuk-table__cell--numeric">− £x</td>
+     </tr>
+
+     <tr class="govuk-table__row">
+       <th scope="row" class="govuk-table__header">Tax</th>
+       <td class="govuk-table__cell govuk-table__cell--numeric">− £x</td>
+     </tr>
+
+     <tr class="govuk-table__row" style="border-top: 2px solid #000">
+       <th scope="row" class="govuk-table__header">Total</th>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£x</td>
+     </tr>
+   </tbody>
+   </table>
+
+    <h2 class="govuk-heading-m">Is this information accurate?</h2>
 
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
@@ -72,13 +99,40 @@ Apply for legal aid - Income start page
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
         <div class="govuk-form-group">
           <label class="govuk-label" for="policies-value">
-            How much does your client earn each month before tax?
+            Monthly income
           </label>
     <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
     <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
     </div>
     </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="policies-value">
+        Benefits in kind
+      </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="policies-value">
+    National Insurance
+  </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="policies-value">
+    Tax
+  </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
     <div class="govuk-form-group">
     <label class="govuk-label" for="policies-value">
     Provide details of your client's employment
@@ -92,15 +146,14 @@ Apply for legal aid - Income start page
     " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
     </div>
 
-    <div class="govuk-inset-text">
-    You'll need to upload evidence of your client's employment before you submit your application.
-    </div>
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    A caseworker will request evidence of your client's employment after you've submitted your application.
+  </strong>
+</div>
 
-    <p class="gov-body">OR</p>
-
-    <div class="govuk-inset-text">
-    You'll need to upload evidence of your client's employment in CCMS after you've submitted your application.
-    </div>
 
   <!--  <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -118,56 +171,11 @@ Apply for legal aid - Income start page
 
     </div>
       </div>
-      <br><br>
-
-
-
-    <h3 class="govuk-heading-l">Student finance</h3>
-
-    <!-- <span class="govuk-hint">You do not need to categorise this transaction if it appears on your client's bank statements.</span>
-
-    <p class="gov-body">Your client told us they'll get <strong>£9,800</strong> in student finance this academic year.</p> -->
-
-    <p class="gov-body"><strong>£9,800</strong> this academic year.</p>
-
-
-     <h2 class="govuk-heading-l">Cash: financial help from friends or family
-    </h2>
-    <span class="govuk-hint">This means physical cash like bank notes and coins.</span>
-
-
-     <table class="govuk-table" style="margin-bottom:0px;">
-       <thead class="govuk-table__head">
-         <tr class="govuk-table__row">
-           <th class="govuk-table__header" scope="col">Month</th>
-           <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-         </tr>
-       </thead>
-     <tbody class="govuk-table__body">
-       <tr class="govuk-table__row">
-         <td class="govuk-table__cell">Dec 2020 to Jan 2021</td>
-         <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
-       </tr>
-       <tr class="govuk-table__row">
-         <td class="govuk-table__cell">Nov to Dec 2020</td>
-         <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
-       </tr>
-       <tr class="govuk-table__row">
-         <td class="govuk-table__cell">Oct to Nov 2020</td>
-         <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
-       </tr>
-       <tr class="govuk-table__row">
-         <td class="govuk-table__cell"><strong>Total</strong></td>
-         <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
-
-       </tr>
-       </tbody>
-       </table>
 
        <div class="govuk-!-padding-bottom-6"></div>
 
 
-        <a href="outgoings" role="button" class="govuk-button">
+        <a href="income" role="button" class="govuk-button">
           Save and continue
         </a>
 

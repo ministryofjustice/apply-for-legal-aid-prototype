@@ -1,0 +1,333 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "work_income"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Sort your client's non-work income into categories</h1>
+
+    <p class="gov-body">
+    Your client told us they receive the following types of non-work income.</p>
+
+<p class="gov-body">
+View your client's bank statements and add transactions to each category.</p>
+
+<!-- <div class="govuk-inset-text">
+Some transactions may have been automatically added.</div> -->
+
+ <ol class="app-task-list">
+
+   <li>
+     <h2 class="app-task-list__section">
+
+       <span class="app-task-list__section-number">1. </span> Benefits
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+             Some transactions may have been automatically added.
+         </span>
+
+     </h2>
+     <ul class="app-task-list__items">
+    <!--   <table class="govuk-table" style="margin-bottom:0px;">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th class="govuk-table__header" scope="col">Date</th>
+             <th class="govuk-table__header" scope="col">Description</th>
+             <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+             <th class="govuk-table__header" scope="col"></th>
+           </tr>
+         </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">29 Jan 2019</td>
+           <td class="govuk-table__cell">Work and child TC</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">23 Jan 2019</td>
+           <td class="govuk-table__cell">Work and child TC</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">17 Jan 2019</td>
+           <td class="govuk-table__cell">Work and child TC</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">11 Jan 2019</td>
+           <td class="govuk-table__cell">Work and child TC</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">7 Jan 2019</td>
+           <td class="govuk-table__cell">Child benefit</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">3 Jan 2018</td>
+           <td class="govuk-table__cell">Work and child TC</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+             Remove
+           </a></td>
+         </tr>
+         </tbody>
+         </table> -->
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
+           View statements and add transactions
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number"></span> Disregarded benefits
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+             Some transactions may have been automatically added.
+         </span>
+
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="disregarded_benefits" aria-describedby="eligibility-completed">
+           View statements and add transactions
+         </a>
+       </li>
+     </ul>
+   </li>
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">2. </span> Financial help from friends or family
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
+           View statements and add transactions <!-- Select payments from your bank statement -->
+         </a>
+       </li>
+
+       <div class="govuk-!-padding-bottom-6"></div>
+
+       <h2 class="govuk-heading-s">Received in cash (bank notes and coins)
+      </h2>
+      <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            Your client entered these amounts.
+        </span>
+
+       <table class="govuk-table" style="margin-bottom:0px;">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th class="govuk-table__header" scope="col">Month</th>
+             <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+           </tr>
+         </thead>
+       <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">Dec 2020 to Jan 2021</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">Nov to Dec 2020</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">Oct to Nov 2020</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
+         </tr>
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell"><strong>Total</strong></td>
+           <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
+
+         </tr>
+         </tbody>
+         </table>
+     </ul>
+     </li>
+
+   <li>
+   <h2 class="app-task-list__section">
+     <span class="app-task-list__section-number">3. </span> Maintenance payments
+   </h2>
+   <ul class="app-task-list__items">
+     <li class="app-task-list__item">
+       <a class="govuk-body" href="incoming/maintenance" aria-describedby="eligibility-completed">
+         View statements and add transactions
+       </a>
+     </li>
+   </ul>
+ </li>
+ <li>
+ <h2 class="app-task-list__section">
+   <span class="app-task-list__section-number">4. </span> Income from a property or lodger
+ </h2>
+ <ul class="app-task-list__items">
+   <li class="app-task-list__item">
+     <a class="govuk-body" href="incoming/property" aria-describedby="eligibility-completed">
+       View statements and add transactions
+     </a>
+   </li>
+   <div class="govuk-!-padding-bottom-6"></div>
+
+   <h2 class="govuk-heading-s">Received in cash (bank notes and coins)
+  </h2>
+  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+        Your client entered these amounts.
+    </span>
+
+   <table class="govuk-table" style="margin-bottom:0px;">
+     <thead class="govuk-table__head">
+       <tr class="govuk-table__row">
+         <th class="govuk-table__header" scope="col">Month</th>
+         <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+       </tr>
+     </thead>
+   <tbody class="govuk-table__body">
+     <tr class="govuk-table__row">
+       <td class="govuk-table__cell">Dec 2020 to Jan 2021</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+     </tr>
+     <tr class="govuk-table__row">
+       <td class="govuk-table__cell">Nov to Dec 2020</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+     </tr>
+     <tr class="govuk-table__row">
+       <td class="govuk-table__cell">Oct to Nov 2020</td>
+       <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+     </tr>
+     <tr class="govuk-table__row">
+       <td class="govuk-table__cell"><strong>Total</strong></td>
+       <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£900</strong></td>
+
+     </tr>
+     </tbody>
+     </table>
+ </ul>
+</li>
+<li>
+<h2 class="app-task-list__section">
+<span class="app-task-list__section-number">5. </span> Pension
+</h2>
+<ul class="app-task-list__items">
+<li class="app-task-list__item">
+ <a class="govuk-body" href="incoming/pension" aria-describedby="eligibility-completed">
+   View statements and add transactions
+ </a>
+</li>
+</ul>
+</li>
+<li>
+
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
+          Add another income type
+        </a>
+      </h2>
+   </li>
+ </ol>
+ <br>
+ <h1 class="govuk-heading-l">Student finance</h1>
+
+ <p class="gov-body">
+ Your client also told us they got <strong>£7,500</strong> in student finance this calendar year.</p>
+ <br>
+
+        <a href="cya" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
