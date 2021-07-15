@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Start your client's financial assessment</h1>
+
+        <p class="govuk-body">
+        <strong>Client:</strong> John Doe<br>
+        <strong>Case reference:</strong> L-1DU-D0W
+        </p>
+
+        <p class="govuk-body">Your client has:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>shared 3 months of bank statements with us</li>
+        <li>told us about their income and outgoings</li>
+        </ul>
+
+        <p class="govuk-body">You need to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>check your client's employment income (provided by HMRC)</li>
+      <!--  <li>check the details HMRC shared with us about your client's employment income</li> -->
+        <li>view your client's bank statements and sort their transactions</li>
+        </ul>
+
+        <p class="govuk-body">You'll also need to tell us about your client's:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>dependants (if they have any)</li>
+        <li>capital such as property, savings and investments</li>
+        </ul>
+
+      <!--  <p class="govuk-body">Your answers will help us check if your client qualifies financially for legal aid.</p> -->
+
+<br>
+
+<a class="govuk-button" href="work_income" role="button">
+  Continue
+</a>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
