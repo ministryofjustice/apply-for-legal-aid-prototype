@@ -4,18 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Other capital
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,38 +16,44 @@ Apply for legal aid - Income start page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "employment_status"
-}) }}
-
+    text: "Back",
+      href: "consent"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Sorry, there is a problem with the service</h1>
+      <div class="govuk-grid-column-two-thirds">
+        <form action="email_address" method="post" class="form">
 
-        <p>We could not connect to HMRC to check your client's employment details.</p>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What your client needs to do
+                </h1>
+              </legend>
 
-        <p>We need this to calculate your client's financial eligibility.</p>
+              <p class="govuk-body">Your client needs to access 'Apply for legal aid' using a link we'll send them in an email.</p>
 
- <p>You can:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>try again later</li>
-    <li><a href="#">use CCMS for this application</a></li>
-</ul>
+              <p class="govuk-body">They'll then be redirected to their bank’s website or app where they can:</p>
 
-<p><a href="dashboard">Back to your applications</a</p>
+              <ul class="govuk-list govuk-list--bullet">
+                   <li>sign in to their online banking</li>
+                  <li>give TrueLayer permission to collect 3 months of bank statements on behalf of the LAA</li>
+                   </ul>
+
+              <p class="govuk-body">Once they've done this, your client will be returned to 'Apply for legal aid' so they can answer questions about their income and outgoings.</p>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
 
 
-
-      <!--  <span id="citizenship-conditional-hint" class="govuk-body">
-          <a href="#">Request another link</a>
-        </span> -->
-
+        </form>
+      </div>
     </div>
-</div>
+
+
 
 {% endblock %}
 

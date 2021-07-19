@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
+  Apply for legal aid - Citizen start page
 {% endblock %}
 
 {% block header %}
@@ -27,38 +27,41 @@ Apply for legal aid - Income start page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "employment_status"
-}) }}
+    text: "Back",
+      href: "dashboard"
+  }) }}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Sorry, there is a problem with the service</h1>
 
-        <p>We could not connect to HMRC to check your client's employment details.</p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Declaration</h1>
 
-        <p>We need this to calculate your client's financial eligibility.</p>
+      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
+<p class="govuk-body">By continuing, you agree that:</p>
 
- <p>You can:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>try again later</li>
-    <li><a href="#">use CCMS for this application</a></li>
+<ul class="govuk-list govuk-list--bullet">
+<li>your client has instructed you to represent them</li>
+<li>you'll go through all parts of the application with your client</li>
+<li>you've told your client they may need to repay the legal costs if they keep or gain property or money at the end of their case (the ‘statutory charge’)</li>
+<li>you'll provide complete and correct information</li>
 </ul>
 
-<p><a href="dashboard">Back to your applications</a</p>
+
+<br>
+  <a href="client_details" role="button" class="govuk-button right">
+    Agree and continue
+  </a>
 
 
 
-      <!--  <span id="citizenship-conditional-hint" class="govuk-body">
-          <a href="#">Request another link</a>
-        </span> -->
+
+      </div>
 
     </div>
-</div>
 
 {% endblock %}
 
@@ -68,14 +71,6 @@ Apply for legal aid - Income start page
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -83,7 +78,11 @@ Apply for legal aid - Income start page
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {

@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "check"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="online_banking_declaration" method="post" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">Enter your client's email address</h1>
+</legend>
+
+         <div class="govuk-form-group">
+           <label class="govuk-label" for="email">
+           Email address
+           </label>
+            <span id="email-hint" class="govuk-hint">
+              <!-- We will use this to send your client information about the case.
+If your client needs to complete a financial assessment we'll send an email to this address
+We'll send your client a secure link if they need to complete a financial assessment
+We'll use this to send your client instructions on how to complete a financial assessment if required
+We'll send your client a secure link to an online financial assessment if they need to complete one
+We'll use this to send your client a secure link if they need to complete a financial assessment -->
+We'll use this to send your client a link to the service.
+            </span>
+            <input class="govuk-input govuk-!-width-three-quarters" id="email-address" name="email-address" type="email" aria-describedby="email-hint" value="{{ data['email-address'] }}">
+          </div>
+
+          <div class="govuk-!-padding-bottom-2"></div>
+
+        <!--  <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="email">
+              Client representation
+            </label>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Client represented by person acting in a professional capacity
+                </label>
+              </div>
+          </div> -->
+
+
+        <!--  <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I don't have my client's details
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+               <p class="govuk-body">Look for the National Insurance number on payslips or official letters about tax, pensions or benefits</p>
+              <p class="govuk-body">Your client can also ask for a reminder through the post.</p>
+            </div>
+          </details> -->
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+          <!-- <p class="govuk-body">
+            <a href="dashboard">Save and come back later</a></p> -->
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

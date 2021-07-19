@@ -4,18 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Outgoings start page
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +17,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "employment_status"
+  href: "benefits_selected"
 }) }}
 
 {% endblock %}
@@ -36,28 +25,32 @@ Apply for legal aid - Income start page
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Sorry, there is a problem with the service</h1>
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <h1 class="govuk-heading-xl">Give details about regular payments you make</h1> -->
+    <h1 class="govuk-heading-xl">Details about your regular payments</h1>
 
-        <p>We could not connect to HMRC to check your client's employment details.</p>
+    <form action="types_of_outgoing3" method="post" novalidate>
 
-        <p>We need this to calculate your client's financial eligibility.</p>
+    <!--  <p class="govuk-body">We will now ask you about all the money coming out of your accounts.</p>
 
- <p>You can:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>try again later</li>
-    <li><a href="#">use CCMS for this application</a></li>
-</ul>
+      <h2 class="govuk-heading-m">What you need to do</h2> -->
 
-<p><a href="dashboard">Back to your applications</a</p>
+      <p class="govuk-body">We'll ask you to:</p>
 
+            <ul class="govuk-list govuk-list--bullet">
+              <li>select the types of payments you make, for example rent or Council Tax</li>
+              <li>sort the payments into categories</li>
+            <!--  <li>Ensure you have shown all the outgoings.</li> -->
+            </ul>
 
+            <div class="govuk-!-padding-bottom-4"></div>
 
-      <!--  <span id="citizenship-conditional-hint" class="govuk-body">
-          <a href="#">Request another link</a>
-        </span> -->
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
 
-    </div>
+    </form>
+  </div>
 </div>
 
 {% endblock %}
@@ -68,14 +61,6 @@ Apply for legal aid - Income start page
           items: [
             {
               href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
               text: "Contact"
             },
             {
@@ -83,7 +68,11 @@ Apply for legal aid - Income start page
               text: "Feedback"
             },
             {
-              href: "#",
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
               text: "Terms and conditions"
             },
             {

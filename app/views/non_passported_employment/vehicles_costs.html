@@ -4,18 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Costs
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,37 +16,49 @@ Apply for legal aid - Income start page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "employment_status"
-}) }}
-
+    text: "Back",
+      href: "vehicles"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Sorry, there is a problem with the service</h1>
+      <div class="govuk-grid-column-two-thirds">
+        <form action="vehicles_loan" method="post" class="form">
 
-        <p>We could not connect to HMRC to check your client's employment details.</p>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is the estimated value of the vehicle?
+      </h1>
+    </legend>
+    <span class="govuk-hint">
+      You can use car valuation websites to find this out.
 
-        <p>We need this to calculate your client's financial eligibility.</p>
-
- <p>You can:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>try again later</li>
-    <li><a href="#">use CCMS for this application</a></li>
-</ul>
-
-<p><a href="dashboard">Back to your applications</a</p>
+    </span>
 
 
+        <!--  <span id="postcode-hint" class="govuk-hint">
+            Include profit costs, disbursements, expert costs and counsel fees.
+          </span> -->
 
-      <!--  <span id="citizenship-conditional-hint" class="govuk-body">
-          <a href="#">Request another link</a>
-        </span> -->
 
-    </div>
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+   <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </form>
+  </div>
 </div>
 
 {% endblock %}
