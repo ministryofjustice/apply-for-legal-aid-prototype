@@ -28,7 +28,7 @@ Apply for legal aid - Outgoings summary
 
   {{ govukBackLink({
   text: "Back",
-  href: "dependants"
+  href: "other_income"
 }) }}
 
 {% endblock %}
@@ -40,22 +40,15 @@ Apply for legal aid - Outgoings summary
   <!--  <p class="gov-body">
     <a href="income">Go to income</a>
     </p> -->
-    <h1 class="govuk-heading-xl">Sort your client's regular payments into categories
-</h1>
+    <h1 class="govuk-heading-xl">Sort your client's outgoings into categories</h1>
 
-<p class="gov-body">Your client told us they make the types of payments listed on this page.</p>
+<!-- Sort your client's bank transactions: outgoings -->
 
-    <p class="gov-body">
-     You need to:
-   </p>
+<p class="gov-body">
+Your client told us they make the following regular payments.</p>
 
-   <ul class="govuk-list govuk-list--bullet">
-   <li>view your client's bank statements</li>
-   <li>add transactions to the relevant category</li>
-   </ul>
-
-   <h1 class="govuk-heading-l">Add transactions to each category</h1>
-
+<p class="gov-body">
+View your client's bank statements and add transactions to each category.</p>
 
       <ol class="app-task-list">
         <li>
@@ -82,7 +75,7 @@ Apply for legal aid - Outgoings summary
             </li>
           </ul>
         </li>
-      <!--  <li>
+        <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">3. </span> Maintenance payments
           </h2>
@@ -105,7 +98,7 @@ Apply for legal aid - Outgoings summary
               </a>
             </li>
           </ul>
-        </li> -->
+        </li>
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_outgoing_provider" aria-describedby="eligibility-completed">
@@ -115,59 +108,10 @@ Apply for legal aid - Outgoings summary
         </li>
       </ol>
 
-      <hr>
-
-      <div class="govuk-!-padding-bottom-4"></div>
-
-      <h2 class="govuk-heading-l">Other outgoings</h2>
-
-      <p class="gov-body">
-       Your client also told us they made the following payments. These will be included in the financial eligibility calculation.
-     </p>
-
-      <h2 class="govuk-heading-m">Physical cash: housing costs
-
-      </h2>
-
-      <span class="govuk-hint">For example, banknotes and coins.</span>
-
-
-      <table class="govuk-table" style="margin-bottom:0px;">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col">Calendar month</th>
-            <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-
-          </tr>
-        </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">6 Dec 2020 to 6 Jan 2021</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
-
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">5 Nov to 5 Dec 2020</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
-
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">4 Oct to 4 Nov 2020</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><strong>Total</strong></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£1,500.00</strong></td>
-
-        </tr>
-        </tbody>
-        </table>
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="property" role="button" class="govuk-button">
+        <a href="dependants" role="button" class="govuk-button">
           Save and continue
         </a>
 

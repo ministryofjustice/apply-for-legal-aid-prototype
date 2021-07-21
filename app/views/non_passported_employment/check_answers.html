@@ -33,16 +33,16 @@ Apply for legal aid - Check your answers
        Client details
      </h2>
 
-     <dl class="govuk-summary-list">
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
            First name
          </dt>
          <dd class="govuk-summary-list__value">
-           John
+           {{ data['firstname'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="client_details#firstname">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">first name</span>
            </a>
          </dd>
@@ -52,10 +52,10 @@ Apply for legal aid - Check your answers
            Last name
          </dt>
          <dd class="govuk-summary-list__value">
-           Doe
+           {{ data['lastname'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="client_details#lastname">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">last name</span>
            </a>
          </dd>
@@ -65,10 +65,10 @@ Apply for legal aid - Check your answers
            Date of birth
          </dt>
          <dd class="govuk-summary-list__value">
-           1 January 1980
+           {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="client_details#dob-day">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">dob</span>
            </a>
          </dd>
@@ -78,36 +78,23 @@ Apply for legal aid - Check your answers
            National Insurance number
          </dt>
          <dd class="govuk-summary-list__value">
-           QQ 12 34 56 C
+           {{ data['national-insurance-number'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="client_details#national-insurance-number">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">national insurance number</span>
            </a>
          </dd>
        </div>
-  <!--   <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Email address
-         </dt>
-         <dd class="govuk-summary-list__value">
-           johndoe@email.com
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="client_details#email-address">
-             Change <span class="govuk-visually-hidden">email address</span>
-           </a>
-         </dd>
-       </div> -->
        <div class="govuk-summary-list__row">
          <dt class="govuk-summary-list__key">
            Correspondence address
          </dt>
          <dd class="govuk-summary-list__value">
-           1 Main Street<br/>London<br/>SE1 2AB
+           1 Main Street<br/>London<br/>{{ data['postcode'] }}
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="postcode_finder#postcode">
+              <a class="govuk-link" href="#">
              Change <span class="govuk-visually-hidden">correspondance address</span>
            </a>
          </dd>
@@ -120,7 +107,7 @@ Apply for legal aid - Check your answers
            Employed
          </dd>
          <dd class="govuk-summary-list__actions">
-           <a href="employment_status">
+              <a class="govuk-link" href="#">
              Change <span class="govuk-visually-hidden">correspondance address</span>
            </a>
          </dd>
@@ -219,7 +206,7 @@ Apply for legal aid - Check your answers
       Non-molestation order
     </dt>
     <dd class="govuk-summary-list__value">
-      3 Mar 2021
+      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
   <!--  <a href="delegated_functions">
@@ -233,7 +220,7 @@ Apply for legal aid - Check your answers
       Prohibited steps order
     </dt>
     <dd class="govuk-summary-list__value">
-      3 Mar 2021
+      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
     <!-- <a href="delegated_functions_select">
@@ -246,7 +233,7 @@ Apply for legal aid - Check your answers
       Child arrangements order (residence)
     </dt>
     <dd class="govuk-summary-list__value">
-      Not used
+      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
   <!--  <a href="delegated_functions_select">
@@ -316,7 +303,7 @@ Apply for legal aid - Check your answers
         We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
       </p><br>
 
-      <a class="govuk-button" href="prospects" role="button">
+      <a class="govuk-button" href="means_assessment_required" role="button">
         Save and continue
       </a>
 

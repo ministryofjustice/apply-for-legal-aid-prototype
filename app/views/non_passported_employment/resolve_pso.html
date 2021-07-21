@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Outgoings start page
+Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,45 +16,49 @@ Apply for legal aid - Outgoings start page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "#"
-}) }}
-
+    text: "Back",
+      href: "children_pso"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Your regular costs</h1>
 
-    <form action="types_of_outgoing" method="post" novalidate>
+    <form action="prospects_pso" method="post" novalidate>
 
-      <p class="govuk-body">We'll ask you to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-      <li>select the types of payments you make, for example rent or Council Tax</li>
-      <li>sort the payments into categories</li>
-    </ul>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
 
-      <!-- <p class="govuk-body">We will now ask you about all the money coming out of your accounts.</p>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Prohibited steps order</span>
 
-      <h2 class="govuk-heading-m">What you need to do</h2>
+            <h1 class="govuk-fieldset__heading">
+              What attempts have been made to settle the matter?
+            </h1>
+          </legend>
 
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Select the type of outgoings you have.</li>
-              <li>Go through your bank statments selecting the outgoings.</li>
-              <li>Ensure you have shown all the outgoings.</li>
-            </ul> -->
-
-            <div class="govuk-!-padding-bottom-4"></div>
-
-    <button type="submit" class="govuk-button">
-      Continue
-    </button>
-
-    </form>
+          <div id="event-name-hint" class="govuk-hint">
+    Tell us if correspondence or mediation has been tried, or if no attempts have been made.
   </div>
-</div>
+
+
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" autocomplete="off" id="resolve_pso" name="resolve_pso" rows="8" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+      </div>
+    </div>
 
 {% endblock %}
 

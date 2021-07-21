@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "check_answers"
+  href: "laspo_pso"
 }) }}
 
 {% endblock %}
@@ -26,42 +26,33 @@ Apply for legal aid - Confirmation page
 
 
   <div class="flash-card">
-
+    <header>
+      <h1 class="govuk-heading-l">You need to use CCMS for this application<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+    </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <header>
-          <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit – is this correct?</h1>
-        </header>
-        <form action="client_details" method="post" class="form">
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
 
+            <p style="color: #fff;">
+            This is because a Section 8 proceeding you're applying for is not within the scope of LASPO.</p>
 
-            <div class="govuk-radios govuk-radios">
-     <div class="govuk-radios__item">
-       <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="check" type="radio" value="yes">
-       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name">
-         Yes
-       </label>
-     </div>
-     <div class="govuk-radios__item">
-       <input class="govuk-radios__input" id="changed-name-2" name="check" type="radio" value="no">
-       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name-2">
-         No, my client receives a passporting benefit
-       </label>
-     </div>
-   </div>
+
+          </li>
+
         </ul>
 
         <div class="govuk-!-padding-bottom-4"></div>
-        <a href="consent" role="button" class="govuk-button white-button right">
-          Save and continue</a>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
+        <a href="#" role="button" class="govuk-button white-button right">
+          Apply in CCMS</a>
 
-          </form>
+          <p style="color: #fff;"><a href="#">Back to my applications</a></p>
+
+      <!--  <a href="#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Outgoings start page
+Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,41 +17,44 @@ Apply for legal aid - Outgoings start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "benefits_selected"
+  href: "laspo_pso"
 }) }}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-  <!--  <h1 class="govuk-heading-xl">Give details about regular payments you make</h1> -->
-    <h1 class="govuk-heading-xl">Details about your regular payments</h1>
 
-    <form action="types_of_outgoing3" method="post" novalidate>
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">You need to use CCMS for this application<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+    </header>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
-    <!--  <p class="govuk-body">We will now ask you about all the money coming out of your accounts.</p>
+            <p style="color: #fff;">
+            This is because a Section 8 proceeding you're applying for is not within the scope of LASPO.</p>
+          </li>
 
-      <h2 class="govuk-heading-m">What you need to do</h2> -->
+        </ul>
 
-      <p class="govuk-body">We'll ask you to:</p>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-            <ul class="govuk-list govuk-list--bullet">
-              <li>select the types of payments you make, for example rent or Council Tax</li>
-              <li>sort the payments into categories</li>
-            <!--  <li>Ensure you have shown all the outgoings.</li> -->
-            </ul>
+        <a href="#" role="button" class="govuk-button white-button right">
+          Apply in CCMS</a>
 
-            <div class="govuk-!-padding-bottom-4"></div>
+          <p style="color: #fff;"><a href="#">Back to my applications</a></p>
 
-    <button type="submit" class="govuk-button">
-      Continue
-    </button>
+      <!--  <a href="#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
 
-    </form>
+      </div>
+    </div>
   </div>
-</div>
+
 
 {% endblock %}
 

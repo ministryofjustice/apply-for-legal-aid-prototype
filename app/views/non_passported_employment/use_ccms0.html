@@ -4,18 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Income start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,43 +17,46 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "other_bank_radios"
+  href: "laspo"
 }) }}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Details about your income</h1>
 
-    <form action="types_of_income" method="post" novalidate>
+  <div class="flash-card">
+    <header>
+      <h1 class="govuk-heading-l">You need to use CCMS for this application<!-- needs to answer some questions about their financial situation / We need to ask your client some questions about their financial situation --></h1>
+    </header>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
-      <p class="govuk-body">We'll ask you to:</p>
+            <p style="color: #fff;">
+            All Section 8 proceedings you're applying for must be within the scope of LASPO to use this service.</p>
 
-            <ul class="govuk-list govuk-list--bullet">
-              <li>select the types of income you receive</li>
-              <li>sort the income types into categories</li>
-            </ul>
 
-    <!--  <h2 class="govuk-heading-m">What you need to do</h2>
+          </li>
 
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Select the type of income you receive.</li>
-              <li>Go through your bank statments selecting the income.</li>
-              <li>Ensure you have shown all the income you receive.</li>
-            </ul> -->
+        </ul>
 
-            <div class="govuk-!-padding-bottom-4"></div>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-    <button type="submit" class="govuk-button">
-      Continue
-    </button>
+        <a href="#" role="button" class="govuk-button white-button right">
+          Apply in CCMS</a>
 
-    </form>
+          <p style="color: #fff;"><a href="#">Back to my applications</a></p>
+
+      <!--  <a href="#" role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
+      </div>
+    </div>
   </div>
-</div>
+
 
 {% endblock %}
 
