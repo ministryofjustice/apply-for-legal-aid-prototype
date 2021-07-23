@@ -77,6 +77,38 @@ th:first-child {
     </table>
 <br>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Employment income</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="other_income">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Monthly income before tax (HMRC)</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£2,500</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">HMRC figure is correct</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">How much does your client earn each month before tax?</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£3,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Details of employment</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">My client gets cash in hand pay and works zero-hours contracts.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
 
 
         <div class="govuk-grid-row">
@@ -120,7 +152,7 @@ th:first-child {
               Does your client have any dependants?
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes{{ data['firstname'] }}
+              Yes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="dependants">
@@ -142,7 +174,7 @@ th:first-child {
         <h2 class="govuk-heading-m">Dependant 1</h2>
         </div>
         <div class="govuk-grid-column-one-third">
-          <p><a class="govuk-link" style="float:right;" href="client_details_2">Change</a></p>
+          <p><a class="govuk-link" style="float:right;" href="dependant_add">Change</a></p>
         </div>
         </div>
 
@@ -152,7 +184,7 @@ th:first-child {
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Jeff Doe{{ data['firstname'] }}
+              {{ data['dependant-one-name'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="client_details#firstname">
@@ -179,7 +211,7 @@ th:first-child {
               Relationship to your client
             </dt>
             <dd class="govuk-summary-list__value">
-              Child relative{{ data['national-insurance-number'] }}
+              Child relative
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="client_details#national-insurance-number">
@@ -192,7 +224,7 @@ th:first-child {
               In full-time education or training
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes{{ data['email-address'] }}
+              Yes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="client_details#email-address">
@@ -205,7 +237,7 @@ th:first-child {
               Receives income
             </dt>
             <dd class="govuk-summary-list__value">
-              No{{ data['postcode'] }}
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="postcode_finder#postcode">
@@ -241,7 +273,7 @@ th:first-child {
         <h2 class="govuk-heading-m">Dependant 2</h2>
         </div>
         <div class="govuk-grid-column-one-third">
-          <p><a class="govuk-link"style="float:right;" href="client_details_2">Change</a></p>
+          <p><a class="govuk-link"style="float:right;" href="dependant_add_2">Change</a></p>
         </div>
         </div>
 
@@ -251,7 +283,7 @@ th:first-child {
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Jill Doe{{ data['firstname'] }}
+              {{ data['dependant-two-name'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="client_details#firstname">
@@ -277,7 +309,7 @@ th:first-child {
               Relationship to your client
             </dt>
             <dd class="govuk-summary-list__value">
-              Adult relative{{ data['national-insurance-number'] }}
+              Adult relative
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="client_details#national-insurance-number">
@@ -303,7 +335,7 @@ th:first-child {
               Receives income
             </dt>
             <dd class="govuk-summary-list__value">
-              No{{ data['postcode'] }}
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="postcode_finder#postcode">
@@ -317,7 +349,7 @@ th:first-child {
               Has assets worth more than £8,000
             </dt>
             <dd class="govuk-summary-list__value">
-              No{{ data['postcode'] }}
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="postcode_finder#postcode">
@@ -493,7 +525,7 @@ th:first-child {
                       </tr>
                       <tr class="govuk-table__row">
                         <th class="govuk-table__cell govuk-body" scope="row">Amount in offline savings accounts</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">£400</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['offline-accounts'] }}</td>
                       </tr>
                     </tbody>
                   </table>

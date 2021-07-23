@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "outgoings"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Sort your client's outgoings into categories
+      </h1>
+    </legend>
+
+    <p class="gov-body">
+    Your client told us they make the following regular payments.</p>
+
+  <p class="gov-body">
+  View your client's bank statements and add transactions to each category.</p>
+
+  <ol class="app-task-list">
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> Housing payments
+      </h2>
+      <ul class="app-task-list__items">
+        <table class="govuk-table" style="margin-bottom:0px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Date</th>
+              <th class="govuk-table__header" scope="col">Description</th>
+              <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">4 Jan 2021</td>
+            <td class="govuk-table__cell">1082 02DEC20 RENTAL LIMITED WWW.RENTAL.O GB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£184</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">21 Dec 2020</td>
+            <td class="govuk-table__cell">1082 02DEC20 RENTAL LIMITED WWW.RENTAL.O GB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£184</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">3 Dec 2020</td>
+            <td class="govuk-table__cell">1082 02DEC20 RENTAL LIMITED WWW.RENTAL.O GB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£184</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">19 Oct 2020</td>
+            <td class="govuk-table__cell">1082 02DEC20 RENTAL LIMITED WWW.RENTAL.O GB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£184</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">19 Oct 2020</td>
+            <td class="govuk-table__cell">1082 02DEC20 RENTAL LIMITED WWW.RENTAL.O GB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          </tbody>
+          </table>
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="rent" aria-describedby="eligibility-completed">
+            View statements and add transactions
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Childcare payments
+      </h2>
+      <ul class="app-task-list__items">
+
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="childcare" aria-describedby="eligibility-completed">
+            View statements and add transactions
+          </a>
+        </li>
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <h2 class="govuk-heading-s">Paid in cash (bank notes and coins)
+       </h2>
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+             Your client entered these amounts.
+         </span>
+
+        <table class="govuk-table" style="margin-bottom:0px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Month</th>
+              <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+            </tr>
+          </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Jul to Aug 2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Jun to Jul 2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">May to Jun 2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><strong>Total</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£600</strong></td>
+
+          </tr>
+          </tbody>
+          </table>
+      </ul>
+      </li>
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_outgoing_provider" aria-describedby="eligibility-completed">
+          Add an outgoings category
+        </a>
+      </h2>
+    </li>
+  </ol>
+
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <a href="property" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

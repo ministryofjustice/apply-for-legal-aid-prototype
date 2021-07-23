@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "incoming/benefits"
+  href: "benefits"
 }) }}
 
 {% endblock %}
@@ -57,12 +57,13 @@ Apply for legal aid - Income start page
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span> Benefits
-          <!--  <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                We identified these transactions from your client's statements.
-            </span> -->
+            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                  Some transactions may have been automatically added.
+              </span>
+
           </h2>
           <ul class="app-task-list__items">
-            <table class="govuk-table" style="margin-bottom:0px;">
+         <table class="govuk-table" style="margin-bottom:0px;">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th class="govuk-table__header" scope="col">Date</th>
@@ -73,53 +74,110 @@ Apply for legal aid - Income start page
               </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">29 Jan 2021</td>
-                <td class="govuk-table__cell">Work and child TC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell">6 Jan 2021</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£25</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">23 Jan 2021</td>
-                <td class="govuk-table__cell">Work and child TC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell">31 Dec 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">17 Jan 2021</td>
-                <td class="govuk-table__cell">Work and child TC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell">18 Dec 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">11 Jan 2021</td>
-                <td class="govuk-table__cell">Work and child TC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell">2 Dec 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">7 Jan 2021</td>
-                <td class="govuk-table__cell">Child benefit</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
+                <td class="govuk-table__cell">18 Nov 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£414.81</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">3 Jan 2021</td>
-                <td class="govuk-table__cell">Work and child TC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
+                <td class="govuk-table__cell">9 Nov 2020</td>
+                <td class="govuk-table__cell">1234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
                   Remove
                 </a></td>
               </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">2 Nov 2020</td>
+                <td class="govuk-table__cell">1234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">30 Oct 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£280.70</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">26 Oct 2020</td>
+                <td class="govuk-table__cell">1234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">19 Oct 2020</td>
+                <td class="govuk-table__cell">1234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">16 Oct 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£280.71</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">16 Oct 2020</td>
+                <td class="govuk-table__cell">12345678A DWP UC</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£368.20</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">12 Oct 2020</td>
+                <td class="govuk-table__cell">1234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
+
               </tbody>
               </table>
             <li class="app-task-list__item">
@@ -134,7 +192,7 @@ Apply for legal aid - Income start page
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number"></span> Disregarded benefits
           <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                Add transactions that have not been automatically identified here.
+            Some transactions may have been automatically added.
             </span>
           </h2>
           <ul class="app-task-list__items">
@@ -156,6 +214,41 @@ Apply for legal aid - Income start page
                 View statements and add transactions <!-- Select payments from your bank statement -->
               </a>
             </li>
+            <div class="govuk-!-padding-bottom-6"></div>
+
+            <h2 class="govuk-heading-s">Received in cash (bank notes and coins)
+           </h2>
+           <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+                 Your client entered these amounts.
+             </span>
+
+            <table class="govuk-table" style="margin-bottom:0px;">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Month</th>
+                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                </tr>
+              </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Jul to Aug 2021</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Jun to Jul 2021</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">May to Jun 2021</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><strong>Total</strong></td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
+
+              </tr>
+              </tbody>
+              </table>
           </ul>
         </li>
         <li>

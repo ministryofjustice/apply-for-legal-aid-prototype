@@ -39,7 +39,7 @@ Apply for legal aid - Check your answers
            First name
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['firstname'] }}
+           Sam
          </dd>
          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="client_details">
@@ -52,7 +52,7 @@ Apply for legal aid - Check your answers
            Last name
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['lastname'] }}
+           Doe
          </dd>
          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="client_details">
@@ -65,7 +65,7 @@ Apply for legal aid - Check your answers
            Date of birth
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+           1 January 1980
          </dd>
          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="client_details">
@@ -78,7 +78,7 @@ Apply for legal aid - Check your answers
            National Insurance number
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['national-insurance-number'] }}
+           QQ123456C
          </dd>
          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="client_details">
@@ -91,10 +91,10 @@ Apply for legal aid - Check your answers
            Correspondence address
          </dt>
          <dd class="govuk-summary-list__value">
-           1 Main Street<br/>London<br/>{{ data['postcode'] }}
+           1 Main Street<br/>London<br/>SE15 5NP
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="postcode_finder">
              Change <span class="govuk-visually-hidden">correspondance address</span>
            </a>
          </dd>
@@ -107,7 +107,7 @@ Apply for legal aid - Check your answers
            Employed
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="employment_status">
              Change <span class="govuk-visually-hidden">correspondance address</span>
            </a>
          </dd>
@@ -206,7 +206,7 @@ Apply for legal aid - Check your answers
       Non-molestation order
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
+      28 July 2021
     </dd>
     <dd class="govuk-summary-list__actions">
   <!--  <a href="delegated_functions">
@@ -220,7 +220,7 @@ Apply for legal aid - Check your answers
       Prohibited steps order
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
+      30 July 2021
     </dd>
     <dd class="govuk-summary-list__actions">
     <!-- <a href="delegated_functions_select">
@@ -233,7 +233,7 @@ Apply for legal aid - Check your answers
       Child arrangements order (residence)
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['df-day'] }}/{{ data['df-month'] }}/{{ data['df-year'] }}
+      30 July 2021
     </dd>
     <dd class="govuk-summary-list__actions">
   <!--  <a href="delegated_functions_select">
@@ -249,7 +249,7 @@ Apply for legal aid - Check your answers
     <h2 class="govuk-heading-m">Emergency cost limit</h2>
   </div>
   <div class="govuk-grid-column-one-third">
-    <p><a class="govuk-link" style="float:right;" href="limits_4">Change</a></p>
+    <p><a class="govuk-link" style="float:right;" href="limitations">Change</a></p>
   </div>
 </div>
 
@@ -272,7 +272,7 @@ Apply for legal aid - Check your answers
          New emergency cost limit
        </dt>
        <dd class="govuk-summary-list__value">
-         £3,000
+          {{ data['cost-limit'] }}
        </dd>
       <!-- <dd class="govuk-summary-list__actions">
          <a href="client_details#lastname">
@@ -285,7 +285,7 @@ Apply for legal aid - Check your answers
          Why you need a higher cost limit
        </dt>
        <dd class="govuk-summary-list__value">
-         Reasons
+         {{ data['cost-limit-reason'] }}
        </dd>
       <!-- <dd class="govuk-summary-list__actions">
          <a href="client_details#dob-day">
@@ -299,9 +299,13 @@ Apply for legal aid - Check your answers
 
     <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p class="govuk-body">
-        We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
-      </p><br>
+    <p class="govuk-body">
+      We'll check your client's:</p>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>benefits status with the Department of Work and Pensions (DWP)</li>
+      <li>employment details with HM Revenue and Customs (HMRC)</li>
+    </ul>
+    <br>
 
       <a class="govuk-button" href="means_assessment_required" role="button">
         Save and continue
