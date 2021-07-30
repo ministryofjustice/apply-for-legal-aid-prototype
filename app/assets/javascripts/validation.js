@@ -1,20 +1,20 @@
 /* global $ */
 
+const EMPTY_TEXT_FIELD_ERR = 'Enter a '
+const EMPTY_DATE_FIELD_ERR = 'Enter a valid date'
+const NO_CHECKBOX_CHECKED_ERR = 'Select one or more checkboxes'
+const NO_RADIO_SELECTED_ERR = 'Select an option'
+
 $(document).ready(() => {
   $('button[type=submit]').on('click', (e) => {
     e.preventDefault()
     runValidations()
     if (!$('.govuk-error-summary__list').children().length) {
-      // $('.govuk-error-summary').remove()
+      $('.govuk-error-summary').remove()
       $('form').submit()
     }
   })
 })
-
-const EMPTY_TEXT_FIELD_ERR = 'Enter a valid '
-const EMPTY_DATE_FIELD_ERR = 'Enter a valid date'
-const NO_CHECKBOX_CHECKED_ERR = 'Select one or more checkboxes'
-const NO_RADIO_SELECTED_ERR = 'Select an option'
 
 function runValidations () {
   validateTextFields()
@@ -25,10 +25,9 @@ function runValidations () {
 
 function validateTextFields () {
   $('.govuk-input[type=text]').each(function () {
-    if (!$(this).val()) {
+    if (!$(this).val() && !$(this).hasClass('govuk-date-input__input')) {
       const fieldName = $(this).parent().find('label').text().trim()
-      const message = EMPTY_TEXT_FIELD_ERR + fieldName
-      addError(this, message)
+      addError(this, EMPTY_TEXT_FIELD_ERR + fieldName)
     } else {
       removeErrorMessages(this)
     }
@@ -37,8 +36,9 @@ function validateTextFields () {
 
 function validateDateFields () {
   $('.govuk-date-input').each(function () {
-    const fieldsFilled = $(this).find('.govuk-date-input__input').filter(function () { return $(this).val() }).length
-    if (!fieldsFilled) {
+    const dateComplete = $(this).find('.govuk-date-input__input').filter(function () { return $(this).val() }).length
+    const isHiddenConditional = $(this).closest('.govuk-checkboxes__conditional--hidden').length
+    if (!dateComplete && !isHiddenConditional) {
       addError(this, EMPTY_DATE_FIELD_ERR)
     } else {
       removeErrorMessages(this)
@@ -76,7 +76,8 @@ function validateRadioButtonSelected () {
 function removeErrorMessages (input) {
   $('#' + input.name + '-field-error').remove()
   $('#' + input.name + '-error-link').remove()
-  $(input).closest('.govuk-fieldset').closest('.govuk-form-group').removeClass('govuk-form-group--error')
+  $(input).closest('.govuk-form-group').removeClass('govuk-form-group--error')
+  $(input).closest('.govuk-fieldset').removeClass('govuk-form-group--error')
 }
 
 function addError (input, message) {
@@ -94,7 +95,9 @@ function showErrorOnField (input, message) {
   if (!$('#' + errMsgId).length) {
     const errorMessage = getFieldErrorMessage(errMsgId, message)
     $(input).before(errorMessage)
-    if (input.hasClass('.govuk-checkboxes') || input.hasClass('.govuk-radios')) {
+    if (!$(this).closest('.govuk-form.group') && !$(this).closest('.govuk-fieldset')) {
+      $(input).addClass('govuk-form-group--error')
+    } else if ($(input).hasClass('.govuk-checkboxes') || $(input).hasClass('.govuk-radios')) {
       $(input).closest('.govuk-fieldset').addClass('govuk-form-group--error')
     } else {
       $(input).closest('.govuk-form-group').addClass('govuk-form-group--error')
@@ -106,9 +109,9 @@ function addErrorMessageToSummary (input, message) {
   const errorMsgId = input.name + '-error-link'
   if (!$('#' + errorMsgId).length) {
     let linkId = input.id
-    if (input.hasClass('.govuk-checkboxes')) {
+    if ($(input).hasClass('.govuk-checkboxes')) {
       linkId = $(input).find('.govuk-checkboxes__input:first').id
-    } else if (input.hasClass('.govuk-radios')) {
+    } else if ($(input).hasClass('.govuk-radios')) {
       linkId = $(input).find('.govuk-radios__input:first').id
     }
     const errorMsg = $('<li></li>').attr({ id: errorMsgId }).append($('<a>' + message + '</a>').attr({ href: '#' + linkId }).text(message))
