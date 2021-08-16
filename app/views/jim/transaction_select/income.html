@@ -94,13 +94,18 @@ white-space: nowrap;
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 <h1 class="govuk-heading-xl">
-  Sort your client's income into categories
+  Assign categories to bank transactions: payments in
 </h1>
 
-<p class="govuk-body">View your client's bank statements and categorise each transaction.</p>
 
-<div class="govuk-inset-text">
-You do not need to categorise employment income or student finance payments.</div>
+<p class="govuk-body">Your client told us they receive:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>benefits payments</li>
+<li>financial help from family or friends</li>
+</ul>
+
+<p class="govuk-body">Find these payments below and assign the relevant category to them.</p>
 
 </div>
 </div>
@@ -112,7 +117,7 @@ You do not need to categorise employment income or student finance payments.</di
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
-        <caption class="govuk-table__caption" style="padding-bottom:10px;">Payments in: 8 October 2020 to 7 January 2021</caption>
+        <caption class="govuk-table__caption" style="padding-bottom:10px;">8 October 2020 to 7 January 2021</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date</th>
@@ -124,62 +129,68 @@ You do not need to categorise employment income or student finance payments.</di
 
       <tbody class="govuk-table__body">
 
-          <tr class="govuk-table__row">
+        <!--  <tr class="govuk-table__row">
             <td class="govuk-table__cell">6 Jan 2021</td>
             <td class="govuk-table__cell">12345678A DWP UC</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£25</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
   <select class="govuk-select" id="sort" name="sort">
-    <option value="benefits">Benefits</option>
-    <option value="gift" selected>Gift</option>
+    <option value="benefits">Benefit</option>
+    <option value="benefits">Disregarded benefit</option>
+    <option value="gift" selected>Financial help</option>
     <option value="views">Maintenance</option>
     <option value="views">Property</option>
     <option value="pension">Pension</option>
     <option value="other">Other</option>
   </select>
 </td>
-          </tr>
+          </tr> -->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">4 Jan 2021</td>
             <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
               <select class="govuk-select" id="sort" name="sort">
-                <option value="benefits">Benefits</option>
-                <option value="gift" selected>Gift</option>
-                <option value="maintenance">Maintenance</option>
+                <option value="benefits">Benefit</option>
+                <option value="benefits">Disregarded benefit</option>
+                <option value="gift" selected>Financial help</option>
+                <option value="views">Maintenance</option>
                 <option value="views">Property</option>
                 <option value="pension">Pension</option>
+                <option value="pension">Student finance</option>
                 <option value="other">Other</option>
               </select>
             </td>
           </tr>
-          <tr class="govuk-table__row">
+        <!--  <tr class="govuk-table__row">
             <td class="govuk-table__cell">31 Dec 2020</td>
             <td class="govuk-table__cell">12345678A DWP UC</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£468.80</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
               <select class="govuk-select" id="sort" name="sort">
-                <option value="benefits">Benefits</option>
-                <option value="gift" selected>Gift</option>
+                <option value="benefits">Benefit</option>
+                <option value="benefits">Disregarded benefit</option>
+                <option value="gift" selected>Financial help</option>
                 <option value="views">Maintenance</option>
                 <option value="views">Property</option>
                 <option value="pension">Pension</option>
                 <option value="other">Other</option>
               </select>
             </td>
-          </tr>
+          </tr> -->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">24 Dec 2020</td>
             <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
               <select class="govuk-select" id="sort" name="sort">
-                <option value="benefits">Benefits</option>
-                <option value="gift" selected>Gift</option>
+                <option value="benefits">Benefit</option>
+                <option value="benefits">Disregarded benefit</option>
+                <option value="gift" selected>Financial help</option>
                 <option value="views">Maintenance</option>
                 <option value="views">Property</option>
                 <option value="pension">Pension</option>
+                <option value="pension">Student finance</option>
                 <option value="other">Other</option>
               </select>
             </td>
@@ -190,11 +201,13 @@ You do not need to categorise employment income or student finance payments.</di
               <td class="govuk-table__cell govuk-table__cell--numeric">£7.99</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
                 <select class="govuk-select" id="sort" name="sort">
-                  <option value="benefits">Benefits</option>
-                  <option value="gift" selected>Gift</option>
+                  <option value="benefits">Benefit</option>
+                  <option value="benefits">Disregarded benefit</option>
+                  <option value="gift" selected>Financial help</option>
                   <option value="views">Maintenance</option>
                   <option value="views">Property</option>
                   <option value="pension">Pension</option>
+                  <option value="pension">Student finance</option>
                   <option value="other">Other</option>
                 </select>
               </td>
@@ -205,41 +218,46 @@ You do not need to categorise employment income or student finance payments.</di
                 <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric">
                   <select class="govuk-select" id="sort" name="sort">
-                    <option value="benefits">Benefits</option>
-                    <option value="gift" selected>Gift</option>
+                    <option value="benefits">Benefit</option>
+                    <option value="benefits">Disregarded benefit</option>
+                    <option value="gift" selected>Financial help</option>
                     <option value="views">Maintenance</option>
                     <option value="views">Property</option>
                     <option value="pension">Pension</option>
+                    <option value="pension">Student finance</option>
                     <option value="other">Other</option>
                   </select>
                 </td>
               </tr>
-              <tr class="govuk-table__row">
+            <!--  <tr class="govuk-table__row">
                   <td class="govuk-table__cell">18 Dec 2020</td>
                   <td class="govuk-table__cell">12345678A DWP UC</td>
                   <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
                   <td class="govuk-table__cell govuk-table__cell--numeric">
                     <select class="govuk-select" id="sort" name="sort">
-                      <option value="benefits">Benefits</option>
-                      <option value="gift" selected>Gift</option>
+                      <option value="benefits">Benefit</option>
+                      <option value="benefits">Disregarded benefit</option>
+                      <option value="gift" selected>Financial help</option>
                       <option value="views">Maintenance</option>
                       <option value="views">Property</option>
                       <option value="pension">Pension</option>
                       <option value="other">Other</option>
                     </select>
                   </td>
-                </tr>
+                </tr> -->
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">14 Dec 2020</td>
                     <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                       <select class="govuk-select" id="sort" name="sort">
-                        <option value="benefits">Benefits</option>
-                        <option value="gift" selected>Gift</option>
+                        <option value="benefits">Benefit</option>
+                        <option value="benefits">Disregarded benefit</option>
+                        <option value="gift" selected>Financial help</option>
                         <option value="views">Maintenance</option>
                         <option value="views">Property</option>
                         <option value="pension">Pension</option>
+                        <option value="pension">Student finance</option>
                         <option value="other">Other</option>
                       </select>
                     </td>
@@ -250,11 +268,13 @@ You do not need to categorise employment income or student finance payments.</di
                       <td class="govuk-table__cell govuk-table__cell--numeric">£450</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
                         <select class="govuk-select" id="sort" name="sort">
-                          <option value="benefits">Benefits</option>
-                          <option value="gift" selected>Gift</option>
+                          <option value="benefits">Benefit</option>
+                          <option value="benefits">Disregarded benefit</option>
+                          <option value="gift" selected>Financial help</option>
                           <option value="views">Maintenance</option>
                           <option value="views">Property</option>
                           <option value="pension">Pension</option>
+                          <option value="pension">Student finance</option>
                           <option value="other">Other</option>
                         </select>
                       </td>
@@ -265,11 +285,13 @@ You do not need to categorise employment income or student finance payments.</di
                         <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric">
                           <select class="govuk-select" id="sort" name="sort">
-                            <option value="benefits">Benefits</option>
-                            <option value="gift" selected>Gift</option>
+                            <option value="benefits">Benefit</option>
+                            <option value="benefits">Disregarded benefit</option>
+                            <option value="gift" selected>Financial help</option>
                             <option value="views">Maintenance</option>
                             <option value="views">Property</option>
                             <option value="pension">Pension</option>
+                            <option value="pension">Student finance</option>
                             <option value="other">Other</option>
                           </select>
                         </td>
@@ -280,11 +302,13 @@ You do not need to categorise employment income or student finance payments.</di
                           <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
                           <td class="govuk-table__cell govuk-table__cell--numeric">
                             <select class="govuk-select" id="sort" name="sort">
-                              <option value="benefits">Benefits</option>
-                              <option value="gift" selected>Gift</option>
+                              <option value="benefits">Benefit</option>
+                              <option value="benefits">Disregarded benefit</option>
+                              <option value="gift" selected>Financial help</option>
                               <option value="views">Maintenance</option>
                               <option value="views">Property</option>
                               <option value="pension">Pension</option>
+                              <option value="pension">Student finance</option>
                               <option value="other">Other</option>
                             </select>
                           </td>
@@ -295,41 +319,46 @@ You do not need to categorise employment income or student finance payments.</di
                             <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric">
                               <select class="govuk-select" id="sort" name="sort">
-                                <option value="benefits">Benefits</option>
-                                <option value="gift" selected>Gift</option>
+                                <option value="benefits">Benefit</option>
+                                <option value="benefits">Disregarded benefit</option>
+                                <option value="gift" selected>Financial help</option>
                                 <option value="views">Maintenance</option>
                                 <option value="views">Property</option>
                                 <option value="pension">Pension</option>
+                                <option value="pension">Student finance</option>
                                 <option value="other">Other</option>
                               </select>
                             </td>
                           </tr>
-                          <tr class="govuk-table__row">
+                        <!--  <tr class="govuk-table__row">
                               <td class="govuk-table__cell">5 Dec 2020</td>
                               <td class="govuk-table__cell">12345678A DWP UC</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">
                                 <select class="govuk-select" id="sort" name="sort">
-                                  <option value="benefits">Benefits</option>
-                                  <option value="gift" selected>Gift</option>
+                                  <option value="benefits">Benefit</option>
+                                  <option value="benefits">Disregarded benefit</option>
+                                  <option value="gift" selected>Financial help</option>
                                   <option value="views">Maintenance</option>
                                   <option value="views">Property</option>
                                   <option value="pension">Pension</option>
                                   <option value="other">Other</option>
                                 </select>
                             </td>
-                            </tr>
+                            </tr> -->
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell">30 Nov 2020</td>
                                 <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
                                 <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                                 <td class="govuk-table__cell govuk-table__cell--numeric">
                                   <select class="govuk-select" id="sort" name="sort">
-                                    <option value="benefits">Benefits</option>
-                                    <option value="gift" selected>Gift</option>
+                                    <option value="benefits">Benefit</option>
+                                    <option value="benefits">Disregarded benefit</option>
+                                    <option value="gift" selected>Financial help</option>
                                     <option value="views">Maintenance</option>
                                     <option value="views">Property</option>
                                     <option value="pension">Pension</option>
+                                    <option value="pension">Student finance</option>
                                     <option value="other">Other</option>
                                   </select>
                                 </td>
@@ -340,11 +369,13 @@ You do not need to categorise employment income or student finance payments.</di
                                   <td class="govuk-table__cell govuk-table__cell--numeric">£270</td>
                                   <td class="govuk-table__cell govuk-table__cell--numeric">
                                     <select class="govuk-select" id="sort" name="sort">
-                                      <option value="benefits">Benefits</option>
-                                      <option value="gift" selected>Gift</option>
+                                      <option value="benefits">Benefit</option>
+                                      <option value="benefits">Disregarded benefit</option>
+                                      <option value="gift" selected>Financial help</option>
                                       <option value="views">Maintenance</option>
                                       <option value="views">Property</option>
                                       <option value="pension">Pension</option>
+                                      <option value="pension">Student finance</option>
                                       <option value="other">Other</option>
                                     </select>
                                   </td>
@@ -355,11 +386,13 @@ You do not need to categorise employment income or student finance payments.</di
                                     <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                                     <td class="govuk-table__cell govuk-table__cell--numeric">
                                       <select class="govuk-select" id="sort" name="sort">
-                                        <option value="benefits">Benefits</option>
-                                        <option value="gift" selected>Gift</option>
+                                        <option value="benefits">Benefit</option>
+                                        <option value="benefits">Disregarded benefit</option>
+                                        <option value="gift" selected>Financial help</option>
                                         <option value="views">Maintenance</option>
                                         <option value="views">Property</option>
                                         <option value="pension">Pension</option>
+                                        <option value="pension">Student finance</option>
                                         <option value="other">Other</option>
                                       </select>
                                     </td>
@@ -369,11 +402,13 @@ You do not need to categorise employment income or student finance payments.</di
                                       <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
                                       <td class="govuk-table__cell govuk-table__cell--numeric">
                                         <select class="govuk-select" id="sort" name="sort">
-                                          <option value="benefits">Benefits</option>
-                                          <option value="gift" selected>Gift</option>
+                                          <option value="benefits">Benefit</option>
+                                          <option value="benefits">Disregarded benefit</option>
+                                          <option value="gift" selected>Financial help</option>
                                           <option value="views">Maintenance</option>
                                           <option value="views">Property</option>
                                           <option value="pension">Pension</option>
+                                          <option value="pension">Student finance</option>
                                           <option value="other">Other</option>
                                         </select>
                                       </td>
@@ -384,11 +419,13 @@ You do not need to categorise employment income or student finance payments.</di
                                         <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
                                         <td class="govuk-table__cell govuk-table__cell--numeric">
                                           <select class="govuk-select" id="sort" name="sort">
-                                            <option value="benefits">Benefits</option>
-                                            <option value="gift" selected>Gift</option>
+                                            <option value="benefits">Benefit</option>
+                                            <option value="benefits">Disregarded benefit</option>
+                                            <option value="gift" selected>Financial help</option>
                                             <option value="views">Maintenance</option>
                                             <option value="views">Property</option>
                                             <option value="pension">Pension</option>
+                                            <option value="pension">Student finance</option>
                                             <option value="other">Other</option>
                                           </select>
                                         </td>
@@ -399,11 +436,13 @@ You do not need to categorise employment income or student finance payments.</di
                                           <td class="govuk-table__cell govuk-table__cell--numeric">£20</td>
                                           <td class="govuk-table__cell govuk-table__cell--numeric">
                                             <select class="govuk-select" id="sort" name="sort">
-                                              <option value="benefits">Benefits</option>
-                                              <option value="gift" selected>Gift</option>
+                                              <option value="benefits">Benefit</option>
+                                              <option value="benefits">Disregarded benefit</option>
+                                              <option value="gift" selected>Financial help</option>
                                               <option value="views">Maintenance</option>
                                               <option value="views">Property</option>
                                               <option value="pension">Pension</option>
+                                              <option value="pension">Student finance</option>
                                               <option value="other">Other</option>
                                             </select>
                                           </td>
@@ -414,11 +453,13 @@ You do not need to categorise employment income or student finance payments.</di
                                             <td class="govuk-table__cell govuk-table__cell--numeric">£35</td>
                                             <td class="govuk-table__cell govuk-table__cell--numeric">
                                               <select class="govuk-select" id="sort" name="sort">
-                                                <option value="benefits">Benefits</option>
-                                                <option value="gift" selected>Gift</option>
+                                                <option value="benefits">Benefit</option>
+                                                <option value="benefits">Disregarded benefit</option>
+                                                <option value="gift" selected>Financial help</option>
                                                 <option value="views">Maintenance</option>
                                                 <option value="views">Property</option>
                                                 <option value="pension">Pension</option>
+                                                <option value="pension">Student finance</option>
                                                 <option value="other">Other</option>
                                               </select>
                                             </td>
@@ -429,41 +470,46 @@ You do not need to categorise employment income or student finance payments.</di
                                               <td class="govuk-table__cell govuk-table__cell--numeric">£35</td>
                                               <td class="govuk-table__cell govuk-table__cell--numeric">
                                                 <select class="govuk-select" id="sort" name="sort">
-                                                  <option value="benefits">Benefits</option>
-                                                  <option value="gift" selected>Gift</option>
+                                                  <option value="benefits">Benefit</option>
+                                                  <option value="benefits">Disregarded benefit</option>
+                                                  <option value="gift" selected>Financial help</option>
                                                   <option value="views">Maintenance</option>
                                                   <option value="views">Property</option>
                                                   <option value="pension">Pension</option>
+                                                  <option value="pension">Student finance</option>
                                                   <option value="other">Other</option>
                                                 </select>
                                               </td>
                                             </tr>
-                                            <tr class="govuk-table__row">
+                                          <!--  <tr class="govuk-table__row">
                                                 <td class="govuk-table__cell">18 Nov 2020</td>
                                                 <td class="govuk-table__cell">12345678A DWP UC</td>
                                                 <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
                                                 <td class="govuk-table__cell govuk-table__cell--numeric">
                                                   <select class="govuk-select" id="sort" name="sort">
-                                                    <option value="benefits">Benefits</option>
-                                                    <option value="gift" selected>Gift</option>
+                                                    <option value="benefits">Benefit</option>
+                                                    <option value="benefits">Disregarded benefit</option>
+                                                    <option value="gift" selected>Financial help</option>
                                                     <option value="views">Maintenance</option>
                                                     <option value="views">Property</option>
                                                     <option value="pension">Pension</option>
                                                     <option value="other">Other</option>
                                                   </select>
                                                 </td>
-                                              </tr>
+                                              </tr> -->
                                               <tr class="govuk-table__row">
                                                   <td class="govuk-table__cell">16 Nov 2020</td>
                                                   <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
                                                   <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
                                                   <td class="govuk-table__cell govuk-table__cell--numeric">
                                                     <select class="govuk-select" id="sort" name="sort">
-                                                      <option value="benefits">Benefits</option>
-                                                      <option value="gift" selected>Gift</option>
+                                                      <option value="benefits">Benefit</option>
+                                                      <option value="benefits">Disregarded benefit</option>
+                                                      <option value="gift" selected>Financial help</option>
                                                       <option value="views">Maintenance</option>
                                                       <option value="views">Property</option>
                                                       <option value="pension">Pension</option>
+                                                      <option value="pension">Student finance</option>
                                                       <option value="other">Other</option>
                                                     </select>
                                                   </td>
@@ -474,11 +520,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                     <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                     <td class="govuk-table__cell govuk-table__cell--numeric">
                                                       <select class="govuk-select" id="sort" name="sort">
-                                                        <option value="benefits">Benefits</option>
-                                                        <option value="gift" selected>Gift</option>
+                                                        <option value="benefits">Benefit</option>
+                                                        <option value="benefits">Disregarded benefit</option>
+                                                        <option value="gift" selected>Financial help</option>
                                                         <option value="views">Maintenance</option>
                                                         <option value="views">Property</option>
                                                         <option value="pension">Pension</option>
+                                                        <option value="pension">Student finance</option>
                                                         <option value="other">Other</option>
                                                       </select>
                                                     </td>
@@ -489,11 +537,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                       <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
                                                       <td class="govuk-table__cell govuk-table__cell--numeric">
                                                         <select class="govuk-select" id="sort" name="sort">
-                                                          <option value="benefits">Benefits</option>
-                                                          <option value="gift" selected>Gift</option>
+                                                          <option value="benefits">Benefit</option>
+                                                          <option value="benefits">Disregarded benefit</option>
+                                                          <option value="gift" selected>Financial help</option>
                                                           <option value="views">Maintenance</option>
                                                           <option value="views">Property</option>
                                                           <option value="pension">Pension</option>
+                                                          <option value="pension">Student finance</option>
                                                           <option value="other">Other</option>
                                                         </select>
                                                       </td>
@@ -504,11 +554,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                         <td class="govuk-table__cell govuk-table__cell--numeric">£30</td>
                                                         <td class="govuk-table__cell govuk-table__cell--numeric">
                                                           <select class="govuk-select" id="sort" name="sort">
-                                                            <option value="benefits">Benefits</option>
-                                                            <option value="gift" selected>Gift</option>
+                                                            <option value="benefits">Benefit</option>
+                                                            <option value="benefits">Disregarded benefit</option>
+                                                            <option value="gift" selected>Financial help</option>
                                                             <option value="views">Maintenance</option>
                                                             <option value="views">Property</option>
                                                             <option value="pension">Pension</option>
+                                                            <option value="pension">Student finance</option>
                                                             <option value="other">Other</option>
                                                           </select>
                                                         </td>
@@ -519,11 +571,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                           <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                           <td class="govuk-table__cell govuk-table__cell--numeric">
                                                             <select class="govuk-select" id="sort" name="sort">
-                                                              <option value="benefits">Benefits</option>
-                                                              <option value="gift" selected>Gift</option>
+                                                              <option value="benefits">Benefit</option>
+                                                              <option value="benefits">Disregarded benefit</option>
+                                                              <option value="gift" selected>Financial help</option>
                                                               <option value="views">Maintenance</option>
                                                               <option value="views">Property</option>
                                                               <option value="pension">Pension</option>
+                                                              <option value="pension">Student finance</option>
                                                               <option value="other">Other</option>
                                                             </select>
                                                           </td>
@@ -534,11 +588,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                             <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
                                                             <td class="govuk-table__cell govuk-table__cell--numeric">
                                                               <select class="govuk-select" id="sort" name="sort">
-                                                                <option value="benefits">Benefits</option>
-                                                                <option value="gift" selected>Gift</option>
+                                                                <option value="benefits">Benefit</option>
+                                                                <option value="benefits">Disregarded benefit</option>
+                                                                <option value="gift" selected>Financial help</option>
                                                                 <option value="views">Maintenance</option>
                                                                 <option value="views">Property</option>
                                                                 <option value="pension">Pension</option>
+                                                                <option value="pension">Student finance</option>
                                                                 <option value="other">Other</option>
                                                               </select>
                                                             </td>
@@ -549,11 +605,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                               <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                                                               <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                 <select class="govuk-select" id="sort" name="sort">
-                                                                  <option value="benefits">Benefits</option>
-                                                                  <option value="gift" selected>Gift</option>
+                                                                  <option value="benefits">Benefit</option>
+                                                                  <option value="benefits">Disregarded benefit</option>
+                                                                  <option value="gift" selected>Financial help</option>
                                                                   <option value="views">Maintenance</option>
                                                                   <option value="views">Property</option>
                                                                   <option value="pension">Pension</option>
+                                                                  <option value="pension">Student finance</option>
                                                                   <option value="other">Other</option>
                                                                 </select>
                                                               </td>
@@ -564,11 +622,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                   <select class="govuk-select" id="sort" name="sort">
-                                                                    <option value="benefits">Benefits</option>
-                                                                    <option value="gift" selected>Gift</option>
+                                                                    <option value="benefits">Benefit</option>
+                                                                    <option value="benefits">Disregarded benefit</option>
+                                                                    <option value="gift" selected>Financial help</option>
                                                                     <option value="views">Maintenance</option>
                                                                     <option value="views">Property</option>
                                                                     <option value="pension">Pension</option>
+                                                                    <option value="pension">Student finance</option>
                                                                     <option value="other">Other</option>
                                                                   </select>
                                                                 </td>
@@ -579,11 +639,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                     <select class="govuk-select" id="sort" name="sort">
-                                                                      <option value="benefits">Benefits</option>
-                                                                      <option value="gift" selected>Gift</option>
+                                                                      <option value="benefits">Benefit</option>
+                                                                      <option value="benefits">Disregarded benefit</option>
+                                                                      <option value="gift" selected>Financial help</option>
                                                                       <option value="views">Maintenance</option>
                                                                       <option value="views">Property</option>
                                                                       <option value="pension">Pension</option>
+                                                                      <option value="pension">Student finance</option>
                                                                       <option value="other">Other</option>
                                                                     </select>
                                                                   </td>
@@ -594,11 +656,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                     <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
                                                                     <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                       <select class="govuk-select" id="sort" name="sort">
-                                                                        <option value="benefits">Benefits</option>
-                                                                        <option value="gift" selected>Gift</option>
+                                                                        <option value="benefits">Benefit</option>
+                                                                        <option value="benefits">Disregarded benefit</option>
+                                                                        <option value="gift" selected>Financial help</option>
                                                                         <option value="views">Maintenance</option>
                                                                         <option value="views">Property</option>
                                                                         <option value="pension">Pension</option>
+                                                                        <option value="pension">Student finance</option>
                                                                         <option value="other">Other</option>
                                                                       </select>
                                                                     </td>
@@ -610,11 +674,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                       <td class="govuk-table__cell govuk-table__cell--numeric">£12.30</td>
                                                                       <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                         <select class="govuk-select" id="sort" name="sort">
-                                                                          <option value="benefits">Benefits</option>
-                                                                          <option value="gift" selected>Gift</option>
+                                                                          <option value="benefits">Benefit</option>
+                                                                          <option value="benefits">Disregarded benefit</option>
+                                                                          <option value="gift" selected>Financial help</option>
                                                                           <option value="views">Maintenance</option>
                                                                           <option value="views">Property</option>
                                                                           <option value="pension">Pension</option>
+                                                                          <option value="pension">Student finance</option>
                                                                           <option value="other">Other</option>
                                                                         </select>
                                                                       </td>
@@ -625,11 +691,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                         <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                                                                         <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                           <select class="govuk-select" id="sort" name="sort">
-                                                                            <option value="benefits">Benefits</option>
-                                                                            <option value="gift" selected>Gift</option>
+                                                                            <option value="benefits">Benefit</option>
+                                                                            <option value="benefits">Disregarded benefit</option>
+                                                                            <option value="gift" selected>Financial help</option>
                                                                             <option value="views">Maintenance</option>
                                                                             <option value="views">Property</option>
                                                                             <option value="pension">Pension</option>
+                                                                            <option value="pension">Student finance</option>
                                                                             <option value="other">Other</option>
                                                                           </select>
                                                                         </td>
@@ -640,41 +708,46 @@ You do not need to categorise employment income or student finance payments.</di
                                                                           <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                                           <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                             <select class="govuk-select" id="sort" name="sort">
-                                                                              <option value="benefits">Benefits</option>
-                                                                              <option value="gift" selected>Gift</option>
+                                                                              <option value="benefits">Benefit</option>
+                                                                              <option value="benefits">Disregarded benefit</option>
+                                                                              <option value="gift" selected>Financial help</option>
                                                                               <option value="views">Maintenance</option>
                                                                               <option value="views">Property</option>
                                                                               <option value="pension">Pension</option>
+                                                                              <option value="pension">Student finance</option>
                                                                               <option value="other">Other</option>
                                                                             </select>
                                                                           </td>
                                                                         </tr>
-                                                                        <tr class="govuk-table__row">
+                                                                      <!--  <tr class="govuk-table__row">
                                                                             <td class="govuk-table__cell">30 Oct 2020</td>
                                                                             <td class="govuk-table__cell">12345678A DWP UC</td>
                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">£280.70</td>
                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                               <select class="govuk-select" id="sort" name="sort">
-                                                                                <option value="benefits">Benefits</option>
-                                                                                <option value="gift" selected>Gift</option>
+                                                                                <option value="benefits">Benefit</option>
+                                                                                <option value="benefits">Disregarded benefit</option>
+                                                                                <option value="gift" selected>Financial help</option>
                                                                                 <option value="views">Maintenance</option>
                                                                                 <option value="views">Property</option>
                                                                                 <option value="pension">Pension</option>
                                                                                 <option value="other">Other</option>
                                                                               </select>
                                                                             </td>
-                                                                          </tr>
+                                                                          </tr> -->
                                                                           <tr class="govuk-table__row">
                                                                               <td class="govuk-table__cell">27 Oct 2020</td>
                                                                               <td class="govuk-table__cell">FRAUD REFUND</td>
                                                                               <td class="govuk-table__cell govuk-table__cell--numeric">£0.99</td>
                                                                               <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                 <select class="govuk-select" id="sort" name="sort">
-                                                                                  <option value="benefits">Benefits</option>
-                                                                                  <option value="gift" selected>Gift</option>
+                                                                                  <option value="benefits">Benefit</option>
+                                                                                  <option value="benefits">Disregarded benefit</option>
+                                                                                  <option value="gift" selected>Financial help</option>
                                                                                   <option value="views">Maintenance</option>
                                                                                   <option value="views">Property</option>
                                                                                   <option value="pension">Pension</option>
+                                                                                  <option value="pension">Student finance</option>
                                                                                   <option value="other">Other</option>
                                                                                 </select>
                                                                               </td>
@@ -685,11 +758,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                   <select class="govuk-select" id="sort" name="sort">
-                                                                                    <option value="benefits">Benefits</option>
-                                                                                    <option value="gift" selected>Gift</option>
+                                                                                    <option value="benefits">Benefit</option>
+                                                                                    <option value="benefits">Disregarded benefit</option>
+                                                                                    <option value="gift" selected>Financial help</option>
                                                                                     <option value="views">Maintenance</option>
                                                                                     <option value="views">Property</option>
                                                                                     <option value="pension">Pension</option>
+                                                                                    <option value="pension">Student finance</option>
                                                                                     <option value="other">Other</option>
                                                                                   </select>
                                                                                 </td>
@@ -700,11 +775,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">£15</td>
                                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                     <select class="govuk-select" id="sort" name="sort">
-                                                                                      <option value="benefits">Benefits</option>
-                                                                                      <option value="gift" selected>Gift</option>
+                                                                                      <option value="benefits">Benefit</option>
+                                                                                      <option value="benefits">Disregarded benefit</option>
+                                                                                      <option value="gift" selected>Financial help</option>
                                                                                       <option value="views">Maintenance</option>
                                                                                       <option value="views">Property</option>
                                                                                       <option value="pension">Pension</option>
+                                                                                      <option value="pension">Student finance</option>
                                                                                       <option value="other">Other</option>
                                                                                     </select>
                                                                                   </td>
@@ -716,43 +793,47 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                               <select class="govuk-select" id="sort" name="sort">
-                                                                                                <option value="benefits">Benefits</option>
-                                                                                                <option value="gift" selected>Gift</option>
+                                                                                                <option value="benefits">Benefit</option>
+                                                                                                <option value="benefits">Disregarded benefit</option>
+                                                                                                <option value="gift" selected>Financial help</option>
                                                                                                 <option value="views">Maintenance</option>
                                                                                                 <option value="views">Property</option>
                                                                                                 <option value="pension">Pension</option>
+                                                                                                <option value="pension">Student finance</option>
                                                                                                 <option value="other">Other</option>
                                                                                               </select>
                                                                                             </td>
                                                                                           </tr>
                                                                                           <tr class="govuk-table__row">
-
                                                                                               <td class="govuk-table__cell">23 Oct 2020</td>
                                                                                               <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
                                                                                               <td class="govuk-table__cell govuk-table__cell--numeric">£310</td>
                                                                                               <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                 <select class="govuk-select" id="sort" name="sort">
-                                                                                                  <option value="benefits">Benefits</option>
-                                                                                                  <option value="gift" selected>Gift</option>
+                                                                                                  <option value="benefits">Benefit</option>
+                                                                                                  <option value="benefits">Disregarded benefit</option>
+                                                                                                  <option value="gift" selected>Financial help</option>
                                                                                                   <option value="views">Maintenance</option>
                                                                                                   <option value="views">Property</option>
                                                                                                   <option value="pension">Pension</option>
+                                                                                                  <option value="pension">Student finance</option>
                                                                                                   <option value="other">Other</option>
                                                                                                 </select>
                                                                                               </td>
                                                                                             </tr>
                                                                                             <tr class="govuk-table__row">
-
                                                                                                 <td class="govuk-table__cell">21 Oct 2020</td>
                                                                                                 <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
                                                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
                                                                                                 <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                   <select class="govuk-select" id="sort" name="sort">
-                                                                                                    <option value="benefits">Benefits</option>
-                                                                                                    <option value="gift" selected>Gift</option>
+                                                                                                    <option value="benefits">Benefit</option>
+                                                                                                    <option value="benefits">Disregarded benefit</option>
+                                                                                                    <option value="gift" selected>Financial help</option>
                                                                                                     <option value="views">Maintenance</option>
                                                                                                     <option value="views">Property</option>
                                                                                                     <option value="pension">Pension</option>
+                                                                                                    <option value="pension">Student finance</option>
                                                                                                     <option value="other">Other</option>
                                                                                                   </select>
                                                                                                 </td>
@@ -764,24 +845,26 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                                                                                                   <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                     <select class="govuk-select" id="sort" name="sort">
-                                                                                                      <option value="benefits">Benefits</option>
-                                                                                                      <option value="gift" selected>Gift</option>
+                                                                                                      <option value="benefits">Benefit</option>
+                                                                                                      <option value="benefits">Disregarded benefit</option>
+                                                                                                      <option value="gift" selected>Financial help</option>
                                                                                                       <option value="views">Maintenance</option>
                                                                                                       <option value="views">Property</option>
                                                                                                       <option value="pension">Pension</option>
+                                                                                                      <option value="pension">Student finance</option>
                                                                                                       <option value="other">Other</option>
                                                                                                     </select>
                                                                                                   </td>
                                                                                                 </tr>
-                                                                                                <tr class="govuk-table__row">
-
+                                                                                              <!--  <tr class="govuk-table__row">
                                                                                                     <td class="govuk-table__cell">16 Oct 2020</td>
                                                                                                     <td class="govuk-table__cell">12345678A DWP UC</td>
                                                                                                     <td class="govuk-table__cell govuk-table__cell--numeric">£280.71</td>
                                                                                                     <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                       <select class="govuk-select" id="sort" name="sort">
-                                                                                                        <option value="benefits">Benefits</option>
-                                                                                                        <option value="gift" selected>Gift</option>
+                                                                                                        <option value="benefits">Benefit</option>
+                                                                                                        <option value="benefits">Disregarded benefit</option>
+                                                                                                        <option value="gift" selected>Financial help</option>
                                                                                                         <option value="views">Maintenance</option>
                                                                                                         <option value="views">Property</option>
                                                                                                         <option value="pension">Pension</option>
@@ -789,34 +872,37 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                                       </select>
                                                                                                     </td>
                                                                                                   </tr>
-                                                                                                  <tr class="govuk-table__row">
 
+                                                                                                  <tr class="govuk-table__row">
                                                                                                       <td class="govuk-table__cell">16 Oct 2020</td>
                                                                                                       <td class="govuk-table__cell">12345678A DWP UC</td>
                                                                                                       <td class="govuk-table__cell govuk-table__cell--numeric">£368.20</td>
                                                                                                       <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                         <select class="govuk-select" id="sort" name="sort">
-                                                                                                          <option value="benefits">Benefits</option>
-                                                                                                          <option value="gift" selected>Gift</option>
+                                                                                                          <option value="benefits">Benefit</option>
+                                                                                                          <option value="benefits">Disregarded benefit</option>
+                                                                                                          <option value="gift" selected>Financial help</option>
                                                                                                           <option value="views">Maintenance</option>
                                                                                                           <option value="views">Property</option>
                                                                                                           <option value="pension">Pension</option>
                                                                                                           <option value="other">Other</option>
                                                                                                         </select>
                                                                                                       </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="govuk-table__row">
+                                                                                                    </tr> -->
 
+                                                                                                    <tr class="govuk-table__row">
                                                                                                         <td class="govuk-table__cell">13 Oct 2020</td>
                                                                                                         <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
                                                                                                         <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
                                                                                                         <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                           <select class="govuk-select" id="sort" name="sort">
-                                                                                                            <option value="benefits">Benefits</option>
-                                                                                                            <option value="gift" selected>Gift</option>
+                                                                                                            <option value="benefits">Benefit</option>
+                                                                                                            <option value="benefits">Disregarded benefit</option>
+                                                                                                            <option value="gift" selected>Financial help</option>
                                                                                                             <option value="views">Maintenance</option>
                                                                                                             <option value="views">Property</option>
                                                                                                             <option value="pension">Pension</option>
+                                                                                                            <option value="pension">Student finance</option>
                                                                                                             <option value="other">Other</option>
                                                                                                           </select>
                                                                                                         </td>
@@ -828,11 +914,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                                           <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
                                                                                                           <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                             <select class="govuk-select" id="sort" name="sort">
-                                                                                                              <option value="benefits">Benefits</option>
-                                                                                                              <option value="gift" selected>Gift</option>
+                                                                                                              <option value="benefits">Benefit</option>
+                                                                                                              <option value="benefits">Disregarded benefit</option>
+                                                                                                              <option value="gift" selected>Financial help</option>
                                                                                                               <option value="views">Maintenance</option>
                                                                                                               <option value="views">Property</option>
                                                                                                               <option value="pension">Pension</option>
+                                                                                                              <option value="pension">Student finance</option>
                                                                                                               <option value="other">Other</option>
                                                                                                             </select>
                                                                                                           </td>
@@ -843,11 +931,13 @@ You do not need to categorise employment income or student finance payments.</di
                                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
                                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric">
                                                                                                               <select class="govuk-select" id="sort" name="sort">
-                                                                                                                <option value="benefits">Benefits</option>
-                                                                                                                <option value="gift" selected>Gift</option>
+                                                                                                                <option value="benefits">Benefit</option>
+                                                                                                                <option value="benefits">Disregarded benefit</option>
+                                                                                                                <option value="gift" selected>Financial help</option>
                                                                                                                 <option value="views">Maintenance</option>
                                                                                                                 <option value="views">Property</option>
                                                                                                                 <option value="pension">Pension</option>
+                                                                                                                <option value="pension">Student finance</option>
                                                                                                                 <option value="other">Other</option>
                                                                                                               </select>
                                                                                                             </td>
