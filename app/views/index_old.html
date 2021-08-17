@@ -1,19 +1,8 @@
 
-{% extends "layout2.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "PROTOTYPE"
-  },
-  html: 'This is a prototype. Some things may not work as expected.'
-}) }}
-
-
 {% endblock %}
 
 {% block content %}
@@ -21,74 +10,62 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      Apply for legal aid
+      Prototypes and explorations
       <span class="govuk-caption-xl"></span>
     </h1>
   </div>
 </div>
 
-<div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">
-    Contents
-  </h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#current">
-        Current
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#proposals">
-        Proposals
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#concepts">
-        Concepts
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#archive">
-        Archive
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#notes">
-        Notes
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-tabs__panel" id="current">
-    <h2 class="govuk-heading-l">Complete end-to-end user journeys</h2>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
     <h2 class="govuk-heading-m">Prototypes</h2>
+    <p class="govuk-body-s">End-to-end user experience of both user journeys</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li><a href="/passported_v2/start_page">Passported clients</a></li>
+    <li><a href="/apply_for_legal_aid_prototype_non_passported_provider_means/dashboard">Non-passported clients (single proceeding)</a></li>
+    </ul>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="/non_passported_employment/sign_in">Non-passported + employment</a></li>
+    </ul>
 
-    <p class="govuk-body">These protoypes are <strong>works in progress</strong> and reflect the live service as closely as possible.</p>
+<br>
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <strong>Earlier versions</strong></span></summary>
 
-      <p class="govuk-body"><a href="https://apply-for-legal-aid-prototype.herokuapp.com/passported_v2/start_page">Passported journey</a></p>
+        <div class="panel panel-border-narrow">
 
-      <p class="govuk-body"><a href="https://apply-for-legal-aid-prototype.herokuapp.com/non_passported_employment/sign_in">Non-passported journey</a></p>
+          <br>
+          <h2 class="govuk-heading-s">Non-passported</h2>
 
-      <h2 class="govuk-heading-m">Overviews</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/non_passported_v1/start_page">Version 1</a></li>
+              <li><a href="/apply_for_legal_aid_prototype/start_page">Version 2</a></li>
+              <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/start_page">Version 3</a></li>
+              <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/citizen_start_page">Skip to citizen start page</a></li>
+              <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/citizen_accounts">Skip to citizen accounts</a></li>
+              <li><a href="/apply_for_legal_aid_prototype_non_passported_v3/provider_means_summary">Skip to provider means summary</a></li>
+            </ul>
 
-      <p class="govuk-body"><a href="https://www.figma.com/file/UyD9h3V99kn7DT3pbSgLw7/Apply-for-legal-aid-User-flow?node-id=232%3A13" target="_blank">User flow</a></p>
+            <h2 class="govuk-heading-s">Passported</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/start_page">Version 1</a>: proceedings at the start of flow, capital questions, first attempt at simple merits</li>
+              </ul>
+        </div>
+      </details>
 
-      <p class="govuk-body"><a href="https://miro.com/app/board/o9J_lNaUefM=/" target="_blank">Journey map</a></p>
+      <h2 class="govuk-heading-m">New UCD documentation prototype</h2>
+      <p class="govuk-body-s">Proposed replacement for this page to make information more findable</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="/ucd_documentation/home">Prototypes, concepts, archive and notes</a></li>
+      </ul>
+      </div>
 
-  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-m">Current explorations</h2>
 
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="proposals">
-    <h2 class="govuk-heading-l">Proposals</h2>
-
-    <p class="govuk-body">Reviewed and approved design proposals ready for build.</p>
-  </div>
-
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="concepts">
-    <h2 class="govuk-heading-l">Concepts</h2>
-
-    <p class="govuk-body">Design and content explorations of current and future problems we want to solve.</p>
-
-    <h3 class="govuk-heading-m">HMRC provider challenge
+    <h3 class="govuk-heading-s">HMRC provider challenge
       <p class="govuk-body-s">Allow provider to challenge HMRC data and enter new employment details</p>
     </h3>
 
@@ -103,27 +80,37 @@ GOV.UK Prototype Kit
 
         </ul>
 
-    <h3 class="govuk-heading-m">Certificate page</h3>
+    <h3 class="govuk-heading-s">Application certificate 'cert' page</h3>
     <a href="https://www.figma.com/file/m16Fj0Du8Ap0x0efPR5PxY/Apply-for-legal-aid-Application-Certificate?node-id=232%3A13">Initial design exploration</a>
 <br>
 <p class="govuk-body-s">Check your answers components, extracted 'like for like' onto Application cert + print view page.
 </p>
-        <ul class="govuk-list govuk-list--bullet">
+    <ul class="govuk-list govuk-list--bullet">
+        <!--  <li><a href="multiple_proceedings/v1/search">V1 (add to a list)</a></li>
+          <li><a href="multiple_proceedings/what">Limitations</a></li> -->
+          <!-- <li><a href="multiple_proceedings/merits_da/home">Merits tasklist (DA)</a></li> -->
+
           <li><a href="stevey/application_certificate/check_answers_details">non-passported: check your answers (case details)</a></li>
           <li><a href="stevey/application_certificate/check_answers_merits">non-passported: check your answers (merits)</a></li>
           <li><a href="stevey/application_certificate/application_completed">non-passported: application certificate</a></li>
           <li><a href="stevey/application_certificate/application_print_placeholder_02">non-passported: print view</a></li>
-        </ul>
+
+</ul>
     <p class="govuk-body-s">Check your answers components, extracted 'like for like', but content differs on Application cert + print view page to be more representative at point in application.</p>
 
 <ul class="govuk-list govuk-list--bullet">
+
+        <!--  <li><a href="multiple_proceedings/proceedings_merits_grouped/search">Add proceedings + tasklist (grouped)</a></li>
+          <li><a href="multiple_proceedings/proceedings_merits/home">Tasklist (1 thing pp)</a></li>
+          <li><a href="multiple_proceedings/proceedings_merits_grouped/home">Tasklist (grouped)</a>
+          <li><a href="multiple_proceedings/version_3/home">Tasklist (1 thing pp + one link under proceeding)</a> -->
 
           <li><a href="jim/certificate_page/passported/certificate">passported</a></li>
           <li><a href="jim/certificate_page/non_passported/certificate">non-passported</a></li>
           <li><a href="jim/certificate_page/non_passported/print_view">print view</a></li>
         </ul>
 
-        <h3 class="govuk-heading-m">Employment details</h3>
+        <h3 class="govuk-heading-s">Employment details</h3>
 
         <ul class="govuk-list govuk-list--bullet">
           <li><a href="jim/hmrc/v1/check_answers">Happy path</a></li>
@@ -137,7 +124,7 @@ GOV.UK Prototype Kit
           <li>Provider - <a href="employment-details/provider/employment_details/income_summary">enter employment details</a></li>
         </ul>
 
-    <h3 class="govuk-heading-m">Dependants: progressive reveal
+    <h3 class="govuk-heading-s">Dependants: progressive reveal
         <p class="govuk-body-s">Ask only relevant questions for each dependant</p>
     </h3>
 
@@ -146,19 +133,9 @@ GOV.UK Prototype Kit
        <li><a href="/jim/dependants/multi_page/dependants">multi-page</a></li>
     </ul>
 
-    <h3 class="govuk-heading-m">Bank transaction categorisation</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/jim/transaction_select/income">'Select' component for each transaction</a></li>
-    </ul>
+    <h2 class="govuk-heading-m">Older explorations</h2>
 
-
-  </div>
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
-    <h2 class="govuk-heading-l">Archive</h2>
-
-    <p class="govuk-body">Past versions of prototypes and older design explorations.</p>
-
-    <h3 class="govuk-heading-m">Multiple proceedings
+    <h3 class="govuk-heading-s">Multiple proceedings
     <p class="govuk-body-s">Allow providers to apply for more than one proceeding</p>
     </h3>
 
@@ -179,7 +156,7 @@ GOV.UK Prototype Kit
           <li><a href="multiple_proceedings/version_3/home">Tasklist (1 thing pp + one link under proceeding)</a> -->
         </ul>
 
-        <h3 class="govuk-heading-m">Emergency cost limits
+        <h3 class="govuk-heading-s">Emergency cost limits
         <p class="govuk-body-s">Allow providers to request a higher emergency cost limit</p>
         </h3>
 
@@ -408,19 +385,10 @@ GOV.UK Prototype Kit
                   </ul>
                 </div>
               </details>
-  </div>
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="notes">
-    <h2 class="govuk-heading-l">Notes</h2>
 
-    <p class="govuk-body">Notes on the key work done throughout the project.</p>
 
-        <h2 class="govuk-heading-m">User research</h2>
+        </div>
+      </div>
 
-          <h2 class="govuk-heading-s">August 2021</h2>
-
-          <p class="govuk-body"><a href="https://docs.google.com/spreadsheets/d/1I2pIzyhXfPzVCgQB5l3LJSunpK5ct5aiYjal7nTggBI/edit#gid=1467977828">Non-passported/employed journey</a></p>
-
-  </div>
-</div>
 
       {% endblock %}
