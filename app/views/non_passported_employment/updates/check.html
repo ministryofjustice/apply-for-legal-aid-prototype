@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "consent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="email_address" method="post" class="form">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What your client needs to do
+                </h1>
+              </legend>
+
+              <p class="govuk-body">Your client needs to access 'Apply for legal aid' using a link we'll send them in an email.</p>
+
+              <p class="govuk-body">They'll then be redirected to their bank’s website or app where they can:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                   <li>sign in to their online banking</li>
+                  <li>give TrueLayer permission to collect 3 months of bank statements on behalf of the LAA</li>
+                   </ul>
+
+              <p class="govuk-body">Once they've done this, your client will be returned to 'Apply for legal aid' so they can answer questions about their income and outgoings.</p>
+
+            <!-- Proposed updates after user testing August 2021
+
+              <h2 class="govuk-heading-m">What your client needs to do</h2>
+
+              <p class="govuk-body">1. Access 'Apply for legal aid' using a link we'll send them in an email.</p>
+
+              <p class="govuk-body">2. Sign in to their online banking after they're redirected to their bank's website or app.</p>
+
+              <p class="govuk-body">3. Allow TrueLayer to collect 3 months of bank statements on our behalf.</p>
+
+              <p class="govuk-body">4. Select the types of payments they receive and make (you'll need to assign these categories to bank transactions when you continue the application).</p> -->
+
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
