@@ -10,9 +10,9 @@ Apply for legal aid - Check client financial assessment
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
-    text: "prototype"
+    text: "PROTOTYPE"
   },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  html: 'This is a prototype. Some things may not work as expected.'
 }) }}
 
 
@@ -173,30 +173,80 @@ th:first-child {
       </h2>
 
       <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
-        <h2 class="govuk-heading-m">Income</h2>
-        <p></p><h2 class="govuk-heading-s">8 October 2020 to 7 January 2021</h2>
+        <h2 class="govuk-heading-m">Employment income</h2>
+<!--  <h2 class="govuk-heading-s">8 October 2020 to 7 January 2021</h2> -->
+            </div>
+
+      <table class="govuk-table" style="margin-bottom: 15px;">
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Income</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£3000</td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Benefits in kind</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Tax</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">-£300</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">National insurance</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">-£54</td>
+        </tr>
+
+      <!--  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Maintenance payments</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Income from a property or lodger</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Pension</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Student finance</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+      <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
+        <h2 class="govuk-heading-m">Other income</h2>
+        <!-- <h2 class="govuk-heading-s">8 October 2020 to 7 January 2021</h2> -->
       </div>
 
 
       <table class="govuk-table" style="margin-bottom: 15px;">
       <tbody class="govuk-table__body">
 
-
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Benefits</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">£2869.08</td>
         </tr>
-
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Financial help from friends or family</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">£150</td>
         </tr>
 
-
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Maintenance payments</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Student finance</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£9,800</td>
         </tr>
 
 
@@ -219,62 +269,11 @@ th:first-child {
       </tbody>
     </table>
 
-<p></p>
-
-<p></p>
-    <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
-      <h2 class="govuk-heading-m">Other income: Employment income</h2>
-<p></p><h2 class="govuk-heading-s">8 October 2020 to 7 January 2021</h2>
-          </div>
-
-    <table class="govuk-table" style="margin-bottom: 15px;">
-    <tbody class="govuk-table__body">
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Employment income</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">£3000</td>
-      </tr>
 
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Benefits in kind</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Tax</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">-£300</td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">National insurance</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">-£54</td>
-      </tr>
-
-    <!--  <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Maintenance payments</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Income from a property or lodger</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Pension</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Student finance</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr> -->
-    </tbody>
-  </table>
-
-
-
-  <p></p>
-      <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
-        <h2 class="govuk-heading-m">Other income: Student finance</h2>
-        <p></p><h2 class="govuk-heading-s">8 January 2021 to 7 January 2022</h2>
+    <!--  <div class="govuk-grid-column-two-thirds" style="padding-left:0px">
+        <h2 class="govuk-heading-m">Student finance</h2>
+         <h2 class="govuk-heading-s">8 January 2021 to 7 January 2022</h2>
       </div>
 
 
@@ -287,7 +286,7 @@ th:first-child {
         </tr>
 
       </tbody>
-    </table>
+    </table> -->
 
 
     <div class="govuk-!-padding-bottom-6"></div>
@@ -845,7 +844,7 @@ th:first-child {
       text: "MOJ Digital Services"
     },
     {
-      href: "/prototype-admin/clear-data",
+      href: "/PROTOTYPE-admin/clear-data",
       text: "Clear data"
     }
     ]

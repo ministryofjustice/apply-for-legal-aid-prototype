@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "benefits"
+  href: "disregarded_benefits"
 }) }}
 
 {% endblock %}
@@ -42,161 +42,282 @@ Apply for legal aid - Income start page
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Sort your client's income into categories
+        Add incoming bank transactions to categories
       </h1>
-    </legend>
+    </legend><br>
 
     <p class="gov-body">
-    Your client told us they receive the following types of income.</p>
+      Your client told us they receive:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>financial help from family or friends</li>
+        <li>benefits payments</li>
+        </ul>
 
   <p class="gov-body">
-  View your client's bank statements and add transactions to each category.</p>
+    Find these transactions in your client's bank statements and add them to each category.</p>
 
-      <ol class="app-task-list">
+  <ol class="app-task-list">
 
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Benefits
-            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                  Some transactions may have been automatically added.
-              </span>
-
-          </h2>
-          <ul class="app-task-list__items">
-         <table class="govuk-table" style="margin-bottom:0px;">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Date</th>
-                  <th class="govuk-table__header" scope="col">Description</th>
-                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-                  <th class="govuk-table__header" scope="col"></th>
-                </tr>
-              </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">6 Jan 2021</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£25</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">31 Dec 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">18 Dec 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">2 Dec 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">18 Nov 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£414.81</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">9 Nov 2020</td>
-                <td class="govuk-table__cell">1234567890-CHB</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">2 Nov 2020</td>
-                <td class="govuk-table__cell">1234567890-CHB</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">30 Oct 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£280.70</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">26 Oct 2020</td>
-                <td class="govuk-table__cell">1234567890-CHB</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">19 Oct 2020</td>
-                <td class="govuk-table__cell">1234567890-CHB</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">16 Oct 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£280.71</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">16 Oct 2020</td>
-                <td class="govuk-table__cell">12345678A DWP UC</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£368.20</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">12 Oct 2020</td>
-                <td class="govuk-table__cell">1234567890-CHB</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                  Remove
-                </a></td>
-              </tr>
-
-              </tbody>
-              </table>
-            <li class="app-task-list__item">
-              <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
-                View statements and add transactions
-              </a>
-            </li>
-          </ul>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> Financial help from friends or family
+      </h2>
+      <ul class="app-task-list__items">
+        <table class="govuk-table" style="margin-bottom:0px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Date</th>
+              <th class="govuk-table__header" scope="col">Description</th>
+              <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">11 Dec 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£450</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 Dec 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 Dec 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 Nov 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£270</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 Nov 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">9 Nov 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 Oct 2020</td>
+            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£310</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          </tbody>
+          </table>
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
+            Add transactions
+          </a>
         </li>
+      <!--  <div class="govuk-!-padding-bottom-6"></div>
 
+        <h2 class="govuk-heading-s">Received in cash (bank notes and coins)
+       </h2>
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+             Your client entered these amounts.
+         </span>
 
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"></span> Disregarded benefits
-          <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                Some transactions may have been automatically added.
-            </span>
-          </h2>
-          <ul class="app-task-list__items">
-            <table class="govuk-table" style="margin-bottom:0px;">
+        <table class="govuk-table" style="margin-bottom:0px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Month</th>
+              <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+            </tr>
+          </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">8 Dec 2020 to 7 Jan 2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">8 Nov to 7 Dec 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">8 Oct to 7 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><strong>Total</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
+
+          </tr>
+          </tbody>
+          </table> -->
+      </ul>
+    </li>
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Benefits
+        <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+              Some transactions may have been automatically added.
+          </span>
+
+      </h2>
+      <ul class="app-task-list__items">
+     <table class="govuk-table" style="margin-bottom:0px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Date</th>
+              <th class="govuk-table__header" scope="col">Description</th>
+              <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+        <tbody class="govuk-table__body">
+        <!--  <tr class="govuk-table__row">
+            <td class="govuk-table__cell">6 Jan 2021</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£25</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">31 Dec 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">18 Dec 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 Dec 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">18 Nov 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£414.81</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr> -->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">9 Nov 2020</td>
+            <td class="govuk-table__cell">1234567890-CHB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 Nov 2020</td>
+            <td class="govuk-table__cell">1234567890-CHB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+        <!--  <tr class="govuk-table__row">
+            <td class="govuk-table__cell">30 Oct 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£280.70</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr> -->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">26 Oct 2020</td>
+            <td class="govuk-table__cell">1234567890-CHB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">19 Oct 2020</td>
+            <td class="govuk-table__cell">1234567890-CHB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+        <!--  <tr class="govuk-table__row">
+            <td class="govuk-table__cell">16 Oct 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£280.71</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">16 Oct 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£368.20</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr> -->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">12 Oct 2020</td>
+            <td class="govuk-table__cell">1234567890-CHB</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+              Remove
+            </a></td>
+          </tr>
+
+          </tbody>
+          </table>
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
+            Add transactions
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">3.</span> Disregarded benefits
+      <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            Add transactions that have not been automatically identified here.
+        </span>
+      </h2>
+      <ul class="app-task-list__items">
+        <table class="govuk-table" style="margin-bottom:0px;">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th class="govuk-table__header" scope="col">Date</th>
@@ -233,75 +354,29 @@ Apply for legal aid - Income start page
 
               </tbody>
               </table>
-            <li class="app-task-list__item">
-              <a class="govuk-body" href="disregarded_benefits" aria-describedby="eligibility-completed">
-                View statements and add transactions
-              </a>
-            </li>
-          </ul>
+        <li class="app-task-list__item">
+          <a class="govuk-body" href="disregarded_benefits" aria-describedby="eligibility-completed">
+            Add transactions
+          </a>
         </li>
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Financial help from friends or family
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
-                View statements and add transactions <!-- Select payments from your bank statement -->
-              </a>
-            </li>
-            <div class="govuk-!-padding-bottom-6"></div>
+      </ul>
+    </li>
 
-            <h2 class="govuk-heading-s">Received in cash (bank notes and coins)
-           </h2>
-           <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-                 Your client entered these amounts.
-             </span>
-
-            <table class="govuk-table" style="margin-bottom:0px;">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Month</th>
-                  <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
-                </tr>
-              </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">8 Dec 2020 to 7 Jan 2021</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">8 Nov to 7 Dec 2020</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£200</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">8 Oct to 7 Nov 2020</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><strong>Total</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£360</strong></td>
-
-              </tr>
-              </tbody>
-              </table>
-          </ul>
-        </li>
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income_provider" aria-describedby="eligibility-completed">
-              Add another type of income
-            </a>
-          </h2>
-        </li>
-        <!-- <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
-              Add another type of income
-            </a>
-          </h2>
-        </li> -->
-      </ol>
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number"> <img src="/public/images/plus_icon.svg"> </span> <a class="govuk-body" href="types_of_income_provider" aria-describedby="eligibility-completed">
+          Add another type of income
+        </a>
+      </h2>
+    </li>
+    <!-- <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">  <img src="/public/images/plus_icon.svg"> </span> <a  href="#" aria-describedby="eligibility-completed">
+          Add another type of income
+        </a>
+      </h2>
+    </li> -->
+  </ol>
 
       <!-- <p class="govuk-body">
           <a href="types_of_income3" class="govuk-link">Add another type of income</a>
@@ -309,7 +384,7 @@ Apply for legal aid - Income start page
 
         <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="other_income" role="button" class="govuk-button">
+        <a href="dependants" role="button" class="govuk-button">
           Save and continue
         </a>
 
