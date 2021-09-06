@@ -1,4 +1,3 @@
-
 {% extends "layout2.html" %}
 
 {% block pageTitle %}
@@ -55,6 +54,11 @@ GOV.UK Prototype Kit
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#notes">
         Notes
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#settings">
+        Settings
       </a>
     </li>
   </ul>
@@ -429,6 +433,40 @@ GOV.UK Prototype Kit
           <p class="govuk-body"><a href="https://docs.google.com/spreadsheets/d/1I2pIzyhXfPzVCgQB5l3LJSunpK5ct5aiYjal7nTggBI/edit#gid=1467977828">Non-passported/employed journey</a></p>
 
   </div>
-</div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="settings">
+    <h2 class="govuk-heading-l">Settings</h2>
 
-      {% endblock %}
+    <p class="govuk-body">Settings which control various aspects of prototype behaviour.</p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-2" aria-describedby="validation-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Validation
+          </h1>
+        </legend>
+        <div id="validation-hint">
+          <span class="govuk-hint">Turns validation on for the whole prototype. The current validations are:</span>
+          <ul class="govuk-list govuk-list--bullet govuk-hint">
+            <li>Empty text fields</li>
+            <li>Empty date fields</li>
+            <li>No checkbox checked</li>
+            <li>No radio button selected</li>
+          </ul>
+        </div>
+        <div class="govuk-radios govuk-radios--inline" data-module="radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="validation-on" name="validation_on" type="radio" value="yes" checked="{{ data['validation_on'] }}">
+            <label for="validation-on" class="govuk-radios__label">On</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="validation-off" name="validation_on" type="radio" value="no" checked="{{ data['validation_on'] }}">
+            <label for="validation-off" class="govuk-radios__label">Off</label>
+          </div>
+        </div>
+      </fieldset>
+      <button class="govuk-button" type="submit" id="save-settings">Save changes</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
