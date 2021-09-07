@@ -4,6 +4,25 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+
+  $(document).ready(() => {
+    let onData = "{{ data['validation-on'] }}"
+    let on = document.getElementById('validation-on')
+    let off = document.getElementById('validation-off')
+    if (onData === 'true') {
+      on.checked = true
+      off.checked = false
+    } else {
+      off.checked = true
+      on.checked = false
+    }
+  })
+
+</script>
+{% endblock %}
+
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -438,7 +457,8 @@ GOV.UK Prototype Kit
 
     <p class="govuk-body">Settings which control various aspects of prototype behaviour.</p>
 
-    <div class="govuk-form-group">
+    <form action="index#settings" method="post" novalidate>
+      <div class="govuk-form-group">
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-2" aria-describedby="validation-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
@@ -456,17 +476,18 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-radios govuk-radios--inline" data-module="radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="validation-on" name="validation_on" type="radio" value="yes" checked="{{ data['validation_on'] }}">
+            <input class="govuk-radios__input" id="validation-on" name="validation-on" type="radio" value="true">
             <label for="validation-on" class="govuk-radios__label">On</label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="validation-off" name="validation_on" type="radio" value="no" checked="{{ data['validation_on'] }}">
+            <input class="govuk-radios__input" id="validation-off" name="validation-on" type="radio" value="false">
             <label for="validation-off" class="govuk-radios__label">Off</label>
           </div>
         </div>
       </fieldset>
       <button class="govuk-button" type="submit" id="save-settings">Save changes</button>
     </div>
+    </form>
   </div>
 </div>
 {% endblock %}
