@@ -17,7 +17,7 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "consent"
+  href: "client_details"
 }) }}
 
 {% endblock %}
@@ -26,44 +26,45 @@ Apply for legal aid - Confirmation page
 
 
   <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">You need to complete this application in CCMS</h1>
-    </header>
+
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
+        <header>
+          <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit – is this correct?</h1>
+        </header>
+        <form action="client_details" method="post" class="form">
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
 
-          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
 
-         <p style="color: #fff;">As part of your client's assessment, they need to share their financial data with us using online banking.</p>
-
-         <p style="color: #fff;">We've saved your answers.</p> -->
-
-         <p style="color: #fff;">You cannot use this service if your client:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-            <li style="color: #fff;">does not use online banking for all of their current accounts</li>
-            <li style="color: #fff;">will not allow TrueLayer to collect 3 months of bank statements</li>
-            <!-- <li style="color: #fff;">cannot answer questions about their property, savings and other investments</li> -->
-            </ul>
-          </li>
+            <div class="govuk-radios govuk-radios">
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="check" type="radio" value="yes">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name">
+         Yes
+       </label>
+     </div>
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="changed-name-2" name="check" type="radio" value="no">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name-2">
+         No, my client receives a passporting benefit
+       </label>
+     </div>
+   </div>
         </ul>
 
-<!-- <p style="color: #fff;">We currently only accept applications for people receiving one of these benefits.</p> -->
-
         <div class="govuk-!-padding-bottom-4"></div>
+        <a href="check" role="button" class="govuk-button white-button right">
+          Save and continue</a>
 
-        <a href="#" role="button" class="govuk-button white-button right">
-          Continue in CCMS</a>
-      <!--  <a href=#" role="button" class="govuk-button draft-button">
-          Save and come back later
-        </a> -->
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
-        <p style="color: #fff;"><a href="dashboard">Back to my applications</a></p>
-
+          </form>
       </div>
-
+    </div>
+  </div>
 
 
 {% endblock %}
