@@ -28,7 +28,7 @@ Apply for legal aid - Types of income
 
   {{ govukBackLink({
     text: "Back",
-      href: "sort_income"
+      href: "check_details"
   }) }}
 {% endblock %}
 
@@ -36,95 +36,125 @@ Apply for legal aid - Types of income
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="sort_income" method="post" class="form">
+        <form action="evidence" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Which payments does your client receive?
+                  Which passporting benefit does your client receive?
                 </h1>
               </legend>
 
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  Universal Credit
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                  Guarantee Credit element of Pension Credit
+                </label>
+              </div>
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+       <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+         Income-based Jobseeker’s Allowance (JSA)
+       </label>
+     </div>
+     <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Income-related Employment and Support Allowance (ESA)
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Income Support
+        </label>
+      </div>
 
-               <span class="govuk-hint">Select all that apply.</span>
+      <p class="govuk-body">or</p>
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          None of these
+        </label>
+      </div>
+
+   </div>
+
+
+
+            <!--  <span class="govuk-hint">
+                    Select all that apply.
+                </span>
 
               <div class="govuk-checkboxes" data-module="checkboxes">
-
-              <!--  <div class="govuk-checkboxes__item">
+                <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-1" name="salary" type="checkbox" value="yes" data-aria-controls="income-conditional-1" {{ checked("salary","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-1">
-                    Salary or wages
+                    Income Support (IS)
                   </label>
-                </div> -->
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                    Financial help from friends or family
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Select if your client gets regular money from a friend or relative to help with living costs. Do not include one-off payments.
-                  </span>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                    Benefits
+                    Income-based Jobseeker’s Allowance (JSA)
                   </label>
-               <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      For example, Child Benefit or tax credits.
-                  </span>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
+                    Universal Credit (UC)
+                  </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                    Maintenance payments from a former partner
+                    Guarantee Credit element of Pension Credit (GC)
                   </label>
-              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                    This includes child maintenance.
-                  </span>
-
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                    Income from a property or lodger
+                    Income-related Employment and Support Allowance (ESA)
                   </label>
                 </div>
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                     Pension
-                  </label>
-                <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                      Include State, workplace and personal pensions.
-                  </span>
-                </div>
-             <p class="govuk-body">or</p>
+          <!--   <p class="govuk-body">or</p>
 
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                    <!-- I receive none of these types of income --> None of these
+                     None of these
                   </label>
                 </div>
-              </div>
+              </div> -->
+
+
+
             </fieldset>
           </div>
 
           <button type="submit" class="govuk-button">
-            Continue
+            Save and continue
           </button>
 
-        <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
-          </a> -->
+          </a>
 
         </form>
       </div>

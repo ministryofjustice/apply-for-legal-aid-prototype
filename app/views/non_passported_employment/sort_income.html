@@ -41,17 +41,17 @@ Apply for legal aid - Income start page
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Add incoming bank transactions to categories
+            Sort incoming bank transactions into categories
           </h1>
         </legend><br>
 
         <p class="gov-body">
-          Your client told us they receive:</p>
+          Your client said their income falls into the categories listed below.</p>
 
-          <ul class="govuk-list govuk-list--bullet">
+        <!--  <ul class="govuk-list govuk-list--bullet">
             <li>financial help from family or friends</li>
             <li>benefits payments</li>
-            </ul>
+            </ul> -->
 
       <p class="gov-body">
         Find these transactions in your client's bank statements and add them to each category.</p>
@@ -68,7 +68,7 @@ Some transactions may have been automatically added.</div> -->
      <ul class="app-task-list__items">
        <li class="app-task-list__item">
          <a class="govuk-body" href="financial_help" aria-describedby="eligibility-completed">
-          Add transactions <!-- Select payments from your bank statement -->
+          View statements and add transactions <!-- Select payments from your bank statement -->
          </a>
        </li>
 
@@ -110,12 +110,65 @@ Some transactions may have been automatically added.</div> -->
      </ul>
      </li>
 
+     <li>
+       <h2 class="app-task-list__section">
+         <span class="app-task-list__section-number">2. </span>Disregarded benefits
+         <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+               Transactions may have been automatically added. View statements to check that none were missed.
+           </span>
+
+       </h2>
+       <ul class="app-task-list__items">
+         <table class="govuk-table" style="margin-bottom:0px;">
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th class="govuk-table__header" scope="col">Date</th>
+                   <th class="govuk-table__header" scope="col">Description</th>
+                   <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                   <th class="govuk-table__header" scope="col"></th>
+                 </tr>
+               </thead>
+             <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">12 Dec 2020</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">12 Nov 2020</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">12 Oct 2020</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               </tbody>
+               </table>
+         <li class="app-task-list__item">
+           <a class="govuk-body" href="disregarded_benefits" aria-describedby="eligibility-completed">
+             View statements and add transactions
+           </a>
+         </li>
+       </ul>
+     </li>
+
  <li>
    <h2 class="app-task-list__section">
 
-     <span class="app-task-list__section-number">2. </span> Benefits
+     <span class="app-task-list__section-number">3. </span> Benefits
      <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-           Check bank statements and add any transactions that have not been automatically added.
+           Transactions may have been automatically added. View statements to check that none were missed.
        </span>
 
    </h2>
@@ -239,28 +292,12 @@ Some transactions may have been automatically added.</div> -->
        </table>
      <li class="app-task-list__item">
        <a class="govuk-body" href="benefits" aria-describedby="eligibility-completed">
-         Add transactions
+         View statements and add transactions
        </a>
      </li>
    </ul>
  </li>
 
- <li>
-   <h2 class="app-task-list__section">
-     <span class="app-task-list__section-number">3. </span>Disregarded benefits
-     <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
-           Check bank statements and add any transactions that have not been automatically added.
-       </span>
-
-   </h2>
-   <ul class="app-task-list__items">
-     <li class="app-task-list__item">
-       <a class="govuk-body" href="disregarded_benefits" aria-describedby="eligibility-completed">
-         Add transactions
-       </a>
-     </li>
-   </ul>
- </li>
 
  <!-- <li>
  <h2 class="app-task-list__section">
@@ -324,9 +361,10 @@ Some transactions may have been automatically added.</div> -->
 <li>
 
 
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-Add another income type
-</button>
+
+<a href="types_of_income_provider" role="button" class="govuk-button govuk-button--secondary">
+  Add another income category
+</a>
  </ol>
 
         <a href="dependants" role="button" class="govuk-button">
