@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "consent"
+      href: "substantive_application"
   }) }}
 {% endblock %}
 
@@ -25,39 +25,28 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="online_banking_declaration" method="post" class="form">
+        <form action="email_address" method="post" class="form">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Sam Doe's financial assessment
-                </h1>
-              </legend>
-              <br>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What your client needs to do
+            </h1>
+          </legend>
 
-              <p class="govuk-body-l">Your client needs to do the following:</p>
+          <p class="govuk-body">Your client needs to access 'Apply for legal aid' using a link we'll send them in an email.</p>
 
-                <h3 class="govuk-heading-m">1. Access 'Apply for legal aid'</h3>
+          <p class="govuk-body">They'll then be redirected to their bank’s website or app where they can:</p>
 
-                <p class="govuk-body">We'll send them an email with a link to the service.</p>
+          <ul class="govuk-list govuk-list--bullet">
+               <li>sign in to their online banking</li>
+              <li>give TrueLayer permission to collect 3 months of bank statements on behalf of the LAA</li>
+               </ul>
 
-              <h3 class="govuk-heading-m">2. Allow TrueLayer to collect 3 months of bank statements</h3>
+          <p class="govuk-body">Once they've done this, your client will be returned to 'Apply for legal aid' so they can answer questions about their income and outgoings.</p>
 
-              <p class="govuk-body">We'll redirect them to their bank's website or app to do this.</p>
-
-              <p class="govuk-body">They'll then be returned to 'Apply for legal aid'.</p>
-
-              <h3 class="govuk-heading-m">3. Tell us about their income and outgoings</h3>
-
-              <p class="govuk-body">They'll need to select the categories their income and outgoings fall into.</p>
-
-              <p class="govuk-body">
-You’ll need to sort your client's bank transactions into the categories they select when you continue the application.</p>
-
-              <br>
-
-          <button type="submit" class="govuk-button">
-            Continue
-          </button>
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
 
 
         </form>

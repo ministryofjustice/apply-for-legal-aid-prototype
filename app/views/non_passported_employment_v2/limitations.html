@@ -1,0 +1,272 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Proceedings
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery.hideseek.min.js"></script>
+<script>
+$('#search').hideseek({
+    highlight: true,
+    min_chars: 3,
+    nodata: "No results found.",
+    hidden_mode: true
+});
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "delegated_functions_select"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#name">Search and select a proceeding</a>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <!-- The costs and work you're covered for -->
+          What you're applying for
+
+            </h1>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table">
+            <h2 class="govuk-heading-l">Proceedings</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell govuk-body" scope="row"><h2 class="govuk-heading-m">Non-molestation order</h2>
+              <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
+                <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li>
+                <br><br> -->
+                <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Scope limits
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m">Emergency certificate</h2>
+        <p class="govuk-body">
+          <strong>Form of service:</strong> Full representation<br><br>
+          <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+        </p>
+        <h2 class="govuk-heading-m">Substantive certificate</h2>
+        <p class="govuk-body">
+          <strong>Form of service:</strong> Full representation<br><br>
+          <strong>Work you can do:</strong>
+          As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).</p>
+      </div>
+    </details>
+                </th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="other_3">
+                      Change<span class="govuk-visually-hidden">blank</span>
+                    </a></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+              <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__cell govuk-body" scope="row"><h2 class="govuk-heading-m">Prohibited steps order</h2>
+                    <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
+                      <li class="govuk-caption-m proceeding__list-item"> > Children (Section 8)</li>
+                      <br><br> -->
+                      <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Scope limits
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h2 class="govuk-heading-m">Emergency certificate</h2>
+              <p class="govuk-body">
+                <strong>Form of service:</strong> Family help (higher)<br><br>
+                <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+              </p>
+              <h2 class="govuk-heading-m">Substantive certificate</h2>
+              <p class="govuk-body">
+                <strong>Form of service:</strong> Family help (higher)<br><br>
+                <strong>Work you can do:</strong>
+                Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.</p>
+            </div>
+          </details>
+                      </th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="other_3">
+                            Change<span class="govuk-visually-hidden">blank</span>
+                          </a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+
+
+      <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row"><h2 class="govuk-heading-m">Child arrangements order (residence)</h2>
+            <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
+              <li class="govuk-caption-m proceeding__list-item"> > Children (Section 8)</li>
+              <br><br> -->
+              <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Scope limits
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <h2 class="govuk-heading-m">Emergency certificate</h2>
+      <p class="govuk-body">
+        <strong>Form of service:</strong> Family help (higher)<br><br>
+        <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+      </p>
+      <h2 class="govuk-heading-m">Substantive certificate</h2>
+      <p class="govuk-body">
+        <strong>Form of service:</strong> Family help (higher)<br><br>
+        <strong>Work you can do:</strong>
+        Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.</p>
+    </div>
+    </details>
+              </th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="other_3">
+                    Change<span class="govuk-visually-hidden">blank</span>
+                  </a></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+
+      <h2 class="govuk-heading-l">Cost limits</h2>
+
+      <h2 class="govuk-heading-m">Emergency certificate</h2>
+
+
+
+      <p class="govuk-body">The default cost limit is <strong>£1,350</strong>.</p>
+
+      <h2 class="govuk-heading-s">Do you want to request a higher cost limit?</h2>
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="policies-value">
+              Enter a new emergency cost limit
+            </label>
+<div class="govuk-input__wrapper">
+<div class="govuk-input__prefix" aria-hidden="true">£</div>
+<input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+</div>
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="policies-value">
+    Tell us why you need a higher cost limit
+  </label>
+<textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
+" aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+</div>
+</div>
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+            No
+          </label>
+        </div>
+        </div>
+        <br><br>
+
+
+      <h2 class="govuk-heading-m">Substantive certificate</h2>
+
+
+      <p class="govuk-body">The default cost limit is <strong>£25,000</strong>.</p>
+
+    </div>
+    </div>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+<a class="govuk-button" href="check_answers" role="button">
+  Save and continue
+</a>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
