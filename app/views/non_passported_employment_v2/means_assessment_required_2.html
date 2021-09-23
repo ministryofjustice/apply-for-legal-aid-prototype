@@ -36,12 +36,19 @@ Apply for legal aid - Confirmation page
         <ul class="how-to-renew" data-id="how-to-renew-uk">
           <li>
             <div class="govuk-radios govuk-radios">
-     <div class="govuk-radios__item">
-       <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="check" type="radio" value="yes">
-       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name">
-         Yes
-       </label>
-     </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" style="color: #fff" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label style="color: #fff;" class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label style="color: #fff;" class="govuk-label" for="contact-by-email">
+            We'll check your client's employment details with HM Revenue and Customs (HMRC). You'll need to review these details later on.
+          </label></div>
+      </div>
      <div class="govuk-radios__item">
        <input class="govuk-radios__input" id="changed-name-2" name="check" type="radio" value="no">
        <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name-2">

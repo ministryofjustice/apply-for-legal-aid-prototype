@@ -33,8 +33,6 @@ Apply for legal aid - Confirmation page
           <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit – is this correct?</h1>
         </header>
         <form action="client_details" method="post" class="form">
-        <ul class="how-to-renew" data-id="how-to-renew-uk">
-          <li>
             <div class="govuk-radios govuk-radios">
      <div class="govuk-radios__item">
        <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="check" type="radio" value="yes">
@@ -48,22 +46,33 @@ Apply for legal aid - Confirmation page
          No, my client receives a passporting benefit
        </label>
      </div>
-   </div>
-        </ul>
+    </div>
 
-        <div class="govuk-!-padding-bottom-4"></div>
-        <a href="employment_details" role="button" class="govuk-button white-button right">
-          Save and continue</a>
+    <div class="govuk-!-padding-bottom-6"></div>
 
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m" style="color: #fff">If your client does not receive a passporting benefit</h2>
+    </div></div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body" style="color: #fff">We'll check their employment details with HM Revenue and Customs (HMRC). You'll need to review these details later on.</p>
+    </div></div>
+
+   <div class="govuk-!-padding-bottom-4"></div>
+
+   <a href="employment_details" role="button" class="govuk-button white-button right">
+     Save and continue</a>
+
+     <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+       Save and come back later
+     </a>
 
           </form>
       </div>
     </div>
   </div>
-
 
 {% endblock %}
 
