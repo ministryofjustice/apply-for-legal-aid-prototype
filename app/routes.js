@@ -286,6 +286,30 @@ router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search'
                                                     proceedings: utils.getProceedings()
                                                   })
 
+                                                })
+
+                                                      router.get('/non_passported_employment_v2/search', function (req, res) {
+
+                                                        res.render('non_passported_employment_v2/search',
+                                                          {
+                                                            proceedings: utils.getProceedings()
+                                                          })
+                                                        })
+
+                                                              router.get('/non_passported_employment_v2/search_2', function (req, res) {
+
+                                                                res.render('non_passported_employment_v2/search_2',
+                                                                  {
+                                                                    proceedings: utils.getProceedings()
+                                                                  })
+                                                                })
+
+                                                                      router.get('/non_passported_employment_v2/search_3', function (req, res) {
+
+                                                                        res.render('non_passported_employment_v2/search_3',
+                                                                          {
+                                                                            proceedings: utils.getProceedings()
+                                                                          })
 
 })
 
