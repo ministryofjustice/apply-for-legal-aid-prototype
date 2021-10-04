@@ -500,7 +500,7 @@ router.post('/passported_v2/property_amount', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/passported_v2/savings_investments_select_2')
+    res.redirect('/passported_v2/vehicles')
   } else {
     res.redirect('/passported_v2/property_amount')
   }

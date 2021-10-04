@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Does your client use online banking
+Apply for legal aid - Client details
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,97 +16,175 @@ Apply for legal aid - Does your client use online banking
   }) }}
 
   {{ govukBackLink({
-    text: "Home",
-      href: "home_v2"
+    text: "Back",
+      href: "laspo"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="what_youre_covered_for" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
+      <form action="what_youre_covered_for" method="post" novalidate>
 
         <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-      <h1 class="govuk-fieldset__heading">
-      <!--  Have you exercised delegated functions?
-      Have you started work on this case yet?
-      Have you used delegated functions to start work on this case?
-      Have you already started work on this case using delegated functions?
-      Have you used delegated functions to grant legal aid to your client?
-      Have you used delegated functions for this application? -->
-      Have you used delegated functions?
-      </h1>
-    </legend>
-
-  <!--  <span id="how-contacted-conditional-hint" class="govuk-hint">
-      If yes the date must be within 5 days of submission
-    </span> -->
-
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-          Yes
-        </label>
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Which proceedings have you used delegated functions for?
+        </h1>
+      </legend>
+      <div id="contact-hint" class="govuk-hint">
+        Select all that apply.
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-        <label class="govuk-label" for="how-contacted-conditional-1">
-          Date you used delegated functions <!-- Date you granted legal aid -->
-        </label>
-        <span id="dob-hint" class="govuk-hint">
-      For example, 18 4 2019.
-    </span>
-    <div class="govuk-date-input" id="dob">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day-2">
-            Day
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-checkboxes__label" for="contact">
+            Non-molestation order
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
         </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month-2">
-            Month
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+          <div class="govuk-date-input" id="passport-issued">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Date you used delegated functions
+            </label>
+            <div id="contact-hint" class="govuk-hint">
+              For example, 31 3 2020.
+            </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+        </div>
+
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            Prohibited steps order
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month-2" name="dob-month-2" type="number" pattern="[0-9]*" value="{{ data['dob-month-2'] }}">
         </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year-2">
-            Year
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+          <div class="govuk-date-input" id="passport-issued">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Date you used delegated functions
+            </label>
+            <div id="contact-hint" class="govuk-hint">
+              For example, 31 3 2020.
+            </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+        </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+          <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+            Child arrangements order (residence)
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year-2" name="dob-year-2" type="number" pattern="[0-9]*" value="{{ data['dob-year-2'] }}">
         </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+          <div class="govuk-date-input" id="passport-issued">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Date you used delegated functions
+            </label>
+            <div id="contact-hint" class="govuk-hint">
+              For example, 31 3 2020.
+            </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          </div>
+        </div>
+        </div>
+
+        <p class="govuk-body">or</p>
+
+
+           <div class="govuk-checkboxes__item">
+             <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
+             <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
+               <!-- I receive none of these types of income --> I have not used delegated functions
+             </label>
+           </div>
+         </div>
+
+
       </div>
-    </div>
-      </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-          No
-        </label>
-        </fieldset>
-      </div>
-
-      <button type="submit" class="govuk-button">
-        Save and continue
-      </button>
-
-      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
-
-      </form>
-    </div>
+</div>
   </div>
+  </fieldset>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+          <!-- <p class="govuk-body">
+            <a href="dashboard">Save and come back later</a></p> -->
+
+        </form>
+
+      </div>
+    </div>
 
 {% endblock %}
 
