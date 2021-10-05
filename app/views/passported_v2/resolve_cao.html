@@ -1,21 +1,10 @@
 {% extends "layout.html" %}
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid - Citizen start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,42 +17,45 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_results"
+      href: "children_cao"
   }) }}
-
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Provide details of the case</h1>
+    <form action="prospects_cao" method="post" novalidate>
 
-      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
-<p class="govuk-body">We need to know if the merits of the case qualify for legal aid.</p>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
 
-          <p class="govuk-body">You'll need to enter:</p>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Child arrangements order (residence)</span>
+            <h1 class="govuk-fieldset__heading">
+              What attempts have been made to settle the matter?
+            </h1>
+          </legend>
 
-<ul class="govuk-list govuk-list--bullet">
-<li>details about the latest domestic abuse incident</li>
-<li>information about the opponent</li>
-<li>a statement of case</li>
-<li>the chances of a successful outcome</li>
-</ul>
+          <div id="event-name-hint" class="govuk-hint">
+    Tell us if correspondence or mediation has been tried, or if no attempts have been made.
+  </div>
 
-<br>
-  <a href="merits_tasklist" role="button" class="govuk-button right">
-    Continue
-  </a>
+            <div class="govuk-form-group">
+            <textarea class="govuk-textarea" autocomplete="off" id="more-detail" name="statement" rows="8" aria-describedby="more-detail-hint"></textarea>
+            </div>
 
-  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-             Save and come back later
-           </a>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
 
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
+        </form>
       </div>
-
     </div>
 
 {% endblock %}

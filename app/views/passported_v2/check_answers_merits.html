@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers - Merits
 
   {{ govukBackLink({
     text: "Back",
-      href: "prospects_less_than_50"
+      href: "upload"
   }) }}
 {% endblock %}
 
@@ -29,799 +29,378 @@ Apply for legal aid - Check your answers - Merits
         Check your answers and submit application
       </h1>
 
-    <!--  <h2 class="govuk-heading-m">
-        Scope of legal aid
-      </h2> -->
+      <h1 class="govuk-heading-l">
+        General case details
+      </h1>
 
-    <!--  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Client details
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            First name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['firstname'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">first name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['lastname'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">last name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">dob</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['national-insurance-number'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">national insurance number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['email-address'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">email address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            1 Main Street<br/>London<br/>{{ data['postcode'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">correspondance address</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          What you're applying for
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Proceeding
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Non-molestation order{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Form of service
-          </dt>
-          <dd class="govuk-summary-list__value">
-          Full representation{{ data['...'] }}
-          </dd>
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Costs you can incur
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £5,000{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Work you can do
-          </dt>
-          <dd class="govuk-summary-list__value">
-            As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration 	of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
-    {{ data['...'] }}
-          </dd>
-
-        </div>
-        <!-- <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Delegated functions
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Client involvement type
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Applicant{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Client capital
-        </span>
-      </h2>
-    </div>
-
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-
-
-      <h2 class="govuk-heading-m">
-        Property
-      </h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-          Does your client own the home they live in?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Latest domestic abuse incident details</h2>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          How much is your client's home worth?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What is the outstanding mortgage on your client's home?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Does your client own their home with anyone else?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">
-        Vehicles
-      </h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-          Does your client own a vehicle?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          What is the estimated value of the vehicle?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Are there any payments left on the vehicle?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Did your client buy the vehicle over 3 years ago?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Is the vehicle in regular use?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">
-        Bank accounts
-      </h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-          Current account
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Savings account
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">
-        Savings and investments
-      </h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Cash kept at home or another location
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Access to another person's bank account
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          National Savings Certificates and Premium Bonds
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Shares in a PLC
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unit trust
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Fixed interest security
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Life assurance or endowment policies
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">
-        Other assets
-      </h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Valuable items worth more than £500
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Second property or holiday home
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Timeshare property
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Land
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Money or assets from the estate of a person who has died
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Money owed to them, including from a private mortgage
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         Interest in a trust
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">
-      Restrictions
-      </h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Are there any legal restrictions that prevent your client from selling or borrowing against their assets?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['...'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Change <span class="govuk-visually-hidden">blank</span>
-          </a>
-        </dd>
-      </div>
-   </dl>
-
-    </div>
-  </div>
-</div>
-
-<h2 class="govuk-heading-l">
-  Case merits
-</h2> -->
-
-     <h2 class="govuk-heading-m">
-       Latest incident details
-     </h2>
-     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-           Date your client contacted you about the latest incident
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Date the incident occurred
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       </dl>
-
-
-       <h2 class="govuk-heading-m">
-         Opponent details
-       </h2>
-       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-           Can understand terms of an order
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Warning letter has been sent
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Police have been notified
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-        <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Bail conditions have been set
-         </dt>
-        <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-     </dl>
-
-
-     <h2 class="govuk-heading-m">
-       Case details
-     </h2>
-     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-           Statement of case
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Chance of a successful outcome 50% or better?
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['...'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a href="#">
-             Change <span class="govuk-visually-hidden">blank</span>
-           </a>
-         </dd>
-       </div>
-       </dl>
-
-       <div class="govuk-grid-row">
-       <div class="govuk-grid-column-full">
-         <p>{{ data['statement'] }}</p>
+      <div class="govuk-grid-column-one-third">
+        <p><a class="govuk-link" style="float:right;" href="incident_details">Change</a></p>
       </div>
       </div>
 
-      <h2 class="govuk-heading-l">Confirm the following</h2>
+      <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row"><strong>Date your client contacted you</strong></th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">10 Dec 2019</td>
+              </tr>
 
-      <p class="govuk-body">Your client agrees that:</p>
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell govuk-body" scope="row"><strong>Date the incident occurred</strong></th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2019</td>
+              </tr>
 
-      <ul class="govuk-list govuk-list--bullet">
+            </tbody>
+          </table>
 
-      <li>they've instructed Hitchcock, Jones and King to represent them</li>
-      <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
-      <li>we can check their details with bank and credit reference agencies</li>
-      <li>they may have to pay towards legal aid</li>
-      <li>they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
-      <li>the information they’ve given is complete and correct</li>
-      <li>they’ll report any changes to their financial situation immediately</li>
-      </ul>
-
-      <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
-
-      <p class="govuk-body" style="padding-left: 60px;">
-
-      <strong>f you give wrong or incomplete information, do not report changes, or are found to have committed benefit fraud, you may:</p>
-      <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
-      <strong><li>be prosecuted</li>
-      <li>need to pay a financial penalty</li>
-      <li>have their legal aid stopped and have to pay back the costs</li></strong>
-      </ul>
-
-
-
-<!--  <h2 class="govuk-heading-m">Complete your application</h2>
-
-
-        <p class="govuk-body">But submitting this application, you confirm that:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-        <li>you're authorised to provide legal representation under a contract with the Legal Aid Agency</li>
-        <li>you've gone through all parts of the application with my client</li>
-        <li>to the best of my knowledge, the information your client has given you is complete and correct</li>
-        </ul> -->
 
 <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Opponent details</h2>
+</div>
+<div class="govuk-grid-column-one-third">
+  <p><a class="govuk-link" style="float:right;" href="opponent_details">Change</a></p>
+</div>
+</div>
+
+<table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-body" scope="row"><strong>Opponent's name</strong></th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">Rex Smith</td>
+        </tr>
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-body" scope="row"><strong>Has mental capacity to understand terms of a court order</strong></th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>A warning letter has been sent</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Police have been notified</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Bail conditions have been set</strong></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Children involved in the application</h2>
+</div>
+</div>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Child 1</dt>
+            <dd class="govuk-summary-list__value">
+              Billy Doe, born	1 Jan 2013
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="children_1">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Child 2</dt>
+            <dd class="govuk-summary-list__value">
+              Sarah Doe, born 20 Mar 2015
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="children_2">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+   <h2 class="govuk-heading-m">Statement of case</h2>
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+               <div class="govuk-summary-list__row">
+                 <dt class="govuk-summary-list__key">
+                   Provide a statement of case
+                 </dt>
+                 <dd class="govuk-summary-list__value">
+                   <a href="#">statement_of_case.pdf (200kb)</a>
+                 </dd>
+                 <dd class="govuk-summary-list__actions">
+                   <a class="govuk-link" href="statement">
+                     Change
+                   </a>
+                 </dd>
+               </div>
+             </dl>
+
+             <h1 class="govuk-heading-l">
+              Proceedings
+             </h1>
+
+             <h2 class="govuk-heading-m">Non-molestation order</h2>
+
+             <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                       <div class="govuk-summary-list__row">
+                         <dt class="govuk-summary-list__key">
+                           Chance of success 50% or better
+                         </dt>
+                         <dd class="govuk-summary-list__value">
+                           Yes
+                         </dd>
+                         <dd class="govuk-summary-list__actions">
+                           <a class="govuk-link" href="prospects_non_mol">
+                             Change
+                           </a>
+                         </dd>
+                       </div>
+                     </dl>
+
+             <h2 class="govuk-heading-m">Prohibited steps order</h2>
+
+          <!--   <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                       <div class="govuk-summary-list__row">
+                         <dt class="govuk-summary-list__key">
+                           Is this proceeding within the scope of LASPO?
+                         </dt>
+                         <dd class="govuk-summary-list__value">
+                           Yes
+                         </dd>
+                         <dd class="govuk-summary-list__actions">
+                           <a class="govuk-link" href="laspo_pso">
+                             Change
+                           </a>
+                         </dd>
+                       </div>
+                     </dl> -->
+
+                     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                               <div class="govuk-summary-list__row">
+                                 <dt class="govuk-summary-list__key">
+                                   Children covered under this proceeding
+                                 </dt>
+                                 <dd class="govuk-summary-list__value">
+                                   Billy Doe<br>Sarah Doe
+                                 </dd>
+                                 <dd class="govuk-summary-list__actions">
+                                   <a class="govuk-link" href="children_pso">
+                                     Change
+                                   </a>
+                                 </dd>
+                               </div>
+                             </dl>
+
+                             <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                                       <div class="govuk-summary-list__row">
+                                         <dt class="govuk-summary-list__key">
+                                           Attempts to settle
+                                         </dt>
+                                         <dd class="govuk-summary-list__value">
+
+                                         </dd>
+                                         <dd class="govuk-summary-list__actions">
+                                           <a class="govuk-link" href="resolve_pso">
+                                             Change
+                                           </a>
+                                         </dd>
+                                       </div>
+                                     </dl>
+
+
+                                     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                                               <div class="govuk-summary-list__row">
+                                                 <dt class="govuk-summary-list__key">
+                                                   Chance of success 50% or better
+                                                 </dt>
+                                                 <dd class="govuk-summary-list__value">
+                                                   Yes
+                                                 </dd>
+                                                 <dd class="govuk-summary-list__actions">
+                                                   <a class="govuk-link" href="prospects_pso">
+                                                     Change
+                                                   </a>
+                                                 </dd>
+                                               </div>
+                                             </dl>
+
+             <h2 class="govuk-heading-m">Child arrangements order (residence)</h2>
+
+            <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                       <div class="govuk-summary-list__row">
+                         <dt class="govuk-summary-list__key">
+                           Is this proceeding within the scope of LASPO?
+                         </dt>
+                         <dd class="govuk-summary-list__value">
+                           Yes
+                         </dd>
+                         <dd class="govuk-summary-list__actions">
+                           <a class="govuk-link" href="laspo_cao">
+                             Change
+                           </a>
+                         </dd>
+                       </div>
+                     </dl> -->
+
+                     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                               <div class="govuk-summary-list__row">
+                                 <dt class="govuk-summary-list__key">
+                                   Children covered under this proceeding
+                                 </dt>
+                                 <dd class="govuk-summary-list__value">
+                                   Billy Doe<br>Sarah Doe
+                                 </dd>
+                                 <dd class="govuk-summary-list__actions">
+                                   <a class="govuk-link" href="children_cao">
+                                     Change
+                                   </a>
+                                 </dd>
+                               </div>
+                             </dl>
+
+                             <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+                                       <div class="govuk-summary-list__row">
+                                         <dt class="govuk-summary-list__key">
+                                           Attempts to settle
+                                         </dt>
+                                         <dd class="govuk-summary-list__value">
+
+                                         </dd>
+                                         <dd class="govuk-summary-list__actions">
+                                           <a class="govuk-link" href="resolve_cao">
+                                             Change
+                                           </a>
+                                         </dd>
+                                       </div>
+                                     </dl>
+
+
+                                     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                                               <div class="govuk-summary-list__row">
+                                                 <dt class="govuk-summary-list__key">
+                                                   Chance of success 50% or better
+                                                 </dt>
+                                                 <dd class="govuk-summary-list__value">
+                                                   Yes
+                                                 </dd>
+                                                 <dd class="govuk-summary-list__actions">
+                                                   <a class="govuk-link" href="prospects_cao">
+                                                     Change
+                                                   </a>
+                                                 </dd>
+                                               </div>
+                                             </dl>
+
+                                             <h1 class="govuk-heading-l">
+                                              Supporting evidence
+                                             </h1>
+
+                                             <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+                                                       <div class="govuk-summary-list__row">
+                                                         <dt class="govuk-summary-list__key">
+                                                           Upload supporting evidence
+                                                         </dt>
+                                                         <dd class="govuk-summary-list__value">
+                                                           <a href="#">gateway_evidence.pdf (100kb)</a><br>
+                                                           <a href="#">passporting_benefit.pdf (50kb)</a>
+                                                         </dd>
+                                                         <dd class="govuk-summary-list__actions">
+                                                           <a class="govuk-link" href="upload">
+                                                             Change
+                                                           </a>
+                                                         </dd>
+                                                       </div>
+                                                     </dl>
+
+                                             <h2 class="govuk-heading-l">Confirm the following</h2>
+
+                                             <p class="govuk-body">Your client agrees that:</p>
+
+                                             <ul class="govuk-list govuk-list--bullet">
+
+                                             <li>they've instructed Hitchcock, Jones and King to represent them</li>
+                                             <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
+                                             <li>we can check their details with bank and credit reference agencies</li>
+                                             <li>they may have to pay towards legal aid</li>
+                                             <li>they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
+                                             <li>the information they’ve given is complete and correct</li>
+                                             <li>they’ll report any changes to their financial situation immediately</li>
+                                             </ul>
+
+                                             <div class="govuk-warning-text">
+                                             <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
+
+                                             <p class="govuk-body" style="padding-left: 60px;">
+
+                                             <strong>If your client gives wrong or incomplete information, or they do not report changes, they may:</p>
+                                             <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+                                             <strong><li>be prosecuted</li>
+                                             <li>need to pay a financial penalty</li>
+                                             <li>have their legal aid stopped and have to pay back the costs</li></strong>
+                                             </ul>
+                                             </div>
+
+
       <a class="govuk-button" href="confirmation_page" role="button">
         Agree and submit
       </a>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
+         Save and come back later
+       </a>
 
     </div>
   </div>
 
+
   {% endblock %}
 
   {% block footer %}
-  {{ govukFooter({
-  meta: {
-      items: [
-        {
-          href: "#",
-          text: "Help"
-        },
-        {
-          href: "https://www.gov.uk/help/cookies",
-          text: "Cookies"
-        },
-        {
-          href: "#",
-          text: "Contact"
-        },
-        {
-          href: "#",
-          text: "Feedback"
-        },
-        {
-          href: "#",
-          text: "Terms and conditions"
-        },
-        {
-          href: "https://mojdigital.blog.gov.uk/",
-          text: "MOJ Digital Services"
-        },
-        {
-          href: "/prototype-admin/clear-data",
-          text: "Clear data"
-        }
-      ]
-    }
-  }) }}
-  {% endblock %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

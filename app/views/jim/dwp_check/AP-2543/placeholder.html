@@ -1,21 +1,10 @@
 {% extends "layout.html" %}
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-  Apply for legal aid - Citizen start page
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+Apply for legal aid - Does your client use online banking
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,43 +17,39 @@
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_results"
+      href: "evidence"
   }) }}
-
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-xl">Provide details of the case</h1>
-
-      <!--  <p class="govuk-body">We need to know if the case is strong enough to qualify for legal aid (also called a 'merits test').</p> -->
-<p class="govuk-body">We need to know if the merits of the case qualify for legal aid.</p>
-
-          <p class="govuk-body">You'll need to enter:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-<li>details about the latest domestic abuse incident</li>
-<li>information about the opponent</li>
-<li>a statement of case</li>
-<li>the chances of a successful outcome</li>
-</ul>
-
-<br>
-  <a href="merits_tasklist" role="button" class="govuk-button right">
-    Continue
-  </a>
-
-  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-             Save and come back later
-           </a>
+        <form action="evidence_upload" method="post" class="form">
 
 
-      </div>
+                <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+         Apply passported journey: provider completes means and merits questions
+          </h1>
+        </legend>
 
-    </div>
+
+            </div>
+
+          </div>
+
+
+          </div>
+
+
+          <button type="submit" class="govuk-button">
+          Continue
+          </button>
+
+
 
 {% endblock %}
 
