@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "hmrc_status_check"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="flash-card">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <header>
+          <h1 class="govuk-heading-l">You need to complete this application in CCMS</h1>
+        </header>
+        <form action="non_passported" method="post" class="form">
+
+
+            <p style="color: #fff;">You said your client is employed but HMRC has no record of their employment in the past 3 months.</p>
+
+            <br>
+
+            <p style="color: #fff;">You need to enter your client's employment details in CCMS.</p>
+            <br>
+            <a href="#" role="button" class="govuk-button white-button right">
+                Continue in CCMS</a>
+  <br>
+                <p style="color: #fff;"><a href="dashboard">Back to my applications</a></p>
+
+
+
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
