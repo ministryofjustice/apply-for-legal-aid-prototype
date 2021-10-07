@@ -4,7 +4,7 @@
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
-Apply for legal aid - Does your client use online banking
+Apply for legal aid - Is your client employed
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "consent"
+      href: "loading"
   }) }}
 {% endblock %}
 
@@ -32,11 +32,11 @@ Apply for legal aid - Does your client use online banking
       <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-      Is your client employed?
+         Is your client employed?
           </h1>
         </legend>
 
-
+    <br>
 
     <!--    <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
@@ -57,30 +57,30 @@ Apply for legal aid - Does your client use online banking
   </div>
 </details> -->
 
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="onlinebank-2" name="property" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
-  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-    Yes
-  </label> </div>
-<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="onlinebank-2">
-    <p class="govuk-body">We'll use your client's personal details to check their employment status with HMRC.</p>
 
-
-    </label>
-  </div>
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="onlinebank-2" name="property" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+            <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+              Yes
+            </label> </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="onlinebank-2">
+              <p class="govuk-body">We'll use your client's personal details to check their employment status with HMRC.</p>
+
+
+              </label>
+            </div>
+
+          </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                     No
                   </label></div>
-
-
-
-          </div>
 
 
           </div>
@@ -102,6 +102,7 @@ Apply for legal aid - Does your client use online banking
 
       </div>
     </div>
+
 
 {% endblock %}
 
