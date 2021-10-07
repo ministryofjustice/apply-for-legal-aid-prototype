@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "benefits"
+      href: "passported_benefits"
   }) }}
 {% endblock %}
 
@@ -38,28 +38,40 @@ Apply for legal aid - Property and mortgage
            <span class="govuk-hint">
                 For example, a letter from the DWP. You'll need to upload this before you submit your application.</span>
 
-                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
-                          <label class="govuk-label govuk-radios__label" for="onlinebank-1">
-                            Yes
-                          </label>
-                        </div>
+              <div class="govuk-radios">
 
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="onlinebank-2" name="property" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
-                    <label class="govuk-label govuk-radios__label" for="onlinebank-2">
-                      No
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="onlinebank-2">
-                      <p class="govuk-body">You must complete an income assessment for your client if you cannot provide evidence of a passporting benefit.</p>
-                      </label>
-                    </div>
-                  </div>
-                  </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="evidence" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="evidence" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="property-3">
+                    No
+                  </label>
+                </div>
+              </div>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
 
             </fieldset>
           </div>
@@ -74,7 +86,6 @@ Apply for legal aid - Property and mortgage
         </form>
       </div>
     </div>
-
 
 {% endblock %}
 
