@@ -1442,5 +1442,20 @@ router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res
   }
 })
 
+// Other bank accounts - client
+router.post('/jim/AP-1931/types_of_income', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['accounts']
+
+  if (over18 === 'no') {
+    res.redirect('/jim/AP-1931/types_of_income')
+  } else {
+    res.redirect('/jim/AP-1931/bank_select_03')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
