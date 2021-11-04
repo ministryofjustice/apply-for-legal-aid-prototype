@@ -17,7 +17,7 @@ Apply for legal aid - Assessment start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "dwp_check_2"
+  href: "substantive_application"
 }) }}
 
 {% endblock %}
@@ -26,15 +26,35 @@ Apply for legal aid - Assessment start page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">We need to check your client's details with HMRC</h1>
+    <h1 class="govuk-heading-xl">What you need to do</h1>
 
-    <p class="govuk-body-l">We need to assess your client's income because they do not receive a passporting benefit.</p>
+    <form action="property" method="post" novalidate>
 
-    <p class="govuk-body">HMRC will share your client's employment details from the last 3 months with us as part of the financial eligibility calculation.</p>
+    <!--  <p class="govuk-body-l">You need to complete a financial assessment and provide details of the case.</p> -->
 
-    <p class="govuk-body">You'll need to review these details later in the application.</p>
+      <!-- <p class="govuk-body-l">You need to complete a capital and a means assessment.</p> -->
 
-    <!--  <p class="govuk-body">You'll need to review these details later on.</p> -->
+
+      <h2 class="govuk-heading-m">1. Tell us about your client's capital</h2>
+
+      <p class="govuk-body">This includes:</p>
+        <ul class="govuk-list govuk-list--bullet">
+  <li>property</li>
+  <li>vehicles</li>
+  <li>savings and investments</li>
+  <li>other assets</li>
+  </ul>
+
+<h2 class="govuk-heading-m">2. Provide details of the case</h2>
+
+<p class="govuk-body">This includes:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>latest incident details</li>
+  <li>opponent details</li>
+<li>a statement of case</li>
+<li>the chance of a successful outcome</li>
+</ul>
 
             <div class="govuk-!-padding-bottom-4"></div>
 
@@ -45,6 +65,7 @@ Apply for legal aid - Assessment start page
     <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
       Save and come back later
     </a>
+    </form>
   </div>
 </div>
 
