@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h2 class="govuk-panel__title">
+          Application complete
+        </h2>
+        <div class="govuk-panel__body">
+          Your LAA case reference number is
+          <br><strong>L-23A-56D</strong>
+        </div>
+      </div>
+
+      <div class="govuk-!-padding-top-4"></div>
+
+      <!--  <h3 class="govuk-heading-m">We've sent your client a secure link</h3>
+
+      <p class="govuk-body">Your client can use the link to start the financial assessment from home or another location.</p> -->
+
+      <p class="govuk-body">We've sent you a confirmation email.</p>
+
+
+
+
+    <h3 class="govuk-heading-m">What happens next</h3>
+
+    <p class="govuk-body">We'll check your application to see if your client is entitled to legal aid.</p>
+    <p class="govuk-body">We'll let you know our decision in CCMS.</p>
+
+    <div class="govuk-inset-text">
+    <a href="feedback" class="govuk_link">Give feedback</a> to help us improve this service.</div>
+
+
+
+    <a href="application_cert_submitted" role="button" class="govuk-button">
+      View completed application
+    </a>
+
+      <!--  <p class="gov-body">
+        <a href="outgoings">Go to outgoings</a>
+        </p> -->
+
+        <h3 class="govuk-heading-m">Do you need to tell us anything about your client's declaration before you submit the application?</h3>
+          <span class="govuk-hint">For example, your client may want something changed on their application, or they may not want to sign the client declaration.
+          <!--  <br><br>You will need to upload evidence of this later on. -->
+          </span>
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="policies-value">
+        Enter details
+        </label>
+
+
+        <textarea class="govuk-textarea" id="more-detail" name="statement" rows="8
+        " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+        </div>
+
+
+        </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+              No
+            </label>
+          </div>
+
+          </div>
+        <!--  <br>
+        <hr>
+    <br>
+
+        <h3 class="govuk-heading-l">Student finance</h3>
+         <span class="govuk-hint">Your client entered this information.</span>
+        <p class="gov-body"><strong>£9,800</strong> this academic year.</p> -->
+
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+    <a href="#" role="button" class="govuk-button">
+      Save and continue
+    </a>
+
+    <a href="#" role="button" class="govuk-button govuk-button--secondary" style="background-color:#dee0e2; color:#0b0c0c; margin-left:10px">
+      Back to your applications
+    </a>
+
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+    {
+      href: "#",
+      text: "Contact"
+    },
+    {
+      href: "#",
+      text: "Feedback"
+    },
+    {
+      href: "https://www.gov.uk/help/cookies",
+      text: "Cookies"
+    },
+    {
+      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+      text: "Terms and conditions"
+    },
+    {
+      href: "https://mojdigital.blog.gov.uk/",
+      text: "MOJ Digital Services"
+    },
+    {
+      href: "/prototype-admin/clear-data",
+      text: "Clear data"
+    }
+    ]
+  }
+}) }}
+{% endblock %}
