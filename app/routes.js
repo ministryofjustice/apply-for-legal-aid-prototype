@@ -1245,6 +1245,37 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
   }
 })
 
+// DWP check fail - prototype
+router.post('/non_passported_employment_v2/employed', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['evidence']
+
+  if (over18 === 'no') {
+    res.redirect('/non_passported_employment_v2/employed')
+  } else {
+    res.redirect('/passported_v2/substantive_application')
+  }
+})
+
+
+// DWP check fail - radios provider checks details
+router.post('/non_passported_employment_v2/client_details', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['check']
+
+  if (over18 === 'no') {
+    res.redirect('/non_passported_employment_v2/client_details')
+  } else {
+    res.redirect('/non_passported_employment_v2/passporting_benefit')
+  }
+})
+
 
 
 // DWP check fail - use CCMS v1

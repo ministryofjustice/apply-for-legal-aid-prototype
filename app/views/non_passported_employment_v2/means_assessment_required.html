@@ -25,56 +25,49 @@ Apply for legal aid - Confirmation page
 {% block content %}
 
 
-<div class="flash-card">
+  <div class="flash-card">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <header>
-        <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit – is this correct?</h1>
-      </header>
-      <form action="client_details" method="post" class="form">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <header>
+          <h1 class="govuk-heading-l">DWP records show that your client does not receive a passporting benefit – is this correct?</h1>
+        </header>
+        <form action="employed_2" method="post" class="form">
+        <ul class="how-to-renew" data-id="how-to-renew-uk">
+          <li>
 
 
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                <label style="color: #fff;" class="govuk-label govuk-radios__label" for="contact">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <label style="color: #fff;" class="govuk-label" for="contact-by-email">
-                    We'll check your client's details with HM Revenue and Customs (HMRC). You'll need to review these details later on.
-                  </label>
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                <label style="color: #fff;" class="govuk-label govuk-radios__label" for="contact-2">
-                  No
-                </label>
-              </div>
+            <div class="govuk-radios govuk-radios">
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" style="color: #fff" id="changed-name" name="dwp" type="radio" value="yes">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name">
+         Yes
+       </label>
+     </div>
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="changed-name-2" name="dwp" type="radio" value="no">
+       <label style="color: #fff;" class="govuk-label govuk-radios__label" for="changed-name-2">
+         No, my client receives a passporting benefit
+       </label>
+     </div>
+   </div>
+        </ul>
 
-            </div>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-          </fieldset>
-        </div>
+        <button type="submit" class="govuk-button white-button right">
+          Save and continue
+        </button>
 
-      <div class="govuk-!-padding-bottom-4"></div>
-      <a href="consent" role="button" class="govuk-button white-button right">
-        Save and continue</a>
 
-        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-          Save and come back later
-        </a>
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
-        </form>
+          </form>
+      </div>
     </div>
   </div>
-</div>
 
 
 {% endblock %}
