@@ -28,22 +28,21 @@ Apply for legal aid - Check your answers - Merits
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
+        <h2 class="govuk-error-summary__title" id="confirm">
           There is a problem
         </h2>
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#signature">You MUST confirm that you will obtain the necessary signed declarations/signatures and will retain them upon the client’s file.</a>
+              <a href="#confirm">Confirm the above is correct and that you'll obtain a signed declaration from your client</a>
             </li>
             <li>
             </li>
           </ul>
         </div>
       </div>
-
+<div class="govuk-form-group govuk-form-group--error">
 <h1 class="govuk-heading-xl">Confirm the following</h1>
 
  <p class="govuk-body">Your client agrees that:</p>
@@ -74,19 +73,16 @@ Apply for legal aid - Check your answers - Merits
 
 
  <div class="govuk-form-group">
-
-
-  <p class="govuk-body">You agree that:</p>
-
-
-
-
+   <span id="confirm" class="govuk-error-message">
+     <span class="govuk-visually-hidden">Error:</span> Confirm the above is correct and that you'll obtain a signed declaration from your client
+   </span>
      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
        <div class="govuk-checkboxes__item">
          <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
          <label class="govuk-label govuk-checkboxes__label" for="countries">
-           I confirm I will obtain the necessary signed declarations/signatures and will retain them upon the client’s file.
+           I confirm the above is correct and that I'll obtain a signed declaration from my client.
          </label>
+       </div>
        </div>
 
 <p></p>
