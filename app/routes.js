@@ -1260,6 +1260,21 @@ router.post('/non_passported_employment_v2/employed', function (req, res) {
   }
 })
 
+// DWP check fail - prototype
+router.post('/non_passported_employment_v2/check_details', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['dwp']
+
+  if (over18 === 'no') {
+    res.redirect('/non_passported_employment_v2/check_details')
+  } else {
+    res.redirect('/non_passported_employment_v2/employed')
+  }
+})
+
 
 // DWP check fail - radios provider checks details
 router.post('/non_passported_employment_v2/client_details', function (req, res) {
