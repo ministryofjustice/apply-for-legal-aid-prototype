@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "benefits"
+      href: "passported_benefits"
   }) }}
 {% endblock %}
 
@@ -36,7 +36,7 @@ Apply for legal aid - Property and mortgage
               </legend>
 
            <span class="govuk-hint">
-                For example, a letter from the DWP. You'll need to upload this before you submit your application.</span>
+                For example, a letter from the DWP, a bank statement from the last 3 months showing benefits paid in, or any other relevant documents.</span>
 
               <div class="govuk-radios">
 
@@ -44,8 +44,11 @@ Apply for legal aid - Property and mortgage
                   <input class="govuk-radios__input" id="property-1" name="evidence" type="radio" value="yes">
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
-                  </label>
-                </div>
+                         </label>
+                         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">You'll need to upload supporting evidence later.</div>
+                  </div>
+
+
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-3" name="evidence" type="radio" value="no">
