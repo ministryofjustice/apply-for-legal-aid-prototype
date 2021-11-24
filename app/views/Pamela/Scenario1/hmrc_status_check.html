@@ -25,7 +25,7 @@ Apply for legal aid - Is your client employed
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="check_loading" method="post" class="form">
+        <form action="use_ccms1" method="post" class="form">
 
 
                 <div class="govuk-form-group">
@@ -36,27 +36,7 @@ Apply for legal aid - Is your client employed
           </h1>
         </legend>
 
-    <br>
-
-    <!--    <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What you need to make a substantive application
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">You’ll need to tell us about your client's:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>savings, investments and other capital</li>
-      <li>income, outgoings and dependants (if they do not receive passporting benefits)</li>
-      </ul>
-
-      <p class="govuk-body">You'll also need to provide details of the case.</p>
-
-  </div>
-</details> -->
-
+        <span class="govuk-hint">If your client is employed we'll share their personal details with HMRC to check their employment status.</span>
 
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -66,16 +46,7 @@ Apply for legal aid - Is your client employed
             <label class="govuk-label govuk-radios__label" for="onlinebank-2">
               Yes
             </label> </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="onlinebank-2">
-              <p class="govuk-body">We'll use your client's personal details to check their employment status with HMRC.</p>
 
-
-              </label>
-            </div>
-
-          </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">

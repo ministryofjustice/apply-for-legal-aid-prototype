@@ -114,6 +114,10 @@ app.use('/public', express.static(path.join(__dirname, '/public')))
 // Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
+// Serve moj-frontend in from node_modules (so not to break pre-extenstions prototype kits)
+app.use('/node_modules/@ministryofjustice/frontend/moj', express.static(path.join(__dirname, '/node_modules/@ministryofjustice/frontend/moj')))
+
+
 // Set up documentation app
 if (useDocumentation) {
   var documentationViews = [

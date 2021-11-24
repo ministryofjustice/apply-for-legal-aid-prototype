@@ -62,7 +62,7 @@ GOV.UK Prototype Kit
     </li> -->
 <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#recommended">
-            Recommendations 
+            Recommendation for build
           </a>
         </li>
     <li class="govuk-tabs__list-item">
@@ -92,13 +92,15 @@ GOV.UK Prototype Kit
   <div class="govuk-tabs__panel" id="current">
     <h2 class="govuk-heading-l">End-to-end user journeys</h2>
     <h2 class="govuk-heading-m">Prototypes</h2>
-      <p class="govuk-body">These protoypes are works in progress and reflect the live service as closely as possible.</p>
+      <p class="govuk-body">These protoypes reflect the live service as closely as possible.</p>
       <p class="govuk-body"><a href="passported_v2/start_page">Passported journey</a></p>
       <p class="govuk-body"><a href="apply_for_legal_aid_prototype_non_passported_provider_means/dashboard">Non-passported journey</a></p>
-      <p class="govuk-body"><a href="non_passported_employment_v2/sign_in">Non-passported journey + employment v2</a></p>
+      <p class="govuk-body"><a href="non_passported_employment_v2/dashboard">Non-passported journey + employment v2</a></p>
       <h2 class="govuk-heading-m">Overviews</h2>
       <p class="govuk-body"><a href="https://www.figma.com/file/UyD9h3V99kn7DT3pbSgLw7/Apply-for-legal-aid-User-flow?node-id=232%3A13" target="_blank">User flow</a></p>
       <p class="govuk-body"><a href="https://miro.com/app/board/o9J_lNaUefM=/" target="_blank">Journey map</a></p>
+      <h2 class="govuk-heading-m">CCMS</h2>
+      <p class="govuk-body"><a href="https://miro.com/app/board/o9J_lqu_Zho=/" target="_blank">Journey map</a></p>
 
   </div>
 
@@ -112,10 +114,12 @@ GOV.UK Prototype Kit
   <!-- Recommendations -->
 
  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="recommended">
-    <h2 class="govuk-heading-l">Recommendations</h2>
-      <p class="govuk-body">These protoypes are recommended fixes for specific parts of the process but do not cover the end-to-end journeys.</p>
-      <p class="govuk-body"><a href="Pamela/Scenario1/hmrc_status_check">HMRCI API Scenario 1 </a></p>
-      <p class="govuk-body"><a href="Pamela/Scenario2/hmrc_status_check">HMRCI API Scenario 2 </a></p>
+    <h2 class="govuk-heading-l">Recommendation for build</h2>
+      <p class="govuk-body">These protoypes are recommended fixes for specific parts of the process but do not cover end-to-end journeys.</p>
+
+
+      <p class="govuk-body"><a href="Pamela/Scenario1/hmrc_status_check">AP-2526: HMRC API determines eligibility to use Apply</a></p>
+
   </div>
 
   <!-- Concepts -->
@@ -123,17 +127,43 @@ GOV.UK Prototype Kit
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="concepts">
     <h2 class="govuk-heading-l">Concepts</h2>
     <p class="govuk-body">Design and content explorations of current and future problems we want to solve.</p>
-    <h3 class="govuk-heading-m">Post-user research iterations (August 2021)</h3>
+
+    <h3 class="govuk-heading-m">AP-2182: Signature</h3>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="non_passported_employment_v2/financial_help">AP-2441: Explore the scenario where monthly employment income appears on 'income transactions'</a></li>
-      <li><a href="non_passported_employment_v2/nonpassported_meansresults">AP-2442: Resolve issues with means assessments results being misleading</a></li>
-      <li><a href="non_passported_employment_v2/other_income">AP-2443: Resolve concerns around ‘Is this correct?’</a></li>
-      <li><a href="non_passported_employment_v2/provider_continue_application">AP-2470: Review/update content on 'Continue your application' page</a></li>
-      <li><a href="non_passported_employment_v2/check">AP-2471: Review/update content on 'What your client needs to do' page</a></li>
-      <li><a href="non_passported_employment_v2/employment_income">AP-2477: Move employment income/student finance page before income categorisation page</a></li>
-      <li><a href="non_passported_employment_v2/sort_income">AP-2479: Improve income transaction page content</a></li>
-      <li><a href="non_passported_employment_v2/outgoings">AP-2480: Improve outgoings summary page content</a></li>
-      <li><a href="non_passported_employment_v2/online_banking_declaration">AP-2486: Improve content on 'Give your client temporary access to the service' page</a></li>
+    <li><a href="stevey/signature/V2/check_answers_merits">V2 - Proposed concept without 'Challenge'</a></li>
+    <li><a href="stevey/signature/V1/check_answers_merits">V1 - with 'Challenge'</a></li>
+    <li><a href="https://www.figma.com/file/9p65eCEz0bncPjPE1n57XL/Apply-for-legal-aid%3A-Client-signature?node-id=232%3A13">Design exploration</a></li>
+    </ul>
+
+
+    <h3 class="govuk-heading-m">AP-2612: Remove conditionally revealing text on DWP check result page</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="jim/AP-2612/dwp_check">Inset text on interruption card</a></li>
+    </ul>
+
+
+    <h3 class="govuk-heading-m">AP-2696: Update H1 on non-passported DWP check result page</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+    <li><a href="jim/AP-2696/dwp_check">V1</a></li>
+    <li><a href="jim/AP-2696/dwp_check_2">V2</a></li>
+    </ul>
+
+    <h3 class="govuk-heading-m">AP-2691: Content iterations on means result pages</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+  <!--  <li><a href="jim/AP-2691/means_results">V1</a></li> -->
+    <li><a href="jim/AP-2691/means_results_2">V2</a></li>
+  <!--   <li><a href="jim/AP-2691/means_results+3">V3</a></li> -->
+    </ul>
+
+    <h3 class="govuk-heading-m">Evidence upload
+      <p class="govuk-body-s">Evidence upload throughout the service and introduction of multiple upload</p>
+    </h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="evidence_upload/gateway_evidence.html">Multi-upload component</a></li>
     </ul>
 
     <h3 class="govuk-heading-m">Certificate page</h3>
@@ -257,6 +287,26 @@ GOV.UK Prototype Kit
 
                   <div class="panel panel-border-narrow">
                     <div class="govuk-details__text">
+
+                      <h3 class="govuk-heading-s">Post-user research iterations (August 2021)</h3>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="non_passported_employment_v2/financial_help">AP-2441: Explore the scenario where monthly employment income appears on 'income transactions'</a></li>
+                        <li><a href="non_passported_employment_v2/nonpassported_meansresults">AP-2442: Resolve issues with means assessments results being misleading</a></li>
+                        <li><a href="non_passported_employment_v2/other_income">AP-2443: Resolve concerns around ‘Is this correct?’</a></li>
+                        <li><a href="non_passported_employment_v2/provider_continue_application">AP-2470: Review/update content on 'Continue your application' page</a></li>
+                        <li><a href="non_passported_employment_v2/check">AP-2471: Review/update content on 'What your client needs to do' page</a></li>
+                        <li><a href="non_passported_employment_v2/employment_income">AP-2477: Move employment income/student finance page before income categorisation page</a></li>
+                        <li><a href="non_passported_employment_v2/sort_income">AP-2479: Improve income transaction page content</a></li>
+                        <li><a href="non_passported_employment_v2/outgoings">AP-2480: Improve outgoings summary page content</a></li>
+                        <li><a href="non_passported_employment_v2/online_banking_declaration">AP-2486: Improve content on 'Give your client temporary access to the service' page</a></li>
+                      </ul>
+
+                      <h3 class="govuk-heading-s">AP-2523/24: Passported 'before you continue' content</h3>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                      <li><a href="jim/before_you_continue/passported">V1</a></li>
+                      </ul>
+
                     <ul class="govuk-list govuk-list--bullet">
                       <li>Capital improvements: NP <a href="/jim/capital/non_passported/v1/accounts">v1</a> / <a href="/jim/capital/non_passported/v2/savings">v2</a> / <a href="/jim/capital/non_passported/v3/capital">v3 (one page)</a> / P <a href="/jim/capital/passported/v1/bank_accounts">v1</a> / <a href="/jim/capital/passported/v2/bank_accounts">v2</a></li>
                       <li>Client reports no income: <a href="/jim/client_no_income/v1/income">v1</a> / <a href="/jim/client_no_income/v2/income">v2</a></li>
