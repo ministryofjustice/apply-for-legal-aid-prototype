@@ -1,0 +1,299 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "provider_continue_application"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Review Sam Doe's employment income (provided by HMRC)</h1>
+
+  <!--  <h2 class="govuk-heading-l">Employment income</h2> -->
+
+    <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Job 1</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Date range</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Gross income</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Benefits in kind</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Tax  </th>
+     <th scope="col" class="govuk-table__header app-custom-class">NI</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">8 Dec 2020 to 7 Jan 2021</td>
+      <td class="govuk-table__cell">£500</td>
+      <td class="govuk-table__cell">£50</td>
+      <td class="govuk-table__cell">- £50</td>
+      <td class="govuk-table__cell">- £10</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">8 Nov to 7 Dec 2020</td>
+      <td class="govuk-table__cell">£500</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">- £50</td>
+      <td class="govuk-table__cell">- £10</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">8 Oct to 7 Nov 2020</td>
+      <td class="govuk-table__cell">£500</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">- £50</td>
+      <td class="govuk-table__cell">- £10</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+<caption class="govuk-table__caption govuk-table__caption--m">Job 2</caption>
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+  <th scope="col" class="govuk-table__header app-custom-class">Date range</th>
+  <th scope="col" class="govuk-table__header app-custom-class">Gross income</th>
+  <th scope="col" class="govuk-table__header app-custom-class">Tax</th>
+  <th scope="col" class="govuk-table__header app-custom-class">NI</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">1 Jan to 7 Jan 2021</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">25 Dec to 31 Dec 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">18 Dec to 24 Dec 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">11 Dec to 17 Dec 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">4 Dec to 10 Dec 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">27 Nov to 3 Dec 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">20 Nov to 26 Nov 2020 </td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">13 Nov to 19 Nov 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">6 Nov to 12 Nov 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">30 Oct to 5 Nov 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">23 Oct to 29 Oct 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">16 Oct to 22 Oct 2020</td>
+  <td class="govuk-table__cell">£125</td>
+  <td class="govuk-table__cell">- £12.50</td>
+        <td class="govuk-table__cell">- £2</td>
+</tr>
+
+</tbody>
+</table>
+
+
+    <h2 class="govuk-heading-l">Do you need to tell us anything else about your client's employment?</h2>
+      <span class="govuk-hint">For example, if they get cash in hand pay, have zero-hours contracts, or recently started or ended employment.
+      <!--  <br><br>You will need to upload evidence of this later on. -->
+      </span>
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+      <!--  <div class="govuk-form-group">
+          <label class="govuk-label" for="policies-value">
+            How much does your client earn each month before tax?
+          </label>
+    <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+    </div>
+    </div> -->
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="policies-value">
+    Enter details
+    </label>
+    <span class="govuk-hint">You'll need to upload supporting evidence later.</span>
+
+
+
+    <textarea class="govuk-textarea" id="more-detail" name="statement" rows="8
+    " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+    </div>
+
+  <!--  <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    A caseworker will request evidence of your client's employment after you've submitted your application.
+  </strong>
+  </div>
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I have evidence of my client's employment
+        </label>
+        <span class="govuk-hint" style="padding-left: 15px">You can upload this evidence later on.</span>
+      </div>
+    </div>
+  </fieldset>
+</div -->
+
+    </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          No
+        </label>
+      </div>
+
+      </div>
+    <!--  <br>
+    <hr>
+<br>
+
+    <h3 class="govuk-heading-l">Student finance</h3>
+     <span class="govuk-hint">Your client entered this information.</span>
+    <p class="gov-body"><strong>£9,800</strong> this academic year.</p> -->
+
+       <div class="govuk-!-padding-bottom-6"></div>
+
+
+        <a href="other_income" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/PROTOTYPE-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}
