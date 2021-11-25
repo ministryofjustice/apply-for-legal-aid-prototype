@@ -17,14 +17,46 @@ Apply for legal aid - Confirmation page
 
   {{ govukBackLink({
   text: "Back",
-  href: "/passported_v2/check_answers"
+  href: "check_answers"
 }) }}
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">DWP records show that your client receives a passporting benefit</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+
+        <!-- <li>
+          <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="margin-top: 5px; color: #fff;">
+          Your client does not receive benefits that qualify for legal aid.</p>
+        </li> -->
+
+          <h2 class="govuk-heading-m" style="margin-bottom: 20px;">What happens next</h2>
+
+          <p style="margin-top: 8px; color: #fff;">You need to tell us about your client's capital, such as property, savings and other assets.</li>
+          </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <a href="substantive_application" role="button" class="govuk-button white-button right">
+          Continue</a>
+      <a href=""#" role="button" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+  <!--  <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation">
 
@@ -32,36 +64,30 @@ Apply for legal aid - Confirmation page
             {{ data['firstname'] }} {{ data['lastname'] }}</h1>
 
             <div class="govuk-panel__title">
-            receives a qualifying benefit</div>
+            receives benefits that qualify for legal aid</div>
         </div>
 
         <div class="govuk-!-padding-top-4"></div>
 
-          <h3 class="govuk-heading-m">Your client's benefits status</h3>
+         <h3 class="govuk-heading-m">Your client's benefits status</h3>
 
           <p class="govuk-body">Your client receives benefits that qualify for legal aid.</p>
 
           <h3 class="govuk-heading-m">What happens next</h3>
 
-          <p class="govuk-body">You'll need to tell us if your client has any property, savings, investments or other assets (and their values).</p>
+          <p class="govuk-body">You'll need to:</p>
 
-          <p class="govuk-body">You'll also need to tell us:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-<li>details about the case</li>
-<li>the estimated costs of doing the work</li>
-<li>how likely the case is to succeed</li>
-</ul>
-     <!--  <p class="govuk-body">
-            You will also have to complete a merits assessment for your client's case.
-          </p>
-
-          <p class="govuk-body">You'll need to tell us if your client:</p>
           <ul class="govuk-list govuk-list--bullet">
-                            <li>owns a home or has a mortgage (and their values)</li>
-                            <li>has any savings, investments or other capital (and their values)</li>
-                            <li>has any other ways of contributing towards legal costs</li>
-                          </ul> -->
+            <li>answer questions about your client's financial situation</li>
+            <li>provide details of the case</li>
+          </ul> -->
+
+        <!--  <p class="govuk-body">You'll need to tell us if your client has any property, savings, investments or other assets.</p>
+
+ <p class="govuk-body">
+            You will also have to complete a merits assessment for your client's case.
+          </p> -->
+
 
 
       <!--  <p class="govuk-body">You'll also need to enter:</p>
@@ -71,9 +97,9 @@ Apply for legal aid - Confirmation page
           <li>information about any attempts to settle</li>
           <li>cost estimates</li>
           <li>the prospects of success</li>
-        </ul> -->
+        </ul>
 
-
+<br>
         <a href="property" role="button" class="govuk-button right">
           Continue to assessment
         </a>
@@ -83,7 +109,7 @@ Apply for legal aid - Confirmation page
         </a>
 
     </div>
-  </div>
+  </div>   -->
 
 
 

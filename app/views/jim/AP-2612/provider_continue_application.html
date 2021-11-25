@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Continue Sam Doe’s financial assessment</h1>
+
+        <p class="govuk-body-l">You need to do the following:</p>
+
+        <h3 class="govuk-heading-m">1. Review their employment details</h3>
+
+        <p class="govuk-body">HMRC shared this with us.</p>
+
+        <h3 class="govuk-heading-m">2. Sort their bank transactions into categories</h3>
+
+<p class="govuk-body">Your client selected the categories their income and outgoings fall into. View their bank statements and sort transactions into these categories.</p>
+
+<h3 class="govuk-heading-m">3. Tell us about their dependants</h3>
+
+<p class="govuk-body">Provide details of your client's dependants (if they have any).</p>
+
+<h3 class="govuk-heading-m">4. Tell us about their capital</h3>
+
+<p class="govuk-body">Provide details of your client's savings, investments and other assets.</p>
+
+<br>
+
+<a class="govuk-button" href="employment_income" role="button">
+  Continue
+</a>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/PROTOTYPE-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

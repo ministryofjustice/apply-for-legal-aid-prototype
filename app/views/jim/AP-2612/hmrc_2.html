@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Assessment start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "dwp_check_2"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">We need to assess your client's income</h1>
+
+    <p class="govuk-body">HMRC will share your client's employment details from the last 3 months with us. You can review this later.</p>
+
+    <p class="govuk-body">Your client will also need to tell us about:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>any other types of income they receive (such as benefits or help from family or friends)</li>
+        <li>their outgoings (such as housing or childcare costs)</li>
+        </ul>
+
+
+    <!--  <p class="govuk-body">You'll need to review these details later on.</p> -->
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
