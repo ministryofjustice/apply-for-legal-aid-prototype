@@ -33,8 +33,13 @@ Apply for legal aid - Statement of case
 
               <h1 class="govuk-heading-xl">Upload supporting evidence</h1>
 
-              <div class="govuk-inset-text">
-Use this page if you're applying for Section 8 proceedings and need to upload gateway evidence.</div>
+              <p class="govuk-body">Use this page to upload:</p>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>evidence that your client receives Universal Credit</li>
+                    <li>evidence of your client's employment</li>
+                    <li>gateway evidence for Section 8 proceedings (optional)</li>
+              </ul>
 
             </label>
           </div>
@@ -49,33 +54,38 @@ Use this page if you're applying for Section 8 proceedings and need to upload ga
           </div> -->
 
 
-<div class="moj-multi-file-upload">
-   <div class="moj-multi-file__uploaded-files moj-hidden">
-     <h2 class="govuk-heading-m">Files added</h2>
-     <div class="govuk-summary-list moj-multi-file-upload__list">
+          <div class="document-upload">
+            <form action="gateway_evidence" method="post" enctype="multipart/form-data">
 
-     </div>
-   </div>
+              <div class="moj-multi-file-upload">
+                <div class="moj-multi-file__uploaded-files">
+                  <h2 class="govuk-heading-m">Files added</h2>
+                  <div class="govuk-summary-list moj-multi-file-upload__list">
 
-   <div class="moj-multi-file-upload__upload">
+                  </div>
+                </div>
 
-     <div class="govuk-form-group">
-       <label class="govuk-label govuk-label--m" for="documents">
-          Upload a file
+                <div class="moj-multi-file-upload__upload">
 
-         <span id="more-detail-hint" class="govuk-hint">
-         The maximum file size is 8MB. Upload one file at a time.</span>
-       </label>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="documents">
+                      Upload files
+                      <span id="more-detail-hint" class="govuk-hint">
+                        The maximum file size is 8MB.</span>
+                    </label>
 
-       <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-     </div>
+                    <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+                  </div>
 
-     <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-       Upload file
-     </button>
+                  <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                    Upload file
+                  </button>
 
-   </div>
- </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
 
 
 
