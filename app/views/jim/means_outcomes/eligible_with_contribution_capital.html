@@ -1,0 +1,214 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "check_answers"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="flash-card">
+  <header>
+    <h1 class="govuk-heading-l">Sam Doe may need to pay towards legal aid</h1>
+  </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ul class="how-to-renew" data-id="how-to-renew-uk">
+        <li>
+
+        <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2>
+          <p style="color: #fff;">
+          See how we worked out the contribution your client has to pay below.</p> -->
+
+          <p style="color: #fff;">
+            We calculated that your client should make a <strong>£x one-off payment</strong> from their disposable capital.
+<!-- This is because they have £425.50 in disposable income. --></p>
+
+          <p style="color: #fff;">
+      <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
+      Continue your application to provide details of the case.
+
+    </p>
+
+    </div>
+  </div>
+</div>
+<br><br>
+
+
+<details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How we calculated your client's eligibility
+        </span>
+      </summary>
+      <br>
+
+          <h2 class="govuk-heading-m">Property</h2>
+
+          <table class="govuk-table">
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Value
+              <!--  <span class="govuk-hint">
+                You can upload your receipt as a scanned copy or photo of the original
+                </span> -->
+              </th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£150,000</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Outstanding mortgage</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">− £75,000</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Disregards and deductions</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">− £100,000</td>
+            </tr>
+
+            <tr class="govuk-table__row" style="border-top: 2px solid #000">
+              <th scope="row" class="govuk-table__header">Amount included in assessment</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Vehicles</h2>
+
+        <table class="govuk-table">
+        <tbody>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Value
+            <!--  <span class="govuk-hint">
+              You can upload your receipt as a scanned copy or photo of the original
+              </span> -->
+            </th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£25,000</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Outstanding payments</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">− £6,000</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Disregards and deductions</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">− £15,000</td>
+          </tr>
+
+          <tr class="govuk-table__row" style="border-top: 2px solid #000">
+            <th scope="row" class="govuk-table__header">Amount included in assessment</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+          </tr>
+        </tbody>
+        </table>
+
+          <h2 class="govuk-heading-m">Savings and investments</h2>
+
+          <table class="govuk-table">
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Current accounts
+              <!--  <span class="govuk-hint">
+                You can upload your receipt as a scanned copy or photo of the original
+                </span> -->
+              </th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£1,000</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Savings accounts</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£2,000</td>
+            </tr>
+
+            <tr class="govuk-table__row" style="border-top: 2px solid #000">
+              <th scope="row" class="govuk-table__header">Amount included in assessment</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£3,000</td>
+            </tr>
+          </tbody>
+          </table>
+
+            <h2 class="govuk-heading-m">Other assets</h2>
+
+            <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Valuable items worth more than £500
+                <!--  <span class="govuk-hint">
+                  You can upload your receipt as a scanned copy or photo of the original
+                  </span> -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+
+              <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                <th scope="row" class="govuk-table__header">Amount included in assessment</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+              </tr>
+            </tbody>
+            </table>
+
+                <h2 class="govuk-heading-m">Capital assessment</h2>
+
+                <table class="govuk-table">
+                <tbody>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Property
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Vehicles
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Savings and investments
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£3,000</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Other assets
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+                  </tr>
+                  <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                    <th scope="row" class="govuk-table__header">Total capital</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£7,500</strong></td>
+                  </tr>
+                  <tr class="govuk-table__row"">
+                    <th scope="row" class="govuk-table__header">Pensioner disregard</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">− £0</td>
+                  </tr>
+                  <tr class="govuk-table__row" style="border-top: 2px solid #000">
+                    <th scope="row" class="govuk-table__header">Disposable capital</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£7,500</strong></td>
+                  </tr>
+</tbody>
+</table>
+<h2 class="govuk-heading-m">Restrictions on your client's assets</h2>
+<p class="govuk-body">None</p>
+    </details>
+  <button type="submit" class="govuk-button">
+    Continue
+  </button>
+{% endblock %}
