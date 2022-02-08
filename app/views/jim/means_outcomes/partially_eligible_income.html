@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Confirmation page
@@ -25,27 +25,27 @@ Apply for legal aid - Confirmation page
 {% block content %}
 
 
-  <div class="flash-card">
-    <header>
-      <h1 class="govuk-heading-l">Sam Doe could be eligible for free legal aid</h1>
-    </header>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <ul class="how-to-renew" data-id="how-to-renew-uk">
-          <li>
+<div class="flash-card">
 
-          <!--  <h2 class="govuk-heading-m">Your client's benefits status</h2> -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h1 class="govuk-heading-l">Sam Doe is partially eligible for legal aid</h1>
+      </header>
+      <!--  <h2 class="govuk-heading-m">Domestic abuse proceedings</h2>
+  <br> -->
             <p style="color: #fff;">
-            Based on their financial situation, your client may not have to pay towards legal aid.</p>
+            For domestic abuse proceedings, your client must pay <strong>£800</strong> from their disposable income.</p>
 
-            <p style="color: #fff;">
-        <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
-        Continue your application to provide details of the case.
-      </p>
+          <!--  <h2 class="govuk-heading-m">Section 8 proceedings</h2>
+      <br> -->
 
-      </div>
+        <p style="color: #fff;">Your client is ineligible for Section 8 proceedings.</p>
+
+      <p style="color: #fff;">Continue your application to provide details of the case.</p> 
     </div>
   </div>
+</div>
 <br><br>
 
 
@@ -413,8 +413,41 @@ Apply for legal aid - Confirmation page
         </div>
       </div>
 
-    <button type="submit" class="govuk-button">
-      Continue
-    </button>
 
+
+  <button type="submit" class="govuk-button">
+    Continue
+  </button>
 {% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}
