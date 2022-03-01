@@ -29,270 +29,11 @@ Apply for legal aid - Check your answers - Merits
         Check your answers
       </h1>
 
-    <!--  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Client details
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-            First name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['firstname'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#firstname">
-              Change <span class="govuk-visually-hidden">first name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['lastname'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#lastname">
-              Change <span class="govuk-visually-hidden">last name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#dob-day">
-              Change <span class="govuk-visually-hidden">dob</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['national-insurance-number'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#national-insurance-number">
-              Change <span class="govuk-visually-hidden">national insurance number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['email-address'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="client_details#national-insurance-number">
-              Change <span class="govuk-visually-hidden">email address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            1 Main Street<br/>London<br/>{{ data['postcode'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="postcode_finder#postcode">
-              Change <span class="govuk-visually-hidden">correspondance address</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-           What you're applying for
-        </span>
-      </h2>
-    </div>
 
-
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-
-      <h2 class="govuk-heading-m">
-        Emergency certificate
-      </h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-            Proceeding
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Non-molestation order{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Form of service
-          </dt>
-          <dd class="govuk-summary-list__value">
-          Full representation{{ data['...'] }}
-          </dd>
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Costs you can incur
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £1,350{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Work you can do
-          </dt>
-          <dd class="govuk-summary-list__value">
-            All steps up to and including the hearing on 21 July 2019.
-    {{ data['...'] }}
-          </dd>
-
-        </div>
-        <!-- <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Delegated functions
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Client involvement type
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Applicant{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
-
-
-
-      <h2 class="govuk-heading-m">
-        Substantive certificate
-      </h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-            Proceeding
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Non-molestation order{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Form of service
-          </dt>
-          <dd class="govuk-summary-list__value">
-          Full representation{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Costs you can incur
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £5,000{{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Work you can do
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Limited to all steps up to and including serving a final order. If your client breaches an order and they're arrested, you may represent them on the consideration of the court. You cannot apply for an arrest warrant or represent someone in contempt proceedings.
-    {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-        </div>
-        <!-- <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Delegated functions
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            No{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Client involvement type
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Applicant{{ data['...'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="search#search">
-              Change <span class="govuk-visually-hidden">proceeding</span>
-            </a>
-          </dd>
-        </div>
-     </dl>
-    </div>
-  </div>
-</div>
 
 <h2 class="govuk-heading-l">
-  Client capital
-</h2> -->
+  Your client's capital
+</h2>
 
         <h2 class="govuk-heading-m">
           Property
@@ -341,6 +82,19 @@ Apply for legal aid - Check your answers - Merits
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Does your client own their home with anyone else?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What % share of their home does your client legally own?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -426,7 +180,7 @@ Apply for legal aid - Check your answers - Merits
         </dl>
 
         <h2 class="govuk-heading-m">
-          Bank accounts
+          Which bank accounts does your client have?
         </h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -459,12 +213,12 @@ Apply for legal aid - Check your answers - Merits
         </dl>
 
         <h2 class="govuk-heading-m">
-          Savings and investments
+          Which types of savings or investments does your client have?
         </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Cash kept at home or another location
+            Money not in a bank account
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -490,7 +244,7 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            National Savings Certificates and Premium Bonds
+            ISAs, National Savings Certificates and Premium Bonds
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -503,7 +257,7 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Shares in a PLC
+            Shares in a PLC (public limited company)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -516,7 +270,7 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Unit trust
+            PEPs, unit trusts, capital bonds and government stocks
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -529,20 +283,7 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-           Fixed interest security
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Life assurance or endowment policies
+           Life assurance and endowment policies not linked to a mortgage
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['...'] }}
@@ -556,7 +297,7 @@ Apply for legal aid - Check your answers - Merits
         </dl>
 
         <h2 class="govuk-heading-m">
-          Other assets
+          Which types of assets does your client have?
         </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -653,7 +394,104 @@ Apply for legal aid - Check your answers - Merits
         </dl>
 
         <h2 class="govuk-heading-m">
-        Restrictions
+          Payments from scheme or charities
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            England Infected Blood Support Scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Vaccine Damage Payments Scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Variant Creutzfeldt-Jakob disease (vCJD) Trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Criminal Injuries Compensation Scheme
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Emergencies Trust (NET)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           We Love Manchester Emergency Fund
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           The London Emergencies Trust
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['...'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change <span class="govuk-visually-hidden">blank</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Restrictions on your client's assets
         </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -691,5 +529,3 @@ Apply for legal aid - Check your answers - Merits
   </div>
 
   {% endblock %}
-
-
