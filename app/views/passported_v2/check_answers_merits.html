@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Check your answers - Merits
@@ -30,12 +30,12 @@ Apply for legal aid - Check your answers - Merits
       </h1>
 
       <h1 class="govuk-heading-l">
-        General case details
+        Case details
       </h1>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Latest domestic abuse incident details</h2>
+      <h2 class="govuk-heading-m">Latest incident details</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <p><a class="govuk-link" style="float:right;" href="incident_details">Change</a></p>
@@ -45,12 +45,12 @@ Apply for legal aid - Check your answers - Merits
       <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th class="govuk-table__cell govuk-body" scope="row"><strong>Date your client contacted you</strong></th>
+              <th class="govuk-table__cell govuk-body" scope="row"><strong>When did your client contact you about the latest domestic abuse incident?</strong></th>
               <td class="govuk-table__cell govuk-table__cell--numeric">10 Dec 2019</td>
               </tr>
 
               <tr class="govuk-table__row">
-                <th class="govuk-table__cell govuk-body" scope="row"><strong>Date the incident occurred</strong></th>
+                <th class="govuk-table__cell govuk-body" scope="row"><strong>When did the incident occur?</strong></th>
                 <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2019</td>
               </tr>
 
@@ -72,29 +72,48 @@ Apply for legal aid - Check your answers - Merits
 <table class="govuk-table">
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <th class="govuk-table__cell govuk-body" scope="row"><strong>Opponent's name</strong></th>
+        <th class="govuk-table__cell govuk-body" scope="row"><strong>Name</strong></th>
         <td class="govuk-table__cell govuk-table__cell--numeric">Rex Smith</td>
         </tr>
       <tr class="govuk-table__row">
-        <th class="govuk-table__cell govuk-body" scope="row"><strong>Has mental capacity to understand terms of a court order</strong></th>
+        <th class="govuk-table__cell govuk-body" scope="row"><strong>Does the opponent have the mental capacity to understand the terms of a court order?</strong></th>
         <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row"><strong>A warning letter has been sent</strong></th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Has a warning letter been sent to the opponent?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row"><strong>Police have been notified</strong></th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have the police been notified?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row"><strong>Bail conditions have been set</strong></th>
+          <th class="govuk-table__cell govuk-body" scope="row"><strong>Have bail conditions been set?</strong></th>
           <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
         </tr>
       </tbody>
     </table>
 
 <br>
+
+<h2 class="govuk-heading-m">Statement of case</h2>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Provide a statement of case
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="#">statement_of_case.pdf (200kb)</a>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="statement">
+                  Change
+                </a>
+              </dd>
+            </div>
+          </dl>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -131,36 +150,14 @@ Apply for legal aid - Check your answers - Merits
           </div>
         </dl>
 
-
-   <h2 class="govuk-heading-m">Statement of case</h2>
-
-     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-
-               <div class="govuk-summary-list__row">
-                 <dt class="govuk-summary-list__key">
-                   Provide a statement of case
-                 </dt>
-                 <dd class="govuk-summary-list__value">
-                   <a href="#">statement_of_case.pdf (200kb)</a>
-                 </dd>
-                 <dd class="govuk-summary-list__actions">
-                   <a class="govuk-link" href="statement">
-                     Change
-                   </a>
-                 </dd>
-               </div>
-             </dl>
-
              <h1 class="govuk-heading-l">
-              Proceedings
+              Non-molestation order
              </h1>
-
-             <h2 class="govuk-heading-m">Non-molestation order</h2>
 
              <dl class="govuk-summary-list govuk-!-margin-bottom-7">
                        <div class="govuk-summary-list__row">
                          <dt class="govuk-summary-list__key">
-                           Chance of success 50% or better
+                           Is the chance of a successful outcome 50% or better?
                          </dt>
                          <dd class="govuk-summary-list__value">
                            Yes
@@ -173,31 +170,29 @@ Apply for legal aid - Check your answers - Merits
                        </div>
                      </dl>
 
-             <h2 class="govuk-heading-m">Prohibited steps order</h2>
+             <h1 class="govuk-heading-l">Prohibited steps order</h1>
 
-          <!--   <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+             <dl class="govuk-summary-list govuk-!-margin-bottom-7">
                        <div class="govuk-summary-list__row">
                          <dt class="govuk-summary-list__key">
-                           Is this proceeding within the scope of LASPO?
+                           Is the chance of a successful outcome 50% or better?
                          </dt>
                          <dd class="govuk-summary-list__value">
                            Yes
                          </dd>
                          <dd class="govuk-summary-list__actions">
-                           <a class="govuk-link" href="laspo_pso">
+                           <a class="govuk-link" href="prospects_pso">
                              Change
                            </a>
                          </dd>
                        </div>
-                     </dl> -->
 
-                     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
                                <div class="govuk-summary-list__row">
                                  <dt class="govuk-summary-list__key">
-                                   Children covered under this proceeding
+                                   What attempts have been made to settle the matter?
                                  </dt>
                                  <dd class="govuk-summary-list__value">
-                                   Billy Doe<br>Sarah Doe
+                                 None
                                  </dd>
                                  <dd class="govuk-summary-list__actions">
                                    <a class="govuk-link" href="children_pso">
@@ -205,15 +200,12 @@ Apply for legal aid - Check your answers - Merits
                                    </a>
                                  </dd>
                                </div>
-                             </dl>
 
-                             <dl class="govuk-summary-list govuk-!-margin-bottom-0">
                                        <div class="govuk-summary-list__row">
                                          <dt class="govuk-summary-list__key">
-                                           Attempts to settle
-                                         </dt>
+                                           Which children are covered under this proceeding?
                                          <dd class="govuk-summary-list__value">
-
+                                           Billy Doe<br>Sarah Doe
                                          </dd>
                                          <dd class="govuk-summary-list__actions">
                                            <a class="govuk-link" href="resolve_pso">
@@ -223,45 +215,41 @@ Apply for legal aid - Check your answers - Merits
                                        </div>
                                      </dl>
 
+             <h1 class="govuk-heading-l">Child arrangements order (residence)</h1>
 
-                                     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-                                               <div class="govuk-summary-list__row">
-                                                 <dt class="govuk-summary-list__key">
-                                                   Chance of success 50% or better
-                                                 </dt>
-                                                 <dd class="govuk-summary-list__value">
-                                                   Yes
-                                                 </dd>
-                                                 <dd class="govuk-summary-list__actions">
-                                                   <a class="govuk-link" href="prospects_pso">
-                                                     Change
-                                                   </a>
-                                                 </dd>
-                                               </div>
-                                             </dl>
-
-             <h2 class="govuk-heading-m">Child arrangements order (residence)</h2>
-
-            <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+             <dl class="govuk-summary-list govuk-!-margin-bottom-7">
                        <div class="govuk-summary-list__row">
                          <dt class="govuk-summary-list__key">
-                           Is this proceeding within the scope of LASPO?
+                           Is the chance of a successful outcome 50% or better?
                          </dt>
                          <dd class="govuk-summary-list__value">
                            Yes
                          </dd>
                          <dd class="govuk-summary-list__actions">
-                           <a class="govuk-link" href="laspo_cao">
+                           <a class="govuk-link" href="prospects_cao">
                              Change
                            </a>
                          </dd>
                        </div>
-                     </dl> -->
 
-                     <dl class="govuk-summary-list govuk-!-margin-bottom-0">
                                <div class="govuk-summary-list__row">
                                  <dt class="govuk-summary-list__key">
-                                   Children covered under this proceeding
+                                   What attempts have been made to settle the matter?
+                                 </dt>
+                                 <dd class="govuk-summary-list__value">None
+
+                                 </dd>
+                                 <dd class="govuk-summary-list__actions">
+                                   <a class="govuk-link" href="resolve_cao">
+                                     Change
+                                   </a>
+                                 </dd>
+                               </div>
+
+
+                               <div class="govuk-summary-list__row">
+                                 <dt class="govuk-summary-list__key">
+                                   Which children are covered under this proceeding?
                                  </dt>
                                  <dd class="govuk-summary-list__value">
                                    Billy Doe<br>Sarah Doe
@@ -273,40 +261,6 @@ Apply for legal aid - Check your answers - Merits
                                  </dd>
                                </div>
                              </dl>
-
-                             <dl class="govuk-summary-list govuk-!-margin-bottom-0">
-                                       <div class="govuk-summary-list__row">
-                                         <dt class="govuk-summary-list__key">
-                                           Attempts to settle
-                                         </dt>
-                                         <dd class="govuk-summary-list__value">
-
-                                         </dd>
-                                         <dd class="govuk-summary-list__actions">
-                                           <a class="govuk-link" href="resolve_cao">
-                                             Change
-                                           </a>
-                                         </dd>
-                                       </div>
-                                     </dl>
-
-
-                                     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-                                               <div class="govuk-summary-list__row">
-                                                 <dt class="govuk-summary-list__key">
-                                                   Chance of success 50% or better
-                                                 </dt>
-                                                 <dd class="govuk-summary-list__value">
-                                                   Yes
-                                                 </dd>
-                                                 <dd class="govuk-summary-list__actions">
-                                                   <a class="govuk-link" href="prospects_cao">
-                                                     Change
-                                                   </a>
-                                                 </dd>
-                                               </div>
-                                             </dl>
-
                                              <h1 class="govuk-heading-l">
                                               Supporting evidence
                                              </h1>
@@ -336,7 +290,8 @@ Apply for legal aid - Check your answers - Merits
                                              <ul class="govuk-list govuk-list--bullet">
 
                                              <li>they've instructed Hitchcock, Jones and King to represent them</li>
-                                             <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
+                                             <li>they've read the <a href="/privacy/privacy">LAA privacy policy</a></li>
+                                             <li>we can share their information with other government departments like the DWP and HMRC</li>
                                              <li>we can check their details with bank and credit reference agencies</li>
                                              <li>they may have to pay towards legal aid</li>
                                              <li>they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
@@ -349,7 +304,7 @@ Apply for legal aid - Check your answers - Merits
 
                                              <p class="govuk-body" style="padding-left: 60px;">
 
-                                             <strong>If your client gives wrong or incomplete information, or they do not report changes, they may:</p>
+                                             <strong>If your client gives wrong or incomplete information, does not report changes, or is found to have committed benefit fraud, they may:</p>
                                              <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
                                              <strong><li>be prosecuted</li>
                                              <li>need to pay a financial penalty</li>
@@ -371,36 +326,3 @@ Apply for legal aid - Check your answers - Merits
 
 
   {% endblock %}
-
-  {% block footer %}
-      {{ govukFooter({
-        meta: {
-            items: [
-              {
-                href: "#",
-                text: "Contact"
-              },
-              {
-                href: "#",
-                text: "Feedback"
-              },
-              {
-                href: "https://www.gov.uk/help/cookies",
-                text: "Cookies"
-              },
-              {
-                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-                text: "Terms and conditions"
-              },
-              {
-                href: "https://mojdigital.blog.gov.uk/",
-                text: "MOJ Digital Services"
-              },
-              {
-                href: "/prototype-admin/clear-data",
-                text: "Clear data"
-              }
-            ]
-          }
-        }) }}
-      {% endblock %}

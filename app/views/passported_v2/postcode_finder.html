@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Correspondence address lookup
@@ -31,9 +31,9 @@ Apply for legal aid - Correspondence address lookup
         <form action="postcode_select" method="post" novalidate>
           <div class="govuk-form-group">
 
-            <label class="govuk-label" for="postcode">
+          <!--  <label class="govuk-label" for="postcode">
             Postcode
-            </label>
+            </label> -->
 
               <span id="postcode-hint" class="govuk-hint">
                 This must be a valid UK postcode.
@@ -46,6 +46,10 @@ Apply for legal aid - Correspondence address lookup
             Find address
           </button>
 
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
           <p>
             <a class="govuk-link" href="/passported_v2/manual_address">Enter address manually</a>
           </p>
@@ -55,40 +59,3 @@ Apply for legal aid - Correspondence address lookup
     </div>
 
 {% endblock %}
-
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "#",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}

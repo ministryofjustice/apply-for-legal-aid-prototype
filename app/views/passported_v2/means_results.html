@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Confirmation page
@@ -27,7 +27,7 @@ Apply for legal aid - Confirmation page
 
 <div class="flash-card">
   <header>
-    <h1 class="govuk-heading-l">John Doe may need to pay towards legal aid</h1>
+    <h1 class="govuk-heading-l">Sam Doe may need to pay towards legal aid</h1>
   </header>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -38,11 +38,11 @@ Apply for legal aid - Confirmation page
           See how we worked out the contribution your client has to pay below.</p> -->
 
           <p style="color: #fff;">
-            We've calculated that your client should pay £4,500 from their disposable capital.<!-- This is because they have £425.50 in disposable income. --></p>
+            We've calculated that your client should pay <strong>£4,500</strong> from their disposable capital.<!-- This is because they have £425.50 in disposable income. --></p>
 
           <p style="color: #fff;">
       <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
-      You still need to provide details of the case before we can grant legal aid.
+      Continue your application to provide details of the case.
 
     </p>
 
@@ -55,11 +55,11 @@ Apply for legal aid - Confirmation page
 <h1 class="govuk-heading-m">How we calculated your client's eligibility</h1>
 
 
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+<div class="govuk-accordion__section ">
+<div class="govuk-accordion__section-header">
+<h2 class="govuk-accordion__section-heading">
+  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
                 Capital calculation
               </span>
             </h2>
@@ -257,7 +257,7 @@ Apply for legal aid - Confirmation page
 
         </details>
 
-      <a href="merits_start_page" button type="submit" class="govuk-button">
+      <a href="merits_tasklist" button type="submit" class="govuk-button">
         Continue
       </a>
 
@@ -265,35 +265,3 @@ Apply for legal aid - Confirmation page
 
 
 {% endblock %}
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}

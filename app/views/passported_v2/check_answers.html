@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Check your answers
@@ -39,10 +39,10 @@ Apply for legal aid - Check your answers
            First name
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['firstname'] }}
+           Sam
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">first name</span>
            </a>
          </dd>
@@ -52,10 +52,10 @@ Apply for legal aid - Check your answers
            Last name
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['lastname'] }}
+           Doe
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">last name</span>
            </a>
          </dd>
@@ -65,10 +65,10 @@ Apply for legal aid - Check your answers
            Date of birth
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+           1 January 1980
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">dob</span>
            </a>
          </dd>
@@ -78,24 +78,11 @@ Apply for legal aid - Check your answers
            National Insurance number
          </dt>
          <dd class="govuk-summary-list__value">
-           {{ data['national-insurance-number'] }}
+           QQ123456C
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="client_details">
              Change <span class="govuk-visually-hidden">national insurance number</span>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Email address
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{ data['email-address'] }}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-             Change <span class="govuk-visually-hidden">email address</span>
            </a>
          </dd>
        </div>
@@ -104,195 +91,217 @@ Apply for legal aid - Check your answers
            Correspondence address
          </dt>
          <dd class="govuk-summary-list__value">
-           1 Main Street<br/>London<br/>{{ data['postcode'] }}
+           1 Main Street<br/>London<br/>SE15 5NP
          </dd>
          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="postcode_finder">
+             Change <span class="govuk-visually-hidden">correspondance address</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Employment status
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Employed
+         </dd>
+         <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="employment_status">
              Change <span class="govuk-visually-hidden">correspondance address</span>
            </a>
          </dd>
        </div>
     </dl>
+<br>
 
-    <h2 class="govuk-heading-m">
-      What you're applying for
-    </h2>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-        Proceeding
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Proceedings</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="other_3">Change</a></p>
+  </div>
+</div>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proceeding 1
       </dt>
       <dd class="govuk-summary-list__value">
         Non-molestation order
       </dd>
       <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
+      <!--  <a href="proceedings">
           Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
+        </a> -->
       </dd>
     </div>
-</dl>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proceeding 2
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Prohibited steps order
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      <!--  <a href="proceedings">
+          Change <span class="govuk-visually-hidden">proceeding</span>
+        </a> -->
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proceeding 3
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Child arrangements order (residence)
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      <!--  <a href="proceedings">
+          Change <span class="govuk-visually-hidden">proceeding</span>
+        </a> -->
+      </dd>
+    </div>
+ </dl>
+<br>
 
 <h2 class="govuk-heading-m">
-  Delegated functions
+  LASPO
 </h2>
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-    Used delegated functions
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Are all Section 8 proceedings within the scope of LASPO?
   </dt>
   <dd class="govuk-summary-list__value">
-
+    Yes
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="search#search">
+    <a href="laspo">
       Change <span class="govuk-visually-hidden">proceeding</span>
     </a>
   </dd>
 </div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-Date you used delegated functions
-</dt>
-<dd class="govuk-summary-list__value">
-
-</dd>
-<dd class="govuk-summary-list__actions">
-  <a href="search#search">
- Change <span class="govuk-visually-hidden">proceeding</span>
-</a>
-</dd>
-</div>
 </dl>
-
-
-    <h2 class="govuk-heading-m">
-      Work covered under an emergency certificate
-    </h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-        Form of service
-      </dt>
-      <dd class="govuk-summary-list__value">
-      Full representation
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Costs you can incur
-      </dt>
-      <dd class="govuk-summary-list__value">
-        £1,350
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Work you can do
-      </dt>
-      <dd class="govuk-summary-list__value">
-All steps up to and including the hearing on 21 July 2019.
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    </dl>
-
-
-    <h2 class="govuk-heading-m">
-      Work covered under a substantive certificate
-    </h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
-        Form of service
-      </dt>
-      <dd class="govuk-summary-list__value">
-      Full representation
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Costs you can incur
-      </dt>
-      <dd class="govuk-summary-list__value">
-        £5,000
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <!-- <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Work you can do
-      </dt>
-      <dd class="govuk-summary-list__value">
-All steps up to and including getting and serving a final order. If the order is breached you can apply for power of arrest. You cannot apply for a warrant of arrest or contempt of court proceedings.
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <!--  <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a> -->
-      </dd>
-    </div>
-    <!-- <div class="app-check-your-answers__contents">
-      <dt class="app-check-your-answers__question">
-        Delegated functions
-      </dt>
-      <dd class="app-check-your-answers__answer">
-        No{{ data['...'] }}
-      </dd>
-      <dd class="app-check-your-answers__change">
-        <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
-      </dd>
-    </div>
-    <div class="app-check-your-answers__contents">
-      <dt class="app-check-your-answers__question">
-        Client involvement type
-      </dt>
-      <dd class="app-check-your-answers__answer">
-        Applicant{{ data['...'] }}
-      </dd>
-      <dd class="app-check-your-answers__change">
-        <a href="search#search">
-          Change <span class="govuk-visually-hidden">proceeding</span>
-        </a>
-      </dd>
-    </div> -->
- </dl>
-
-    <h2 class="govuk-heading-m">Check your client's benefits status</h2>
-
-      <p class="govuk-body">
-        We'll check with the Department for Work and Pensions to see if your client receives benefits that qualify for legal aid.
-      </p>
 <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Delegated functions</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="delegated_functions">Change</a></p>
+  </div>
+</div>
+
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Non-molestation order
+    </dt>
+    <dd class="govuk-summary-list__value">
+      28 July 2021
+    </dd>
+    <dd class="govuk-summary-list__actions">
+  <!--  <a href="delegated_functions">
+        Change <span class="govuk-visually-hidden">proceeding</span>
+      </a> -->
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Prohibited steps order
+    </dt>
+    <dd class="govuk-summary-list__value">
+      30 July 2021
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    <!-- <a href="delegated_functions_select">
+        Change <span class="govuk-visually-hidden">proceeding</span>
+      </a> -->
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Child arrangements order (residence)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      30 July 2021
+    </dd>
+    <dd class="govuk-summary-list__actions">
+  <!--  <a href="delegated_functions_select">
+        Change <span class="govuk-visually-hidden">proceeding</span>
+      </a> -->
+    </dd>
+  </div>
+</dl>
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Emergency cost limit</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="what_youre_covered_for">Change</a></p>
+  </div>
+</div>
+
+   <dl class="govuk-summary-list">
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Higher cost limit requested
+       </dt>
+       <dd class="govuk-summary-list__value">
+         Yes
+       </dd>
+      <!-- <dd class="govuk-summary-list__actions">
+         <a href="client_details#firstname">
+           Change <span class="govuk-visually-hidden">first name</span>
+         </a>
+       </dd> -->
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Amount requested
+       </dt>
+       <dd class="govuk-summary-list__value">
+          £4,000
+       </dd>
+      <!-- <dd class="govuk-summary-list__actions">
+         <a href="client_details#lastname">
+           Change <span class="govuk-visually-hidden">last name</span>
+         </a>
+       </dd> -->
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Reason
+       </dt>
+       <dd class="govuk-summary-list__value">
+         Reason goes here
+       </dd>
+      <!-- <dd class="govuk-summary-list__actions">
+         <a href="client_details#dob-day">
+           Change <span class="govuk-visually-hidden">dob</span>
+         </a>
+       </dd> -->
+     </div>
+  </dl>
+  <br>
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">We’ll use your client’s name, date of birth and National Insurance number to check their benefit status with the Department for Work and Pensions (DWP).</p>
+
+    <br>
       <a class="govuk-button" href="passported" role="button">
         Save and continue
       </a>
@@ -304,41 +313,4 @@ All steps up to and including getting and serving a final order. If the order is
     </div>
   </div>
 
-  {% endblock %}
-
-  {% block footer %}
-  {{ govukFooter({
-  meta: {
-      items: [
-        {
-          href: "#",
-          text: "Help"
-        },
-        {
-          href: "https://www.gov.uk/help/cookies",
-          text: "Cookies"
-        },
-        {
-          href: "#",
-          text: "Contact"
-        },
-        {
-          href: "#",
-          text: "Feedback"
-        },
-        {
-          href: "#",
-          text: "Terms and conditions"
-        },
-        {
-          href: "https://mojdigital.blog.gov.uk/",
-          text: "MOJ Digital Services"
-        },
-        {
-          href: "/prototype-admin/clear-data",
-          text: "Clear data"
-        }
-      ]
-    }
-  }) }}
   {% endblock %}

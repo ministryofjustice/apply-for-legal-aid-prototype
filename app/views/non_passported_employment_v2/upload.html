@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Statement of case
@@ -71,7 +71,7 @@ Apply for legal aid - Statement of case
                     <label class="govuk-label govuk-label--m" for="documents">
                       Upload files
                       <span id="more-detail-hint" class="govuk-hint">
-                        The maximum file size is 8MB.</span>
+                        The maximum file size is 8MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</span>
                     </label>
 
                     <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
@@ -110,37 +110,4 @@ Apply for legal aid - Statement of case
 
 </div>
 
-{% endblock %}
-
-{% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-    {
-      href: "#",
-      text: "Contact"
-    },
-    {
-      href: "#",
-      text: "Feedback"
-    },
-    {
-      href: "https://www.gov.uk/help/cookies",
-      text: "Cookies"
-    },
-    {
-      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-      text: "Terms and conditions"
-    },
-    {
-      href: "https://mojdigital.blog.gov.uk/",
-      text: "MOJ Digital Services"
-    },
-    {
-      href: "/prototype-admin/clear-data",
-      text: "Clear data"
-    }
-    ]
-  }
-}) }}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Confirmation page
@@ -27,7 +27,7 @@ Apply for legal aid - Confirmation page
 
 <div class="flash-card">
   <header>
-    <h1 class="govuk-heading-l">John Doe must pay towards legal aid</h1>
+    <h1 class="govuk-heading-l">Sam Doe may need to pay towards legal aid</h1>
   </header>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -39,11 +39,12 @@ Apply for legal aid - Confirmation page
           See how we worked out the contribution your client has to pay below.</p> -->
 
           <p style="color: #fff;">
-          Based on their financial situation, your client must pay a contribution of £4,500.<!-- This is because they have £425.50 in disposable income. --></p>
+            We calculated that your client should pay <strong>£x per month</strong> from their disposable income until the end of the case or there is a change in their financial situation.
+<!-- This is because they have £425.50 in disposable income. --></p>
 
           <p style="color: #fff;">
       <!--  You still have to answer questions about the merits of the case before we decide if legal aid will be granted. -->
-      You still have to provide details of the case before we can grant legal aid.
+      Continue your application to provide details of the case.
 
     </p>
 
@@ -211,35 +212,3 @@ Apply for legal aid - Confirmation page
     Continue
   </button>
 {% endblock %}
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}

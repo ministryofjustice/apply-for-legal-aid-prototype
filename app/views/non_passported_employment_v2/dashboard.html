@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}
 Apply for legal aid - Your applications
@@ -258,37 +257,4 @@ table .govuk-tag {
   <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p>
 </nav>
 
-{% endblock %}
-
-{% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-    {
-      href: "#",
-      text: "Contact"
-    },
-    {
-      href: "#",
-      text: "Feedback"
-    },
-    {
-      href: "https://www.gov.uk/help/cookies",
-      text: "Cookies"
-    },
-    {
-      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-      text: "Terms and conditions"
-    },
-    {
-      href: "https://mojdigital.blog.gov.uk/",
-      text: "MOJ Digital Services"
-    },
-    {
-      href: "/prototype-admin/clear-data",
-      text: "Clear data"
-    }
-    ]
-  }
-}) }}
 {% endblock %}

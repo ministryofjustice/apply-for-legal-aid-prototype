@@ -24,22 +24,6 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
-  }) }}
-
 {% endblock %}
 
 {% block content %}
@@ -82,10 +66,7 @@
 
         <p class="govuk-body">You cannot upload documents using this service. Use CCMS if you want to submit evidence to support your case.</p> -->
 
-        <a href="/passported_v2/sign_in" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
-          Start
-        </a>
-
+        <a role="button" class="govuk-button govuk-button--start" id="start" aria-label="Start now" href="dashboard">Start now <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 33 40" role="presentation" focusable="false"><path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path></svg></a>
 <!--Not sure if Welsh is needed for provider service
 
 <p class="govuk-body">The online service is also available in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</p>
@@ -126,42 +107,3 @@
     </div>
 
 {% endblock %}
-
-
-
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "#",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}

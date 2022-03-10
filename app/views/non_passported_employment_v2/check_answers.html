@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Check your answers
@@ -253,48 +253,48 @@ Apply for legal aid - Check your answers
   </div>
 </div>
 
-   <dl class="govuk-summary-list">
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Higher cost limit requested
-       </dt>
-       <dd class="govuk-summary-list__value">
-         Yes
-       </dd>
-      <!-- <dd class="govuk-summary-list__actions">
-         <a href="client_details#firstname">
-           Change <span class="govuk-visually-hidden">first name</span>
-         </a>
-       </dd> -->
-     </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Amount requested
-       </dt>
-       <dd class="govuk-summary-list__value">
-          {{ data['cost-limit'] }}
-       </dd>
-      <!-- <dd class="govuk-summary-list__actions">
-         <a href="client_details#lastname">
-           Change <span class="govuk-visually-hidden">last name</span>
-         </a>
-       </dd> -->
-     </div>
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Reason
-       </dt>
-       <dd class="govuk-summary-list__value">
-         {{ data['cost-limit-reason'] }}
-       </dd>
-      <!-- <dd class="govuk-summary-list__actions">
-         <a href="client_details#dob-day">
-           Change <span class="govuk-visually-hidden">dob</span>
-         </a>
-       </dd> -->
-     </div>
-  </dl>
-  <br>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Higher cost limit requested
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+   <!-- <dd class="govuk-summary-list__actions">
+      <a href="client_details#firstname">
+        Change <span class="govuk-visually-hidden">first name</span>
+      </a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Amount requested
+    </dt>
+    <dd class="govuk-summary-list__value">
+       £4,000
+    </dd>
+   <!-- <dd class="govuk-summary-list__actions">
+      <a href="client_details#lastname">
+        Change <span class="govuk-visually-hidden">last name</span>
+      </a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reason
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Reason goes here
+    </dd>
+   <!-- <dd class="govuk-summary-list__actions">
+      <a href="client_details#dob-day">
+        Change <span class="govuk-visually-hidden">dob</span>
+      </a>
+    </dd> -->
+  </div>
+</dl>
+<br>
 
 
     <h2 class="govuk-heading-m">What happens next</h2>
@@ -314,36 +314,3 @@ Apply for legal aid - Check your answers
   </div>
 
   {% endblock %}
-
-  {% block footer %}
-      {{ govukFooter({
-        meta: {
-            items: [
-              {
-                href: "#",
-                text: "Contact"
-              },
-              {
-                href: "#",
-                text: "Feedback"
-              },
-              {
-                href: "https://www.gov.uk/help/cookies",
-                text: "Cookies"
-              },
-              {
-                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-                text: "Terms and conditions"
-              },
-              {
-                href: "https://mojdigital.blog.gov.uk/",
-                text: "MOJ Digital Services"
-              },
-              {
-                href: "/prototype-admin/clear-data",
-                text: "Clear data"
-              }
-            ]
-          }
-        }) }}
-      {% endblock %}
