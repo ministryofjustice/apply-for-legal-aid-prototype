@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Check your answers
@@ -512,7 +512,7 @@ th:first-child {
 
                   <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
-                      <h2 class="govuk-heading-m">Bank accounts</h2>
+                      <h2 class="govuk-heading-m">Which bank accounts does your client have?</h2>
                     </div>
                     <div class="govuk-grid-column-one-third">
                       <p><a class="govuk-link" style="float:right;" href="client_accounts">Change</a></p>
@@ -538,7 +538,7 @@ th:first-child {
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Savings and investments</h2>
+      <h2 class="govuk-heading-m">Which types of savings or investments does your client have?</h2>
     </div>
     <div class="govuk-grid-column-one-third">
       <p><a class="govuk-link" style="float:right;" href="savings_investments_select">Change</a></p>
@@ -860,48 +860,3 @@ Money not in a bank account
 </div>
 
 {% endblock %}
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-
-{% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-    {
-      href: "#",
-      text: "Contact"
-    },
-    {
-      href: "#",
-      text: "Feedback"
-    },
-    {
-      href: "https://www.gov.uk/help/cookies",
-      text: "Cookies"
-    },
-    {
-      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-      text: "Terms and conditions"
-    },
-    {
-      href: "https://mojdigital.blog.gov.uk/",
-      text: "MOJ Digital Services"
-    },
-    {
-      href: "/prototype-admin/clear-data",
-      text: "Clear data"
-    }
-    ]
-  }
-}) }}
-{% endblock %}
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes

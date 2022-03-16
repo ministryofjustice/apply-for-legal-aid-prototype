@@ -1,19 +1,8 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
-<<<<<<< Updated upstream
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
 {% block pageTitle %}
-Apply for legal aid - Homepage
+Apply for legal aid - Your applications
 {% endblock %}
 
 {% block beforeContent %}
@@ -124,9 +113,7 @@ table .govuk-tag {
   <!--  <h2 class="govuk-heading-m">Make an application</h2>
     <p class="govuk-body">Tell us the basic case details and we'll check if your client can get legal aid.</p> -->
 
-    <a href="declaration_provider" class="govuk-button govuk-button--start">
-      Make an application
-    </a>
+    <a class="govuk-button govuk-button--start" role="button" id="start" aria-label="Make a new application" data-method="get" href="declaration_provider">Make a new application <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 33 40" role="presentation" focusable="false"><path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path></svg></a>
 
   </div>
 
@@ -163,71 +150,83 @@ table .govuk-tag {
             <!-- <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">CCMS Ref</span></th> -->
             <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Certificate type</span></th>
             <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:right !important"><span  class="th_bespoke">Status</span></th>
+            <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:right !important"><span  class="th_bespoke">Action</span></th>
+
           </tr>
         </thead>
 
         <tbody class="govuk-table__body">
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="">David Francis</a></td>
-            <td class="govuk-table__cell">19 Mar 2019</td>
-            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell"><a href="#">David Francis</a></td>
+            <td class="govuk-table__cell">1 Aug 2021</td>
+            <td class="govuk-table__cell">L-456-DEF</td>
             <!-- <td class="govuk-table__cell">123456789012</td> -->
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
             </strong></td>
+            <td class="govuk-table__cell">
+              <a href=delete class="govuk-button govuk-button--secondary">
+              Delete</a>
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="">Gwen McCrae</a></td>
-            <td class="govuk-table__cell">19 Mar 2019</td>
-            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">28 Jul 2021</td>
+            <td class="govuk-table__cell">L-789-GHI</td>
             <!-- <td class="govuk-table__cell">123456789012</td> -->
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
             </strong></td>
+            <td class="govuk-table__cell">
+              <a href=delete class="govuk-button govuk-button--secondary">
+              Delete</a>
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="">Patrice Sokda</a></td>
-            <td class="govuk-table__cell">19 Mar 2019</td>
-            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">28 Jul 2021</td>
+            <td class="govuk-table__cell">L-012-JKL</td>
             <!-- <td class="govuk-table__cell">123456789012</td> -->
             <td class="govuk-table__cell">Emergency<br><span class="govuk-body-s">Substantive due on 12 December 2019</span></td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
               Submitted
             </strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <!-- <role="button" class="govuk-button draft-button">
+              Delete -->
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
-            <td class="govuk-table__cell">18 Mar 2019</td>
-            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">26 Jul 2021</td>
+            <td class="govuk-table__cell">L-345-MNO</td>
             <!-- <td class="govuk-table__cell">123456789012</td> -->
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">
               Submitted
             </strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <!--<role="button" class="govuk-button draft-button">
+              Delete -->
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="">Steve Smith</a></td>
-            <td class="govuk-table__cell">17 Mar 2019</td>
-            <td class="govuk-table__cell">L-123-ABC</td>
+            <td class="govuk-table__cell">25 Jul 2021</td>
+            <td class="govuk-table__cell">L-678-PQR</td>
             <!-- <td class="govuk-table__cell">123456789012</td> -->
             <td class="govuk-table__cell">Substantive</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--blue">
               In progress
             </strong></td>
+            <td class="govuk-table__cell">
+              <a href=delete class="govuk-button govuk-button--secondary">
+              Delete</a>
+            </td>
           </tr>
-          <!-- <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="">Patty LaBelle</a></td>
-          <td class="govuk-table__cell">17 Mar 2019</td>
-          <td class="govuk-table__cell">L-123-ABC</td>
-          <td class="govuk-table__cell">123456789012</td>
-          <td class="govuk-table__cell">Substantive</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag granted">
-          Granted
-        </strong></td>
-      </tr> -->
 
     </tbody>
   </table>
@@ -257,48 +256,3 @@ table .govuk-tag {
 </nav>
 
 {% endblock %}
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-
-{% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-    {
-      href: "#",
-      text: "Contact"
-    },
-    {
-      href: "#",
-      text: "Feedback"
-    },
-    {
-      href: "https://www.gov.uk/help/cookies",
-      text: "Cookies"
-    },
-    {
-      href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
-      text: "Terms and conditions"
-    },
-    {
-      href: "https://mojdigital.blog.gov.uk/",
-      text: "MOJ Digital Services"
-    },
-    {
-      href: "/prototype-admin/clear-data",
-      text: "Clear data"
-    }
-    ]
-  }
-}) }}
-{% endblock %}
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes

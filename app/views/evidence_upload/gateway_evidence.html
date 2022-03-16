@@ -25,10 +25,31 @@ Apply for legal aid - Upload evidence
   }) }}
 {% endblock %}
 
+{% block pageScripts %}
+<script src="public/javascripts/document-upload.js"></script>
+<script>
+  $( document ).ready(function() {
+    if (typeof DocumentUpload !== 'undefined') {
+      new DocumentUpload({
+        container: $('.document-upload'),
+        uploadUrl: '/book/book-upload-documents'
+      })
+    }
+  })
+</script>
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if uploads.deletedFile %}
+      {{ mojBanner({
+          type: 'success',
+          text: '' + uploads.deletedFile.fileName + ' has been deleted',
+          iconFallbackText: 'Success'
+      }) }}
+    {% endif %}
   <h1 class="govuk-heading-xl">Upload evidence</h1>
 
     <div class="govuk-warning-text">

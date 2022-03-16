@@ -57,17 +57,45 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
+  {{ govukFooter({
+    meta: {
+      items: [
+      {
+        href: "/contact_us",
+        text: "Contact"
+      },
+      {
+        href: "/feedback",
+        text: "Feedback"
+      },
+      {
+        href: "/cookies",
+        text: "Cookies"
+      },
+      {
+        href: "/privacy/privacy",
+        text: "Privacy policy"
+      },
+      {
+        href: "/accessibility_statement",
+        text: "Accessibility statement"
+      },
+      {
+        href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+        text: "Terms and conditions"
+      },
+      {
+        href: "https://mojdigital.blog.gov.uk/",
+        text: "MOJ Digital Services"
+      },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
