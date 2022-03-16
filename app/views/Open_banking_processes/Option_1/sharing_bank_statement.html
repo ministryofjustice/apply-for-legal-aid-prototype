@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Apply for legal aid - Other capital
+Apply for legal aid - Property and mortgage
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "citizen_start_page"
+      href: "benefits"
   }) }}
 {% endblock %}
 
@@ -25,37 +25,30 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="agree_bank_access" method="post" class="form">
+        <form action="employed" method="post" class="form">
 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Sharing your bank statements
+                  We need to check your client's income
                 </h1>
               </legend>
+
               <br>
 
-
-                <p class="govuk-body">Watch this video to understand how you can securely share your bank statements
-                  with the LAA via TrueLayer.</p>
-
-                  <div class="govuk-!-padding-bottom-4"></div>
-                  <br>
-              
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/Kx7vPsZ8H54"></iframe>
+              <p>If you do not evidence of a passporting benefit we'll need to assess your client's income.</p>
 
 
+            </fieldset>
+          </div>
 
-<div class="govuk-!-padding-bottom-4"></div>
-<br>
           <button type="submit" class="govuk-button">
             Continue
           </button>
-
-
         </form>
       </div>
     </div>
-
 
 
 {% endblock %}
