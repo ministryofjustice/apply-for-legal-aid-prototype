@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_income"
+      href: "outgoing_select"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="student_loan" method="post" class="form">
+        <form action="check_answers_citizen" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -34,14 +34,13 @@ Apply for legal aid - Other capital
 
                 <!--  Does your client have any savings or investments?
                   Savings and investments - select any that apply to your client
-                Were any of the following types of income received as cash payments in the past 3 months?
-                Did you receive any of the following types of income in cash in the past 3 months? -->
-                Select payments your client receives in cash
+              Did you make any of the following payments in cash in the past 3 months? -->
+              Select payments your client makes in cash
+                <!--  Your savings and investments -->
                 </h1>
               </legend>
 
               <p class="govuk-body">Cash means physical money like banknotes and coins.</p>
-
 
               <span id="changed-name-hint" class="govuk-hint">Select all that apply.</span>
 
@@ -64,50 +63,19 @@ Apply for legal aid - Other capital
                   </div>
                   </div> -->
 
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                      Financial help from friends or family
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
-                    <div class="govuk-form-group">
-                      <span id="account-number-hint" class="govuk-hint">
-                        Enter the total cash amount you received each month, or enter 0 if you received none.
-                      </span>
-                      <label class="govuk-label" for="antiques-value">
-                        February 2021
-                      </label>
-                      <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                      <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                    </div>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="antiques-value">
-                      January 2021
-                      </label>
-                      <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                      <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                    </div>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="antiques-value">
-                        December 2020
-                      </label>
-                      <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                      <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
-                    </div>
-                  </div>
-
-
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Benefits
+                    Housing payments
                   </label>
+              <!-- <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                      For example, cash kept at home.
+                  </span> -->
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
                   <div class="govuk-form-group">
                     <span id="account-number-hint" class="govuk-hint">
-                    Enter the total cash amount you received each month, or enter 0 if you received none.
+                    Enter the total cash amount you paid each month, or enter 0 if you paid none.
                     </span>
                     <label class="govuk-label" for="antiques-value">
                       February 2021
@@ -132,101 +100,101 @@ Apply for legal aid - Other capital
                   </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("classic-car","yes") }}>
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
+                    Childcare payments
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
+                  <div class="govuk-form-group">
+                    <span id="account-number-hint" class="govuk-hint">
+                    Enter the total cash amount you paid each month, or enter 0 if you paid none.
+                    </span>
+                    <label class="govuk-label" for="antiques-value">
+                    February 2021
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="antiques-value">
+                    January 2021
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="antiques-value">
+                    December 2020
+                    </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
-                    Maintenance payments from a former partner
+                    Maintenance payments to a former partner
                   </label>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
                   <div class="govuk-form-group">
                     <span id="account-number-hint" class="govuk-hint">
-                      Enter the total cash amount you received each month, or enter 0 if you received none.
+                    Enter the total cash amount you paid each month, or enter 0 if you paid none.
                     </span>
-                    <label class="govuk-label" for="car-value">
-                      February 2021
+                    <label class="govuk-label" for="antiques-value">
+                    February 2021
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
-                      January 2021
+                    <label class="govuk-label" for="antiques-value">
+                    January 2021
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
-                      December 2020
+                    <label class="govuk-label" for="antiques-value">
+                    December 2020
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("classic-car","yes") }}>
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
-                    Income from a property or lodger
+                    Payments towards legal aid in a criminal case
                   </label>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-4">
                   <div class="govuk-form-group">
                     <span id="account-number-hint" class="govuk-hint">
-                      Enter the total cash amount you received each month, or enter 0 if you received none.
+                    Enter the total cash amount you paid each month, or enter 0 if you paid none.
                     </span>
-                    <label class="govuk-label" for="car-value">
-                      February 2021
+                    <label class="govuk-label" for="antiques-value">
+                    February 2021
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
-                      January 2021
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
-                      December 2020
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
-                  </div>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="citizenship-conditional-5" name="classic-car" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-5" {{ checked("classic-car","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-5">
-                    Pension
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-5">
-                  <div class="govuk-form-group">
-                    <span id="account-number-hint" class="govuk-hint">
-                      Enter the total cash amount you received each month, or enter 0 if you received none.
-                    </span>
-                    <label class="govuk-label" for="car-value">
-                      February 2021
-                    </label>
-                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
-                  </div>
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
+                    <label class="govuk-label" for="antiques-value">
                     January 2021
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="car-value">
-                      December 2020
+                    <label class="govuk-label" for="antiques-value">
+                    December 2020
                     </label>
                     <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
                   </div>
                 </div>
 
@@ -236,8 +204,8 @@ Apply for legal aid - Other capital
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   None of the above
-                  <!-- I do not receive these payments in cash -->
+                  None of the above
+                   <!-- I did not make any of these payments in cash -->
                  </label>
                </div>
 
@@ -245,9 +213,13 @@ Apply for legal aid - Other capital
             </fieldset>
           </div>
 
-          <button type="submit" class="govuk-button">
-            Continue
-          </button>
+          <a href="dependants" role="button" class="govuk-button">
+            Save and continue
+          </a>
+  
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
         </form>
       </div>

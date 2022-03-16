@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "types_of_income"
+      href: "income_select"
   }) }}
 {% endblock %}
 
@@ -67,8 +67,7 @@ Apply for legal aid - Other capital
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-2" {{ checked("antiques","yes") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
-                      Financial help from friends or family
-                    </label>
+                    Benefits</label>
                   </div>
                   <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
                     <div class="govuk-form-group">
@@ -101,7 +100,7 @@ Apply for legal aid - Other capital
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-                    Benefits
+                    Financial help from friends or friends
                   </label>
                 </div>
                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
@@ -236,7 +235,7 @@ Apply for legal aid - Other capital
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   None of the above
+                   None of these
                   <!-- I do not receive these payments in cash -->
                  </label>
                </div>
@@ -245,9 +244,15 @@ Apply for legal aid - Other capital
             </fieldset>
           </div>
 
-          <button type="submit" class="govuk-button">
-            Continue
-          </button>
+          <div class="govuk-!-padding-bottom-6"></div>
+
+          <a href="student_loan" role="button" class="govuk-button">
+            Save and continue
+          </a>
+  
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
 
         </form>
       </div>
