@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
 
 {% block pageTitle %}
 Apply for legal aid - Property and mortgage
@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "resolve_pso"
+      href: "property_details"
   }) }}
 {% endblock %}
 
@@ -25,32 +25,41 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="home_pso" method="post" class="form">
+        <form action="vehicles_details" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <span class="govuk-caption-xl">Prohibited steps order</span>
                 <h1 class="govuk-fieldset__heading">
-                  Is the chance of a successful outcome 50% or better?
+                  Does your client own a vehicle?
                 </h1>
               </legend>
+              <span class="govuk-hint">
+                This includes car, vans or motorcycles.
+              </span>
 
-            <!--   <span class="govuk-hint">
-                This includes cars, vans or motorcycles.
-              </span> -->
 
-              <div class="govuk-radios">
+              <div class="govuk-radios govuk-radios">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
 
+              <!--  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes, with financing (for example, hire purchase)
+                   <span class="govuk-hint">
+                  Includes hire purchase (HP) and personal purchase contract (PCP)
+                  </span>
+                  </label>
+                </div> -->
+
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
@@ -85,57 +94,11 @@ Apply for legal aid - Property and mortgage
           <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
             Save and come back later
           </a>
+
         </form>
       </div>
     </div>
 
 {% endblock %}
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-          items: [
-            {
-              href: "#",
-              text: "Help"
-            },
-            {
-              href: "https://www.gov.uk/help/cookies",
-              text: "Cookies"
-            },
-            {
-              href: "#",
-              text: "Contact"
-            },
-            {
-              href: "#",
-              text: "Feedback"
-            },
-            {
-              href: "#",
-              text: "Terms and conditions"
-            },
-            {
-              href: "https://mojdigital.blog.gov.uk/",
-              text: "MOJ Digital Services"
-            },
-            {
-              href: "/prototype-admin/clear-data",
-              text: "Clear data"
-            }
-          ]
-        }
-      }) }}
-    {% endblock %}
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
