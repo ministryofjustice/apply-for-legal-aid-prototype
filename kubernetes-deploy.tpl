@@ -13,21 +13,21 @@ spec:
         app: prototype
     spec:
       containers:
-        - name: nginx
-          image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/${ECR_NAME}:${IMAGE_TAG}
-          env:
-            - name: USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: basic-auth
-                  key: username
-            - name: PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: basic-auth
-                  key: password
-          ports:
-            - containerPort: 3000
+      - name: nginx
+        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/${ECR_NAME}:${IMAGE_TAG}
+        env:
+          - name: USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: basic-auth
+                key: username
+          - name: PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: basic-auth
+                key: password
+        ports:
+        - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
@@ -37,9 +37,9 @@ metadata:
     app: nginx-service
 spec:
   ports:
-    - port: 3000
-      name: http
-      targetPort: 3000
+  - port: 3000
+    name: http
+    targetPort: 3000
   selector:
     app: prototype
 ---
@@ -53,13 +53,13 @@ metadata:
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
-    - hosts:
-        - ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
+  - hosts:
+    - ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-    - host: ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: nginx-service
-              servicePort: 3000
+  - host: ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-service
+          servicePort: 3000
