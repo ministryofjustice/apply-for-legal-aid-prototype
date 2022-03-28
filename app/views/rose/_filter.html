@@ -1,0 +1,141 @@
+<div class="moj-filter-layout__filter">
+    <div class="moj-filter">
+        <div class="moj-filter__header">
+
+            <div class="moj-filter__header-title">
+                <h2 class="govuk-heading-m">Filter</h2>
+            </div>
+            <div class="moj-filter__header-action"></div>
+
+        </div>
+
+        <div class="moj-filter__content">
+            <div class="moj-filter__selected">
+                <div class="moj-filter__selected-heading">
+                    <div class="moj-filter__heading-title">
+                        <h2 class="govuk-heading-m">Selected filters</h2>
+                    </div>
+                    <div class="moj-filter__heading-action">
+                        <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                    </div>
+                </div>
+
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Transaction type</h3>
+                <ul class="moj-filter-tags">
+                    <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Income</a></li>
+                </ul>
+
+            </div>
+
+            <div class="moj-filter__options">
+                <button class="govuk-button" data-module="govuk-button">
+                    Apply filters
+                </button>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="keywords">
+                        Keywords
+                    </label>
+                    <input class="govuk-input" id="keywords" name="keywords" type="text">
+                </div>
+
+                <!--  Payment category filter options   -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Category</legend>
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category" name="category" type="checkbox" value="1" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="category">
+                                    Benefits
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category-2" name="category" type="checkbox" value="2" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                    Financial help
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category-3" name="category" type="checkbox" value="2" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="category-3">
+                                    Housing
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category-4" name="category" type="checkbox" value="3">
+                                <label class="govuk-label govuk-checkboxes__label" for="category-4">
+                                    Pension
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category-5" name="category" type="checkbox" value="3">
+                                <label class="govuk-label govuk-checkboxes__label" for="category-5">
+                                    Property Income
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="category-6" name="category" type="checkbox" value="3">
+                                <label class="govuk-label govuk-checkboxes__label" for="category-6">
+                                    Uncategorised
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!--  Transaction type filter options   -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Transaction type</legend>
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="transaction-type" name="transaction-type" type="checkbox" value="1" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="transaction-type">
+                                    Income
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="transaction-type-2" name="transaction-type" type="checkbox" value="2">
+                                <label class="govuk-label govuk-checkboxes__label" for="transaction-type-2">
+                                    Outgoings
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!--  Date range filter options   -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Transaction type</legend>
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="date-range" name="date-range" type="checkbox" value="1" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="date-range">
+                                    8 Dec 2021 to 7 Jan 2022
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="date-range-2" name="date-range" type="checkbox" value="2">
+                                <label class="govuk-label govuk-checkboxes__label" for="date-range-2">
+                                    8 Jan 2022 to 7 Feb 2022
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="date-range-3" name="date-range" type="checkbox" value="2">
+                                <label class="govuk-label govuk-checkboxes__label" for="date-range-3">
+                                    8 Feb 2022 to 7 Mar 2022
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
