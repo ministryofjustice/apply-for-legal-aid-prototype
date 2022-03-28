@@ -10,309 +10,242 @@ router.get('/', function (req, res) {
 // Route for search proceeding list
 
 router.get('/multiple_proceedings/v1/search', function (req, res) {
-
   res.render('multiple_proceedings/v1/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v1/search_2', function (req, res) {
-
   res.render('multiple_proceedings/v1/search_2',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v1/search_3', function (req, res) {
-
   res.render('multiple_proceedings/v1/search_3',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v2/search', function (req, res) {
-
   res.render('multiple_proceedings/v2/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
-
 router.get('/multiple_proceedings/v2/search_2', function (req, res) {
-
   res.render('multiple_proceedings/v2/search_2',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
-
 router.get('/multiple_proceedings/v2/search_3', function (req, res) {
-
   res.render('multiple_proceedings/v2/search_3',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-
   res.render('multiple_proceedings/v3/search_3',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-
   res.render('multiple_proceedings/v3/search_3',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-
   res.render('multiple_proceedings/v3/search_3',
     {
       proceedings: utils.getProceedings()
     })
-
 })
-
 
 router.get('/search', function (req, res) {
-
   res.render('search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/passported_v2/search', function (req, res) {
-
   res.render('passported_v2/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/non_passported_v1/search', function (req, res) {
-
   res.render('non_passported_v1/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/apply_for_legal_aid_prototype/search', function (req, res) {
-
   res.render('apply_for_legal_aid_prototype/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/proceeding_flow/search', function (req, res) {
-
   res.render('proceeding_flow/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/limitations/search', function (req, res) {
-
   res.render('limitations/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/jim/limitations/search', function (req, res) {
-
   res.render('jim/limitations/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/delegated_functions/search_notify', function (req, res) {
-
   res.render('delegated_functions/search_notify',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/mp/search', function (req, res) {
-
   res.render('delegated_functions/v2/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
 router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search', function (req, res) {
-
   res.render('apply_for_legal_aid_prototype_non_passported_provider_means/search',
     {
       proceedings: utils.getProceedings()
     })
-
 })
 
-  router.get('/multiple_proceedings/proceedings_merits/search', function (req, res) {
-
-    res.render('multiple_proceedings/proceedings_merits/search',
-      {
-        proceedings: utils.getProceedings()
-      })
-
+router.get('/multiple_proceedings/proceedings_merits/search', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits/search',
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
-    router.get('/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
-
-      res.render('multiple_proceedings/proceedings_merits/search_2',
-        {
-          proceedings: utils.getProceedings()
-        })
-
+router.get('/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
-      router.get('/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
-
-        res.render('multiple_proceedings/proceedings_merits/search_3',
-          {
-            proceedings: utils.getProceedings()
-          })
-
-        })
-
-          router.get('/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
-
-            res.render('multiple_proceedings/proceedings_merits_grouped/search',
-              {
-                proceedings: utils.getProceedings()
-              })
-
-        })
-
-            router.get('/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
-
-              res.render('multiple_proceedings/proceedings_merits_grouped/search_2',
-                {
-                  proceedings: utils.getProceedings()
-                })
-
-        })
-
-              router.get('/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
-
-                res.render('multiple_proceedings/proceedings_merits_grouped/search_3',
-                  {
-                    proceedings: utils.getProceedings()
-                  })
-
-                })
-
-                  router.get('/multiple_proceedings/df/v2/search', function (req, res) {
-
-                    res.render('multiple_proceedings/df/v2/search',
-                      {
-                        proceedings: utils.getProceedings()
-                      })
-
-                })
-
-                    router.get('/multiple_proceedings/df/v2/search_2', function (req, res) {
-
-                      res.render('multiple_proceedings/df/v2/search_2',
-                        {
-                          proceedings: utils.getProceedings()
-                        })
-
-                })
-
-                      router.get('/multiple_proceedings/df/v2/search_3', function (req, res) {
-
-                        res.render('multiple_proceedings/df/v2/search_3',
-                          {
-                            proceedings: utils.getProceedings()
-                          })
-                        })
-
-                              router.get('/non_passported_employment/search', function (req, res) {
-
-                                res.render('non_passported_employment/search',
-                                  {
-                                    proceedings: utils.getProceedings()
-                                  })
-                                })
-
-                                      router.get('/non_passported_employment/search_2', function (req, res) {
-
-                                        res.render('non_passported_employment/search_2',
-                                          {
-                                            proceedings: utils.getProceedings()
-                                          })
-                                        })
-
-                                              router.get('/non_passported_employment/search_3', function (req, res) {
-
-                                                res.render('non_passported_employment/search_3',
-                                                  {
-                                                    proceedings: utils.getProceedings()
-                                                  })
-
-                                                })
-
-                                                      router.get('/non_passported_employment_v2/search', function (req, res) {
-
-                                                        res.render('non_passported_employment_v2/search',
-                                                          {
-                                                            proceedings: utils.getProceedings()
-                                                          })
-                                                        })
-
-                                                              router.get('/non_passported_employment_v2/search_2', function (req, res) {
-
-                                                                res.render('non_passported_employment_v2/search_2',
-                                                                  {
-                                                                    proceedings: utils.getProceedings()
-                                                                  })
-                                                                })
-
-                                                                      router.get('/non_passported_employment_v2/search_3', function (req, res) {
-
-                                                                        res.render('non_passported_employment_v2/search_3',
-                                                                          {
-                                                                            proceedings: utils.getProceedings()
-                                                                          })
-
+router.get('/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
+router.get('/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits_grouped/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits_grouped/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
+  res.render('multiple_proceedings/proceedings_merits_grouped/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/multiple_proceedings/df/v2/search', function (req, res) {
+  res.render('multiple_proceedings/df/v2/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/multiple_proceedings/df/v2/search_2', function (req, res) {
+  res.render('multiple_proceedings/df/v2/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/multiple_proceedings/df/v2/search_3', function (req, res) {
+  res.render('multiple_proceedings/df/v2/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment/search', function (req, res) {
+  res.render('non_passported_employment/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment/search_2', function (req, res) {
+  res.render('non_passported_employment/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment/search_3', function (req, res) {
+  res.render('non_passported_employment/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment_v2/search', function (req, res) {
+  res.render('non_passported_employment_v2/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment_v2/search_2', function (req, res) {
+  res.render('non_passported_employment_v2/search_2',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/non_passported_employment_v2/search_3', function (req, res) {
+  res.render('non_passported_employment_v2/search_3',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
 
 // CAPITAL Branching
 router.get('/capital', function (req, res) {
@@ -328,7 +261,6 @@ router.get('/capital', function (req, res) {
 })
 
 router.get('/other_capital_alt', function (req, res) {
-
   if (req.session.data.capital === 'yes') {
     // Redirect to the relevant page
     res.redirect('/yes_holding_page')
@@ -337,7 +269,6 @@ router.get('/other_capital_alt', function (req, res) {
     res.render('other_capital_alt')
   }
 })
-
 
 // Branching for non_passported_v1 prototype
 router.get('/non_passported_v1/online_banking_declaration', function (req, res) {
@@ -368,7 +299,7 @@ router.get('/non_passported_v1/types_of_income', function (req, res) {
 
 router.get('/non_passported_v1/savings_investments', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var property= req.query.property
+  var property = req.query.property
 
   if (property === 'yes') {
     // Redirect to the relevant page
@@ -378,9 +309,6 @@ router.get('/non_passported_v1/savings_investments', function (req, res) {
     res.render('non_passported_v1/savings_investments')
   }
 })
-
-
-
 
 // Vehicles provider
 router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
@@ -442,8 +370,6 @@ router.post('/jim/citizen_car_capital_questions/vehicles_costs', function (req, 
   }
 })
 
-
-
 // Prospects of success (Jim's prototype)
 router.post('/jim/prospects_of_success/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
@@ -474,7 +400,6 @@ router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
   }
 })
 
-
 // Prospects of success (Passported v2)
 router.post('/passported_v2/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
@@ -489,7 +414,6 @@ router.post('/passported_v2/prospects_less_than_50', function (req, res) {
     res.redirect('/passported_v2/check_answers_merits')
   }
 })
-
 
 // Passported property v2 - property
 router.post('/passported_v2/property_amount', function (req, res) {
@@ -520,7 +444,6 @@ router.post('/jim/dependants/dependant_details', function (req, res) {
     res.redirect('/jim/dependants/dependant_details')
   }
 })
-
 
 // Delegated functions - continue with full application or come back later
 router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
@@ -611,7 +534,6 @@ router.post('/jim/statement/split/statement_enter', function (req, res) {
     res.redirect('/jim/statement/split/statement_upload')
   }
 })
-
 
 // Provider office select
 router.post('/jim/office_select/office', function (req, res) {
@@ -762,7 +684,6 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/comple
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
   }
 })
-
 
 // Dependants - v4 NP flow
 router.post('/passported_v2/delegated_functions_confirmation', function (req, res) {
@@ -973,7 +894,6 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoi
     res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_add')
   }
 })
-
 
 // Delete application
 router.post('/stevey/dashboard/multi-delete/04_dashboard_deleted', function (req, res) {
@@ -1275,7 +1195,6 @@ router.post('/non_passported_employment_v2/check_details', function (req, res) {
   }
 })
 
-
 // DWP check fail - radios provider checks details
 router.post('/non_passported_employment_v2/client_details', function (req, res) {
   // Get the answer from session data
@@ -1290,8 +1209,6 @@ router.post('/non_passported_employment_v2/client_details', function (req, res) 
     res.redirect('/non_passported_employment_v2/passporting_benefit')
   }
 })
-
-
 
 // DWP check fail - use CCMS v1
 router.post('/jim/dwp_check/radios/employed', function (req, res) {
@@ -1500,6 +1417,22 @@ router.post('/jim/AP-1931/types_of_income', function (req, res) {
     res.redirect('/jim/AP-1931/types_of_income')
   } else {
     res.redirect('/jim/AP-1931/bank_select_03')
+  }
+})
+
+// open banking journey
+router.post('/open_banking_process/Option_2/consent', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let shareOnline = req.session.data['share-online']
+  console.log(shareOnline)
+
+  if (shareOnline === 'no') {
+    res.redirect('/open_banking_process/Option_2/upload')
+  } else {
+    res.redirect('/open_banking_process/Option_2/check')
   }
 })
 
