@@ -2,6 +2,9 @@
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
+{% block head %}
+{% include "styles/table-sort.html" %}
+{% endblock %}
 
 {% block pageTitle %}
 Apply for legal aid - Salary statement
@@ -35,72 +38,80 @@ Apply for legal aid - Salary statement
 {% block content %}
 <style media="screen">
 
-.dot{
-  background-color:#005ea5;
-}
-.col_bespoke{
-  width:15%;
-}
-.govuk-table__header{
-  color: #0b0c0c;
-  background-color: #dee0e2;
-  border: 1px solid #bfc1c3;
-  box-shadow: 0 2px 0 #b5babe;
-  padding-left: 10px;
-  text-align: left;
-}
-.th_bespoke{
-  padding-right: 15px;
-  position: relative;
-}
-.th_bespoke::before{
-  /*down*/
-  content:" \25bc";
-  position: absolute;
-  right: -1px;
-  top: 11px;
-  font-size: 0.6em;
-}
-.th_bespoke::after{
-  /*up*/
-  content:" \25b2";
-  position: absolute;
-  right: -1px;
-  top: 1px;
-  font-size: 0.6em;
-}
-.th_bespoke_hover:hover{
-  background-color: #c8cacb;
-  cursor:pointer;
-}
-.govuk-table__head{
-  position: relative;
-}
-.govuk-table__cell{
-  padding-left: 10px;
-}
+  .dot{
+    background-color:#005ea5;
+  }
+  .col_bespoke{
+    width:15%;
+  }
+
+  .govuk-table {
+    height: 40em;
+    overflow-y: scroll;
+    display: block
+  }
+
+  .govuk-table__header{
+    color: #0b0c0c;
+    background-color: #dee0e2;
+    border: 1px solid #bfc1c3;
+    box-shadow: 0 2px 0 #b5babe;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .th_bespoke{
+    padding-right: 15px;
+    position: relative;
+  }
+  .th_bespoke::before{
+    /*down*/
+    content:" \25bc";
+    position: absolute;
+    right: -1px;
+    top: 11px;
+    font-size: 0.6em;
+  }
+  .th_bespoke::after{
+    /*up*/
+    content:" \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.6em;
+  }
+  .th_bespoke_hover:hover{
+    background-color: #c8cacb;
+    cursor:pointer;
+  }
+  .govuk-table__head{
+    position: relative;
+  }
+  .govuk-table__cell{
+    padding-left: 10px;
+  }
 
 </style>
+<div class="moj-filter-layout">
+  {% include "open_banking_process/Option_2/_filter.html" %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <form action="#" method="post" novalidate>
+  <div class="moj-filter-layout__content">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form action="#" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
         Review and sort regular incoming payments into categories
       </h1>
 
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Show filter
-      </button>
+      <div class="moj-action-bar">
+        <div class="moj-action-bar__filter"></div>
+      </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
 
       <div class="govuk-panel govuk-panel--confirmation" style="background-color:#eeefef; height:65px; padding:10px; border: 1px solid #bfc1c3;">
         <div class="govuk-form-group govuk-body">
- <span class="selected-count" > <strong>3 </strong></span>&nbsp; <strong  style="padding-right: 20px;">transactions selected </strong> 
-
-
+      <span class="selected-count" > <strong>3 </strong></span>&nbsp; <strong  style="padding-right: 20px;">transactions selected </strong>
 
           <select class="govuk-select" id="assign" name="assign" >
             <option value="help" selected>Assign a category</option>
@@ -112,8 +123,6 @@ Apply for legal aid - Salary statement
  
           <a role="button" class="govuk-button" href="transactions_assigned" style="float: right;">
             Confirm selection</a>
-
-          
         </div>
 
       </div>
@@ -949,7 +958,9 @@ Apply for legal aid - Salary statement
                                                                             </form>
 
                                                                           </div>
-                                                                        </div>
+    </div>
+  </div>
+</div>
 
 
                                                                         {% endblock %}

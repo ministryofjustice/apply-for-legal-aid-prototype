@@ -35,54 +35,65 @@ Apply for legal aid - Salary statement
 {% block content %}
 <style media="screen">
 
-.dot{
-  background-color:#005ea5;
-}
-.col_bespoke{
-  width:15%;
-}
-.govuk-table__header{
-  color: #0b0c0c;
-  background-color: #dee0e2;
-  border: 1px solid #bfc1c3;
-  box-shadow: 0 2px 0 #b5babe;
-  padding-left: 10px;
-  text-align: left;
-}
-.th_bespoke{
-  padding-right: 15px;
-  position: relative;
-}
-.th_bespoke::before{
-  /*down*/
-  content:" \25bc";
-  position: absolute;
-  right: -1px;
-  top: 11px;
-  font-size: 0.6em;
-}
-.th_bespoke::after{
-  /*up*/
-  content:" \25b2";
-  position: absolute;
-  right: -1px;
-  top: 1px;
-  font-size: 0.6em;
-}
-.th_bespoke_hover:hover{
-  background-color: #c8cacb;
-  cursor:pointer;
-}
-.govuk-table__head{
-  position: relative;
-}
-.govuk-table__cell{
-  padding-left: 10px;
-}
+  .dot{
+    background-color:#005ea5;
+  }
+  .col_bespoke{
+    width:15%;
+  }
+
+  .govuk-table {
+    height: 40em;
+    overflow-y: scroll;
+    display: block
+  }
+
+  .govuk-table__header{
+    color: #0b0c0c;
+    background-color: #dee0e2;
+    border: 1px solid #bfc1c3;
+    box-shadow: 0 2px 0 #b5babe;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .th_bespoke{
+    padding-right: 15px;
+    position: relative;
+  }
+  .th_bespoke::before{
+    /*down*/
+    content:" \25bc";
+    position: absolute;
+    right: -1px;
+    top: 11px;
+    font-size: 0.6em;
+  }
+  .th_bespoke::after{
+    /*up*/
+    content:" \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.6em;
+  }
+  .th_bespoke_hover:hover{
+    background-color: #c8cacb;
+    cursor:pointer;
+  }
+  .govuk-table__head{
+    position: relative;
+  }
+  .govuk-table__cell{
+    padding-left: 10px;
+  }
 
 </style>
 
-<div class="govuk-grid-row">
+<div class="moj-filter-layout">
+  {% include "open_banking_process/Option_2/_filter.html" %}
+
+  <div class="moj-filter-layout__content">
+    <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form action="#" method="post" novalidate>
 
@@ -90,10 +101,9 @@ Apply for legal aid - Salary statement
         Review and sort regular outgoing payments into categories
       </h1>
 
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Show filter
-      </button>
-      
+      <div class="moj-action-bar">
+        <div class="moj-action-bar__filter"></div>
+      </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
@@ -845,8 +855,6 @@ Apply for legal aid - Salary statement
 
                                                                           </div>
                                                                         </div>
-
-
-                                                                        {% endblock %}
-
-                                                                        
+  </div>
+</div>
+{% endblock %}
