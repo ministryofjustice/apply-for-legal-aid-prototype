@@ -2,10 +2,6 @@
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
-{% block head %}
-{% include "styles/table-sort.html" %}
-{% endblock %}
-
 {% block pageTitle %}
 Apply for legal aid - Salary statement
 {% endblock %}
@@ -47,7 +43,6 @@ Apply for legal aid - Salary statement
 
   .govuk-table {
     height: 40em;
-    overflow-y: scroll;
     display: block
   }
 
