@@ -35,64 +35,87 @@ Apply for legal aid - Salary statement
 {% block content %}
 <style media="screen">
 
-.dot{
-  background-color:#005ea5;
-}
-.col_bespoke{
-  width:15%;
-}
-.govuk-table__header{
-  color: #0b0c0c;
-  background-color: #dee0e2;
-  border: 1px solid #bfc1c3;
-  box-shadow: 0 2px 0 #b5babe;
-  padding-left: 10px;
-  text-align: left;
-}
-.th_bespoke{
-  padding-right: 15px;
-  position: relative;
-}
-.th_bespoke::before{
-  /*down*/
-  content:" \25bc";
-  position: absolute;
-  right: -1px;
-  top: 11px;
-  font-size: 0.6em;
-}
-.th_bespoke::after{
-  /*up*/
-  content:" \25b2";
-  position: absolute;
-  right: -1px;
-  top: 1px;
-  font-size: 0.6em;
-}
-.th_bespoke_hover:hover{
-  background-color: #c8cacb;
-  cursor:pointer;
-}
-.govuk-table__head{
-  position: relative;
-}
-.govuk-table__cell{
-  padding-left: 10px;
-}
+  .dot{
+    background-color:#005ea5;
+  }
+  .col_bespoke{
+    width:15%;
+  }
+
+  .govuk-table {
+    display: block
+  }
+
+  .govuk-table__header{
+    color: #0b0c0c;
+    background-color: #dee0e2;
+    border: 1px solid #bfc1c3;
+    box-shadow: 0 2px 0 #b5babe;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .th_bespoke{
+    padding-right: 15px;
+    position: relative;
+  }
+  .th_bespoke::before{
+    /*down*/
+    content:" \25bc";
+    position: absolute;
+    right: -1px;
+    top: 11px;
+    font-size: 0.6em;
+  }
+  .th_bespoke::after{
+    /*up*/
+    content:" \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.6em;
+  }
+  .th_bespoke_hover:hover{
+    background-color: #c8cacb;
+    cursor:pointer;
+  }
+  .govuk-table__head{
+    position: relative;
+  }
+  .govuk-table__cell{
+    padding-left: 10px;
+  }
 
 </style>
 
-<div class="govuk-grid-row">
+<div class="moj-banner moj-banner--success">
+
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+
+  <div class="moj-banner__message">
+    <span class="moj-banner__assistive">Success</span>You have succesfully assigned transactions to a category.
+  </div>
+
+</div>
+
+<div class="moj-filter-layout">
+  {% include "open_banking_process/Option_2/_filter.html" %}
+
+  <div class="moj-filter-layout__content">
+    <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form action="#" method="post" novalidate>
+
+    
 
       <h1 class="govuk-heading-xl">
         Review and sort regular incoming payments into categories
       </h1>
 
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Show filter
-      </button>
+      <div class="moj-action-bar">
+        <div class="moj-action-bar__filter"></div>
+      </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
 
@@ -104,7 +127,7 @@ Apply for legal aid - Salary statement
 
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col"><span >Select</span>
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col"><span >Selec all</span>
           </th>
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
           <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
@@ -930,8 +953,7 @@ Apply for legal aid - Salary statement
 
                                                                           </div>
                                                                         </div>
+  </div>
+</div>
 
-
-                                                                        {% endblock %}
-
-                                                                        
+{% endblock %}

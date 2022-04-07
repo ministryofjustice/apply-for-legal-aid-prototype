@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "check"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="agree_bank_access" method="post" class="form">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  How the process works
+                </h1>
+              </legend>
+              <br>
+
+
+                <h3 class="govuk-heading-m">1. Select your bank</h3>
+
+                <img src="https://design-system.service.gov.uk/styles/images/alt-text/larry-the-cat.jpg" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">2. Sign in to online banking</h3>
+
+                <p class="govuk-body">We’ll redirect to your client to your bank’s website or app.</p>
+
+                <img src="https://design-system.service.gov.uk/styles/images/alt-text/larry-the-cat.jpg" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+
+
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">3. Authorise Truelayer to collect 3 months of bank statements</h3>
+
+                <img src="https://design-system.service.gov.uk/styles/images/alt-text/larry-the-cat.jpg" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+                <p class="govuk-body">Your bank will ask if you give consent to Truelayer to securely access your account information.</p>
+
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">4. TrueLayer fetches bank details and verifies ownership</h3>
+
+                <p class="govuk-body">TrueLayer's name-matching engine compares your name to your name on file at the bank.</p>
+
+                <img src="https://design-system.service.gov.uk/styles/images/alt-text/larry-the-cat.jpg" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">5. TrueLayer shares your bank statements with the LAA</h3>
+
+                <p class="govuk-body">You will then be able to continue within the Apply service.</p>
+
+                <img src="https://design-system.service.gov.uk/styles/images/alt-text/larry-the-cat.jpg" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+
+
+                <p></p>
+                <p></p>
+
+
+<p></p>
+
+                    <button type="submit" class="govuk-button">
+                      Save and continue
+                    </button>
+
+                    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                      Save and come back later
+                    </a>
+
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}

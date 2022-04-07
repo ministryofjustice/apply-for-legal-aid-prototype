@@ -47,3 +47,4 @@ jobs:
       - name: Apply the updated manifest
         run: |
           kubectl -n ${KUBE_NAMESPACE} apply -f kubernetes-deploy.yaml
+#          kubectl -n ${KUBE_NAMESPACE} rollout status deployments/website
