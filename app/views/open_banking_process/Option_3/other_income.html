@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "employment_income"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Review other income declared by your client</h1>
+
+      <h3 class="govuk-heading-l">Cash payments</h3>
+
+<br>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    
+          <h2 class="govuk-heading-m">Financial help from family and friends</h2>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <p><a class="govuk-heading-m" style="float:right;">£1,500.75</a></p>
+        </div>
+      </div>
+
+      <table class="govuk-table" style="margin-bottom:0px;">
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Month</th>
+            <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+          </tr>
+        </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Dec 2020 to Jan 2021</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Nov to Dec 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Oct to Nov 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£300</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£900</strong></td>
+
+        </tr>
+        </tbody>
+        </table>
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <h3 class="govuk-heading-l">Student finance</h3>
+
+      <!--   <span class="govuk-hint">Your client entered this information.</span> -->
+
+        <p class="gov-body"><strong>£9,800</strong> this academic year.</p>
+
+<div class="govuk-!-padding-bottom-4"></div>
+
+        <a href="sort_income" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  

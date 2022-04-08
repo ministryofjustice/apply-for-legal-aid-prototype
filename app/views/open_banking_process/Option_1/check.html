@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "consent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="email_address" method="post" class="form">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What your client needs to do
+                </h1>
+              </legend>
+              <br>
+
+            <!--  <p class="govuk-body-l">Your client needs to do the following:</p> -->
+
+                <h3 class="govuk-heading-m">1. Access 'Apply for legal aid'</h3>
+
+                <p class="govuk-body">We'll send them an email with a link to the service.</p>
+
+              <h3 class="govuk-heading-m">2. Share 3 months of bank statements with the LAA via TrueLayer</h3>
+
+              <p class="govuk-body">We'll redirect them to their bank's website or app to do this.</p>
+
+              <p class="govuk-body">They'll then be returned to 'Apply for legal aid'.</p>
+
+              <div class="govuk-!-padding-bottom-4"></div>
+
+              <h3 class="govuk-heading-m"> How TrueLayer works</h3>
+              <p class="govuk-body">Watch this video to understand how your client can securely share their bank statements
+                with the LAA via TrueLayer.</p>
+                <div class="govuk-!-padding-bottom-4"></div>
+
+  
+
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Kx7vPsZ8H54"></iframe>
+
+
+
+<div class="govuk-!-padding-bottom-4"></div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
+
+
