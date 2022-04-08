@@ -28,7 +28,7 @@ Apply for legal aid - Salary statement
 
 {{ govukBackLink({
   text: "Back",
-  href: "transactions_select"
+  href: "review_income"
 }) }}
 {% endblock %}
 
@@ -88,7 +88,7 @@ Apply for legal aid - Salary statement
 </style>
 
 <div class="moj-filter-layout">
-  {% include "open_banking_process/Option_2/_filter.html" %}
+  {% include "open_banking_solutions/Option_2/_filter.html" %}
 
   <div class="moj-filter-layout__content">
     <div class="govuk-grid-row">
@@ -96,14 +96,12 @@ Apply for legal aid - Salary statement
     <form action="#" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
-        Review and sort regular incoming payments into categories
+        Review and sort regular outgoing payments into categories
       </h1>
 
       <div class="moj-action-bar">
         <div class="moj-action-bar__filter"></div>
       </div>
-
-      <div class="govuk-!-padding-bottom-4"></div>
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
@@ -113,11 +111,13 @@ Apply for legal aid - Salary statement
 
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col"><span >Select</span>
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span ><a href="outgoing_transactions_select.html">
+              Select
+            </a></span>
           </th>
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
           <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
-          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Income</span></th>
+          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Outgoing</span></th>
           <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
         </tr>
       </thead>
@@ -129,10 +129,10 @@ Apply for legal aid - Salary statement
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="" >
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">7 Jan 2021</td>
-            <td class="govuk-table__cell">ALISON SAMSON FP 07/01/2021</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell">20 Dec 2020</td>
+            <td class="govuk-table__cell">DADDY DAYCARE 20/12/2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -140,10 +140,10 @@ Apply for legal aid - Salary statement
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">5 Jan 2021</td>
-            <td class="govuk-table__cell">ALISON SAMSON FP 05/01/2021</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell">20 Nov 2020</td>
+            <td class="govuk-table__cell">DADDY DAYCARE 20/11/2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -152,27 +152,13 @@ Apply for legal aid - Salary statement
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">3 Jan 2021</td>
-            <td class="govuk-table__cell">ALISON SAMSON FP 03/01/2021</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell">20 Oct 2020</td>
+            <td class="govuk-table__cell">DADDY DAYCARE 20/10/2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
-          </tr>
-        <!--  <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">31 Dec 2020</td>
-            <td class="govuk-table__cell">12345678A DWP UC</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£468.80</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-            Benefits
-            </strong></td>
-          </tr>  -->
+
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
@@ -181,7 +167,7 @@ Apply for legal aid - Salary statement
               </div></td>
             <td class="govuk-table__cell">31 Dec 2020</td>
             <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           </tr>
@@ -193,7 +179,7 @@ Apply for legal aid - Salary statement
               </div></td>
               <td class="govuk-table__cell">27 Dec 2020</td>
               <td class="govuk-table__cell">STUDENT LOANS COMPANY</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£1,000.50</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£1,000.50</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             </tr>
@@ -205,7 +191,7 @@ Apply for legal aid - Salary statement
               </div></td>
               <td class="govuk-table__cell">27 Dec 2020</td>
               <td class="govuk-table__cell">1234 20DEC20 AMAZON PRIME AMZN.CO.U AMZN.CO.UK/PM LU REFUND</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£7.99</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£7.99</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             </tr>
@@ -217,7 +203,7 @@ Apply for legal aid - Salary statement
                 </div></td>
               <td class="govuk-table__cell">24 Dec 2020</td>
               <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             </tr>
@@ -229,7 +215,7 @@ Apply for legal aid - Salary statement
                 </div></td>
                 <td class="govuk-table__cell">21 Dec 2020</td>
                 <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
               </tr>
@@ -241,23 +227,11 @@ Apply for legal aid - Salary statement
                   </div></td>
                 <td class="govuk-table__cell">17 Dec 2020</td>
                 <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
               </tr>
-            <!--  <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                  </div>
-                </td>
-                  <td class="govuk-table__cell">18 Dec 2020</td>
-                  <td class="govuk-table__cell">12345678A DWP UC</td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                  Benefits</strong></td>
-                </tr>  -->
+
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
                     <div class="govuk-checkboxes__item">
@@ -266,21 +240,18 @@ Apply for legal aid - Salary statement
                     </div></td>
                     <td class="govuk-table__cell">14 Dec 2020</td>
                     <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                   </tr>
 
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                    <!--  <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                        <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                      </div> -->
+
                     </td>
                       <td class="govuk-table__cell">12 Dec 2020</td>
                       <td class="govuk-table__cell">12345678A DWP DLA</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                     </tr>
 
@@ -293,7 +264,7 @@ Apply for legal aid - Salary statement
                     </td>
                       <td class="govuk-table__cell">11 Dec 2020</td>
                       <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£450</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -304,7 +275,7 @@ Apply for legal aid - Salary statement
                         </div></td>
                       <td class="govuk-table__cell">10 Dec 2020</td>
                       <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                     </tr>
@@ -316,7 +287,7 @@ Apply for legal aid - Salary statement
                         </div></td>
                       <td class="govuk-table__cell">7 Dec 2020</td>
                       <td class="govuk-table__cell">LAR HOMECARE SALARY</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                     </tr>
@@ -329,7 +300,7 @@ Apply for legal aid - Salary statement
                       </td>
                         <td class="govuk-table__cell">7 Dec 2020</td>
                         <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">-£100</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                       </tr>
@@ -342,7 +313,7 @@ Apply for legal aid - Salary statement
                         </td>
                           <td class="govuk-table__cell">7 Dec 2020</td>
                           <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                          <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
@@ -354,24 +325,11 @@ Apply for legal aid - Salary statement
                             </div></td>
                             <td class="govuk-table__cell">7 Dec 2020</td>
                             <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                           </tr>
-                        <!--  <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                              <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                              </div>
-                            </td>
-                              <td class="govuk-table__cell">5 Dec 2020</td>
-                              <td class="govuk-table__cell">12345678A DWP UC</td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">£464.80</td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                              Benefits
-                              </strong></td>
-                            </tr>  -->
+
                             <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes__item">
@@ -380,7 +338,7 @@ Apply for legal aid - Salary statement
                                 </div></td>
                               <td class="govuk-table__cell">3 Dec 2020</td>
                               <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                             </tr>
@@ -392,7 +350,7 @@ Apply for legal aid - Salary statement
                                 </div></td>
                                 <td class="govuk-table__cell">30 Nov 2020</td>
                                 <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                               </tr>
@@ -403,8 +361,8 @@ Apply for legal aid - Salary statement
                                     <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
                                   </div></td>
                                 <td class="govuk-table__cell">26 Nov 2020</td>
-                                <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                <td class="govuk-table__cell">CYGNET SECURITY LTD DEBT</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                               </tr>
@@ -417,7 +375,7 @@ Apply for legal aid - Salary statement
                                 </td>
                                   <td class="govuk-table__cell">23 Nov 2020</td>
                                   <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                                  <td class="govuk-table__cell govuk-table__cell--numeric">£270</td>
+                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£270</td>
                                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                   <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                 </tr>
@@ -429,7 +387,7 @@ Apply for legal aid - Salary statement
                                     </div></td>
                                     <td class="govuk-table__cell">23 Nov 2020</td>
                                     <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                   </tr>
@@ -442,7 +400,7 @@ Apply for legal aid - Salary statement
                                     </td>
                                       <td class="govuk-table__cell">23 Nov 2020</td>
                                       <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                                      <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£100</td>
                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                     </tr>
@@ -454,7 +412,7 @@ Apply for legal aid - Salary statement
                                         </div></td>
                                         <td class="govuk-table__cell">20 Nov 2020</td>
                                         <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
                                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                       </tr>
@@ -466,7 +424,7 @@ Apply for legal aid - Salary statement
                                           </div></td>
                                           <td class="govuk-table__cell">20 Nov 2020</td>
                                           <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                          <td class="govuk-table__cell govuk-table__cell--numeric">£20</td>
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£20</td>
                                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                         </tr>
@@ -478,7 +436,7 @@ Apply for legal aid - Salary statement
                                             </div></td>
                                             <td class="govuk-table__cell">20 Nov 2020</td>
                                             <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                            <td class="govuk-table__cell govuk-table__cell--numeric">£35</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£35</td>
                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                           </tr>
@@ -490,24 +448,11 @@ Apply for legal aid - Salary statement
                                               </div></td>
                                               <td class="govuk-table__cell">20 Nov 2020</td>
                                               <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                              <td class="govuk-table__cell govuk-table__cell--numeric">£35</td>
+                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£35</td>
                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                             </tr>
-                                          <!--  <tr class="govuk-table__row">
-                                              <td class="govuk-table__cell">
-                                                <div class="govuk-checkboxes__item">
-                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                </div>
-                                              </td>
-                                                <td class="govuk-table__cell">18 Nov 2020</td>
-                                                <td class="govuk-table__cell">12345678A DWP UC</td>
-                                                <td class="govuk-table__cell govuk-table__cell--numeric">£464.81</td>
-                                                <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                                                Benefits
-                                                </strong></td>
-                                              </tr>  -->
+
                                               <tr class="govuk-table__row">
                                                 <td class="govuk-table__cell">
                                                   <div class="govuk-checkboxes__item">
@@ -516,7 +461,7 @@ Apply for legal aid - Salary statement
                                                   </div></td>
                                                 <td class="govuk-table__cell">19 Nov 2020</td>
                                                 <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                               </tr>
@@ -528,7 +473,7 @@ Apply for legal aid - Salary statement
                                                   </div></td>
                                                   <td class="govuk-table__cell">16 Nov 2020</td>
                                                   <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
                                                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                   <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                 </tr>
@@ -540,7 +485,7 @@ Apply for legal aid - Salary statement
                                                     </div></td>
                                                     <td class="govuk-table__cell">16 Nov 2020</td>
                                                     <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                   </tr>
@@ -552,7 +497,7 @@ Apply for legal aid - Salary statement
                                                       </div></td>
                                                       <td class="govuk-table__cell">16 Nov 2020</td>
                                                       <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
-                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
                                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                     </tr>
@@ -564,7 +509,7 @@ Apply for legal aid - Salary statement
                                                         </div></td>
                                                         <td class="govuk-table__cell">16 Nov 2020</td>
                                                         <td class="govuk-table__cell">16-Nov-20	30	SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£30</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£30</td>
                                                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                       </tr>
@@ -576,7 +521,7 @@ Apply for legal aid - Salary statement
                                                           </div></td>
                                                           <td class="govuk-table__cell">16 Nov 2020</td>
                                                           <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                         </tr>
@@ -588,7 +533,7 @@ Apply for legal aid - Salary statement
                                                             </div></td>
                                                             <td class="govuk-table__cell">13 Nov 2020</td>
                                                             <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
                                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                           </tr>
@@ -600,32 +545,26 @@ Apply for legal aid - Salary statement
                                                               </div></td>
                                                             <td class="govuk-table__cell">12 Nov 2020</td>
                                                             <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                           </tr>
                                                           <tr class="govuk-table__row">
                                                             <td class="govuk-table__cell">
-                                                              <!-- <div class="govuk-checkboxes__item">
-                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                              </div> -->
+
                                                             </td>
                                                               <td class="govuk-table__cell">12 Nov 2020</td>
                                                               <td class="govuk-table__cell">12345678A DWP DLA</td>
-                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
                                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                             </tr>
                                                           <tr class="govuk-table__row">
                                                             <td class="govuk-table__cell">
-                                                            <!--  <div class="govuk-checkboxes__item">
-                                                                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                              </div> -->
+
                                                             </td>
                                                               <td class="govuk-table__cell">9 Nov 2020</td>
                                                               <td class="govuk-table__cell">1234567890-CHB</td>
-                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
                                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                             </tr>
                                                             <tr class="govuk-table__row">
@@ -636,7 +575,7 @@ Apply for legal aid - Salary statement
                                                                 </div></td>
                                                                 <td class="govuk-table__cell">9 Nov 2020</td>
                                                                 <td class="govuk-table__cell">TEST MONEY FP 08/11/20 2057 1234567890987654321 VIA MOBILE - LVP</td>
-                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                               </tr>
                                                               <tr class="govuk-table__row">
@@ -647,7 +586,7 @@ Apply for legal aid - Salary statement
                                                                   </div></td>
                                                                   <td class="govuk-table__cell">9 Nov 2020</td>
                                                                   <td class="govuk-table__cell">SAM DOE F FP 08/11/20 1234 098765432123456789TESTNAME JP F VIA MOBILE - LVP</td>
-                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                   <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                 </tr>
@@ -660,7 +599,7 @@ Apply for legal aid - Salary statement
                                                                   </td>
                                                                     <td class="govuk-table__cell">9 Nov 2020</td>
                                                                     <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£40</td>
                                                                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                   </tr>
@@ -672,7 +611,7 @@ Apply for legal aid - Salary statement
                                                                       </div></td>
                                                                       <td class="govuk-table__cell">9 Nov 2020</td>
                                                                       <td class="govuk-table__cell">1234 07NOV20 DINE ORDER ENGLISH TOWN GB REFUND</td>
-                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£12.30</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£12.30</td>
                                                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                     </tr>
@@ -684,7 +623,7 @@ Apply for legal aid - Salary statement
                                                                         </div></td>
                                                                       <td class="govuk-table__cell">7 Nov 2020</td>
                                                                       <td class="govuk-table__cell">LAR HOMECARE SALARY</td>
-                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
                                                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                     </tr>
@@ -696,7 +635,7 @@ Apply for legal aid - Salary statement
                                                                         </div></td>
                                                                       <td class="govuk-table__cell">5 Nov 2020</td>
                                                                       <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                     </tr>
@@ -709,7 +648,7 @@ Apply for legal aid - Salary statement
                                                                       </td>
                                                                         <td class="govuk-table__cell">2 Nov 2020</td>
                                                                         <td class="govuk-table__cell">1234567890-CHB</td>
-                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
                                                                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                       </tr>
                                                                       <tr class="govuk-table__row">
@@ -720,24 +659,11 @@ Apply for legal aid - Salary statement
                                                                           </div></td>
                                                                           <td class="govuk-table__cell">2 Nov 2020</td>
                                                                           <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                         </tr>
-                                                                      <!--   <tr class="govuk-table__row">
-                                                                          <td class="govuk-table__cell">
-                                                                           <div class="govuk-checkboxes__item">
-                                                                              <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                              <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                                            </div>
-                                                                          </td>
-                                                                            <td class="govuk-table__cell">30 Oct 2020</td>
-                                                                            <td class="govuk-table__cell">12345678A DWP UC</td>
-                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£280.70</td>
-                                                                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
-                                                                            Benefits
-                                                                            </strong></td>
-                                                                          </tr>  -->
+
                                                                           <tr class="govuk-table__row">
                                                                             <td class="govuk-table__cell">
                                                                               <div class="govuk-checkboxes__item">
@@ -746,7 +672,7 @@ Apply for legal aid - Salary statement
                                                                               </div></td>
                                                                             <td class="govuk-table__cell">29 Oct 2020</td>
                                                                             <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                           </tr>
@@ -758,20 +684,17 @@ Apply for legal aid - Salary statement
                                                                               </div></td>
                                                                               <td class="govuk-table__cell">27 Oct 2020</td>
                                                                               <td class="govuk-table__cell">FRAUD REFUND</td>
-                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£0.99</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£0.99</td>
                                                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                             </tr>
                                                                             <tr class="govuk-table__row">
                                                                               <td class="govuk-table__cell">
-                                                                              <!--  <div class="govuk-checkboxes__item">
-                                                                                  <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                                  <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                                                </div> -->
+
                                                                               </td>
                                                                                 <td class="govuk-table__cell">26 Oct 2020</td>
                                                                                 <td class="govuk-table__cell">1234567890-CHB</td>
-                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
                                                                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                               </tr>
                                                                               <tr class="govuk-table__row">
@@ -782,7 +705,7 @@ Apply for legal aid - Salary statement
                                                                                   </div></td>
                                                                                   <td class="govuk-table__cell">26 Oct 2020</td>
                                                                                   <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£15</td>
+                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£15</td>
                                                                                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                   <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                 </tr>
@@ -795,7 +718,7 @@ Apply for legal aid - Salary statement
                                                                                             </div></td>
                                                                                             <td class="govuk-table__cell">23 Oct 2020</td>
                                                                                             <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                           </tr>
@@ -808,7 +731,7 @@ Apply for legal aid - Salary statement
                                                                                             </td>
                                                                                               <td class="govuk-table__cell">23 Oct 2020</td>
                                                                                               <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
-                                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£310</td>
+                                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£310</td>
                                                                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                             </tr>
@@ -820,7 +743,7 @@ Apply for legal aid - Salary statement
                                                                                                 </div></td>
                                                                                               <td class="govuk-table__cell">22 Oct 2020</td>
                                                                                               <td class="govuk-table__cell">CYGNET SECURITY LTD SALARY</td>
-                                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+                                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
                                                                                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                               <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                             </tr>
@@ -832,20 +755,17 @@ Apply for legal aid - Salary statement
                                                                                                 </div></td>
                                                                                                 <td class="govuk-table__cell">21 Oct 2020</td>
                                                                                                 <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">£60</td>
+                                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£60</td>
                                                                                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                               </tr>
                                                                                               <tr class="govuk-table__row">
                                                                                                 <td class="govuk-table__cell">
-                                                                                                <!--  <div class="govuk-checkboxes__item">
-                                                                                                    <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                                                    <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                                                                  </div> -->
+
                                                                                                 </td>
                                                                                                   <td class="govuk-table__cell">19 Oct 2020</td>
                                                                                                   <td class="govuk-table__cell">1234567890-CHB</td>
-                                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
                                                                                                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                 </tr>
                                                                                               <tr class="govuk-table__row">
@@ -857,9 +777,9 @@ Apply for legal aid - Salary statement
                                                                                                   </td>
                                                                                                     <td class="govuk-table__cell">16 Oct 2020</td>
                                                                                                     <td class="govuk-table__cell">12345678A DWP UC</td>
-                                                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">£280.71</td>
+                                                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£280.71</td>
                                                                                                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
-                                                                                                  </tr>  
+                                                                                                  </tr>
                                                                                                  <tr class="govuk-table__row">
                                                                                                     <td class="govuk-table__cell">
                                                                                                       <div class="govuk-checkboxes__item">
@@ -869,9 +789,9 @@ Apply for legal aid - Salary statement
                                                                                                     </td>
                                                                                                       <td class="govuk-table__cell">16 Oct 2020</td>
                                                                                                       <td class="govuk-table__cell">12345678A DWP UC</td>
-                                                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">£368.20</td>
+                                                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£368.20</td>
                                                                                                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
-                                                                                                    </tr>  
+                                                                                                    </tr>
                                                                                                     <tr class="govuk-table__row">
                                                                                                       <td class="govuk-table__cell">
                                                                                                         <div class="govuk-checkboxes__item">
@@ -880,34 +800,28 @@ Apply for legal aid - Salary statement
                                                                                                         </div></td>
                                                                                                         <td class="govuk-table__cell">13 Oct 2020</td>
                                                                                                         <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">£10</td>
+                                                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
                                                                                                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                                       </tr>
                                                                                                       <tr class="govuk-table__row">
                                                                                                         <td class="govuk-table__cell">
-                                                                                                        <!--  <div class="govuk-checkboxes__item">
-                                                                                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                                                                          </div> -->
+
                                                                                                         </td>
                                                                                                           <td class="govuk-table__cell">12 Oct 2020</td>
                                                                                                           <td class="govuk-table__cell">12345678A DWP DLA</td>
-                                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
                                                                                                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                         </tr>
 
 
                                                                                                       <tr class="govuk-table__row">
                                                                                                         <td class="govuk-table__cell">
-                                                                                                        <!--  <div class="govuk-checkboxes__item">
-                                                                                                            <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                                                                                                            <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-                                                                                                          </div> -->
+
                                                                                                         </td>
                                                                                                           <td class="govuk-table__cell">12 Oct 2020</td>
                                                                                                           <td class="govuk-table__cell">1234567890-CHB</td>
-                                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">£21.05</td>
+                                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
                                                                                                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                         </tr>
                                                                                                         <tr class="govuk-table__row">
@@ -918,16 +832,16 @@ Apply for legal aid - Salary statement
                                                                                                             </div></td>
                                                                                                             <td class="govuk-table__cell">9 Oct 2020</td>
                                                                                                             <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
-                                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
                                                                                                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
                                                                                                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                                                                                                           </tr>
                                                                                                   </tbody>
                                                                                                 </table>
 
-                                                                          
 
-                                                                              <a role="button" href="review_income" class="govuk-button">
+
+                                                                              <a role="button" href="outgoing_transactions_select" class="govuk-button">
                                                                                 Save and continue
                                                                               </a>
 
@@ -941,5 +855,4 @@ Apply for legal aid - Salary statement
                                                                         </div>
   </div>
 </div>
-
 {% endblock %}
