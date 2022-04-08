@@ -22,14 +22,14 @@ Apply for legal aid - Incoming transactions
 
 {% block content %}
 <style media="screen">
-
+ 
   .dot{
     background-color:#005ea5;
   }
   .col_bespoke{
     width:15%;
   }
- 
+
   .govuk-table {
     height: 40em;
     overflow-y: scroll;
@@ -81,6 +81,20 @@ Apply for legal aid - Incoming transactions
 
   <div class="moj-filter-layout__content">
 
+    <div class="moj-banner moj-banner--success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+
+      <div class="moj-banner__message">
+        <span class="moj-banner__assistive">Success</span>You have succesfully assigned transactions to the “Financial help” category.
+      </div>
+
+    </div>
+
+
+
     <h1 class="govuk-heading-xl">
       Sort bank transactions into categories
     </h1>
@@ -91,22 +105,40 @@ Apply for legal aid - Incoming transactions
 
       <div class="govuk-!-padding-bottom-4"></div>
 
+      <div class="govuk-panel govuk-panel--confirmation" style="background-color:#dee0e2; height:70px; padding:10px;">
+        <div class="govuk-form-group govuk-body">
+<!--          <span class="selected-count">11</span>&nbsp; transactions selected-->
+
+          <select class="govuk-select" id="assign" name="assign">
+            <option value="help" selected>Assign a category</option>
+            <option value="benefits">Benefits</option>
+            <option value="help">Financial help</option>
+            <option value="maintenance">Housing</option>
+            <option value="pension">Pension</option>
+            <option value="lodger">Property income</option>
+            <option value="remove">Remove category</option>
+          </select>
+
+          <button class="govuk-button">Confirm selection</button>
+        </div>
+
+      </div>
 
       <table class="govuk-table" style="height: 40em; overflow-y: scroll; display: block;">
         <caption class="govuk-table__caption" style="padding-bottom:10px;">8 December 2021 to 7 March 2022</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span ><a href="transactions_select.html">
+            <th class="govuk-table__header" scope="col"><a class="govuk-body" href="" aria-describedby="eligibility-completed">
               Select all
-            </a></span>
-          </th>
-          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
-          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
-          <th class="govuk-table__header" scope="col">Income</th>
-          <th class="govuk-table__header" scope="col">Outgoing</th>
-          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
-        </tr>
-      </thead>
+            </a>
+            </th>
+            <th class="govuk-table__header" scope="col">Date <img src="/public/images/filter_icon.svg" style="float:right;"></th>
+            <th class="govuk-table__header" scope="col">Description</th>
+            <th class="govuk-table__header" scope="col">Income</th>
+            <th class="govuk-table__header" scope="col">Outgoing</th>
+            <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Category</th>
+          </tr>
+        </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -118,9 +150,9 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">12345678A DWP DLA</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">BENEFITS</strong></td>
           </tr>
-          <tr class="govuk-table__row"> 
+          <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
@@ -130,19 +162,19 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">12345678A DWP DLA</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">BENEFITS</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td> 
+              </div></td>
             <td class="govuk-table__cell">7 Jan 2021</td>
             <td class="govuk-table__cell">WEST LONDON NURSERY FP 16/11/20 1234 1234567890987654321</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">- £59</td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -154,7 +186,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">FINANCIAL HELP</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -166,7 +198,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">FINANCIAL HELP</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -178,7 +210,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">FINANCIAL HELP</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -190,7 +222,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">SKY DIGITAL REVERSAL OF 03-01</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -202,7 +234,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">HOUSING</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">HOUSING</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -214,7 +246,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -226,7 +258,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">PENSION PAYMENT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£450</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -238,7 +270,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">CASH IN NATIONWIDER 15JAN</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">UNCATEGORISED</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -250,7 +282,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">WORK AND CHILD TC</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">BENEFITS</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -262,7 +294,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">CHILD BENEFIT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">MAINTENANCE</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">MAINTENANCE</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -274,7 +306,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">GREENS NURSERIES LTD SALARY</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">SALARY</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -286,7 +318,7 @@ Apply for legal aid - Incoming transactions
             <td class="govuk-table__cell">WORK AND CHILD TC</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">BENEFITS</strong></td>
           </tr>
         </tbody>
       </table>

@@ -16,13 +16,13 @@ Apply for legal aid - Incoming transactions
 
   {{ govukBackLink({
     text: "Back",
-      href: "transactions"
+      href: "outgoing_select"
   }) }}
 {% endblock %}
 
 {% block content %}
 <style media="screen">
-
+ 
   .dot{
     background-color:#005ea5;
   }
@@ -35,7 +35,7 @@ Apply for legal aid - Incoming transactions
     overflow-y: scroll;
     display: block
   }
- 
+
   .govuk-table__header{
     color: #0b0c0c;
     background-color: #dee0e2;
@@ -89,30 +89,6 @@ Apply for legal aid - Incoming transactions
       <div class="moj-action-bar__filter"></div>
     </div>
 
-    <div class="govuk-panel govuk-panel--confirmation" style="background-color:#eeefef; height:65px; padding:10px; border: 1px solid #bfc1c3;">
-      <div class="govuk-form-group govuk-body">
-<span class="selected-count" > <strong>1 </strong></span>&nbsp; <strong  style="padding-right: 20px;">transaction selected </strong>
-
-
-
-        <select class="govuk-select" id="assign" name="assign" >
-          <option value="help" selected>Assign a category</option>
-          <option value="benefits">Benefits</option>
-          <option value="help">Financial help</option>
-          <option value="help">Housing</option>
-          <option value="help">Maintenance</option>
-          <option value="help">Uncategorised</option>
-        </select>
-
-        <a role="button" class="govuk-button" href="transactions_assigned.html" style="float: right;">
-          Confirm selection</a>
-
-
-      </div>
-
-    </div>
-
-
       <div class="govuk-!-padding-bottom-4"></div>
 
 
@@ -120,9 +96,9 @@ Apply for legal aid - Incoming transactions
         <caption class="govuk-table__caption" style="padding-bottom:10px;">8 December 2021 to 7 March 2022</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span >
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span ><a href="transactions_select.html">
               Select all
-            </span> 
+            </a></span>
           </th>
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
           <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
@@ -137,7 +113,7 @@ Apply for legal aid - Incoming transactions
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td> 
+              </div></td>
             <td class="govuk-table__cell">7 Jan 2021</td>
             <td class="govuk-table__cell">12345678A DWP DLA</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
@@ -231,7 +207,7 @@ Apply for legal aid - Incoming transactions
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="" checked>
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
             <td class="govuk-table__cell">3 Dec 2020</td>
