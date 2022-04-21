@@ -6,6 +6,87 @@
 Apply for legal aid - Incoming transactions
 {% endblock %}
 
+{% block pageScripts %}
+<script type="text/javascript">
+  function hide(elem) {
+    elem.style.display = 'none'
+  }
+  function show(elem) {
+    elem.style.display = 'block'
+  }
+  // open the assign category panel when user selects any checkbox
+  // and close when no checkboxes are selected
+  const allCheckboxes = document.querySelectorAll('.govuk-checkboxes__input')
+  const assignCategoryPanel = document.getElementById('assign-category-panel')
+  const selectedCounter = assignCategoryPanel.querySelector('#selected-count')
+  const successBanner = document.querySelector('#success-banner')
+  allCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', (e)=> {
+      hide(successBanner)
+      if (assignCategoryPanel.style.display === 'none') {
+        show(assignCategoryPanel)
+      }
+      let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
+      // update the counter
+      let selectedCount = checkedBoxes.length
+      selectedCounter.innerText = selectedCount
+      if (selectedCount === 0) {
+        hide(assignCategoryPanel)
+      }
+    })
+  })
+  // select all checkboxes
+  const selectAllBtn = document.querySelector('#select-all-btn')
+  selectAllBtn.addEventListener('click', (e) => {
+    if (assignCategoryPanel.style.display === 'none') {
+      show(assignCategoryPanel)
+      allCheckboxes.forEach((box) => {
+        box.checked = true
+      })
+      selectedCounter.innerText = allCheckboxes.length
+    } else {
+      hide(assignCategoryPanel)
+      allCheckboxes.forEach((box) => {
+        box.checked = false
+      })
+    }
+  })
+  // get the value of the assigned category and use it to update the tags of all selected transactions
+  const assignCategorySelect = assignCategoryPanel.querySelector('.govuk-select')
+  const assignCategoryBtn = assignCategoryPanel.querySelector('.govuk-button')
+  assignCategoryBtn.addEventListener('click', (e) => {
+    let category = assignCategorySelect.value
+    let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
+    checkedBoxes.forEach((item) => {
+      let tag = item.closest('.govuk-table__row').querySelector('.moj-badge')
+      switch (category) {
+        case "":
+          break;
+        case 'Uncategorised':
+          tag.innerText = category
+          if (tag.classList.contains('moj-badge--blue')) {
+            tag.classList.remove('moj-badge--blue')
+            tag.classList.add('moj-badge--grey')
+          }
+          item.checked = false
+          hide(assignCategoryPanel)
+          show(successBanner)
+          break;
+        default:
+          tag.innerText = category
+          if (tag.classList.contains('moj-badge--grey')) {
+            tag.classList.remove('moj-badge--grey')
+            tag.classList.add('moj-badge--blue')
+          }
+          item.checked = false
+          hide(assignCategoryPanel)
+          show(successBanner)
+      }
+    })
+  })
+</script>
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -76,6 +157,7 @@ Apply for legal aid - Incoming transactions
   }
 
 </style>
+{% include "open_banking_solutions/Option_2/_success_banner.html" %}
 <div class="moj-filter-layout">
   {% include "open_banking_solutions/Option_2/_filter.html" %}
 
@@ -89,6 +171,8 @@ Apply for legal aid - Incoming transactions
       <div class="moj-action-bar__filter"></div>
     </div>
 
+    {% include "open_banking_solutions/Option_2/_assign_category.html" %}
+
       <div class="govuk-!-padding-bottom-4"></div>
 
 
@@ -96,16 +180,15 @@ Apply for legal aid - Incoming transactions
         <caption class="govuk-table__caption" style="padding-bottom:10px;">8 December 2021 to 7 March 2022</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span ><a href="transactions_select.html">
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%" scope="col" id="select-all-btn">
               Select all
-            </a></span>
-          </th>
-          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
-          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
-          <th class="govuk-table__header" scope="col">Income</th>
-          <th class="govuk-table__header" scope="col">Outgoing</th>
-          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
-        </tr>
+            </th>
+            <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+            <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
+            <th class="govuk-table__header" scope="col">Income</th>
+            <th class="govuk-table__header" scope="col">Outgoing</th>
+            <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
+          </tr>
       </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
