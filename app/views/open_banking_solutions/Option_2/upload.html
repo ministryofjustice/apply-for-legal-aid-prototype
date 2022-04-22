@@ -22,11 +22,11 @@ Apply for legal aid - Statement of case
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form action="provider_continue_application" method="post" >
+        <form action="provider_continue_application_2" method="post" >
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="more-detail">
@@ -34,13 +34,15 @@ Apply for legal aid - Statement of case
               <h1 class="govuk-heading-xl">Upload your client’s bank statements</h1>
 
               <p class="govuk-body">You need to upload 3 months of bank statements for all of your client’s bank accounts.
-</p>Bank statements must be in the following format: </p>
+</p>
+<p class="govuk-body">Bank statements must be in the following format:</p>
 
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>1. Date</li>
-                    <li>2. Transaction description</li>
-                    <li>3. Amount</li>
-              </ul>
+                  <ol class="govuk-list govuk-list--number">
+
+                    <li>Date</li>
+                    <li>Transaction description</li>
+                    <li>Amount</li>
+              </ol>
 
 <p>Any other columns must be removed before uploading.</p>
 
@@ -146,7 +148,7 @@ Apply for legal aid - Statement of case
 
 
 
-                            <a href="provider_continue_application" role="button" class="govuk-button">
+                            <a href="provider_continue_application_2" role="button" class="govuk-button">
                               Save and continue
                             </a>
 
