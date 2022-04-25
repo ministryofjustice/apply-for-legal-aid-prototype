@@ -1,0 +1,218 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "review_income"
+}) }}
+
+{% endblock %}
+ 
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Review regular outgoing bank transactions
+          </h1>
+        </legend><br>
+
+        <p class="gov-body">
+          We've guessed outgoing categories for the transactions with the 'automated' tag.</p>
+
+     </ul>
+     </li>
+
+    <br>
+    <br>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m"> Childcare</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-heading-m" style="float: right;"> Total:  -£180.00 </p>
+          </div>
+        </div>
+
+
+
+         <table class="govuk-table" style="margin-bottom:0px;">
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th class="govuk-table__header" scope="col">Date</th>
+                   <th class="govuk-table__header" scope="col">Description</th>
+                   <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                   <th class="govuk-table__header" scope="col"></th>
+                   <th class="govuk-table__header" scope="col"></th>
+                 </tr>
+               </thead>
+             <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">7 Jan 2021</td>
+                 <td class="govuk-table__cell">CUBS NURSERY 04/12/2020</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                 <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--blue">
+            AUTOMATED
+          </strong>
+
+                </td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">9 Dec 2020</td>
+                 <td class="govuk-table__cell">CUBS NURSERY 04/12/2020</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                 <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--blue">
+            AUTOMATED
+          </strong>
+
+                </td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">12 Oct 2020</td>
+                 <td class="govuk-table__cell">CUBS NURSERY 04/12/2020</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
+                 <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--blue">
+            AUTOMATED
+          </strong>
+
+                </td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               </tbody>
+               </table>
+
+
+         <div class="govuk-!-padding-bottom-9"></div>
+
+
+         <br>
+         <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m"> Housing</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-heading-m" style="float: right;"> Total:  -£800.00 </p>
+          </div>
+        </div>
+
+
+
+         <table class="govuk-table" style="margin-bottom:0px;">
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th class="govuk-table__header" scope="col">Date</th>
+                   <th class="govuk-table__header" scope="col">Description</th>
+                   <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold" scope="col">Amount</th>
+                   <th class="govuk-table__header" scope="col"></th>
+                   <th class="govuk-table__header" scope="col"></th>
+                 </tr>
+               </thead>
+             <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">10 Nov 2020</td>
+                 <td class="govuk-table__cell">LANDLORD RENT 10/11/2020</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">-£400</td>
+                 <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--blue">
+            AUTOMATED
+          </strong>
+
+                </td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">10 Oct 2020</td>
+                 <td class="govuk-table__cell">LANDLORD RENT 10/10/2020</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">-£400</td>
+                 <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--blue">
+            AUTOMATED
+          </strong>
+
+                </td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                   Remove
+                 </a></td>
+               </tr>
+               </tbody>
+               </table>
+
+          <br>
+          <br>
+
+
+          <div class="govuk-!-padding-bottom-"></div>
+
+          <p class="govuk-body"><a href="types_of_outgoing_provider">Add another outgoing category</a></p>
+
+ </ol>
+ <div class="govuk-!-padding-bottom-6"></div>
+ <h2 class="govuk-heading-l">What you will need to do next</h2>
+
+ <p class="gov-body">
+   You will need to assign categories to any uncategorised regular transactions.</p>
+
+   <br>
+
+    </label>
+  </div>
+
+
+
+
+        <a href="outgoing_transactions" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}

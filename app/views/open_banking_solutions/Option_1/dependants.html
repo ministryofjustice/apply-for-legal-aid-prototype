@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Dependants
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "outgoings_cash"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="dependant_add" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Does your client have any dependants?
+              <!--  Does anyone depend on you for financial support? -->
+                </h1>
+              </legend>
+
+            <!--  <p class="govuk-body">A dependant is be a child or adult who lives with your client and depends on them for financial support.</p>
+               This includes anyone who depends on you for financial support. -->
+
+              <p class="govuk-body">A dependant is a child or adult who:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>lives with your client</li>
+                    <li>depends on your client for financial support</li>
+                    </ul>
+
+              <div class="govuk-inset-text">Do not include your client's partner (if they have one).</div>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+
+                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    Yes
+                  </label>
+                </div>
+              <!--  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                  <label class="govuk-label" for="how-contacted-conditional-1">
+                    How many dependants do you have?
+                  </label>
+                  <span id="dob-hint" class="govuk-hint">
+                For example, 31 3 1980.
+              </span>
+              <div class="govuk-date-input" id="dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day-2" name="dob-day-2" type="number" pattern="[0-9]*" value="{{ data['dob-day-2'] }}">
+                  </div>
+                </div>
+              </div>
+                </div> -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    No
+                  </label>
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
