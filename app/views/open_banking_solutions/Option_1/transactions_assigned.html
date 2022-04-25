@@ -6,87 +6,6 @@
 Apply for legal aid - Incoming transactions
 {% endblock %}
 
-{% block pageScripts %}
-<script type="text/javascript">
-  function hide(elem) {
-    elem.style.display = 'none'
-  }
-  function show(elem) {
-    elem.style.display = 'block'
-  }
-  // open the assign category panel when user selects any checkbox
-  // and close when no checkboxes are selected
-  const allCheckboxes = document.querySelectorAll('.govuk-checkboxes__input')
-  const assignCategoryPanel = document.getElementById('assign-category-panel')
-  const selectedCounter = assignCategoryPanel.querySelector('#selected-count')
-  const successBanner = document.querySelector('#success-banner')
-  allCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener('click', (e)=> {
-      hide(successBanner)
-      if (assignCategoryPanel.style.display === 'none') {
-        show(assignCategoryPanel)
-      }
-      let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
-      // update the counter
-      let selectedCount = checkedBoxes.length
-      selectedCounter.innerText = selectedCount
-      if (selectedCount === 0) {
-        hide(assignCategoryPanel)
-      }
-    })
-  })
-  // select all checkboxes
-  const selectAllBtn = document.querySelector('#select-all-btn')
-  selectAllBtn.addEventListener('click', (e) => {
-    if (assignCategoryPanel.style.display === 'none') {
-      show(assignCategoryPanel)
-      allCheckboxes.forEach((box) => {
-        box.checked = true
-      })
-      selectedCounter.innerText = allCheckboxes.length
-    } else {
-      hide(assignCategoryPanel)
-      allCheckboxes.forEach((box) => {
-        box.checked = false
-      })
-    }
-  })
-  // get the value of the assigned category and use it to update the tags of all selected transactions
-  const assignCategorySelect = assignCategoryPanel.querySelector('.govuk-select')
-  const assignCategoryBtn = assignCategoryPanel.querySelector('.govuk-button')
-  assignCategoryBtn.addEventListener('click', (e) => {
-    let category = assignCategorySelect.value
-    let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
-    checkedBoxes.forEach((item) => {
-      let tag = item.closest('.govuk-table__row').querySelector('.moj-badge')
-      switch (category) {
-        case "":
-          break;
-        case 'Uncategorised':
-          tag.innerText = category
-          if (tag.classList.contains('moj-badge--blue')) {
-            tag.classList.remove('moj-badge--blue')
-            tag.classList.add('moj-badge--grey')
-          }
-          item.checked = false
-          hide(assignCategoryPanel)
-          show(successBanner)
-          break;
-        default:
-          tag.innerText = category
-          if (tag.classList.contains('moj-badge--grey')) {
-            tag.classList.remove('moj-badge--grey')
-            tag.classList.add('moj-badge--blue')
-          }
-          item.checked = false
-          hide(assignCategoryPanel)
-          show(successBanner)
-      }
-    })
-  })
-</script>
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -157,9 +76,21 @@ Apply for legal aid - Incoming transactions
   }
 
 </style>
-{% include "open_banking_solutions/Option_2/_success_banner.html" %}
+
+<div class="moj-banner moj-banner--success">
+
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+
+  <div class="moj-banner__message">
+    <span class="moj-banner__assistive">Success</span>You have succesfully assigned transactions to a category.
+  </div>
+
+</div>
+
 <div class="moj-filter-layout">
-  {% include "open_banking_solutions/Option_2/_filter.html" %}
+  {% include "open_banking_process/Option_2/_filter.html" %}
 
   <div class="moj-filter-layout__content">
 
@@ -171,24 +102,23 @@ Apply for legal aid - Incoming transactions
       <div class="moj-action-bar__filter"></div>
     </div>
 
-    {% include "open_banking_solutions/Option_2/_assign_category.html" %}
-
       <div class="govuk-!-padding-bottom-4"></div>
 
 
       <table class="govuk-table" style="height: 40em; overflow-y: scroll; display: block;">
-        <caption class="govuk-table__caption" style="padding-bottom:10px;">8 Feb 2022 to 7 Apr 2022</caption>
+        <caption class="govuk-table__caption" style="padding-bottom:10px;">8 December 2021 to 7 March 2022</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%" scope="col" id="select-all-btn">
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span >
               Select all
-            </th>
-            <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
-            <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
-            <th class="govuk-table__header" scope="col">Income</th>
-            <th class="govuk-table__header" scope="col">Outgoing</th>
-            <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
-          </tr>
+            </span>
+          </th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
+          <th class="govuk-table__header" scope="col">Income</th>
+          <th class="govuk-table__header" scope="col">Outgoing</th>
+          <th class="govuk-table__header govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover" scope="col"><span class="th_bespoke">Category</span></th>
+        </tr>
       </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -197,7 +127,19 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">8 Feb 2022</td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">12345678A DWP DLA</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-2"></label>
+              </div></td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
             <td class="govuk-table__cell">12345678A DWP DLA</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
@@ -209,7 +151,67 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">19 Feb 2022</td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">WEST LONDON NURSERY FP 16/11/20 1234 1234567890987654321</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">- £59</td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£500</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">3 Jan 2021</td>
+            <td class="govuk-table__cell">SKY DIGITAL REVERSAL OF 03-01</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div></td>
+            <td class="govuk-table__cell">3 Jan 2021</td>
             <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
@@ -218,87 +220,14 @@ Apply for legal aid - Incoming transactions
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-2" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-2"></label>
-              </div></td>
-            <td class="govuk-table__cell">8 Mar 2022</td>
-            <td class="govuk-table__cell">12345678A DWP DLA</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">10 Mar 2022</td>
-            <td class="govuk-table__cell">WEST LONDON NURSERY FP 10/03/22 1234 1234567890987654321</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">- £200</td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
-            <td class="govuk-table__cell">11 Mar 2022</td>
-            <td class="govuk-table__cell">SALLY DOE FP 11/03/2022</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
-            <td class="govuk-table__cell">12 Mar 2022</td>
-            <td class="govuk-table__cell">SALLY DOE FP 12/03/2022</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
-            <td class="govuk-table__cell">15 Mar 2022</td>
-            <td class="govuk-table__cell">SALLY DOE FP 15/03/2022</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">FINANCIAL HELP</strong></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
-            <td class="govuk-table__cell">16 Mar 2022</td>
-            <td class="govuk-table__cell">SKY DIGITAL REVERSAL OF 16-03-2022</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£56.79</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
-                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
-              </div></td>
-            <td class="govuk-table__cell"> 19 Mar 2022</td>
+            <td class="govuk-table__cell">3 Dec 2020</td>
             <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">HOUSING</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -306,9 +235,9 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">20 Mar 2022</td>
-            <td class="govuk-table__cell">FRAUD REPAYMENT</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£15</td>
+            <td class="govuk-table__cell">3 Nov 2020</td>
+            <td class="govuk-table__cell">PENSION PAYMENT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£450</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
           </tr>
@@ -318,8 +247,8 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">25 Mar 2022</td>
-            <td class="govuk-table__cell">CASH IN NATIONWIDER 25MAR</td>
+            <td class="govuk-table__cell">15 Jan 2019</td>
+            <td class="govuk-table__cell">CASH IN NATIONWIDER 15JAN</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£250.00</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
@@ -330,9 +259,9 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">27 Mar 2022</td>
-            <td class="govuk-table__cell">12345678A DWP DLA</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+            <td class="govuk-table__cell">11 Jan 2019</td>
+            <td class="govuk-table__cell">WORK AND CHILD TC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
             <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
           </tr>
@@ -342,11 +271,11 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">29 Mar 2022</td>
-            <td class="govuk-table__cell">1234567890-CHB</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">£615.28</td>
+            <td class="govuk-table__cell">07 Jan 2019</td>
+            <td class="govuk-table__cell">CHILD BENEFIT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£82.80</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">MAINTENANCE</strong></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -354,7 +283,7 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div></td>
-            <td class="govuk-table__cell">1 Apr 2022</td>
+            <td class="govuk-table__cell">07 Jan 2019</td>
             <td class="govuk-table__cell">GREENS NURSERIES LTD SALARY</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£174.77</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
@@ -366,11 +295,11 @@ Apply for legal aid - Incoming transactions
                 <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
                 <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
               </div>
-            <td class="govuk-table__cell">1 Apr 2022</td>
-            <td class="govuk-table__cell">BANK REPAYMENT</td>
+            <td class="govuk-table__cell">03 Jan 2019</td>
+            <td class="govuk-table__cell">WORK AND CHILD TC</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">£165.65</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--grey moj-badge--large">UNCATEGORISED</strong></td>
+            <td class="govuk-table__cell govuk-table__cell"><strong class="moj-badge moj-badge--blue moj-badge--large">BENEFITS</strong></td>
           </tr>
         </tbody>
       </table>
