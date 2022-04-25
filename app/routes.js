@@ -1405,6 +1405,7 @@ router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res
   }
 })
 
+
 // Other bank accounts - client
 router.post('/jim/AP-1931/types_of_income', function (req, res) {
   // Get the answer from session data
@@ -1420,19 +1421,33 @@ router.post('/jim/AP-1931/types_of_income', function (req, res) {
   }
 })
 
-// open banking journey
-router.post('/open_banking_process/Option_2/consent', function (req, res) {
+// Other bank accounts - client
+router.post('/jim/AP-1931/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let shareOnline = req.session.data['share-online']
-  console.log(shareOnline)
+  let over18 = req.session.data['accounts']
 
-  if (shareOnline === 'no') {
-    res.redirect('/open_banking_process/Option_2/upload')
+  if (over18 === 'no') {
+    res.redirect('/jim/AP-1931/types_of_income')
   } else {
-    res.redirect('/open_banking_process/Option_2/check')
+    res.redirect('/jim/AP-1931/bank_select_03')
+  }
+})
+
+// Other bank accounts - client
+router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['share']
+
+  if (over18 === 'no') {
+    res.redirect('/open_banking_solutions/Option_2/upload')
+  } else {
+    res.redirect('/open_banking_solutions/Option_2/check')
   }
 })
 

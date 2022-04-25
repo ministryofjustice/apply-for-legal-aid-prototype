@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="check" method="post" class="form">
+        <form action="upload" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -37,53 +37,49 @@ Apply for legal aid - Property and mortgage
 
               <p class="govuk-body">We need to see your client’s bank statements from the last 3 months as part of their income assessment.</p>
 
+              <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="share-online-2" name="share-online" type="radio" value="no" data-aria-controls="share-online-2" {{ checked("share-online","no") }}>
-                <label class="govuk-label govuk-radios__label" for="share-online-2">
+                <input class="govuk-radios__input" id="open_banking" name="share" type="radio" value="yes" data-aria-controls="open_banking" >
+                <label class="govuk-label govuk-radios__label" for="open_banking">
                   My client will share their bank statements online
                   <div id="hint-2" class="govuk-hint">They'll need to authorise a trusted third-party financial service provider called TrueLayer
                   to collect 3 months of bank statements on our behalf.</div>
                 </label>
-
-                <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-              What is TrueLayer?
-              </span>
-              </summary>
-              <div class="govuk-details__text">
-
-              <p class="govuk-body">TrueLayer is a third-party service that acts as a messenger between your client's bank and the LAA.</p>
-              <p class="govuk-body">It allows your client to quickly and securely share their bank statements without having to gather physical bank statements.</p>
-              <p class="govuk-body">They’re regulated by the Financial Conduct Authority (FCA) and will not:</p>
-              <ul class="govuk-list govuk-list--bullet">
-              <li>store your client's bank account details</li>
-              <li>see your client's online banking sign-in details</li>
-              <li>share your client's data with anyone other than the LAA</li>
-              <li>have ongoing access to your client's bank accounts</li>
-              </ul>
-              </div>
-              </details>
-
-
-
               </div>
 
-
-              <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
-
-                  <input class="govuk-radios__input" id="share-online-1" name="share-online" type="radio" value="yes" data-aria-controls="share-online-1" {{ checked("share-online","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="share-online-1">
+                  <input class="govuk-radios__input" id="upload" name="share" type="radio" value="no" data-aria-controls="upload" >
+                  <label class="govuk-label govuk-radios__label" for="upload">
                     I’ll upload bank statements
                       <!--  <div id="hint-1" class="govuk-hint">
  Files must be a CSV, QIF, OFC or OFX.
                         </div> -->
-
                     </label>
                 </div>
-<p></p>
+                </div>
+                </div>
 
+
+                <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                What is TrueLayer?
+                </span>
+                </summary>
+                <div class="govuk-details__text">
+
+
+                <p class="govuk-body">TrueLayer is a third-party service that acts as a messenger between your client's bank and the LAA.</p>
+                <p class="govuk-body">It allows your client to quickly and securely share their bank statements without having to gather physical bank statements.</p>
+                <p class="govuk-body">They’re regulated by the Financial Conduct Authority (FCA) and will not:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                <li>store your client's bank account details</li>
+                <li>see your client's online banking sign-in details</li>
+                <li>share your client's data with anyone other than the LAA</li>
+                <li>have ongoing access to your client's bank accounts</li>
+                </ul>
+                </div>
+                </details>
 
         <!--  <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
@@ -116,6 +112,5 @@ Apply for legal aid - Property and mortgage
       </div>
     </div>
 
-<p><a href="upload" class="govuk-link">If you want to go to 'I’ll upload bank statements'</a></p>
 
 {% endblock %}
