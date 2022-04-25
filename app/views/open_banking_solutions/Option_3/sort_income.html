@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "employment_income"
+  href: "merits_tasklist_2"
 }) }}
  
 {% endblock %}
@@ -41,15 +41,12 @@ Apply for legal aid - Income start page
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Review regular incoming bank transactions
+            Review incoming bank transactions
           </h1>
         </legend><br>
 
         <p class="gov-body">
-          We've guessed income categories for the transactions with the 'automated' tag.</p>
-
-     </ul>
-     </li>
+          We’ve guessed the income categories for the following transactions:</p>
 
     <br>
     <br>
@@ -57,10 +54,10 @@ Apply for legal aid - Income start page
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-m"> Help from family and friends</h2>
+            <h2 class="govuk-heading-m"> Benefits</h2>
           </div>
           <div class="govuk-grid-column-one-third">
-            <p class="govuk-heading-m" style="float: right;"> Total:  £1,500.75 </p>
+            <p class="govuk-heading-m" style="float: right;"> Total:  £915.28 </p>
           </div>
         </div>
 
@@ -78,9 +75,9 @@ Apply for legal aid - Income start page
                </thead>
              <tbody class="govuk-table__body">
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">7 Jan 2021</td>
-                 <td class="govuk-table__cell">SALLY DOE FP 7/01/2021</td>
-                 <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                 <td class="govuk-table__cell">8 Feb 2022</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
                  <td class="govuk-table__cell">
                   <strong class="govuk-tag govuk-tag--blue">
             AUTOMATED
@@ -92,9 +89,9 @@ Apply for legal aid - Income start page
                  </a></td>
                </tr>
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">9 Dec 2020</td>
-                 <td class="govuk-table__cell">SALLY DOE FP 9/12/2020</td>
-                 <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+                 <td class="govuk-table__cell">8 Mar 2022</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
                  <td class="govuk-table__cell">
                   <strong class="govuk-tag govuk-tag--blue">
             AUTOMATED
@@ -106,9 +103,9 @@ Apply for legal aid - Income start page
                  </a></td>
                </tr>
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">12 Oct 2020</td>
-                 <td class="govuk-table__cell">12345678A SAL DOE</td>
-                 <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
+                 <td class="govuk-table__cell">27 Mar 2022</td>
+                 <td class="govuk-table__cell">12345678A DWP DLA</td>
+                 <td class="govuk-table__cell govuk-table__cell--numeric">£100.00</td>
                  <td class="govuk-table__cell">
                   <strong class="govuk-tag govuk-tag--blue">
             AUTOMATED
@@ -119,6 +116,20 @@ Apply for legal aid - Income start page
                    Remove
                  </a></td>
                </tr>
+               <tr class="govuk-table__row">
+                <td class="govuk-table__cell">29 Mar 2022</td>
+                <td class="govuk-table__cell">11234567890-CHB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£615.28</td>
+                <td class="govuk-table__cell">
+                 <strong class="govuk-tag govuk-tag--blue">
+           AUTOMATED
+         </strong>
+
+               </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
+                  Remove
+                </a></td>
+              </tr>
                </tbody>
                </table>
 
@@ -130,10 +141,10 @@ Apply for legal aid - Income start page
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-              <h2 class="govuk-heading-m">Benefits</h2>
+              <h2 class="govuk-heading-m">Financial help</h2>
             </div>
             <div class="govuk-grid-column-one-third">
-              <p class="govuk-heading-m" style="float: right;"> Total:  £1,500.75 </p>
+              <p class="govuk-heading-m" style="float: right;"> Total:  £150.00 </p>
             </div>
           </div>
 
@@ -149,9 +160,9 @@ Apply for legal aid - Income start page
             </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">7 Jan 2021</td>
-              <td class="govuk-table__cell">12345678A DWP DLA</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+              <td class="govuk-table__cell">11 Mar 2022</td>
+              <td class="govuk-table__cell">SALLY DOE FP</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
               <td class="govuk-table__cell">
                <strong class="govuk-tag govuk-tag--blue">
          AUTOMATED
@@ -163,9 +174,9 @@ Apply for legal aid - Income start page
               </a></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">9 Dec 2020</td>
-              <td class="govuk-table__cell">12345678A DWP DLA</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+              <td class="govuk-table__cell">12 Mar 2022</td>
+              <td class="govuk-table__cell">SALLY DOE FP</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
               <td class="govuk-table__cell">
                <strong class="govuk-tag govuk-tag--blue">
          AUTOMATED
@@ -177,9 +188,9 @@ Apply for legal aid - Income start page
               </a></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">12 Oct 2020</td>
-              <td class="govuk-table__cell">12345678A DWP DLA</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£100</td>
+              <td class="govuk-table__cell">15 Mar 2022</td>
+              <td class="govuk-table__cell">SALLY DOE FP</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
               <td class="govuk-table__cell">
                <strong class="govuk-tag govuk-tag--blue">
          AUTOMATED
@@ -204,7 +215,7 @@ Apply for legal aid - Income start page
          <h2 class="govuk-heading-m">Pension</h2>
        </div>
        <div class="govuk-grid-column-one-third">
-         <p class="govuk-heading-m" style="float: right;"> Total:  £1,500.75 </p>
+         <p class="govuk-heading-m" style="float: right;"> Total:  £300.00 </p>
        </div>
      </div>
 
@@ -220,9 +231,9 @@ Apply for legal aid - Income start page
             </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">10 Dec 2020</td>
-              <td class="govuk-table__cell">WORK PENSION 10/12/2020</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+              <td class="govuk-table__cell">8 Feb 2022</td>
+              <td class="govuk-table__cell">WORK PENSION 8/02/2022</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£150</td>
               <td class="govuk-table__cell">
                <strong class="govuk-tag govuk-tag--blue">
          AUTOMATED
@@ -234,9 +245,9 @@ Apply for legal aid - Income start page
               </a></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">9 Nov 2020</td>
-              <td class="govuk-table__cell">WORK PENSION 09/11/2020</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£50</td>
+              <td class="govuk-table__cell">8 Mar 2022</td>
+              <td class="govuk-table__cell">WORK PENSION 08/03/2022</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£150</td>
               <td class="govuk-table__cell">
                <strong class="govuk-tag govuk-tag--blue">
          AUTOMATED
@@ -247,20 +258,7 @@ Apply for legal aid - Income start page
                 Remove
               </a></td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">12 Oct 2020</td>
-              <td class="govuk-table__cell">WORK PENSION 12/10/2020</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
-              <td class="govuk-table__cell">
-               <strong class="govuk-tag govuk-tag--blue">
-         AUTOMATED
-       </strong>
-
-             </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-                Remove
-              </a></td>
-            </tr>
+      
             </tbody>
             </table>
           <br>
@@ -273,32 +271,18 @@ Apply for legal aid - Income start page
 
  </ol>
  <div class="govuk-!-padding-bottom-6"></div>
- <h2 class="govuk-heading-l">Review remaining incoming transactions</h2>
+ <h2 class="govuk-heading-l">What you will need to do next</h2>
 
  <p class="gov-body">
-   You must review the uncategorised transactions and add any regular payments to their associated category.</p>
+   You will need to assign categories to any uncategorised regular transactions.</p>
 
    <br>
-<a href="transactions" role="button" class="govuk-button govuk-button--secondary"  class="govuk-button">
-    <strong>  Review income payments </strong>
-  </a>
 
-  <div class="govuk-!-padding-bottom-6"></div>
-
-  <h2 class="govuk-heading-l">Confirmation</h2>
-
-  <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
-    <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-      I confirm that I have reviewed the pre-categorised income payments and the remaining income payments and categorised all regular payments into their correct categories.
-
-    </label>
-  </div>
 
 
  <div class="govuk-!-padding-bottom-6"></div>
 
-        <a href="#" role="button" class="govuk-button">
+        <a href="transactions" role="button" class="govuk-button">
           Save and continue
         </a>
 

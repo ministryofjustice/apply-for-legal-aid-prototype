@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "merits_start_page"
+  href: "employment_income"
 }) }}
 
 {% endblock %}
@@ -54,7 +54,7 @@ Apply for legal aid - Income start page
          <a class="govuk-body" href="employment_income" aria-describedby="eligibility-completed">
            Review employment income
          </a>
-         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+         <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
        </li>
      </ul>
    </li>
@@ -74,19 +74,19 @@ Apply for legal aid - Income start page
          <a class="govuk-body" href="sort_income" aria-describedby="eligibility-completed">
            Review and sort incoming transactions
          </a>
-         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+         <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
        </li>
        <li class="app-task-list__item">
-        <a class="govuk-body"  aria-describedby="eligibility-completed">
+        <a class="govuk-body" href="sort_outgoings" aria-describedby="eligibility-completed">
           Review and sort outgoing transactions
         </a>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
       </li>
       <li class="app-task-list__item">
-        <a class="govuk-body"  aria-describedby="eligibility-completed">
+        <a class="govuk-body" href="dependants" aria-describedby="eligibility-completed">
           Dependants
         </a>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+        <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
       </li>
      </ul>
    </li>
@@ -101,46 +101,46 @@ Apply for legal aid - Income start page
     <ul class="app-task-list__items">
 
       <li class="app-task-list__item">
-        <a class="govuk-body"  aria-describedby="eligibility-completed">
+        <a class="govuk-body" href="property" aria-describedby="eligibility-completed">
           Property
-        <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
       </li>
       <li class="app-task-list__item">
-       <a class="govuk-body" " aria-describedby="eligibility-completed">
+       <a class="govuk-body" href="vehicles" aria-describedby="eligibility-completed">
          Vehicle
        </a>
-       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
      </li>
      <li class="app-task-list__item">
-       <a class="govuk-body"  aria-describedby="eligibility-completed">
+       <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
          Offline bank accounts
        </a>
-       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
      </li>
      <li class="app-task-list__item">
-       <a class="govuk-body" aria-describedby="eligibility-completed">
+       <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
          Savings and investments
        </a>
-       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
      </li>
      <li class="app-task-list__item">
-      <a class="govuk-body"  aria-describedby="eligibility-completed">
+      <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
         Other assets
       </a>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
     </li>
     <li class="app-task-list__item">
-      <a class="govuk-body"  aria-describedby="eligibility-completed">
+      <a class="govuk-body" href="#" aria-describedby="eligibility-completed">
         Scheme or charity payments
       </a>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
     </li>
     </ul>
   </li>
 
  </ol>
 
-        <a href="employment_income.html" role="button" class="govuk-button">
+        <a href="sort_income.html" role="button" class="govuk-button">
           Save and continue
         </a>
 

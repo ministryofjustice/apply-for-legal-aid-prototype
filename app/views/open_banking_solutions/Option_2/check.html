@@ -32,21 +32,16 @@ Apply for legal aid - Does your client use online banking
       <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-         Check if you can continue using this service
+            Do you agree with the following?
           </h1>
         </legend>
 
+        <p class="govuk-body">Your client:</p>
 
-
-        <p class="govuk-body">You agree that your client:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>uses online banking for all of their current accounts</li>
-          <li>will give Truelayer one-time access to their bank accounts to collect 3 months of bank statements</li>
-          <li>is not employed</li>
-        </ul>
-
-
-
+          <li>will let a trusted third-party financial service provider called TrueLayer collect 3 months of their bank statements on behalf of the LAA</li>
+            </ul>
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
@@ -59,22 +54,12 @@ Apply for legal aid - Does your client use online banking
             <label class="govuk-label govuk-radios__label" for="onlinebank-2">
               No, I do not agree
             </label> </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"">
-            <div class="govuk-form-group">
-
-
-              </label>
-            </div>
 
           </div>
-
-
-          </div>
+          </fieldset>
         </div>
-      </fieldset>
+
     </div>
-
-
           </div>
 
           <button type="submit" class="govuk-button">
