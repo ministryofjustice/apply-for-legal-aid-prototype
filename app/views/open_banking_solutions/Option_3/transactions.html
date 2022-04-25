@@ -17,6 +17,87 @@ Apply for legal aid - Salary statement
 }) }}
 {% endblock %}
 
+{% block pageScripts %}
+<script type="text/javascript">
+  function hide(elem) {
+    elem.style.display = 'none'
+  }
+  function show(elem) {
+    elem.style.display = 'block'
+  }
+  // open the assign category panel when user selects any checkbox
+  // and close when no checkboxes are selected
+  const allCheckboxes = document.querySelectorAll('.govuk-checkboxes__input')
+  const assignCategoryPanel = document.getElementById('assign-category-panel')
+  const selectedCounter = assignCategoryPanel.querySelector('#selected-count')
+  const successBanner = document.querySelector('#success-banner')
+  allCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', (e)=> {
+      hide(successBanner)
+      if (assignCategoryPanel.style.display === 'none') {
+        show(assignCategoryPanel)
+      }
+      let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
+      // update the counter
+      let selectedCount = checkedBoxes.length
+      selectedCounter.innerText = selectedCount
+      if (selectedCount === 0) {
+        hide(assignCategoryPanel)
+      }
+    })
+  })
+  // select all checkboxes
+  const selectAllBtn = document.querySelector('#select-all-btn')
+  selectAllBtn.addEventListener('click', (e) => {
+    if (assignCategoryPanel.style.display === 'none') {
+      show(assignCategoryPanel)
+      allCheckboxes.forEach((box) => {
+        box.checked = true
+      })
+      selectedCounter.innerText = allCheckboxes.length
+    } else {
+      hide(assignCategoryPanel)
+      allCheckboxes.forEach((box) => {
+        box.checked = false
+      })
+    }
+  })
+  // get the value of the assigned category and use it to update the tags of all selected transactions
+  const assignCategorySelect = assignCategoryPanel.querySelector('.govuk-select')
+  const assignCategoryBtn = assignCategoryPanel.querySelector('.govuk-button')
+  assignCategoryBtn.addEventListener('click', (e) => {
+    let category = assignCategorySelect.value.toUpperCase()
+    let checkedBoxes = document.querySelector('.govuk-table').querySelectorAll('input[type=checkbox]:checked');
+    checkedBoxes.forEach((item) => {
+      let tag = item.closest('.govuk-table__row').querySelector('.govuk-tag')
+      switch (category) {
+        case "":
+          break;
+        case 'Uncategorised':
+          tag.innerText = category
+          if (tag.classList.contains('govuk-tag--blue')) {
+            tag.classList.remove('govuk-tag--blue')
+            tag.classList.add('govuk-tag--grey')
+          }
+          item.checked = false
+          hide(assignCategoryPanel)
+          show(successBanner)
+          break;
+        default:
+          tag.innerText = category
+          if (tag.classList.contains('govuk-tag--grey')) {
+            tag.classList.remove('govuk-tag--grey')
+            tag.classList.add('govuk-tag--blue')
+          }
+          item.checked = false
+          hide(assignCategoryPanel)
+          show(successBanner)
+      }
+    })
+  })
+</script>
+{% endblock %}
+
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -85,13 +166,13 @@ Apply for legal aid - Salary statement
   }
 
 </style>
+{% include "open_banking_solutions/Option_2/_success_banner.html" %}
 <div class="moj-filter-layout">
   {% include "open_banking_solutions/Option_2/_filter.html" %}
 
   <div class="moj-filter-layout__content">
     <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="#" method="post" novalidate>
 
       <h1 class="govuk-heading-xl">
         Review and sort regular incoming payments into categories
@@ -101,6 +182,8 @@ Apply for legal aid - Salary statement
         <div class="moj-action-bar__filter"></div>
       </div>
 
+      {% include "open_banking_solutions/Option_2/_assign_category.html" %}
+
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
         <caption class="govuk-table__caption" style="padding-bottom:10px;">8 October 2020 to 7 January 2021</caption>
@@ -109,9 +192,9 @@ Apply for legal aid - Salary statement
 
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  scope="col" ><span ><a href="transactions_select.html">
+            <th class="govuk-table__header th_bespoke_hover" style="width:12%"  id="select-all-btn" scope="col" ><span >
               Select all
-            </a></span>
+            </span>
           </th>
           <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
           <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
@@ -928,8 +1011,6 @@ Apply for legal aid - Salary statement
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
         Save and come back later
       </a>
-
-    </form>
 
     </div>
     </div>

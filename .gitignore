@@ -18,4 +18,5 @@ app/views/stevey/bankaccounts/citizen_accounts.html
 app/views/stevey/bankaccounts/citizen_accounts1.html
 app/views/stevey/bankaccounts/dependants_3.html
 lib/extensions/_extensions.scss
+/lib/extensions/_extensions.scss
 app/views/.DS_Store
