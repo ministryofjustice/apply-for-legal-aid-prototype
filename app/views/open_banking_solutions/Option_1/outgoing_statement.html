@@ -1,0 +1,578 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+Apply for legal aid - Salary statement
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "outgoing_select"
+}) }}
+{% endblock %}
+
+{% block content %}
+<style media="screen">
+
+  .dot{
+    background-color:#005ea5;
+  }
+  .col_bespoke{
+    width:15%;
+  }
+
+  .govuk-table {
+    display: block
+  }
+
+  .govuk-table__header{
+    color: #0b0c0c;
+    background-color: #dee0e2;
+    border: 1px solid #bfc1c3;
+    box-shadow: 0 2px 0 #b5babe;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .th_bespoke{
+    padding-right: 15px;
+    position: relative;
+  }
+  .th_bespoke::before{
+    /*down*/
+    content:" \25bc";
+    position: absolute;
+    right: -1px;
+    top: 11px;
+    font-size: 0.6em;
+  }
+  .th_bespoke::after{
+    /*up*/
+    content:" \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.6em;
+  }
+  .th_bespoke_hover:hover{
+    background-color: #c8cacb;
+    cursor:pointer;
+  }
+  .govuk-table__head{
+    position: relative;
+  }
+  .govuk-table__cell{
+    padding-left: 10px;
+  }
+
+</style>
+<div >
+ 
+  <div>
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-xl">
+        Sam Doe's outgoing payments
+      </h1>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption" style="padding-bottom:10px;">8 October 2020 to 7 January 2021</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col">Date <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">Description</span></th>
+          <th class="govuk-table__header col_bespoke govuk-table__cell--numeric govuk-!-font-weight-bold th_bespoke_hover col_bespoke"  scope="col"><span class="th_bespoke">Outgoing</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">7 Jan 2021</td>
+            <td class="govuk-table__cell">WEST LONDON NURSERY FP -7/01/2021</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
+  
+          </tr>
+          <tr class="govuk-table__row">
+        
+            <td class="govuk-table__cell">5 Jan 2021</td>
+            <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+            
+          </tr>
+          <tr class="govuk-table__row">
+          
+            <td class="govuk-table__cell">3 Jan 2021</td>
+            <td class="govuk-table__cell">LANDLORD RENT PAYMENT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+            
+          </tr>
+        <!--  <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="income-1" name="income" type="checkbox" value="">
+                <label class="govuk-label govuk-checkboxes__label" for="income-1"></label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">31 Dec 2020</td>
+            <td class="govuk-table__cell">12345678A DWP UC</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£468.80</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">
+            Benefits
+            </strong></td>
+          </tr>  -->
+          <tr class="govuk-table__row">
+            
+            <td class="govuk-table__cell">31 Dec 2020</td>
+            <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+            
+          </tr>
+          <tr class="govuk-table__row">
+            
+              <td class="govuk-table__cell">27 Dec 2020</td>
+              <td class="govuk-table__cell">STUDENT LOANS REPAYMENT</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£1,000.50</td>
+              
+
+            </tr>
+          <tr class="govuk-table__row">
+            
+              <td class="govuk-table__cell">27 Dec 2020</td>
+              <td class="govuk-table__cell">1234 20DEC20 AMAZON PRIME AMZN.CO.U AMZN.CO.UK/PM LU</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£7.99</td>
+              
+
+            </tr>
+          <tr class="govuk-table__row">
+            
+            <td class="govuk-table__cell">24 Dec 2020</td>
+            <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+            
+          </tr>
+          <tr class="govuk-table__row">
+            
+              <td class="govuk-table__cell">21 Dec 2020</td>
+              <td class="govuk-table__cell">CASH BOX DEBIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+              
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">17 Dec 2020</td>
+              <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+            </tr>
+         
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">14 Dec 2020</td>
+                  <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+                  
+    
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">12 Dec 2020</td>
+                    <td class="govuk-table__cell">12345678A DWP DLA</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
+                    
+                  </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">11 Dec 2020</td>
+                    <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">-£450</td>
+                    
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10 Dec 2020</td>
+                    <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                    
+      
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">7 Dec 2020</td>
+                    <td class="govuk-table__cell">LAR HOMECARE PAYMENT</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
+                    
+      
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">7 Dec 2020</td>
+                      <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">-£100</td>
+                      
+        
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">7 Dec 2020</td>
+                        <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                        
+          
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">7 Dec 2020</td>
+                          <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+                          
+            
+                        </tr>
+                     
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">3 Dec 2020</td>
+                            <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                            
+              
+                          </tr>
+                          <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">30 Nov 2020</td>
+                              <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+                              
+                
+                            </tr>
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">26 Nov 2020</td>
+                              <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                              
+                
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">23 Nov 2020</td>
+                                <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">-£270</td>
+                                
+                  
+                              </tr>
+                              <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell">23 Nov 2020</td>
+                                  <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+                                  
+                    
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">23 Nov 2020</td>
+                                    <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£100</td>
+                                    
+                      
+                                  </tr>
+                                  <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell">20 Nov 2020</td>
+                                      <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                                      
+                        
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">20 Nov 2020</td>
+                                        <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£20</td>
+                                        
+                          
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell">20 Nov 2020</td>
+                                          <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£35</td>
+                                          
+                            
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                         
+                                            <td class="govuk-table__cell">20 Nov 2020</td>
+                                            <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£35</td>
+                                            
+                              
+                                          </tr>
+                                        
+                                            <tr class="govuk-table__row">
+                                             
+                                              <td class="govuk-table__cell">19 Nov 2020</td>
+                                              <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                                              
+                                
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                      
+                                                <td class="govuk-table__cell">16 Nov 2020</td>
+                                                <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
+                                                
+                                  
+                                              </tr>
+                                              <tr class="govuk-table__row">
+                                                  <td class="govuk-table__cell">16 Nov 2020</td>
+                                                  <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                  
+                                    
+                                                </tr>
+                                                <tr class="govuk-table__row">
+                                                    <td class="govuk-table__cell">16 Nov 2020</td>
+                                                    <td class="govuk-table__cell">CASH BOX CREDIT UN109521 FP 16/11/20 1234 1234567890987654321</td>
+                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£5</td>
+                                                    
+                                      
+                                                  </tr>
+                                                  <tr class="govuk-table__row">
+                                                      <td class="govuk-table__cell">16 Nov 2020</td>
+                                                      <td class="govuk-table__cell">16-Nov-20	30	SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£30</td>
+                                                      
+                                        
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell">16 Nov 2020</td>
+                                                        <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                        
+                                          
+                                                      </tr>
+                                                      <tr class="govuk-table__row">
+                                                          <td class="govuk-table__cell">13 Nov 2020</td>
+                                                          <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                                                          
+                                            
+                                                        </tr>
+                                                        <tr class="govuk-table__row">
+                                                          <td class="govuk-table__cell">12 Nov 2020</td>
+                                                          <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                                                          
+                                            
+                                                        </tr>
+                                                        <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell">12 Nov 2020</td>
+                                                            <td class="govuk-table__cell">12345678A DWP DLA</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
+                                                            
+                                                          </tr>
+                                                        <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell">9 Nov 2020</td>
+                                                            <td class="govuk-table__cell">1234567890-CHB</td>
+                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
+                                                            
+                                                          </tr>
+                                                          <tr class="govuk-table__row">
+                                                              <td class="govuk-table__cell">9 Nov 2020</td>
+                                                              <td class="govuk-table__cell">TEST MONEY FP 08/11/20 2057 1234567890987654321 VIA MOBILE - LVP</td>
+                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                              
+                                                            </tr>
+                                                            <tr class="govuk-table__row">
+                                                                <td class="govuk-table__cell">9 Nov 2020</td>
+                                                                <td class="govuk-table__cell">SAM DOE F FP 08/11/20 1234 098765432123456789TESTNAME JP F VIA MOBILE - LVP</td>
+                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                                
+                                                  
+                                                              </tr>
+                                                              <tr class="govuk-table__row">
+                                                                  <td class="govuk-table__cell">9 Nov 2020</td>
+                                                                  <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£40</td>
+                                                                  
+                                                    
+                                                                </tr>
+                                                                <tr class="govuk-table__row">
+                                                                    <td class="govuk-table__cell">9 Nov 2020</td>
+                                                                    <td class="govuk-table__cell">1234 07NOV20 DINE ORDER ENGLISH TOWN GB PAYMENT</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£12.30</td>
+                                                                    
+                                                      
+                                                                  </tr>
+                                                                  <tr class="govuk-table__row">
+                                                                    
+                                                                    <td class="govuk-table__cell">7 Nov 2020</td>
+                                                                    <td class="govuk-table__cell">LAR HOMECARE PAYMENT</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£500</td>
+                                                                    
+                                                      
+                                                                  </tr>
+                                                                  <tr class="govuk-table__row">
+                                                                   
+                                                                    <td class="govuk-table__cell">5 Nov 2020</td>
+                                                                    <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                                                                    
+                                                      
+                                                                  </tr>
+                                                                  <tr class="govuk-table__row">
+                                                                   
+                                                                      <td class="govuk-table__cell">2 Nov 2020</td>
+                                                                      <td class="govuk-table__cell">1234567890-CHB</td>
+                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr class="govuk-table__row">
+                                                                      
+                                                                        <td class="govuk-table__cell">2 Nov 2020</td>
+                                                                        <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                                        
+                                                          
+                                                                      </tr>
+                                                                    
+                                                                        <tr class="govuk-table__row">
+                                                                          
+                                                                          <td class="govuk-table__cell">29 Oct 2020</td>
+                                                                          <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                                                                          
+                                                            
+                                                                        </tr>
+                                                                        <tr class="govuk-table__row">
+                                                                         
+                                                                            <td class="govuk-table__cell">27 Oct 2020</td>
+                                                                            <td class="govuk-table__cell"> BANK REPAYMENT</td>
+                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£0.99</td>
+                                                                            
+                                                              
+                                                                          </tr>
+                                                                          <tr class="govuk-table__row">
+                                                                          
+                                                                              <td class="govuk-table__cell">26 Oct 2020</td>
+                                                                              <td class="govuk-table__cell">1234567890-CHB</td>
+                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
+                                                                              
+                                                                            </tr>
+                                                                            <tr class="govuk-table__row">
+                                                                            
+                                                                                <td class="govuk-table__cell">26 Oct 2020</td>
+                                                                                <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£15</td>
+                                                                                
+                                                                  
+                                                                              </tr>
+
+                                                                                      <tr class="govuk-table__row">
+                                                                                       
+                                                                                          <td class="govuk-table__cell">23 Oct 2020</td>
+                                                                                          <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                                                          
+                                                                            
+                                                                                        </tr>
+                                                                                        <tr class="govuk-table__row">
+                                                                                         
+                                                                                            <td class="govuk-table__cell">23 Oct 2020</td>
+                                                                                            <td class="govuk-table__cell">SALLY DOE FP 23/10/20 1234 0987654321234567890</td>
+                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£310</td>
+                                                                                            
+                                                                              
+                                                                                          </tr>
+                                                                                          <tr class="govuk-table__row">
+                                                                                           
+                                                                                            <td class="govuk-table__cell">22 Oct 2020</td>
+                                                                                            <td class="govuk-table__cell">CYGNET SECURITY LTD PAYMENT</td>
+                                                                                            <td class="govuk-table__cell govuk-table__cell--numeric">-£125</td>
+                                                                                            
+                                                                              
+                                                                                          </tr>
+                                                                                          <tr class="govuk-table__row">
+                                                                                            
+                                                                                              <td class="govuk-table__cell">21 Oct 2020</td>
+                                                                                              <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                                              <td class="govuk-table__cell govuk-table__cell--numeric">-£60</td>
+                                                                                              
+                                                                                
+                                                                                            </tr>
+                                                                                            <tr class="govuk-table__row">
+                                                                                              
+                                                                                                <td class="govuk-table__cell">19 Oct 2020</td>
+                                                                                                <td class="govuk-table__cell">1234567890-CHB</td>
+                                                                                                <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
+                                                                                                
+                                                                                              </tr>
+                                                                                            <tr class="govuk-table__row">
+                                                                                                
+                                                                                                  <td class="govuk-table__cell">16 Oct 2020</td>
+                                                                                                  <td class="govuk-table__cell">12345678A DWP UC</td>
+                                                                                                  <td class="govuk-table__cell govuk-table__cell--numeric">-£280.71</td>
+                                                                                                  
+                                                                                                </tr>
+                                                                                               <tr class="govuk-table__row">
+                                                                                                 
+                                                                                                    <td class="govuk-table__cell">16 Oct 2020</td>
+                                                                                                    <td class="govuk-table__cell">12345678A DWP UC</td>
+                                                                                                    <td class="govuk-table__cell govuk-table__cell--numeric">-£368.20</td>
+                                                                                                    
+                                                                                                  </tr>
+                                                                                                  <tr class="govuk-table__row">
+                                                                                                  
+                                                                                                      <td class="govuk-table__cell">13 Oct 2020</td>
+                                                                                                      <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                                                      <td class="govuk-table__cell govuk-table__cell--numeric">-£10</td>
+                                                                                                      
+                                                                                        
+                                                                                                    </tr>
+                                                                                                    <tr class="govuk-table__row">
+                                                                                                     
+                                                                                                        <td class="govuk-table__cell">12 Oct 2020</td>
+                                                                                                        <td class="govuk-table__cell">12345678A DWP DLA</td>
+                                                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£80</td>
+                                                                                                        
+                                                                                                      </tr>
+
+
+                                                                                                    <tr class="govuk-table__row">
+                                                                                                     
+                                                                                                        <td class="govuk-table__cell">12 Oct 2020</td>
+                                                                                                        <td class="govuk-table__cell">1234567890-CHB</td>
+                                                                                                        <td class="govuk-table__cell govuk-table__cell--numeric">-£21.05</td>
+                                                                                                        
+                                                                                                      </tr>
+                                                                                                      <tr class="govuk-table__row">
+                                                                                                        
+                                                                                                          <td class="govuk-table__cell">9 Oct 2020</td>
+                                                                                                          <td class="govuk-table__cell">SAM DOE MONEY FP 09/10/20 1234 0987654321234567890</td>
+                                                                                                          <td class="govuk-table__cell govuk-table__cell--numeric">-£50</td>
+                                                                                                          
+                                                                                            
+                                                                                                        </tr>
+                                                                                                </tbody>
+      </table>
+      
+
+    </form>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
