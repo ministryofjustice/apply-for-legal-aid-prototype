@@ -18,6 +18,10 @@ $( document ).ready(function() {
       $('.moj-action-bar__filter').find('button').click()
     })
 
+    $('#apply-filters-btn').click((e) => {
+      $('.moj-action-bar__filter').find('button').click()
+    })
+
     new MOJFrontend.FilterToggleButton({
       bigModeMediaQuery: "(min-width: 48.063em)",
       startHidden: true,
