@@ -1451,5 +1451,20 @@ router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
   }
 })
 
+// Other bank accounts - client
+router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['share']
+
+  if (over18 === 'no') {
+    res.redirect('/open_banking_solutions/Option_3/upload')
+  } else {
+    res.redirect('/open_banking_solutions/Option_3/check')
+  }
+})
+
 // Add your routes here - above the module.exports line
 module.exports = router
