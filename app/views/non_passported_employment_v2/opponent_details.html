@@ -45,8 +45,17 @@ Apply for legal aid - Alternative funding
 </h2>
 
 <div class="govuk-form-group">
+    <label class="govuk-label" for="firstname">
+    First name
+    </label>
+  <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+</div>
 
-  <input class="govuk-input govuk-!-width-three-quarters" autocomplete="off" id="firstname" name="firstname" type="text">
+<div class="govuk-form-group">
+    <label class="govuk-label" for="lastname">
+    Last name
+    </label>
+  <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
 </div>
 
 <h2 class="govuk-heading-m">Does the opponent have the mental capacity to understand the terms of a court order?</h2>
@@ -192,4 +201,3 @@ Apply for legal aid - Alternative funding
   </div>
 
 {% endblock %}
-
