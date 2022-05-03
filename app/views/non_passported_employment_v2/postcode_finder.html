@@ -52,12 +52,12 @@ Apply for legal aid - Correspondence address lookup
     <form action="postcode_select" method="post" novalidate>
       <div class="govuk-form-group">
 
-        <label class="govuk-label" for="postcode">
-        Postcode
-        </label>
+        <label class="govuk-label govuk-label--m" for="example">
+    Postcode
+  </label>
 
         <span id="postcode-hint" class="govuk-hint">
-          This must be a valid UK postcode.
+          This must be a UK postcode, for example SW1A 2AA.
         </span>
 
         <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
@@ -80,5 +80,3 @@ Apply for legal aid - Correspondence address lookup
 </div>
 
 {% endblock %}
-
-
