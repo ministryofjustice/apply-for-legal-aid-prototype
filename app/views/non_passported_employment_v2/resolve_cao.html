@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
   {{ govukBackLink({
     text: "Back",
-      href: "children_cao"
+      href: "children_pso"
   }) }}
 {% endblock %}
 
@@ -26,25 +26,48 @@ Apply for legal aid - Statement of case
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="prospects_cao" method="post" novalidate>
+    <form action="prospects_pso" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <span class="govuk-caption-xl">Child arrangements order (residence)</span>
+
             <h1 class="govuk-fieldset__heading">
-              What attempts have been made to settle the matter?
+              Have attempts been made to settle the matter?
             </h1>
           </legend>
 
-          <div id="event-name-hint" class="govuk-hint">
-    Tell us if correspondence or mediation has been tried, or if no attempts have been made.
-  </div>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
 
-            <div class="govuk-form-group">
-            <textarea class="govuk-textarea" autocomplete="off" id="more-detail" name="statement" rows="8" aria-describedby="more-detail-hint"></textarea>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                Yes
+              </label>
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Enter details of any attempts at correspondence or mediation
+                </label>
+                <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                No
+              </label>
+            </div>
+
+            </div>
+
+            <br><br>
+
+
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -59,4 +82,3 @@ Apply for legal aid - Statement of case
     </div>
 
 {% endblock %}
-
