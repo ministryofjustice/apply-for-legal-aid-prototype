@@ -40,18 +40,31 @@ Apply for legal aid - Client details
             </span>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" autocomplete="off" for="dateofbirth">
-              Full name
-              </label>
-              <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Name
+                </legend>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="firstname">
+                    First name
+                    </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="lastname">
+                    Last name
+                    </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
+                </div>
+              </fieldset>
             </div>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="dateofbirth">
-              Date of birth
-            </label>
+                        <div class="govuk-form-group">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"> Date of birth
+                          </legend>
                 <span id="dob-hint" class="govuk-hint">
-                  For example, 31 3 1980.
+                  For example, 31 3 2017.
                 </span>
                 <div class="govuk-date-input" id="dob">
                   <div class="govuk-date-input__item">
@@ -102,4 +115,3 @@ Apply for legal aid - Client details
     </div>
 
 {% endblock %}
-

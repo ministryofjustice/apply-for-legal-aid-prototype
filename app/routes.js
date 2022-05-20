@@ -1165,20 +1165,6 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
   }
 })
 
-// DWP check fail - prototype
-router.post('/non_passported_employment_v2/employed', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let over18 = req.session.data['evidence']
-
-  if (over18 === 'no') {
-    res.redirect('/non_passported_employment_v2/employed')
-  } else {
-    res.redirect('/passported_v2/substantive_application')
-  }
-})
 
 // DWP check fail - prototype
 router.post('/non_passported_employment_v2/check_details', function (req, res) {
@@ -1448,6 +1434,21 @@ router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
     res.redirect('/open_banking_solutions/Option_2/upload')
   } else {
     res.redirect('/open_banking_solutions/Option_2/check')
+  }
+})
+
+// Other bank accounts - client
+router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let over18 = req.session.data['share']
+
+  if (over18 === 'no') {
+    res.redirect('/open_banking_solutions/Option_3/upload')
+  } else {
+    res.redirect('/open_banking_solutions/Option_3/check')
   }
 })
 
