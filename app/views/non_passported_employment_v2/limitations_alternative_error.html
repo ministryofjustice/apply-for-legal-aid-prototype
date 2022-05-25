@@ -48,6 +48,19 @@ $('#search').hideseek({
   </div>
 </div> -->
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#substantive-cost-error">The substantive cost limit cannot be more than £25,000</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
@@ -238,7 +251,7 @@ $('#search').hideseek({
             <label class="govuk-label" for="policies-value">
               Enter a new substantive cost limit
             </label>
-            <p id="contact-by-email-error" class="govuk-error-message">
+            <p id="substantive-cost-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> The substantive cost limit cannot be more than £25,000
             </p>
 <div class="govuk-input__wrapper">
