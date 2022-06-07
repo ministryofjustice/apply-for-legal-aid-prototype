@@ -17,7 +17,7 @@ Apply for legal aid - Employment status
 
   {{ govukBackLink({
     text: "Back",
-      href: "means_assessment_required"
+      href: "postcode_select"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Employment status
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="consent" method="post" class="form">
+        <form action="search" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -76,7 +76,7 @@ Apply for legal aid - Employment status
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                   <!-- I receive none of these types of income --> None of the above
+                   My client is not employed
                  </label>
                </div>
 
