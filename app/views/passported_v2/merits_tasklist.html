@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "means_results"
+  href: "merits_start_page"
 }) }}
 
 {% endblock %}
@@ -65,18 +65,17 @@ Apply for legal aid - Income start page
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <a class="govuk-body" href="statement" aria-describedby="eligibility-completed">
-           Statement of case
-         </a>
-         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
-       </li>
-       <li class="app-task-list__item">
          <a class="govuk-body" href="children_1" aria-describedby="eligibility-completed">
            Children involved in this application
          </a>
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
-
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="statement" aria-describedby="eligibility-completed">
+           Statement of case
+         </a>
+         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
      </ul>
    </li>
 
@@ -123,14 +122,8 @@ Apply for legal aid - Income start page
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li> -->
        <li class="app-task-list__item">
-         <a class="govuk-body" href="prospects_cao" aria-describedby="eligibility-completed">
-           Chances of success
-         </a>
-         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
-       </li>
-       <li class="app-task-list__item">
          <a class="govuk-body" aria-describedby="eligibility-completed">
-           Children involved in this proceeding
+           Children covered by proceeding
          </a>
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li>
@@ -146,7 +139,12 @@ Apply for legal aid - Income start page
          </a>
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li> -->
-
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="prospects_cao" aria-describedby="eligibility-completed">
+           Chances of success
+         </a>
+         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
      </ul>
    </li>
 
@@ -165,14 +163,8 @@ Apply for legal aid - Income start page
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li> -->
        <li class="app-task-list__item">
-         <a class="govuk-body" href="prospects_cao" aria-describedby="eligibility-completed">
-           Chances of success
-         </a>
-         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
-       </li>
-       <li class="app-task-list__item">
          <a class="govuk-body" aria-describedby="eligibility-completed">
-           Children involved in this proceeding
+           Children covered by proceeding
          </a>
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li>
@@ -182,13 +174,18 @@ Apply for legal aid - Income start page
          </a>
          <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
-
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="prospects_cao" aria-describedby="eligibility-completed">
+           Chances of success
+         </a>
+         <strong class="govuk-tag moj-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
      </ul>
    </li>
 
  </ol>
 
-        <a href="#" role="button" class="govuk-button">
+        <a href="upload" role="button" class="govuk-button">
           Save and continue
         </a>
 
@@ -200,3 +197,5 @@ Apply for legal aid - Income start page
   </div>
 
   {% endblock %}
+
+  

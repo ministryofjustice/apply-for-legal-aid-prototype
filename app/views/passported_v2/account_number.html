@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "resolve_cao"
+      href: "start_page"
   }) }}
 {% endblock %}
 
@@ -25,17 +25,15 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="home_cao" method="post" class="form">
+        <form action="dashboard" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                          <span class="govuk-caption-xl">Child arrangements order (residence)</span>
-                          <h1 class="govuk-fieldset__heading">
-                            Is the chance of a successful outcome 50% or better?
-                          </h1>
-                        </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Is 2M012V your office account number?
+                </h1>
+              </legend>
 
               <div class="govuk-!-padding-top-4"></div>
 
@@ -46,37 +44,19 @@ Apply for legal aid - Property and mortgage
               <div class="govuk-radios">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="property-1" name="vehicles" type="radio" value="yes" {{ checked("property","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="capital-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no">
+                  <input class="govuk-radios__input" id="property-3" name="vehicles" type="radio" value="no" {{ checked("property","no") }}>
                   <label class="govuk-label govuk-radios__label" for="property-3">
-                    No
+                    No, another office is handling this application
                   </label>
                 </div>
               </div>
-
-
-
-  <!--   <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="capital-1">
-                    No
-                  </label>
-                </div>
-              </div> -->
-
 
             </fieldset>
           </div>
@@ -93,3 +73,5 @@ Apply for legal aid - Property and mortgage
     </div>
 
 {% endblock %}
+
+

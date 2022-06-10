@@ -45,7 +45,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own the home they live in?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -58,7 +58,7 @@ Apply for legal aid - Check your answers - Merits
             How much is your client's home worth?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -71,7 +71,7 @@ Apply for legal aid - Check your answers - Merits
             What is the outstanding mortgage on your client's home?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -84,7 +84,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own their home with anyone else?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -97,7 +97,7 @@ Apply for legal aid - Check your answers - Merits
             What % share of their home does your client legally own?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -117,7 +117,7 @@ Apply for legal aid - Check your answers - Merits
             Does your client own a vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -130,7 +130,7 @@ Apply for legal aid - Check your answers - Merits
             What is the estimated value of the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -143,7 +143,7 @@ Apply for legal aid - Check your answers - Merits
             Are there any payments left on the vehicle?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -156,7 +156,7 @@ Apply for legal aid - Check your answers - Merits
             Did your client buy the vehicle over 3 years ago?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -169,7 +169,7 @@ Apply for legal aid - Check your answers - Merits
             Is the vehicle in regular use?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -179,335 +179,369 @@ Apply for legal aid - Check your answers - Merits
         </div>
         </dl>
 
-        <h2 class="govuk-heading-m">
-          Which bank accounts does your client have?
-        </h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Which bank accounts does your client have?</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p><a class="govuk-link" style="float:right;" href="bank_accounts">Change</a></p>
+          </div>
+        </div>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-             <div class="govuk-summary-list__row">
-               <dt class="govuk-summary-list__key">
-            Current account
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Savings account
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        </dl>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Current account</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell govuk-body" scope="row">Savings account</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            </tr>
+          </tbody>
+        </table>
 
-        <h2 class="govuk-heading-m">
-          Which types of savings or investments does your client have?
-        </h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Money not in a bank account
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Which savings or investments does your client have?</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p><a class="govuk-link" style="float:right;" href="savings_investments_select">Change</a></p>
+          </div>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Access to another person's bank account
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ISAs, National Savings Certificates and Premium Bonds
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Shares in a PLC (public limited company)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            PEPs, unit trusts, capital bonds and government stocks
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Life assurance and endowment policies not linked to a mortgage
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        </dl>
 
-        <h2 class="govuk-heading-m">
-          Which types of assets does your client have?
-        </h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+      Money not in a bank account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £745
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#firstname">
+                <span class="govuk-visually-hidden">first name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Access to another person's bank account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1,280.72
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#dob-day">
+                <span class="govuk-visually-hidden">dob</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ISAs, National Savings Certificates and Premium Bonds
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £2,657
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#national-insurance-number">
+                <span class="govuk-visually-hidden">national insurance number</span>
+              </a>
+            </dd>
+          </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Valuable items worth more than £500
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Second property or holiday home
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Timeshare property
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Land
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Money or assets from the estate of a person who has died
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Money owed to them, including from a private mortgage
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Interest in a trust
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        </dl>
+            <dt class="govuk-summary-list__key">
+              Shares in a PLC
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1,345
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#email-address">
+                <span class="govuk-visually-hidden">email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              PEPs, unit trusts, capital bonds and government stocks
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1,256
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode_finder#postcode">
+                <span class="govuk-visually-hidden">correspondance address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Life assurance and endowment policies
 
-        <h2 class="govuk-heading-m">
-          Payments from scheme or charities
-        </h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            England Infected Blood Support Scheme
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £556
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode_finder#postcode">
+                <span class="govuk-visually-hidden">correspondance address</span>
+              </a>
+            </dd>
+          </div>
+
+          </dl>
+
+        <div class="govuk-!-padding-bottom-3"></div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Which assets does your client have?</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p><a class="govuk-link" style="float:right;" href="other_capital_select">Change</a></p>
+          </div>
         </div>
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Items worth £500 or more
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £756
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#firstname">
+                <span class="govuk-visually-hidden">first name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Second property or holiday home: value
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £100,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#dob-day">
+                <span class="govuk-visually-hidden">dob</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Second property or holiday home: outstanding mortgage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £50,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#dob-day">
+                <span class="govuk-visually-hidden">dob</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Second property or holiday home: % owned
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50%
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#dob-day">
+                <span class="govuk-visually-hidden">dob</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Timeshare
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £22,450
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#national-insurance-number">
+                <span class="govuk-visually-hidden">national insurance number</span>
+              </a>
+            </dd>
+          </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Vaccine Damage Payments Scheme
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Variant Creutzfeldt-Jakob disease (vCJD) Trust
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Criminal Injuries Compensation Scheme
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Emergencies Trust (NET)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           We Love Manchester Emergency Fund
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           The London Emergencies Trust
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
-        </div>
-        </dl>
+            <dt class="govuk-summary-list__key">
+              Land
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £87,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="client_details#email-address">
+                <span class="govuk-visually-hidden">email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Money or assets from the estate of a person who has died
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £4,000.50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode_finder#postcode">
+                <span class="govuk-visually-hidden">correspondance address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Money owed to your client
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £4,123
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode_finder#postcode">
+                <span class="govuk-visually-hidden">correspondance address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Interest in a trust
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £6,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode_finder#postcode">
+                <span class="govuk-visually-hidden">correspondance address</span>
+              </a>
+            </dd>
+          </div>
+          </dl>
 
         <h2 class="govuk-heading-m">
           Restrictions on your client's assets
         </h2>
+
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is your client prohibited from selling or borrowing against their assets? 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['...'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change <span class="govuk-visually-hidden">blank</span>
-            </a>
-          </dd>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Is your client prohibited from selling or borrowing against their assets? 
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Yes
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> name</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Details of restrictions
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Answer goes here.
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Payments from scheme or charities</h2>
         </div>
-     </dl>
+        <div class="govuk-grid-column-one-third">
+          <p><a class="govuk-link" style="float:right;" href="savings_investments_select">Change</a></p>
+        </div>
+      </div>
+
+   <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="app-check-your-answers__policy_disregards_items">
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_0">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       England Infected Blood Support Scheme
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_1">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       Vaccine Damage Payments Scheme
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_2">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       Variant Creutzfeldt-Jakob disease (vCJD) Trust
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_3">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       Criminal Injuries Compensation Scheme
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_4">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       National Emergencies Trust (NET)
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_5">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       We Love Manchester Emergency Fund
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+
+           <div class="govuk-summary-list__row  normal-word-break" id="app-check-your-answers__policy_disregards_6">
+     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+       The London Emergencies Trust
+     </dt>
+     <!--  in-line styling due to issues around pdf generation in our production envs -->
+     <dd class="govuk-summary-list__value" style="">
+           No
+     </dd>
+   </div>
+   </dl>
+
 
 
    <h2 class="govuk-heading-m">What happens next</h2>

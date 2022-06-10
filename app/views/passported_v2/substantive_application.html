@@ -17,7 +17,7 @@ Apply for legal aid - Does your client use online banking
 
   {{ govukBackLink({
     text: "Back",
-      href: "passported"
+      href: "consent"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Does your client use online banking
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="delegated_functions_confirmation" method="post" class="form">
+        <form action="assessment_start" method="post" class="form">
 
 
                 <div class="govuk-form-group">
@@ -36,38 +36,54 @@ Apply for legal aid - Does your client use online banking
           </h1>
         </legend>
 
-      <div id="more-detail-hint" class="govuk-hint">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</div>
+        <p class="govuk-body">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</p>
+
+    <!--    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What you need to make a substantive application
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">You’ll need to tell us about your client's:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>savings, investments and other capital</li>
+      <li>income, outgoings and dependants (if they do not receive passporting benefits)</li>
+      </ul>
+
+      <p class="govuk-body">You'll also need to provide details of the case.</p>
+
+  </div>
+</details> -->
+
 
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="onlinebank-1" name="onlinebank" type="radio" value="yes" {{ checked("online-banking","yes") }}>
+            <input class="govuk-radios__input" id="onlinebank-1" name="property" type="radio" value="yes" {{ checked("online-banking","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="onlinebank-1">
                     Yes
                   </label></div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="onlinebank-2" name="onlinebank" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
+            <input class="govuk-radios__input" id="onlinebank-2" name="property" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("online-banking","no") }}>
             <label class="govuk-label govuk-radios__label" for="onlinebank-2">
               No, I'll do it later
             </label> </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2" style="padding-top:15px;">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="onlinebank-2">
-              <!--  By continuing you're notifying the Legal Aid Agency that you've used delegated functions.<br><br> -->You must submit a substantive application by 11 June 2019.
-              </label>
-            </div>
-
-          </div>
-
-
           </div>
         </div>
-      </fieldset>
     </div>
+
           </div>
 
-          </details>
+          <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You must submit a substantive application by 31 March 2022.
+  </strong>
+</div>
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -82,5 +98,3 @@ Apply for legal aid - Does your client use online banking
     </div>
 
 {% endblock %}
-
-
