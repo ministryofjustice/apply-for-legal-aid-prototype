@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="upload" method="post" class="form">
+        <form action="upload" method="get" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -44,7 +44,7 @@ Apply for legal aid - Property and mortgage
 
               <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="open_banking" name="share" type="radio" value="yes" data-aria-controls="open_banking" >
+                <input class="govuk-radios__input" id="open_banking" name="share" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="open_banking">
                   Yes
                   <div id="hint-2" class="govuk-hint">With your client's consent, a third-party service (TrueLayer) will securely access their bank statements on our behalf.</div>
@@ -56,8 +56,6 @@ Apply for legal aid - Property and mortgage
                 </span>
                 </summary>
                 <div class="govuk-details__text">
-
-
                 <p class="govuk-body">TrueLayer is a trusted third-party financial service provider that acts as a messenger between your client's bank and the LAA.</p>
                 <p class="govuk-body">It allows your client to quickly and securely share their bank statements without having to gather physical bank statements.</p>
                 <p class="govuk-body">They’re regulated by the Financial Conduct Authority (FCA) and will:</p>
@@ -72,7 +70,7 @@ Apply for legal aid - Property and mortgage
               </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="upload" name="share" type="radio" value="no" data-aria-controls="upload" >
+                  <input class="govuk-radios__input" id="upload" name="share" type="radio" value="no">
                   <label class="govuk-label govuk-radios__label" for="upload">
                     No
                     <div id="hint-2" class="govuk-hint">You'll need to upload bank statements. Your application may take longer to process as a caseworker will need to review them.</div>
@@ -80,28 +78,6 @@ Apply for legal aid - Property and mortgage
                 </div>
                 </div>
                 </div>
-
-
-
-
-        <!--  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Why does my client need to do this?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">We'll give your client access to the service and ask them to:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-    <li>sign in to online banking using a secure third-party service</li>
-    <li>give us one-time access to their bank accounts so we can download 3 months of bank statements</li>
-    <li>tell us about their income and outgoings</li>
-    </ul>
-
-    <p class="govuk-body">Once they've done this, you'll need to categorise their bank transactions so we can calculate their disposable income.</p>
-  </div>
-</details> -->
 
           <button type="submit" class="govuk-button">
             Save and continue

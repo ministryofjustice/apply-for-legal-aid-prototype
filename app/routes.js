@@ -1433,7 +1433,7 @@ router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
   if (over18 === 'no') {
     res.redirect('/open_banking_solutions/Option_2/upload')
   } else {
-    res.redirect('/open_banking_solutions/Option_2/check')
+    res.redirect('/open_banking_solutions/Option_2/email_address')
   }
 })
 
@@ -1451,6 +1451,7 @@ router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
     res.redirect('/open_banking_solutions/Option_3/check')
   }
 })
+
 
 // Add your routes here - above the module.exports line
 module.exports = router
