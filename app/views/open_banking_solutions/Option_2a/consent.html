@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="upload" method="post" class="form">
+        <form action="check" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -59,24 +59,7 @@ Apply for legal aid - Property and mortgage
               </details>
 
               <h2 class="govuk-heading-m">
-                How your client can share their bank statements
-              </h2>
-            <!--  <p class="govuk-body">Your client will need to:</p> -->
-              <ol class="govuk-list govuk-list--number">
-  <li>They access 'Apply for legal aid' using a link we'll send them in an email.</li>
-  <li>They select the banks they use online banking with.</li>
-    <li>We redirect your client to their bank's website or app.</li>
-      <li>They give consent for TrueLayer to securely access their account details.</li>
-  <li>TrueLayer shares their bank statements with us.</li>
-
-</ol>
-
-<!-- <p class="govuk-body">You can then view your client's bank statements and sort their transactions into categories.</p> -->
-
-
-
-              <h2 class="govuk-heading-m">
-                Can your client share their bank statements with us via TrueLayer?
+                Does your client use online banking?
               </h2>
 
               <div class="govuk-radios" data-module="govuk-radios">
@@ -87,13 +70,54 @@ Apply for legal aid - Property and mortgage
               </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="upload" name="share" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="upload">
-                    No, I want to upload bank statements
-                    <div id="hint-2" class="govuk-hint">Your application may take longer to process as a caseworker will need to check your client's bank statements.</div>
+                  <input class="govuk-radios__input" id="open_banking-2" name="share" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="open_banking-2">
+                    No
                     </label>
                 </div>
                 </div>
+
+                <br><br>
+
+                <h2 class="govuk-heading-m">
+                  Does your client have an email address?
+                </h2>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="open_banking-3" name="share-2" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="open_banking-3">
+                    Yes</label>
+                </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="open_banking-4" name="share-2" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="open_banking-4">
+                      No
+                      </label>
+                  </div>
+                  </div>
+
+                  <br><br>
+
+                  <h2 class="govuk-heading-m">
+                    Is your client happy to share their bank statements with us via TrueLayer?
+                  </h2>
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="open_banking-5" name="share-3" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="open_banking-5">
+                      Yes</label>
+                  </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="open_banking-6" name="share-3" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="open_banking-6">
+                        No
+                        </label>
+                    </div>
+                    </div>
                 </div>
 
           <button type="submit" class="govuk-button">
@@ -107,6 +131,8 @@ Apply for legal aid - Property and mortgage
         </form>
       </div>
     </div>
+
+    <p class="govuk-body"><a href="upload" style="color: #b7b7b7;">If one or more 'No' radios are selected the provider has to upload bank statements</p>
 
 
 {% endblock %}

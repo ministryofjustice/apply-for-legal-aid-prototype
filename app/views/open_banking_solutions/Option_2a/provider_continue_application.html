@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Continue Sam Doe’s financial assessment</h1>
+
+        <p class="govuk-body-l">Your client has shared their financial information. You need to do the following:</p>
+
+        <h3 class="govuk-heading-m">1. Review their employment details</h3>
+
+        <p class="govuk-body">We'll show you the information HMRC shared with us.</p>
+
+        <h3 class="govuk-heading-m">2. Tell us about their income and outgoings</h3>
+
+        <p class="govuk-body">We need to know if your client:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>receives certain types of income (for example, benefits)</li>
+          <li>has certain regular outgoings (for example, childcare)</li>
+          </ul>
+
+        <h3 class="govuk-heading-m">3. Assign categories to bank transactions</h3>
+
+<p class="govuk-body">View your client's bank statements and assign a category to each transaction (for example, housing).</p>
+
+<h3 class="govuk-heading-m">4. Tell us about their dependants</h3>
+
+<p class="govuk-body">Provide details of your client's dependants (if they have any).</p>
+
+<h3 class="govuk-heading-m">5. Tell us about their capital</h3>
+
+<p class="govuk-body">Provide details of your client's savings, investments and other assets.</p>
+
+<br>
+<br>
+
+<a class="govuk-button" href="employment_income" role="button">
+  Continue
+</a>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}

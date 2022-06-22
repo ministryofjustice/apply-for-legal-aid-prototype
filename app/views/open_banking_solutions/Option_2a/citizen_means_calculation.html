@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check client financial assessment
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <!-- {{ govukBackLink({
+    text: "Back",
+      href: "citizen_accounts"
+  }) }} -->
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+   <div class="govuk-panel govuk-panel--confirmation">
+
+          <br>
+          <h1 class="govuk-panel__title">
+          You've shared your financial information
+          </h1>
+          <div class="govuk-panel__body">
+          Name: <strong>John Doe</strong><br>
+          Reference: <strong>L-1DU-D0W</strong>
+        </div>
+        </div>
+
+     <div class="govuk-!-padding-bottom-4"></div>
+
+              <h2 class="govuk-heading-m">What happens next</h2>
+
+              <p class="govuk-body">Your solicitor will use the information you provided to help them complete your application.</p>
+
+              <p class="govuk-body">We'll confirm if you qualify for legal aid once we've checked your financial situation and the details of your case.</p>
+
+              <div class="govuk-inset-text">
+              <a href="feedback" class="govuk_link">Give feedback</a> to help us improve this service.</div>
+
+            </div>
+          </div>
+
+         <div class="govuk-!-padding-bottom-2"></div>
+
+                 <a class="govuk-button" href="provider_continue_application" role="button" style="background-color: #b10e1e;">
+                   Go to provider journey
+                 </a>
+
+
+  {% endblock %}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "upload"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">What you need to do next</h1>
+
+        <h3 class="govuk-heading-m">1. Review your client's employment details</h3>
+
+        <p class="govuk-body">We'll show you the information HMRC shared with us.</p>
+
+        <h3 class="govuk-heading-m">2. Tell us about your client's income and outgoings</h3>
+
+        <p class="govuk-body">We need to know if they:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>receive certain types of income (for example, benefits)</li>
+          <li>have certain regular outgoings (for example, childcare)</li>
+          </ul>
+
+        <h3 class="govuk-heading-m">3. Sort your client's bank transactions into categories</h3>
+
+<p class="govuk-body">View their bank statements and assign a category to each transaction (for example, housing).</p>
+
+<h3 class="govuk-heading-m">4. Tell us about your client's dependants</h3>
+
+<p class="govuk-body">Provide details of their dependants (if they have any).</p>
+
+<h3 class="govuk-heading-m">5. Tell us about your client's capital</h3>
+
+<p class="govuk-body">Provide details of their savings, investments and other assets.</p>
+
+<br>
+<br>
+
+<a class="govuk-button" href="employment_income" role="button">
+  Continue
+</a>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}
