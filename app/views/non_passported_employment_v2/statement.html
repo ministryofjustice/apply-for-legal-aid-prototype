@@ -27,19 +27,19 @@ Apply for legal aid - Statement of case
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Provide a statement of case</h1>
 
-        <form action="home_case_details_added" method="post" novalidate>
+        <form action="home_case_details_added" method="post" class="form">
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="more-detail">
 
-            <p class="govuk-body">You need to provide details of:</p>
+            <p class="govuk-body">Your statement must include:</p>
 
                 <ul class="govuk-list govuk-list--bullet">
-                  <li>the latest domestic abuse incident</li>
-                  <li>what has happened in the case so far</li>
-                  <li>any other parties involved and their relationship to the applicant</li>
-                  <li>why the current proceedings are necessary</li>
-                  <li>anyone else who might be able to fund this case</li>
+                  <li>details of the latest domestic abuse incident</li>
+                  <li>what's happened in the case so far</li>
+                  <li>if any other parties are involved and their relationship to your client</li>
+                  <li>why the proceedings are necessary</li>
+                  <li>if anyone else might be able to fund the case</li>
 </ul>
 
 
@@ -57,7 +57,6 @@ Apply for legal aid - Statement of case
           </div>
 
           <div class="document-upload">
-            <form action="gateway_evidence" method="post" enctype="multipart/form-data">
 
               <div class="moj-multi-file-upload">
                 <div class="moj-multi-file__uploaded-files">
@@ -71,9 +70,9 @@ Apply for legal aid - Statement of case
 
                   <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="documents">
-                      Upload files
+                      Attach a file
                       <span id="more-detail-hint" class="govuk-hint">
-                        The maximum file size is 8MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</span>
+                        The maximum file size is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</span>
                     </label>
 
                     <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
@@ -86,7 +85,6 @@ Apply for legal aid - Statement of case
                 </div>
               </div>
 
-            </form>
           </div>
 
 <p class="govuk-body">or</p>

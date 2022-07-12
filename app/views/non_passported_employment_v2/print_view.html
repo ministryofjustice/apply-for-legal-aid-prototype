@@ -94,7 +94,7 @@ th:first-child {
     <img src="/public/images/crest.svg" alt="" height="30px"</>
     <h1 class="logo-type">Legal Aid Agency</h1>
     <h1 class="govuk-heading-xl govuk-!-margin-top-1">
-      Application for civil legal aid certificate
+      Application for legal aid and client declaration
     </h1>
 
   <!--  <h2 class="govuk-heading-l">
@@ -760,7 +760,8 @@ th:first-child {
 <table class="govuk-table">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td><a href="#">statement_of_case_1.pdf (100kb)</a></td>
+      <th class="govuk-table__cell govuk-body" scope="row">Provide a statement of case</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">statement_of_case_1.pdf (100kb)</td>
     </tr>
   </tbody>
 </table>
@@ -837,7 +838,8 @@ th:first-child {
         <tbody class="govuk-table__body">
 
           <tr class="govuk-table__row">
-            <td><a href="#">supporting_evidence.pdf (200kb)</a></td>
+            <td class="govuk-table__cell">Benefit evidence</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">supporting_evidence.pdf (200kb)</td>
           </tr>
         </tbody>
       </table>
@@ -852,6 +854,7 @@ th:first-child {
 
 <ul class="govuk-list govuk-list--bullet">
 <li>you've instructed Hitchcock, Jones and King to represent you</li>
+<li>you've read the LAA privacy policy</li>
 <li>we can share their information with other government departments like the Department for Work and Pensions and HM Revenue and Customs</li>
 <li>we can check your details with your bank and credit reference agencies</li>
 <li>you may have to pay towards legal aid</li>
@@ -877,5 +880,3 @@ th:first-child {
 
 
 {% endblock %}
-
-

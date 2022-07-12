@@ -28,43 +28,27 @@ Apply for legal aid - Accounts
 
 {{ govukBackLink({
   text: "Back",
-  href: "bank_access_information"
+  href: "bank_select_03"
 }) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="additional_accounts" method="post" class="form">
+        <form action="citizen_accounts_2" method="post" class="form">
 
-        <h1 class="govuk-heading-xl">You've successfully shared your bank statements</h1>
+        <h1 class="govuk-heading-xl">You've successfully shared your bank transactions</h1>
 
         <p class="govuk-body">
-      <!--    We'll show you your statements so you can tell us more about your financial situation.
-      We'll ask your to sort your transactions (for example, salary or benefits payments) to help us understand your financial situation.
-      We'll ask your solicitor to sort your transactions into categories (for example, salary or benefits payments) to help us understand your financial situation. -->
+          We’ve downloaded your bank statements from the past 3 months.</p>
+
+          <p class="govuk-body">We’ll ask your solicitor to put your transactions into categories to help us understand your financial situation.<p>
         </p>
 
-
-
-
-      <!--  <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header" scope="row">Account holder name</th>
-              <td class="govuk-table__cell">John Doe</td>
-              </tr>
-            <!--  <tr class="govuk-table__row">
-              <td class="govuk-table__header" scope="row">Account holder address</td>
-              <td class="govuk-table__cell">2 Denman Road, London SE15 5NP</td>
-            </tr>
-          </tbody>
-        </table> -->
-
       </div>
       </div>
 
-        <table class="govuk-table">
+    <!--    <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Bank</th>
@@ -83,7 +67,7 @@ Apply for legal aid - Accounts
       <td class="govuk-table__cell">£205.79</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 <!-- <h2 class="govuk-heading-m">Do you use online banking for any other bank accounts?</h2>
 
@@ -109,8 +93,7 @@ Apply for legal aid - Accounts
 You can add more bank accounts later if you need to.
 </div> -->
 
-<p class="govuk-body"><a href="bank_select_03">Add another bank account</a></p>
-<br>
+
 <button type="submit" class="govuk-button">
   Continue
 </button>
@@ -121,5 +104,3 @@ You can add more bank accounts later if you need to.
 
 
 {% endblock %}
-
-

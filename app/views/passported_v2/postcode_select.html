@@ -27,13 +27,13 @@ Apply for legal aid - Correspondence address select
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Enter a correspondence address for your client</h1>
 
-    <form action="search" method="post" novalidate>
+    <form action="employment_status" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <label class="govuk-label" for="postcode">
-          Postcode
-          </label>
+          <label class="govuk-label govuk-label--m" for="example">
+      Postcode
+    </label>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-!-font-weight-bold postcode_change" for="change-postcode">{{ data['postcode'] }}</label>
               <p class="postcode_change"><a class="govuk-link" href="postcode_finder" aria-label="change postcode">Change</a></p>
@@ -74,5 +74,3 @@ Apply for legal aid - Correspondence address select
 </div>
 
 {% endblock %}
-
-
