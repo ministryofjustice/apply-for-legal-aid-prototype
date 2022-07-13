@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "consent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="email_address" method="post" class="form">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  How your client can share their bank statements
+                </h1>
+              </legend>
+              <br>
+
+            <!--  <p class="govuk-body-l">Your client needs to do the following:</p> -->
+
+                <h3 class="govuk-heading-m">1. Access 'Apply for legal aid'</h3>
+
+                <p class="govuk-body">We'll send them an email with a link to the service.</p>
+
+              <h3 class="govuk-heading-m">2. Select the banks they use online banking with</h3>
+
+              <p class="govuk-body">They'll then be redirected to their bank's website or app.</p>
+
+              <h3 class="govuk-heading-m">3. Give consent for TrueLayer to securely access their account details.</h3>
+
+              <p class="govuk-body">TrueLayer will share their bank statements with us.</p>
+
+
+              <h3 class="govuk-heading-m">3. Tell us about their income and outgoings</h3>
+
+              <p class="govuk-body">They'll need to select the categories their income and outgoings fall into.</p>
+
+            <!--  <div class="govuk-inset-text">
+You’ll need to sort your client's bank transactions into the categories they select when you continue the application.</div> -->
+
+              <br>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
