@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "check1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading" style="max-width:900px">Your client can share their bank statements with us through online banking.</p>
+  </div>
+</div>
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <h1 class="govuk-fieldset__heading">
+    Sharing online bank statements
+  </h1>
+</legend>
+<br>
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form">
+
+              
+              <p>Your client can share their bank statements with us through online banking via a trusted third-party called TrueLayer.</p>
+
+              <p>It’s a quicker and more accurate way to get a legal aid decision than uploading bank statements, and there’s no collecting, scanning and uploading statements</p>
+
+                <br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                                What is TrueLayer?
+                                </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                  
+                  
+                                <p class="govuk-body"><a href="https://truelayer.com/" target=_blank>TrueLayer</a> is a trusted third-party financial service provider that acts as a messenger between your client's bank and the LAA.</p>
+                              <!--  <p class="govuk-body">TrueLayer will ask for one-time, read-only access to your client's bank account information. If your client consents, TrueLayer will share 3 months of bank statements with us.</p> -->
+                              <p class="govuk-body">With your client's permission, TrueLayer has one-time, read-only access to your client's bank account information, including their bank statements.</p>
+                  
+                                <p class="govuk-body">TrueLayer shares the bank statements with us so your client does not have to gather physical statements.</p>
+                                <p class="govuk-body">TrueLayer is regulated by the Financial Conduct Authority (FCA) and will <strong>not</strong>:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                <li>store your client's bank account information</li>
+                                <li>see your client's online banking sign-in details</li>
+                                <li>share your client's data with anyone other than the LAA</li>
+                                <li>have ongoing access to your client's bank accounts</li>
+                                </ul>
+                                </div>
+                                </details>
+
+                                <br>
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Step-by-step guide to sharing statements online
+                  </h1>
+                </legend>
+                <br>
+
+                
+                <h3 class="govuk-heading-m">1. Access ‘Apply for legal aid’</h3>
+
+                <p class="govuk-body">Your client will receive an email clearly labelled from the Legal Aid Agency asking them to share 3 months of their transactions using TrueLayer. There’s a link in the email to access the service.
+                </p>
+
+            
+            <br>
+
+                <h3 class="govuk-heading-m">2. Select their bank</h3>
+                
+                <p class="govuk-body">Your client selects their bank and signs in to their online banking website or app.
+                </p>
+
+
+                <img src="/public/images/truelayer/test.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">3. Choose which accounts to share</h3>
+
+                <p class="govuk-body">Your client chooses the accounts they want to share. Transactions from the last 3 months will be shared securely with the Legal Aid Agency.</p>
+<br>
+
+                <img src="/public/images/truelayer/Step3.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">4. Confirmation</h3>
+
+              <p class="govuk-body">Your client will see a message confirming they’ve successfully shared their statements for the last 3 months. They’ll be asked if they have any more bank accounts to share.
+              </p>
+
+                <img src="/public/images/truelayer/Step4a.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+                <img src="/public/images/truelayer/Step4b.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+               
+                <p></p>
+
+              <!--  <h3 class="govuk-heading-m">5. TrueLayer fetches bank details and verifies ownership</h3>
+
+                <p class="govuk-body">TrueLayer’s name-matching engine compares your name to your name on file at the bank.</p>
+
+                <img src="/public/images/truelayer/05.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+                <p></p>
+
+                <h3 class="govuk-heading-m">6. TrueLayer shares your client’s bank statements with the LAA</h3>
+
+                <img src="/public/images/truelayer/06.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie."> -->
+                <p></p>
+
+                <h3 class="govuk-heading-m">5. What happens next</h3>
+
+                <p class="govuk-body">Sort your client’s transactions into categories so we can understand their financial situation and process your application quickly.</p>
+
+                <img src="/public/images/truelayer/Step5.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+
+                <div class="govuk-!-padding-bottom-6"></div>
+                <br>
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+ Will your client be able to complete these steps?
+  </h1>
+</legend>
+
+<form action="search_2" method="post" class="form">
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+      Yes
+    </label>
+  </div>
+
+
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+      No
+    </label>
+
+  </div>
+
+  <div class="govuk-!-padding-bottom-4"></div>
+<br>
+<button type="submit" class="govuk-button">
+  Save and continue
+</button>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+</form>
+</div>
+</div>
+
+<p class="govuk-body"><a href="upload" style="color: #b7b7b7;">If 'No' radio is selected, the provider has to upload bank statements</p>
+
+
+
+
+{% endblock %}
