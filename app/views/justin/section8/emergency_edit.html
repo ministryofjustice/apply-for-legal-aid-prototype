@@ -1,0 +1,222 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "emergency_default"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="substantive_default_02" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Proceeding 1 of 2</span>
+            <h1 class="govuk-fieldset__heading">
+              Child arrangements order (contact)
+            </h1>
+          </legend>
+          <h2 class="govuk-heading-m govuk-!-margin-top-1">For the emergency application, select the level of service</h2>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="emergency-LOS" name="emergency-LOS" type="radio" value="Family help higher" data-aria-controls="conditional-emergency-LOS">
+              <label class="govuk-label govuk-radios__label" for="emergency-LOS">
+                Family help higher
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-emergency-LOS">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                    Select scope
+                  </legend>
+                  <div id="waste-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Hearing">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Hearing
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-2" name="scope" type="checkbox" value="Counsel's Opinion">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-2">
+                        Counsel's Opinion
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-3" name="scope" type="checkbox" value="Interim order inc. return date">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-3">
+                        Interim order inc. return date
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-4" name="scope" type="checkbox" value="CAFCASS report">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-4">
+                        CAFCASS report
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-5" name="scope" type="checkbox" value="Blood Tests or DNA Tests">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-5">
+                        Blood Tests or DNA Tests
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-6" name="scope" type="checkbox" value="FHH Children">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-6">
+                        FHH Children
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-7" name="scope" type="checkbox" value="Counsel's opinion-merits, quantum, and cost benefit">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-7">
+                        Counsel's opinion-merits, quantum, and cost benefit
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-8" name="scope" type="checkbox" value="Counsel's opinion-merits">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-8">
+                        Counsel's opinion-merits
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-9" name="scope" type="checkbox" value="Section 37 Report">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-9">
+                        Section 37 Report
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-10" name="scope" type="checkbox" value="Exchange of Evidence">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-10">
+                        Exchange of Evidence
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-11" name="scope" type="checkbox" value="Final hearing(CAFCASS rept)priv law only">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-11">
+                        Final hearing(CAFCASS rept)priv law only
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope-12" name="scope" type="checkbox" value="Hearing/Adjournment">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope-12">
+                        Hearing/Adjournment
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="emergency-LOS-2" name="emergency-LOS" type="radio" value="Full representation" data-aria-controls="conditional-emergency-LOS-2">
+              <label class="govuk-label govuk-radios__label" for="emergency-LOS-2">
+                Full representation
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-emergency-LOS-2">
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  Selecting full representaion means you will be required to upload supporting evidence before submitting this application.
+                </strong>
+              </div>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                    Select scope
+                  </legend>
+                  <div id="waste-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Hearing">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Hearing
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Interim order inc. return date">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Interim order inc. return date
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Blood Tests or DNA Tests">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Blood Tests or DNA Tests
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Final hearing (CAFCASS rept) priv law only">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Final hearing (CAFCASS rept) priv law only
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Hearing-children">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Hearing-children
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="scope" name="scope" type="checkbox" value="Hearing/Adjournment">
+                      <label class="govuk-label govuk-checkboxes__label" for="scope">
+                        Hearing/Adjournment
+                      </label>
+                    </div>
+
+                  </div>
+
+                </fieldset>
+              </div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+        <!-- <p class="govuk-body">
+        <a href="dashboard">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+  </div>
+
+  {% endblock %}

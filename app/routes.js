@@ -1453,5 +1453,62 @@ router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
 })
 
 
+// SECTION 8
+
+// Using delegated functions?
+router.post('/justin/section8/emergency_default', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let df = req.session.data['DF']
+
+  if (df === 'no') {
+    res.redirect('/justin/section8/substantive_default')
+  } else {
+    res.redirect('/justin/section8/emergency_default')
+  }
+})
+
+// section 8
+// Using emergency default?
+router.post('/justin/section8/substantive_default', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyDefault = req.session.data['emergencydefault'];
+
+  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
+
+  if (emergencyDefault === 'no') {
+    res.redirect('/justin/section8/emergency_edit');
+  } else {
+    res.redirect('/justin/section8/substantive_default')
+  }
+})
+
+// Using substantive default?
+router.post('/justin/section8/client_involvement_type_Non_Mol', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+  // console.log('req.session.data[emergencydefault] = '+ req.session.data['emergencydefault'])
+  // console.log('emergencydefault = '+ emergencyDefault)
+
+  let substantivedefault = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (substantivedefault === 'no') {
+    res.redirect('/justin/section8/substantive_edit');
+  } else {
+    res.redirect('/justin/section8/client_involvement_type_Non_Mol')
+  }
+})
+
+
+
+
 // Add your routes here - above the module.exports line
 module.exports = router
