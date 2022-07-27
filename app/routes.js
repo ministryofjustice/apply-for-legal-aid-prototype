@@ -1507,6 +1507,91 @@ router.post('/justin/section8/client_involvement_type_Non_Mol', function (req, r
   }
 })
 
+// SECTION 8 refined
+
+router.post('/justin/section8_refined/emergency_default', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let df = req.session.data['DF']
+
+  if (df === 'no') {
+    res.redirect('/justin/section8_refined/substantive_default')
+  } else {
+    res.redirect('/justin/section8_refined/emergency_default')
+  }
+})
+
+// Using emergency default?
+router.post('/justin/section8_refined/emergency_LOS_edit', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyDefault = req.session.data['emergencydefault'];
+
+  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
+
+  if (emergencyDefault === 'no') {
+    res.redirect('/justin/section8_refined/emergency_LOS_edit');
+  } else {
+    res.redirect('/justin/section8_refined/substantive_default')
+  }
+})
+
+// emergency which scopes to show
+router.post('/justin/section8_refined/emergency_LOS_FHH_scope', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyLOS = req.session.data['emergencyLOS'];
+
+  console.log('emergencyLOS = '+ req.session.data['emergencyLOS'])
+
+  if (emergencyLOS === 'Family help higher') {
+    res.redirect('/justin/section8_refined/emergency_LOS_FHH_scope');
+  } else {
+    res.redirect('/justin/section8_refined/emergency_LOS_FR_scope')
+  }
+})
+
+//substantive_edit
+// Using substantive default?
+router.post('/justin/section8_refined/substantive_LOS_edit', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let substantiveDefault = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (substantiveDefault === 'no') {
+    res.redirect('/justin/section8_refined/substantive_LOS_edit');
+  } else {
+    res.redirect('/justin/section8_refined/client_involvement_type_Non_Mol')
+  }
+})
+
+// substantive which scopes to show
+router.post('/justin/section8_refined/substantive_LOS_FHH_scope', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let substantiveLOS = req.session.data['substantiveLOS'];
+
+  console.log('substantiveLOS = '+ req.session.data['substantiveLOS'])
+
+  if (substantiveLOS === 'Family help higher') {
+    res.redirect('/justin/section8_refined/substantive_LOS_FHH_scope');
+  } else {
+    res.redirect('/justin/section8_refined/substantive_LOS_FR_scope')
+  }
+})
+
 
 
 

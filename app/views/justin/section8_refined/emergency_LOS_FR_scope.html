@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "emergency_default"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="substantive_default" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Proceeding 1 of 2</span>
+            <h1 class="govuk-fieldset__heading">
+              Child arrangements order (contact)
+            </h1>
+          </legend>
+          <h2 class="govuk-heading-m govuk-!-margin-top-1">For the emergency application, select the scope</h2>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                Select scope
+              </legend> -->
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-1" name="scope" type="checkbox" value="Blood or DNA tests">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-1">
+                    Blood or DNA tests
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-2" name="scope" type="checkbox" value="Exchange of Evidence">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-2">
+                    Exchange of Evidence
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-3" name="scope" type="checkbox" value="Final hearing (CAFCASS rept) priv law only">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-3">
+                    Final hearing (CAFCASS rept) priv law only
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="hearing" name="scope" type="checkbox" value="email" data-aria-controls="conditional-hearing">
+                  <label class="govuk-label govuk-checkboxes__label" for="hearing">
+                    Hearing
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-hearing">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                      <legend class="govuk-fieldset__legend govuk-body">
+                        <h3 class="govuk-fieldset__heading">
+                          Please provide the date
+                        </h3>
+                      </legend>
+                      <div id="passport-issued-hint" class="govuk-hint">
+                        For example, 27 3 2007
+                      </div>
+                      <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-5" name="scope" type="checkbox" value="Hearing-children">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-5">
+                    Hearing-children
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-6" name="scope" type="checkbox" value="Hearing/Adjournment">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-6">
+                    Hearing/Adjournment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="scope-7" name="scope" type="checkbox" value="Interim order including return date">
+                  <label class="govuk-label govuk-checkboxes__label" for="scope-7">
+                    Interim order including return date
+                  </label>
+                </div>
+
+              </div>
+
+
+            </fieldset>
+          </div>
+        </div>
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+        <!-- <p class="govuk-body">
+        <a href="dashboard">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+  </div>
+
+  {% endblock %}
