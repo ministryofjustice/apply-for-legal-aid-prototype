@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "../index"
+      href: "upload"
   }) }}
 {% endblock %}
 
@@ -25,40 +25,43 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="tlguidance" method="post" class="form">
+        <form action="add_benefit_details" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  We need your client's bank statements from the last 3 months
+                  Does your client receive any benefits?
                 </h1>
               </legend>
 
-              <div class="govuk-!-padding-bottom-4"></div>
+              <div class="govuk-!-padding-bottom-6"></div>
+
+
 
                 <h2 class="govuk-heading-m">
-                  Does your client use online banking?
+                  For example, Child Benefit or tax credits.
                 </h2>
-              <div class="govuk-!-padding-bottom-2"></div>
+
+
 
                 <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="open_banking" name="consent" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="open_banking">
-                      Yes</label>
-                  </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitsyes" name="benefits" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="benefitsyes">
+                    Yes</label>
+
+
+                </div>
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="upload" name="consent" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="upload">
+                    <input class="govuk-radios__input" id="benefitsno" name="benefits" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="benefitsno">
                       No</label>
+                    </div>
                   </div>
-                </div>
             </fieldset>
           </div>
-
-          <div class="govuk-!-padding-bottom-4"></div>
 
           <button type="submit" class="govuk-button">
             Save and continue
@@ -71,5 +74,7 @@ Apply for legal aid - Property and mortgage
         </form>
       </div>
     </div>
+
+    <p class="govuk-body"><a href="upload" style="color: #b7b7b7;">If 'No' is selected the provider has to upload bank statements</p>
 
 {% endblock %}
