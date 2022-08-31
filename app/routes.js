@@ -1608,17 +1608,19 @@ router.post('/jim/tl_unsupported_banks/guidance', function (req, res) {
 })
 
 // Enhanced bank upload - open banking consent
-router.post('/enhanced_bank_upload/open_banking_question', function (req, res) {
+router.post('/enhanced_bank_upload/online_banking_question', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let consent = req.session.data['consent']
+  let consent = req.session.data['onlineBankingConsent']
+
+  console.log(req.session.data['onlineBankingConsent'])
 
   if (consent === 'no') {
-    res.redirect('/enhanced_bank_upload/tlguidance')
-  } else {
     res.redirect('/enhanced_bank_upload/upload')
+  } else {
+    res.redirect('/enhanced_bank_upload/tlguidance')
   }
 })
 
