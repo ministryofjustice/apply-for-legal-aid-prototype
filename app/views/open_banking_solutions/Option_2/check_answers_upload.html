@@ -40,24 +40,25 @@ th:first-child {
     <h2 class="govuk-heading-l">Your client's income</h2>
 
 
-    <h2 class="govuk-heading-m">
-      Bank statements
-    </h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Bank statements</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <p><a class="govuk-link" style="float:right;" href="upload">Change</a></p>
+      </div>
+    </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
          <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
         Upload bank statements
       </dt>
-      <dd class="govuk-summary-list__value">
+      <dd class="govuk-table__cell govuk-table__cell--numeric">
     feb-bank-statment.csv	(2MB)<br>
     mar-bank-statment.csv	(2MB)<br>
     apr-bank-statment.csv (2MB)
       </dd>
-      <dd class="govuk-summary-list__actions">
-        <a href="upload">
-          Change <span class="govuk-visually-hidden">blank</span>
-        </a>
       </dd>
     </div>
     </dl>
@@ -136,7 +137,7 @@ th:first-child {
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th class="govuk-table__cell govuk-body" scope="row">Financial help from family or friends</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">March: <strong>£100</strong><br>April: <strong>£100</strong><br>May: <strong>£100</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"> <strong>March:</strong> £100<br><strong>April: </strong> £100<br><strong>May: </strong>£100</td>
       </tr>
       <tr class="govuk-table__row">
         <th class="govuk-table__cell govuk-body" scope="row">Maintenance payments from a former partner</th>
@@ -146,6 +147,86 @@ th:first-child {
   </table>
 
 <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Student finance</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="student_loan">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Does your client receive student finance?</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">How much student finance will your client get this academic year?</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£10,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+    <h2 class="govuk-heading-l">Your client's outgoings</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Which payments does your client make?</h2>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p><a class="govuk-link" style="float:right;" href="outgoings">Change</a></p>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Housing payments</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Childcare payments</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Maintenance payments to a former partner</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Payments towards legal aid in a criminal case</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Payments your client makes in cash</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p><a class="govuk-link" style="float:right;" href="income">Change</a></p>
+    </div>
+  </div>
+
+  <table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-body" scope="row">Housing payments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-body" scope="row">Childcare payments</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><strong>March:</strong> £250<br><strong>April: </strong> £250<br><strong>May: </strong>£250</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
 
   <h2 class="govuk-heading-l">
     Dependants
@@ -338,60 +419,6 @@ th:first-child {
     </div>
     </dl>
     <br>
-
-    <h2 class="govuk-heading-l">Your client's outgoings</h2>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Which payments does your client make?</h2>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <p><a class="govuk-link" style="float:right;" href="outgoings">Change</a></p>
-  </div>
-</div>
-
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Housing payments</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Childcare payments</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">Yes</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Maintenance payments to a former partner</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th class="govuk-table__cell govuk-body" scope="row">Payments towards legal aid in a criminal case</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
-    </tr>
-  </tbody>
-</table>
-<br>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Payments your client makes in cash</h2>
-    </div>
-    <div class="govuk-grid-column-one-third">
-      <p><a class="govuk-link" style="float:right;" href="income">Change</a></p>
-    </div>
-  </div>
-
-  <table class="govuk-table">
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <th class="govuk-table__cell govuk-body" scope="row">Housing payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">None</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th class="govuk-table__cell govuk-body" scope="row">Childcare payments</th>
-        <td class="govuk-table__cell govuk-table__cell--numeric">March: <strong>£250</strong><br>April: <strong>£250</strong><br>May: <strong>£250</strong></td>
-      </tr>
-    </tbody>
-  </table>
 
 <br>
 
