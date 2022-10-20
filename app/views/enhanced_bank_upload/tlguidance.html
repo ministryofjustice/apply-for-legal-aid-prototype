@@ -17,13 +17,13 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "check1"
+      href: "online_banking_question"
   }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Important
@@ -32,24 +32,24 @@ Apply for legal aid - Other capital
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading" style="max-width:900px">Your client can share their bank statements with us through online banking.</p>
   </div>
-</div>
-
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-  <h1 class="govuk-fieldset__heading">
-    Share bank statements
-  </h1>
-</legend>
-<br>
-
+</div> -->
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="email_address" method="post" class="form">
 
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <h1 class="govuk-fieldset__heading">
+    Share bank statements with online banking
+  </h1>
+</legend>
+<br>
 
-              <p>Your client can securely share their bank statements through online banking via a third party called TrueLayer.</p>
+              <p>Your client can share their bank statements with us through online banking via a third party called TrueLayer.</p>
 
-              <p>It’s a quicker and more accurate way to get a legal aid decision than collecting, scanning and uploading bank statements.</p>
+            <!--  <p>It’s a quicker and more accurate way to get a legal aid decision than uploading bank statements.</p> -->
+
+              <p>It's a fast, safe and accurate way to access your client's transactions and means your client does not need to gather statements.</p>
 
                 <br>
 
@@ -63,9 +63,10 @@ Apply for legal aid - Other capital
 
 
                                 <p class="govuk-body"><a href="https://truelayer.com/" target=_blank>TrueLayer</a> is a trusted third-party financial service provider that acts as a messenger between your client's bank and the Legal Aid Agency (LAA).</p>
-                              <!--  <p class="govuk-body">TrueLayer will ask for one-time, read-only access to your client's bank account information. If your client consents, TrueLayer will share 3 months of bank statements with us.</p> -->
-                              <p class="govuk-body">With your client's permission, TrueLayer has one-time, read-only access to their bank account information (including bank statements which TrueLayer shares with us).</p>
-                                <p class="govuk-body">TrueLayer is regulated by the Financial Conduct Authority (FCA) and will <strong>not</strong>:</p>
+                              <!--  <p class="govuk-body">TrueLayer will ask for one-time, read-only access to your client's bank account information. With your client's consent, TrueLayer collects 3 months of bank statements and shares them with us.</p>
+                              <p class="govuk-body">With your client's permission, TrueLayer has one-time, read-only access to their bank account information (including bank statements which TrueLayer shares with us).</p> -->
+                              <p class="govuk-body">TrueLayer needs one-time, read-only access to your client's bank account information. If your client agrees, TrueLayer will securely collect 3 months of statements and share them with the LAA.</p>
+                                <p class="govuk-body">They're regulated by the Financial Conduct Authority (FCA) and will <strong>not</strong>:</p>
                                 <ul class="govuk-list govuk-list--bullet">
                                 <li>store your client's bank account information</li>
                                 <li>see your client's online banking sign-in details</li>
@@ -79,47 +80,47 @@ Apply for legal aid - Other capital
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Step-by-step guide to sharing bank statements online
+                    How it works
                   </h1>
                 </legend>
                 <br>
 
 
-                <h3 class="govuk-heading-m">1. Access ‘Apply for legal aid’</h3>
+                <h3 class="govuk-heading-m">1. Get started</h3>
 
-                <p class="govuk-body">Your client will receive an email clearly labelled from the LAA asking them to share 3 months of bank statements. There’s a link in the email to access the service.
-                </p>
+                <p class="govuk-body">Your client will receive an email clearly labelled from the Legal Aid Agency (LAA) asking them to share 3 months of bank statements.</p>
+
+                <p class="govuk-body">There's a link in the email directing them to 'Apply for legal aid' to get started.
 
 
             <br>
 
-                <h3 class="govuk-heading-m">2. Select their bank</h3>
+                <h3 class="govuk-heading-m">2. Select a bank</h3>
 
-                <p class="govuk-body">Your client selects their bank. We then redirect them to sign in to their online banking website or app.
+                <p class="govuk-body">Your client selects their bank then signs in to their online banking website or app.
                 </p>
 
 
-                <img src="/public/images/truelayer/test.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+                <img src="/public/images/truelayer/select_bank.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
 
 
                 <p></p>
 
-                <h3 class="govuk-heading-m">3. Choose which accounts to share</h3>
+                <h3 class="govuk-heading-m">3. Share bank accounts</h3>
 
-                <p class="govuk-body">Your client chooses the accounts they want to share. Transactions from the last 3 months will be shared securely with the Legal Aid Agency.</p>
+                <p class="govuk-body">Your client must share all of their bank accounts, including joint accounts and accounts with no money in them. Bank statements from the last 3 months will be shared securely with the LAA.</p>
 <br>
 
-                <img src="/public/images/truelayer/Step3.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+                <img src="/public/images/truelayer/sharing.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
 
                 <p></p>
 
                 <h3 class="govuk-heading-m">4. Confirmation</h3>
 
-              <p class="govuk-body">Your client will see a message confirming they’ve successfully shared their statements for the last 3 months. They’ll be asked if they have any more bank accounts to share.
+              <p class="govuk-body">Your client will see a message confirming they’ve successfully shared their bank statements. They’ll be asked if they have any more bank accounts to share.
               </p>
 
-                <img src="/public/images/truelayer/Step4a.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
-                <img src="/public/images/truelayer/Step4b.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
+                <img src="/public/images/truelayer/success.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
 
                 <p></p>
 
@@ -140,18 +141,16 @@ Apply for legal aid - Other capital
 
                 <p class="govuk-body">You need to sort your client’s transactions into categories so we can understand their financial situation and process your application quickly.</p>
 
-                <img src="/public/images/truelayer/Step5.png" alt="Larry the cat, Chief Mouser to the Cabinet Office, sitting on a meeting table wearing a Union Jack bowtie.">
-
-                <div class="govuk-!-padding-bottom-6"></div>
-                <br>
-
-                <a href="/public/images/truelayer/guidance.png" download>
-                  <p> download here </p>
+                <div class="govuk-!-padding-bottom-8"></div>
+                <a role="button" href="downloaded_tlguidance" target="_blank" class="govuk-button draft-button">
+                  Download this guidance
                 </a>
+
+                <div class="govuk-!-padding-bottom-2"></div>
 
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
   <h1 class="govuk-fieldset__heading">
-    Will your client be able to share their bank statements using online banking?
+    Can your client share their bank statements using online banking?
   </h1>
 </legend>
 
@@ -175,10 +174,10 @@ Apply for legal aid - Other capital
     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
       No
     </label>
-
   </div>
 
   <div class="govuk-!-padding-bottom-4"></div>
+
 <br>
 <button type="submit" class="govuk-button">
   Save and continue
@@ -192,7 +191,6 @@ Apply for legal aid - Other capital
 </div>
 </div>
 
-<p class="govuk-body"><a href="upload" style="color: #b7b7b7;">If 'No' radio is selected, the provider has to upload bank statements</p>
 
 
 
