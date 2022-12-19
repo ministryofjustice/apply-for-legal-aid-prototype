@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Types of income
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "dwp_blue_box"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="partner_income_support" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Which joint passporting benefit does your client and their partner get?
+                </h1>
+              </legend>
+
+            <div class="govuk-radios govuk-!-margin-top-4">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passporting-benefit-2" name="passporting-benefit" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="passporting-benefit-2">
+                  Universal Credit
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passporting-benefit-3" name="passporting-benefit" type="radio" value="wales">
+                <label class="govuk-label govuk-radios__label" for="passporting-benefit-3">
+                  Guarantee Credit element of Pension Credit
+                </label>
+              </div>
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="passporting-benefit-4" name="passporting-benefit" type="radio" value="northern-ireland">
+               <label class="govuk-label govuk-radios__label" for="passporting-benefit-4">
+                 Income-based Jobseeker’s Allowance (JSA)
+               </label>
+             </div>
+             <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passporting-benefit-5" name="passporting-benefit" type="radio" value="northern-ireland">
+                <label class="govuk-label govuk-radios__label" for="passporting-benefit-5">
+                  Income-related Employment and Support Allowance (ESA)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passporting-benefit-6" name="passporting-benefit" type="radio" value="england">
+                <label class="govuk-label govuk-radios__label" for="passporting-benefit-6">
+                  Income Support
+                </label>
+              </div>
+
+              <p class="govuk-body">or</p>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="passporting-benefit" name="passporting-benefit" type="radio" value="england">
+                <label class="govuk-label govuk-radios__label" for="passporting-benefit">
+                  None of these
+                </label>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+   <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
