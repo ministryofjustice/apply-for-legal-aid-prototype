@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "add_outgoing_payment_details"
+      href: "outgoing_select"
   }) }}
 {% endblock %}
 
@@ -25,13 +25,13 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="dependants" method="post" class="form">
+      <form action="" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-              Select payments your client makes in cash
+              Select payments the payments makes in cash
                 </h1>
               </legend>
 
@@ -128,7 +128,7 @@ Apply for legal aid - Other capital
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   My client makes none of these payments in cash
+                   The partner makes none of these payments in cash
                  </label>
                </div>
 
@@ -136,7 +136,7 @@ Apply for legal aid - Other capital
             </fieldset>
           </div>
 
-          <button type="submit" class="govuk-button">
+          <button type="submit" class="govuk-button" href="joint_questions/housing_benefit">
             Save and continue
           </button>
 
