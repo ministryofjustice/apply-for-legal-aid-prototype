@@ -37,12 +37,21 @@ Apply for legal aid - Property and mortgage
 
               <div class="govuk-!-padding-bottom-4"></div>
 
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contrary-interest-1" name="contrary-interest" type="radio" value="yes" {{ checked("contrary-interest","yes") }}>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item" >
+                  <input class="govuk-radios__input" id="contrary-interest-1" name="contrary-interest" type="radio" value="yes"
+                         data-aria-controls="contrary-interest-detail-conditional" {{ checked("contrary-interest","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="contrary-interest-1">
                     Yes
                   </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="contrary-interest-detail-conditional">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contrary-interest-detail">
+                      Reason (optional)
+                    </label>
+                    <textarea class="govuk-textarea" id="contrary-interest-detail" name="contrary-interest-detail" rows="5">{{ data['contrary-interest-detail'] }}</textarea>
+                  </div>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="contrary-interest-2" name="contrary-interest" type="radio" value="no" {{ checked("contrary-interest","no") }}>
