@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "vehicles_date"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="client_accounts" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-4">
+                <h1 class="govuk-fieldset__heading">
+                  Is the partner's vehicle in regular use?
+                </h1>
+              </legend>
+
+
+              <span class="govuk-hint">
+                This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.
+                </span>
+
+              <div class="govuk-radios govuk-radios-">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="vehicle-1" name="vehicle" type="radio" value="yes" {{ checked("vehicle","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="vehicle-1">
+                    Yes
+
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="vehicle" name="vehicle" type="radio" value="yes" {{ checked("vehicle","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="vehicle">
+                    No
+
+                  </label>
+                </div>
+
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+         <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
+
+
