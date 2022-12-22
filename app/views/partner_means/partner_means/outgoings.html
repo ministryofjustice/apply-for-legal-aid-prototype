@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Outgoings summary
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "financial_help"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Sort outgoing bank transactions into categories
+          </h1>
+        </legend><br>
+
+        <p class="gov-body">
+          You told us the partner gets the types of payments listed below.</p>
+
+          <p class="gov-body">You need to:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+                     <li>check the partner's bank statements</li>
+                     <li>add transactions to each outgoing category</li>
+                     </ul>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Housing payments
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="rent" aria-describedby="eligibility-completed">
+              View statements and add transactions
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Childcare payments
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                View statements and add transactions
+              </a>
+            </li>
+
+            <br>
+            </br>
+            <a href="types_of_outgoing_provider" class="govuk-body">
+              Add another outgoings category
+            </a>
+    
+          </ul>
+          </li>
+
+         
+      </ol>
+
+
+
+        <a href="childcare" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  

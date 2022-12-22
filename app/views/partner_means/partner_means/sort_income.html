@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "other_income"
+  href: "outgoings_cash_1"
 }) }}
 
 {% endblock %}
@@ -55,8 +55,7 @@ Apply for legal aid - Income start page
             <li>add transactions to each income category</li>
             </ul>
 
-<!-- <div class="govuk-inset-text">
-Some transactions may have been automatically added.</div> -->
+
 
  <ol class="app-task-list">
 
@@ -230,14 +229,6 @@ Some transactions may have been automatically added.</div> -->
                Remove
              </a></td>
            </tr>
-           <tr class="govuk-table__row">
-             <td class="govuk-table__cell">12 Oct 2020</td>
-             <td class="govuk-table__cell">12345678A DWP DLA</td>
-             <td class="govuk-table__cell govuk-table__cell--numeric">£80</td>
-             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">
-               Remove
-             </a></td>
-           </tr>
            </tbody>
            </table>
      <li class="app-task-list__item">
@@ -258,7 +249,11 @@ Some transactions may have been automatically added.</div> -->
         View statements and add transactions 
        </a>
      </li>
-
+    <br>
+    </br>
+     <a class="govuk-body" href="types_of_income_provider"  >
+      Add another income category
+    </a>
    
    </ul>
    </li>
@@ -268,12 +263,10 @@ Some transactions may have been automatically added.</div> -->
 <li>
 
 
-<a class="govuk-body" href="types_of_income_provider"  >
-  Add another income category
-</a>
+  
  </ol>
 
-        <a href="dependants" role="button" class="govuk-button">
+        <a href="financial_help" role="button" class="govuk-button">
           Save and continue
         </a>
 

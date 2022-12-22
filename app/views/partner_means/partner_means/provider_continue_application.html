@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Continue Sally Doe’s financial assessment</h1>
+
+        <p class="govuk-body-l">The partner has shared their financial information. You need to do the following:</p>
+
+        <h3 class="govuk-heading-m">1. Review their employment details</h3>
+
+        <p class="govuk-body">We'll show you the information HMRC shared with us.</p>
+
+        <h3 class="govuk-heading-m">2. Sort their bank transactions into categories</h3>
+
+<p class="govuk-body">You will need to select the categories their income and outgoings fall into. View their bank statements and sort transactions into these categories.</p>
+
+<h3 class="govuk-heading-m">3. Tell us about their dependants</h3>
+
+<p class="govuk-body">Provide details of your client and their partner's dependants (if they have any).</p>
+
+
+<br>
+
+<a class="govuk-button" href="employment_income" role="button">
+  Continue
+</a>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}
+

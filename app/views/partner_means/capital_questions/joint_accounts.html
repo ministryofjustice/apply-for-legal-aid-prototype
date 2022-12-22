@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "vehicles_date"
+      href: "../partner_vehicle/vehicles_regular_use."
   }) }}
 {% endblock %}
 
@@ -25,20 +25,17 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../joint_accounts" method="post" class="form">
+        <form action="bank_accounts" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-4">
                 <h1 class="govuk-fieldset__heading">
-                  Is the partner's vehicle in regular use?
+                  Does your client have any joint accounts with their partner?
                 </h1>
               </legend>
 
-
-              <span class="govuk-hint">
-                This means the vehicle is used at least once every 2 weeks for things like work, shopping or driving children to school.
-                </span>
+              <br>
 
               <div class="govuk-radios govuk-radios-">
                 <div class="govuk-radios__item">

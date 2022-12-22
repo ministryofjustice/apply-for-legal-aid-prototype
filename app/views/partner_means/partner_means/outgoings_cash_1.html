@@ -17,7 +17,7 @@ Apply for legal aid - Other capital
 
   {{ govukBackLink({
     text: "Back",
-      href: "outgoing_select"
+      href: "outgoings_select_1"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Other capital
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-      <form action="../joint_questions/housing_benefit" method="post" class="form">
+        <form action="sort_income" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -123,12 +123,91 @@ Apply for legal aid - Other capital
                   </div>
                 </div>
 
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                    Maintenance payments to a former partner
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+                  <div class="govuk-form-group">
+                    <span id="account-number-hint" class="govuk-hint">
+                      Enter the total cash amount paid each month, or enter 0 if the partner paid none.
+                    </span>
+                    <label class="govuk-label" for="car-value">
+                      February 2021
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="car-value">
+                    January 2021
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="car-value">
+                      December 2020
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="citizenship-conditional-4" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-4">
+                    Payments towards legal aid in a criminal case
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-4">
+                  <div class="govuk-form-group">
+                    <span id="account-number-hint" class="govuk-hint">
+                      Enter the total cash amount paid each month, or enter 0 if the partner paid none.
+                    </span>
+                    <label class="govuk-label" for="car-value">
+                      February 2021
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="car-value">
+                    January 2021
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="car-value">
+                      December 2020
+                    </label>
+                    <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                    </div>
+                  </div>
+                </div>
+
                <p class="govuk-body">or</p>
+
 
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                  <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
-                   The partner makes none of these payments in cash
+     None of these
                  </label>
                </div>
 
