@@ -4,7 +4,18 @@
 
 
 {% block pageTitle %}
-Apply for legal aid - Types of outgoing
+Apply for legal aid - Outgoings summary
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,93 +27,83 @@ Apply for legal aid - Types of outgoing
   }) }}
 
   {{ govukBackLink({
-    text: "Back",
-      href: "student_loan"
-  }) }}
+  text: "Back",
+  href: "financial_help"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="housing_benefit" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Sort outgoing bank transactions into categories
+          </h1>
+        </legend><br>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Which payments does your client make?
-                </h1>
-              </legend>
+        <p class="gov-body">
+          You told us your client gets the types of payments listed below.</p>
 
-               <span class="govuk-hint">Select all that apply.</span>
+          <p class="gov-body">You need to:</p>
 
-              <div class="govuk-checkboxes" data-module="checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-1" name="salary" type="checkbox" value="yes" data-aria-controls="income-conditional-1">
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-1">
-                    Housing payments
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                        For example, rent, mortgage or board and lodging.
-                    </span>
-                </div>
+          <ul class="govuk-list govuk-list--bullet">
+                     <li>check your client's bank statements</li>
+                     <li>add transactions to each outgoing category</li>
+                     </ul>
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3">
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                    Childcare payments
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                  For example, to a childminder, nanny or nursery.
-                  </span>
-                </div>
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Housing payments
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="rent" aria-describedby="eligibility-completed">
+              View statements and add transactions
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Childcare payments
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="govuk-body" href="" aria-describedby="eligibility-completed">
+                View statements and add transactions
+              </a>
+            </li>
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                  Maintenance payments to a former partner
-                  </label>
-                  <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                    This includes child maintenance.
-                    </span>
-                </div>
+            <br>
+            </br>
+            <a href="types_of_outgoing_provider" class="govuk-body">
+              Add another outgoings category
+            </a>
+    
+          </ul>
+          </li>
 
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-5" name="student-loan" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-5" {{ checked("student-loan","yes") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-5">
-                    Payments towards legal aid in a criminal case
-                  </label>
-                </div>
-
-                 <p class="govuk-body">or</p>
-
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
-                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                    My client makes none of these payments
-                  </label>
-                </div>
-
-              </div>
-
-            </fieldset>
-          </div>
-
-
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-
-          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
+         
+      </ol>
 
 
 
-        </form>
-      </div>
+        <a href="childcare" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
     </div>
+  </div>
 
-{% endblock %}
+  {% endblock %}
+
+  

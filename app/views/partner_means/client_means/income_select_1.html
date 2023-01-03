@@ -28,7 +28,7 @@ Apply for legal aid - Types of income
 
   {{ govukBackLink({
     text: "Back",
-      href: "add_another_benefit"
+      href: "employment_income"
   }) }}
 {% endblock %}
 
@@ -36,28 +36,39 @@ Apply for legal aid - Types of income
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="add_income_payment_details" method="post" class="form">
+        <form action="income_cash" method="post" class="form">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Which payments does your client receive?
+                  Which of these payments does your client get?
                 </h1>
               </legend>
 
-            <!--  <p class="govuk-body"></p> -->
+           
 
                <span class="govuk-hint">Select all that apply.</span>
 
               <div class="govuk-checkboxes" data-module="checkboxes">
 
+    
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                    Financial help from friends or family
+                    Benefits
                   </label>
                   <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
+                       For example, Child Benefit or tax credits.
+                  </span>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
+                    Financial help from friends or family
+                  </label>
+               <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
                       Select if a friend or relative regularly gives your client money to help with living costs. Do not include one-off payments.
                   </span>
                 </div>
@@ -95,7 +106,7 @@ Apply for legal aid - Types of income
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
                   <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                    My client receives none of these payments
+            None of these
                   </label>
                 </div>
               </div>
@@ -103,16 +114,19 @@ Apply for legal aid - Types of income
           </div>
 
 
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
 
-     <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-            Save and come back later
-          </a>
 
-        </form>
-      </div>
-    </div>
+                                      <a href="income_cash_1" role="button" class="govuk-button">
+                                        Save and continue
+                                      </a>
 
-{% endblock %}
+                                      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+                                        Save and come back later
+                                      </a>
+
+
+                                    </form>
+                                  </div>
+                                </div>
+
+          {% endblock %}
