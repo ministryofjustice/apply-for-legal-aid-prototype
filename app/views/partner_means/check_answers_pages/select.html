@@ -15,10 +15,7 @@ Apply for legal aid - Assessment start page
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  {{ govukBackLink({
-  text: "Back",
-  href: ""
-}) }}
+  
 
 {% endblock %}
 
@@ -26,22 +23,28 @@ Apply for legal aid - Assessment start page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Select a "check your answers" review page</h1>
+    <h1 class="govuk-heading-l">For testing purposes only</h1>
 
 
     <div class="govuk-!-padding-bottom-4"></div>
 
 
+      <h2><a href="check_answers_capital" style="color: #415a77; "> Link 1 <br> </a></h2>
 
-      <h2><a href="check_answers_capital" style="color: #424248;"> Passported journey</a></h2>  
+      <h2 class="govuk-body-m" style="color: #1b263b; font-weight: 100;" >Continue with the passported journey</h2>
 
-      <h2><a href="check_answers_capital_upload" style="color: #424248;"> Manual bank upload journey</a></h2>  
+      <br>
+
+      <h2><a href="check_answers_capital_upload" style="color: #415a77;"> Link 2 <br> </a></h2>  
+      <h2 class="govuk-body-m" style="color: #1b263b;" >Continue with the manual bank upload journey</h2>
 
             <div class="govuk-!-padding-bottom-4"></div>
 
-    </form>
+  
   </div>
 </div>
+
+
 
 {% endblock %}
 
