@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "upload"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="add_benefit_details" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Does the partner receive any benefits?
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-6"></div>
+
+
+
+                <h2 class="govuk-heading-m">
+                  For example, Child Benefit or tax credits.
+                </h2>
+
+
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefitsyes" name="benefits" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="benefitsyes">
+                    Yes</label>
+
+
+                </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="benefitsno" name="benefits" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="benefitsno">
+                      No</label>
+                    </div>
+                  </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
