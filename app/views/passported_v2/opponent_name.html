@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "contact_date"
+      href: "incident_details"
   }) }}
 {% endblock %}
 
@@ -26,28 +26,29 @@ Apply for legal aid - Client details
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="respondent_details" method="post" novalidate>
+      <h1 class="govuk-heading-xl">Opponent's name</h1>
+
+      <form action="opponent_mental_capacity" method="post" novalidate>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              What is the opponent's name?
             </legend>
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="firstname">
-                Full name
+                First name
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
             </div>
 
-          <!--  <div class="govuk-form-group">
+          <div class="govuk-form-group">
                 <label class="govuk-label" for="lastname">
                 Last name
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
-            </div> -->
+            </div>
 
           </fieldset>
         </div>
@@ -108,5 +109,3 @@ Apply for legal aid - Client details
     </div>
 
 {% endblock %}
-
-
