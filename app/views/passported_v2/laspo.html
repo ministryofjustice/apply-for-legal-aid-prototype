@@ -8,68 +8,61 @@ Apply for legal aid - Does your client use online banking
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
-  {{ govukBackLink({
-    text: "Back",
-      href: "other_3"
-  }) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "children_add_2"
+}) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="delegated_functions" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="statement" method="post" class="form">
 
 
-        <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-    Are the Section 8 proceedings you're applying for in scope of the Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO)?
-      </h1>
-    </legend>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are the Section 8 proceedings in scope of the Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO)?
+            </h1>
+          </legend>
 
-  <!--  <p class="govuk-body">You're applying for a:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>prohibited steps order</li>
-          <li>child arrangements order (residence)</li>
-    </ul> -->
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-          Yes
-        </label>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                No
+              </label>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
       </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
-        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-          No
-        </label>
-        </fieldset>
-      </div>
-
-      <button type="submit" class="govuk-button">
-        Save and continue
-      </button>
-
-      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
-
-      </form>
     </div>
-  </div>
 
-{% endblock %}
-
-
+    {% endblock %}
