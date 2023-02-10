@@ -1700,5 +1700,20 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
   }
 })
 
+
+// MULTIPLE OPPONENTS
+// Using delegated functions?
+router.post('/justin/multiple_opponents/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/justin/multiple_opponents/opponent_name')
+  } else {
+    res.redirect('/justin/multiple_opponents/opponent_organisation')
+  }
+})
+
+
 // Add your routes here - above the module.exports line
 module.exports = router
