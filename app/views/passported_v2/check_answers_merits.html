@@ -23,6 +23,21 @@ Apply for legal aid - Check your answers - Merits
 
 {% block content %}
 
+<style media="screen">
+  .govuk-summary-list__key {
+    width: 75%;
+  }
+  .govuk-summary-list {
+    margin-bottom: 40px;
+  }
+  .govuk-heading-l{
+    margin-bottom: 40px;
+  }
+  .govuk-table__cell{
+    width: 70%;
+  }
+</style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
@@ -42,23 +57,22 @@ Apply for legal aid - Check your answers - Merits
       </div>
     </div>
 
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row"><strong>When did your client contact you about the latest domestic abuse incident?</strong></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">10 Dec 2019</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell govuk-body" scope="row"><strong>When did the incident occur?</strong></th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2019</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-
-    <br>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When did your client contact you about the latest domestic abuse incident?</dt>
+          <dd class="govuk-summary-list__value">
+            10 Dec 2019
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When did the incident occur?</dt>
+            <dd class="govuk-summary-list__value">
+              8 Dec 2019
+            </dd>
+          </div>
+        </dl>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
