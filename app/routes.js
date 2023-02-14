@@ -1607,7 +1607,7 @@ router.post('/partner_means/client_means/means_start', function (req, res) {
     res.redirect('/partner_means/dwp_check/');
   }
   else if (dwp === 'no_partner') {
-    res.redirect('/partner_means/dwp_check/joint_passporting_benefit');
+    res.redirect('/partner_means/dwp_check/check_details');
   }
   else {
     // yes //
