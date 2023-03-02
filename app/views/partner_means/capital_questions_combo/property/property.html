@@ -16,8 +16,8 @@ Apply for legal aid - Property and mortgage
   }) }}
 
   {{ govukBackLink({
-    text: "Home",
-      href: "/index"
+    text: "Back",
+      href: "../capital_start"
   }) }}
 {% endblock %}
 
@@ -25,44 +25,34 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../partner_details/partner_details" method="post" class="form">
+        <form action="property_detail" method="post" class="form">
 
-          <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Does your client have a partner?
+                  Does your client or their partner own the home your client lives in?
                 </h1>
               </legend>
 
-              <div class="govuk-!-padding-bottom-4"></div>
+                <div class="govuk-!-padding-bottom-4"></div>
 
-              <p class="govuk-body">A partner is someone your client is:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>married to</li>
-                <li>in a civil partnership with</li>
-                <li>living with as if they were married or in a civil partnership</li>
-              </ul>
-
-              <p class="govuk-body">Do not include anyone who:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>your client is permanently separated from</li>
-                <li>is an opponent in the case</li>
-                <li>has 'contrary interest' in the case - this means they want a different outcome to your client</li>
-              </ul>
-
-              <div class="govuk-!-padding-bottom-4"></div>
-
-              <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="has-partner-1" name="has-partner" type="radio" value="yes" {{ checked("has-partner","yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="has-partner-1">
-                    Yes
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-1">
+                    Yes, with a mortgage or loan
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="has-partner-2" name="has-partner" type="radio" value="no" {{ checked("has-partner","no") }}>
-                  <label class="govuk-label govuk-radios__label" for="has-partner-2">
+                  <input class="govuk-radios__input" id="property-2" name="property" type="radio" value="yes" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-2">
+                    Yes, owned outright
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="no" {{ checked("property","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="property-3">
                     No
                   </label>
                 </div>
@@ -74,9 +64,9 @@ Apply for legal aid - Property and mortgage
             Save and continue
           </button>
 
-<!--          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">-->
-<!--            Save and come back later-->
-<!--          </a>-->
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
         </form>
       </div>
     </div>
