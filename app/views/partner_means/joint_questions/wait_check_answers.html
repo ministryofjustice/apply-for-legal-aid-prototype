@@ -1,0 +1,380 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "dashboard"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading" style="max-width: 900px">Your client needs to complete their part of the application before you can continue.</p>
+  </div>
+</div>
+
+<p>We've sent an email to <strong>samdoe@email.com</strong>.</p>
+
+<!--  <p>If you need to change the email address and resend the application, click on the button below.</p> -->
+
+<a role="button" href="../client_means/email_address" class="govuk-button draft-button">
+  Change email and resend link
+</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Your application
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Client details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sam
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Doe
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 1980
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondence address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 Main Street<br/>London<br/>SE15 5NP
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456C
+        </dd>
+       
+      </div>
+    </dl>
+    <br>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Proceedings</h2>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Proceeding 1
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Non-molestation order
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Proceeding 2
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Child arrangements order (contact)
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+</dl>
+    <br>
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Non-molestation order</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+
+   <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Client role
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Applicant
+      </dd>
+    
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Delegated functions
+      </dt>
+      <dd class="govuk-summary-list__value">
+        3 December 2022
+      </dd>
+    
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Emergency level of service
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Full representation
+      </dd>
+     
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Emergency scope limits
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Hearing<br/>
+        Date: 12/2/23
+      </dd>
+     
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Substantive level of service
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Full representation
+      </dd>
+     
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Substantive scope limits
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Injunction FLA-to-final hearing
+      </dd>
+    </div>
+  </dl>
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Child arrangements order (contact)</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Applicant
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Delegated functions
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 December 2022
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Emergency level of service
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Family help (higher)
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Emergency scope limits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Interim order including return date
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Substantive level of service
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Family help (higher)
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Substantive scope limits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          FHH Children
+        </dd>
+      
+      </div>
+    </dl>
+    <br>
+
+    <br>
+
+    <h2 class="govuk-heading-m">Emergency cost limit</h2>
+
+     <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Higher cost limit requested
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Amount requested
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £4,000
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Reason goes here
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+  <br/>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">
+      Partner details
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does your client have a partner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Partner first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sally Doe
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Partner last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['partner-lastname'] }}
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Partner date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['partner-dob-day'] }}<br/>
+          {{ data['partner-dob-month'] }}<br/>
+          {{ data['partner-dob-year'] }}
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Partner National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456C
+        </dd>
+       
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is the partner's correspondence address the same as your client's?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+       
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+  <br>
+  <a class="govuk-button" href="dashboard_2" role="button">
+   Back to applications
+  </a>
+
+
+{% endblock %}
