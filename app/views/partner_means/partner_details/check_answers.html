@@ -17,7 +17,7 @@ Apply for legal aid - Check your answers
 
 {{ govukBackLink({
   text: "Back",
-  href: "contrary_interest"
+  href: "same_address"
 }) }}
 {% endblock %}
 
@@ -30,7 +30,7 @@ Apply for legal aid - Check your answers
     </h1>
 
     <h2 class="govuk-heading-m">
-      Client's details
+      Client details
     </h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -99,16 +99,6 @@ Apply for legal aid - Check your answers
           </a>
         </dd>
       </div>
-    </dl>
-    <br>
-
-<!---->
-
-
-    <h2 class="govuk-heading-m">
-      Partner's details
-    </h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Does your client have a partner?
@@ -117,17 +107,27 @@ Apply for legal aid - Check your answers
           Yes
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
+          <a class="govuk-link" href="../client_details/client_has_partner">
             Change <span class="govuk-visually-hidden">partner answer</span>
           </a>
         </dd>
       </div>
+    </dl>
+    <br>
+
+    <!-- partner details -->
+
+    <h2 class="govuk-heading-m">
+      Partner's details
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Partner first name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['partner-firstname'] }}
+          Sally
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="partner_details">
@@ -140,7 +140,7 @@ Apply for legal aid - Check your answers
           Partner last name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['partner-lastname'] }}
+          Doe
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="partner_details">
@@ -153,9 +153,7 @@ Apply for legal aid - Check your answers
           Partner date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['partner-dob-day'] }}<br/>
-          {{ data['partner-dob-month'] }}<br/>
-          {{ data['partner-dob-year'] }}
+        3 March 1990
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="partner_details">
@@ -178,10 +176,10 @@ Apply for legal aid - Check your answers
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Is the partner's correspondence address the same as your client's?
+          Correspondence address
         </dt>
         <dd class="govuk-summary-list__value">
-          Yes
+        1 Main Street<br/>London<br/>SE15 5NP
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="same_address">
@@ -191,10 +189,6 @@ Apply for legal aid - Check your answers
       </div>
     </dl>
 
-
-
-
-<!---->
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -427,97 +421,6 @@ Apply for legal aid - Check your answers
 </div>
   <br/>
 
-
-  <!--partner details-->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">
-      Partner's details
-    </h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Does your client have a partner?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
-            Change <span class="govuk-visually-hidden">partner answer</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Partner first name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['partner-firstname'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
-            Change <span class="govuk-visually-hidden">first name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Partner last name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['partner-lastname'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
-            Change <span class="govuk-visually-hidden">last name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Partner date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['partner-dob-day'] }}<br/>
-          {{ data['partner-dob-month'] }}<br/>
-          {{ data['partner-dob-year'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
-            Change <span class="govuk-visually-hidden">partner date of birth</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Partner National Insurance number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          QQ123456C
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="partner_details">
-            Change <span class="govuk-visually-hidden">national insurance number</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Is the partner's correspondence address the same as your client's?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="same_address">
-            Change <span class="govuk-visually-hidden">partner correspondence address</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
