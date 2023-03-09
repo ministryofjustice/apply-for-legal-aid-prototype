@@ -34,584 +34,120 @@ Apply for legal aid - Types of income
 
 {% block content %}
 
-<style>
-
-
-.govuk-summary-card {
-  margin-bottom: 20px;
-  border: 1px solid #b1b4b6;
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card {
-    margin-bottom: 30px;
-  }
-}
-
-.govuk-summary-card__title-wrapper {
-  padding: 15px;
-  border-bottom: 1px solid transparent;
-  background-color: #f3f2f1;
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__title-wrapper {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    padding: 15px 20px;
-  }
-}
-
-.govuk-summary-card__title {
-  font-family: "GDS Transport", arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 700;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  margin: 5px 20px 10px 0;
-}
-@media print {
-  .govuk-summary-card__title {
-    font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__title {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
-  }
-}
-@media print {
-  .govuk-summary-card__title {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__title {
-    margin-bottom: 5px;
-  }
-}
-
-.govuk-summary-card__actions {
-  font-family: "GDS Transport", arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 700;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  row-gap: 10px;
-  margin: 5px 0;
-  padding: 0;
-  list-style: none;
-}
-@media print {
-  .govuk-summary-card__actions {
-    font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__actions {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
-  }
-}
-@media print {
-  .govuk-summary-card__actions {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__actions {
-    -ms-flex-pack: right;
-    justify-content: right;
-    text-align: right;
-  }
-}
-
-.govuk-summary-card__action {
-  display: inline;
-  margin: 0 10px 0 0;
-  padding-right: 10px;
-  border-right: 1px solid #b1b4b6;
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__action {
-    margin-right: 0;
-  }
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .govuk-summary-card__action {
-    margin-bottom: 5px;
-  }
-}
-
-.govuk-summary-card__action:last-child {
-  margin: 0;
-  padding-right: 0;
-  border-right: none;
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__action:last-child {
-    padding-left: 10px;
-  }
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .govuk-summary-card__action:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.govuk-summary-card__content {
-  padding: 15px 15px 0;
-}
-@media (min-width: 40.0625em) {
-  .govuk-summary-card__content {
-    padding: 15px 20px;
-  }
-}
-.govuk-summary-card__content .govuk-summary-list {
-  margin-bottom: 0;
-}
-.govuk-summary-card__content .govuk-summary-list__row:last-of-type {
-  margin-bottom: 0;
-  border-bottom: none;
-}
-
-.govuk-table {
-  font-family: "GDS Transport", arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: #0b0c0c;
-  width: 100%;
-  margin-bottom: 20px;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-@include govuk-exports("govuk/component/summary-list") {
-  .govuk-summary-list {
-    @include govuk-font($size: 19);
-    @include govuk-text-colour;
-    @include govuk-media-query($from: tablet) {
-      display: table;
-      width: 100%;
-      table-layout: fixed; // Required to allow us to wrap words that overflow.
-      border-collapse: collapse;
-    }
-    margin: 0; // Reset default user agent styles
-    @include govuk-responsive-margin(6, "bottom");
-  }
-
-  .govuk-summary-list__row {
-    border-bottom: 1px solid $govuk-border-colour;
-
-    @include govuk-media-query($until: tablet) {
-      margin-bottom: govuk-spacing(3);
-    }
-    @include govuk-media-query($from: tablet) {
-      display: table-row;
-    }
-  }
-
-  // Remove right padding from the last column in the row
-  .govuk-summary-list__row:not(.govuk-summary-list__row--no-actions) > :last-child {
-    padding-right: 0;
-  }
-
-  // Provide an empty 'cell' for rows that don't have actions – otherwise the
-  // bottom border is not drawn for that part of the row in some browsers.
-  .govuk-summary-list__row--no-actions {
-    @include govuk-media-query($from: tablet) {
-      &:after {
-        content: "";
-        display: table-cell;
-        width: 20%;
-      }
-    }
-  }
-
-  .govuk-summary-list__key,
-  .govuk-summary-list__value,
-  .govuk-summary-list__actions {
-    margin: 0; // Reset default user agent styles
-
-    @include govuk-media-query($from: tablet) {
-      display: table-cell;
-      padding-top: govuk-spacing(2);
-      padding-right: govuk-spacing(4);
-      padding-bottom: govuk-spacing(2);
-    }
-  }
-
-  .govuk-summary-list__actions {
-    margin-bottom: govuk-spacing(3);
-    @include govuk-media-query($from: tablet) {
-      width: 20%;
-      padding-right: 0; // Needed for IE8
-      text-align: right;
-    }
-  }
-
-  .govuk-summary-list__key,
-  .govuk-summary-list__value {
-    // Automatic wrapping for unbreakable text (e.g. URLs)
-    word-wrap: break-word; // Fallback for older browsers only
-    overflow-wrap: break-word;
-  }
-
-  .govuk-summary-list__key {
-    margin-bottom: govuk-spacing(1);
-    @include govuk-typography-weight-bold;
-    @include govuk-media-query($from: tablet) {
-      width: 30%;
-    }
-  }
-
-  .govuk-summary-list__value {
-    @include govuk-media-query($until: tablet) {
-      margin-bottom: govuk-spacing(3);
-    }
-  }
-
-  .govuk-summary-list__value > p {
-    margin-bottom: govuk-spacing(2);
-  }
-
-  .govuk-summary-list__value > :last-child {
-    margin-bottom: 0;
-  }
-
-  .govuk-summary-list__actions-list {
-    width: 100%;
-    margin: 0; // Reset default user agent styles
-    padding: 0; // Reset default user agent styles
-  }
-
-  .govuk-summary-list__actions-list-item {
-    display: inline-block;
-  }
-
-  // In older browsers such as IE8, :last-child is not available,
-  // so only show the border divider where it is available.
-  @include govuk-media-query($until: tablet) {
-    .govuk-summary-list__actions-list-item {
-      margin-right: govuk-spacing(2);
-      padding-right: govuk-spacing(2);
-    }
-
-    .govuk-summary-list__actions-list-item:not(:last-child) {
-      border-right: 1px solid $govuk-border-colour;
-    }
-
-    .govuk-summary-list__actions-list-item:last-child {
-      margin-right: 0;
-      padding-right: 0;
-      border: 0;
-    }
-  }
-
-  @include govuk-media-query($from: tablet) {
-    .govuk-summary-list__actions-list-item {
-      margin-left: govuk-spacing(2);
-      padding-left: govuk-spacing(2);
-    }
-
-    .govuk-summary-list__actions-list-item:not(:first-child) {
-      border-left: 1px solid $govuk-border-colour;
-    }
-
-    .govuk-summary-list__actions-list-item:first-child {
-      margin-left: 0;
-      padding-left: 0;
-      border: 0;
-    }
-  }
-
-  // No border on entire summary list
-  .govuk-summary-list--no-border {
-    .govuk-summary-list__row {
-      border: 0;
-    }
-
-    // Increase padding by 1px to compensate for 'missing' border
-    @include govuk-media-query($from: tablet) {
-      .govuk-summary-list__key,
-      .govuk-summary-list__value,
-      .govuk-summary-list__actions {
-        padding-bottom: govuk-spacing(2) + 1px;
-      }
-    }
-  }
-
-  // No border on specific rows
-  .govuk-summary-list__row--no-border {
-    border: 0;
-
-    // Increase padding by 1px to compensate for 'missing' border
-    @include govuk-media-query($from: tablet) {
-      .govuk-summary-list__key,
-      .govuk-summary-list__value,
-      .govuk-summary-list__actions {
-        padding-bottom: govuk-spacing(2) + 1px;
-      }
-    }
-  }
-
-  // Additional block for the summary card
-  .govuk-summary-card {
-    @include govuk-responsive-margin(6, "bottom");
-    border: 1px solid $govuk-border-colour;
-  }
-
-  .govuk-summary-card__title-wrapper {
-    padding: govuk-spacing(3);
-
-    // Ensures the card header appears separate to the summary list in forced colours mode
-    border-bottom: 1px solid transparent;
-    background-color: govuk-colour("light-grey", $legacy: "grey-3");
-
-    @include govuk-media-query($from: "tablet") {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-      padding: govuk-spacing(3) govuk-spacing(4);
-    }
-  }
-
-  .govuk-summary-card__title {
-    @include govuk-font($size: 19, $weight: bold);
-    margin: govuk-spacing(1) govuk-spacing(4) govuk-spacing(2) 0;
-
-    @include govuk-media-query($from: "tablet") {
-      margin-bottom: govuk-spacing(1);
-    }
-  }
-
-  .govuk-summary-card__actions {
-    @include govuk-font($size: 19, $weight: bold);
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    row-gap: 10px;
-    margin: govuk-spacing(1) 0;
-    padding: 0;
-    list-style: none;
-
-    @include govuk-media-query($from: "tablet") {
-      -ms-flex-pack: right;
-          justify-content: right;
-      text-align: right;
-    }
-  }
-
-  .govuk-summary-card__action {
-    display: inline;
-    margin: 0 govuk-spacing(2) 0 0;
-    padding-right: govuk-spacing(2);
-    border-right: 1px solid $govuk-border-colour;
-
-    @include govuk-media-query($from: "tablet") {
-      margin-right: 0;
-    }
-
-    // We use the following media query to target IE11 and 10 only to add margin
-    // between actions.
-    //
-    // We do this because we're using row-gap to create space between actions on
-    // more evergreen browsers which IE doesn't support. @supports currently isn't
-    // a viable solution, see https://github.com/w3c/csswg-drafts/issues/3559.
-    //
-    // Solution taken from https://stackoverflow.com/questions/11173106/apply-style-only-on-ie#answer-36448860
-    // which also includes an explanation of why this works
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      margin-bottom: govuk-spacing(1);
-    }
-  }
-
-  .govuk-summary-card__action:last-child {
-    margin: 0;
-    padding-right: 0;
-    border-right: none;
-
-    @include govuk-media-query($from: "tablet") {
-      padding-left: govuk-spacing(2);
-    }
-
-    // See above comment for why this is here
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      margin-bottom: 0;
-    }
-  }
-
-  .govuk-summary-card__content {
-    padding: govuk-spacing(3) govuk-spacing(3) 0;
-
-    @include govuk-media-query($from: "tablet") {
-      padding: govuk-spacing(3) govuk-spacing(4);
-    }
-
-    .govuk-summary-list {
-      margin-bottom: 0;
-    }
-
-    .govuk-summary-list__row:last-of-type {
-      margin-bottom: 0;
-      border-bottom: none;
-    }
-  }
-}
-
-</style>
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="partner_income_support" method="post" class="form">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check your client's and their partner's details
+    </h1>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Check your client's and their partner's details
-                </h1>
-              </legend>
+    <h2 class="govuk-heading-m">
+      Client details
+    </h2>
 
-              <br>
-              <br>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sam Doe
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">first name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 1980
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">last name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">dob</span>
+          </a>
+        </dd>
+      </div> 
+    </dl>
+    <br>
 
-              <div class="govuk-summary-card">
-                <div class="govuk-summary-card__title-wrapper">
-                  <h2 class="govuk-summary-card__title">Client's details</h2>
-                </div>
-                <div class="govuk-summary-card__content">
-                  <dl class="govuk-summary-list">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Name
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        John Doe
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> age</span>
-                        </a>
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Date of birth
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        1 January 1990
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> nationality</span>
-                        </a>
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        National Insurance number
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        QQ 12 34 56 C
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> working situation</span>
-                        </a>
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-              <div class="govuk-summary-card">
-                <div class="govuk-summary-card__title-wrapper">
-                  <h2 class="govuk-summary-card__title">Partner's details</h2>
-                </div>
-                <div class="govuk-summary-card__content">
-                  <dl class="govuk-summary-list">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Name
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        Sally Doe
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> whether details are known</span>
-                        </a>
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Date of birth
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        2 February 1992
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> relationship to lead tenant</span>
-                        </a>
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        National Insurance number
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        PP 22 44 55 C
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> age</span>
-                        </a>
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
+    <!-- partner details -->
 
-            </fieldset>
-          </div>
+    <h2 class="govuk-heading-m">
+      Partner's details
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sally Doe
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">first name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 March 1990
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">last name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          PP 22 44 55 C
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="client_details">
+            Change <span class="govuk-visually-hidden">dob</span>
+          </a>
+        </dd>
+      </div> 
+    </dl>
 
-          
 
-      <button type="submit" class="govuk-button">
-        Save and continue
-      </button>
-
-   <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
-
-    </form>
   </div>
 </div>
+
+
+  <br>
+  <a class="govuk-button" href="../dwp_check/joint_passporting_benefit" role="button">
+    Save and continue
+  </a>
+
+  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+    Save and come back later
+  </a>
 
 {% endblock %}
 
