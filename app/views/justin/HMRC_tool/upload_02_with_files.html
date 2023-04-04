@@ -1,0 +1,121 @@
+{% extends "layout_HMRC_tool.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Service name",
+  serviceUrl: "info_requests",
+  navigation: [
+    {
+      href: "info_requests",
+      text: "Requests"
+    },
+    {
+      href: "profile",
+      text: "Profile"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "info_requests"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="upload_02_with_files" method="post" class="form">
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+
+          <h1 class="govuk-heading-xl">Upload a file</h1>
+
+        </label>
+      </div>
+
+
+  <div class="document-upload">
+
+    <div class="moj-multi-file-upload">
+      <div class="moj-multi-file__uploaded-files">
+
+      </div>
+
+      <div class="moj-multi-file-upload__upload">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="documents">
+            Attach a file
+            <span id="more-detail-hint" class="govuk-hint">
+              The maximum file size is 20MB (TBC). Files must be XLS, or CSV (TBC).</span>
+            </label>
+
+            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+          </div>
+          <div class="govuk-heading-m">
+            Uploaded files
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+              <table class="govuk-table">
+
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Filename</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-font-weight-regular">filename.csv</th>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+                      Uploaded
+                    </strong></td>
+                    <td class="govuk-table__cell"><a href="upload_01_no_files" class="govuk-link">Remove</a></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+
+          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+            Upload file
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+    <a role="button" class="govuk-button" href="info_requests">
+      Back to requests
+    </a>
+
+  </form>
+</div>
+
+{% endblock %}

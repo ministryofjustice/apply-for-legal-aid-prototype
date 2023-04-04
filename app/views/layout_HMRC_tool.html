@@ -1,0 +1,67 @@
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/back-link/macro.njk"     import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"        import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk"    import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"    import govukDateInput %}
+{% from "govuk/components/details/macro.njk"       import govukDetails %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"      import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"   import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"         import govukInput %}
+{% from "govuk/components/label/macro.njk"         import govukLabel %}
+{% from "govuk/components/panel/macro.njk"         import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"        import govukRadios %}
+{% from "govuk/components/select/macro.njk"        import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"     import govukSkipLink %}
+{% from "govuk/components/table/macro.njk"         import govukTable %}
+{% from "govuk/components/tag/macro.njk"           import govukTag %}
+{% from "govuk/components/textarea/macro.njk"      import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"  import govukWarningText %}
+{% from "govuk/components/header/macro.njk"        import govukHeader %}
+{% set useValidation = false %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Service name",
+  serviceUrl: "info_requests",
+  navigation: [
+    {
+      href: "info_requests",
+      text: "Requests",
+      active: true
+    },
+    {
+      href: "profile",
+      text: "Profile"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% if useAutoStoreData %}
+
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}
