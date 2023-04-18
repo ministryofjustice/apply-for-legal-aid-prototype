@@ -7,24 +7,6 @@
 Apply for legal aid - Statement of case
 {% endblock %}
 
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "#",
-  serviceName: "Service name",
-  serviceUrl: "info_requests",
-  navigation: [
-    {
-      href: "info_requests",
-      text: "Requests"
-    },
-    {
-      href: "profile",
-      text: "Profile"
-    }
-  ]
-}) }}
-{% endblock %}
-
 
 
 {% block beforeContent %}
@@ -74,33 +56,9 @@ Apply for legal aid - Statement of case
           <div class="govuk-heading-m">
             Uploaded files
           </div>
-
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-
-              <table class="govuk-table">
-
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Filename</th>
-                    <th scope="col" class="govuk-table__header">Status</th>
-                    <th scope="col" class="govuk-table__header">Action</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header govuk-!-font-weight-regular">filename.csv</th>
-                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                      Uploaded
-                    </strong></td>
-                    <td class="govuk-table__cell"><a href="upload_01_no_files" class="govuk-link">Remove</a></td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </div>
-
+          <p class="govuk-body">
+            Files uploaded will appear here.
+          </p>
 
           <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
             Upload file
@@ -112,8 +70,11 @@ Apply for legal aid - Statement of case
     </div>
 
     <a role="button" class="govuk-button" href="info_requests">
-      Back to requests
+      Back to checked details
     </a>
+<div class="">
+    <a href="upload_02_with_files" style="color:grey">(Testing link) Once user has chosen a file</a>
+</div>
 
   </form>
 </div>
