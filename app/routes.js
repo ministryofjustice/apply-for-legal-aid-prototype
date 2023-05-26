@@ -1703,14 +1703,39 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
 
 // MULTIPLE OPPONENTS
 // Using delegated functions?
-router.post('/justin/multiple_opponents/opponent_name', function (req, res) {
+router.post('/justin/merits/opponent_name', function (req, res) {
 
   let myvar = req.session.data['individualororganisation']
 
   if (myvar === 'individual') {
-    res.redirect('/justin/multiple_opponents/opponent_name')
+    res.redirect('/justin/merits/opponent_name')
   } else {
-    res.redirect('/justin/multiple_opponents/opponent_organisation')
+    res.redirect('/justin/merits/opponent_organisation')
+  }
+})
+
+
+// Merits ECCT questions
+// question 01
+router.post('/justin/merits/ECCT_question_02', function (req, res) {
+
+  let myvar = req.session.data['ECCT_question_01_second_appeal']
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/merits/ECCT_question_03')
+  } else {
+    res.redirect('/justin/merits/ECCT_question_02')
+  }
+})
+// question 02
+router.post('/justin/merits/ECCT_question_04', function (req, res) {
+
+  let myvar = req.session.data['level_of_judge']
+
+  if (myvar == 'HHJ' || myvar == 'J') {
+    res.redirect('/justin/merits/ECCT_question_04')
+  } else {
+    res.redirect('/justin/merits/statement')
   }
 })
 
