@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "assessed_your_client"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="upload_01_no_files" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Proceeding name</span>
+
+            <h1 class="govuk-fieldset__heading">
+              Was the assessment positive or negative?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="positive" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                Positive
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="negative" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Negative
+              </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  How will the negative assessment be challenged?
+                </label>
+                <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+
+            </div>
+
+          </div>
+
+          <br><br>
+
+
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+
+        </form>
+      </div>
+    </div>
+
+    {% endblock %}

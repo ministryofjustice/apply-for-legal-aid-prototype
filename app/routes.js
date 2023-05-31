@@ -1739,6 +1739,19 @@ router.post('/justin/merits/ECCT_question_04', function (req, res) {
   }
 })
 
+// Merits questions PLF
+// question 04
+router.post('/justin/merits/assessment_pos_or_neg', function (req, res) {
+
+  let myvar = req.session.data['assessed']
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/merits/assessment_pos_or_neg')
+  } else {
+    res.redirect('/justin/merits/upload_01_no_files')
+  }
+})
+
 
 // Add your routes here - above the module.exports line
 module.exports = router
