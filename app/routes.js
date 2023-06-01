@@ -1748,9 +1748,35 @@ router.post('/justin/merits/assessment_pos_or_neg', function (req, res) {
   if (myvar === 'yes') {
     res.redirect('/justin/merits/assessment_pos_or_neg')
   } else {
-    res.redirect('/justin/merits/upload_01_no_files')
+    res.redirect('/justin/merits/merits_tasklist_proceeding_1_details_added')
   }
 })
+
+// Partner question
+// question 04
+router.post('/partner_means/client_details/partner_contrary_interest', function (req, res) {
+
+  let myvar = req.session.data['has-partner']
+
+  if (myvar === 'yes') {
+    res.redirect('/partner_means/client_details/partner_contrary_interest')
+  } else {
+    res.redirect('/passported_v2/check_answers')
+  }
+})
+
+router.post('/partner_means/partner_details/partner_details', function (req, res) {
+
+  let myvar = req.session.data['has-contrary-interest']
+
+  if (myvar === 'yes') {
+    res.redirect('/passported_v2/check_answers')
+  } else {
+    res.redirect('/partner_means/partner_details/partner_details')
+  }
+})
+
+
 
 
 // Add your routes here - above the module.exports line

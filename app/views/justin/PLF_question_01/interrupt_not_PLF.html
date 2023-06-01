@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "PLF_question_01"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="flash-card">
+    <h1 class="govuk-heading-l">This is not a public law family matter</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-body" style="color:white">
+A child must be subject to a care or supervision order for a proceeding to be a public law family matter.
+      </div>
+      <p class="govuk-body" style="color:white">You can:</p>
+<ul style="color:white" class="govuk-list govuk-list--bullet">
+  <li>select a different proceeding</li>
+  <li>go back and change your answer</li>
+  <li>apply using CCMS</li>
+</ul>
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <a href="search" role="button" class="govuk-button white-button right">
+          Select a different proceeding</a>
+      <a href="#" role="button" class="govuk-button draft-button">
+        Apply using CCMS</a>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
