@@ -227,8 +227,8 @@ Apply for legal aid - Check your answers - Merits
 }
 
 .govuk-summary-card {
-  margin-bottom: 20px;
-  border: 1px solid #b1b4b6
+  margin-bottom: 20px
+  /*border: 1px solid #b1b4b6*/
 }
 
 @media(min-width: 40.0625em) {
@@ -238,17 +238,17 @@ Apply for legal aid - Check your answers - Merits
 }
 
 .govuk-summary-card__title-wrapper {
-  padding: 15px;
-  border-bottom: 1px solid rgba(0,0,0,0);
-  background-color: #f3f2f1
+  /*padding: 15px;*/
+  border-bottom: 1px solid rgba(0,0,0,0)
+  /*background-color: #f3f2f1*/
 }
 
 @media(min-width: 40.0625em) {
   .govuk-summary-card__title-wrapper {
     display:flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
-    padding: 15px 20px
+    flex-wrap: nowrap
+    /*padding: 15px 20px*/
   }
 }
 
@@ -258,7 +258,7 @@ Apply for legal aid - Check your answers - Merits
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.25;
   margin: 5px 20px 10px 0
 }
@@ -272,7 +272,7 @@ Apply for legal aid - Check your answers - Merits
 @media(min-width: 40.0625em) {
   .govuk-summary-card__title {
     font-size:19px;
-    font-size: 1.1875rem;
+    font-size: 1.5rem;
     line-height: 1.3157894737
   }
 }
@@ -372,12 +372,12 @@ Apply for legal aid - Check your answers - Merits
 }
 
 .govuk-summary-card__content {
-  padding: 15px 15px 0
+  padding: 15px 0px
 }
 
 @media(min-width: 40.0625em) {
   .govuk-summary-card__content {
-    padding:15px 20px
+    padding:15px 0px
   }
 }
 
@@ -392,9 +392,7 @@ Apply for legal aid - Check your answers - Merits
 </style>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    <span class="govuk-caption-xl">Merits assessment</span>
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
       Check your answers
@@ -424,7 +422,7 @@ Apply for legal aid - Check your answers - Merits
             Joe Bloggs<br>Individual
           </dd>
         </div>
-        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+        <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
             Opponent 2
           </dt>
@@ -456,7 +454,7 @@ Apply for legal aid - Check your answers - Merits
           Billy Doe</br>born 1 Jan 2013
         </dd>
       </div>
-      <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <div class="govuk-summary-list__row ">
         <dt class="govuk-summary-list__key">
           Child 2
         </dt>
@@ -480,7 +478,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Why is the matter opposed by your client or the other party?
       </dt>
@@ -520,7 +518,7 @@ Apply for legal aid - Check your answers - Merits
         Yes
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Date of hearing
       </dt>
@@ -560,7 +558,7 @@ Apply for legal aid - Check your answers - Merits
         Yes
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Which court will the appeal be heard in?
       </dt>
@@ -584,7 +582,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Do you have a copy of the court order for this application?
       </dt>
@@ -608,7 +606,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         File names
       </dt>
@@ -637,7 +635,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Which children are covered under this proceeding?
       </dt>
@@ -669,7 +667,7 @@ Apply for legal aid - Check your answers - Merits
         Yes
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Details of correspondence or mediation
       </dt>
@@ -709,7 +707,7 @@ Apply for legal aid - Check your answers - Merits
         Borderline
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Details on the chance of a successful outcome
       </dt>
@@ -733,7 +731,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         What has changed in your client’s circumstances since the original order was made?
       </dt>
@@ -765,7 +763,7 @@ Apply for legal aid - Check your answers - Merits
         Yes
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         Details about any discussions that have happened, including the local authority’s response.
       </dt>
@@ -805,7 +803,7 @@ Apply for legal aid - Check your answers - Merits
         Negative
       </dd>
     </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         How will the negative assessment be challenged?
       </dt>
@@ -817,9 +815,6 @@ Apply for legal aid - Check your answers - Merits
 </div>
 </div>
 
-<h2 class="govuk-heading-l">
-  Supporting evidence
-</h2>
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
@@ -833,7 +828,7 @@ Apply for legal aid - Check your answers - Merits
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+    <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         File names
       </dt>
