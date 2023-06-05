@@ -23,6 +23,20 @@ Apply for legal aid - Does your client use online banking
 
 {% block content %}
 
+<script type="text/javascript">
+window.onload= function(){
+  // document.getElementById('countries-10').onclick = function(){
+  //   var cbs = document.getElementsByClassName("govuk-checkboxes__input");
+  //   for (var i = 0; i < cbs.length; i++) {
+  //     cbs[i].checked = false;
+  //   }
+  //   document.getElementById('countries-10').checked = true;
+  // }
+};
+
+
+</script>
+
 <style media="screen">
 .govuk-checkboxes__divider {
   font-family: "GDS Transport",arial,sans-serif;
@@ -111,7 +125,7 @@ Apply for legal aid - Does your client use online banking
 
           <div class="govuk-checkboxes__divider">or</div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="countries-10" name="countries" type="checkbox" value="none" data-behaviour="exclusive" onclick="unCheckAllInputsExcept(this)">
+            <input class="govuk-checkboxes__input" id="countries-10" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
             <label class="govuk-label govuk-checkboxes__label" for="countries-10">
               None of these orders relate to this proceeding
             </label>
@@ -136,24 +150,7 @@ Apply for legal aid - Does your client use online banking
 </br></br>
 <a href="other" style="color:grey">User selects an order</a>
 
-<script type="text/javascript">
-
-console.alert('what');
-
-Checkboxes.prototype.unCheckAllInputsExcept = function ($input) {
- var allInputsWithSameName = document.querySelectorAll('input[type="checkbox"][name="' + countries + '"]')
-
- nodeListForEach(allInputsWithSameName, function ($inputWithSameName) {
-   var hasSameFormOwner = ($input.form === $inputWithSameName.form)
-   if (hasSameFormOwner && $inputWithSameName !== $input) {
-     $inputWithSameName.checked = false
-   }
- })
-
- this.syncAllConditionalReveals()
-}
 
 
-</script>
 
 {% endblock %}
