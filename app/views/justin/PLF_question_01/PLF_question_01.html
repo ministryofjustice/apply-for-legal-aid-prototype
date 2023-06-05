@@ -24,14 +24,26 @@ Apply for legal aid - Does your client use online banking
 {% block content %}
 
 <script type="text/javascript">
+
 window.onload= function(){
-  // document.getElementById('countries-10').onclick = function(){
-  //   var cbs = document.getElementsByClassName("govuk-checkboxes__input");
-  //   for (var i = 0; i < cbs.length; i++) {
-  //     cbs[i].checked = false;
-  //   }
-  //   document.getElementById('countries-10').checked = true;
-  // }
+  console.log('onload')
+    var cbs = document.getElementsByClassName("govuk-checkboxes__input");
+    for (var i = 0; i < cbs.length; i++) {
+      cbs[i].onclick = function(){
+        document.getElementById('countries-10').checked = false;
+      }
+      // console.log('i= ' + cbs[i].id)
+    }
+
+    document.getElementById('countries-10').addEventListener("click", uncheckOthers);
+
+    function uncheckOthers(){
+      // console.log(this.id)
+      for (var i = 0; i < cbs.length; i++) {
+        cbs[i].checked = false;
+        }
+      this.checked = true;
+    };
 };
 
 
