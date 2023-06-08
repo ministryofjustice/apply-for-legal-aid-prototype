@@ -72,8 +72,9 @@ router.get('/multiple_proceedings/v3/search_3', function (req, res) {
     })
 })
 
-router.get('/search', function (req, res) {
-  res.render('search',
+
+router.get('/justin/merits/search', function (req, res) {
+  res.render('justin/merits/search',
     {
       proceedings: utils.getProceedings()
     })
@@ -81,6 +82,13 @@ router.get('/search', function (req, res) {
 
 router.get('/passported_v2/search', function (req, res) {
   res.render('passported_v2/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+
+router.get('/passported_v2/search_2', function (req, res) {
+  res.render('passported_v2/search_2',
     {
       proceedings: utils.getProceedings()
     })
