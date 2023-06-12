@@ -80,6 +80,13 @@ router.get('/justin/merits/search', function (req, res) {
     })
 })
 
+router.get('/justin/merits/search_JP', function (req, res) {
+  res.render('justin/merits/search_JP',
+    {
+      proceedings: utils.getProceedingsSwag()
+    })
+})
+
 router.get('/passported_v2/search', function (req, res) {
   res.render('passported_v2/search',
     {

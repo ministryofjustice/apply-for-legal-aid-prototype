@@ -4,67 +4,71 @@
 
 
 {% block pageTitle %}
-  Apply for legal aid - Citizen start page
+Apply for legal aid - Citizen start page
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Apply for legal aid",
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "PROTOTYPE"
-    },
-    html: 'This is a prototype. Some things may not work as expected.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: {
+    text: "PROTOTYPE"
+  },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
+{{ govukBackLink({
+  text: "Back",
+  href: ""
+}) }}
 
 {% endblock %}
 
 {% block content %}
 
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Continue the partner's financial assessment</h1>
+    <h1 class="govuk-heading-xl">Continue the partner's financial assessment</h1>
 
-        <p class="govuk-body-l">You need to:</p>
+    <p class="govuk-body-l">You need to:</p>
 
-        <h3 class="govuk-heading-m">1. Review their employment income</h3>
+    <h3 class="govuk-heading-m">1. Review their employment income</h3>
 
-        <p class="govuk-body">We'll show you the information HMRC shared with us.</p>
+    <p class="govuk-body">We'll show you the information HMRC shared with us.</p>
 
-        <h3 class="govuk-heading-m">2. Tell us about their income and outgoings</h3>
+    <h3 class="govuk-heading-m">2. Tell us about their income and outgoings</h3>
 
-<p class="govuk-body">We need to know if the partner:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li class="govuk-body"> receives certain types of income (for example, benefits)</li>
-<li class="govuk-body"> has certain regular outgoings (for example, childcare)</li>
-</ul>
-<br>
+    <p class="govuk-body">We need to know if the partner:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li class="govuk-body"> receives certain types of income (for example, benefits)</li>
+      <li class="govuk-body"> has certain regular outgoings (for example, childcare)</li>
+    </ul>
+    <br>
 
-<a class="govuk-button" href="employment_status" role="button">
-  Continue
-</a>
-<br>
+    <div class="govuk-button-group">
+      <a class="govuk-button" href="employment_status" data-module="govuk-button">
+        Save and continue
+      </a>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save as and come back later
+      </button>
+    </div>
 
+    <br>
 
+  </div>
 
 </div>
 
-
-      </div>
-
-    </div>
-
 {% endblock %}
-
