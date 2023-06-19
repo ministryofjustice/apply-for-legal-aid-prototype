@@ -1,6 +1,15 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
+
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// utils (is for civil apply) it provides the location of the json file with the proceedings list
 const utils = require('./utils')
+
+// Add your routes here
 
 // Route index page
 router.get('/', function (req, res) {
@@ -1790,9 +1799,3 @@ router.post('/partner_means/partner_details/partner_details', function (req, res
     res.redirect('/partner_means/partner_details/partner_details')
   }
 })
-
-
-
-
-// Add your routes here - above the module.exports line
-module.exports = router
