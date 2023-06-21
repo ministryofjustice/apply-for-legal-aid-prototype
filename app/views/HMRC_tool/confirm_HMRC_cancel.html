@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Are you sure you want to cancel this download?
+      </h1>
+
+      <form class="form" action="info_requests_cancel_notification" method="post">
+
+        <p>
+          You can not undo this action.
+        </p>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Cancel download
+          </button>
+          <a class="govuk-link" href="info_requests">Go back</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
