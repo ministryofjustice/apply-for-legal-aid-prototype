@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layout_HMRC_tool.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Check detail
+        Are you sure you want to cancel this check?
       </h1>
 
       <dl class="govuk-summary-list">
@@ -71,9 +71,9 @@
 
         <div class="govuk-button-group">
           <button class="govuk-button govuk-button--warning" data-module="govuk-button">
-            Cancel download
+            Yes, cancel this check
           </button>
-          <a class="govuk-link" href="info_requests">Go back</a>
+          <!-- <a class="govuk-link" href="info_requests">Go back</a> -->
         </div>
 
       </form>
