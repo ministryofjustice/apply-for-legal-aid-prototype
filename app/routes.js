@@ -1778,24 +1778,24 @@ router.post('/justin/merits/assessment_pos_or_neg', function (req, res) {
 
 // Partner question
 // question 04
-router.post('/partner_means/client_details/partner_contrary_interest', function (req, res) {
+router.post('/passported_v2/partner_contrary_interest', function (req, res) {
 
   let myvar = req.session.data['has-partner']
 
   if (myvar === 'yes') {
-    res.redirect('/partner_means/client_details/partner_contrary_interest')
+    res.redirect('/passported_v2/partner_contrary_interest')
   } else {
     res.redirect('/passported_v2/check_answers')
   }
 })
 
-router.post('/partner_means/partner_details/partner_details', function (req, res) {
+router.post('/passported_v2/partner_details', function (req, res) {
 
   let myvar = req.session.data['has-contrary-interest']
 
   if (myvar === 'yes') {
     res.redirect('/passported_v2/check_answers')
   } else {
-    res.redirect('/partner_means/partner_details/partner_details')
+    res.redirect('/passported_v2/partner_details')
   }
 })
