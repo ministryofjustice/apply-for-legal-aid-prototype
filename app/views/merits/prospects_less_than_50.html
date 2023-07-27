@@ -25,7 +25,7 @@ Apply for legal aid - Prospects of success
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="check_answers_merits" method="post" novalidate>
+        <form action="merits_tasklist_proceeding_1_details_added?prospects=yes" method="post" novalidate>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -38,13 +38,6 @@ Apply for legal aid - Prospects of success
               <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-
-              <!--  <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="prospects" type="radio" value="better" {{ checked("prospects","better") }}>
-                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                    50% or better
-                  </label>
-                </div> -->
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="how-contacted-conditional-2" name="prospects" type="radio" value="marginal" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("prospects","marginal") }}>
@@ -139,5 +132,3 @@ Apply for legal aid - Prospects of success
     </div>
 
 {% endblock %}
-
-

@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "incident_details"
+      href: "opponent_individual_or_org"
   }) }}
 {% endblock %}
 
@@ -26,9 +26,9 @@ Apply for legal aid - Client details
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Opponent's name</h1>
+      <h1 class="govuk-heading-xl">Opponent</h1>
 
-      <form action="opponent_mental_capacity" method="post" novalidate>
+      <form action="opponent_add" method="post" novalidate>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -38,16 +38,32 @@ Apply for legal aid - Client details
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="firstname">
-                First name
+                Organisation name
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
             </div>
 
-          <div class="govuk-form-group">
-                <label class="govuk-label" for="lastname">
-                Last name
-                </label>
-              <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="subject">
+                Organisation type
+              </label>
+              <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+                <option value="choose" selected>Select type</option>
+                <option value="Charity">Charity</option>
+                <option value="Court">Court</option>
+                <option value="Government Department">Government Department</option>
+                <option value="HMP/YOI">HMP/YOI</option>
+                <option value="Housing Association">Housing Association</option>
+                <option value="Immigration Removal Centre">Immigration Removal Centre</option>
+                <option value="Limited Company">Limited Company</option>
+                <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+                <option value="Local Authority">Local Authority</option>
+                <option value="NHS">NHS</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Police Authority">Police Authority</option>
+                <option value="Public Limited Company">Public Limited Company</option>
+                <option value="Sole Trader">Sole Trader</option>
+              </select>
             </div>
 
           </fieldset>

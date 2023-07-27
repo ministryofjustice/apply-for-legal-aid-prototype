@@ -4,9 +4,19 @@
 
 
 {% block pageTitle %}
-Apply for legal aid - Merits task list
+Apply for legal aid - Income start page
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -18,7 +28,7 @@ Apply for legal aid - Merits task list
 
   {{ govukBackLink({
   text: "Back",
-  href: "what_you_need_to_do_merits"
+  href: ""
 }) }}
 
 {% endblock %}
@@ -43,14 +53,38 @@ Apply for legal aid - Merits task list
      </h2>
      <ul class="app-task-list__items">
        <li class="app-task-list__item">
+         <a class="govuk-body" href="incident_details" aria-describedby="eligibility-completed">
+           Latest incident details
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
          <a class="govuk-body" href="opponent_individual_or_org" aria-describedby="eligibility-completed">
            Opponents
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
+         <a class="govuk-body" href="opponent_mental_capacity" aria-describedby="eligibility-completed">
+           Mental capacity of all parties
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="domestic_abuse_summary" aria-describedby="eligibility-completed">
+           Domestic abuse summary
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
          <a class="govuk-body" href="children_1" aria-describedby="eligibility-completed">
            Children involved in this application
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="laspo" aria-describedby="eligibility-completed">
+           Section 8 and LASPO
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
@@ -67,14 +101,24 @@ Apply for legal aid - Merits task list
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <span class="govuk-body" style="color:gray">Q6 </span>
+         <a class="govuk-body" href="deny_allegations" aria-describedby="eligibility-completed">
+           Client denial of allegation
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="offered_undertakings" aria-describedby="eligibility-completed">
+           Client offer of undertakings
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
          <a class="govuk-body" href="court_order" aria-describedby="eligibility-completed">
            The court order
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <span class="govuk-body" style="color:gray">Q ECCT </span>
          <a class="govuk-body" href="ECCT_question_01" aria-describedby="eligibility-completed">
            Is this a second appeal?
          </a>
@@ -100,7 +144,7 @@ Apply for legal aid - Merits task list
   </h2>
      <ul class="app-task-list__items">
        <li class="app-task-list__item">
-         <a class="govuk-body" aria-describedby="eligibility-completed">
+         <a class="govuk-body" href="children_cao" aria-describedby="eligibility-completed">
            Children covered by proceeding
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
@@ -130,20 +174,30 @@ Apply for legal aid - Merits task list
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <span class="govuk-body" style="color:gray">Q2 </span><a class="govuk-body" href="change_in_circumstances" aria-describedby="eligibility-completed">
+         <a class="govuk-body" href="prohibited_steps" aria-describedby="eligibility-completed">
+           Prohibited steps
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="opponents_app_or_court_order" aria-describedby="eligibility-completed">
+           Opponent's application
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="change_in_circumstances" aria-describedby="eligibility-completed">
          Changes in circumstances
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <span class="govuk-body" style="color:gray">Q3 </span>
          <a class="govuk-body" href="contacting_local_authority" aria-describedby="eligibility-completed">
            Contacting the local authority
          </a>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
        </li>
        <li class="app-task-list__item">
-         <span class="govuk-body" style="color:gray">Q4 </span>
          <a class="govuk-body" href="assessed_your_client" aria-describedby="eligibility-completed">
            Assessment of your client
          </a>

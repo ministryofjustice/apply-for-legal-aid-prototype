@@ -5,3 +5,35 @@
 
 // Add extra styles here
 @import "main.scss";
+.dropzone.dz-clickable {
+  cursor: pointer;
+}
+.dropzone {
+  position: relative;
+}
+.dropzone, .dropzone * {
+  box-sizing: border-box;
+}
+.dropzone {
+  min-height: 150px;
+  border: 1px solid rgba(0,0,0,.8);
+  border-radius: 5px;
+  padding: 20px 20px;
+}
+.dropzone, .dropzone * {
+  box-sizing: border-box;
+}
+.dropzone {
+  display: flex;
+  margin-top: 1em;
+  padding: 60px 15px;
+  transition: outline-offset .1s ease-in-out,background-color .1s linear;
+  border: none !important;
+  border-radius: 0 !important;
+  outline: 3px dashed #0b0c0c;
+  text-align: center;
+}
+.dropzone .dz-message {
+    text-align: center;
+    margin: 3em 0;
+}

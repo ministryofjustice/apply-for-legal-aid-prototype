@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "merits_tasklist_proceeding_2_details_added"
+  href: "assessed_your_client"
 }) }}
 {% endblock %}
 
@@ -34,39 +34,32 @@ Apply for legal aid - Statement of case
 
           <h1 class="govuk-heading-xl">Upload supporting evidence</h1>
 
-          <p class="govuk-body">Use this page to upload gateway evidence for Section 8 proceedings (optional).</p>
+          <!-- <p class="govuk-body">Use this page to upload gateway evidence for Section 8 proceedings (optional).</p> -->
 
         </label>
       </div>
 
 
-  <div class="document-upload">
-
-    <div class="moj-multi-file-upload">
-      <div class="moj-multi-file__uploaded-files">
-
-      </div>
-
-      <div class="moj-multi-file-upload__upload">
-
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="documents">
+      <div class="dropzone__upload">
+        <div class="govuk-form-group script" id="dropzone-form-group" aria-labelledby="dropzone-label">
+          <label class="govuk-label govuk-label--m" id="dropzone-label">
             Attach a file
-            <span id="more-detail-hint" class="govuk-hint">
-              The maximum file size is 8MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</span>
-            </label>
+          </label>
+          <div class="govuk-hint">The maximum file size is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</div>
 
-            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+          <span class="hidden" aria-hidden="true" id="application-id"></span>
+          <span class="hidden" aria-hidden="true" id="dropzone-url" data-url="/v1/statement_of_cases"></span>
+          <p id="dropzone-file-error" class="govuk-error-message dropzone-error hidden">
+            <span class="govuk-visually-hidden">Error:</span>
+          </p>
+          <div class="dropzone dz-clickable" id="dropzone-form">
+            <div class="dz-message" data-dz-message="">
+              <span class="govuk-body govuk-!-padding-top-2 script">Drag and drop files here or</span>
+              <button id="dz-upload-button" class="govuk-button govuk-button--secondary script" style="top:-5px" tabindex="0">Choose files</button>
+            </div>
           </div>
-
-          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-            Upload file
-          </button>
-
         </div>
       </div>
-
-    </div>
 
     <button type="submit" class="govuk-button">
       Save and continue

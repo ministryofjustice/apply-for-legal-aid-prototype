@@ -17,11 +17,12 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "children_add_2"
+  href: ""
 }) }}
 {% endblock %}
 
 {% block content %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -35,18 +36,15 @@ Apply for legal aid - Statement of case
           <p class="govuk-body">You need to provide details of:</p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>the latest domestic abuse incident</li>
+            <!-- <li>the latest domestic abuse incident</li> -->
             <li>what has happened in the case so far</li>
             <li>any other parties involved and their relationship to the applicant</li>
             <li>why the current proceedings are necessary</li>
             <li>anyone else who might be able to fund this case</li>
           </ul>
 
-
-
         </label>
       </div>
-
 
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -56,35 +54,29 @@ Apply for legal aid - Statement of case
         </strong>
       </div>
 
-      <div class="document-upload">
+      <div class="dropzone__upload">
+        <div class="govuk-form-group script" id="dropzone-form-group" aria-labelledby="dropzone-label">
+          <label class="govuk-label govuk-label--m" id="dropzone-label">
+            Attach a file
+          </label>
+          <div class="govuk-hint">The maximum file size is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</div>
 
-        <div class="moj-multi-file-upload">
-          <div class="moj-multi-file__uploaded-files">
-
-          </div>
-
-          <div class="moj-multi-file-upload__upload">
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--m" for="documents">
-                Attach a file
-                <span id="more-detail-hint" class="govuk-hint">
-                  The maximum file size is 8MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</span>
-                </label>
-
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-              </div>
-
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-                Upload file
-              </button>
-
+          <span class="hidden" aria-hidden="true" id="application-id"></span>
+          <span class="hidden" aria-hidden="true" id="dropzone-url" data-url="/v1/statement_of_cases"></span>
+          <p id="dropzone-file-error" class="govuk-error-message dropzone-error hidden">
+            <span class="govuk-visually-hidden">Error:</span>
+          </p>
+          <div class="dropzone dz-clickable" id="dropzone-form">
+            <div class="dz-message" data-dz-message="">
+              <span class="govuk-body govuk-!-padding-top-2 script">Drag and drop files here or</span>
+              <button id="dz-upload-button" class="govuk-button govuk-button--secondary script" style="top:-5px" tabindex="0">Choose files</button>
             </div>
           </div>
-
         </div>
-<h2 class="govuk-heading-m">Uploaded files</h2>
-<p class="govuk-body">Files uploaded will appear here.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Uploaded files</h2>
+      <p class="govuk-body">Files uploaded will appear here.</p>
 
 
 
