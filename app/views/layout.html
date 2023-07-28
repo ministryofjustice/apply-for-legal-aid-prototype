@@ -1,5 +1,4 @@
 {% extends "govuk/template.njk" %}
-
 {% from "govuk/components/back-link/macro.njk"     import govukBackLink %}
 {% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
 {% from "govuk/components/button/macro.njk"        import govukButton %}
@@ -42,7 +41,7 @@
     navigationClasses: "position_right",
     navigation: [
     {
-      href: "profile",
+      href: "sitewide_links/profile",
       text: "Neha Patel"
     },
     {
@@ -62,23 +61,23 @@
     meta: {
       items: [
       {
-        href: "/contact_us",
+        href: "sitewide_links/contact_us",
         text: "Contact"
       },
       {
-        href: "/feedback",
+        href: "sitewide_links/feedback",
         text: "Feedback"
       },
       {
-        href: "/cookies",
+        href: "sitewide_links/cookies",
         text: "Cookies"
       },
       {
-        href: "/privacy/privacy",
+        href: "sitewide_links/privacy",
         text: "Privacy policy"
       },
       {
-        href: "/accessibility_statement",
+        href: "sitewide_links/accessibility_statement",
         text: "Accessibility statement"
       },
       {
