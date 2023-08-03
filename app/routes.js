@@ -1563,7 +1563,7 @@ router.post('/new_app_to_DWP/substantive_LOS_FHH_scope', function (req, res) {
   }
 })
 
-// DWP check with PARTNER
+// DWP check with PARTNER - CONCEPT
 // ../client_means/means_start
 router.post('/partner_means/client_means/means_start', function (req, res) {
   // Get the answer from session data
@@ -1579,6 +1579,28 @@ router.post('/partner_means/client_means/means_start', function (req, res) {
   }
   else if (dwp === 'no_partner') {
     res.redirect('/partner_means/dwp_check/check_details');
+  }
+  else {
+    // yes //
+    res.redirect('/partner_means/client_means/means_start')
+  }
+})
+
+// DWP check with PARTNER
+router.post('/means_financial/client_means/means_start', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let dwp = req.session.data['dwp'];
+
+  console.log('dwp = '+ req.session.data['dwp'])
+
+  if (dwp === 'no') {
+    res.redirect('/DWP_outcomes/check_details');
+  }
+  else if (dwp === 'no_partner') {
+    res.redirect('/DWP_outcomes/check_details_with_partner');
   }
   else {
     // yes //
