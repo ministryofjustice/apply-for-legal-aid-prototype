@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+
+
+{% block pageTitle %}
+  Apply for legal aid - Citizen start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "PROTOTYPE"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+        <h1 class="govuk-heading-xl">Confirm the following</h1>
+
+<p class="govuk-body">Your client, Sam Doe, agrees that:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li class="govuk-body"> they've instructed Hitchcock, Jones and King to represent them</li>
+<li class="govuk-body"> they've read the <a href="https://main-applyforlegalaid-uat.cloud-platform.service.justice.gov.uk/privacy_policy">LAA privacy policy</a></li>
+<li class="govuk-body"> we can share their information with other government departments like DWP and HMRC</li>
+<li class="govuk-body"> we can check their details with bank and credit reference agencies</li>
+<li class="govuk-body"> they may have to pay towards legal aid</li>
+<li class="govuk-body"> they may have to repay the legal costs if they keep or gain property or money at the end of the case (the 'statutory charge')</li>
+<li class="govuk-body"> the information they and their partner have’ve given is complete and correct</li>
+<li class="govuk-body"> they’ll report any changes to their financial situation immediately</li>
+</ul>
+<br>
+<br>
+
+<p class="govuk-body">Your client's partner, Sally Doe, agrees that:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li class="govuk-body"> they've read the <a href="https://main-applyforlegalaid-uat.cloud-platform.service.justice.gov.uk/privacy_policy">LAA privacy policy</a></li>
+<li class="govuk-body"> we can share their information with other government departments like DWP and HMRC</li>
+<li class="govuk-body"> we can check their details with bank and credit reference agencies</li>
+<li class="govuk-body"> the information they have given is complete and correct</li>
+
+</ul>
+<br>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true" style="top: 30px;">!</span>
+ 
+  <p class="govuk-body" style="padding-left: 60px;">
+ 
+  <strong>If they give wrong or incomplete information, do not report changes, or are found to have committed benefit fraud, they may:</p>
+  <ul class="govuk-list govuk-list--bullet" style="border-left-width: 60px; padding-left: 78px;">
+  <strong><li>be prosecuted</li>
+  <li>need to pay a financial penalty</li>
+  <li>have their legal aid stopped and have to pay back the costs</li></strong>
+  </ul>
+  </div>
+
+<div class="govuk-form-group">
+
+  <!-- <p class="govuk-body">You confirm that:</p> -->
+  
+       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+           <label class="govuk-label govuk-checkboxes__label" for="countries">
+            <!-- I confirm I will obtain the necessary signed declarations/signatures and will retain them upon the client’s file. -->
+            I confirm the above is correct and that I'll get a signed declaration from my client and their partner.
+  
+           </label>
+         </div>
+  
+  <p></p>
+  <p></p>
+       </div>
+  
+     </fieldset>
+   </div>
+
+   <div class="govuk-button-group">
+    <a class="govuk-button" data-module="govuk-button" href="review_and_print_application">
+      Save and continue
+    </a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Save and come back later
+    </button>
+  </div>
+
+</div>
+
+
+      </div>
+
+    </div>
+
+{% endblock %}
+

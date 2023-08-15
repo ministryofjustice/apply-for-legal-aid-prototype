@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Assessment start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "../dwp_check/dwp_blue_box"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">What you need to do</h1>
+
+    <form action="employment_status" method="post" novalidate>
+
+      <h2 class="govuk-heading-l">Complete Sam Doe's and their partner's financial assessment</h2>
+
+      <p class="govuk-body">As part of the financial assessment, you'll need to provide:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>details about their employment status</li>
+  <li>all of their bank statements from the last 3 months either through online banking or manual upload</li>
+<li>details about payments they receive</li>
+<li>details about money they pay out</li>
+  <li>any dependants they may have</li>
+  <li>details about their assets</li>
+        </ul>
+
+
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    <button type="submit" class="govuk-button">
+      Continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+

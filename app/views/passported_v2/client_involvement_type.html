@@ -1,0 +1,94 @@
+Applicant{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "other_3"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="delegated_functions" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Proceeding 1 of 2</span>
+            <h1 class="govuk-fieldset__heading">
+              Child arrangements order (contact)
+            </h1>
+          </legend>
+          <h2 class="govuk-heading-m govuk-!-margin-top-1">What is your client’s role in this proceeding?</h2>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CIT-1" name="CIT" type="radio" value="Applicant">
+              <label class="govuk-label govuk-radios__label" for="CIT-1">
+                Applicant, claimant or petitioner
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CIT-2" name="CIT" type="radio" value="Defendant">
+              <label class="govuk-label govuk-radios__label" for="CIT-2">
+                Defendant or respondent
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CIT-3" name="CIT" type="radio" value="Subject to proceedings">
+              <label class="govuk-label govuk-radios__label" for="CIT-3">
+                Subject of proceedings (child)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CIT-4" name="CIT" type="radio" value="Intervenor">
+              <label class="govuk-label govuk-radios__label" for="CIT-4">
+                Intervenor
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="CIT-5" name="CIT" type="radio" value="Joined party">
+              <label class="govuk-label govuk-radios__label" for="CIT-5">
+                Joined party
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+    </div>
+  </div>
+</fieldset>
+
+<button type="submit" class="govuk-button">
+  Save and continue
+</button>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+
+</form>
+<p><a href="substantive_default_Non_Mol" style="color:lightgray;">Skip to last screen of proceedings</a></p>
+
+</div>
+
+{% endblock %}
