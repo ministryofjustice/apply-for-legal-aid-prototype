@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Assessment start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">For testing purposes only</h1>
+
+
+    <div class="govuk-!-padding-bottom-4"></div>
+
+
+
+      <h2><a href="../check_answers_pages/check_answers_financial_means_BSU" style="color: #415a77;"> Link 1 <br> </a></h2>  
+      <h2 class="govuk-body-m" style="color: #1b263b;" >Continue with the manual bank upload journey</h2>
+
+<br>
+
+      <h2><a href="../check_answers_pages/check_answers_financial_means_truelayer" style="color: #415a77; "> Link 2 <br> </a></h2>
+
+      <h2 class="govuk-body-m" style="color: #1b263b; font-weight: 100;" >Continue with the TrueLayer (Online banking) journey</h2>
+
+<br>
+
+      <h2><a href="../check_answers_pages/check_answers_financial_means_BSU_v2" style="color: #415a77; "> Link 3 <br> </a></h2>
+
+      <h2 class="govuk-body-m" style="color: #1b263b; font-weight: 100;" >Continue with journey where client has done open-banking and partner has done manual upload.</h2> 
+      
+      <div class="govuk-!-padding-bottom-4"></div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+

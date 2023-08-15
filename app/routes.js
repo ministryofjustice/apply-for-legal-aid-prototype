@@ -1,95 +1,60 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
+
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// utils (is for civil apply) it provides the location of the json file with the proceedings list
 const utils = require('./utils')
+
+// Add your routes here
 
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Route for search proceeding list
+// Special Children Act filter question
+router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
-router.get('/multiple_proceedings/v1/search', function (req, res) {
-  res.render('multiple_proceedings/v1/search',
+  let myvar = req.session.data['proceeding-issued']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/other')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA')
+  }
+})
+
+
+// PROCEEDINGS SEARCH
+router.get('/new_app_to_DWP/search', function (req, res) {
+  res.render('new_app_to_DWP/search',
+    {
+      proceedings: utils.getProceedings()
+    })
+})
+// PROCEEDINGS SEARCH - CONCEPTS
+router.get('/sara/new_app_to_DWP/search', function (req, res) {
+  res.render('sara/new_app_to_DWP/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/v1/search_2', function (req, res) {
-  res.render('multiple_proceedings/v1/search_2',
+router.get('/justin/merits/search', function (req, res) {
+  res.render('justin/merits/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/v1/search_3', function (req, res) {
-  res.render('multiple_proceedings/v1/search_3',
+router.get('/justin/merits/search_JP', function (req, res) {
+  res.render('justin/merits/search_JP',
     {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search', function (req, res) {
-  res.render('multiple_proceedings/v2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search_2', function (req, res) {
-  res.render('multiple_proceedings/v2/search_2',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search_3', function (req, res) {
-  res.render('multiple_proceedings/v2/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/search', function (req, res) {
-  res.render('search',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/passported_v2/search', function (req, res) {
-  res.render('passported_v2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/non_passported_v1/search', function (req, res) {
-  res.render('non_passported_v1/search',
-    {
-      proceedings: utils.getProceedings()
+      proceedings: utils.getProceedingsSwag()
     })
 })
 
@@ -1453,63 +1418,28 @@ router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
 })
 
 
-// SECTION 8
+// PROCEDDING LOOP
 
-// Using delegated functions?
-router.post('/justin/section8/emergency_default', function (req, res) {
+// SCA proceeding - CONCEPT
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let df = req.session.data['DF']
-
-  if (df === 'no') {
-    res.redirect('/justin/section8/substantive_default')
-  } else {
-    res.redirect('/justin/section8/emergency_default')
-  }
-})
-
-// section 8
-// Using emergency default?
-router.post('/justin/section8/substantive_default', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let emergencyDefault = req.session.data['emergencydefault'];
-
-  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
-
-  if (emergencyDefault === 'no') {
-    res.redirect('/justin/section8/emergency_edit');
-  } else {
-    res.redirect('/justin/section8/substantive_default')
-  }
-})
-
-// Using substantive default?
-router.post('/justin/section8/client_involvement_type_Non_Mol', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-  // console.log('req.session.data[emergencydefault] = '+ req.session.data['emergencydefault'])
-  // console.log('emergencydefault = '+ emergencyDefault)
-
-  let substantivedefault = req.session.data['substantivedefault'];
+  let myVar = req.session.data['substantivedefault'];
 
   console.log('substantivedefault = '+ req.session.data['substantivedefault'])
 
-  if (substantivedefault === 'no') {
-    res.redirect('/justin/section8/substantive_edit');
+  if (myVar === 'no') {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit');
   } else {
-    res.redirect('/justin/section8/client_involvement_type_Non_Mol')
+    res.redirect('/sara/new_app_to_DWP/substantive_default_proceeding_02')
   }
 })
 
-// SECTION 8 refined
 
-router.post('/justin/section8_refined/emergency_default', function (req, res) {
+// Using delegated functions?
+router.post('/new_app_to_DWP/emergency_default', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1517,14 +1447,14 @@ router.post('/justin/section8_refined/emergency_default', function (req, res) {
   let df = req.session.data['DF']
 
   if (df === 'no') {
-    res.redirect('/justin/section8_refined/substantive_default')
+    res.redirect('/new_app_to_DWP/substantive_default')
   } else {
-    res.redirect('/justin/section8_refined/emergency_default')
+    res.redirect('/new_app_to_DWP/emergency_default')
   }
 })
 
 // Using emergency default?
-router.post('/justin/section8_refined/emergency_LOS_edit', function (req, res) {
+router.post('/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1534,14 +1464,14 @@ router.post('/justin/section8_refined/emergency_LOS_edit', function (req, res) {
   console.log('emergencydefault = '+ req.session.data['emergencydefault'])
 
   if (emergencyDefault === 'no') {
-    res.redirect('/justin/section8_refined/emergency_LOS_edit');
+    res.redirect('/new_app_to_DWP/emergency_LOS_edit');
   } else {
-    res.redirect('/justin/section8_refined/substantive_default')
+    res.redirect('/new_app_to_DWP/substantive_default')
   }
 })
 
 // emergency which scopes to show
-router.post('/justin/section8_refined/emergency_LOS_FHH_scope', function (req, res) {
+router.post('/new_app_to_DWP/emergency_LOS_FHH_scope', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1551,15 +1481,15 @@ router.post('/justin/section8_refined/emergency_LOS_FHH_scope', function (req, r
   console.log('emergencyLOS = '+ req.session.data['emergencyLOS'])
 
   if (emergencyLOS === 'Family help higher') {
-    res.redirect('/justin/section8_refined/emergency_LOS_FHH_scope');
+    res.redirect('/new_app_to_DWP/emergency_LOS_FHH_scope');
   } else {
-    res.redirect('/justin/section8_refined/emergency_LOS_FR_scope')
+    res.redirect('/new_app_to_DWP/emergency_LOS_FR_scope')
   }
 })
 
 //substantive_edit
 // Using substantive default?
-router.post('/justin/section8_refined/substantive_LOS_edit', function (req, res) {
+router.post('/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1569,14 +1499,14 @@ router.post('/justin/section8_refined/substantive_LOS_edit', function (req, res)
   console.log('substantivedefault = '+ req.session.data['substantivedefault'])
 
   if (substantiveDefault === 'no') {
-    res.redirect('/justin/section8_refined/substantive_LOS_edit');
+    res.redirect('/new_app_to_DWP/substantive_LOS_edit');
   } else {
-    res.redirect('/justin/section8_refined/client_involvement_type_Non_Mol')
+    res.redirect('/new_app_to_DWP/client_involvement_type_Non_Mol')
   }
 })
 
 // substantive which scopes to show
-router.post('/justin/section8_refined/substantive_LOS_FHH_scope', function (req, res) {
+router.post('/new_app_to_DWP/substantive_LOS_FHH_scope', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1586,9 +1516,92 @@ router.post('/justin/section8_refined/substantive_LOS_FHH_scope', function (req,
   console.log('substantiveLOS = '+ req.session.data['substantiveLOS'])
 
   if (substantiveLOS === 'Family help higher') {
-    res.redirect('/justin/section8_refined/substantive_LOS_FHH_scope');
+    res.redirect('/new_app_to_DWP/substantive_LOS_FHH_scope');
   } else {
-    res.redirect('/justin/section8_refined/substantive_LOS_FR_scope')
+    res.redirect('/new_app_to_DWP/substantive_LOS_FR_scope')
+  }
+})
+
+// DWP check with PARTNER - CONCEPT
+// ../client_means/means_start
+router.post('/partner_means/client_means/means_start', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let dwp = req.session.data['dwp'];
+
+  console.log('dwp = '+ req.session.data['dwp'])
+
+  if (dwp === 'no') {
+    res.redirect('/partner_means/dwp_check/');
+  }
+  else if (dwp === 'no_partner') {
+    res.redirect('/partner_means/dwp_check/check_details');
+  }
+  else {
+    // yes //
+    res.redirect('/partner_means/client_means/means_start')
+  }
+})
+
+// DWP check with PARTNER
+router.post('/means_financial/client_means/means_start', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let dwp = req.session.data['dwp'];
+
+  console.log('dwp = '+ req.session.data['dwp'])
+
+  if (dwp === 'no') {
+    res.redirect('/DWP_outcomes/check_details');
+  }
+  else if (dwp === 'no_partner') {
+    res.redirect('/DWP_outcomes/check_details_with_partner');
+  }
+  else {
+    // yes //
+    res.redirect('/partner_means/client_means/means_start')
+  }
+})
+
+// does your client use online banking?
+router.post('/partner_means/client_means/tlguidance', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let onlineBankingConsent = req.session.data['onlineBankingConsent'];
+
+  console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
+
+  if (onlineBankingConsent === 'no') {
+    res.redirect('/partner_means/client_means/upload');
+  }
+  else {
+    // yes //
+    res.redirect('/partner_means/client_means/tlguidance')
+  }
+})
+
+// does the partner use online banking?
+router.post('/partner_means/partner_means/tlguidance', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let onlineBankingConsent = req.session.data['onlineBankingConsent'];
+
+  console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
+
+  if (onlineBankingConsent === 'no') {
+    res.redirect('/partner_means/partner_means/upload');
+  }
+  else {
+    // yes //
+    res.redirect('/partner_means/partner_means/tlguidance')
   }
 })
 
@@ -1639,5 +1652,101 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
   }
 })
 
-// Add your routes here - above the module.exports line
-module.exports = router
+
+// MULTIPLE OPPONENTS - CONCEPT
+router.post('/justin/merits/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/justin/merits/opponent_name')
+  } else {
+    res.redirect('/justin/merits/opponent_organisation')
+  }
+})
+
+// MULTIPLE OPPONENTS
+router.post('/merits/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/merits/opponent_name')
+  } else {
+    res.redirect('/merits/opponent_organisation')
+  }
+})
+
+
+// Merits ECCT questions
+// question 01
+router.post('/justin/merits/ECCT_question_02', function (req, res) {
+
+  let myvar = req.session.data['ECCT_question_01_second_appeal']
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/merits/ECCT_question_03')
+  } else {
+    res.redirect('/justin/merits/ECCT_question_02')
+  }
+})
+// question 02
+router.post('/justin/merits/ECCT_question_04', function (req, res) {
+
+  let myvar = req.session.data['level_of_judge']
+
+  if (myvar == 'HHJ' || myvar == 'J') {
+    res.redirect('/justin/merits/ECCT_question_04')
+  } else {
+    res.redirect('/justin/merits/statement')
+  }
+})
+
+// Merits questions PLF
+// question 04
+router.post('/justin/merits/assessment_pos_or_neg', function (req, res) {
+
+  let myvar = req.session.data['assessed']
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/merits/assessment_pos_or_neg')
+  } else {
+    res.redirect('/justin/merits/merits_tasklist_proceeding_1_details_added')
+  }
+})
+
+// merits chances of success
+router.post('/merits/merits_tasklist_proceeding_1_details_added', function (req, res) {
+
+  let myvar = req.session.data['prospects']
+
+  if (myvar === 'yes') {
+    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+  } else {
+    res.redirect('/merits/prospects_less_than_50')
+  }
+})
+
+// Partner question
+// question 04
+router.post('/new_app_to_DWP/partner_contrary_interest', function (req, res) {
+
+  let myvar = req.session.data['has-partner']
+
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/partner_contrary_interest')
+  } else {
+    res.redirect('/new_app_to_DWP/check_answers')
+  }
+})
+
+router.post('/new_app_to_DWP/partner_details', function (req, res) {
+
+  let myvar = req.session.data['has-contrary-interest']
+
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/check_answers')
+  } else {
+    res.redirect('/new_app_to_DWP/partner_details')
+  }
+})

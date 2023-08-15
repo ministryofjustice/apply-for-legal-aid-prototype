@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "online_banking_question"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="receives_benefits" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label">
+              <h1 class="govuk-heading-xl">Your client needs to share their bank statements</h1>
+            </label>
+          </div>
+
+          <p class="govuk-body-"> We've emailed your client with details on how to share their bank statements.</p>
+          
+          <p class="govuk-body">We'll email you when they have done this.</p>
+
+          <p class="govuk-body">You've already shared the partner's bank statements.</p>
+
+          <div class="govuk-!-padding-bottom-6"></div>
+
+          <a href="../joint_questions/dashboard" class="govuk-button">
+            Back to your applications
+          </a>
+
+
+          <br>
+
+
+      </div>
+
+     
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "../partner_details/check_answers"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="../client_means/means_start" method="post" class="form">
+
+  <div class="flash-card govuk-!-margin-bottom-2">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <header>
+          <h1 class="govuk-heading-l">DWP records show that your client does not get a passporting benefit</h1>
+        </header>
+      </div>
+    </div>
+  </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-!-width-two-thirds govuk-!-padding-4">
+
+            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
+                            Are the DWP records correct?
+                        </h2>
+                    </legend>
+                    <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name" name="dwp" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                        Yes
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="dwp" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        No, my client gets a passporting benefit
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-3" name="dwp" type="radio" value="no_partner">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                        No, my client gets a joint passporting benefit with their partner
+                    </label>
+                </div>
+            </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="govuk-button right">
+      Save and continue
+    </button>
+
+  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+    Save and come back later
+  </a>
+
+  <!--<p><a href="joint_passporting_benefit" style="color: #555555;"> Alternative: If third option is selected</a></p> -->
+
+
+</form>
+
+
+{% endblock %}

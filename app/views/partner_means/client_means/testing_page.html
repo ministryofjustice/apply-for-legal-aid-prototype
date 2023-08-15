@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Assessment start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">For testing purposes only</h1>
+
+
+    <div class="govuk-!-padding-bottom-4"></div>
+
+      <h2 class="govuk-body-m" style="color: #1b263b;" >At this point your client will be sent an email with a link to access the service so that they can provide their financial information through TrueLayer.</h2>
+      <h2 class="govuk-body-m" style="color: #1b263b;" >Imagine that they have just completed this and have successfully submitted their information.</h2>
+      <h2 class="govuk-body-m" style="color: #1b263b;" >You can now continue with the application.</h2>
+<br>
+
+    <a class="govuk-button" href="provider_continue_application" > Continue <br> </a>
+
+
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
