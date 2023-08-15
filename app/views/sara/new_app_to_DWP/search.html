@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Proceedings
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery.hideseek.min.js"></script>
+<script>
+$('#search').hideseek({
+  highlight: true,
+  min_chars: 3,
+  nodata: "No results found.",
+  hidden_mode: true
+});
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
+  </div>
+</div>
+
+
+<label class="govuk-heading-m" for="search">
+  Search for legal proceedings
+</label>
+<div class="govuk-hint">
+  Select one proceeding at a time. You can choose more later.
+</div>
+
+
+<div id="search-field" class="govuk-form-group">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <input class="govuk-input" autocomplete="off" id="search" name="search" type="text" data-list="#proceedings-list">
+    </div>
+    <div class="govuk-grid-column-one-third clear-search">
+      <p><a class="govuk-link" href="search">Clear search</a></p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div id="proceedings-list" class="govuk-grid-column-full ">
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          {% for proceeding in proceedings -%}
+
+          <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
+            <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
+              <ul class="proceeding-list" style="text">
+
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+
+                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+
+                    <label class="govuk-label govuk-radios__label"><strong>{{proceeding.proceedingtype | capitalize}}</strong><br>{{proceeding.categoryoflaw| capitalize}} ({{proceeding.mattertype | capitalize}})</label>
+
+                  </div>
+                </div>
+              </ul>
+            </div>
+
+
+          </div>
+          {%- endfor %}
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+  <a class="govuk-button" href="has_proceeding_been_issued" role="button">
+    Save and continue
+  </a>
+
+  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+    Save and come back later
+  </a>
+
+  <!-- <p><a href="other_3" style="color:lightgray;">Skip to completed proceedings selection</a></p> -->
+
+  {% endblock %}

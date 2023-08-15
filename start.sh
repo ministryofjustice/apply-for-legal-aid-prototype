@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -euo pipefail
-
-node ./node_modules/gulp/bin/gulp generate-assets \
-  && node listen-on-port.js
+# maybe replace 5 and 6 with - npm run serve
+npm run serve
+# node ./node_modules/gulp/bin/gulp generate-assets \
+#   && node listen-on-port.js

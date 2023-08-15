@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Income start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "what_you_need_to_do_merits"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <p class="gov-body">
+    <a href="outgoings">Go to outgoings</a>
+    </p> -->
+    <h1 class="govuk-heading-xl">Provide details of the case</h1>
+
+ <h1 class="govuk-heading-l">Enter general case details</h1>
+
+ <ol class="app-task-list">
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">1. </span>Enter general case details
+       <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+         </span>
+     </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="opponent_individual_or_org" aria-describedby="eligibility-completed">
+           Opponents
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="children_add_2" aria-describedby="eligibility-completed">
+           Children involved in this application
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="matter_opposed" aria-describedby="eligibility-completed">
+           Why the matter is opposed
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="nature_of_urgency" aria-describedby="eligibility-completed">
+           Nature of urgency and hearing date
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <span class="govuk-body" style="color:gray">Q6 </span>
+         <a class="govuk-body" href="court_order" aria-describedby="eligibility-completed">
+           The court order
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <span class="govuk-body" style="color:gray">Q ECCT </span>
+         <a class="govuk-body" href="ECCT_question_01" aria-describedby="eligibility-completed">
+           Is this a second appeal?
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="statement" aria-describedby="eligibility-completed">
+           Statement of case
+         </a>
+         <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
+       </li>
+     </ul>
+   </li>
+
+
+   <h1 class="govuk-heading-l">Enter details for each proceeding</h1>
+   <br>
+
+
+   <li>
+     <h2 class="app-task-list__section">
+       <span class="app-task-list__section-number">2. </span> Name of proceeding
+  </h2>
+     <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="children_cao" aria-describedby="eligibility-completed">
+           Children covered by proceeding
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="resolve_cao" aria-describedby="eligibility-completed">
+           Attempts to settle
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="prospects_cao" aria-describedby="eligibility-completed">
+           Chances of success
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="reason_for_new_application" aria-describedby="eligibility-completed">
+           Reason for new application
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <a class="govuk-body" href="specific_issue" aria-describedby="eligibility-completed">
+           Specific issue
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <span class="govuk-body" style="color:gray">Q2 </span>
+         <a class="govuk-body" href="change_in_circumstances" aria-describedby="eligibility-completed">
+           Changes in circumstances
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <span class="govuk-body" style="color:gray">Q3 </span>
+         <a class="govuk-body" href="contacting_local_authority" aria-describedby="eligibility-completed">
+           Contacting the local authority
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+       <li class="app-task-list__item">
+         <span class="govuk-body" style="color:gray">Q4 </span>
+         <a class="govuk-body" href="assessed_your_client" aria-describedby="eligibility-completed">
+           Assessment of your client
+         </a>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+       </li>
+     </ul>
+   </li>
+
+ </ol>
+
+        <a href="#" role="button" class="govuk-button">
+          Save and continue
+        </a>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+
+    </div>
+  </div>
+
+  {% endblock %}

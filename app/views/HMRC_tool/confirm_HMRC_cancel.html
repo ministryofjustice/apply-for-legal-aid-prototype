@@ -1,0 +1,84 @@
+{% extends "layout_HMRC_tool.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Are you sure you want to cancel this check?
+      </h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Uploaded by
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Joe Bloggs
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date requested
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22 Mar 2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expiry date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None set
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            	additions.csv
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Pending
+            </strong>
+          </dd>
+        </div>
+      </dl>
+
+      <form class="form" action="info_requests_cancel_notification" method="post">
+
+
+
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Yes, cancel check
+          </button>
+          <!-- <a class="govuk-link" href="info_requests">Go back</a> -->
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
