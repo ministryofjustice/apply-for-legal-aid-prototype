@@ -28,29 +28,38 @@ Apply for legal aid - Income start page
 
   {{ govukBackLink({
   text: "Back",
-  href: "provider_continue_application"
+  href: "upload"
 }) }}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="moj-banner">
-
-  <div class="moj-banner__message">
-
-    <h2 class="govuk-heading-m">The information on this page has been provided by HMRC.</h2>
+<div class="govuk-notification-banner" role="region"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
   </div>
-
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      HMRC have provided the information on this page.
+      </p>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <!--  <p class="gov-body">
-    <a href="outgoings">Go to outgoings</a>
-    </p> -->
+    <span class="govuk-caption-xl">Partner's means assessment</span>
     <h1 class="govuk-heading-xl">Review Sally Doe's employment income</h1>
 
+    <div class="govuk-inset-text">
+      We’ve used the partner's National Insurance number to get this information from HMRC.
+    </div>
+
+    <br>
   <!--  <h2 class="govuk-heading-l">Employment income</h2> -->
 
   <table class="govuk-table">
@@ -213,7 +222,7 @@ Apply for legal aid - Income start page
         </label>
       </div>
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
- 
+
     <div class="govuk-form-group">
     <label class="govuk-label" for="policies-value">
     Enter details
@@ -237,12 +246,12 @@ Apply for legal aid - Income start page
       </div>
 
       </div>
-    
+
 
        <div class="govuk-!-padding-bottom-6"></div>
 
 
-        <a href="income_select_1" role="button" class="govuk-button">
+        <a href="receives_benefits" role="button" class="govuk-button">
           Save and continue
         </a>
 
@@ -252,6 +261,8 @@ Apply for legal aid - Income start page
 
     </div>
   </div>
+
+  <p><a href="hmrc_no_data" style="color: #b7b7b7;">If the partner is employed but no NINO was provided </a></p>
 
   <p><a href="hmrc_no_data_2" style="color: #b7b7b7;">If the partner is employed but HMRC returns no data</a></p>
 

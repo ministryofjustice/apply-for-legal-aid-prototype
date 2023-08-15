@@ -24,21 +24,33 @@ Apply for legal aid - Confirmation page
 
 {% block content %}
 
-<div class="moj-banner">
-
-  <div class="moj-banner__message">
-
-    <h2 class="govuk-heading-m">The information on this page has been provided by HMRC.</h2>
-  </div>
-
+<div class="govuk-notification-banner" role="region"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Important
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <p class="govuk-notification-banner__heading">
+    HMRC have provided the information on this page.
+    </p>
+</div>
 </div>
 
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">HMRC found a record of the partner's employment</h1>
+<div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-xl">Partner's means assessment</span>
+  <h1 class="govuk-heading-xl">HMRC found a record of the partner's employment</h1>
 
-        <p class="govuk-body-l">You told us the partner is not employed but HMRC shared the following information with us:</p>
+  <div class="govuk-inset-text">
+    We’ve used the partner's National Insurance number to get this information from HMRC.
+  </div>
+
+  <h2 class="govuk-body-l">You told us the partner is not employed but HMRC shared the following information with us:</h2>
+
+  <br>
 
         <table class="govuk-table">
           <thead class="govuk-table__head">

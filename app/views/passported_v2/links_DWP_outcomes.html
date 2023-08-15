@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: ""
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        The users will not see this page
+      </strong>
+    </div>
+
+    <h1 class="govuk-heading-l">DWP outcomes</h1>
+
+    <ul class="govuk-list govuk-list--number">
+      <li><a href="DWP_outcome_no_means_test">No means test</a><div class="govuk-hint">Client under 18</div></li>
+      <li><a href="DWP_outcome_no_NINO">No NINO provided</a><div class="govuk-hint">Due to client's immigration status or client lacking capacity (can't find NINO)</div></li>
+      <li><a href="DWP_outcome_non_passported">Non-Passported</a><div class="govuk-hint">Client does not get a qualifying benefit</div></li>
+      <li><a href="DWP_outcome_passported">Passported</a><div class="govuk-hint">Client gets a qualifying benefit</div></li>
+    </ul>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

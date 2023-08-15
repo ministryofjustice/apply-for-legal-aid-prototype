@@ -1,15 +1,8 @@
 # Apply for Legal Aid Prototype
 
-Make sure you have Node.js v14.x installed locally. Further information on the requirements can be found here:
-https://govuk-prototype-kit.herokuapp.com/docs/install/requirements.md . You can follow this guide but once you get to
-the 'Install the kit' step then you should come back here and download/clone this prototype rather than the
-example GOV.UK one. Then you can continue following the instructions in the guide.
-
-Once you have the requirements set up and this prototype downloaded onto your machine, run `npm install` on the command line.
+Make sure you have Node.js v18.x installed locally.
 
 To start the prototype, run `npm start`.
-
-The guide here https://govuk-prototype-kit.herokuapp.com/docs also provides examples and further information.
 
 ## Deploying to Cloud platform
 

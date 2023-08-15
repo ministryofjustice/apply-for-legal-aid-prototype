@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Does your client use online banking
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "search"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+
+window.onload= function(){
+  console.log('onload')
+    var cbs = document.getElementsByClassName("govuk-checkboxes__input");
+    for (var i = 0; i < cbs.length; i++) {
+      cbs[i].onclick = function(){
+        document.getElementById('countries-10').checked = false;
+      }
+      // console.log('i= ' + cbs[i].id)
+    }
+
+    document.getElementById('countries-10').addEventListener("click", uncheckOthers);
+
+    function uncheckOthers(){
+      // console.log(this.id)
+      for (var i = 0; i < cbs.length; i++) {
+        cbs[i].checked = false;
+        }
+      this.checked = true;
+    };
+};
+
+
+</script>
+
+<style media="screen">
+.govuk-checkboxes__divider {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  width: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-xl">Proceeding name</span>
+          <h1 class="govuk-fieldset__heading">
+            Which of these orders does this proceeding relate to?
+          </h1>
+        </legend>
+        <div id="countries-hint" class="govuk-body">
+          These are orders set out in schedule 1, part 1, paragraph 1 of LASPO.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="Care order under section 31 Children act">
+            <label class="govuk-label govuk-checkboxes__label" for="countries">
+              Care order under section 31 Children act
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="Supervision order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+              Supervision order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="Secure accommodation order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+              Secure accommodation order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-4" name="countries" type="checkbox" value="Placement order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-4">
+              Placement order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="Adoption order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+              Adoption order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-6" name="countries" type="checkbox" value="Emergency Protection order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-6">
+              Emergency Protection order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-7" name="countries" type="checkbox" value="Child assessment order">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-7">
+              Child assessment order
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-8" name="countries" type="checkbox" value="Parenting orders under section 8 of the Crime and Disorder Act 1998">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-8">
+              Parenting orders under section 8 of the Crime and Disorder Act 1998
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-9" name="countries" type="checkbox" value="Child safety orders under section 11 of the Crime and Disorder Act 1998">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-9">
+              Child safety orders under section 11 of the Crime and Disorder Act 1998
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__divider">or</div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-10" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-10">
+              None of these orders relate to this proceeding
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <br><br>
+
+    <button type="submit" class="govuk-button">
+      Save and continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a>
+
+  </form>
+</div>
+</div>
+<a href="interrupt_not_PLF" style="color:grey">User selects 'None of these'</a>
+</br></br>
+<a href="other" style="color:grey">User selects an order</a>
+
+
+
+
+{% endblock %}

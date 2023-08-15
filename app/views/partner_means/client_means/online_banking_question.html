@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Apply for legal aid - Property and mortgage
+Does your client use online banking? - Apply for legal aid - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "employment_status"
+      href: "substantive_application"
   }) }}
 {% endblock %}
 
@@ -30,16 +30,17 @@ Apply for legal aid - Property and mortgage
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-xl">Client's means assessment</span>
                 <h1 class="govuk-fieldset__heading">
-                  We need your client's bank statements from the last 3 months
+                  Does your client use online banking?
                 </h1>
               </legend>
 
               <div class="govuk-!-padding-bottom-4"></div>
 
-                <h2 class="govuk-heading-m">
-                  Does your client use online banking?
-                </h2>
+                <p class="govuk-body">
+                  We need this information to collect your client’s bank statements for the last 3 months.
+                </p>
               <div class="govuk-!-padding-bottom-2"></div>
 
                 <div class="govuk-radios" data-module="govuk-radios">
