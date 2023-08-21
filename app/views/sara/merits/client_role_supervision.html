@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
   {{ govukBackLink({
     text: "Back",
-      href: "children_cao"
+      href: "children_supervision"
   }) }}
 {% endblock %}
 
@@ -26,16 +26,16 @@ Apply for legal aid - Statement of case
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="prospects_cao" method="post" novalidate>
+    <form action="client_parental_responsibility" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-xl">Proceeding name</span>
+            <span class="govuk-caption-xl">Supervision order</span>
 
             <h1 class="govuk-fieldset__heading">
-              Have attempts been made to settle the matter?
+              Who is your client in this proceeding?
             </h1>
           </legend>
 
@@ -44,22 +44,24 @@ Apply for legal aid - Statement of case
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                Yes
+                The biological parent of any children involved
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="contact-by-email">
-                  Enter details of any attempts at correspondence or mediation
-                </label>
-                <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Someone with parental responsibility
+              </label>
+              <div id="parental-responsibility-hint" class="govuk-hint govuk-radios__hint">
+                You'll need to upload supporting evidence later.
               </div>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                No
+                A child subject of the proceeding
               </label>
             </div>
 
