@@ -9,7 +9,6 @@ node_modules
 .tmuxp.*
 .idea/
 .DS_Store
-package-lock.json
 npm-debug.log
 lib/extensions/_extensions.scss
 app/views/.DS_Store

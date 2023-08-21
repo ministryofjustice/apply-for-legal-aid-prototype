@@ -16,71 +16,33 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Route for search proceeding list
+// Special Children Act filter question
+router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
-router.get('/multiple_proceedings/v1/search', function (req, res) {
-  res.render('multiple_proceedings/v1/search',
+  let myvar = req.session.data['proceeding-issued']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/other')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA')
+  }
+})
+
+
+// PROCEEDINGS SEARCH
+router.get('/new_app_to_DWP/search', function (req, res) {
+  res.render('new_app_to_DWP/search',
     {
       proceedings: utils.getProceedings()
     })
 })
-
-router.get('/multiple_proceedings/v1/search_2', function (req, res) {
-  res.render('multiple_proceedings/v1/search_2',
+// PROCEEDINGS SEARCH - CONCEPTS
+router.get('/sara/new_app_to_DWP/search', function (req, res) {
+  res.render('sara/new_app_to_DWP/search',
     {
       proceedings: utils.getProceedings()
     })
 })
-
-router.get('/multiple_proceedings/v1/search_3', function (req, res) {
-  res.render('multiple_proceedings/v1/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search', function (req, res) {
-  res.render('multiple_proceedings/v2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search_2', function (req, res) {
-  res.render('multiple_proceedings/v2/search_2',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v2/search_3', function (req, res) {
-  res.render('multiple_proceedings/v2/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/multiple_proceedings/v3/search_3', function (req, res) {
-  res.render('multiple_proceedings/v3/search_3',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
 
 router.get('/justin/merits/search', function (req, res) {
   res.render('justin/merits/search',
@@ -93,27 +55,6 @@ router.get('/justin/merits/search_JP', function (req, res) {
   res.render('justin/merits/search_JP',
     {
       proceedings: utils.getProceedingsSwag()
-    })
-})
-
-router.get('/passported_v2/search', function (req, res) {
-  res.render('passported_v2/search',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/passported_v2/search_2', function (req, res) {
-  res.render('passported_v2/search_2',
-    {
-      proceedings: utils.getProceedings()
-    })
-})
-
-router.get('/non_passported_v1/search', function (req, res) {
-  res.render('non_passported_v1/search',
-    {
-      proceedings: utils.getProceedings()
     })
 })
 
@@ -1477,9 +1418,27 @@ router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
 })
 
 
-// SECTION 8
-// Using delegated functions?
+// PROCEDDING LOOP
 
+// SCA proceeding - CONCEPT
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let myVar = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (myVar === 'no') {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit');
+  } else {
+    res.redirect('/sara/new_app_to_DWP/substantive_default_proceeding_02')
+  }
+})
+
+
+// Using delegated functions?
 router.post('/new_app_to_DWP/emergency_default', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
