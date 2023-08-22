@@ -16,17 +16,31 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Special Children Act filter question
+// Special Children Act filter question 1
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
   let myvar = req.session.data['proceeding-issued']
 
   if (myvar === 'yes') {
-    res.redirect('/sara/new_app_to_DWP/other')
+    res.redirect('/sara/new_app_to_DWP/vary_discharge_extend')
   } else {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA')
   }
 })
+
+// Special Children Act filter question 2
+router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
+
+  let myvar = req.session.data['vary-discharge-extend']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/other_3')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_2')
+  }
+})
+
+
 
 
 // PROCEEDINGS SEARCH
