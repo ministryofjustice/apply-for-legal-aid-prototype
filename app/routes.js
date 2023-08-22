@@ -54,7 +54,7 @@ router.get('/new_app_to_DWP/search', function (req, res) {
 router.get('/sara/new_app_to_DWP/search', function (req, res) {
   res.render('sara/new_app_to_DWP/search',
     {
-      proceedings: utils.getProceedings()
+      sca_proceedings: utils.getScaProceedings()
     })
 })
 
