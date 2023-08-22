@@ -4,5 +4,8 @@ const getProceedings = () => {
 const getProceedingsSwag = () => {
   return require('./data/swagger_example.json');
 };
+const getScaProceedings = () => {
+  return require('./data/sca-and-s8-prohibited.json');
+};
 
-module.exports = {getProceedings, getProceedingsSwag};
+module.exports = { getProceedings, getScaProceedings, getProceedingsSwag };
