@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Special Children Act filter question 1
+// Special Children Act filter question 1 (general SCA filter for supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
   let myvar = req.session.data['proceeding-issued']
@@ -28,17 +28,68 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
   }
 })
 
-// Special Children Act filter question 2
+// Special Children Act filter question 2 (supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
-
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/sara/new_app_to_DWP/other_3')
-  } else {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_2')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/other')
   }
 })
+
+// Special Children Act filter question 3 (general SCA filter for prohibited steps order)
+router.post('/sara/new_app_to_DWP/change_name', function (req, res) {
+
+  let myvar = req.session.data['proceeding-issued-pso']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/change_name')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA')
+  }
+})
+
+// Special Children Act filter question 4 (prohibited steps order)
+router.post('/sara/new_app_to_DWP/other_3', function (req, res) {
+
+  let myvar = req.session.data['change-name']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_3')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/other_3')
+  }
+})
+
+
+// Special Children Act supervision order default substantive limitation
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+
+  let myvar = req.session.data['substantivedefault']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/client_involvement_type_proceeding_02')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit')
+  }
+})
+
+// Special Children Act prohibited steps order default substantive limitation
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit_2', function (req, res) {
+
+  let myvar = req.session.data['sub-default']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/limitations')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit_2')
+  }
+})
+
+
 
 
 

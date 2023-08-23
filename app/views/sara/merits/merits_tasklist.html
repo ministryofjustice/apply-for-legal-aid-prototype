@@ -16,7 +16,7 @@ Apply for legal aid - merits
 
   {{ govukBackLink({
   text: "Back",
-  href: "means_results"
+  href: "javascript:window.history.back()"
 }) }}
 
 {% endblock %}
@@ -70,9 +70,9 @@ Apply for legal aid - merits
   </h2>
      <ul class="app-task-list__items">
        <li class="app-task-list__item">
-         <a class="govuk-body" aria-describedby="eligibility-completed">
-           Children covered by proceeding
-         </a>
+         <span class="govuk-body" aria-describedby="eligibility-completed">
+           Children covered in this proceeding
+         </span>
          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li>
        <li class="app-task-list__item">
@@ -92,10 +92,10 @@ Apply for legal aid - merits
      <ul class="app-task-list__items">
 
        <li class="app-task-list__item">
-         <a class="govuk-body" href="children_prohibited" aria-describedby="eligibility-completed">
-           Children covered by proceeding
-         </a>
-         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">NOT STARTED</strong>
+         <span class="govuk-body" aria-describedby="eligibility-completed">
+           Children covered in this proceeding
+         </span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eligibility-completed">CANNOT START YET</strong>
        </li>
        <li class="app-task-list__item">
          <a class="govuk-body" href="prohibited_steps_hearing" aria-describedby="eligibility-completed">
