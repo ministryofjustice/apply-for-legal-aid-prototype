@@ -47,7 +47,7 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 router.get('/new_app_to_DWP/search', function (req, res) {
   res.render('new_app_to_DWP/search',
     {
-      proceedings: utils.getProceedings()
+      proceedings: utils.getLiveProceedings(),
     })
 })
 // PROCEEDINGS SEARCH - CONCEPTS
