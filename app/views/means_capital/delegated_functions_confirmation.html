@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h2 class="govuk-panel__title">
+          Application started for John Doe
+        </h2>
+
+        <div class="govuk-panel__body">
+          Your case reference number is
+          <br><strong>L-23A-56D</strong>
+        </div>
+      </div>
+
+      <div class="govuk-!-padding-top-4"></div>
+
+      <h3 class="govuk-heading-m">What happens next</h3>
+
+      <p class="govuk-body">You must submit a substantive application by 10 November 2019.</p>
+
+      <br>
+
+      <a href="dashboard" role="button" class="govuk-button">
+        Back to your applications
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

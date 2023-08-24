@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Does your client use online banking
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="capital_start" method="post" class="form">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to make a substantive application now?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</p
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="onlinebank-1" name="substantive_app_now" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="onlinebank-1">
+                  Yes
+                </label></div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="onlinebank-2" name="substantive_app_now" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="onlinebank-2">
+                    No, I'll do it later
+                  </label> </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                You must submit a substantive application by 31 March 2022.
+              </strong>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Save and continue
+            </button>
+
+            <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

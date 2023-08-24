@@ -1,0 +1,499 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key {
+  width: 40%;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl">Capital assessment</span>
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <h1 class="govuk-heading-l">
+      Your client's capital
+    </h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Property</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client own the home they live in?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes, with a mortgage or loan
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Your client's property</h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How much is the home they live in worth?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £200,000
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key">
+          How much is left to pay on the mortgage?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £120,000
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key">
+          Does your client own the home with anyone else?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes, a friend, family member or other individual
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key">
+          What percentage of the home does your client own?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          80%
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Vehicles
+</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Vehicles</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does your client or their partner own a vehicle?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Vehicle details</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How much is the vehicle worth?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £5,000
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Are there any payments left on the vehicle?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes</br>£5,000
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Was the vehicle bought over 3 years ago?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is the vehicle in regular use?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">Bank accounts</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Your client's accounts</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Has savings accounts they cannot access online
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Amount in offline savings accounts
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £4,000
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">Savings and assets </h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Which savings or investments does either your client have?</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Money not in a bank account
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £200
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Access to another person's bank account
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        ISAs, National Savings Certificates and Premium Bonds
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Shares in a PLC
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unit trusts, capital bonds and government stocks
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Life assurance and endowment policies not linked to a mortgage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Which assets does your client have?</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Timeshare property
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £2000
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Land
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Any valuable items worth £500 or more
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Money or assets from the estate of a person who has died
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Money owed to them, including from a private mortgage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Interest in a trust
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Second property or holiday home
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £300,000
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Second property or holiday home outstanding mortgage
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £200,000
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Second property or holiday home percentage owned by client
+      </dt>
+      <dd class="govuk-summary-list__value">
+        50%
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Restrictions on your client's assets</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is your client prohibited from selling or borrowing against their assets?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Details of restrictions
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payments from schemes or charities</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        England Infected Blood Support Scheme
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Vaccine Damage Payments Scheme
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Variant Creutzfeldt-Jakob disease (vCJD) Trust
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Criminal Injuries Compensation Scheme
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        National Emergencies Trust (NET)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        We Love Manchester Emergency Fund
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        The London Emergencies Trust
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h3 class="govuk-heading-m">What happens next</h3>
+<p class="govuk-body">We’ll use your answers to calculate your client’s financial eligibility for legal aid.</p>
+
+<div class="govuk-button-group">
+  <a class="govuk-button" href="means_result_client_truelayer" role="button">
+    Save and continue
+  </a>
+
+  <a role="button" class="govuk-button govuk-button--secondary">
+    Save and come back later
+  </a>
+</div>
+
+{% endblock %}
