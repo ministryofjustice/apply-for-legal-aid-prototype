@@ -28,7 +28,7 @@ Apply for legal aid - Income start page
 
 {{ govukBackLink({
   text: "Back",
-  href: "what_you_need_to_do_merits"
+  href: "javascript:window.history.back()"
 }) }}
 
 {% endblock %}
@@ -127,19 +127,13 @@ Apply for legal aid - Income start page
         </li>
         <li class="app-task-list__item">
           <a class="govuk-body" href="reason_for_new_application" aria-describedby="eligibility-completed">
-            Reason for new application
+            Changes since original order was made
           </a>
           <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
         </li>
         <li class="app-task-list__item">
           <a class="govuk-body" href="specific_issue" aria-describedby="eligibility-completed">
             Specific issue
-          </a>
-          <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
-        </li>
-        <li class="app-task-list__item">
-          <a class="govuk-body" href="change_in_circumstances" aria-describedby="eligibility-completed">
-            Changes in circumstances
           </a>
           <strong class="govuk-tag govuk-tag--green app-task-list__task-completed" id="eligibility-completed">COMPLETED</strong>
         </li>

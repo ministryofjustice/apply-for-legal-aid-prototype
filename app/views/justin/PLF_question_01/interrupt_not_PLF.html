@@ -8,16 +8,16 @@ Apply for legal aid - Confirmation page
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 
-  {{ govukBackLink({
+{{ govukBackLink({
   text: "Back",
-  href: "PLF_question_01"
+  href: "javascript:window.history.back()"
 }) }}
 
 {% endblock %}
@@ -25,28 +25,28 @@ Apply for legal aid - Confirmation page
 {% block content %}
 
 <div class="flash-card">
-    <h1 class="govuk-heading-l">This is not a public law family matter</h1>
+  <h1 class="govuk-heading-l">This is not a public law family matter</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div class="govuk-body" style="color:white">
-This is because it does not relate to an application or order set out in schedule 1, part 1, paragraph 1 of LASPO. 
+        This is because it does not relate to an application or order set out in schedule 1, part 1, paragraph 1 of LASPO.
       </div>
-      <p class="govuk-body" style="color:white">You can:</p>
-<ul style="color:white" class="govuk-list govuk-list--bullet">
-  <li>select a different proceeding</li>
-  <li>go back and change your answer</li>
-  <li>apply using CCMS</li>
-</ul>
+      <p class="govuk-body" style="color:white">You can (choose one of the following):</p>
+      <ul style="color:white" class="govuk-list govuk-list--bullet">
+        <li>select a different proceeding</li>
+        <li>go back and change your answer</li>
+        <li>apply using CCMS</li>
+      </ul>
       <div class="govuk-!-padding-bottom-4"></div>
 
       <a href="search" role="button" class="govuk-button white-button right">
-          Select a different proceeding</a>
-      <a href="#" role="button" class="govuk-button draft-button">
-        Apply using CCMS</a>
+        Select a different proceeding</a>
+        <a href="#" role="button" class="govuk-button draft-button">
+          Apply using CCMS</a>
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-{% endblock %}
+    {% endblock %}

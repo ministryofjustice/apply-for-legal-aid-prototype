@@ -16,6 +16,78 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// means capital
+router.post('/means_capital/capital_start', function (req, res) {
+
+  let myvar = req.session.data['substantive_app_now']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/links_means_capital')
+  } else {
+    res.redirect('/means_capital/delegated_functions_confirmation')
+  }
+})
+
+// means capital
+router.post('/means_capital/client_only/vehicle_detail', function (req, res) {
+
+  let myvar = req.session.data['vehicle']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/client_only/vehicle_detail')
+  } else {
+    res.redirect('/means_capital/client_only/links_client_used_truelayer')
+  }
+})
+
+router.post('/means_capital/client_only/property_detail_mortgage', function (req, res) {
+
+  let myvar = req.session.data['property']
+
+  console.log(myvar)
+
+  if (myvar === 'mortgage') {
+    res.redirect('/means_capital/client_only/property_detail_mortgage')
+  } else if (myvar === 'outright') {
+    res.redirect('/means_capital/client_only/property_detail_outright')
+  } else {
+    res.redirect('/means_capital/client_only/vehicles')
+  }
+})
+
+// means capital with partner
+router.post('/means_capital/with_partner/vehicle_detail_with_partner', function (req, res) {
+
+  let myvar = req.session.data['vehicle']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/with_partner/vehicle_detail_with_partner')
+  } else {
+    res.redirect('/means_capital/with_partner/links_client_used_truelayer_with_partner')
+  }
+})
+
+router.post('/means_capital/with_partner/property_detail_mortgage_with_partner', function (req, res) {
+
+  let myvar = req.session.data['property']
+
+  console.log(myvar)
+
+  if (myvar === 'mortgage') {
+    res.redirect('/means_capital/with_partner/property_detail_mortgage_with_partner')
+  } else if (myvar === 'outright') {
+    res.redirect('/means_capital/with_partner/property_detail_outright_with_partner')
+  } else {
+    res.redirect('/means_capital/with_partner/vehicles_with_partner')
+  }
+})
+
 // Special Children Act filter question 1 (general SCA filter for supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
