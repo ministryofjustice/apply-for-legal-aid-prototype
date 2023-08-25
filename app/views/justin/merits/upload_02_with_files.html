@@ -34,7 +34,11 @@ Apply for legal aid - Statement of case
 
           <h1 class="govuk-heading-xl">Upload supporting evidence</h1>
 
-          <!-- <p class="govuk-body">Use this page to upload gateway evidence for Section 8 proceedings (optional).</p> -->
+          <p class="govuk-body">You can buy:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the local authority’s assessment</li>
+            <li>the court order</li>
+          </ul>
 
         </label>
       </div>
@@ -80,9 +84,13 @@ Apply for legal aid - Statement of case
           <td class="govuk-table__cell">filename.doc</td>
           <td class="govuk-table__cell no-wrap">
             <div class="govuk-form-group govuk">
-              <div class="govuk-form-group"><label for="uploaded-evidence-collection-field" class="govuk-label govuk-visually-hidden">Select a category for to do.rtf</label><select id="uploaded-evidence-collection-field" class="govuk-select" name="uploaded_evidence_collection">
-                <!-- <option selected="selected" value="gateway_evidence">Gateway evidence</option> -->
-                <option value="uncategorised" selected="selected">Uncategorised</option></select></div>
+              <div class="govuk-form-group">
+                <label for="uploaded-evidence-collection-field" class="govuk-label govuk-visually-hidden">Select a category for to do.rtf</label>
+                <select id="uploaded-evidence-collection-field" class="govuk-select" name="uploaded_evidence_collection">
+                <option value="uncategorised" selected="selected">Uncategorised</option>
+                <option value="Court order">Court order</option>
+                <option value="Assessment">Assessment</option>
+              </select></div>
               </div>
             </td>
             <td class="govuk-table__cell">

@@ -28,13 +28,16 @@ Apply for legal aid - Statement of case
 
     <form action="upload_02_with_files" method="post" class="form">
 
-
       <div class="govuk-form-group">
         <label class="govuk-label" for="more-detail">
 
-          <h1 class="govuk-heading-xl">Upload supporting evidence</h1>
+          <h1 class="govuk-heading-xl">Use this page to provide evidence of:</h1>
 
-          <!-- <p class="govuk-body">Use this page to upload gateway evidence for Section 8 proceedings (optional).</p> -->
+          <p class="govuk-body">You can buy:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the local authority’s assessment</li>
+            <li>the court order</li>
+          </ul>
 
         </label>
       </div>
@@ -61,17 +64,17 @@ Apply for legal aid - Statement of case
         </div>
       </div>
 
-    <button type="submit" class="govuk-button">
-      Save and continue
-    </button>
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
 
-    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-      Save and come back later
-    </a>
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
 
-    <!--  <p class="govuk-body"><a href="check_answers">I do not need to upload evidence</a></p> -->
+      <!--  <p class="govuk-body"><a href="check_answers">I do not need to upload evidence</a></p> -->
 
-  </form>
-</div>
+    </form>
+  </div>
 
-{% endblock %}
+  {% endblock %}
