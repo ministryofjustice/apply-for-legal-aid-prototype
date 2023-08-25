@@ -1790,7 +1790,25 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
 })
 
 
-// MULTIPLE OPPONENTS - CONCEPT
+// MULTIPLE OPPONENTS - CONCEPTS
+router.post('/justin/organisations/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/justin/organisations/opponent_name')
+  } else {
+    res.redirect('/justin/organisations/opponent_organisation_auto')
+  }
+})
+
+router.get('/justin/organisations/opponent_organisation_auto', function (req, res) {
+  res.render('justin/organisations/opponent_organisation_auto',
+    {
+      proceedings: utils.getOrganisations(),
+    })
+})
+
 router.post('/justin/merits/opponent_name', function (req, res) {
 
   let myvar = req.session.data['individualororganisation']

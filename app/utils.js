@@ -6,6 +6,10 @@ const getProceedingsSwag = () => {
   return require('./data/swagger_example.json');
 };
 
+const getOrganisations = () => {
+  return require('./data/organisations_example.json');
+};
+
 const getScaProceedings = () => {
   return require('./data/sca-and-s8-prohibited.json');
 };
@@ -27,4 +31,4 @@ async function getProceedingsFromLfa () {
 
 }
 
-module.exports = { getProceedings, getScaProceedings, getProceedingsSwag, getLiveProceedings, getProceedingsFromLfa };
+module.exports = { getProceedings, getScaProceedings, getOrganisations, getProceedingsSwag, getLiveProceedings, getProceedingsFromLfa };
