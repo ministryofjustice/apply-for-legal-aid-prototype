@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "receives_benefits"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="add_another_benefit" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Partner's means assessment</span>
+            <h1 class="govuk-fieldset__heading">
+              Add benefit details
+            </h1>
+          </legend>
+
+          <p class="govuk-body">For example, Child Benefit or tax credits.</p>
+
+          <p class="govuk-body">Do not include Housing Benefit, government Cost of Living Payments, or any other disregarded benefits.</p>
+
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Government Cost of Living Payments and disregarded benefits
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>The following benefits are disregarded from the financial eligibility calculation.</p>
+              <p class="govuk-body"><strong>Carer and disability benefits</strong><br>
+                Attendance Allowance <br>
+                Carer's Allowance<br>
+                Community Care Direct Payments<br>
+                Constant Attendance Allowance <br>
+                Disability Living Allowance<br>
+                Exceptionally Severe Disablement Allowance <br>
+                Independent Living Fund <br>
+                Payments on account of benefit <br>
+                Personal Independence Payments (PIP) <br>
+                Severe Disablement Allowance <br>
+                Special Education Needs (SEN) Direct Payment <br>
+                Welsh Independent Living Grant <br></p>
+
+                <p class="govuk-body"><strong>Low income benefits</strong><br>
+                  Benefit Transfer Advance (Universal Credit) <br>
+                  Budgeting Advance<br>
+                  Counsel Tax Reduction<br>
+                  Earnings Top-up (ETU) <br>
+                  Housing Benefit<br>
+                  Social Fund Funeral Payment <br>
+                  Social Fund payments <br></p>
+
+                  <p class="govuk-body"><strong>Other benefits</strong><br>
+                    Armed Forces Independence Payment <br>
+                    Foster Carers Allowance<br>
+                    Grenfell Tower Resident's Discretionary Fund<br>
+                    Grenfell Tower fire victims payments <br>
+                    War Pensions Scheme payments<br>
+                    War Widow(er) Pension <br>
+                    Widow's Pension lump sum payments<br>
+                    Windrush Compensation Scheme Payments</p>
+
+                  </div>
+                </details>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="benefittype">
+                    Benefit
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="benefittype" name="benefittype" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="amount">
+                    Enter amount
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-currency-input govuk-input--width-10" id="amount" name="amount" type="text">
+                  </div>
+                </div>
+
+                <div class="govuk-!-padding-bottom-2"></div>
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Select frequency
+                  </h2>
+                </legend>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="week" name="week" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="week">
+                    Every week
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="month" name="month" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="month">
+                    Every two weeks
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="four_weeks" name="four_weeks" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="four_weeks">
+                    Every four weeks
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button">
+                Save and continue
+              </button>
+
+              <a role="button" class="govuk-button draft-button">
+                Save and come back later
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {% endblock %}
