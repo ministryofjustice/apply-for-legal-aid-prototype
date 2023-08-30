@@ -1704,7 +1704,7 @@ router.post('/means_financial/client_means/means_start', function (req, res) {
   }
 })
 
-// does your client use online banking?
+// does your client use online banking? - CONCEPT
 router.post('/partner_means/client_means/tlguidance', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -1723,11 +1723,24 @@ router.post('/partner_means/client_means/tlguidance', function (req, res) {
   }
 })
 
+// does your client use online banking?
+router.post('/means_financial/tlguidance', function (req, res) {
+
+  let onlineBankingConsent = req.session.data['onlineBankingConsent'];
+
+  console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
+
+  if (onlineBankingConsent === 'no') {
+    res.redirect('/means_financial/upload');
+  }
+  else {
+    // yes //
+    res.redirect('/means_financial/tlguidance')
+  }
+})
+
 // does the partner use online banking?
 router.post('/partner_means/partner_means/tlguidance', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   let onlineBankingConsent = req.session.data['onlineBankingConsent'];
 
