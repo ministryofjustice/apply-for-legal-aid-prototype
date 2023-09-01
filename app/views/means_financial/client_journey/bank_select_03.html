@@ -7,16 +7,6 @@
 Apply for legal aid - Agree bank access
 {% endblock %}
 
-{% block header %}
-{% include "includes/cookie-banner.html" %}
-{# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "/",
-  serviceName: "Apply for legal aid",
-  serviceUrl: "/",
-  containerClasses: "govuk-width-container"
-}) }}
-{% endblock %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -82,10 +72,9 @@ Apply for legal aid - Agree bank access
           <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
             Select your bank
           </h1>
-          <span class="govuk-hint">
+          <div class="govuk-hint">
             Select one bank at a time. You'll be able to select more later if you have accounts with other banks.
-
-          </span>
+          </div>
         </legend>
         <div class="govuk-radios">
           <div class="govuk-radios__item expo_box">

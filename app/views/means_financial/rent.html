@@ -7,17 +7,6 @@
 Apply for legal aid - Salary statement
 {% endblock %}
 
-{% block header %}
-{% include "includes/cookie-banner.html" %}
-{# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "/",
-  serviceName: "Apply for legal aid",
-  serviceUrl: "/",
-  containerClasses: "govuk-width-container"
-}) }}
-{% endblock %}
-
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -100,9 +89,6 @@ table .govuk-tag {
       </h1>
 
       <div class="govuk-inset-text">Select every housing payment your client made in the past 3 months.</div>
-
-
-      <!-- <div class="govuk-inset-text">Select every payment from friends or family your client received in the past 3 months.</div> -->
 
       <div class="govuk-!-padding-bottom-4"></div>
       <table class="govuk-table">
@@ -292,9 +278,6 @@ table .govuk-tag {
                               </tr>
                             </tbody>
                           </table>
-
-                          <div class="govuk-!-padding-bottom-6"></div>
-
 
                           <div class="govuk-button-group">
                             <button type="submit" class="govuk-button">

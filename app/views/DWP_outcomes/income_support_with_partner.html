@@ -17,7 +17,7 @@ Apply for legal aid - Property and mortgage
 
   {{ govukBackLink({
     text: "Back",
-      href: "joint_passporting_benefit"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -25,7 +25,7 @@ Apply for legal aid - Property and mortgage
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../capital_questions/capital_start" method="post" class="form">
+        <form action="/means_financial/means_financial_start_with_partner" method="post" class="form">
 
           <div class="govuk-form-group govuk-!-margin-bottom-4">
             <fieldset class="govuk-fieldset govuk-!-padding-bottom-4">
@@ -65,7 +65,7 @@ Apply for legal aid - Property and mortgage
             Save and come back
           </a>
 
-          <p><a href="/partner_means/client_means/means_start" style="color: #555555;">Alternative:If no evidence of passporting benefit</a></p>
+          <p><a href="/means_financial/means_financial_start_with_partner" style="color: #555555;">Alternative:If no evidence of passporting benefit</a></p>
 
 
         </form>

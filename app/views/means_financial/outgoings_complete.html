@@ -7,17 +7,6 @@
 Apply for legal aid - Outgoings summary
 {% endblock %}
 
-{% block header %}
-{% include "includes/cookie-banner.html" %}
-{# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "/",
-  serviceName: "Apply for legal aid",
-  serviceUrl: "/",
-  containerClasses: "govuk-width-container"
-}) }}
-{% endblock %}
-
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -44,7 +33,7 @@ Apply for legal aid - Outgoings summary
           <h1 class="govuk-fieldset__heading">
             Sort outgoing bank transactions into categories
           </h1>
-        </legend><br>
+        </legend>
 
         <p class="gov-body">
           You told us your client gets the types of payments listed below.</p>

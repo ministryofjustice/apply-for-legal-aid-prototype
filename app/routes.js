@@ -1700,7 +1700,7 @@ router.post('/means_financial/client_means/means_start', function (req, res) {
   }
   else {
     // yes //
-    res.redirect('/partner_means/client_means/means_start')
+    res.redirect('/means_financial/links_means_financial_start')
   }
 })
 
