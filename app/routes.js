@@ -181,6 +181,22 @@ router.get('/sara/new_app_to_DWP/search', function (req, res) {
     })
 })
 
+// PROCEEDINGS SEARCH
+router.get('/new_app_to_DWP/search_2', function (req, res) {
+  res.render('new_app_to_DWP/search_2',
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
+})
+// PROCEEDINGS SEARCH - CONCEPTS
+router.get('/sara/new_app_to_DWP/search_2', function (req, res) {
+  res.render('sara/new_app_to_DWP/search_2',
+    {
+      sca_proceedings: utils.getScaProceedings()
+    })
+})
+
+
 router.get('/justin/merits/search', function (req, res) {
   res.render('justin/merits/search',
     {
