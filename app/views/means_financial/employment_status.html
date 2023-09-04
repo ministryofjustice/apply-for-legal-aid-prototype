@@ -41,7 +41,7 @@ Apply for legal aid - Employment status
           <div class="govuk-checkboxes" data-module="checkboxes">
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
+              <input class="govuk-checkboxes__input" id="income-conditional-2" name="employment_status" type="checkbox" value="Employed" data-aria-controls="income-conditional-2">
               <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
                 Employed
               </label>
@@ -49,7 +49,7 @@ Apply for legal aid - Employment status
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
+              <input class="govuk-checkboxes__input" id="income-conditional-7" name="employment_status" type="checkbox" value="Self-employed" data-aria-controls="income-citizenship-conditional-7" >
               <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
                 Self-employed
               </label>
@@ -57,7 +57,7 @@ Apply for legal aid - Employment status
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
+              <input class="govuk-checkboxes__input" id="income-conditional-3" name="employment_status" type="checkbox" value="armed-forces" data-aria-controls="income-conditional-3" >
               <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
                 Member of the armed forces
               </label>
@@ -69,7 +69,7 @@ Apply for legal aid - Employment status
 
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
+              <input class="govuk-checkboxes__input" id="income-conditional-8" name="employment_status" type="checkbox" value="None-fo-these">
               <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
                 None of these
               </label>
@@ -92,7 +92,7 @@ Apply for legal aid - Employment status
 
     </form>
 
-    <p><a href="hmrc_no_data" style="color: #e5e5e5;">If NI number not provided</a></p>
+    <p><a href="use_ccms_employment" style="color: grey;">If self-employed of armed forces selected</a></p>
 
   </div>
 </div>

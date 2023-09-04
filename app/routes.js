@@ -16,6 +16,36 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// online_banking_question
+
+// means financial
+router.post('/means_financial/online_banking_question', function (req, res) {
+
+  let myvar = req.session.data['substantive_now']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_financial/online_banking_question')
+  } else {
+    res.redirect('/means_capital/delegated_functions_confirmation')
+  }
+})
+
+// means financial
+router.post('/means_financial/substantive_application', function (req, res) {
+
+  let myvar = req.session.data['employment_status'][0]
+
+  console.log(myvar)
+
+  if (myvar === 'Self-employed' || myvar === 'armed-forces') {
+    res.redirect('/means_financial/use_ccms_employment')
+  } else {
+    res.redirect('/means_capital/substantive_application')
+  }
+})
+
 // means capital
 router.post('/means_capital/capital_start', function (req, res) {
 
