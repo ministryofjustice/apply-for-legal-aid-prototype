@@ -32,16 +32,11 @@ Apply for legal aid - Other capital
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-
-
               Which assets does either your client or their partner have?
             </h1>
           </legend>
 
-
-
           <div class="govuk-hint">Select all that apply.</div>
-
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
@@ -59,12 +54,12 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="car-value">
                   Enter the value for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="car-value" name="car-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
-
-
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="second-property" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("second-property","yes") }}>
@@ -77,24 +72,30 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="property-value">
                   Enter the value for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="property-value" name="property-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
 
               <div class="govuk-form-group">
                 <label class="govuk-label" for="property-value">
                   Enter the outstanding mortgage amount for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="property-value" name="property-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
 
               <div class="govuk-form-group">
                 <label class="govuk-label" for="property-value">
                   Enter the share your client and their partner owns
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">%</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="property-value" name="property-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
 
@@ -109,8 +110,10 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="investments-value">
                   Enter the value, minus any loan and sale costs for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="investments-value" name="investments-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
 
             </div>
@@ -125,14 +128,12 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="antiques-value">
                   Enter the value for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
-
-
-
-
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-7" {{ checked("estates","yes") }}>
@@ -145,8 +146,10 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="estates-value">
                   Enter the value for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="estates-value" name="estates-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
             <div class="govuk-checkboxes__item">
@@ -160,8 +163,10 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="estates-value">
                   Enter the amount owed for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="estates-value" name="estates-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
             <div class="govuk-checkboxes__item">
@@ -175,13 +180,14 @@ Apply for legal aid - Other capital
                 <label class="govuk-label" for="estates-value">
                   Enter the value for both your client and their partner
                 </label>
-                <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
-                <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="estates-value" name="estates-value" type="text">
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+                </div>
               </div>
             </div>
 
             <p class="govuk-body">or</p>
-
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
@@ -190,19 +196,18 @@ Apply for legal aid - Other capital
               </label>
             </div>
 
-
           </div>
 
         </fieldset>
       </div>
-
-      <button type="submit" class="govuk-button">
-        Save and continue
-      </button>
-
-      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+        <a role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+      </div>
 
     </form>
   </div>

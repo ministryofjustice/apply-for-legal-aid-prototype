@@ -32,17 +32,31 @@ router.post('/means_financial/online_banking_question', function (req, res) {
   }
 })
 
-// means financial
-router.post('/means_financial/substantive_application', function (req, res) {
+// means financial - can-share-online-banking
+router.post('/means_financial/email_address', function (req, res) {
 
-  let myvar = req.session.data['employment_status'][0]
+  let myvar = req.session.data['can-share-online-banking']
 
   console.log(myvar)
 
-  if (myvar === 'Self-employed' || myvar === 'armed-forces') {
-    res.redirect('/means_financial/use_ccms_employment')
+  if (myvar === 'no') {
+    res.redirect('/means_financial/upload')
   } else {
-    res.redirect('/means_capital/substantive_application')
+    res.redirect('/means_financial/email_address')
+  }
+})
+
+// means financial client journey
+router.post('/means_financial/client_journey/bank_select', function (req, res) {
+
+  let myvar = req.session.data['onlinebank']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_financial/client_journey/bank_select')
+  } else {
+    res.redirect('/means_financial/client_journey/complete_assessment_with_solicitor')
   }
 })
 
@@ -1887,8 +1901,15 @@ router.post('/merits/opponent_name', function (req, res) {
   if (myvar === 'individual') {
     res.redirect('/merits/opponent_name')
   } else {
-    res.redirect('/merits/opponent_organisation')
+    res.redirect('/merits/opponent_organisation_auto')
   }
+})
+
+router.get('/merits/opponent_organisation_auto', function (req, res) {
+  res.render('merits/opponent_organisation_auto',
+    {
+      proceedings: utils.getOrganisations(),
+    })
 })
 
 
