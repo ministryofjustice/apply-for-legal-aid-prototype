@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label">
+          <span class="govuk-caption-xl">Client's means assessment</span>
+          <h1 class="govuk-heading-xl">Upload your client's bank statements </h1>
+        </label>
+      </div>
+
+      <p class="govuk-body-">We need bank statements from the last 3 months for all of your client's bank accounts. If delegated functions have been used, then we need the most recent 3 months before the delegated functions date.</p>
+
+      <p class="govuk-body">You must include all current, savings, building society, Post Office, ISA and any other type of bank account.</p>
+
+          <div class="dropzone__upload">
+            <div class="govuk-form-group script" id="dropzone-form-group" aria-labelledby="dropzone-label">
+              <label class="govuk-label govuk-label--m" id="dropzone-label">
+                Upload files
+              </label>
+              <p class="govuk-body">Statements must be readable, If we cannot read them, it may delay a decision or give an inaccurate assessment of rejection of your client’s case.</p>
+              <div class="govuk-hint">The maximum file size is 8MB.</div>
+
+              <span class="hidden" aria-hidden="true" id="application-id"></span>
+              <span class="hidden" aria-hidden="true" id="dropzone-url" data-url="/v1/statement_of_cases"></span>
+              <p id="dropzone-file-error" class="govuk-error-message dropzone-error hidden">
+                <span class="govuk-visually-hidden">Error:</span>
+              </p>
+              <div class="dropzone dz-clickable" id="dropzone-form">
+                <div class="dz-message" data-dz-message="">
+                  <span class="govuk-body govuk-!-padding-top-2 script">Drag and drop files here or</span>
+                  <button id="dz-upload-button" class="govuk-button govuk-button--secondary script" style="top:-5px" tabindex="0">Choose files</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+
+      <h2 class="govuk-heading-m">Uploaded files</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Filename
+          </dt>
+          <dt class="govuk-summary-list__key">
+            Size
+          </dt>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <a class="govuk-link" href="data:text/csv;charset=utf-8,DATE,DESCRIPTION,AMOUNT
+            28/02/2021,	WEST LONDON NURSERY,	-£300.25
+            20/02/2021,	LANDLORD RENT PAYMENT,	-£250.00
+            18/02/2021,	LAR HOMECARE PAYMENT,	£80.00
+            18/02/2021,	12345678A DWP DLA,	£100.00
+            13/02/2021,	1234567890-CHB,	£100.00
+            11/02/2021,	SALLY DOE FP PAYMENT,	£50.00
+            11/02/2021,	CAR PAYMENT,	-£250.00
+            09/02/2021,	BANK INTEREST PAYMENT,	-£20.00
+            08/02/2021,	12345678A DWP UC,	£100.00
+            05/02/2021,	SALLY DOE FP PAYMENT,	£100.00
+            04/02/2021,	TFL TRAVEL,	-£12.00
+            03/02/2021,	FRAUD REPAYMENT,	£20.00
+            02/02/2021,	CAR PAYMENT,	-£30.00
+            01/02/2021,	NURSERY PAYMENT,	-£200.00
+            " download="feb-bank-statement.csv">feb-bank-statment.csv</a>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2MB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Delete<span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <a class="govuk-link" href="data:text/csv;charset=utf-8,DATE,DESCRIPTION,AMOUNT
+            28/03/2021,	WEST LONDON NURSERY,	-£300.25
+            20/03/2021,	LANDLORD RENT PAYMENT,	-£250.00
+            18/03/2021,	LAR HOMECARE PAYMENT,	£80.00
+            18/03/2021,	12345678A DWP DLA,	£100.00
+            13/03/2021,	1234567890-CHB,	£100.00
+            11/03/2021,	SALLY DOE FP PAYMENT,	£50.00
+            11/03/2021,	CAR PAYMENT,	-£250.00
+            09/03/2021,	BANK INTEREST PAYMENT,	-£20.00
+            08/03/2021,	12345678A DWP UC,	£100.00
+            05/03/2021,	SALLY DOE FP PAYMENT,	£100.00
+            04/03/2021,	TFL TRAVEL,	-£12.00
+            03/03/2021,	FRAUD REPAYMENT,	£20.00
+            02/03/2021,	CAR PAYMENT,	-£30.00
+            01/03/2021,	NURSERY PAYMENT,	-£200.00
+            " download="mar-bank-statement.csv">mar-bank-statment.csv</a>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2MB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Delete<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <a class="govuk-link" href="data:text/csv;charset=utf-8,DATE,DESCRIPTION,AMOUNT
+            28/04/2021,	WEST LONDON NURSERY,	-£300.25
+            20/04/2021,	LANDLORD RENT PAYMENT,	-£250.00
+            18/04/2021,	LAR HOMECARE PAYMENT,	£80.00
+            18/04/2021,	12345678A DWP DLA,	£100.00
+            13/04/2021,	1234567890-CHB,	£100.00
+            11/04/2021,	SALLY DOE FP PAYMENT,	£50.00
+            11/04/2021,	CAR PAYMENT,	-£250.00
+            09/04/2021,	BANK INTEREST PAYMENT,	-£20.00
+            08/04/2021,	12345678A DWP UC,	£100.00
+            05/04/2021,	SALLY DOE FP PAYMENT,	£100.00
+            04/04/2021,	TFL TRAVEL,	-£12.00
+            03/04/2021,	FRAUD REPAYMENT,	£20.00
+            02/04/2021,	CAR PAYMENT,	-£30.00
+            01/04/2021,	NURSERY PAYMENT,	-£200.00
+            " download="apr-bank-statement.csv">apr-bank-statment.csv</a>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2MB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Delete<span class="govuk-visually-hidden"> licence period</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+        <a href="links_HMRC_outcomes" class="govuk-button">
+          Save and continue
+        </a>
+        <a role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

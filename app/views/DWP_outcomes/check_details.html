@@ -7,16 +7,6 @@
 Apply for legal aid - Types of income
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -28,7 +18,7 @@ Apply for legal aid - Types of income
 
   {{ govukBackLink({
     text: "Back",
-      href: "dwp_blue_box"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 

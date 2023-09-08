@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Employment status
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="substantive_application" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Client's means assessment</span>
+            <h1 class="govuk-fieldset__heading">
+              What is your client's employment status?
+            </h1>
+          </legend>
+
+          <div class="govuk-hint">Select all that apply.</div>
+
+          <div class="govuk-checkboxes" data-module="checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-conditional-2" name="employment_status" type="checkbox" value="Employed" data-aria-controls="income-conditional-2">
+              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
+                Employed
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-conditional-7" name="employment_status" type="checkbox" value="Self-employed" data-aria-controls="income-citizenship-conditional-7" >
+              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
+                Self-employed
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-conditional-3" name="employment_status" type="checkbox" value="armed-forces" data-aria-controls="income-conditional-3" >
+              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
+                Member of the armed forces
+              </label>
+
+            </div>
+
+
+            <p class="govuk-body">or</p>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="income-conditional-8" name="employment_status" type="checkbox" value="None-fo-these">
+              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
+                None of these
+              </label>
+            </div>
+
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+        <a role="button" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+      </div>
+
+    </form>
+
+    <p><a href="use_ccms_employment" style="color: grey;">If self-employed of armed forces selected</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

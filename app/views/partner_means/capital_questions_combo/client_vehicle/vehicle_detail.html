@@ -63,11 +63,14 @@ Apply for legal aid -
             </div>
           </fieldset>
         </div>
-        
+
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="passport-number">
             How much is the vehicle worth?
           </label>
+          <div class="govuk-hint">
+            You can use car valuation websites to find this out.
+          </div>
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
             <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
@@ -78,6 +81,9 @@ Apply for legal aid -
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
              Are there any payments left on the vehicle?
             </legend>
+            <div class="govuk-hint">
+              Include any outstanding payments on loans, hire purchase (HP) or personal contract purchase (PCP) agreements.
+            </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
@@ -99,7 +105,7 @@ Apply for legal aid -
                   No
                 </label>
               </div>
-            
+
           </fieldset>
         </div>
 
@@ -135,14 +141,14 @@ Apply for legal aid -
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="interview-needs" name="interview-needs" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="interview-needs">
+                <input class="govuk-radios__input" id="regular-use" name="regular-use" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="regular-use">
                 Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="interview-needs" name="interview-needs" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="interview-needs">
+                <input class="govuk-radios__input" id="regular-use" name="regular-use" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="regular-use">
                  No
                 </label>
               </div>
@@ -165,5 +171,3 @@ Apply for legal aid -
 </main>
 
 {% endblock %}
-
-

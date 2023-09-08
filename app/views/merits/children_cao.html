@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "merits_tasklist_case_details_added"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -37,6 +37,10 @@ Apply for legal aid - Client details
                 Which children are covered under this proceeding?
               </h1>
             </legend>
+
+            <div class="govuk-hint">
+              Select all that apply
+            </div>
 
             <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">

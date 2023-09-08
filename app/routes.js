@@ -16,7 +16,123 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Special Children Act filter question 1
+// online_banking_question
+
+// means financial
+router.post('/means_financial/online_banking_question', function (req, res) {
+
+  let myvar = req.session.data['substantive_now']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_financial/online_banking_question')
+  } else {
+    res.redirect('/means_capital/delegated_functions_confirmation')
+  }
+})
+
+// means financial - can-share-online-banking
+router.post('/means_financial/email_address', function (req, res) {
+
+  let myvar = req.session.data['can-share-online-banking']
+
+  console.log(myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/means_financial/upload')
+  } else {
+    res.redirect('/means_financial/email_address')
+  }
+})
+
+// means financial client journey
+router.post('/means_financial/client_journey/bank_select', function (req, res) {
+
+  let myvar = req.session.data['onlinebank']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_financial/client_journey/bank_select')
+  } else {
+    res.redirect('/means_financial/client_journey/complete_assessment_with_solicitor')
+  }
+})
+
+// means capital
+router.post('/means_capital/capital_start', function (req, res) {
+
+  let myvar = req.session.data['substantive_app_now']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/links_means_capital')
+  } else {
+    res.redirect('/means_capital/delegated_functions_confirmation')
+  }
+})
+
+// means capital
+router.post('/means_capital/client_only/vehicle_detail', function (req, res) {
+
+  let myvar = req.session.data['vehicle']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/client_only/vehicle_detail')
+  } else {
+    res.redirect('/means_capital/client_only/links_client_used_truelayer')
+  }
+})
+
+router.post('/means_capital/client_only/property_detail_mortgage', function (req, res) {
+
+  let myvar = req.session.data['property']
+
+  console.log(myvar)
+
+  if (myvar === 'mortgage') {
+    res.redirect('/means_capital/client_only/property_detail_mortgage')
+  } else if (myvar === 'outright') {
+    res.redirect('/means_capital/client_only/property_detail_outright')
+  } else {
+    res.redirect('/means_capital/client_only/vehicles')
+  }
+})
+
+// means capital with partner
+router.post('/means_capital/with_partner/vehicle_detail_with_partner', function (req, res) {
+
+  let myvar = req.session.data['vehicle']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/means_capital/with_partner/vehicle_detail_with_partner')
+  } else {
+    res.redirect('/means_capital/with_partner/links_client_used_truelayer_with_partner')
+  }
+})
+
+router.post('/means_capital/with_partner/property_detail_mortgage_with_partner', function (req, res) {
+
+  let myvar = req.session.data['property']
+
+  console.log(myvar)
+
+  if (myvar === 'mortgage') {
+    res.redirect('/means_capital/with_partner/property_detail_mortgage_with_partner')
+  } else if (myvar === 'outright') {
+    res.redirect('/means_capital/with_partner/property_detail_outright_with_partner')
+  } else {
+    res.redirect('/means_capital/with_partner/vehicles_with_partner')
+  }
+})
+
+// Special Children Act filter question 1 (general SCA filter for supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
   let myvar = req.session.data['proceeding-issued']
@@ -28,17 +144,68 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
   }
 })
 
-// Special Children Act filter question 2
+// Special Children Act filter question 2 (supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
-
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/sara/new_app_to_DWP/other_3')
-  } else {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_2')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/other')
   }
 })
+
+// Special Children Act filter question 3 (general SCA filter for prohibited steps order)
+router.post('/sara/new_app_to_DWP/change_name', function (req, res) {
+
+  let myvar = req.session.data['proceeding-issued-pso']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/change_name')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA')
+  }
+})
+
+// Special Children Act filter question 4 (prohibited steps order)
+router.post('/sara/new_app_to_DWP/other_3', function (req, res) {
+
+  let myvar = req.session.data['change-name']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_3')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/other_3')
+  }
+})
+
+
+// Special Children Act supervision order default substantive limitation
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+
+  let myvar = req.session.data['substantivedefault']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/client_involvement_type_proceeding_02')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit')
+  }
+})
+
+// Special Children Act prohibited steps order default substantive limitation
+router.post('/sara/new_app_to_DWP/substantive_LOS_edit_2', function (req, res) {
+
+  let myvar = req.session.data['sub-default']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/new_app_to_DWP/limitations')
+  } else {
+    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit_2')
+  }
+})
+
+
 
 
 
@@ -47,16 +214,32 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 router.get('/new_app_to_DWP/search', function (req, res) {
   res.render('new_app_to_DWP/search',
     {
-      proceedings: utils.getProceedings()
+      proceedings: utils.getLiveProceedings(),
     })
 })
 // PROCEEDINGS SEARCH - CONCEPTS
 router.get('/sara/new_app_to_DWP/search', function (req, res) {
   res.render('sara/new_app_to_DWP/search',
     {
-      proceedings: utils.getProceedings()
+      sca_proceedings: utils.getScaProceedings()
     })
 })
+
+// PROCEEDINGS SEARCH
+router.get('/new_app_to_DWP/search_2', function (req, res) {
+  res.render('new_app_to_DWP/search_2',
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
+})
+// PROCEEDINGS SEARCH - CONCEPTS
+router.get('/sara/new_app_to_DWP/search_2', function (req, res) {
+  res.render('sara/new_app_to_DWP/search_2',
+    {
+      sca_proceedings: utils.getScaProceedings()
+    })
+})
+
 
 router.get('/justin/merits/search', function (req, res) {
   res.render('justin/merits/search',
@@ -1577,11 +1760,11 @@ router.post('/means_financial/client_means/means_start', function (req, res) {
   }
   else {
     // yes //
-    res.redirect('/partner_means/client_means/means_start')
+    res.redirect('/means_financial/links_means_financial_start')
   }
 })
 
-// does your client use online banking?
+// does your client use online banking? - CONCEPT
 router.post('/partner_means/client_means/tlguidance', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -1600,11 +1783,24 @@ router.post('/partner_means/client_means/tlguidance', function (req, res) {
   }
 })
 
+// does your client use online banking?
+router.post('/means_financial/tlguidance', function (req, res) {
+
+  let onlineBankingConsent = req.session.data['onlineBankingConsent'];
+
+  console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
+
+  if (onlineBankingConsent === 'no') {
+    res.redirect('/means_financial/upload');
+  }
+  else {
+    // yes //
+    res.redirect('/means_financial/tlguidance')
+  }
+})
+
 // does the partner use online banking?
 router.post('/partner_means/partner_means/tlguidance', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   let onlineBankingConsent = req.session.data['onlineBankingConsent'];
 
@@ -1667,7 +1863,25 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
 })
 
 
-// MULTIPLE OPPONENTS - CONCEPT
+// MULTIPLE OPPONENTS - CONCEPTS
+router.post('/justin/organisations/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/justin/organisations/opponent_name')
+  } else {
+    res.redirect('/justin/organisations/opponent_organisation_auto')
+  }
+})
+
+router.get('/justin/organisations/opponent_organisation_auto', function (req, res) {
+  res.render('justin/organisations/opponent_organisation_auto',
+    {
+      proceedings: utils.getOrganisations(),
+    })
+})
+
 router.post('/justin/merits/opponent_name', function (req, res) {
 
   let myvar = req.session.data['individualororganisation']
@@ -1687,8 +1901,15 @@ router.post('/merits/opponent_name', function (req, res) {
   if (myvar === 'individual') {
     res.redirect('/merits/opponent_name')
   } else {
-    res.redirect('/merits/opponent_organisation')
+    res.redirect('/merits/opponent_organisation_auto')
   }
+})
+
+router.get('/merits/opponent_organisation_auto', function (req, res) {
+  res.render('merits/opponent_organisation_auto',
+    {
+      proceedings: utils.getOrganisations(),
+    })
 })
 
 

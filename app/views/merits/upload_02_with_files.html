@@ -17,7 +17,7 @@ Apply for legal aid - Statement of case
 
 {{ govukBackLink({
   text: "Back",
-  href: "assessed_your_client"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -60,50 +60,48 @@ Apply for legal aid - Statement of case
           </div>
         </div>
       </div>
-      
-    <table class="govuk-table ">
-      <caption class="govuk-table__caption govuk-heading-m">
-        Uploaded files
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Filename</th>
-          <th class="govuk-table__header" scope="col">Select a category</th>
-          <th class="govuk-table__header" scope="col"></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
 
-        <input type="hidden" name="" value="" autocomplete="off">
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">filename.doc</td>
-          <td class="govuk-table__cell no-wrap">
-            <div class="govuk-form-group govuk">
-              <div class="govuk-form-group"><label for="uploaded-evidence-collection-field" class="govuk-label govuk-visually-hidden">Select a category for to do.rtf</label><select id="uploaded-evidence-collection-field" class="govuk-select" name="uploaded_evidence_collection">
-                <!-- <option selected="selected" value="gateway_evidence">Gateway evidence</option> -->
-                <option value="uncategorised" selected="selected">Uncategorised</option></select></div>
-              </div>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="govuk-link">Delete</a>
-            </td>
+      <table class="govuk-table ">
+        <caption class="govuk-table__caption govuk-heading-m">
+          Uploaded files
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Filename</th>
+            <th class="govuk-table__header" scope="col">Select a category</th>
+            <th class="govuk-table__header" scope="col"></th>
           </tr>
-        </tbody>
-      </table>
+        </thead>
+        <tbody class="govuk-table__body">
 
+          <input type="hidden" name="" value="" autocomplete="off">
 
-    <button type="submit" class="govuk-button">
-      Save and continue
-    </button>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">filename.doc</td>
+            <td class="govuk-table__cell no-wrap">
+              <div class="govuk-form-group govuk">
+                <div class="govuk-form-group"><label for="uploaded-evidence-collection-field" class="govuk-label govuk-visually-hidden">Select a category for to do.rtf</label><select id="uploaded-evidence-collection-field" class="govuk-select" name="uploaded_evidence_collection">
+                  <!-- <option selected="selected" value="gateway_evidence">Gateway evidence</option> -->
+                  <option value="uncategorised" selected="selected">Uncategorised</option></select></div>
+                </div>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="govuk-link">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-      Save and come back later
-    </a>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </div>
 
-    <!--  <p class="govuk-body"><a href="check_answers">I do not need to upload evidence</a></p> -->
+      </form>
+    </div>
 
-  </form>
-</div>
-
-{% endblock %}
+    {% endblock %}

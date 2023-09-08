@@ -1,0 +1,428 @@
+<form class="" action="index.html" method="post">
+
+</form>{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key {
+  width: 40%;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl">Capital assessment</span>
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <h2 class="govuk-heading-l">
+      Your client’s income
+    </h2>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Employment income</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> proceedings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you need to tell us anything else about your client’s employment?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu massa eros. Donec semper, dui et lacinia pellentesque, arcu libero imperdiet neque, vel euismod nibh ipsum at metus.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Payments your client gets
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> payments</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Benefits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £500
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Disregarded benefits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £100
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Financial help from family and friends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £300
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Maintenance payments from a former partner
+        </dt>
+        <dd class="govuk-summary-list__value">
+          None
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Income from a property or lodger
+        </dt>
+        <dd class="govuk-summary-list__value">
+          None
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Pension
+        </dt>
+        <dd class="govuk-summary-list__value">
+          None
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payments your client gets in cash
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> cash payments</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Benefits February 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Benefits March 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Benefits April 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Financial help from family and friends
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Student finance
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> student finance</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does your client get student finance?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Amount of student finance
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £500
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Your client’s outgoings
+</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payments your client pays</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> payments your client pays</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Housing payments
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £300
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Childcare payments
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Maintenance payments to a former partner
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £300
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Payments towards legal aid in a criminal case
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payments your client pays in cash</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> payments your client pays in cash</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Housing payments
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Maintenance payments to a former partner February 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Maintenance payments to a former partner March 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Maintenance payments to a former partner April 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £100
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Dependants
+</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Dependants</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> dependants</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Does your client have any dependants?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Dependant 1</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> dependant 1</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Joe Bloggs
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        What is their relationship to your client?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Child relative
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Are they in full-time education or training?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do they get any income?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do they have assets worth more than £8,000?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+
+<h2 class="govuk-heading-m">What happens next</h2>
+
+<p class="govuk-body">We’ll use your answers to calculate your client’s financial eligibility for legal aid.</p>
+
+
+<div class="govuk-button-group">
+  <a class="govuk-button" href="/means_capital/client_only/capital_start" data-module="govuk-button">
+    Save and continue
+  </a>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and come back later
+  </button>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
