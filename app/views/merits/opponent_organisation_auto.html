@@ -42,15 +42,18 @@ $('#search').hideseek({
   </div>
 </div>
 
-
-<label class="govuk-label" for="search">
-  Enter organisation name
-</label>
-<!-- <div class="govuk-hint">Select the organisation when it appears in the list.</div> -->
-
+<div id="search-field" class="govuk-form-group govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+        <label class="govuk-heading-m govuk-!-margin-bottom-0" for="proceeding-search-input">
+            Search for an organisation
+            <div class="govuk-hint govuk-!-margin-top-0 govuk-!-width-two-thirds">
+                Enter 3 or more letters to start searching. Select one organisation at a time. You can add more later.
+                <span class="govuk-visually-hidden">Enter search term, results will automatically return</span>
+            </div>
+        </label>
+    </h2>
 
 <div id="search-field" class="govuk-form-group">
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -99,7 +102,7 @@ $('#search').hideseek({
   <br>
 
   <div class="govuk-button-group">
-    <a class="govuk-button" href="opponent_add" role="button">
+    <a class="govuk-button" href="/justin/organisations/opponent_add" role="button">
       Save and continue
     </a>
 
@@ -109,6 +112,6 @@ $('#search').hideseek({
 
   </div>
 
-  <p>If you can not find the organisation <a href="opponent_organisation_manual" class="govuk-link">enter manually</a></p>
+  <p><a href="opponent_organisation_manual" class="govuk-link">I cannot find the organisation</a></p>
 
   {% endblock %}
