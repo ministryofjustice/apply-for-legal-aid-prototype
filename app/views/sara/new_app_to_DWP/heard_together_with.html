@@ -17,16 +17,16 @@ Apply for legal aid - Statement of case
 
   {{ govukBackLink({
     text: "Back",
-      href: "client_role_supervision"
+    href: "javascript:window.history.back()"
   }) }}
-{% endblock %}
+  {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="merits_tasklist_proceeding_2_details_added" method="post" novalidate>
+    <form action="heard_as_an_alternative_to" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -35,21 +35,21 @@ Apply for legal aid - Statement of case
             <span class="govuk-caption-xl">Prohibited steps order</span>
 
             <h1 class="govuk-fieldset__heading">
-              Will this order replace proceedings issued by the local authority?
+              Will this proceeding be heard together with the supervision order proceeding?
             </h1>
           </legend>
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="mental" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2">
-              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-              Yes
+              <input class="govuk-radios__input" id="heard-together-with" name="heard-together-with" type="radio" value="no" data-aria-controls="conditional-heard-together-with">
+              <label class="govuk-label govuk-radios__label" for="heard-together-with">
+                Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="mental" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
-              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+              <input class="govuk-radios__input" id="heard-together-with-2" name="heard-together-with" type="radio" value="yes" data-aria-controls="conditional-heard-together-with-2">
+              <label class="govuk-label govuk-radios__label" for="heard-together-with-2">
                 No
               </label>
             </div>

@@ -17,16 +17,16 @@ Apply for legal aid - Client details
 
   {{ govukBackLink({
     text: "Back",
-      href: "merits_tasklist_case_details_added"
+    href: "javascript:window.history.back()"
   }) }}
-{% endblock %}
+  {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="prohibited_steps_hearing" method="post" novalidate>
+      <form action="merits_tasklist_proceeding_2_details_added" method="post" novalidate>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check who your client is
+    </h1>
+
+    <!-- <h2 class="govuk-body">
+      You must answer ‘yes’ to one of these questions. Check your answers and change the one that is wrong.
+    </h2> -->
+
+
+   <dl class="govuk-summary-list">
+
+    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is your client the biological parent of any children involved?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="client-role-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Does your client have parental responsibility for any children involved?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Yes
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="client-role-pr">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+<!--
+                <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Is your client a child subject of the proceeding?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          No
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="client-role-child">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                          </a>
+                        </dd>
+                      </div> -->
+  </dl>
+
+
+
+  <br>
+  <a class="govuk-button" href="merits_tasklist_proceeding_1_details_added" role="button">
+    Save and continue
+  </a>
+
+  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+    Save and come back later
+  </a>
+
+  {% endblock %}
