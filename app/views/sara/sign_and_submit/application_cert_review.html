@@ -17,9 +17,9 @@ Apply for legal aid - Check your answers - Merits
 
   {{ govukBackLink({
     text: "Back",
-      href: "confirm_the_following"
+    href: "javascript:window.history.back()"
   }) }}
-{% endblock %}
+  {% endblock %}
 
 {% block content %}
 
@@ -505,12 +505,12 @@ th:first-child {
           <td class="govuk-table__cell govuk-table__cell--numeric">Billy Doe</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Who is your client in this proceeding?</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">Someone with parental responsibility</td>
+          <td class="govuk-table__cell">Is your client the biological parent of any children involved?</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">No</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">How does your client have parental responsibility?</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">Under a court order</td>
+          <td class="govuk-table__cell">Does your client have parental responsibility for any children involved?</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Yes, under a court order</td>
         </tr>
         </tbody>
         </table>

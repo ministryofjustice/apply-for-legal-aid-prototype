@@ -17,7 +17,7 @@ Apply for legal aid - Client details
 
 {{ govukBackLink({
   text: "Back",
-  href: "opponent_organisation"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -84,16 +84,24 @@ Apply for legal aid - Client details
         </fieldset>
       </div>
 
-      <button type="submit" class="govuk-button">
+      <!-- <button type="submit" class="govuk-button">
         Save and continue
       </button>
 
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
         Save and come back later
-      </a>
+      </a> -->
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
 
     </form>
-<!-- <a href="children_add_2" style="color:lightgray"> Skip to end of children</a> -->
   </div>
 </div>
 

@@ -16,11 +16,10 @@ Apply for legal aid - Income start page
   }) }}
 
   {{ govukBackLink({
-  text: "Back",
-  href: "statement"
-}) }}
-
-{% endblock %}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
 
 {% block content %}
 

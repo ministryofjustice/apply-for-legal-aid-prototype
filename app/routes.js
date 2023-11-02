@@ -193,27 +193,15 @@ console.log("myvar=" + myvar)
 })
 
 
-// Special Children Act supervision order default substantive limitation
-router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+// Special Children Act client role
+router.post('/sara/merits/client-role-parent', function (req, res) {
 
-  let myvar = req.session.data['substantivedefault']
+  let myvar = req.session.data['biological_parent']
 console.log("myvar=" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/sara/new_app_to_DWP/client_involvement_type_proceeding_02')
+    res.redirect('/sara/merits/merits_tasklist_proceeding_1_details_added')
   } else {
-    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit')
-  }
-})
-
-// Special Children Act prohibited steps order default substantive limitation
-router.post('/sara/new_app_to_DWP/substantive_LOS_edit_2', function (req, res) {
-
-  let myvar = req.session.data['sub-default']
-console.log("myvar=" + myvar)
-  if (myvar === 'yes') {
-    res.redirect('/sara/new_app_to_DWP/limitations')
-  } else {
-    res.redirect('/sara/new_app_to_DWP/substantive_LOS_edit_2')
+    res.redirect('/sara/merits/client-role-pr')
   }
 })
 
