@@ -270,7 +270,7 @@ console.log("myvar=" + myvar)
 
 
 // Special Children Act client role
-router.post('/sara/merits/client-role-parent', function (req, res) {
+router.post('/sara/merits/merits_tasklist_proceeding_1_details_added', function (req, res) {
 
   let myvar = req.session.data['biological_parent']
 console.log("myvar=" + myvar)
