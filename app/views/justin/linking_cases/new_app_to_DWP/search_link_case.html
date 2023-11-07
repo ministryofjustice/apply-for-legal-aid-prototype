@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-search">
+
+      <form action="search_result_link_case" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-heading-xl" for="search">
+            What is the LAA reference of the application you want to link to?
+          </label>
+
+          <div id="search-hint" class="govuk-hint moj-search__hint ">
+            For example, ‘A-BCD-E1F’.
+          </div>
+
+          <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button moj-search__button" type="submit" data-module="govuk-button">
+            Search
+          </button>
+          <a role="button" class="govuk-button govuk-button--secondary">
+            Save and come back later
+          </a>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -16,6 +16,65 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// linking cases - CONCEPT
+// search_copy_case
+router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (req, res) {
+
+  let myvar = req.session.data['copycase']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search_copy_case')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
+  }
+})
+// search_result_link_case_with_notification
+router.post('/justin/linking_cases/new_app_to_DWP/search_result_link_case_with_notification', function (req, res) {
+
+  let myvar = req.session.data['copycase_result']
+
+  console.log(myvar)
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search_result_link_case_with_notification')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
+  }
+})
+// NINO_with_notification
+router.post('/justin/linking_cases/new_app_to_DWP/NINO_with_notification', function (req, res) {
+
+  let myvar = req.session.data['linkcase_result_with_note']
+
+  console.log(myvar)
+  console.log("copycase_result: " + req.session.data['copycase_result'])
+
+  if (myvar === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO_with_notification')
+  }
+})
+//search_link_case
+router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (req, res) {
+
+  let myvar = req.session.data['linkcase']
+
+  console.log(myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search_link_case')
+  }
+})
+// client_has_partner
+router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function (req, res) {
+
+    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification')
+})
 // online_banking_question
 
 // means financial
