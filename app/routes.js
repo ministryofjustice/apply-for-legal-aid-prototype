@@ -22,7 +22,7 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (r
 
   let myvar = req.session.data['copycase']
 
-  console.log(myvar)
+  console.log('copycase: ' + myvar)
 
   if (myvar === 'yes') {
     res.redirect('/justin/linking_cases/new_app_to_DWP/search_copy_case')
@@ -43,26 +43,44 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_result_link_case_with_n
     res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
   }
 })
+
 // NINO_with_notification
 router.post('/justin/linking_cases/new_app_to_DWP/NINO_with_notification', function (req, res) {
 
-  let myvar = req.session.data['linkcase_result_with_note']
+  let copycase = req.session.data['copycase']
+  let copycase_result = req.session.data['copycase_result']
+  let linkcase = req.session.data['linkcase']
+  let linkcase_result = req.session.data['linkcase_result']
 
-  console.log(myvar)
-  console.log("copycase_result: " + req.session.data['copycase_result'])
+  console.log('copycase: ' + copycase)
+  console.log('copycase_result: ' + copycase_result)
+  console.log('linkcase: ' + linkcase)
+  console.log('linkcase_result: ' + linkcase_result)
 
-  if (myvar === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
-  } else {
+// linked, copied
+  if (linkcase_result !== 'no' && copycase_result !== undefined && copycase !== 'no') {
     res.redirect('/justin/linking_cases/new_app_to_DWP/NINO_with_notification')
-  }
+    console.log('1. linked, copied')
+// linked, not copied
+} else if (linkcase_result !== 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search_with_notification')
+    console.log('2. linked, not copied')
+// not linked, copied
+} else if (linkcase_result === 'no' && copycase_result !== undefined && copycase !== 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
+    console.log('3. not linked, copied')
+// not linked, not copied
+} else if (linkcase_result === 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
+    console.log('4. not linked, not copied')
+}
 })
 //search_link_case
 router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (req, res) {
 
   let myvar = req.session.data['linkcase']
 
-  console.log(myvar)
+  console.log('linkcase: ' + myvar)
 
   if (myvar === 'no') {
     res.redirect('/justin/linking_cases/new_app_to_DWP/search')
@@ -70,11 +88,39 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (r
     res.redirect('/justin/linking_cases/new_app_to_DWP/search_link_case')
   }
 })
+// check_answers_with_notification
+router.post('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification', function (req, res) {
+
+  let myvar = req.session.data['copycase_result']
+  let myvar2 = req.session.data['copycase']
+
+  console.log('copycase: ' + req.session.data['copycase'])
+  console.log('copycase_result: ' + req.session.data['copycase_result'])
+  console.log('linkcase_result: ' + req.session.data['linkcase_result'])
+
+  if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification')
+  }
+})
 // client_has_partner
 router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function (req, res) {
 
+  let myvar = req.session.data['copycase_result']
+  let myvar2 = req.session.data['copycase']
+
+  console.log('copycase: ' + req.session.data['copycase'])
+  console.log('copycase_result: ' + req.session.data['copycase_result'])
+  console.log('linkcase_result: ' + req.session.data['linkcase_result'])
+
+  if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
+  } else {
     res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification')
+  }
 })
+
 // online_banking_question
 
 // means financial
@@ -277,8 +323,6 @@ console.log("myvar=" + myvar)
 })
 
 
-
-
 // PROCEEDINGS SEARCH
 router.get('/new_app_to_DWP/search', function (req, res) {
   res.render('new_app_to_DWP/search',
@@ -286,6 +330,21 @@ router.get('/new_app_to_DWP/search', function (req, res) {
       proceedings: utils.getLiveProceedings(),
     })
 })
+// PROCEEDINGS SEARCH - linking cases - CONCEPTS
+router.get('/justin/linking_cases/new_app_to_DWP/search', function (req, res) {
+  res.render('justin/linking_cases/new_app_to_DWP/search',
+    {
+      proceedings: utils.getLiveProceedings()
+    })
+})
+router.get('/justin/linking_cases/new_app_to_DWP/search_with_notification', function (req, res) {
+  res.render('justin/linking_cases/new_app_to_DWP/search_with_notification',
+    {
+      proceedings: utils.getLiveProceedings()
+    })
+})
+
+
 // PROCEEDINGS SEARCH - CONCEPTS
 router.get('/sara/new_app_to_DWP/search', function (req, res) {
   res.render('sara/new_app_to_DWP/search',
