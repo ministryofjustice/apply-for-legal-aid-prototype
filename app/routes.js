@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// linking cases - CONCEPT
+// LINKING CASES - CONCEPT
 // search_copy_case
 router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (req, res) {
 

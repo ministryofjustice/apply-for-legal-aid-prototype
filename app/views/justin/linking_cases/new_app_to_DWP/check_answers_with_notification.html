@@ -173,6 +173,8 @@ Apply for legal aid - Check your answers - Merits
             <dd class="govuk-summary-list__actions">
             </dd>
           </div>
+
+          {% if (data['linkcase_result'] != "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Do you want to link an application to your current application?
@@ -199,6 +201,23 @@ Apply for legal aid - Check your answers - Merits
               </a>
             </dd>
           </div>
+          {% endif %}
+
+          {% if (data['linkcase_result'] == "no") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want to link an application to your current application?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="link_case">
+                Change<span class="govuk-visually-hidden"> link applicaion answer</span>
+              </a>
+            </dd>
+          {% endif %}
+
         </dl>
       </div>
     </div>
