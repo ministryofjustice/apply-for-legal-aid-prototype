@@ -30,22 +30,9 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (r
     res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
   }
 })
-// search_result_link_case_with_notification
-router.post('/justin/linking_cases/new_app_to_DWP/search_result_link_case_with_notification', function (req, res) {
-
-  let myvar = req.session.data['copycase_result']
-
-  console.log(myvar)
-
-  if (myvar === 'yes') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/search_result_link_case_with_notification')
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
-  }
-})
 
 // NINO_with_notification
-router.post('/justin/linking_cases/new_app_to_DWP/NINO_with_notification', function (req, res) {
+router.post('/justin/linking_cases/new_app_to_DWP/NINO', function (req, res) {
 
   let copycase = req.session.data['copycase']
   let copycase_result = req.session.data['copycase_result']
@@ -59,11 +46,11 @@ router.post('/justin/linking_cases/new_app_to_DWP/NINO_with_notification', funct
 
 // linked, copied
   if (linkcase_result !== 'no' && copycase_result !== undefined && copycase !== 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO_with_notification')
+    res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
     console.log('1. linked, copied')
 // linked, not copied
 } else if (linkcase_result !== 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/search_with_notification')
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
     console.log('2. linked, not copied')
 // not linked, copied
 } else if (linkcase_result === 'no' && copycase_result !== undefined && copycase !== 'no') {
@@ -89,7 +76,7 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (r
   }
 })
 // check_answers_with_notification
-router.post('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification', function (req, res) {
+router.post('/justin/linking_cases/new_app_to_DWP/check_answers', function (req, res) {
 
   let myvar = req.session.data['copycase_result']
   let myvar2 = req.session.data['copycase']
@@ -101,7 +88,7 @@ router.post('/justin/linking_cases/new_app_to_DWP/check_answers_with_notificatio
   if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
     res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
   } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification')
+    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers')
   }
 })
 // client_has_partner
@@ -117,7 +104,7 @@ router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function 
   if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
     res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
   } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers_with_notification')
+    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers')
   }
 })
 
