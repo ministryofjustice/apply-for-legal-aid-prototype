@@ -30,8 +30,20 @@ router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (r
     res.redirect('/justin/linking_cases/new_app_to_DWP/link_case')
   }
 })
+//search_link_case
+router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (req, res) {
 
-// NINO_with_notification
+  let myvar = req.session.data['linkcase']
+
+  console.log('linkcase: ' + myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search_link_case')
+  }
+})
+// NINO
 router.post('/justin/linking_cases/new_app_to_DWP/NINO', function (req, res) {
 
   let copycase = req.session.data['copycase']
@@ -62,35 +74,6 @@ router.post('/justin/linking_cases/new_app_to_DWP/NINO', function (req, res) {
     console.log('4. not linked, not copied')
 }
 })
-//search_link_case
-router.post('/justin/linking_cases/new_app_to_DWP/search_link_case', function (req, res) {
-
-  let myvar = req.session.data['linkcase']
-
-  console.log('linkcase: ' + myvar)
-
-  if (myvar === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/search_link_case')
-  }
-})
-// check_answers_with_notification
-router.post('/justin/linking_cases/new_app_to_DWP/check_answers', function (req, res) {
-
-  let myvar = req.session.data['copycase_result']
-  let myvar2 = req.session.data['copycase']
-
-  console.log('copycase: ' + req.session.data['copycase'])
-  console.log('copycase_result: ' + req.session.data['copycase_result'])
-  console.log('linkcase_result: ' + req.session.data['linkcase_result'])
-
-  if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers')
-  }
-})
 // client_has_partner
 router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function (req, res) {
 
@@ -101,13 +84,12 @@ router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function 
   console.log('copycase_result: ' + req.session.data['copycase_result'])
   console.log('linkcase_result: ' + req.session.data['linkcase_result'])
 
-  if (myvar === 'no' || myvar === undefined || myvar2 === 'no' || myvar2 === undefined) {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
-  } else {
+  if (myvar !== 'no' || myvar === undefined || myvar2 !== 'no' || myvar2 === undefined) {
     res.redirect('/justin/linking_cases/new_app_to_DWP/check_answers')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/client_has_partner')
   }
 })
-
 
 
 // online_banking_question
