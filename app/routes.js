@@ -208,7 +208,82 @@ router.post('/means_capital/with_partner/property_detail_mortgage_with_partner',
   }
 })
 
+
 // Special Children Act filter question 1 (general SCA filter for core SCA proceedings)
+router.post('/new_app_to_DWP/SCA_interrupt_1', function (req, res) {
+
+  let myvar = req.session.data['proceeding-issued']
+
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_which_core_proceeding')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_1')
+  }
+})
+
+// Special Children Act filter question 2 (specific filter question for supervision order)
+router.post('/new_app_to_DWP/SCA_interrupt_2', function (req, res) {
+
+  let myvar = req.session.data['vary-discharge-extend']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_2')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_other')
+  }
+})
+
+// Special Children Act filter question 3 (specific filter question for secure accommodation order)
+router.post('/new_app_to_DWP/SCA_interrupt_5', function (req, res) {
+
+  let myvar = req.session.data['secure_accommodation_order']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_other')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_5')
+  }
+})
+
+// Special Children Act filter question 4 (related proceeding filter question 1 - heard together with)
+router.post('/new_app_to_DWP/SCA_heard_as_an_alternative_to', function (req, res) {
+
+  let myvar = req.session.data['heard-together-with']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_heard_as_an_alternative_to')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_which_related_proceeding')
+  }
+})
+
+// Special Children Act filter question 5 (related proceeding filter question 2 - heard as an alternative to)
+router.post('/new_app_to_DWP/SCA_interrupt_4', function (req, res) {
+
+  let myvar = req.session.data['heard-alternative-to']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_4')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_which_related_proceeding')
+  }
+})
+
+// Special Children Act filter question 6 (specific filter question for prohibited steps order or specific issue order)
+router.post('/new_app_to_DWP/SCA_other_3', function (req, res) {
+
+  let myvar = req.session.data['change-name']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_3')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_other_3')
+  }
+})
+
+
+
+// Special Children Act CONCEPT filter question 1 (general SCA filter for core SCA proceedings)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 
   let myvar = req.session.data['proceeding-issued']
@@ -220,7 +295,7 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
   }
 })
 
-// Special Children Act filter question 2 (specific filter question for supervision order)
+// Special Children Act CONCEPT filter question 2 (specific filter question for supervision order)
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
@@ -232,7 +307,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 3 (related proceeding filter question 1)
+// Special Children Act CONCEPT filter question 3 (related proceeding filter question 1)
 router.post('/sara/new_app_to_DWP/heard_as_an_alternative_to', function (req, res) {
 
   let myvar = req.session.data['heard-together-with']
@@ -244,7 +319,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 4 (related proceeding filter question 2)
+// Special Children Act CONCEPT filter question 4 (related proceeding filter question 2)
 router.post('/sara/new_app_to_DWP/change_name', function (req, res) {
 
   let myvar = req.session.data['heard-alternative-to']
@@ -256,7 +331,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 5 (specific filter question for prohibited steps order)
+// Special Children Act CONCEPT filter question 5 (specific filter question for prohibited steps order)
 router.post('/sara/new_app_to_DWP/other_3', function (req, res) {
 
   let myvar = req.session.data['change-name']
@@ -268,12 +343,11 @@ console.log("myvar=" + myvar)
   }
 })
 
-
-// Special Children Act client role
+// Special Children Act CONCEPT client role
 router.post('/sara/merits/merits_tasklist_proceeding_1_details_added', function (req, res) {
 
   let myvar = req.session.data['biological_parent']
-console.log("myvar=" + myvar)
+console.log("myvarforbiologicalparent=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/merits/merits_tasklist_proceeding_1_details_added')
   } else {
@@ -281,7 +355,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act client role
+// Special Children Act CONCEPT client role
 router.post('/sara/merits/check_who_your_client_is', function (req, res) {
 
   let myvar = req.session.data['client_role_child']
