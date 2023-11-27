@@ -242,7 +242,7 @@ Apply for legal aid - Check your answers - Merits
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">Proceedings</h2>
     <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="other">
         Change<span class="govuk-visually-hidden"> proceedings</span>
       </a>
     </li>
@@ -254,25 +254,29 @@ Apply for legal aid - Check your answers - Merits
       <dt class="govuk-summary-list__key">
         Proceeding 1
       </dt>
+      {% if (data['copycase'] == "no") %}
       <dd class="govuk-summary-list__value">
         Care order
       </dd>
-    </div>
-    <!-- <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-      <dt class="govuk-summary-list__key">
-        Proceeding 2
-      </dt>
+      {% endif %}
+      {% if (data['copycase'] != "no") %}
       <dd class="govuk-summary-list__value">
-        Non-molestation order
+        Emergency Protection Order
       </dd>
-    </div> -->
+      {% endif %}
+    </div>
   </dl>
 </div>
 </div>
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
+    {% if (data['copycase'] == "no") %}
     <h2 class="govuk-summary-card__title">Care order</h2>
+    {% endif %}
+    {% if (data['copycase'] != "no") %}
+    <h2 class="govuk-summary-card__title">Emergency Protection Order</h2>
+    {% endif %}
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> care order details</span>
@@ -335,66 +339,66 @@ Apply for legal aid - Check your answers - Merits
 </div>
 
 <!-- <div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">Non-molestation order</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> non-molestation order details</span>
-      </a>
-    </li>
-  </ul>
+<div class="govuk-summary-card__title-wrapper">
+<h2 class="govuk-summary-card__title">Non-molestation order</h2>
+<ul class="govuk-summary-card__actions">
+<li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+Change<span class="govuk-visually-hidden"> non-molestation order details</span>
+</a>
+</li>
+</ul>
 </div>
 <div class="govuk-summary-card__content">
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Client role
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Defendant or respondent
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Delegated functions
-      </dt>
-      <dd class="govuk-summary-list__value">
-        3 July 2022
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Emergency level of service
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Full representation
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Emergency scope limits
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Hearing</br>Date: DD Month YYYY
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Substantive level of service
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Full representation)
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-      <dt class="govuk-summary-list__key">
-        Substantive scope limits
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Injunction FLA-to final hearing
-      </dd>
-    </div>
-  </dl>
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Client role
+</dt>
+<dd class="govuk-summary-list__value">
+Defendant or respondent
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Delegated functions
+</dt>
+<dd class="govuk-summary-list__value">
+3 July 2022
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Emergency level of service
+</dt>
+<dd class="govuk-summary-list__value">
+Full representation
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Emergency scope limits
+</dt>
+<dd class="govuk-summary-list__value">
+Hearing</br>Date: DD Month YYYY
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Substantive level of service
+</dt>
+<dd class="govuk-summary-list__value">
+Full representation)
+</dd>
+</div>
+<div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+<dt class="govuk-summary-list__key">
+Substantive scope limits
+</dt>
+<dd class="govuk-summary-list__value">
+Injunction FLA-to final hearing
+</dd>
+</div>
+</dl>
 </div>
 </div> -->
 

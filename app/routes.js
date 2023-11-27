@@ -1807,6 +1807,56 @@ router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
   }
 })
 
+//linking cases - CONCEPT
+// remove proceeding
+router.post('/justin/linking_cases/new_app_to_DWP/search', function (req, res) {
+
+  let myVar = req.session.data['remove_proceeding']
+
+  if (myVar === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/other')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
+  }
+})
+
+// Using delegated functions?
+router.post('/justin/linking_cases/new_app_to_DWP/emergency_default', function (req, res) {
+
+  let df = req.session.data['DF']
+
+  if (df === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_default')
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/emergency_default')
+  }
+})
+//
+router.post('/justin/linking_cases/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+
+  let substantiveDefault = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (substantiveDefault === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_LOS_edit');
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/limitations')
+  }
+})
+//
+router.post('/justin/linking_cases/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
+
+  let emergencyDefault = req.session.data['emergencydefault'];
+
+  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
+
+  if (emergencyDefault === 'no') {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/emergency_LOS_edit');
+  } else {
+    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_default')
+  }
+})
 
 // Using delegated functions?
 router.post('/new_app_to_DWP/emergency_default', function (req, res) {
