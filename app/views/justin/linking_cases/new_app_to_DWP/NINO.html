@@ -27,7 +27,7 @@ Apply for legal aid - Does your client use online banking
   <div class="govuk-grid-column-two-thirds">
     <form action="client_has_partner" method="post" class="form">
 
-{% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
+      {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title"
       data-module="govuk-notification-banner">
@@ -42,52 +42,52 @@ Apply for legal aid - Does your client use online banking
         </h3>
       </div>
     </div>
-{% endif %}
+    {% endif %}
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              Does your client have a National Insurance number?
-            </h1>
-          </legend>
-          <p class="govuk-body">We'll use your client's National Insurance number to check if they receive a passported benefit. If you do not have it you may have to do a means assessment for them.</p>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="" name="NINO" type="radio" value="yes" data-aria-controls="conditional-NINO-yes">
-              <label class="govuk-label govuk-radios__label" for="contact">
-                Yes
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Does your client have a National Insurance number?
+          </h1>
+        </legend>
+        <p class="govuk-body">We'll use your client's National Insurance number to check if they receive a passported benefit. If you do not have it you may have to do a means assessment for them.</p>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="" name="NINO" type="radio" value="yes" data-aria-controls="conditional-NINO-yes">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-NINO-yes">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="NINO-yes">
+                Enter National Insurance number
               </label>
+              <div class="govuk-hint" id="applicant-national-insurance-number-hint">For example, QQ 12 34 56 C</div>
+              <input class="govuk-input govuk-!-width-one-third" id="NINO-yes" name="NINO-yes" spellcheck="false" value="{{ data['nino'] }}">
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-NINO-yes">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="NINO-yes">
-                  Enter National Insurance number
-                </label>
-                <div class="govuk-hint" id="applicant-national-insurance-number-hint">For example, QQ 12 34 56 C</div>
-                <input class="govuk-input govuk-!-width-one-third" id="NINO-yes" name="NINO-yes" spellcheck="false">
-              </div>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="NINO-no" name="NINO" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="NINO-no">
-                No
-              </label>
-            </fieldset>
           </div>
 
-          <div class="govuk-button-group">
-            <button type="submit" class="govuk-button">
-              Save and continue
-            </button>
-            <a role="button" class="govuk-button draft-button">
-              Save and come back later
-            </a>
-          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="NINO-no" name="NINO" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="NINO-no">
+              No
+            </label>
+          </fieldset>
+        </div>
 
-        </form>
-      </div>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+          <a role="button" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </div>
+
+      </form>
     </div>
+  </div>
 
-    {% endblock %}
+  {% endblock %}

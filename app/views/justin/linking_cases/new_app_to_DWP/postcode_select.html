@@ -43,7 +43,7 @@ Apply for legal aid - Correspondence address select
             <label class="govuk-label" for="address-select">
               Select an address
             </label>
-            <select class="govuk-select govuk-!-width-three-quarters" id="address-select" name="address-select">
+            <select class="govuk-select govuk-!-width-three-quarters" id="address-select" name="address-select" value="{{ data['address-select'] or "1 Main Street, London, SE15 5NP" }}">
               <option>5 addresses found</option>
               <option>1 Main Street, London, {{ data['postcode'] }} </option>
               <option>2 Main Street, London, {{ data['postcode'] }} </option>
