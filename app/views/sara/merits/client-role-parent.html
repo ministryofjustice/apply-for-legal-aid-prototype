@@ -24,41 +24,45 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <span class="govuk-caption-xl">Supervision order</span>
-          <h1 class="govuk-fieldset__heading">
-            Is your client the biological parent of any children involved?
-          </h1>
+    <form action="client-role-pr" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Supervision order</span>
+            <h1 class="govuk-fieldset__heading">
+              Is your client the biological parent of any children involved?
+            </h1>
 
 
-        </legend>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="biological_parent" name="biological_parent" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="biological_parent">
-              Yes
-            </label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="biological_parent" name="biological_parent" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="biological_parent">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="biological_parent_2" name="biological_parent" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="biological_parent_2">
+                No
+              </label>
+            </div>
+
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="biological_parent_2" name="biological_parent" type="radio" value="scotland">
-            <label class="govuk-label govuk-radios__label" for="biological_parent_2">
-              No
-            </label>
-          </div>
+        </fieldset>
+      </div>
 
-        </div>
-      </fieldset>
-    </div>
-    <div class="govuk-button-group">
-      <a class="govuk-button" data-module="govuk-button" href="client-role-pr">
-        Save and continue
-      </a>
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Save and come back later
-      </button>
-    </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+        <a role="button" class="govuk-button govuk-button--secondary">
+          Save and come back later
+        </a>
+      </div>
+
+    </form>
   </div>
 </div>
 
