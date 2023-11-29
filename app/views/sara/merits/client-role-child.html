@@ -26,6 +26,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+<form action="check_who_your_client_is" method="post" novalidate>
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -38,13 +39,13 @@
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="client_role_child" name="client_role_child" type="radio" value="england">
+        <input class="govuk-radios__input" id="client_role_child" name="client_role_child" type="radio" value="yes">
         <label class="govuk-label govuk-radios__label" for="client_role_child">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="client_role_child-2" name="client_role_child" type="radio" value="scotland">
+        <input class="govuk-radios__input" id="client_role_child-2" name="client_role_child" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="client_role_child_2">
           No
         </label>
@@ -53,14 +54,17 @@
     </div>
   </fieldset>
 </div>
+
 <div class="govuk-button-group">
-  <a class="govuk-button" data-module="govuk-button" href="check_who_your_client_is.html">
+  <button type="submit" class="govuk-button">
     Save and continue
-  </a>
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Save and come back later
   </button>
+  <a role="button" class="govuk-button govuk-button--secondary">
+    Save and come back later
+  </a>
 </div>
+
+</form>
     </div>
   </div>
 

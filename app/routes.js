@@ -56,23 +56,23 @@ router.post('/justin/linking_cases/new_app_to_DWP/NINO', function (req, res) {
   console.log('linkcase: ' + linkcase)
   console.log('linkcase_result: ' + linkcase_result)
 
-  // linked, copied
+// linked, copied
   if (linkcase_result !== 'no' && copycase_result !== undefined && copycase !== 'no') {
     res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
     console.log('1. linked, copied')
-    // linked, not copied
-  } else if (linkcase_result !== 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
+// linked, not copied
+} else if (linkcase_result !== 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
     res.redirect('/justin/linking_cases/new_app_to_DWP/search')
     console.log('2. linked, not copied')
-    // not linked, copied
-  } else if (linkcase_result === 'no' && copycase_result !== undefined && copycase !== 'no') {
+// not linked, copied
+} else if (linkcase_result === 'no' && copycase_result !== undefined && copycase !== 'no') {
     res.redirect('/justin/linking_cases/new_app_to_DWP/NINO')
     console.log('3. not linked, copied')
-    // not linked, not copied
-  } else if (linkcase_result === 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
+// not linked, not copied
+} else if (linkcase_result === 'no' && (copycase_result === 'no' || copycase_result === undefined || copycase === 'no')) {
     res.redirect('/justin/linking_cases/new_app_to_DWP/search')
     console.log('4. not linked, not copied')
-  }
+}
 })
 // client_has_partner
 router.post('/justin/linking_cases/new_app_to_DWP/client_has_partner', function (req, res) {
@@ -225,7 +225,7 @@ router.post('/new_app_to_DWP/SCA_interrupt_1', function (req, res) {
 router.post('/new_app_to_DWP/SCA_interrupt_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/new_app_to_DWP/SCA_interrupt_2')
   } else {
@@ -237,7 +237,7 @@ router.post('/new_app_to_DWP/SCA_interrupt_2', function (req, res) {
 router.post('/new_app_to_DWP/SCA_interrupt_5', function (req, res) {
 
   let myvar = req.session.data['secure_accommodation_order']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/new_app_to_DWP/SCA_other')
   } else {
@@ -249,7 +249,7 @@ router.post('/new_app_to_DWP/SCA_interrupt_5', function (req, res) {
 router.post('/new_app_to_DWP/SCA_heard_as_an_alternative_to', function (req, res) {
 
   let myvar = req.session.data['heard-together-with']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/new_app_to_DWP/SCA_heard_as_an_alternative_to')
   } else {
@@ -261,7 +261,7 @@ router.post('/new_app_to_DWP/SCA_heard_as_an_alternative_to', function (req, res
 router.post('/new_app_to_DWP/SCA_interrupt_4', function (req, res) {
 
   let myvar = req.session.data['heard-alternative-to']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/new_app_to_DWP/SCA_interrupt_4')
   } else {
@@ -273,7 +273,7 @@ router.post('/new_app_to_DWP/SCA_interrupt_4', function (req, res) {
 router.post('/new_app_to_DWP/SCA_other_3', function (req, res) {
 
   let myvar = req.session.data['change-name']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/new_app_to_DWP/SCA_interrupt_3')
   } else {
@@ -299,7 +299,7 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA', function (req, res) {
 router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_2')
   } else {
@@ -311,7 +311,7 @@ router.post('/sara/new_app_to_DWP/interrupt_not_SCA_2', function (req, res) {
 router.post('/sara/new_app_to_DWP/heard_as_an_alternative_to', function (req, res) {
 
   let myvar = req.session.data['heard-together-with']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/new_app_to_DWP/heard_as_an_alternative_to')
   } else {
@@ -323,7 +323,7 @@ router.post('/sara/new_app_to_DWP/heard_as_an_alternative_to', function (req, re
 router.post('/sara/new_app_to_DWP/change_name', function (req, res) {
 
   let myvar = req.session.data['heard-alternative-to']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_4')
   } else {
@@ -335,7 +335,7 @@ router.post('/sara/new_app_to_DWP/change_name', function (req, res) {
 router.post('/sara/new_app_to_DWP/other_3', function (req, res) {
 
   let myvar = req.session.data['change-name']
-  console.log("myvar=" + myvar)
+console.log("myvar=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/new_app_to_DWP/interrupt_not_SCA_3')
   } else {
@@ -343,13 +343,11 @@ router.post('/sara/new_app_to_DWP/other_3', function (req, res) {
   }
 })
 
-// Special Children Act CONCEPT client role
+// Special Children Act CONCEPT client role biological parent
 router.post('/sara/merits/client-role-pr', function (req, res) {
 
   let myvar = req.session.data['biological_parent']
-
-  console.log('biological_parent: ' + myvar)
-
+console.log("myvarforbiologicalparent=" + myvar)
   if (myvar === 'yes') {
     res.redirect('/sara/merits/merits_tasklist_proceeding_1_details_added')
   } else {
@@ -357,15 +355,63 @@ router.post('/sara/merits/client-role-pr', function (req, res) {
   }
 })
 
-// Special Children Act CONCEPT client role
+// Special Children Act CONCEPT client role parental responsibility
+router.post('/sara/merits/client-role-child', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/merits/merits_tasklist_proceeding_1_details_added')
+  } else {
+    res.redirect('/sara/merits/client-role-child')
+  }
+})
+
+// Special Children Act CONCEPT client role child
 router.post('/sara/merits/check_who_your_client_is', function (req, res) {
 
   let myvar = req.session.data['client_role_child']
-  console.log("myvar=" + myvar)
+console.log("myvar" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/sara/merits/check_who_your_client_is')
+    res.redirect('/sara/merits/merits_tasklist_proceeding_1_details_added')
   } else {
-    res.redirect('/sara/merits/merits_tasklist_proceeding_2_details_added')
+    res.redirect('/sara/merits/check_who_your_client_is')
+  }
+})
+
+// Special Children Act CONCEPT client role parent second
+router.post('/sara/merits/check_who_your_client_is_parent', function (req, res) {
+
+  let myvar = req.session.data['biological_parent_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/merits/check_who_your_client_is_parent')
+  } else {
+    res.redirect('/sara/merits/client-role-pr-2')
+  }
+})
+
+// Special Children Act CONCEPT client role parental responsibility second
+router.post('/sara/merits/check_who_your_client_is_pr', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/merits/check_who_your_client_is_pr')
+  } else {
+    res.redirect('/sara/merits/client-role-child-2')
+  }
+})
+
+// Special Children Act CONCEPT client role child second
+router.post('/sara/merits/check_who_your_client_is_child', function (req, res) {
+
+  let myvar = req.session.data['client_role_child_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/sara/merits/check_who_your_client_is_child')
+  } else {
+    res.redirect('/sara/merits/check_who_your_client_is')
   }
 })
 
@@ -373,215 +419,215 @@ router.post('/sara/merits/check_who_your_client_is', function (req, res) {
 // PROCEEDINGS SEARCH
 router.get('/new_app_to_DWP/search', function (req, res) {
   res.render('new_app_to_DWP/search',
-  {
-    proceedings: utils.getLiveProceedings(),
-  })
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
 })
 // PROCEEDINGS SEARCH - linking cases - CONCEPTS
 router.get('/justin/linking_cases/new_app_to_DWP/search', function (req, res) {
   res.render('justin/linking_cases/new_app_to_DWP/search',
-  {
-    proceedings: utils.getLiveProceedings()
-  })
+    {
+      proceedings: utils.getLiveProceedings()
+    })
 })
 router.get('/justin/linking_cases/new_app_to_DWP/search_with_notification', function (req, res) {
   res.render('justin/linking_cases/new_app_to_DWP/search_with_notification',
-  {
-    proceedings: utils.getLiveProceedings()
-  })
+    {
+      proceedings: utils.getLiveProceedings()
+    })
 })
 
 
 // PROCEEDINGS SEARCH - CONCEPTS
 router.get('/sara/new_app_to_DWP/search', function (req, res) {
   res.render('sara/new_app_to_DWP/search',
-  {
-    sca_proceedings: utils.getScaProceedings()
-  })
+    {
+      sca_proceedings: utils.getScaProceedings()
+    })
 })
 
 // PROCEEDINGS SEARCH
 router.get('/new_app_to_DWP/search_2', function (req, res) {
   res.render('new_app_to_DWP/search_2',
-  {
-    proceedings: utils.getLiveProceedings(),
-  })
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
 })
 // PROCEEDINGS SEARCH - CONCEPTS
 router.get('/sara/new_app_to_DWP/search_2', function (req, res) {
   res.render('sara/new_app_to_DWP/search_2',
-  {
-    sca_proceedings: utils.getScaProceedings()
-  })
+    {
+      sca_proceedings: utils.getScaProceedings()
+    })
 })
 
 
 router.get('/justin/merits/search', function (req, res) {
   res.render('justin/merits/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/justin/merits/search_JP', function (req, res) {
   res.render('justin/merits/search_JP',
-  {
-    proceedings: utils.getProceedingsSwag()
-  })
+    {
+      proceedings: utils.getProceedingsSwag()
+    })
 })
 
 router.get('/apply_for_legal_aid_prototype/search', function (req, res) {
   res.render('apply_for_legal_aid_prototype/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/proceeding_flow/search', function (req, res) {
   res.render('proceeding_flow/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/limitations/search', function (req, res) {
   res.render('limitations/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/jim/limitations/search', function (req, res) {
   res.render('jim/limitations/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/delegated_functions/search_notify', function (req, res) {
   res.render('delegated_functions/search_notify',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/mp/search', function (req, res) {
   res.render('delegated_functions/v2/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search', function (req, res) {
   res.render('apply_for_legal_aid_prototype_non_passported_provider_means/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits/search', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits/search_2',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits/search_3',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits_grouped/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits_grouped/search_2',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
   res.render('multiple_proceedings/proceedings_merits_grouped/search_3',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/df/v2/search', function (req, res) {
   res.render('multiple_proceedings/df/v2/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/df/v2/search_2', function (req, res) {
   res.render('multiple_proceedings/df/v2/search_2',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/multiple_proceedings/df/v2/search_3', function (req, res) {
   res.render('multiple_proceedings/df/v2/search_3',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment/search', function (req, res) {
   res.render('non_passported_employment/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment/search_2', function (req, res) {
   res.render('non_passported_employment/search_2',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment/search_3', function (req, res) {
   res.render('non_passported_employment/search_3',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment_v2/search', function (req, res) {
   res.render('non_passported_employment_v2/search',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment_v2/search_2', function (req, res) {
   res.render('non_passported_employment_v2/search_2',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 router.get('/non_passported_employment_v2/search_3', function (req, res) {
   res.render('non_passported_employment_v2/search_3',
-  {
-    proceedings: utils.getProceedings()
-  })
+    {
+      proceedings: utils.getProceedings()
+    })
 })
 
 // CAPITAL Branching
@@ -1809,56 +1855,6 @@ router.post('/sara/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
   }
 })
 
-//linking cases - CONCEPT
-// remove proceeding
-router.post('/justin/linking_cases/new_app_to_DWP/search', function (req, res) {
-
-  let myVar = req.session.data['remove_proceeding']
-
-  if (myVar === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/other')
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/search')
-  }
-})
-
-// Using delegated functions?
-router.post('/justin/linking_cases/new_app_to_DWP/emergency_default', function (req, res) {
-
-  let df = req.session.data['DF']
-
-  if (df === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_default')
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/emergency_default')
-  }
-})
-//
-router.post('/justin/linking_cases/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
-
-  let substantiveDefault = req.session.data['substantivedefault'];
-
-  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
-
-  if (substantiveDefault === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_LOS_edit');
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/limitations')
-  }
-})
-//
-router.post('/justin/linking_cases/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
-
-  let emergencyDefault = req.session.data['emergencydefault'];
-
-  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
-
-  if (emergencyDefault === 'no') {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/emergency_LOS_edit');
-  } else {
-    res.redirect('/justin/linking_cases/new_app_to_DWP/substantive_default')
-  }
-})
 
 // Using delegated functions?
 router.post('/new_app_to_DWP/emergency_default', function (req, res) {
@@ -2102,9 +2098,9 @@ router.post('/justin/organisations/opponent_name', function (req, res) {
 
 router.get('/justin/organisations/opponent_organisation_auto', function (req, res) {
   res.render('justin/organisations/opponent_organisation_auto',
-  {
-    proceedings: utils.getOrganisations(),
-  })
+    {
+      proceedings: utils.getOrganisations(),
+    })
 })
 
 router.post('/justin/merits/opponent_name', function (req, res) {
@@ -2132,9 +2128,9 @@ router.post('/merits/opponent_name', function (req, res) {
 
 router.get('/merits/opponent_organisation_auto', function (req, res) {
   res.render('merits/opponent_organisation_auto',
-  {
-    proceedings: utils.getOrganisations(),
-  })
+    {
+      proceedings: utils.getOrganisations(),
+    })
 })
 
 

@@ -23,44 +23,38 @@
 {% block content %}
 
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-  <form action="client-role-child" method="post" novalidate>
-
+<form action="check_who_your_client_is_child" method="post" novalidate>
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <span class="govuk-caption-xl">Supervision order</span>
       <h1 class="govuk-fieldset__heading">
-        Does your client have parental responsibility for any children involved?
+        Is your client a child subject of this proceeding?
       </h1>
+
+
     </legend>
-    <p class="govuk-body">You’ll need to upload supporting evidence later if they do.</p>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="parental_responsibility" name="parental_responsibility" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="parental_responsibility">
-          Yes, under a court order
+        <input class="govuk-radios__input" id="client_role_child_second" name="client_role_child_second" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="client_role_child_second">
+          Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="parental_responsibility_2" name="parental_responsibility" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="parental_responsibility_2">
-          Yes, they have a parental responsibility agreement
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="parental_responsibility_3" name="parental_responsibility" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="parental_responsibility_3">
-          No, they do not have parental responsibility
+        <input class="govuk-radios__input" id="client_role_child_second_2" name="client_role_child_second" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="client_role_child_second_2">
+          No
         </label>
       </div>
 
     </div>
   </fieldset>
 </div>
+
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button">
     Save and continue
