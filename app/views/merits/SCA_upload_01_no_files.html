@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="SCA_upload_02_with_files" method="post" class="form">
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+
+          <h1 class="govuk-heading-xl">Upload supporting evidence</h1>
+
+          <!-- <p class="govuk-body">Use this page to upload gateway evidence for Section 8 proceedings (optional).</p> -->
+          <p class="govuk-body">Use this page to upload evidence of your client's parental responsibility.</p>
+
+        </label>
+      </div>
+
+
+
+      <div class="dropzone__upload">
+        <div class="govuk-form-group script" id="dropzone-form-group" aria-labelledby="dropzone-label">
+          <label class="govuk-label govuk-label--m" id="dropzone-label">
+            Upload files
+          </label>
+          <div class="govuk-hint">The maximum file size is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</div>
+
+          <span class="hidden" aria-hidden="true" id="application-id"></span>
+          <span class="hidden" aria-hidden="true" id="dropzone-url" data-url="/v1/statement_of_cases"></span>
+          <p id="dropzone-file-error" class="govuk-error-message dropzone-error hidden">
+            <span class="govuk-visually-hidden">Error:</span>
+          </p>
+          <div class="dropzone dz-clickable" id="dropzone-form">
+            <div class="dz-message" data-dz-message="">
+              <span class="govuk-body govuk-!-padding-top-2 script">Drag and drop files here or</span>
+              <button id="dz-upload-button" class="govuk-button govuk-button--secondary script" style="top:-5px" tabindex="0">Choose files</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <button type="submit" class="govuk-button">
+      Save and continue
+    </button>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a>
+
+    <!--  <p class="govuk-body"><a href="check_answers">I do not need to upload evidence</a></p> -->
+
+  </form>
+</div>
+
+{% endblock %}

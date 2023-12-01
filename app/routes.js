@@ -282,12 +282,12 @@ console.log("myvar=" + myvar)
 })
 
 // Special Children Act client role biological parent
-router.post('merits/SCA_client_role_pr', function (req, res) {
+router.post('/merits/SCA_client_role_pr', function (req, res) {
 
   let myvar = req.session.data['biological_parent']
 console.log("myvarforbiologicalparent=" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+    res.redirect('/merits/SCA_merits_tasklist_proceeding_1_details_added')
   } else {
     res.redirect('/merits/SCA_client_role_pr')
   }
@@ -299,7 +299,7 @@ router.post('/merits/SCA_client_role_child', function (req, res) {
   let myvar = req.session.data['parental_responsibility']
 console.log("myvar" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+    res.redirect('/merits/SCA_merits_tasklist_proceeding_1_details_added')
   } else {
     res.redirect('/merits/SCA_client_role_child')
   }
@@ -311,7 +311,7 @@ router.post('/merits/SCA_check_who_your_client_is', function (req, res) {
   let myvar = req.session.data['client_role_child']
 console.log("myvar" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+    res.redirect('/merits/SCA_merits_tasklist_proceeding_1_details_added')
   } else {
     res.redirect('/merits/SCA_check_who_your_client_is')
   }
