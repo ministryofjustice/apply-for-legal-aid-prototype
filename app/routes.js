@@ -281,6 +281,79 @@ console.log("myvar=" + myvar)
   }
 })
 
+// Special Children Act client role biological parent
+router.post('merits/SCA_client_role_pr', function (req, res) {
+
+  let myvar = req.session.data['biological_parent']
+console.log("myvarforbiologicalparent=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+  } else {
+    res.redirect('/merits/SCA_client_role_pr')
+  }
+})
+
+// Special Children Act client role parental responsibility
+router.post('/merits/SCA_client_role_child', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+  } else {
+    res.redirect('/merits/SCA_client_role_child')
+  }
+})
+
+// Special Children Act client role child
+router.post('/merits/SCA_check_who_your_client_is', function (req, res) {
+
+  let myvar = req.session.data['client_role_child']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/merits_tasklist_proceeding_1_details_added')
+  } else {
+    res.redirect('/merits/SCA_check_who_your_client_is')
+  }
+})
+
+// Special Children Act client role parent second
+router.post('/merits/SCA_check_who_your_client_is_parent', function (req, res) {
+
+  let myvar = req.session.data['biological_parent_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/SCA_check_who_your_client_is_parent')
+  } else {
+    res.redirect('/merits/SCA_client_role_pr_2')
+  }
+})
+
+// Special Children Act client role parental responsibility second
+router.post('/merits/SCA_check_who_your_client_is_pr', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/SCA_check_who_your_client_is_pr')
+  } else {
+    res.redirect('/merits/SCA_client_role_child_2')
+  }
+})
+
+// Special Children Act client role child second
+router.post('/merits/SCA_check_who_your_client_is_child', function (req, res) {
+
+  let myvar = req.session.data['client_role_child_second']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/SCA_check_who_your_client_is_child')
+  } else {
+    res.redirect('/merits/SCA_check_who_your_client_is')
+  }
+})
+
+
 
 
 // Special Children Act CONCEPT filter question 1 (general SCA filter for core SCA proceedings)

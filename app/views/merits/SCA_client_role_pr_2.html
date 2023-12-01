@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form action="check_who_your_client_is_pr" method="post" novalidate>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <span class="govuk-caption-xl">Supervision order</span>
+      <h1 class="govuk-fieldset__heading">
+        Does your client have parental responsibility for any children involved?
+      </h1>
+    </legend>
+    <p class="govuk-body">You’ll need to upload supporting evidence later if they do.</p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="parental_responsibility_second" name="parental_responsibility_second" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="parental_responsibility">
+          Yes, under a court order
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="parental_responsibility_second_2" name="parental_responsibility_second" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="parental_responsibility_second_2">
+          Yes, they have a parental responsibility agreement
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="parental_responsibility_second_3" name="parental_responsibility_second" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="parental_responsibility_second_3">
+          No, they do not have parental responsibility
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button">
+    Save and continue
+  </button>
+  <a role="button" class="govuk-button govuk-button--secondary">
+    Save and come back later
+  </a>
+</div>
+
+</form>
+    </div>
+  </div>
+
+{% endblock %}
