@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="substantive_LOS_FHH_scope" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <!-- <span class="govuk-caption-xl">Proceeding 1 of 2</span> -->
+            <h1 class="govuk-fieldset__heading">
+              Care order
+            </h1>
+          </legend>
+          <h2 class="govuk-heading-m govuk-!-margin-top-1">For the substantive application, select the level of service</h2>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="emergency-LOS" name="substantiveLOS" type="radio" value="Family help (higher)" data-aria-controls="conditional-emergency-LOS">
+              <label class="govuk-label govuk-radios__label" for="emergency-LOS">
+                Family help (higher)
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="emergency-LOS-2" name="substantiveLOS" type="radio" value="Full representation" data-aria-controls="conditional-emergency-LOS-2" aria-describedby="conditional-emergency-LOS-2">
+              <label class="govuk-label govuk-radios__label" for="emergency-LOS-2">
+                Full representation
+              </label>
+              <div id="emergency-LOS-2" class="govuk-hint govuk-radios__hint">
+                You'll be able to upload supporting evidence at the end of this application.
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+      <!-- <p class="govuk-body">
+      <a href="dashboard">Save and come back later</a></p> -->
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form action="search_link_case" method="post" novalidate>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Do you want to link this application with another one?
+          </h1>
+        </legend>
+        <p class="govuk-body">Linking to an application that’s already linked to another one will group them all together.
+        </p>
+        <p class="govuk-body">You can link to applications that you’ve already submitted using this service.
+        </p>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="linkcase" name="linkcase" type="radio" value="Family link" aria-describedby="Yes_family_link-hint">
+            <label class="govuk-label govuk-radios__label" for="linkcase">
+              Yes, I want to make a family link
+            </label>
+            <div id="Yes_family_link-hint" class="govuk-hint govuk-radios__hint">
+              When LAA need multiple certificates with a shared cost limitation.
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="linkcase-2" name="linkcase" type="radio" value="Legal link" aria-describedby="Yes_legal_link-hint">
+            <label class="govuk-label govuk-radios__label" for="linkcase-2">
+              Yes, I want to make a legal link
+            </label>
+            <div id="Yes_legal_link-hint" class="govuk-hint govuk-radios__hint">
+              When LAA need multiple certificates, each with their own cost limitation.
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="linkcase-3" name="linkcase" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="linkcase-3">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+      <a role="button" class="govuk-button govuk-button--secondary">
+        Save and come back later
+      </a>
+    </div>
+
+  </form>
+
+</div>
+</div>
+
+{% endblock %}

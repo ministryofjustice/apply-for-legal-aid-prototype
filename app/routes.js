@@ -16,6 +16,73 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+// LINKING CASES 03 - CONCEPT
+// search link case
+router.post('/justin/linking_cases_03/new_app_to_DWP/search_link_case', function (req, res) {
+
+  let myvar = req.session.data['linkcase']
+
+  console.log('linkcase: ' + myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
+  } 
+  else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/search_link_case')
+  }
+})
+
+//copy case
+router.post('/justin/linking_cases_03/new_app_to_DWP/copy_case', function (req, res) {
+
+  let myvar = req.session.data['linkcase-confirm']
+  let myvar2 = req.session.data['linkcase']
+
+  console.log('linkcase-confirm: ' + myvar)
+  console.log('linkcase: ' + myvar2)
+
+  if (myvar === 'NoDifferentCase') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+  } 
+  else if (myvar === 'No') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
+  }
+  else if (myvar2 === 'Legal link') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/copy_case')
+  }
+})
+
+//NINO
+router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) {
+
+  let myvar = req.session.data['copycase']
+
+  console.log('copycase: ' + myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
+  } 
+  else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/NINO')
+  }
+})
+
+// client has partner
+router.post('/justin/linking_cases_03/new_app_to_DWP/client_has_partner', function (req, res) {
+
+  let myvar = req.session.data['copycase']
+
+  console.log('copycase: ' + req.session.data['copycase'])
+
+  if (myvar === 'yes') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/check_answers')
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/client_has_partner')
+  }
+})
+
 // LINKING CASES - CONCEPT
 // search_copy_case
 router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (req, res) {
