@@ -54,6 +54,13 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/copy_case', function (req, 
   }
 })
 
+router.get('/justin/linking_cases_03/new_app_to_DWP/search', function (req, res) {
+  res.render('/justin/linking_cases_03/new_app_to_DWP/search',
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
+})
+
 //NINO
 router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) {
 
@@ -61,7 +68,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) 
 
   console.log('copycase: ' + myvar)
 
-  if (myvar === 'no') {
+  if (myvar === 'no' || myvar === undefined) {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
   } 
   else {
@@ -71,15 +78,105 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) 
 
 // client has partner
 router.post('/justin/linking_cases_03/new_app_to_DWP/client_has_partner', function (req, res) {
-
-  let myvar = req.session.data['copycase']
-
-  console.log('copycase: ' + req.session.data['copycase'])
-
-  if (myvar === 'yes') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/check_answers')
+})
+
+// proceeding loop for linking cases 03 CONCEPT
+// substantive_LOS_edit
+router.post('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+
+  let myVar = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (myVar === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_edit');
   } else {
-    res.redirect('/justin/linking_cases_03/new_app_to_DWP/client_has_partner')
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/limitations')
+  }
+})
+
+// Using delegated functions?
+router.post('/justin/linking_cases_03/new_app_to_DWP/emergency_default', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let df = req.session.data['DF']
+
+  if (df === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_default')
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/emergency_default')
+  }
+})
+
+// Using emergency default?
+router.post('/justin/linking_cases_03/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyDefault = req.session.data['emergencydefault'];
+
+  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
+
+  if (emergencyDefault === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/emergency_LOS_edit');
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_default')
+  }
+})
+
+// emergency which scopes to show
+router.post('/justin/linking_cases_03/new_app_to_DWP/emergency_LOS_FHH_scope', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyLOS = req.session.data['emergencyLOS'];
+
+  console.log('emergencyLOS = '+ req.session.data['emergencyLOS'])
+
+  if (emergencyLOS === 'Family help higher') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/emergency_LOS_FHH_scope');
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/emergency_LOS_FR_scope')
+  }
+})
+
+//substantive_edit
+// Using substantive default?
+router.post('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_edit', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let substantiveDefault = req.session.data['substantivedefault'];
+
+  console.log('substantivedefault = '+ req.session.data['substantivedefault'])
+
+  if (substantiveDefault === 'no') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_edit');
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/client_involvement_type_Non_Mol')
+  }
+})
+
+// substantive which scopes to show
+router.post('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_FHH_scope', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let substantiveLOS = req.session.data['substantiveLOS'];
+
+  console.log('substantiveLOS = '+ req.session.data['substantiveLOS'])
+
+  if (substantiveLOS === 'Family help higher') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_FHH_scope');
+  } else {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_FR_scope')
   }
 })
 

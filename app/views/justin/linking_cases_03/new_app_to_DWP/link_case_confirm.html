@@ -49,9 +49,16 @@ Apply for legal aid - Client details
         <dt class="govuk-summary-list__key">
           Proceedings
         </dt>
+        {% if (data['linkcase'] == "Family link") %}
         <dd class="govuk-summary-list__value">
-          Proceeding 1 name
+          Child Arrangements Order
         </dd>
+        {% endif %}
+        {% if (data['linkcase'] == "Legal link") %}
+        <dd class="govuk-summary-list__value">
+          Child Arrangements Order
+        </dd>
+        {% endif %}
       </div>
     </dl>
 

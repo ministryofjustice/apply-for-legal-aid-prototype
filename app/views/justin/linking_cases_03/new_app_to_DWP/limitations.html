@@ -54,7 +54,14 @@ Apply for legal aid - Proceedings
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-body" scope="row">
-            <h2 class="govuk-heading-m">Care order</h2>
+
+            {% if (data['linkcase'] == "Family link") %}
+            <h2 class="govuk-heading-m">Child Arrangements Order</h2>
+            {% endif %}
+            {% if (data['linkcase'] == "Legal link") %}
+            <h2 class="govuk-heading-m">Prohibited Steps Order</h2>
+            {% endif %}
+
             <h3 class="govuk-heading-s">Client role:<span class="govuk-!-font-weight-regular"> Applicant, claimant or petitioner</span> </h3>
             <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
             <li class="govuk-caption-m proceeding__list-item"> > Children (Section 8)</li>
@@ -79,7 +86,7 @@ Apply for legal aid - Proceedings
                 </div>
               </details>
             </th>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="other_3">
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="other">
               Change<span class="govuk-visually-hidden">blank</span>
             </a></td>
           </tr>

@@ -177,16 +177,31 @@ Apply for legal aid - Check your answers - Merits
             {{ data['linkcase'] or 'Link type' }}
           </dt>
           <dd class="govuk-summary-list__value">
-            Client Name, A-BCD-E1F, Proceeding name 1.
+            Client Name, A-BCD-E1F, Child Arrangements Order.
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="link_case">
               Change<span class="govuk-visually-hidden"> application linked to answer</span>
             </a>
           </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['linkcase'] == "Family link") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              All applications with a family link to this one
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Client Name, A-BCD-E1F, Child Arrangements Order.</br>
+              Client Name 2, A-BCD-E1F, Child Arrangements Order.<br>
+              Client Name 3, A-BCD-E1F, Child Arrangements Order.
+            </dd>
+          </div>
           {% endif %}
   
           {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
+          <div class="govuk-summary-list__row"></div>
           <dd class="govuk-summary-list__value">
             No
           </dd>
@@ -195,9 +210,8 @@ Apply for legal aid - Check your answers - Merits
               Change<span class="govuk-visually-hidden"> link applicaion answer</span>
             </a>
           </dd>
-          {% endif %}
-  
         </div>
+          {% endif %}
 
 
         {% if (data['copycase'] == "yes") %}
@@ -248,14 +262,14 @@ Apply for legal aid - Check your answers - Merits
       <dt class="govuk-summary-list__key">
         Proceeding 1
       </dt>
-      {% if (data['copycase'] == "no") %}
+      {% if (data['linkcase'] == "Family link") %}
       <dd class="govuk-summary-list__value">
-        Care order
+        Child Arrangements Order
       </dd>
       {% endif %}
-      {% if (data['copycase'] != "no") %}
+      {% if (data['linkcase'] == "Legal link") %}
       <dd class="govuk-summary-list__value">
-        Emergency Protection Order
+        Prohibited Steps Order
       </dd>
       {% endif %}
     </div>
@@ -265,11 +279,11 @@ Apply for legal aid - Check your answers - Merits
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
-    {% if (data['copycase'] == "no") %}
-    <h2 class="govuk-summary-card__title">Care order</h2>
+    {% if (data['linkcase'] == "Family link") %}
+    <h2 class="govuk-summary-card__title">Child Arrangements Order</h2>
     {% endif %}
-    {% if (data['copycase'] != "no") %}
-    <h2 class="govuk-summary-card__title">Emergency Protection Order</h2>
+    {% if (data['linkcase'] == "Legal link") %}
+    <h2 class="govuk-summary-card__title">Prohibited Steps Order</h2>
     {% endif %}
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action"> <a class="govuk-link" href="client_involvement_type">
@@ -435,6 +449,17 @@ Injunction FLA-to final hearing
   </dl>
 </div>
 </div>
+
+
+{% if (data['linkcase'] === "Family link") %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Family linked applications will share one cost limit
+  </strong>
+</div>
+{% endif %}
 
 <h2 class="govuk-heading-m">What happens next</h2>
 
