@@ -30,6 +30,8 @@ Apply for legal aid - Income start page
   <!--  <p class="gov-body">
     <a href="outgoings">Go to outgoings</a>
     </p> -->
+    <form action="SCA_check_answers_merits" method="post" novalidate>
+
     <h1 class="govuk-heading-xl">Provide details of the case</h1>
 
  <ol class="app-task-list">
@@ -113,14 +115,16 @@ Apply for legal aid - Income start page
 
  </ol>
 
-        <a href="SCA_which_client_role_upload_files" role="button" class="govuk-button">
-          Save and continue
-        </a>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+          <a role="button" class="govuk-button govuk-button--secondary">
+            Save and come back later
+          </a>
+        </div>
 
-        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-          Save and come back later
-        </a>
-
+</form>
     </div>
   </div>
 

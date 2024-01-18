@@ -517,6 +517,18 @@ console.log("myvar" + myvar)
   }
 })
 
+// Special Children Act upload evidence shown or not (shown if client is someone with parental responsibility)
+router.post('/merits/SCA_check_answers_merits', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/merits/SCA_upload_01_no_files')
+  } else {
+    res.redirect('/merits/SCA_check_answers_merits')
+  }
+})
+
 
 
 

@@ -288,6 +288,9 @@ Apply for legal aid - Check your answers - Merits
 </div>
 </div> -->
 
+
+
+{% if (data['parental_responsibility'] or ['parental_responsibility_second']) == "yes" %}
 <h2 class="govuk-heading-l">
   Supporting evidence
 </h2>
@@ -316,6 +319,7 @@ Apply for legal aid - Check your answers - Merits
   </dl>
 </div>
 </div>
+{% endif %}
 
 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
   <div class="govuk-checkboxes__item">
