@@ -34,7 +34,7 @@ Apply for legal aid - Check your answers - Merits
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if (data['copycase'] == "yes") %}
+    {% if (data['copycase'] != "no") %}
     <div class="govuk-notification-banner" role="alert"
     aria-labelledby="govuk-notification-banner-title"
     data-module="govuk-notification-banner">
@@ -45,7 +45,7 @@ Apply for legal aid - Check your answers - Merits
     </div>
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        The proceedings information was copied from A-BCD-E1F. You can check the merits information later.
+        Some answers have been copied from A-BCD-E1F
       </h3>
     </div>
   </div>
@@ -121,19 +121,6 @@ Apply for legal aid - Check your answers - Merits
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Same as correspondence address
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="postcode_finder">
-              Change<span class="govuk-visually-hidden"> Correspondence address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
@@ -145,7 +132,7 @@ Apply for legal aid - Check your answers - Merits
             </a>
           </dd>
         </div>
-        <!-- <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Does your client have a partner?
           </dt>
@@ -157,81 +144,24 @@ Apply for legal aid - Check your answers - Merits
               Change<span class="govuk-visually-hidden"> Does your client have a partner?</span>
             </a>
           </dd>
-        </div> -->
+        </div>
       </dl>
     </div>
   </div>
 
   <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper">
-      <h2 class="govuk-summary-card__title">Linking</h2>
+      <h2 class="govuk-summary-card__title">Linking and copying</h2>
     </div>
 
     <div class="govuk-summary-card__content">
       <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do you want to link an application to your current application?
-          </dt>
-
-          {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="link_case">
-              Change<span class="govuk-visually-hidden"> link applicaion answer</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ data['linkcase'] or 'Link type' }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Client Name, A-BCD-E1F, Child Arrangements Order.
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="link_case">
-              Change<span class="govuk-visually-hidden"> application linked to answer</span>
-            </a>
-          </dd>
-          </div>
-          {% endif %}
-
-          {% if (data['linkcase'] == "Family link") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              All applications with a family link to this one
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Client Name, A-BCD-E1F, Child Arrangements Order.</br>
-              Client Name 2, A-BCD-E1F, Child Arrangements Order.<br>
-              Client Name 3, A-BCD-E1F, Child Arrangements Order.
-            </dd>
-          </div>
-          {% endif %}
-
-          {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
-          <div class="govuk-summary-list__row"></div>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="link_case">
-              Change<span class="govuk-visually-hidden"> link applicaion answer</span>
-            </a>
-          </dd>
-        </div>
-          {% endif %}
-
-
-        {% if (data['copycase'] == "yes") %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do you want to copy an application to your current application?
           </dt>
+
+          {% if (data['copycase'] != "no") %}
           <dd class="govuk-summary-list__value">
             Yes
           </dd>
@@ -243,14 +173,63 @@ Apply for legal aid - Check your answers - Merits
             Application copied
           </dt>
           <dd class="govuk-summary-list__value">
-            Client Name, A-BCD-E1F, Proceeding name 1.
+            Client Name, A-BCD-E1F
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
         </div>
+        {% endif %}
+
+        {% if (data['copycase'] == "no") %}
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
       {% endif %}
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want to link an application to your current application?
+        </dt>
 
+        {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="link_case">
+            Change<span class="govuk-visually-hidden"> link applicaion answer</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{ data['linkcase_result'] or 'Link type' }}
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Client Name, A-BCD-E1F
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="search_result_link_case">
+            Change<span class="govuk-visually-hidden"> application linked to answer</span>
+          </a>
+        </dd>
+        {% endif %}
+
+        {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="link_case">
+            Change<span class="govuk-visually-hidden"> link applicaion answer</span>
+          </a>
+        </dd>
+        {% endif %}
+
+      </div>
     </dl>
   </div>
 </div>
@@ -275,14 +254,14 @@ Apply for legal aid - Check your answers - Merits
       <dt class="govuk-summary-list__key">
         Proceeding 1
       </dt>
-      {% if (data['linkcase'] == "Family link") %}
+      {% if (data['copycase'] == "no") %}
       <dd class="govuk-summary-list__value">
-        Child Arrangements Order
+        Care order
       </dd>
       {% endif %}
-      {% if (data['linkcase'] == "Legal link") %}
+      {% if (data['copycase'] != "no") %}
       <dd class="govuk-summary-list__value">
-        Prohibited Steps Order
+        Emergency Protection Order
       </dd>
       {% endif %}
     </div>
@@ -292,11 +271,11 @@ Apply for legal aid - Check your answers - Merits
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
-    {% if (data['linkcase'] == "Family link") %}
-    <h2 class="govuk-summary-card__title">Child Arrangements Order</h2>
+    {% if (data['copycase'] == "no") %}
+    <h2 class="govuk-summary-card__title">Care order</h2>
     {% endif %}
-    {% if (data['linkcase'] == "Legal link") %}
-    <h2 class="govuk-summary-card__title">Prohibited Steps Order</h2>
+    {% if (data['copycase'] != "no") %}
+    <h2 class="govuk-summary-card__title">Emergency Protection Order</h2>
     {% endif %}
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action"> <a class="govuk-link" href="client_involvement_type">
@@ -462,17 +441,6 @@ Injunction FLA-to final hearing
   </dl>
 </div>
 </div>
-
-
-{% if (data['linkcase'] === "Family link") %}
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    Family linked applications will share one cost limit
-  </strong>
-</div>
-{% endif %}
 
 <h2 class="govuk-heading-m">What happens next</h2>
 

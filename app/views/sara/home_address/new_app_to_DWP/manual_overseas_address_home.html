@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Autocomplete question page template – {{ serviceName }} – GOV.UK Prototype Components
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <form class="form" action="/justin/linking_cases_03/new_app_to_DWP/link_case" method="post">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ xGovukAutocomplete({
+          id: "country",
+          name: "country",
+          allowEmpty: false,
+          label: {
+            classes: "govuk-label--xl",
+            isPageHeading: true,
+            text: "Enter your client’s overseas home address"
+          },
+          hint: {
+            text: "Country"
+          },
+          items: [
+            { text: "Austria" },
+            { text: "Belgium" },
+            { text: "Bulgaria" },
+            { text: "Croatia" },
+            { text: "Republic of Cyprus" },
+            { text: "Czech Republic" },
+            { text: "Denmark" },
+            { text: "Estonia" },
+            { text: "Finland" },
+            { text: "France" },
+            { text: "Germany" },
+            { text: "Greece" },
+            { text: "Hungary" },
+            { text: "Ireland" },
+            { text: "Italy" },
+            { text: "Latvia" },
+            { text: "Lithuania" },
+            { text: "Luxembourg" },
+            { text: "Malta" },
+            { text: "Netherlands" },
+            { text: "Poland" },
+            { text: "Portugal" },
+            { text: "Romania" },
+            { text: "Slovakia" },
+            { text: "Slovenia" },
+            { text: "Spain" },
+            { text: "Sweden" }
+          ]
+        }) }}
+        <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      My country doesn't appear
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Use the textbox below to write your address
+  </div>
+</details>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Address
+          </label>
+          <div id="postcode-hint" class="govuk-hint">
+            Give the full address.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

@@ -16,6 +16,22 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+
+//HOME ADDRESS - CONCEPT
+router.post('/sara/home_address/new_app_to_DWP/postcode_finder_home', function (req, res) {
+
+  let myvar = req.session.data['correspondence_home']
+console.log("myvar" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+  } else if (myvar === 'noNone') {
+  res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+  } else {
+    res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+  }
+})
+
+
 // LINKING CASES 03 - CONCEPT
 // search link case
 router.post('/justin/linking_cases_03/new_app_to_DWP/search_link_case', function (req, res) {
@@ -26,7 +42,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/search_link_case', function
 
   if (myvar === 'no') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
-  } 
+  }
   else {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search_link_case')
   }
@@ -43,7 +59,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/copy_case', function (req, 
 
   if (myvar === 'NoDifferentCase') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
-  } 
+  }
   else if (myvar === 'No') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
   }
@@ -70,7 +86,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) 
 
   if (myvar === 'no' || myvar === undefined) {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
-  } 
+  }
   else {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/NINO')
   }
