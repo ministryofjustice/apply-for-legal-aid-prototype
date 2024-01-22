@@ -32,7 +32,11 @@ Apply for legal aid - Correspondence address select
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
-            <label class="govuk-label postcode_change" for="change-postcode"> 8 addresses found for <b>{{ data['postcode']  or "PO5 7CO"}}.<b></label>
+            {% if (data['postcode']) %}
+              <label class="govuk-label postcode_change" for="change-postcode"> 8 addresses found for <b>{{ data['postcode']+ ', ' + data['building']  }}.<b></label>
+            {% else %}
+              <label class="govuk-label postcode_change" for="change-postcode"> 8 addresses found for <b>{{ "PO5 7CO"  }}.<b></label>
+            {% endif %}
             <p class="postcode_change"><a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again</a></p>
           </div>
 

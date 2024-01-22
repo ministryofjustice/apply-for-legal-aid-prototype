@@ -22,16 +22,18 @@
   <form class="form" action="/justin/linking_cases_03/new_app_to_DWP/link_case" method="post">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Enter your client’s overseas home address
+            </h1>
+          </legend>
+
         {{ xGovukAutocomplete({
           id: "country",
           name: "country",
           allowEmpty: false,
           label: {
-            classes: "govuk-label--xl",
-            isPageHeading: true,
-            text: "Enter your client’s overseas home address"
-          },
-          hint: {
             text: "Country"
           },
           items: [
@@ -84,7 +86,7 @@
           </div>
           <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
         </div>
-
+      </fieldset>
         <button type="submit" class="govuk-button">
           Save and continue
         </button>
@@ -93,6 +95,7 @@
           Save and come back later
         </a>
       </div>
+
     </div>
   </form>
 {% endblock %}
