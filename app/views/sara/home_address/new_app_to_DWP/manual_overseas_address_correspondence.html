@@ -19,21 +19,23 @@
 {% endblock %}
 
 {% block content %}
-  <form class="form" action="correspondence_same_as_home" method="post">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        {{ xGovukAutocomplete({
-          id: "country",
-          name: "country",
-          allowEmpty: false,
-          label: {
-            classes: "govuk-label--xl",
-            isPageHeading: true,
-            text: "Enter your client’s overseas correspondence address"
-          },
-          hint: {
-            text: "Country"
-          },
+<form class="form" action="correspondence_same_as_home" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Enter your client’s overseas home address
+          </h1>
+        </legend>
+
+      {{ xGovukAutocomplete({
+        id: "country",
+        name: "country",
+        allowEmpty: false,
+        label: {
+          text: "Country"
+        },
           items: [
             { text: "Austria" },
             { text: "Belgium" },
