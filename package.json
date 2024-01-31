@@ -10,7 +10,7 @@
     "accessible-autocomplete": "^2.0.4",
     "govuk-frontend": "4.6.0",
     "govuk-prototype-components": "^1.1.0",
-    "govuk-prototype-kit": "13.8.1",
+    "govuk-prototype-kit": "13.16.0",
     "jquery": "3.7.0",
     "notifications-node-client": "7.0.3"
   }
