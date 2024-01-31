@@ -1,5 +1,5 @@
 // @import "node_modules/govuk-frontend/govuk/govuk/settings/all";
-@import "node_modules/govuk-frontend/govuk/settings/all";
+@import "node_modules/govuk-frontend/dist/govuk/settings/all";
 
 // Override the govuk-frontend font stack
 $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
@@ -8,7 +8,7 @@ $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", san
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 // @import "node_modules/govuk-frontend/govuk/govuk/all";
-@import "node_modules/govuk-frontend/govuk/all";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/docs/examples/blank-unbranded
