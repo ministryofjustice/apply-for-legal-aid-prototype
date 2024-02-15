@@ -18,16 +18,29 @@ router.get('/', function (req, res) {
 
 
 //HOME ADDRESS - CONCEPT
-router.post('/sara/home_address/new_app_to_DWP/postcode_finder_home', function (req, res) {
+//correspondence address same as home address?
+router.post('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why', function (req, res) {
 
   let myvar = req.session.data['correspondence_home']
 console.log("myvar" + myvar)
   if (myvar === 'yes') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
-  } else if (myvar === 'noNone') {
+  } else {
+    res.redirect('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why')
+  }
+})
+
+//why different
+router.post('/justin/linking_cases_03/new_app_to_DWP/postcode_finder_home', function (req, res) {
+
+  let myvar = req.session.data['correspondence_home_different']
+console.log("myvar" + myvar)
+  if (myvar === 'different') {
+    res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+  } else if (myvar === 'vulnerable') {
   res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
   } else {
-    res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+    res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
   }
 })
 

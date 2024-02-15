@@ -27,31 +27,33 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-  <form action="correspondence_home_address_different_why" method="post" novalidate>
+  <form action="/justin/linking_cases_03/new_app_to_DWP/postcode_finder_home" method="post" novalidate>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Is this also your client’s home address?
+        Why is your client’s home address different to their correspondence address?
       </h1>
     </legend>
-    <p class="govuk-body">The home address is the place that they normally live in, and sometimes called the main dwelling.</p>
-
-    <label class="govuk-label postcode_change" for="change-postcode"> 1 Salisbury Road, Harpenden, AL5 5AR. </label>
-    <p class="postcode_change"><a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again.</a></p>
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="correspondence_home" name="correspondence_home" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="correspondence_home">
-          Yes
+        <input class="govuk-radios__input" id="correspondence_home_different" name="correspondence_home_different" type="radio" value="different">
+        <label class="govuk-label govuk-radios__label" for="correspondence_home_different">
+          They have a different home address
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="correspondence_home_2" name="correspondence_home" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="correspondence_home_2">
-          No
+        <input class="govuk-radios__input" id="correspondence_home_different_2" name="correspondence_home_different" type="radio" value="vulnerable">
+        <label class="govuk-label govuk-radios__label" for="correspondence_home_different_2">
+          My client is vulnerable and a home address cannot be provided
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="correspondence_home_different_3" name="correspondence_home_different" type="radio" value="homeless">
+        <label class="govuk-label govuk-radios__label" for="correspondence_home_different_3">
+          My client is homeless or has no fixed residence
         </label>
       </div>
 

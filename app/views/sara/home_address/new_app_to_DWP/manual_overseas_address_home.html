@@ -1,41 +1,46 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
 
 {% block pageTitle %}
-  Autocomplete question page template – {{ serviceName }} – GOV.UK Prototype Components
+Apply for legal aid - Manual address
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
-  <form class="form" action="/justin/linking_cases_03/new_app_to_DWP/link_case" method="post">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              Enter your client’s overseas home address
-            </h1>
-          </legend>
 
-        {{ xGovukAutocomplete({
-          id: "country",
-          name: "country",
-          allowEmpty: false,
-          label: {
-            text: "Country"
-          },
+  <div class="govuk-grid-row">
+      <form action="/justin/linking_cases_03/new_app_to_DWP/link_case" method="post" novalidate>
+        
+    <div class="govuk-grid-column-two-thirds">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Enter your client's overseas home address
+          </h1>
+        </legend>
+
+      {{ xGovukAutocomplete({
+        id: "country",
+        name: "country",
+        allowEmpty: false,
+        label: {
+          text: "Country"
+        },
           items: [
             { text: "Austria" },
             { text: "Belgium" },
@@ -66,36 +71,57 @@
             { text: "Sweden" }
           ]
         }) }}
-        <details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      My country doesn't appear
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    Use the textbox below to write your address
-  </div>
-</details>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
-            Address
+          <label class="govuk-label" for="address-line-2">
+            Address line 1
+            <span class="govuk-visually-hidden">addressline 2 of 2</span>
           </label>
-          <div id="postcode-hint" class="govuk-hint">
-            Give the full address.
-          </div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
         </div>
-      </fieldset>
-        <button type="submit" class="govuk-button">
-          Save and continue
-        </button>
 
-        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-          Save and come back later
-        </a>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional)
+            <span class="govuk-visually-hidden">addressline 2 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Address line 3 (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Address line 4 (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Address line 5 (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+        </div>
+
+      </fieldset>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </form>
 
     </div>
-  </form>
+  </div>
+
 {% endblock %}

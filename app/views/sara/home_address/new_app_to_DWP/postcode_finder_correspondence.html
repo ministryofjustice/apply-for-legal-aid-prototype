@@ -31,8 +31,6 @@ Apply for legal aid - Correspondence address lookup
         Find your client’s correspondence address
       </h1>
     </legend>
-    <p class="govuk-body">The address you provide is only for this application. If your client has other certificated legal aid cases where a different address has been used, you should review and update those records in CCMS.
-    </p>
 
     <form action="postcode_select_correspondence" method="post" novalidate>
 
@@ -52,7 +50,7 @@ Apply for legal aid - Correspondence address lookup
       <div class="govuk-form-group">
 
         <label class="govuk-label govuk-label--m" for="example">
-          Building number or name
+          Building number or name (optional)
         </label>
 
         <div id="building-hint" class="govuk-hint">
@@ -62,20 +60,28 @@ Apply for legal aid - Correspondence address lookup
         <input class="govuk-input govuk-input--width-10" id="building" name="building" type="text" value="{{ data['building']}}">
       </div>
 
-      <button type="submit" class="govuk-button">
-        Find address
-      </button>
-
-      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-        Save and come back later
-      </a>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+    The address you provide is only for this application. If your client has other certificated legal aid cases where a different address has been used, you should review and update those records in CCMS.
+      </strong>
+      </div>
 
       <p>
-        <a class="govuk-link" href="manual_UK_address_correspondence">Enter a UK address</a>
+        <a class="govuk-link" href="manual_UK_address_correspondence">Enter an address manually</a>
       </p>
       <p>
         <a class="govuk-link" href="manual_overseas_address_correspondence">Enter a non-UK address</a>
       </p>
+<br>
+      <button type="submit" class="govuk-button">
+        Find address
+      </button>
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
 
     </form>
   </div>

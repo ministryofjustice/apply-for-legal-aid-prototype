@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Correspondence address lookup
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<form action="/justin/linking_cases_03/new_app_to_DWP/link_case" method="post" novalidate>
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Confirm your client’s home address
+      </h1>
+    </legend>
+
+
+      <p class="postcode_change">
+      1 address found for AL5 5AR and 1.
+      <a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again</a>
+      </p>
+
+      <div class="govuk-inset-text">
+        1 Salisbury Road<br>
+        Harpenden<br>
+        AL5 5AR<br>
+      </div>
+
+
+
+      <p>
+        <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
+      </p>
+      <br>
+
+      <button type="submit" class="govuk-button">
+        Use this address
+      </button>
+
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

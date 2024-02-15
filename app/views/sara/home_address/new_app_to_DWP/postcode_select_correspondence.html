@@ -25,7 +25,7 @@ Apply for legal aid - Correspondence address select
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Select address</h1>
+    <h1 class="govuk-heading-xl">Select your client’s correspondence address</h1>
 
     <form action="correspondence_same_as_home" method="post" novalidate>
 
@@ -33,7 +33,7 @@ Apply for legal aid - Correspondence address select
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
             {% if (data['postcode']) %}
-              <label class="govuk-label postcode_change" for="change-postcode"> 7 addresses found for <b>{{ data['postcode']+ ', ' + data['building']  }}.<b></label>
+              <label class="govuk-label postcode_change" for="change-postcode"> 7 addresses found for <b>{{ data['postcode']}}</b> and <b>{{data['building']  }}.<b></label>
             {% else %}
               <label class="govuk-label postcode_change" for="change-postcode"> 7 addresses found for <b>{{ "AL5 5AR"  }}.<b></label>
             {% endif %}
@@ -93,19 +93,26 @@ Apply for legal aid - Correspondence address select
         </fieldset>
       </div>
 
-      <button type="submit" class="govuk-button">
-        Use this address
-      </button>
-
       <p>
-        <a class="govuk-link" href="manual_UK_address_correspondence">Enter a UK address</a>
+        <a class="govuk-link" href="manual_UK_address_correspondence">Enter an address manually</a>
       </p>
       <p>
         <a class="govuk-link" href="manual_overseas_address_correspondence">Enter a non-UK address</a>
       </p>
 
+<br>
+      <button type="submit" class="govuk-button">
+        Use this address
+      </button>
+
     </form>
   </div>
 </div>
+<p>
+
+  <a class="govuk-link govuk-body-s" style="color:grey" href="postcode_select_correspondence_one_result">One result version</a>
+  <br>
+  <a class="govuk-link govuk-body-s" style="color:grey" href="postcode_select_correspondence_no_results">No results version</a>
+</p>
 
 {% endblock %}
