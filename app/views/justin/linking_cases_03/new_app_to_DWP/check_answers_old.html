@@ -167,11 +167,6 @@ Apply for legal aid - Check your answers - Merits
     </div>
   </div>
 
-
-  <h2 class="govuk-heading-l">
-    Cases linked to this one
-  </h2>
-
   <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper">
       <h2 class="govuk-summary-card__title">Linking</h2>
@@ -210,6 +205,19 @@ Apply for legal aid - Check your answers - Merits
           </div>
           {% endif %}
 
+          {% if (data['linkcase'] == "Family link") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              All applications with a family link to this one
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Client Name, A-BCD-E1F, Child Arrangements Order.</br>
+              Client Name 2, A-BCD-E1F, Child Arrangements Order.<br>
+              Client Name 3, A-BCD-E1F, Child Arrangements Order.
+            </dd>
+          </div>
+          {% endif %}
+
           {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
           <div class="govuk-summary-list__row"></div>
           <dd class="govuk-summary-list__value">
@@ -223,100 +231,35 @@ Apply for legal aid - Check your answers - Merits
         </div>
           {% endif %}
 
-        </dl>
-      </div>
-    </div>
-    ..........................
 
-    {% if (data['linkcase'] == "Family link made to") %}
-
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">All applications with a family link to this one</h2>
+        {% if (data['copycase'] == "yes") %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Copy from another application?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
         </div>
-
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Client 1
-              </dt>
-              <dd class="govuk-summary-list__value">
-                A-BCD-E1F</br>
-                Child Arrangements Order
-              </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Client 2
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  A-BCD-E1F</br>
-                  Child Arrangements Order
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Client 3
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    A-BCD-E1F</br>
-                    Child Arrangements Order
-                  </dd>
-                  </div>
-              </dl>
-            </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application copied
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Client Name, A-BCD-E1F, Proceeding name 1.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
         </div>
-
-    {% endif %}
-    ..........................
-
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Copying</h2>
-      </div>
-
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Copy from another application?
-            </dt>
-
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                {{ data['linkcase'] or 'Link type' }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="link_case">
-                  Change<span class="govuk-visually-hidden"> application linked to answer</span>
-                </a>
-              </dd>
-              </div>
+      {% endif %}
 
 
-              <!-- {% if (data['copycase'] == "yes") %} -->
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Application copied
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Client Name, A-BCD-E1F, Proceeding name 1.
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="link_case">
-                    Change<span class="govuk-visually-hidden"> application linked to answer</span>
-                  </a>
-                </dd>
-              </div>
-              <!-- {% endif %} -->
+    </dl>
+  </div>
+</div>
 
-            </dl>
-          </div>
-        </div>
-................................................................
 <h2 class="govuk-heading-l">
   What you are applying for
 </h2>
@@ -526,12 +469,12 @@ Injunction FLA-to final hearing
 </div>
 
 
-{% if (data['linkcase'] === "Family link made to") %}
+{% if (data['linkcase'] === "Family link") %}
 <div class="govuk-warning-text">
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
-    As you have made a family link, the cost limit will be on the certificate of the application you submitted first.
+    Family link applications will share one cost limit. This will be added to the certificate of the youngest person.
   </strong>
 </div>
 {% endif %}
