@@ -76,7 +76,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/copy_case', function (req, 
   else if (myvar === 'No') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
   }
-  else if (myvar2 === 'Legal link') {
+  else if (myvar === 'Yes' && myvar2 === 'Legal link') {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
   } else {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/copy_case')

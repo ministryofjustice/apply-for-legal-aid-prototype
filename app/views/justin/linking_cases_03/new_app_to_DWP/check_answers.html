@@ -274,6 +274,8 @@ Apply for legal aid - Check your answers - Merits
     {% endif %}
     ..........................
 
+
+{% if (data['linkcase'] == "Family link") %}
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Copying</h2>
@@ -328,6 +330,7 @@ Apply for legal aid - Check your answers - Merits
             </dl>
           </div>
         </div>
+        {% endif %}
 ................................................................
 <h2 class="govuk-heading-l">
   What you are applying for
