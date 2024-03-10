@@ -184,8 +184,11 @@ Apply for legal aid - Check your answers - Merits
           <dt class="govuk-summary-list__key">
             Link to another application?
           </dt>
+
+
+          {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
           <dd class="govuk-summary-list__value">
-            {{ data['linkcase'] or 'Yes/no' }}
+            Yes
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="link_case">
@@ -193,8 +196,6 @@ Apply for legal aid - Check your answers - Merits
             </a>
           </dd>
         </div>
-
-        {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             {{ data['linkcase'] or 'Link type' }}
