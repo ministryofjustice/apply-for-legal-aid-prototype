@@ -185,7 +185,7 @@ Apply for legal aid - Check your answers - Merits
             Link to another application?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['linkcase'] or 'Link type' }}
+            {{ data['linkcase'] or 'Yes/no' }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="link_case">
@@ -198,6 +198,7 @@ Apply for legal aid - Check your answers - Merits
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             {{ data['linkcase'] or 'Link type' }}
+            made to
           </dt>
           <dd class="govuk-summary-list__value">
             Client Name, A-BCD-E1F, Child Arrangements Order.
@@ -228,7 +229,7 @@ Apply for legal aid - Check your answers - Merits
     </div>
     ..........................
 
-    {% if (data['linkcase'] == "Family link made to") %}
+    {% if (data['linkcase'] == "Family link") %}
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
@@ -285,7 +286,7 @@ Apply for legal aid - Check your answers - Merits
               Copy from another application?
             </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['copycase'] or 'Copy answer' }}
+                {{ data['copycase'] or 'Yes/no' }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="link_case">
@@ -295,7 +296,7 @@ Apply for legal aid - Check your answers - Merits
               </div>
 
 
-              {% if (data['copycase'] == "yes") %}
+              {% if (data['copycase'] == "Yes") %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Application copied
@@ -524,7 +525,7 @@ Injunction FLA-to final hearing
 </div>
 
 
-{% if (data['linkcase'] === "Family link made to") %}
+{% if (data['linkcase'] === "Family link") %}
 <div class="govuk-warning-text">
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
