@@ -61,7 +61,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/search_link_case', function
   }
 })
 
-//copy case
+//confirm link case
 router.post('/justin/linking_cases_03/new_app_to_DWP/copy_case', function (req, res) {
 
   let myvar = req.session.data['linkcase-confirm']
@@ -97,7 +97,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) 
 
   console.log('copycase: ' + myvar)
 
-  if (myvar === 'no' || myvar === undefined) {
+  if (myvar === 'No' || myvar === undefined) {
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/search')
   }
   else {

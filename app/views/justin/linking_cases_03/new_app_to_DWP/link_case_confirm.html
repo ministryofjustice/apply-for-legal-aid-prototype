@@ -62,6 +62,7 @@ Apply for legal aid - Client details
       </div>
     </dl>
 
+{% if (data['linkcase'] == "Family link") %}
 <div>
     <details class="govuk-details">
 <summary class="govuk-details__summary">
@@ -77,6 +78,8 @@ Apply for legal aid - Client details
   Client 5, LAA ref
 </div>
 </details>
+{% endif %}
+
 
     <form action="copy_case" method="post" novalidate>
       <div class="govuk-form-group">
