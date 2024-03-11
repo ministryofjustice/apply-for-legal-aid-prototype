@@ -47,7 +47,59 @@ Apply for legal aid - Client details
                 </label>
               <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
             </div>
-          </fieldset>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend">
+                  Has your client ever changed their last name?
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+                For example, through marriage or deed poll
+              </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="DF" name="DF" type="radio" value="yes" data-aria-controls="conditional-DF">
+                    <label class="govuk-label govuk-radios__label" for="DF">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-DF">
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <legend class="govuk-fieldset__legend govuk-body">
+                          <h1 class="govuk-fieldset__heading">
+                            What was your client's last name at birth?
+                          </h1>
+                        </legend>
+                        <div id="passport-issued-hint" class="govuk-hint">
+                          This lets us check for any records we have for your client under a previous last name.
+                        </div>
+                        <div class="govuk-date-input" id="passport-issued">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text" type="text">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="DF-2" name="DF" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="DF-2">
+                      No
+                    </label>
+                  </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+
         </div>
 
         <div class="govuk-form-group">
