@@ -26,6 +26,19 @@ Apply for legal aid - Client details
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      We could not find an application with the LAA reference of ABC-DEF-123.
+    </p>
+    </div>
+    </div>
+
     <div class="moj-search">
 
       <form action="link_case_confirm" method="post">
@@ -58,10 +71,5 @@ Apply for legal aid - Client details
   </div>
 </div>
 
-<p>
-<a class="govuk-link govuk-body-s" style="color:grey" href="search_link_case_no_result">No result version</a>
-<br>
-<a class="govuk-link govuk-body-s" style="color:grey" href="search_link_case_not_submitted">Application not submitted version</a>
-</p>
 
 {% endblock %}

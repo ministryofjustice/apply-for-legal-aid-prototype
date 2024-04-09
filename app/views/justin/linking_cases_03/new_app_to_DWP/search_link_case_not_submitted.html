@@ -26,9 +26,26 @@ Apply for legal aid - Client details
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Submit ABC-DEF-123 if you want to link to it.
+      <a class="govuk-notification-banner__link" href="search_application_if_link_case_not_submitted">Find this application.</a>
+      </p>
+      <p class="govuk-notification-banner__heading">
+      Your progress here will be saved, and you can come back to this page later.
+    </p>
+  </div>
+</div>
+
     <div class="moj-search">
 
-      <form action="link_case_confirm" method="post">
+      <form action="#" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-heading-xl" for="search">
@@ -58,10 +75,5 @@ Apply for legal aid - Client details
   </div>
 </div>
 
-<p>
-<a class="govuk-link govuk-body-s" style="color:grey" href="search_link_case_no_result">No result version</a>
-<br>
-<a class="govuk-link govuk-body-s" style="color:grey" href="search_link_case_not_submitted">Application not submitted version</a>
-</p>
 
 {% endblock %}
