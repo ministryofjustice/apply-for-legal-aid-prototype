@@ -40,10 +40,65 @@ Apply for legal aid - Client details
       </div>
     </div>
 
+    <h1 class="govuk-heading-xl"> Linked application</h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          LAA  reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          A-BCD-E1F
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Client Name
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Proceedings
+        </dt>
+        {% if (data['linkcase'] == "Family link") %}
+        <dd class="govuk-summary-list__value">
+          Child Arrangements Order
+        </dd>
+        {% endif %}
+        {% if (data['linkcase'] == "Legal link") %}
+        <dd class="govuk-summary-list__value">
+          Child Arrangements Order
+        </dd>
+        {% endif %}
+      </div>
+    </dl>
+
+{% if (data['linkcase'] == "Family link") %}
+<div>
+    <details class="govuk-details">
+<summary class="govuk-details__summary">
+  <span class="govuk-details__summary-text">
+    All applications with a family link to this one
+  </span>
+</summary>
+<div class="govuk-details__text">
+  Client 1, LAA ref<br>
+  Client 2, LAA ref<br>
+  Client 3, LAA ref<br>
+  Client 4, LAA ref<br>
+  Client 5, LAA ref
+</div>
+</details>
+{% endif %}
+
+
     <form action="NINO" method="post" novalidate>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-fieldset__heading">
               Do you want to copy the proceedings and merits information from A-BCD-E1F to this one?
             </h2>
