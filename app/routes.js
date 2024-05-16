@@ -94,6 +94,7 @@ router.get('/justin/linking_cases_03/new_app_to_DWP/search', function (req, res)
 router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) {
 
   let myvar = req.session.data['copycase']
+  // req.session.data['linkcase']='no'
 
   console.log('copycase: ' + myvar)
 
