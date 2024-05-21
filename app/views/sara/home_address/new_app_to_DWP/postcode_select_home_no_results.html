@@ -40,9 +40,11 @@ Apply for legal aid - Correspondence address lookup
       <p>
         <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
       </p>
+      {% if (data['correspondenceUK'] != "UK_home_address") %}
       <p>
         <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
       </p>
+      {% endif %}
       <br>
 
       <a role="button" class="govuk-button draft-button">

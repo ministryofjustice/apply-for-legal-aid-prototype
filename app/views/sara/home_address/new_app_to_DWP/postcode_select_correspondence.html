@@ -27,7 +27,7 @@ Apply for legal aid - Correspondence address select
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Select your client’s correspondence address</h1>
 
-    <form action="correspondence_same_as_home" method="post" novalidate>
+    <form action="care_of" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -37,7 +37,7 @@ Apply for legal aid - Correspondence address select
             {% else %}
               <label class="govuk-label postcode_change" for="change-postcode"> 7 addresses found for <b>{{ "AL5 5AR"  }}.<b></label>
             {% endif %}
-            <p class="postcode_change"><a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again</a></p>
+            <p class="postcode_change"><a class="govuk-link" href="postcode_finder_correspondence" aria-label="change postcode">Search again</a></p>
           </div>
 
           <div class="govuk-form-group">

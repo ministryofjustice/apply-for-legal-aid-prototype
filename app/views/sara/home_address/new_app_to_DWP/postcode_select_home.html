@@ -38,7 +38,7 @@ Apply for legal aid - Correspondence address select
             {% else %}
               <label class="govuk-label postcode_change" for="change-postcode"> 7 addresses found for <b>{{ "AL5 5AR"  }}.<b></label>
             {% endif %}
-            <p class="postcode_change"><a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again</a></p>
+            <p class="postcode_change"><a class="govuk-link" href="postcode_finder_home" aria-label="change postcode">Search again</a></p>
           </div>
 
           <div class="govuk-form-group">
@@ -97,9 +97,11 @@ Apply for legal aid - Correspondence address select
   <p>
     <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
   </p>
+  {% if (data['correspondenceUK'] != "UK_home_address") %}
   <p>
     <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
   </p>
+  {% endif %}
   <br>
 
       <button type="submit" class="govuk-button">

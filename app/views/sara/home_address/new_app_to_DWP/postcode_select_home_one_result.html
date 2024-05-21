@@ -35,7 +35,7 @@ Apply for legal aid - Correspondence address lookup
 
       <p>
       1 address found for AL5 5AR and 1.
-      <a class="govuk-link" href="postcode_finder" aria-label="change postcode">Search again</a>
+      <a class="govuk-link" href="postcode_finder_home" aria-label="change postcode">Search again</a>
       </p>
 
       <div class="govuk-inset-text">
@@ -49,9 +49,11 @@ Apply for legal aid - Correspondence address lookup
       <p>
         <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
       </p>
+      {% if (data['correspondenceUK'] != "UK_home_address") %}
       <p>
         <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
       </p>
+      {% endif %}
       <br>
 
       <button type="submit" class="govuk-button">

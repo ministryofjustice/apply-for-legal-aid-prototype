@@ -64,15 +64,19 @@ Apply for legal aid - Correspondence address lookup
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-    The address you provide is only for this application. If your client has other certificated legal aid cases where a different address has been used, you should review and update those records in CCMS.
+    If your client has applied for legal aid in the past with a different home address, you will also need to update their record in CCMS.
       </strong>
       </div>
+
       <p>
         <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
       </p>
+
+      {% if (data['correspondenceUK'] != "UK_home_address") %}
       <p>
         <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
       </p>
+      {% endif %}
       <br>
 
       <button type="submit" class="govuk-button">

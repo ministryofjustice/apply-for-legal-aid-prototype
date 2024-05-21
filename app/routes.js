@@ -18,31 +18,58 @@ router.get('/', function (req, res) {
 
 
 //HOME ADDRESS - CONCEPT
-//correspondence address same as home address?
-router.post('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why', function (req, res) {
 
-  let myvar = req.session.data['correspondence_home']
+//where should we send your client's correspondence?
+router.post('/sara/home_address/new_app_to_DWP/postcode_finder_correspondence', function (req, res) {
+
+  let myvar = req.session.data['correspondenceUK']
 console.log("myvar" + myvar)
-  if (myvar === 'yes') {
-    res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+  if (myvar === 'UK_home_address') {
+    res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+  } else if (myvar === 'UK_residential_address') {
+  res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_correspondence')
   } else {
-    res.redirect('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why')
+    res.redirect('/sara/home_address/new_app_to_DWP/manual_UK_address_correspondence')
   }
 })
+
+//does client have home address?
+router.post('/sara/home_address/new_app_to_DWP/postcode_finder_home', function (req, res) {
+
+let myvar = req.session.data['clientHomeAddress']
+console.log("myvar" + myvar)
+if (myvar === 'yes') {
+  res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+} else {
+  res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+}
+})
+
+//correspondence address same as home address?
+// router.post('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why', function (req, res) {
+//
+//   let myvar = req.session.data['correspondence_home']
+// console.log("myvar" + myvar)
+//   if (myvar === 'yes') {
+//     res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+//   } else {
+//     res.redirect('/sara/home_address/new_app_to_DWP/correspondence_home_address_different_why')
+//   }
+// })
 
 //why different
-router.post('/justin/linking_cases_03/new_app_to_DWP/postcode_finder_home', function (req, res) {
-
-  let myvar = req.session.data['correspondence_home_different']
-console.log("myvar" + myvar)
-  if (myvar === 'different') {
-    res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
-  } else if (myvar === 'vulnerable') {
-  res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
-  } else {
-    res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
-  }
-})
+// router.post('/justin/linking_cases_03/new_app_to_DWP/postcode_finder_home', function (req, res) {
+//
+//   let myvar = req.session.data['correspondence_home_different']
+// console.log("myvar" + myvar)
+//   if (myvar === 'different') {
+//     res.redirect('/sara/home_address/new_app_to_DWP/postcode_finder_home')
+//   } else if (myvar === 'vulnerable') {
+//   res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+//   } else {
+//     res.redirect('/justin/linking_cases_03/new_app_to_DWP/link_case')
+//   }
+// })
 
 
 // LINKING CASES 03 - CONCEPT
