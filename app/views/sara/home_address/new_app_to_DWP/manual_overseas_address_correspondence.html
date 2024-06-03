@@ -34,6 +34,7 @@ Apply for legal aid - Manual address
             Enter your client's overseas correspondence address
           </h1>
         </legend>
+        <br>
 
       {{ xGovukAutocomplete({
 
@@ -41,6 +42,7 @@ Apply for legal aid - Manual address
         name: "country",
         allowEmpty: false,
         label: {
+          classes: "govuk-label--m",
           text: "Country"
         },
           items: [
@@ -74,6 +76,7 @@ Apply for legal aid - Manual address
           ]
         }) }}
 
+        <p class="govuk-label--m">Address</p>
       <div class="govuk-form-group">
         <label class="govuk-label" for="address-line-2">
           Address line 1
