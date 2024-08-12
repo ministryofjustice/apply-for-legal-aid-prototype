@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl"> Search result</h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          LAA  reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          A-BCD-E1F
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Client Name
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Proceedings
+        </dt>
+        {% if (data['linkcase'] == "Family link") %}
+        <dd class="govuk-summary-list__value">
+          Child Arrangements Order
+        </dd>
+        {% endif %}
+        {% if (data['linkcase'] == "Legal link") %}
+        <dd class="govuk-summary-list__value">
+          Child Arrangements Order
+        </dd>
+        {% endif %}
+      </div>
+    </dl>
+
+{% if (data['linkcase'] == "Family link") %}
+<div>
+    <details class="govuk-details">
+<summary class="govuk-details__summary">
+  <span class="govuk-details__summary-text">
+    All applications with a family link to this one
+  </span>
+</summary>
+<div class="govuk-details__text">
+  Client 1, LAA ref<br>
+  Client 2, LAA ref<br>
+  Client 3, LAA ref<br>
+  Client 4, LAA ref<br>
+  Client 5, LAA ref
+</div>
+</details>
+{% endif %}
+
+
+    <form action="copy_case" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Is this the application you want to link to?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="linkcase-confirm" name="linkcase-confirm" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="linkcase-confirm">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="linkcase-confirm-2" name="linkcase-confirm" type="radio" value="NoDifferentCase">
+              <label class="govuk-label govuk-radios__label" for="linkcase-confirm-2">
+                No, I want to link to a different case
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="linkcase-confirm-3" name="linkcase-confirm" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="linkcase-confirm-3">
+                No, carry on without linking
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+        <a role="button" class="govuk-button govuk-button--secondary">
+          Save and come back later
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

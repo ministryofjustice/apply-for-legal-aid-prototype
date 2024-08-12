@@ -26,7 +26,7 @@ Apply for legal aid - Statement of case
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="SCA_interrupt_4" method="post" novalidate>
+    <form action="SCA_heard_as_an_alternative_to_multiple" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -35,21 +35,30 @@ Apply for legal aid - Statement of case
             <span class="govuk-caption-xl">Proceeding name</span>
 
             <h1 class="govuk-fieldset__heading">
-              Will this proceeding be heard as an alternative to the '[core SCA]' proceeding?
+              Will this proceeding be heard together with any of the special children act proceedings?
             </h1>
           </legend>
+
+          <br>
+          <p class="govuk-body">These are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>one proceeding</li>
+              <li>two proceeding</li>
+              <li>three proceeding</li>
+            </ul>
+
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="heard-alternative-to" name="heard-alternative-to" type="radio" value="no" data-aria-controls="conditional-heard-alternative-to">
-              <label class="govuk-label govuk-radios__label" for="heard-alternative-to">
-              Yes
+              <input class="govuk-radios__input" id="heard-together-with-multiple" name="heard-together-with-multiple" type="radio" value="no" data-aria-controls="conditional-heard-together-with-multiple">
+              <label class="govuk-label govuk-radios__label" for="heard-together-with-multiple">
+                Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="heard-alternative-to-2" name="heard-alternative-to" type="radio" value="yes" data-aria-controls="conditional-heard-alternative-to-2">
-              <label class="govuk-label govuk-radios__label" for="heard-alternative-to-2">
+              <input class="govuk-radios__input" id="heard-together-with-multiple-2" name="heard-together-with-multiple" type="radio" value="yes" data-aria-controls="conditional-heard-together-with-multiple-2">
+              <label class="govuk-label govuk-radios__label" for="heard-together-with-multiple-2">
                 No
               </label>
             </div>
@@ -70,9 +79,6 @@ Apply for legal aid - Statement of case
           </a>
 
         </form>
-        <p>
-          <a class="govuk-link govuk-body-s" style="color:grey" href="SCA_heard_as_an_alternative_to_multiple">Multiple core proceedings</a>
-        </p>
       </div>
     </div>
 

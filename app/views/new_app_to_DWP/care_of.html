@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Correspondence address select
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Do you want to add a ‘care of’ recipient for your client’s mail?</h1>
+
+    <form action="does_client_have_home_address" method="post" novalidate>
+
+
+          <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="careofrecipient" name="careofrecipient" type="radio" value="person" data-aria-controls="conditional-careofrecipient">
+                  <label class="govuk-label govuk-radios__label" for="careofrecipient">
+                    Yes, a person
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-careofrecipient">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="person-first-name">
+                      First name
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="person-first-name" name="personfirstname" type="email" spellcheck="false" autocomplete="email">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="person-last-name">
+                      Last name
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="person-last-name" name="personlastname" type="email" spellcheck="false" autocomplete="email">
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="careofrecipient-2" name="careofrecipient" type="radio" value="organisation" data-aria-controls="conditional-careofrecipient-2">
+                  <label class="govuk-label govuk-radios__label" for="careofrecipient-2">
+                    Yes, an organisation
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-careofrecipient-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="organisation-name">
+                      Organisation name
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="organisation-name" name="organisationname" type="tel" autocomplete="tel">
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="careofrecipient-3" name="careofrecipient" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="careofrecipient-3">
+                    No
+                  </label>
+                </div>
+
+                </div>
+            </fieldset>
+          </div>
+
+<br>
+
+<!-- <div class="govuk-button-group">
+  <a class="govuk-button" href="does_client_have_home_address" data-module="govuk-button">
+    Save and continue
+  </a>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and come back later
+  </button>
+</div> -->
+
+<div class="govuk-form-group">
+  <button type="submit" class="govuk-button form-buttons">
+    Save and continue
+  </button>
+  <button role="button" class="govuk-button draft-button form-buttons">
+    Save and come back later
+  </button>
+</div>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

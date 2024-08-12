@@ -120,11 +120,38 @@ Apply for legal aid - Proceedings
 
           <h2 class="govuk-heading-l">Cost limits</h2>
 
+        {% if (data['linkcase'] === "Family link") %}
+        <h2 class="govuk-heading-m">Emergency certificate</h2>
+        <p class="govuk-body">The default emergency cost limit is <strong>£0</strong>.</p>
+
+        <h2 class="govuk-heading-m">Substantive certificate</h2>
+        <p class="govuk-body">The default substantive cost limit is <strong>£0</strong>.</p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            As you have made a family link, the cost limit will be on the certificate of the application you submitted first.
+          </strong>
+        </div>
+
+        {% endif %}
+
+        {% if (data['linkcase'] != "Family link") %}
           <h2 class="govuk-heading-m">Emergency certificate</h2>
 
-
-
           <p class="govuk-body">The default emergency cost limit is <strong>£2,250</strong>.</p>
+
+          <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What to add for family link applications
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  You can request <strong>£1,125</strong> more for each application that will be family linked to this one.
+  </div>
+</details>
 
           <h2 class="govuk-heading-s">Do you want to request a higher emergency cost limit?</h2>
 
@@ -170,7 +197,7 @@ Apply for legal aid - Proceedings
 
           <p class="govuk-body">The default substantive cost limit is <strong>£25,000</strong>.</p>
 
-          <h2 class="govuk-heading-s">Do you want to request a higher substantive cost limit?</h2>
+          <!-- <h2 class="govuk-heading-s">Do you want to request a higher substantive cost limit?</h2>
 
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -206,12 +233,13 @@ Apply for legal aid - Proceedings
                 No
               </label>
             </div>
-          </div>
-
+          </div> -->
+          {% endif %}
         </div>
       </div>
 
       <div class="govuk-!-padding-bottom-4"></div>
+
 
       <a class="govuk-button" href="NINO" role="button">
         Save and continue

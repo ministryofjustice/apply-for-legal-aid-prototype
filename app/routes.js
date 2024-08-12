@@ -16,8 +16,37 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+//ADDRESSES - CURRENT
 
-//HOME ADDRESS - CONCEPT (within linking cases 03 concept prototype)
+//where should we send your client's correspondence?
+router.post('/new_app_to_DWP/postcode_finder_correspondence', function (req, res) {
+
+  let myvar = req.session.data['correspondenceUK']
+console.log("myvar" + myvar)
+  if (myvar === "My client's UK home address") {
+    res.redirect('/new_app_to_DWP/postcode_finder_home')
+  } else if (myvar === 'Another UK residential address') {
+  res.redirect('/new_app_to_DWP/postcode_finder_correspondence')
+  } else {
+    res.redirect('/new_app_to_DWP/manual_UK_address_correspondence')
+  }
+})
+
+//does client have home address?
+router.post('/new_app_to_DWP/postcode_finder_home', function (req, res) {
+
+let myvar = req.session.data['clientHomeAddress']
+console.log("myvar" + myvar)
+if (myvar === 'Yes') {
+  res.redirect('/new_app_to_DWP/postcode_finder_home')
+} else {
+  res.redirect('/new_app_to_DWP/link_case')
+}
+})
+
+
+
+//ADDRESSES - CONCEPT (within linking cases 03 concept prototype)
 
 //where should we send your client's correspondence?
 router.post('/sara/home_address/new_app_to_DWP/postcode_finder_correspondence', function (req, res) {
@@ -72,6 +101,52 @@ if (myvar === 'yes') {
 // })
 
 
+// LINKING CASES 03 - CURRENT
+// search link case
+router.post('/new_app_to_DWP/search_link_case', function (req, res) {
+
+  let myvar = req.session.data['linkcase']
+
+  console.log('linkcase: ' + myvar)
+
+  if (myvar === 'no') {
+    res.redirect('/new_app_to_DWP/search')
+  }
+  else {
+    res.redirect('/new_app_to_DWP/search_link_case')
+  }
+})
+
+//confirm link case
+router.post('/new_app_to_DWP/copy_case', function (req, res) {
+
+  let myvar = req.session.data['linkcase-confirm']
+  let myvar2 = req.session.data['linkcase']
+
+  console.log('linkcase-confirm: ' + myvar)
+  console.log('linkcase: ' + myvar2)
+
+  if (myvar === 'NoDifferentCase') {
+    res.redirect('/new_app_to_DWP/link_case')
+  }
+  else if (myvar === 'No') {
+    res.redirect('/new_app_to_DWP/search')
+  }
+  else if (myvar === 'Yes' && myvar2 === 'Legal link') {
+    res.redirect('/new_app_to_DWP/search')
+  } else {
+    res.redirect('/new_app_to_DWP/copy_case')
+  }
+})
+
+router.get('/new_app_to_DWP/search', function (req, res) {
+  res.render('/new_app_to_DWP/search',
+    {
+      proceedings: utils.getLiveProceedings(),
+    })
+})
+
+
 // LINKING CASES 03 - CONCEPT
 // search link case
 router.post('/justin/linking_cases_03/new_app_to_DWP/search_link_case', function (req, res) {
@@ -117,7 +192,25 @@ router.get('/justin/linking_cases_03/new_app_to_DWP/search', function (req, res)
     })
 })
 
-//NINO
+
+
+//Copy case CURRENT
+router.post('/new_app_to_DWP/NINO', function (req, res) {
+
+  let myvar = req.session.data['copycase']
+  // req.session.data['linkcase']='no'
+
+  console.log('copycase: ' + myvar)
+
+  if (myvar === 'No' || myvar === undefined) {
+    res.redirect('/new_app_to_DWP/search')
+  }
+  else {
+    res.redirect('/new_app_to_DWP/NINO')
+  }
+})
+
+//Copy case CONCEPT
 router.post('/justin/linking_cases_03/new_app_to_DWP/NINO', function (req, res) {
 
   let myvar = req.session.data['copycase']
@@ -237,7 +330,7 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_FHH_scope',
   }
 })
 
-// LINKING CASES - CONCEPT
+// LINKING CASES - CONCEPT - early version which has since been iterated
 // search_copy_case
 router.post('/justin/linking_cases/new_app_to_DWP/search_copy_case', function (req, res) {
 
@@ -430,7 +523,7 @@ router.post('/means_capital/with_partner/property_detail_mortgage_with_partner',
 })
 
 
-// Special Children Act filter question 1 (general SCA filter for core SCA proceedings)
+// Special Children Act CURRENT filter question 1 (general SCA filter for core SCA proceedings)
 router.post('/new_app_to_DWP/SCA_interrupt_1', function (req, res) {
 
   let myvar = req.session.data['proceeding-issued']
@@ -442,7 +535,7 @@ router.post('/new_app_to_DWP/SCA_interrupt_1', function (req, res) {
   }
 })
 
-// Special Children Act filter question 2 (specific filter question for supervision order)
+// Special Children Act CURRENT filter question 2 (specific filter question for supervision order)
 router.post('/new_app_to_DWP/SCA_interrupt_2', function (req, res) {
 
   let myvar = req.session.data['vary-discharge-extend']
@@ -454,7 +547,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 3 (specific filter question for secure accommodation order)
+// Special Children Act CURRENT filter question 3 (specific filter question for secure accommodation order)
 router.post('/new_app_to_DWP/SCA_interrupt_5', function (req, res) {
 
   let myvar = req.session.data['secure_accommodation_order']
@@ -466,7 +559,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 4 (related proceeding filter question 1 - heard together with)
+// Special Children Act CURRENT filter question 4 (related proceeding filter question 1 - heard together with)
 router.post('/new_app_to_DWP/SCA_heard_as_an_alternative_to', function (req, res) {
 
   let myvar = req.session.data['heard-together-with']
@@ -478,7 +571,19 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 5 (related proceeding filter question 2 - heard as an alternative to)
+// Special Children Act CURRENT filter question 4.1 (related proceeding filter question 1 - heard together with when there's multiple core proceedings)
+router.post('/new_app_to_DWP/SCA_heard_as_an_alternative_to_multiple', function (req, res) {
+
+  let myvar = req.session.data['heard-together-with-multiple']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_heard_as_an_alternative_to_multiple')
+  } else {
+    res.redirect('/new_app_to_DWP/SCA_which_related_proceeding')
+  }
+})
+
+// Special Children Act CURRENT filter question 5 (related proceeding filter question 2 - heard as an alternative to)
 router.post('/new_app_to_DWP/SCA_interrupt_4', function (req, res) {
 
   let myvar = req.session.data['heard-alternative-to']
@@ -490,7 +595,7 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act filter question 6 (specific filter question for prohibited steps order or specific issue order)
+// Special Children Act CURRENT filter question 6 (specific filter question for prohibited steps order or specific issue order)
 router.post('/new_app_to_DWP/SCA_other_3', function (req, res) {
 
   let myvar = req.session.data['change-name']
@@ -502,7 +607,19 @@ console.log("myvar=" + myvar)
   }
 })
 
-// Special Children Act client role biological parent
+// Public Law Family PLF CURRENT filter question change name (specific filter question for prohibited steps order or specific issue order)
+router.post('/new_app_to_DWP/other', function (req, res) {
+
+  let myvar = req.session.data['change-name']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/new_app_to_DWP/SCA_interrupt_3')
+  } else {
+    res.redirect('/new_app_to_DWP/other')
+  }
+})
+
+// Special Children Act CURRENT client role biological parent
 router.post('/merits/SCA_client_role_pr', function (req, res) {
 
   let myvar = req.session.data['biological_parent']
@@ -514,7 +631,7 @@ console.log("myvarforbiologicalparent=" + myvar)
   }
 })
 
-// Special Children Act client role parental responsibility
+// Special Children Act CURRENT client role parental responsibility
 router.post('/merits/SCA_client_role_child', function (req, res) {
 
   let myvar = req.session.data['parental_responsibility']
@@ -526,7 +643,7 @@ console.log("myvar" + myvar)
   }
 })
 
-// Special Children Act client role child
+// Special Children Act CURRENT client role child
 router.post('/merits/SCA_check_who_your_client_is', function (req, res) {
 
   let myvar = req.session.data['client_role_child']
@@ -538,7 +655,7 @@ console.log("myvar" + myvar)
   }
 })
 
-// Special Children Act client role parent second
+// Special Children Act CURRENT client role parent second
 router.post('/merits/SCA_check_who_your_client_is_parent', function (req, res) {
 
   let myvar = req.session.data['biological_parent_second']
@@ -550,7 +667,7 @@ console.log("myvar" + myvar)
   }
 })
 
-// Special Children Act client role parental responsibility second
+// Special Children Act CURRENT client role parental responsibility second
 router.post('/merits/SCA_check_who_your_client_is_pr', function (req, res) {
 
   let myvar = req.session.data['parental_responsibility_second']
@@ -562,7 +679,7 @@ console.log("myvar" + myvar)
   }
 })
 
-// Special Children Act client role child second
+// Special Children Act CURRENT client role child second
 router.post('/merits/SCA_check_who_your_client_is_child', function (req, res) {
 
   let myvar = req.session.data['client_role_child_second']
@@ -574,7 +691,7 @@ console.log("myvar" + myvar)
   }
 })
 
-// Special Children Act upload evidence shown or not (shown if client is someone with parental responsibility)
+// Special Children Act CURRENT upload evidence shown or not (shown if client is someone with parental responsibility)
 router.post('/merits/SCA_check_answers_merits', function (req, res) {
 
   let myvar = req.session.data['parental_responsibility']

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="moj-search">
+
+      <form action="#" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-heading-xl" for="search">
+            Search applications
+          </label>
+
+          <div id="search-hint" class="govuk-hint moj-search__hint">
+            For example, ‘A-BCD-E1F’.
+          </div>
+
+          <input class="govuk-input moj-search__input govuk-!-width-three-quarters" id="search" name="search" type="search" aria-describedby="search-hint">
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button moj-search__button" type="submit" data-module="govuk-button">
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+
+
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><span class="th_bespoke"><strong>Name</strong></span>
+          </th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke" scope="col"><strong>Start date</strong> <img src="/public/images/filter_icon.svg" style=""></th>
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke"><strong>LAA reference</strong></span></th>
+          <!-- <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke">CCMS Ref</span></th> -->
+          <th class="govuk-table__header th_bespoke_hover" style="width:auto" scope="col"><span class="th_bespoke"><strong>Certificate type</strong></span></th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:left !important"><span  class="th_bespoke"><strong>Status</strong></span></th>
+          <th class="govuk-table__header th_bespoke_hover col_bespoke govuk-table__cell--numeric"  scope="col" style="padding-right:10px !important; text-align:left !important"><span  class="th_bespoke"><strong>Action</strong></span></th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">David Francis</a></td>
+          <td class="govuk-table__cell">1 Aug 2021</td>
+          <td class="govuk-table__cell">L-456-DEF</td>
+          <!-- <td class="govuk-table__cell">123456789012</td> -->
+          <td class="govuk-table__cell">Substantive</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+            In progress
+          </strong></td>
+          <td class="govuk-table__cell">
+            <a href=delete class="govuk-button govuk-button--secondary">
+              Delete</a>
+            </td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- <div class="app-pagination__container govuk-grid-row govuk-!-display-none-print">
+        <div class="app-pagination__info govuk-grid-column-one-third govuk-body">
+          <span class="pagy-info"> Showing 1 - 20 of 99 results </span>
+        </div>
+      </div> -->
+
+      <!-- <nav class="moj-pagination" aria-label="Pagination navigation"> -->
+        <p style="text-align: right">Showing <b>1</b> of <b>1</b> result</p>
+      <!-- </nav> -->
+
+
+{% endblock %}

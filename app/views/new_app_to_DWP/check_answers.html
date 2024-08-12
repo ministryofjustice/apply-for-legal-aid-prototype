@@ -34,6 +34,24 @@ Apply for legal aid - Check your answers - Merits
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    {% if (data['copycase'] == "Yes") %}
+    <div class="govuk-notification-banner" role="alert"
+    aria-labelledby="govuk-notification-banner-title"
+    data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        The proceedings information was copied from A-BCD-E1F.
+      </h3>
+          <!-- <p class="govuk-body">You can check the merits information later.</p> -->
+    </div>
+  </div>
+  {% endif %}
+
     <span class="govuk-caption-xl">Client details and what they are applying for</span>
 
     <h1 class="govuk-heading-xl">
@@ -41,7 +59,7 @@ Apply for legal aid - Check your answers - Merits
     </h1>
 
     <h2 class="govuk-heading-l">
-      Client details
+      Client
     </h2>
 
     <div class="govuk-summary-card">
@@ -55,7 +73,7 @@ Apply for legal aid - Check your answers - Merits
               First name
             </dt>
             <dd class="govuk-summary-list__value">
-              Sam
+              {{ data['firstname'] or "Sam" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -68,7 +86,7 @@ Apply for legal aid - Check your answers - Merits
               Last name
             </dt>
             <dd class="govuk-summary-list__value">
-              Doe
+              {{ data['lastname'] or "Doe" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -76,12 +94,34 @@ Apply for legal aid - Check your answers - Merits
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last name at birth
+            </dt>
+
+            <dd class="govuk-summary-list__value">
+              {% if (data['lastnamebirth'] == "no") %}
+              Same as last name
+              {% endif %}
+
+              {% if (data['lastnamebirth'] == "yes") %}
+              {{ data['lastnamebirth-what'] or "Jones" }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="client_details">
+                Change<span class="govuk-visually-hidden"> last name</span>
+              </a>
+            </dd>
+
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              1 Jan 1980
+              {{ data['dob-day'] or "11" }} / {{ data['dob-month'] or "9" }} / {{ data['dob-year'] or "1980" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -91,9 +131,23 @@ Apply for legal aid - Check your answers - Merits
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              Where to send client's mail?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['correspondenceUK'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="postcode_finder">
+                Change<span class="govuk-visually-hidden"> Correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Correspondence address
             </dt>
             <dd class="govuk-summary-list__value">
+              <!-- {{ data['address-select'] }} -->
               1 Main Street</br>London</br>SE15 5NP
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -102,12 +156,71 @@ Apply for legal aid - Check your answers - Merits
               </a>
             </dd>
           </div>
+
+          <!-- //// -->
+          {% if (data['correspondenceUK'] != "My client's UK home address") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Care of recipient
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['careofrecipient'] == "person") %}
+              {{ data['personfirstname']}} {{ data['personlastname']}}
+              {% endif %}
+
+              {% if (data['careofrecipient'] == "organisation") %}
+              {{ data['organisationname'] }}
+              {% endif %}
+
+              {% if (data['careofrecipient'] == "no") %}
+              None
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> Care of recipient</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client has a home address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['clientHomeAddress'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> Client has a home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['correspondenceUK'] == "My client's UK home address") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Barrio de San Roque<br>
+              09692 Canicosa De La Sierra<br>
+              Burgos<br>
+              Spain
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="postcode_finder">
+                Change<span class="govuk-visually-hidden"> Correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               National Insurance number
             </dt>
             <dd class="govuk-summary-list__value">
-              QQ 12 34 56 C
+              {{ data['NINO-yes'] or "None provided" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -117,7 +230,7 @@ Apply for legal aid - Check your answers - Merits
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Does your client have a partner?
+              Client has a partner
             </dt>
             <dd class="govuk-summary-list__value">
               No
@@ -132,19 +245,196 @@ Apply for legal aid - Check your answers - Merits
       </div>
     </div>
 
+
+
     <h2 class="govuk-heading-l">
-      What you are applying for
+      Cases linked to this one
+    </h2>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Linking</h2>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Link to another application?
+            </dt>
+
+
+            {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="link_case">
+                Change<span class="govuk-visually-hidden"> link application answer</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{ data['linkcase'] or 'Link type' }}
+              made to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Client Name, A-BCD-E1F, Child Arrangements Order.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="link_case">
+                Change<span class="govuk-visually-hidden"> application linked to answer</span>
+              </a>
+            </dd>
+            </div>
+            {% endif %}
+
+            {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
+            <div class="govuk-summary-list__row"></div>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="link_case">
+                Change<span class="govuk-visually-hidden"> link applicaion answer</span>
+              </a>
+            </dd>
+          </div>
+            {% endif %}
+
+          </dl>
+        </div>
+      </div>
+
+
+      {% if (data['linkcase'] == "Family link") %}
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">All applications with a family link to this one</h2>
+          </div>
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Client 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  A-BCD-E1F</br>
+                  Child Arrangements Order
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Client 2
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    A-BCD-E1F</br>
+                    Child Arrangements Order
+                  </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Client 3
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      A-BCD-E1F</br>
+                      Child Arrangements Order
+                    </dd>
+                    </div>
+                </dl>
+              </div>
+          </div>
+
+      {% endif %}
+
+
+
+    {% if (data['linkcase'] == "Family link") %}
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Copying</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="copy_case">
+              Change<span class="govuk-visually-hidden"> proceedings</span>
+            </a>
+          </li>
+        </ul>
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Copy from another application?
+              </dt>
+
+              {% if (data['copycase'] != "No") %}
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <!-- <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="copy_case">
+                    Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                  </a>
+                </dd> -->
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Application copied
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Client Name, A-BCD-E1F, Proceeding name 1.
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="copy_case">
+                      Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                    </a>
+                  </dd> -->
+                </div>
+                {% endif %}
+
+                {% if (data['copycase'] == "No") %}
+                  <dd class="govuk-summary-list__value">
+                    No
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="copy_case">
+                      Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                    </a>
+                  </dd>
+                  </div>
+                  {% endif %}
+
+              </dl>
+            </div>
+          </div>
+          {% endif %}
+
+
+
+
+    <h2 class="govuk-heading-l">
+      What you're applying for
     </h2>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Proceedings</h2>
+        {% if (data['copycase'] == "no") %}
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="other_3">
             Change<span class="govuk-visually-hidden"> proceedings</span>
           </a>
         </li>
       </ul>
+      {% endif %}
     </div>
     <div class="govuk-summary-card__content">
       <dl class="govuk-summary-list">
@@ -171,12 +461,14 @@ Apply for legal aid - Check your answers - Merits
   <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper">
       <h2 class="govuk-summary-card__title">CAO Contact</h2>
+      {% if (data['copycase'] == "no") %}
       <ul class="govuk-summary-card__actions">
         <li class="govuk-summary-card__action"> <a class="govuk-link" href="client_involvement_type">
           Change<span class="govuk-visually-hidden"> CAO Contact details</span>
         </a>
       </li>
     </ul>
+    {% endif %}
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
@@ -235,12 +527,14 @@ Apply for legal aid - Check your answers - Merits
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">Non-molestation order</h2>
+    {% if (data['copycase'] == "no") %}
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action"> <a class="govuk-link" href="client_involvement_type_Non_Mol">
         Change<span class="govuk-visually-hidden"> non-molestation order details</span>
       </a>
     </li>
   </ul>
+  {% endif %}
 </div>
 <div class="govuk-summary-card__content">
   <dl class="govuk-summary-list">
@@ -273,7 +567,15 @@ Apply for legal aid - Check your answers - Merits
         Emergency scope limits
       </dt>
       <dd class="govuk-summary-list__value">
-        Hearing</br>Date: DD Month YYYY
+        Hearing
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Hearing date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        10 May 2023
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -281,7 +583,7 @@ Apply for legal aid - Check your answers - Merits
         Substantive level of service
       </dt>
       <dd class="govuk-summary-list__value">
-        Full representation)
+        Full representation
       </dd>
     </div>
     <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
@@ -335,6 +637,19 @@ Apply for legal aid - Check your answers - Merits
   </dl>
 </div>
 </div>
+
+
+{% if (data['linkcase'] === "Family link") %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    As you have made a family link, the cost limit will be on the certificate of the application you submitted first.
+  </strong>
+</div>
+{% endif %}
+
+
 
 <h2 class="govuk-heading-m">What happens next</h2>
 

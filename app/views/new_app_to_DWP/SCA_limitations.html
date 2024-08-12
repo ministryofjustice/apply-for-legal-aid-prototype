@@ -111,7 +111,22 @@ Apply for legal aid - Proceedings
           <h2 class="govuk-heading-l">Cost limits</h2>
 
 
+                  {% if (data['linkcase'] === "Family link") %}
 
+                  <h2 class="govuk-heading-m">Substantive certificate</h2>
+                  <p class="govuk-body">The default substantive cost limit is <strong>£0</strong>.</p>
+
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-visually-hidden">Warning</span>
+                      As you have made a family link, the cost limit will be on the certificate of the application you submitted first.
+                    </strong>
+                  </div>
+
+                  {% endif %}
+
+{% if (data['linkcase'] != "Family link") %}
           <h2 class="govuk-heading-m">Substantive certificate</h2>
 
 
@@ -157,7 +172,7 @@ Apply for legal aid - Proceedings
 
         </div>
       </div>
-
+  {% endif %}
       <div class="govuk-!-padding-bottom-4"></div>
 
       <a class="govuk-button" href="SCA_NINO" role="button">

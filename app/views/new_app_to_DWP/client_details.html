@@ -27,7 +27,7 @@ Apply for legal aid - Client details
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Enter your client's details</h1>
 
-      <form action="postcode_finder" method="post" novalidate>
+      <form action="where_send_correspondence" method="post" novalidate>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -49,6 +49,45 @@ Apply for legal aid - Client details
             </div>
           </fieldset>
         </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Has your client ever changed their last name?
+              </h1>
+            </legend>
+              <div id="contact-hint" class="govuk-hint">
+                For example, through marriage or deed poll
+              </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lastnamebirth-yes" name="lastnamebirth" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="lastnamebirth-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="lastnamebirth-what">
+                        What was your client's last name at birth?
+                      </label>
+                      <div class="govuk-hint" id="lastnamebirth-what-hint">This lets us check for any records we have for your client under a previous last name.</div>
+                      <input class="govuk-input govuk-!-width-three-quarters" id="lastnamebirth-what" name="lastnamebirth-what" type="email" spellcheck="false" autocomplete="email">
+                    </div>
+                  </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lastnamebirth-no" name="lastnamebirth" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="lastnamebirth-no">
+                  No
+                </label>
+                </div>
+              </fieldset>
+            </div>
+
+
+
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">

@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form action="postcode_finder_home" method="post" novalidate>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Does your client have a home address?
+      </h1>
+    </legend>
+    <p class="govuk-body">The home address is the place that they normally live in, and sometimes called the main dwelling.</p>
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="clientHomeAddress" name="clientHomeAddress" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="clientHomeAddress">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="clientHomeAddress_2" name="clientHomeAddress" type="radio" value="No, they have no fixed address">
+        <label class="govuk-label govuk-radios__label" for="clientHomeAddress_2">
+          No, they have no fixed address
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button">
+    Save and continue
+  </button>
+  <a role="button" class="govuk-button govuk-button--secondary">
+    Save and come back later
+  </a>
+</div>
+
+</form>
+    </div>
+  </div>
+
+{% endblock %}
