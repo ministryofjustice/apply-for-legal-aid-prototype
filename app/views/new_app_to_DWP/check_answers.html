@@ -129,6 +129,36 @@ Apply for legal aid - Check your answers - Merits
               </a>
             </dd>
           </div>
+          {% if (data['applied_before'] == "yes") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous application reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applied-before-yes'] or "300001234567" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="applied_before">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if (data['applied_before'] == "no") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has applied before?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="applied_before">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Where to send client's mail?
