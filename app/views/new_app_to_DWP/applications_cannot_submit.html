@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Apply for legal aid - Your applications
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="moj-primary-navigation">
+  <div class="moj-primary-navigation__container">
+    <div class="moj-primary-navigation__nav">
+
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="#1">Your applications</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" href="#2">Search</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Applications you cannot submit</h1>
+    <p class="govuk-body">These applications will be missing information because updates were made to the service. </p>
+  </div>
+</div>
+
+
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Start date</th>
+      <th scope="col" class="govuk-table__header"> Reference number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Certificate type</th>
+      <th scope="col" class="govuk-table__header"> Action</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Martin Jones</td>
+      <td class="govuk-table__cell" data-sort-value="6961">4 Sept 2024</td>
+      <td class="govuk-table__cell">L-AB1-CD2</td>
+      <td class="govuk-table__cell" data-sort-value="1897">Substantive</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Catrin Smith</td>
+      <td class="govuk-table__cell" data-sort-value="6194">4 Sept 2024</td>
+      <td class="govuk-table__cell">L-AB2-CG5</td>
+      <td class="govuk-table__cell" data-sort-value="1913">Substantive</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Michael Norris</td>
+      <td class="govuk-table__cell" data-sort-value="5642">4 Sept 2024</td>
+      <td class="govuk-table__cell">L-NU9-PO4</td>
+      <td class="govuk-table__cell" data-sort-value="1874">Substantive</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Gillian Kent</td>
+      <td class="govuk-table__cell" data-sort-value="8850">2 Sept 2024</td>
+      <td class="govuk-table__cell">L-UY1-UY1</td>
+      <td class="govuk-table__cell" data-sort-value="1953">Emergency</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Dennis Clarke</td>
+      <td class="govuk-table__cell" data-sort-value="5895">2 Sept 2024</td>
+      <td class="govuk-table__cell">L-TR3-BG5</td>
+      <td class="govuk-table__cell" data-sort-value="1889">Emergency</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Mary Williams</td>
+      <td class="govuk-table__cell" data-sort-value="4884">30 Aug 2024</td>
+      <td class="govuk-table__cell">L-IE3-NN7</td>
+      <td class="govuk-table__cell" data-sort-value="1962">Substantive</td>
+      <td class="govuk-table__cell"><a href="applied_before">Delete</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<nav class="govuk-pagination" aria-label="Pagination">
+
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+  <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> pages</p>
+</nav>
+
+<!-- <nav class="moj-pagination" aria-label="Pagination navigation">
+
+  <ul class="moj-pagination__list">
+    <li class="moj-pagination__item  moj-pagination__item--prev">
+      <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> page</span></a>
+    </li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">1</a></li>
+
+    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">2</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
+
+    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=5" aria-label="Page 5 of 30">5</a></li>
+
+    <li class="moj-pagination__item  moj-pagination__item--next">
+      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+    </li>
+  </ul>
+  <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> pages</p>
+</nav> -->
+
+
+<br>
+
+<p>
+<a class="govuk-link govuk-body-s" style="color:grey" href="applications_cannot_submit_deleted">When all applications here have been deleted</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="app-pagination__container govuk-grid-row govuk-!-display-none-print">
+          <div class="govuk-grid-column-two-thirds">
+            <nav role="navigation" aria-label="results" class="govuk-pagination"><ul class="govuk-pagination__list"><li class="govuk-pagination__item govuk-pagination__item--current" aria-label="Page 1"><a href="#" class="govuk-link govuk-pagination__link">1</a></li><li class="govuk-pagination__item" aria-label="Page 2"><a href="#" class="govuk-link govuk-pagination__link">2</a>
+            </li><li class="govuk-pagination__item govuk-pagination__item--ellipses">⋯</li><li class="govuk-pagination__item" aria-label="Page 5"><a href="#" class="govuk-link govuk-pagination__link">5</a></li></ul><div class="govuk-pagination__next"><a href="#" class="govuk-link govuk-pagination__link" rel="next"><span class="govuk-pagination__link-title govuk-pagination__link-title--decorated">Next<span class="govuk-visually-hidden"> page</span></span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" focusable="false" viewBox="0 0 15 13" aria-hidden="true"><path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path></svg></a></div></nav>
+          </div>
+          <div class="app-pagination__info govuk-grid-column-one-third govuk-body">
+            <span class="pagy-info">Showing 1 - 20 of 99 results</span>
+          </div>
+        </div> -->
+
+        {% endblock %}
