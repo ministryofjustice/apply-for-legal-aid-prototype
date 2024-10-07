@@ -16,6 +16,57 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+
+//MANDATORY DISREGARDS - CURRENT
+//client only
+router.post('/means_capital/client_only/add_mandatory_disregards_details', function (req, res) {
+
+  let myvar = req.session.data['mandatory_disregards']
+      if (myvar.includes("none")){
+          res.redirect("/means_capital/client_only/discretionary_disregards")
+      } else {
+          res.redirect("/means_capital/client_only/add_mandatory_disregards_details")
+      }
+})
+
+//with partner
+router.post('/means_capital/with_partner/add_mandatory_disregards_details_partner', function (req, res) {
+
+  let myvar = req.session.data['mandatory_disregards_partner']
+      if (myvar.includes("none")){
+          res.redirect("/means_capital/with_partner/discretionary_disregards_partner")
+      } else {
+          res.redirect("/means_capital/with_partner/add_mandatory_disregards_details_partner")
+      }
+})
+
+
+//DISCRETIONARY DISREGARDS - CURRENT
+//client only
+router.post('/means_capital/client_only/add_discretionary_disregards_details', function (req, res) {
+
+  let myvar = req.session.data['discretionary_disregards']
+      if (myvar.includes("none")){
+          res.redirect("/means_capital/client_only/links_means_capital_check_answers")
+      } else {
+          res.redirect("/means_capital/client_only/add_discretionary_disregards_details")
+      }
+})
+
+//with partner
+router.post('/means_capital/with_partner/add_discretionary_disregards_details_partner', function (req, res) {
+
+  let myvar = req.session.data['discretionary_disregards_partner']
+      if (myvar.includes("none")){
+          res.redirect("/means_capital/with_partner/links_means_capital_check_answers_with_partner")
+      } else {
+          res.redirect("/means_capital/with_partner/add_discretionary_disregards_details_partner")
+      }
+})
+
+
+
+
 //ADDRESSES - CURRENT
 
 //where should we send your client's correspondence?

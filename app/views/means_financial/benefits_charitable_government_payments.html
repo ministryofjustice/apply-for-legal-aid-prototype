@@ -73,35 +73,73 @@ Apply for legal aid - Salary statement
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="sort_income_complete" method="post" novalidate>
+    <form action="sort_income" method="post" novalidate>
       <span class="govuk-caption-xl">Client's means assessment</span>
       <h1 class="govuk-heading-xl">
-        Select payments from friends or family
+        Select any benefits, charitable or government payments
       </h1>
 
-      <div class="govuk-inset-text">Select every payment your client received from friends or family in the past 3 months.</div>
+      <p class="govuk-body">
+        Include those received in the last 3 months.
+      </p>
+
+      <p class="govuk-body">Do not include Housing Benefit, Government Cost of Living Payments, or any other disregarded benefits and payments.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Which payments should I select?
+            What not to include
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="gov-body">Payments from friends or family count as income if they are:</p>
-          <ul class="govuk-list govuk-list--bullet">
+          <p class="govuk-heading-m">Government Cost of Living Payments</p>
+          <p>Government Cost of Living Payments are disregarded from the financial eligibility calculation, for example:</p>
+            <p> Pensioner Cost of Living Payment <br>
+            Cost of Living Payment<br>
+            Disability Cost of Living Payment<br>
+            Household support fund <br>
+            Council tax rebate<br>
+            Energy Bills Support Scheme (EBSS) <br>
+            Payments for those who are not served by mains gas <br></p>
 
-            <li>regular (at least once a month)</li>
-            <li>from the same person</li>
-            <li>gifts (your client does not need to repay them)</li>
-            <li>used for living expenses like housing costs</li>
-          </ul>
 
-          <p class="gov-body">Do not include one-off payments your client received in the past 3 months.</p>
+          <p class="govuk-heading-m">Disregarded benefits and payments</p>
+          <p>The following are disregarded from the financial eligibility calculation. They are known as mandatory disregards.</p>
+          <p class="govuk-body"><strong>Carer and disability</strong><br>
+            Attendance Allowance <br>
+            Carer's Allowance<br>
+            Community Care Direct Payments<br>
+            Constant Attendance Allowance <br>
+            Disability Living Allowance<br>
+            Exceptionally Severe Disablement Allowance <br>
+            Independent Living Fund <br>
+            Payments on account of benefit <br>
+            Personal Independence Payments (PIP) <br>
+            Severe Disablement Allowance <br>
+            Special Education Needs (SEN) Direct Payment <br>
+            Welsh Independent Living Grant <br></p>
 
-        </div>
-      </details>
+            <p class="govuk-body"><strong>Low income</strong><br>
+              Budgeting Advance<br>
+              Council Tax Reduction<br>
+              Housing Benefit<br>
+              Social Fund Funeral Payment <br>
+              Social Fund payments <br>
+              Universal Credit advance payments <br></p>
 
+              <p class="govuk-body"><strong>Other</strong><br>
+                Armed Forces Independence Payment <br>
+                Compensation for miscarriage of justice <br>
+                Foster Carers Allowance<br>
+                Grenfell Tower Resident's Discretionary Fund<br>
+                Grenfell Tower fire victims payments <br>
+                Modern Slavery Victim Care Contract (MSVCC) payments <br>
+                War Pensions Scheme payments<br>
+                War Widow(er) Pension <br>
+                Windrush Compensation Scheme Payments</p>
+
+              </div>
+            </details>
 
       <!-- <div class="govuk-inset-text">Select every payment from friends or family your client received in the past 3 months.</div> -->
 

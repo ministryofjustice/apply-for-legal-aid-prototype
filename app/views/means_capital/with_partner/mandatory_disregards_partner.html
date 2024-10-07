@@ -40,16 +40,16 @@ Apply for legal aid - Types of income
 
 
     <h1 class="govuk-heading-xl">Disregarded payments</h1>
-    <p class="govuk-body">These payments are not counted, but we still need to know about them to understand your client’s finances. They are called mandatory disregards.</p>
+    <p class="govuk-body">These payments are not counted, but we still need to know about them to understand your client and their partner’s finances. They are called mandatory disregards.</p>
 <br>
 
-    <form action="add_mandatory_disregards_details" method="post" class="form">
+    <form action="add_mandatory_disregards_details_partner" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="mandatory-disregards-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Select if your client has received any of these payments
+              Select if your client or their partner has received any of these payments
             </h1>
           </legend>
 
@@ -61,32 +61,32 @@ Apply for legal aid - Types of income
 
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_1" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_1">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_1" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_1">
                   Backdated benefits and child maintenance payments received in the last 24 months
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_2" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_2">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_2" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_2">
                   Backdated Community Care payments
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_3" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_3">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_3" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_3">
                   Budgeting Advances
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_4" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_4">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_4" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_4">
                   Compensation for miscarriage of justice
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_5" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_5">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_5" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_5">
                   Government cost of living payment
                 </label>
                 <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
@@ -94,14 +94,14 @@ Apply for legal aid - Types of income
                 </div>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_6" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_6">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_6" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_6">
                   Independent Living Fund payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_7" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_7">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_7" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_7">
                   Infected Blood Support Scheme payment
                 </label>
                 <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
@@ -109,57 +109,57 @@ Apply for legal aid - Types of income
                 </div>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_8" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_8">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_8" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_8">
                   Modern Slavery Victim Care Contract (MSVCC) payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_9" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_9">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_9" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_9">
                   Payments on Account of Benefit
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_10" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_10">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_10" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_10">
                   Scotland and Northern Ireland Redress Schemes for historical child abuse payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_11" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_11">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_11" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_11">
                   Social Fund payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_12" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_12">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_12" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_12">
                   Vaccine Damage Payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_13" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_13">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_13" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_13">
                   Variant Creutzfeldt-Jakob disease (vCJD) Trust payment
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_14" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_14">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_14" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_14">
                   Welsh Independent Living Grant
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="mandatory_disregards_15" name="mandatory_disregards" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_15">
+                <input class="govuk-checkboxes__input" id="mandatory_disregards_partner_15" name="mandatory_disregards_partner" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="mandatory_disregards_partner_15">
                   Windrush Compensation Scheme payment
                 </label>
               </div>
 
               <div class="govuk-checkboxes__divider">or</div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries-5" name="mandatory_disregards" type="checkbox" value="none" data-behaviour="exclusive">
+                <input class="govuk-checkboxes__input" id="countries-5" name="mandatory_disregards_partner" type="checkbox" value="none" data-behaviour="exclusive">
                 <label class="govuk-label govuk-checkboxes__label" for="countries-5">
                   My client has not received any of these payments
                 </label>

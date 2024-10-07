@@ -40,15 +40,15 @@ Apply for legal aid - Types of income
 
 
     <h1 class="govuk-heading-xl">Payments to be reviewed</h1>
-    <p class="govuk-body">We may be able to disregard some payments your client gets based on the rules and guidelines. These are called discretionary disregards.</p>
+    <p class="govuk-body">We may be able to disregard some payments your client or their partner gets based on the rules and guidelines. These are called discretionary disregards.</p>
 
     <br>
-    <form action="add_discretionary_disregards_details" method="post" class="form">
+    <form action="add_discretionary_disregards_details_partner" method="post" class="form">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Select if your client has received any of these payments
+              Select if your client or their partner has received any of these payments
             </h1>
           </legend>
 
@@ -56,19 +56,19 @@ Apply for legal aid - Types of income
 
 
 
-          <div id="mandatory-disregards-hint" class="govuk-hint">Select all that apply.</div>
+          <div id="discretionary-disregards-hint" class="govuk-hint">Select all that apply.</div>
 
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_1" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_1">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_1" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_1">
                     Backdated benefits and child maintenance payments received more than 24 months ago
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_2" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_2">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_2" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_5">
                     Compensation, damages or ex-gratia payments for personal harm
                   </label>
                   <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
@@ -76,52 +76,52 @@ Apply for legal aid - Types of income
                   </div>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_3" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_3">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_3" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_3">
                     Criminal Injuries Compensation Scheme payment
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_4" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_4">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_4" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_4">
                     Grenfell Tower fire victims payment
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_5" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_5">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_5" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_5">
                     London Emergencies Trust payment
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_6" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_6">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_6" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_6">
                     National Emergencies Trust (NET) payment
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_7" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_7">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_7" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_7">
                     Payments covering loss or harm related to proceedings in this application
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_8" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_8">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_8" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_8">
                     Victims of Overseas Terrorism Compensation Scheme (VOTCS) 2012 payment
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_9" name="discretionary_disregards" type="checkbox" value="france">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_9">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_9" name="discretionary_disregards_partner" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_9">
                     We Love Manchester Emergency Fund payment
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__divider">or</div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="discretionary_disregards_10" name="discretionary_disregards" type="checkbox" value="none" data-behaviour="exclusive">
-                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_10">
+                  <input class="govuk-checkboxes__input" id="discretionary_disregards_partner_10" name="discretionary_disregards_partner" type="checkbox" value="none" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="discretionary_disregards_partner_10">
                     My client has not received any of these payments
                   </label>
                 </div>

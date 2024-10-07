@@ -28,76 +28,69 @@ Apply for legal aid - Types of income
     <form action="income_cash_truelayer" method="post" class="form">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-xl">Client's means assessment</span>
-            <h1 class="govuk-fieldset__heading">
-              Which of these payments does your client get?
-            </h1>
-          </legend>
-
-          <div class="govuk-hint">Select all that apply.</div>
-
-          <div class="govuk-checkboxes" data-module="checkboxes">
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-7" name="financial_help" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-7" {{ checked("financial_help","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-7">
-                Benefits
-              </label>
-              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                For example, Child Benefit or tax credits.
-              </span>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-2" name="benefits" type="checkbox" value="yes" data-aria-controls="income-conditional-2" {{ checked("benefits","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-2">
-                Financial help from friends or family
-              </label>
-              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                This includes any regular payments your client gets from their friends or family. Do not include one-off payments.
-              </span>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-3" name="maintenance" type="checkbox" value="yes" data-aria-controls="income-conditional-3" {{ checked("maintenance","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-3">
-                Maintenance payments from a former partner
-              </label>
-              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                This includes child maintenance.
-              </span>
-
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-4" name="property" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-4" {{ checked("property","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-4">
-                Income from a property or lodger
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-6" name="pensions" type="checkbox" value="yes" data-aria-controls="income-citizenship-conditional-6" {{ checked("policies","yes") }}>
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-6">
-                Pension
-              </label>
-              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint" style="padding-left: 15px">
-                This includes State, workplace and personal pensions.
-              </span>
-            </div>
-            <p class="govuk-body">or</p>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="income-conditional-8" name="estates" type="checkbox" value="yes">
-              <label class="govuk-label govuk-checkboxes__label" for="income-conditional-8">
-                None of these
-              </label>
-            </div>
-          </div>
-        </fieldset>
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <span class="govuk-caption-xl">Client's means assessment</span>
+      <h1 class="govuk-fieldset__heading">
+        Which of these payments does your client get?
+      </h1>
+    </legend>
+    <div id="nationality-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality">
+          Benefits, charitable or government payments
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, Child Benefit or tax credits.
+        </div>
       </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+          Financial help from friends or family
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          This includes any regular payments your client gets from their friends or family. Do not include one-off payments.
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Maintenance payments from a former partner
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          This includes child maintenance.
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Income from a property or lodger
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Pension
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          This includes State, workplace and personal pensions.
+        </div>
+      </div>
+        <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+          My client does not get any of these payments
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
       <div class="govuk-button-group">
         <button type="submit" class="govuk-button">
