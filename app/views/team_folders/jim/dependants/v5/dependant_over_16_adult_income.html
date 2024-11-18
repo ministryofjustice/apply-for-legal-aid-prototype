@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/old/passported_v2/assessment_start"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="dependant_over_16_adult_capital" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Does Joe Doe receive any income?
+              <!--  Does anyone depend on you for financial support? -->
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-6"></div>
+
+
+
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+
+                  <input class="govuk-radios__input" id="how-contacted-conditional-1" name="attempts-to-settle" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked("attempts-to-settle","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    Yes
+                  </label>
+                </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                  <label class="govuk-label" for="how-contacted-conditional-1">
+                    Enter the amount they get each month
+                  </label>
+                    <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+                    <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="antiques-value" name="antiques-value" type="text">
+
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="attempts-to-settle" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    No
+                  </label>
+
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+

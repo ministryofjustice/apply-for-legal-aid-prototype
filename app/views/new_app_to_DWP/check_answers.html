@@ -143,8 +143,8 @@ Apply for legal aid - Check your answers - Merits
               </a>
             </dd>
           </div>
-          {% endif %}
-          {% if (data['applied_before'] == "no") %}
+
+          {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Has applied before?
@@ -159,6 +159,15 @@ Apply for legal aid - Check your answers - Merits
             </dd>
           </div>
           {% endif %}
+
+          <!-- {% if ecmSet === 'no' %}
+             <span class="govuk-caption-m  govuk-!-margin-bottom-2"></span>
+             {% else %}
+             <span class="govuk-caption-m  govuk-!-margin-bottom-2"></span>
+          {% endif %} -->
+
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Where to send client's mail?

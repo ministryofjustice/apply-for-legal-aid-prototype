@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property value
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">How much is your client's home worth?</h1>
+
+    <form action="/old/passported_v2/prospects_of_success" method="post" novalidate>
+      <div class="govuk-form-group">
+
+        <legend class="govuk-fieldset__legend govuk-body" for="postcode"> Enter the estimated value of your client's home
+
+        </legend>
+
+          <span id="postcode-hint" class="govuk-hint">
+            You can use property websites to find the estimated value.
+          </span>
+
+
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+

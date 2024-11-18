@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Costs
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/old/passported_v2/statement_1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">What is the estimated value of the vehicle?</h1>
+
+    <span id="postcode-hint" class="govuk-hint">
+      You can use car valuation websites to find this out.
+    </span>
+<div class="govuk-!-padding-bottom-4"></div>
+    <form action="vehicles_loan" method="post" novalidate>
+      <div class="govuk-form-group">
+
+
+        <!--  <span id="postcode-hint" class="govuk-hint">
+            Include profit costs, disbursements, expert costs and counsel fees.
+          </span> -->
+
+
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <!--  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+          items: [
+            {
+              href: "#",
+              text: "Help"
+            },
+            {
+              href: "https://www.gov.uk/help/cookies",
+              text: "Cookies"
+            },
+            {
+              href: "#",
+              text: "Contact"
+            },
+            {
+              href: "#",
+              text: "Feedback"
+            },
+            {
+              href: "#",
+              text: "Terms and conditions"
+            },
+            {
+              href: "https://mojdigital.blog.gov.uk/",
+              text: "MOJ Digital Services"
+            },
+            {
+              href: "/prototype-admin/clear-data",
+              text: "Clear data"
+            }
+          ]
+        }
+      }) }}
+    {% endblock %}

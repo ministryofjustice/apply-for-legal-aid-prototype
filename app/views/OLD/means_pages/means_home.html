@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageTitle %}
+Apply for legal aid - Citizen means assessment pages (income & outgoings)
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Apply for legal aid",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Citizen means assessment pages (income & outgoings)
+      </h1>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">Flow/ interaction options</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/old/means_pages/income_start">Income & outgoings flow (Option 1)</a> - Step by step</li>
+            <li><a href="/old/means_pages/income_start2">Income & outgoings flow (Option 2)</a> - Step by step with summary at the end</li>
+            <li><a href="/old/means_pages/income_start3">Income & outgoings flow (Option 3)</a> - Summary to statement views</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">Summary page styling</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/old/means_pages/income_summary1">Income summary</a> - Task list style</li>
+            <li><a href="/old/means_pages/income_summary2">Income summary</a> - Heading + table style</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">Statement styling</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/old/means_pages/salary_full">Statement - Full page</a></li>
+            <li><a href="/old/means_pages/salary_tabs">Statement - Tabs</a></li>
+            <li><a href="/old/means_pages/salary_filter">Statement - Filter/select</a></li>
+            <li><a href="/old/means_pages/salary_accounts">Statement - Accounts listed above</a></li>
+            <li><a href="/old/means_pages/salary_highest_value">Statement - Ordered by highest value</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+      {{ govukFooter({
+        meta: {
+            items: [
+              {
+                href: "#",
+                text: "Contact"
+              },
+              {
+                href: "#",
+                text: "Feedback"
+              },
+              {
+                href: "https://www.gov.uk/help/cookies",
+                text: "Cookies"
+              },
+              {
+                href: "https://www.gov.uk/government/publications/laa-online-portal-help-and-information",
+                text: "Terms and conditions"
+              },
+              {
+                href: "https://mojdigital.blog.gov.uk/",
+                text: "MOJ Digital Services"
+              },
+              {
+                href: "/prototype-admin/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }}
+      {% endblock %}

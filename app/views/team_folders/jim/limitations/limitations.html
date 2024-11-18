@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Other capital
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/old/passported_v2/savings_investments"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="capital_restrictions" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                <!--  Does your client have any of the following?
+                Other assets - select any that apply to your client -->
+                Cost and scope limitations
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-4"></div>
+              <p class="govuk-body">
+              <a href=#list>List</a><br>
+              <a href=#grid>Grid</a><br>
+              <a href=#grid-hidden>Grid - full wording hidden</a><br>
+              <a href=#tabs>Tabs</a></p>
+
+
+          <!--   <span id="citizenship-conditional-hint" class="govuk-hint">
+                Do not select any if none apply.
+              </span> -->
+
+              <a name="list"></a><h2 class="govuk-heading-l">List</h2>
+
+              <h2 class="govuk-heading-s">Proceeding</h2>
+              <p class="govuk-body">Non-molestation order - domestic abuse</p>
+
+              <h2 class="govuk-heading-s">Scope limitation</h2>
+<p class="govuk-body">Warrant of arrest FLA</p>
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Full wording
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+       <p class="govuk-body">As to an order under Part IV Family Law Act 1996 limited to an application for the issue of a warrant of arrest.</p>
+    </div>
+  </details>
+
+<h2 class="govuk-heading-s">Cost limitation</h2>
+<p class="govuk-body">£5,000</p>
+            </fieldset>
+          </div>
+
+          <a name="grid"></a><h2 class="govuk-heading-l">Grid</h2>
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              <p><strong>Proceeding</strong></p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p><strong>Cost limitation</strong></p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p><strong>Scope limitation</strong></p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p><strong>Full wording</strong></p>
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              <p>Non-molestation order - domestic abuse</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p>£5,000</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p>Warrant of arrest FLA</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              <p>As to an order under Part IV Family Law Act 1996 limited to an application for the issue of a warrant of arrest.</p>
+            </div>
+          </div>
+
+
+          <a name="grid-hidden"></a><h2 class="govuk-heading-l">Grid - full wording hidden</h2>
+
+<h2 class="govuk-heading-m">
+  Non-molestation order - domestic abuse
+</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p><strong>Cost limitation</strong></p>
+</div>
+  <div class="govuk-grid-column-one-third">
+     <p><strong>Scope limitation</strong></p>
+</div>
+  <div class="govuk-grid-column-one-third">
+  <!--  <p><strong>Full wording</strong></p> -->
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p>£5,000</p>
+</div>
+  <div class="govuk-grid-column-one-third">
+    <p>Warrant of arrest FLA</p>
+</div>
+  <div class="govuk-grid-column-one-third">
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Full wording
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+         <p class="govuk-body">As to an order under Part IV Family Law Act 1996 limited to an application for the issue of a warrant of arrest.</p>
+      </div>
+    </details>  </div>
+</div>
+
+<a name="tabs"></a><h2 class="govuk-heading-l">Tabs</h2>
+
+<div class="govuk-tabs" data-module="tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#past-day">
+        Proceeding
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Cost limitation
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Scope limitation
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Full wording
+      </a>
+    </li>
+  </ul>
+
+  <section class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-m">Non-molestation order (domestic abuse)</h2>
+
+  </section>
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-m">£5,000</h2>
+  </section>
+
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-m">Counsel's opinion</h2>
+  </section>
+
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <p class="govuk-body">Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.</p>
+  </section>
+</div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+

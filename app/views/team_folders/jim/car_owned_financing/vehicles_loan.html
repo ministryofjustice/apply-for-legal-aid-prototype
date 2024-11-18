@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Costs
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+      href: "/old/passported_v2/statement_1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">How much does your client owe on the vehicle?</h1>
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Enter an amount
+    </legend>
+   <span class="govuk-hint">
+      This is the amount left to pay on any loans or hire purchase agreements.
+    </span>
+
+    <form action="vehicles_date" method="post" novalidate>
+      <div class="govuk-form-group">
+
+
+        <!--  <span id="postcode-hint" class="govuk-hint">
+            Include profit costs, disbursements, expert costs and counsel fees.
+          </span> -->
+
+
+        <span class="govuk-body govuk-!-font-weight-bold govuk-currency-input__inner">£</span>
+        <input class="govuk-input govuk-!-width-one-third govuk-currency-input__input" id="costs" name="costs" type="text" value="{{ data['costs'] }}">
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+

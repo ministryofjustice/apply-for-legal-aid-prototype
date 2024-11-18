@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="specific_issue" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                          <span class="govuk-caption-xl">Proceeding name</span>
+                          <h1 class="govuk-fieldset__heading">
+                            Is the chance of a successful outcome 45% or better?
+                          </h1>
+                        </legend>
+
+              <div class="govuk-!-padding-top-4"></div>
+
+
+
+              <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="prospects_plf_yes" name="prospects_plf" type="radio" value="yes" data-aria-controls="conditional-prospects_plf_yes">
+                  <label class="govuk-label govuk-radios__label" for="prospects_plf_yes">
+                    Yes
+                  </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-prospects_plf_yes">
+                    <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-prospects_plf_no">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        How will the negative assessment be challenged?
+                      </label>
+                      <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="prospects_plf_no" name="prospects_plf" type="radio" value="no" data-aria-controls="conditional-prospects_plf_no">
+                  <label class="govuk-label govuk-radios__label" for="prospects_plf_no">
+                    No
+                  </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-prospects_plf_no">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Tell us why legal aid should be granted
+                    </label>
+                    <textarea class="govuk-textarea" id="no-more-detail" name="no-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                  </div>
+                </div>
+
+                </div>
+
+                
+
+
+
+  <!--   <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-1" name="property" type="radio" value="yes" {{ checked("property","yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="capital-1">
+                    No
+                  </label>
+                </div>
+              </div> -->
+
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+          <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

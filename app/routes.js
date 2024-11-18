@@ -664,11 +664,36 @@ router.post('/new_app_to_DWP/other', function (req, res) {
   let myvar = req.session.data['change-name']
 console.log("myvar=" + myvar)
   if (myvar === 'yes') {
-    res.redirect('/new_app_to_DWP/SCA_interrupt_3')
+    res.redirect('/new_app_to_DWP/PLF_interrupt_2')
   } else {
     res.redirect('/new_app_to_DWP/other')
   }
 })
+
+// Public Law Family PLF CONCEPT filter question change name (specific filter question for prohibited steps order or specific issue order)
+router.post('/justin/PLF_question_01/other', function (req, res) {
+
+  let myvar = req.session.data['change-name-plf']
+console.log("myvar=" + myvar)
+  if (myvar === 'yes') {
+    res.redirect('/justin/PLF_question_01/interrupt_2')
+  } else {
+    res.redirect('/justin/PLF_question_01/other')
+  }
+})
+
+// // Public Law Family PLF CONCEPT chances of success question (doesn't matter which one is picked, they all go to the same place)
+// router.post('/justin/merits/specific_issue', function (req, res) {
+//
+//   let myvar = req.session.data['prospects']
+// console.log("myvar=" + myvar)
+//   if (myvar === 'borderline') {
+//     res.redirect('/justin/merits/specific_issue')
+//   } else {
+//     res.redirect('/justin/merits/specific_issue')
+//   }
+// })
+
 
 // Special Children Act CURRENT client role biological parent
 router.post('/merits/SCA_client_role_pr', function (req, res) {
@@ -971,8 +996,8 @@ router.get('/limitations/search', function (req, res) {
     })
 })
 
-router.get('/jim/limitations/search', function (req, res) {
-  res.render('jim/limitations/search',
+router.get('/team_folders/jim/limitations/search', function (req, res) {
+  res.render('team_folders/jim/limitations/search',
     {
       proceedings: utils.getProceedings()
     })
@@ -992,113 +1017,113 @@ router.get('/mp/search', function (req, res) {
     })
 })
 
-router.get('/apply_for_legal_aid_prototype_non_passported_provider_means/search', function (req, res) {
-  res.render('apply_for_legal_aid_prototype_non_passported_provider_means/search',
+router.get('/old/apply_for_legal_aid_prototype_non_passported_provider_means/search', function (req, res) {
+  res.render('old/apply_for_legal_aid_prototype_non_passported_provider_means/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits/search', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits/search',
+router.get('/old/multiple_proceedings/proceedings_merits/search', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits/search_2',
+router.get('/old/multiple_proceedings/proceedings_merits/search_2', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits/search_2',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits/search_3',
+router.get('/old/multiple_proceedings/proceedings_merits/search_3', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits/search_3',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits_grouped/search',
+router.get('/old/multiple_proceedings/proceedings_merits_grouped/search', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits_grouped/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits_grouped/search_2',
+router.get('/old/multiple_proceedings/proceedings_merits_grouped/search_2', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits_grouped/search_2',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
-  res.render('multiple_proceedings/proceedings_merits_grouped/search_3',
+router.get('/old/multiple_proceedings/proceedings_merits_grouped/search_3', function (req, res) {
+  res.render('old/multiple_proceedings/proceedings_merits_grouped/search_3',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/df/v2/search', function (req, res) {
-  res.render('multiple_proceedings/df/v2/search',
+router.get('/old/multiple_proceedings/df/v2/search', function (req, res) {
+  res.render('old/multiple_proceedings/df/v2/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/df/v2/search_2', function (req, res) {
-  res.render('multiple_proceedings/df/v2/search_2',
+router.get('/old/multiple_proceedings/df/v2/search_2', function (req, res) {
+  res.render('old/multiple_proceedings/df/v2/search_2',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/multiple_proceedings/df/v2/search_3', function (req, res) {
-  res.render('multiple_proceedings/df/v2/search_3',
+router.get('/old/multiple_proceedings/df/v2/search_3', function (req, res) {
+  res.render('old/multiple_proceedings/df/v2/search_3',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment/search', function (req, res) {
-  res.render('non_passported_employment/search',
+router.get('/old/non_passported_employment/search', function (req, res) {
+  res.render('old/non_passported_employment/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment/search_2', function (req, res) {
-  res.render('non_passported_employment/search_2',
+router.get('/old/non_passported_employment/search_2', function (req, res) {
+  res.render('old/non_passported_employment/search_2',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment/search_3', function (req, res) {
-  res.render('non_passported_employment/search_3',
+router.get('/old/non_passported_employment/search_3', function (req, res) {
+  res.render('old/non_passported_employment/search_3',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment_v2/search', function (req, res) {
-  res.render('non_passported_employment_v2/search',
+router.get('/old/non_passported_employment_v2/search', function (req, res) {
+  res.render('old/non_passported_employment_v2/search',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment_v2/search_2', function (req, res) {
-  res.render('non_passported_employment_v2/search_2',
+router.get('/old/non_passported_employment_v2/search_2', function (req, res) {
+  res.render('old/non_passported_employment_v2/search_2',
     {
       proceedings: utils.getProceedings()
     })
 })
 
-router.get('/non_passported_employment_v2/search_3', function (req, res) {
-  res.render('non_passported_employment_v2/search_3',
+router.get('/old/non_passported_employment_v2/search_3', function (req, res) {
+  res.render('old/non_passported_employment_v2/search_3',
     {
       proceedings: utils.getProceedings()
     })
@@ -1128,47 +1153,47 @@ router.get('/other_capital_alt', function (req, res) {
 })
 
 // Branching for non_passported_v1 prototype
-router.get('/non_passported_v1/online_banking_declaration', function (req, res) {
+router.get('/old/non_passported_v1/online_banking_declaration', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var onlinebank = req.query.onlinebank
 
   if (onlinebank === 'no') {
     // Redirect to the relevant page
-    res.redirect('/non_passported_v1/no_online_banking')
+    res.redirect('/old/non_passported_v1/no_online_banking')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('non_passported_v1/online_banking_declaration')
+    res.render('old/non_passported_v1/online_banking_declaration')
   }
 })
 
-router.get('/non_passported_v1/types_of_income', function (req, res) {
+router.get('/old/non_passported_v1/types_of_income', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var otherbank = req.query.otherbank
 
   if (otherbank === 'yes') {
     // Redirect to the relevant page
-    res.redirect('/non_passported_v1/additional_accounts')
+    res.redirect('/old/non_passported_v1/additional_accounts')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('non_passported_v1/types_of_income')
+    res.render('old/non_passported_v1/types_of_income')
   }
 })
 
-router.get('/non_passported_v1/savings_investments', function (req, res) {
+router.get('/old/non_passported_v1/savings_investments', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var property = req.query.property
 
   if (property === 'yes') {
     // Redirect to the relevant page
-    res.redirect('/non_passported_v1/yes_holding_page')
+    res.redirect('/old/non_passported_v1/yes_holding_page')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('non_passported_v1/savings_investments')
+    res.render('old/non_passported_v1/savings_investments')
   }
 })
 
 // Vehicles provider
-router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
+router.post('/team_folders/jim/car_capital_questions/vehicles_costs', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1176,14 +1201,14 @@ router.post('/jim/car_capital_questions/vehicles_costs', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/car_capital_questions/savings_investments')
+    res.redirect('/team_folders/jim/car_capital_questions/savings_investments')
   } else {
-    res.redirect('/jim/car_capital_questions/vehicles_costs')
+    res.redirect('/team_folders/jim/car_capital_questions/vehicles_costs')
   }
 })
 
 // Vehicles provider v2 (less than 3 years ago)
-router.post('/jim/car_capital_questions_v2/vehicles_regular_use', function (req, res) {
+router.post('/team_folders/jim/car_capital_questions_v2/vehicles_regular_use', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1191,14 +1216,14 @@ router.post('/jim/car_capital_questions_v2/vehicles_regular_use', function (req,
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/car_capital_questions_v2/savings_investments')
+    res.redirect('/team_folders/jim/car_capital_questions_v2/savings_investments')
   } else {
-    res.redirect('/jim/car_capital_questions_v2/vehicles_regular_use')
+    res.redirect('/team_folders/jim/car_capital_questions_v2/vehicles_regular_use')
   }
 })
 
 // Vehicles provider v2 (regular use)
-router.post('/jim/car_capital_questions_v2/vehicles_costs', function (req, res) {
+router.post('/team_folders/jim/car_capital_questions_v2/vehicles_costs', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1206,14 +1231,14 @@ router.post('/jim/car_capital_questions_v2/vehicles_costs', function (req, res) 
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/car_capital_questions_v2/savings_investments')
+    res.redirect('/team_folders/jim/car_capital_questions_v2/savings_investments')
   } else {
-    res.redirect('/jim/car_capital_questions_v2/vehicles_costs')
+    res.redirect('/team_folders/jim/car_capital_questions_v2/vehicles_costs')
   }
 })
 
 // Vehicles applicant
-router.post('/jim/citizen_car_capital_questions/vehicles_costs', function (req, res) {
+router.post('/team_folders/jim/citizen_car_capital_questions/vehicles_costs', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1221,14 +1246,14 @@ router.post('/jim/citizen_car_capital_questions/vehicles_costs', function (req, 
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/citizen_car_capital_questions/savings_investments')
+    res.redirect('/team_folders/jim/citizen_car_capital_questions/savings_investments')
   } else {
-    res.redirect('/jim/citizen_car_capital_questions/vehicles_costs')
+    res.redirect('/team_folders/jim/citizen_car_capital_questions/vehicles_costs')
   }
 })
 
 // Prospects of success (Jim's prototype)
-router.post('/jim/prospects_of_success/prospects_less_than_50', function (req, res) {
+router.post('/team_folders/jim/prospects_of_success/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1236,14 +1261,14 @@ router.post('/jim/prospects_of_success/prospects_less_than_50', function (req, r
   let over18 = req.session.data['vehicles']
 
   if (over18 === 'no') {
-    res.redirect('/jim/prospects_of_success/prospects_less_than_50')
+    res.redirect('/team_folders/jim/prospects_of_success/prospects_less_than_50')
   } else {
-    res.redirect('/jim/prospects_of_success/declaration')
+    res.redirect('/team_folders/jim/prospects_of_success/declaration')
   }
 })
 
 // Prospects of success (Non passported)
-router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
+router.post('/old/non_passported_v1/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1251,14 +1276,14 @@ router.post('/non_passported_v1/prospects_less_than_50', function (req, res) {
   let over18 = req.session.data['vehicles']
 
   if (over18 === 'no') {
-    res.redirect('/non_passported_v1/prospects_less_than_50')
+    res.redirect('/old/non_passported_v1/prospects_less_than_50')
   } else {
-    res.redirect('/non_passported_v1/check_answers_merits')
+    res.redirect('/old/non_passported_v1/check_answers_merits')
   }
 })
 
 // Prospects of success (Passported v2)
-router.post('/passported_v2/prospects_less_than_50', function (req, res) {
+router.post('/old/passported_v2/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1266,14 +1291,14 @@ router.post('/passported_v2/prospects_less_than_50', function (req, res) {
   let over18 = req.session.data['vehicles']
 
   if (over18 === 'no') {
-    res.redirect('/passported_v2/prospects_less_than_50')
+    res.redirect('/old/passported_v2/prospects_less_than_50')
   } else {
-    res.redirect('/passported_v2/check_answers_merits')
+    res.redirect('/old/passported_v2/check_answers_merits')
   }
 })
 
 // Passported property v2 - property
-router.post('/passported_v2/property_amount', function (req, res) {
+router.post('/old/passported_v2/property_amount', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1281,14 +1306,14 @@ router.post('/passported_v2/property_amount', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/passported_v2/vehicles')
+    res.redirect('/old/passported_v2/vehicles')
   } else {
-    res.redirect('/passported_v2/property_amount')
+    res.redirect('/old/passported_v2/property_amount')
   }
 })
 
 // Dependants
-router.post('/jim/dependants/dependant_details', function (req, res) {
+router.post('/team_folders/jim/dependants/dependant_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1296,14 +1321,14 @@ router.post('/jim/dependants/dependant_details', function (req, res) {
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dependants/types_of_outgoing')
+    res.redirect('/team_folders/jim/dependants/types_of_outgoing')
   } else {
-    res.redirect('/jim/dependants/dependant_details')
+    res.redirect('/team_folders/jim/dependants/dependant_details')
   }
 })
 
 // Delegated functions - continue with full application or come back later
-router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/confirmation_page', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1311,14 +1336,14 @@ router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/confirmation_page')
+    res.redirect('/team_folders/jim/delegated_functions/confirmation_page')
   } else {
-    res.redirect('/jim/delegated_functions/other_bank_radios')
+    res.redirect('/team_folders/jim/delegated_functions/other_bank_radios')
   }
 })
 
 // Delegated functions - continue with full application or come back later
-router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/confirmation_page', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1326,14 +1351,14 @@ router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/confirmation_page')
+    res.redirect('/team_folders/jim/delegated_functions/confirmation_page')
   } else {
-    res.redirect('/jim/delegated_functions/other_bank_radios')
+    res.redirect('/team_folders/jim/delegated_functions/other_bank_radios')
   }
 })
 
 // Delegated functions - continue with full application or come back later
-router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/confirmation_page', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1341,14 +1366,14 @@ router.post('/jim/delegated_functions/confirmation_page', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/confirmation_page')
+    res.redirect('/team_folders/jim/delegated_functions/confirmation_page')
   } else {
-    res.redirect('/jim/delegated_functions/other_bank_radios')
+    res.redirect('/team_folders/jim/delegated_functions/other_bank_radios')
   }
 })
 
 // Vehicles non-passported v3
-router.post('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1356,14 +1381,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs', f
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/savings_investments_select')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/savings_investments_select')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/vehicles_costs')
   }
 })
 
 // Prospects of success (Passported v2)
-router.post('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1371,14 +1396,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_tha
   let over18 = req.session.data['vehicles']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/prospects_less_than_50')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/check_answers_merits')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/check_answers_merits')
   }
 })
 
 // Statement select
-router.post('/jim/statement/split/statement_enter', function (req, res) {
+router.post('/team_folders/jim/statement/split/statement_enter', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1386,14 +1411,14 @@ router.post('/jim/statement/split/statement_enter', function (req, res) {
   let over18 = req.session.data['vehicles']
 
   if (over18 === 'no') {
-    res.redirect('/jim/statement/split/statement_enter')
+    res.redirect('/team_folders/jim/statement/split/statement_enter')
   } else {
-    res.redirect('/jim/statement/split/statement_upload')
+    res.redirect('/team_folders/jim/statement/split/statement_upload')
   }
 })
 
 // Provider office select
-router.post('/jim/office_select/office', function (req, res) {
+router.post('/team_folders/jim/office_select/office', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1401,14 +1426,14 @@ router.post('/jim/office_select/office', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/office_select/office')
+    res.redirect('/team_folders/jim/office_select/office')
   } else {
-    res.redirect('/jim/office_select/dashboard')
+    res.redirect('/team_folders/jim/office_select/dashboard')
   }
 })
 
 // Provider office select
-router.post('/jim/office_select/v2/office', function (req, res) {
+router.post('/team_folders/jim/office_select/v2/office', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1416,14 +1441,14 @@ router.post('/jim/office_select/v2/office', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/office_select//v2/office')
+    res.redirect('/team_folders/jim/office_select//v2/office')
   } else {
-    res.redirect('/jim/office_select//v2/dashboard')
+    res.redirect('/team_folders/jim/office_select//v2/dashboard')
   }
 })
 
 // Non-passported - substantive yes or no
-router.post('/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1431,14 +1456,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/delegated_function
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/delegated_functions_confirmation')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/online_banking_radios')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/online_banking_radios')
   }
 })
 
 // Client doesn't use online banking - continue in ccms
-router.post('/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1446,14 +1471,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/no_online_banking_use_ccms')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_v3/online_banking_declaration')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_v3/online_banking_declaration')
   }
 })
 
 // Client doesn't use online banking - continue in ccms (Jim's miscellany)
-router.post('/jim/pre_financial_assessment_flow/no_online_banking_use_ccms', function (req, res) {
+router.post('/team_folders/jim/pre_financial_assessment_flow/no_online_banking_use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1461,14 +1486,14 @@ router.post('/jim/pre_financial_assessment_flow/no_online_banking_use_ccms', fun
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/pre_financial_assessment_flow/no_online_banking_use_ccms')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow/no_online_banking_use_ccms')
   } else {
-    res.redirect('/jim/pre_financial_assessment_flow/online_banking_declaration')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow/online_banking_declaration')
   }
 })
 
 // Client doesn't agree to share transactions - continue with solicitor (Jim's miscellany)
-router.post('/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor', function (req, res) {
+router.post('/team_folders/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1476,14 +1501,14 @@ router.post('/jim/pre_financial_assessment_flow/complete_assessment_with_solicit
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow/complete_assessment_with_solicitor')
   } else {
-    res.redirect('/jim/pre_financial_assessment_flow/bank_select_03')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow/bank_select_03')
   }
 })
 
 // Client doesn't agree to share transactions v2 - continue with solicitor (Jim's miscellany)
-router.post('/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor', function (req, res) {
+router.post('/team_folders/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1491,14 +1516,14 @@ router.post('/jim/pre_financial_assessment_flow_v2/complete_assessment_with_soli
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/complete_assessment_with_solicitor')
   } else {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/bank_select_03')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/bank_select_03')
   }
 })
 
 // Client doesn't use online banking v2 - continue in ccms (Jim's miscellany)
-router.post('/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms', function (req, res) {
+router.post('/team_folders/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1506,14 +1531,14 @@ router.post('/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms', 
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/no_online_banking_use_ccms')
   } else {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/client_agree_share')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/client_agree_share')
   }
 })
 
 // Client doesn't agree to share transactions v2 - continue in ccms (Jim's miscellany)
-router.post('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms', function (req, res) {
+router.post('/team_folders/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1521,14 +1546,14 @@ router.post('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactio
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/client_not_sharing_transactions_use_ccms')
   } else {
-    res.redirect('/jim/pre_financial_assessment_flow_v2/online_banking_declaration')
+    res.redirect('/team_folders/jim/pre_financial_assessment_flow_v2/online_banking_declaration')
   }
 })
 
 // Client doesn't agree to share transactions - provider completes means test
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1536,14 +1561,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/comple
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/complete_assessment_with_solicitor')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/bank_select_03')
   }
 })
 
 // Dependants - v4 NP flow
-router.post('/passported_v2/delegated_functions_confirmation', function (req, res) {
+router.post('/old/passported_v2/delegated_functions_confirmation', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1551,14 +1576,14 @@ router.post('/passported_v2/delegated_functions_confirmation', function (req, re
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/passported_v2/delegated_functions_confirmation')
+    res.redirect('/old/passported_v2/delegated_functions_confirmation')
   } else {
-    res.redirect('/passported_v2/assessment_start')
+    res.redirect('/old/passported_v2/assessment_start')
   }
 })
 
 // DF - notification more than 5 days after starting application v1
-router.post('/jim/delegated_functions/notification/v1/delegated_functions_2', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/notification/v1/delegated_functions_2', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1566,14 +1591,14 @@ router.post('/jim/delegated_functions/notification/v1/delegated_functions_2', fu
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/notification/v1/what_youre_covered_for')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v1/what_youre_covered_for')
   } else {
-    res.redirect('/jim/delegated_functions/notification/v1/delegated_functions_2')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v1/delegated_functions_2')
   }
 })
 
 // DF - notification more than 5 days after starting application v2
-router.post('/jim/delegated_functions/notification/v2/late_notification', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/notification/v2/late_notification', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1581,14 +1606,14 @@ router.post('/jim/delegated_functions/notification/v2/late_notification', functi
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/notification/v2/what_youre_covered_for')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v2/what_youre_covered_for')
   } else {
-    res.redirect('/jim/delegated_functions/notification/v2/late_notification')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v2/late_notification')
   }
 })
 
 // DF - notification more than 5 days after starting application v3
-router.post('/jim/delegated_functions/notification/v3/delegated_functions_2', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/notification/v3/delegated_functions_2', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1596,14 +1621,14 @@ router.post('/jim/delegated_functions/notification/v3/delegated_functions_2', fu
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/notification/v3/what_youre_covered_for')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v3/what_youre_covered_for')
   } else {
-    res.redirect('/jim/delegated_functions/notification/v3/delegated_functions_2')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v3/delegated_functions_2')
   }
 })
 
 // DF - notification more than 5 days after starting application v4
-router.post('/jim/delegated_functions/notification/v4/delegated_functions_2', function (req, res) {
+router.post('/team_folders/jim/delegated_functions/notification/v4/delegated_functions_2', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1611,14 +1636,14 @@ router.post('/jim/delegated_functions/notification/v4/delegated_functions_2', fu
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/delegated_functions/notification/v4/what_youre_covered_for')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v4/what_youre_covered_for')
   } else {
-    res.redirect('/jim/delegated_functions/notification/v4/delegated_functions_2')
+    res.redirect('/team_folders/jim/delegated_functions/notification/v4/delegated_functions_2')
   }
 })
 
 // Statement of case (select upload or enter)
-router.post('/jim/statement_split/statement_upload', function (req, res) {
+router.post('/team_folders/jim/statement_split/statement_upload', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1626,14 +1651,14 @@ router.post('/jim/statement_split/statement_upload', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/statement_split/statement_upload')
+    res.redirect('/team_folders/jim/statement_split/statement_upload')
   } else {
-    res.redirect('/jim/statement_split/statement_enter')
+    res.redirect('/team_folders/jim/statement_split/statement_enter')
   }
 })
 
 // NP client consent v1
-router.post('/jim/np_edits/v1/use_ccms', function (req, res) {
+router.post('/team_folders/jim/np_edits/v1/use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1641,14 +1666,14 @@ router.post('/jim/np_edits/v1/use_ccms', function (req, res) {
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/jim/np_edits/v1/use_ccms')
+    res.redirect('/team_folders/jim/np_edits/v1/use_ccms')
   } else {
-    res.redirect('/jim/np_edits/v1/email_address')
+    res.redirect('/team_folders/jim/np_edits/v1/email_address')
   }
 })
 
 // NP client consent v1
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1656,14 +1681,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/use_cc
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/substantive_application')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/substantive_application')
   }
 })
 
 // NP client consent v3
-router.post('/jim/np_edits/v3/use_ccms', function (req, res) {
+router.post('/team_folders/jim/np_edits/v3/use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1671,14 +1696,14 @@ router.post('/jim/np_edits/v3/use_ccms', function (req, res) {
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/jim/np_edits/v3/use_ccms')
+    res.redirect('/team_folders/jim/np_edits/v3/use_ccms')
   } else {
-    res.redirect('/jim/np_edits/v3/email_address')
+    res.redirect('/team_folders/jim/np_edits/v3/email_address')
   }
 })
 
 // Client no income selected v1
-router.post('/jim/client_no_income/v2/types_of_income_provider', function (req, res) {
+router.post('/team_folders/jim/client_no_income/v2/types_of_income_provider', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1686,14 +1711,14 @@ router.post('/jim/client_no_income/v2/types_of_income_provider', function (req, 
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/client_no_income/v2/types_of_income_provider')
+    res.redirect('/team_folders/jim/client_no_income/v2/types_of_income_provider')
   } else {
-    res.redirect('/jim/client_no_income/v2/dependants')
+    res.redirect('/team_folders/jim/client_no_income/v2/dependants')
   }
 })
 
 // Client no income selected v2
-router.post('/jim/client_no_income/v2/types_of_outgoing_provider', function (req, res) {
+router.post('/team_folders/jim/client_no_income/v2/types_of_outgoing_provider', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1701,14 +1726,14 @@ router.post('/jim/client_no_income/v2/types_of_outgoing_provider', function (req
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/client_no_income/v2/types_of_outgoing_provider')
+    res.redirect('/team_folders/jim/client_no_income/v2/types_of_outgoing_provider')
   } else {
-    res.redirect('/jim/client_no_income/v2/property')
+    res.redirect('/team_folders/jim/client_no_income/v2/property')
   }
 })
 
 // NP journey substantive yay/nay
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1716,14 +1741,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/delega
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/delegated_functions_confirmation')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/check')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/check')
   }
 })
 
 // Student finance
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1731,14 +1756,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_outgoing')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/loan_amount')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/loan_amount')
   }
 })
 
 // Dependants yay or nay
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1746,14 +1771,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoi
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/outgoings')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_add')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/dependant_add')
   }
 })
 
 // Delete application
-router.post('/stevey/dashboard/multi-delete/04_dashboard_deleted', function (req, res) {
+router.post('/team_folders/stevey/dashboard/multi-delete/04_dashboard_deleted', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1761,14 +1786,14 @@ router.post('/stevey/dashboard/multi-delete/04_dashboard_deleted', function (req
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/stevey/dashboard/multi-delete/04_dashboard')
+    res.redirect('/team_folders/stevey/dashboard/multi-delete/04_dashboard')
   } else {
-    res.redirect('/stevey/dashboard/multi-delete/04_dashboard_deleted')
+    res.redirect('/team_folders/stevey/dashboard/multi-delete/04_dashboard_deleted')
   }
 })
 
 // Client doesn't agree to share transactions - applicant staging
-router.post('/applicant_flow/complete_assessment_with_solicitor', function (req, res) {
+router.post('/old/applicant_flow/complete_assessment_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1776,14 +1801,14 @@ router.post('/applicant_flow/complete_assessment_with_solicitor', function (req,
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow/complete_assessment_with_solicitor')
+    res.redirect('/old/applicant_flow/complete_assessment_with_solicitor')
   } else {
-    res.redirect('/applicant_flow/bank_select')
+    res.redirect('/old/applicant_flow/bank_select')
   }
 })
 
 // Client uses online banking for other accounts (applicant staging)
-router.post('/applicant_flow/types_of_income', function (req, res) {
+router.post('/old/applicant_flow/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1791,14 +1816,14 @@ router.post('/applicant_flow/types_of_income', function (req, res) {
   let over18 = req.session.data['otherbank']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow/types_of_income')
+    res.redirect('/old/applicant_flow/types_of_income')
   } else {
-    res.redirect('/applicant_flow/offline_current_accounts')
+    res.redirect('/old/applicant_flow/offline_current_accounts')
   }
 })
 
 // Offline current accounts (applicant staging)
-router.post('/applicant_flow/complete_with_solicitor', function (req, res) {
+router.post('/old/applicant_flow/complete_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1806,14 +1831,14 @@ router.post('/applicant_flow/complete_with_solicitor', function (req, res) {
   let over18 = req.session.data['current_account']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow/types_of_income')
+    res.redirect('/old/applicant_flow/types_of_income')
   } else {
-    res.redirect('/applicant_flow/complete_with_solicitor')
+    res.redirect('/old/applicant_flow/complete_with_solicitor')
   }
 })
 
 // Student finance
-router.post('/applicant_flow/types_of_outgoing', function (req, res) {
+router.post('/old/applicant_flow/types_of_outgoing', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1821,14 +1846,14 @@ router.post('/applicant_flow/types_of_outgoing', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow/types_of_outgoing')
+    res.redirect('/old/applicant_flow/types_of_outgoing')
   } else {
-    res.redirect('/applicant_flow/loan_amount')
+    res.redirect('/old/applicant_flow/loan_amount')
   }
 })
 
 // Client doesn't agree to share transactions - applicant staging
-router.post('/applicant_flow_tl/complete_assessment_with_solicitor', function (req, res) {
+router.post('/old/applicant_flow_tl/complete_assessment_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1836,14 +1861,14 @@ router.post('/applicant_flow_tl/complete_assessment_with_solicitor', function (r
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow_tl/complete_assessment_with_solicitor')
+    res.redirect('/old/applicant_flow_tl/complete_assessment_with_solicitor')
   } else {
-    res.redirect('/applicant_flow_tl/bank_select')
+    res.redirect('/old/applicant_flow_tl/bank_select')
   }
 })
 
 // Client uses online banking for other accounts (applicant staging)
-router.post('/applicant_flow_tl/types_of_income', function (req, res) {
+router.post('/old/applicant_flow_tl/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1851,14 +1876,14 @@ router.post('/applicant_flow_tl/types_of_income', function (req, res) {
   let over18 = req.session.data['otherbank']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow_tl/types_of_income')
+    res.redirect('/old/applicant_flow_tl/types_of_income')
   } else {
-    res.redirect('/applicant_flow_tl/offline_current_accounts')
+    res.redirect('/old/applicant_flow_tl/offline_current_accounts')
   }
 })
 
 // Offline current accounts (applicant staging)
-router.post('/applicant_flow_tl/complete_with_solicitor', function (req, res) {
+router.post('/old/applicant_flow_tl/complete_with_solicitor', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1866,14 +1891,14 @@ router.post('/applicant_flow_tl/complete_with_solicitor', function (req, res) {
   let over18 = req.session.data['current_account']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow_tl/types_of_income')
+    res.redirect('/old/applicant_flow_tl/types_of_income')
   } else {
-    res.redirect('/applicant_flow_tl/complete_with_solicitor')
+    res.redirect('/old/applicant_flow_tl/complete_with_solicitor')
   }
 })
 
 // Student finance
-router.post('/applicant_flow_tl/types_of_outgoing', function (req, res) {
+router.post('/old/applicant_flow_tl/types_of_outgoing', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1881,14 +1906,14 @@ router.post('/applicant_flow_tl/types_of_outgoing', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/applicant_flow_tl/types_of_outgoing')
+    res.redirect('/old/applicant_flow_tl/types_of_outgoing')
   } else {
-    res.redirect('/applicant_flow_tl/loan_amount')
+    res.redirect('/old/applicant_flow_tl/loan_amount')
   }
 })
 
 // applicant employed
-router.post('/jim/applicant_employed/check', function (req, res) {
+router.post('/team_folders/jim/applicant_employed/check', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1896,14 +1921,14 @@ router.post('/jim/applicant_employed/check', function (req, res) {
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/check')
+    res.redirect('/team_folders/jim/applicant_employed/check')
   } else {
-    res.redirect('/jim/applicant_employed/use_ccms_employed')
+    res.redirect('/team_folders/jim/applicant_employed/use_ccms_employed')
   }
 })
 
 // provider disagrees that client uses online banking / will share transactions
-router.post('/jim/applicant_employed/substantive_application', function (req, res) {
+router.post('/team_folders/jim/applicant_employed/substantive_application', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1911,14 +1936,14 @@ router.post('/jim/applicant_employed/substantive_application', function (req, re
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/use_ccms')
+    res.redirect('/team_folders/jim/applicant_employed/use_ccms')
   } else {
-    res.redirect('/jim/applicant_employed/substantive_application')
+    res.redirect('/team_folders/jim/applicant_employed/substantive_application')
   }
 })
 
 // applicant employed DF
-router.post('/jim/applicant_employed/delegated_functions', function (req, res) {
+router.post('/team_folders/jim/applicant_employed/delegated_functions', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1926,14 +1951,14 @@ router.post('/jim/applicant_employed/delegated_functions', function (req, res) {
   let over18 = req.session.data['property']
 
   if (over18 === 'no') {
-    res.redirect('/jim/applicant_employed/delegated_functions')
+    res.redirect('/team_folders/jim/applicant_employed/delegated_functions')
   } else {
-    res.redirect('/jim/applicant_employed/what_client_must_do')
+    res.redirect('/team_folders/jim/applicant_employed/what_client_must_do')
   }
 })
 
 // client employed
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/consent', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/consent', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1941,14 +1966,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/consen
   let over18 = req.session.data['employed']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/consent')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/consent')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms_employed')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/use_ccms_employed')
   }
 })
 
 // Additional accounts NP
-router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income', function (req, res) {
+router.post('/old/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1956,14 +1981,14 @@ router.post('/apply_for_legal_aid_prototype_non_passported_provider_means/types_
   let over18 = req.session.data['accounts']
 
   if (over18 === 'no') {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/types_of_income')
   } else {
-    res.redirect('/apply_for_legal_aid_prototype_non_passported_provider_means/offline_accounts')
+    res.redirect('/old/apply_for_legal_aid_prototype_non_passported_provider_means/offline_accounts')
   }
 })
 
 // Not in scope of LASPO (PSO)
-router.post('/multiple_proceedings/proceedings_merits/use_ccms_pso', function (req, res) {
+router.post('/old/multiple_proceedings/proceedings_merits/use_ccms_pso', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1971,14 +1996,14 @@ router.post('/multiple_proceedings/proceedings_merits/use_ccms_pso', function (r
   let over18 = req.session.data['mental']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/proceedings_merits/use_ccms_pso')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/use_ccms_pso')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits/children_pso')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/children_pso')
   }
 })
 
 // Not in scope of LASPO (CAO)
-router.post('/multiple_proceedings/proceedings_merits/use_ccms_cao', function (req, res) {
+router.post('/old/multiple_proceedings/proceedings_merits/use_ccms_cao', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -1986,14 +2011,14 @@ router.post('/multiple_proceedings/proceedings_merits/use_ccms_cao', function (r
   let over18 = req.session.data['laspo']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/proceedings_merits/use_ccms_cao')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/use_ccms_cao')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits/children_cao')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/children_cao')
   }
 })
 
 // Not in scope of LASPO (prototype 1)
-router.post('/multiple_proceedings/proceedings_merits/use_ccms', function (req, res) {
+router.post('/old/multiple_proceedings/proceedings_merits/use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2001,14 +2026,14 @@ router.post('/multiple_proceedings/proceedings_merits/use_ccms', function (req, 
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/proceedings_merits/use_ccms')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/use_ccms')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits/delegated_functions_select')
+    res.redirect('/old/multiple_proceedings/proceedings_merits/delegated_functions_select')
   }
 })
 
 // Not in scope of LASPO (prototype 2)
-router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', function (req, res) {
+router.post('/old/multiple_proceedings/proceedings_merits_grouped/use_ccms', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2016,15 +2041,15 @@ router.post('/multiple_proceedings/proceedings_merits_grouped/use_ccms', functio
   let over18 = req.session.data['attempts-to-settle']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/proceedings_merits_grouped/use_ccms')
+    res.redirect('/old/multiple_proceedings/proceedings_merits_grouped/use_ccms')
   } else {
-    res.redirect('/multiple_proceedings/proceedings_merits_grouped/delegated_functions')
+    res.redirect('/old/multiple_proceedings/proceedings_merits_grouped/delegated_functions')
   }
 })
 
 
 // DWP check fail - prototype
-router.post('/non_passported_employment_v2/check_details', function (req, res) {
+router.post('/old/non_passported_employment_v2/check_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2032,14 +2057,14 @@ router.post('/non_passported_employment_v2/check_details', function (req, res) {
   let over18 = req.session.data['dwp']
 
   if (over18 === 'no') {
-    res.redirect('/non_passported_employment_v2/check_details')
+    res.redirect('/old/non_passported_employment_v2/check_details')
   } else {
-    res.redirect('/non_passported_employment_v2/employed')
+    res.redirect('/old/non_passported_employment_v2/employed')
   }
 })
 
 // DWP check fail - radios provider checks details
-router.post('/non_passported_employment_v2/client_details', function (req, res) {
+router.post('/old/non_passported_employment_v2/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2047,14 +2072,14 @@ router.post('/non_passported_employment_v2/client_details', function (req, res) 
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/non_passported_employment_v2/client_details')
+    res.redirect('/old/non_passported_employment_v2/client_details')
   } else {
-    res.redirect('/non_passported_employment_v2/passporting_benefit')
+    res.redirect('/old/non_passported_employment_v2/passporting_benefit')
   }
 })
 
 // DWP check fail - use CCMS v1
-router.post('/jim/dwp_check/radios/employed', function (req, res) {
+router.post('/team_folders/jim/dwp_check/radios/employed', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2062,14 +2087,14 @@ router.post('/jim/dwp_check/radios/employed', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/radios/employed')
+    res.redirect('/team_folders/jim/dwp_check/radios/employed')
   } else {
-    res.redirect('/jim/dwp_check/radios/placeholder')
+    res.redirect('/team_folders/jim/dwp_check/radios/placeholder')
   }
 })
 
 // DWP check fail - use CCMS v2
-router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
+router.post('/team_folders/jim/dwp_check/radios/non_passported_route', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2077,14 +2102,14 @@ router.post('/jim/dwp_check/radios/non_passported_route', function (req, res) {
   let over18 = req.session.data['evidence']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/radios/non_passported_route')
+    res.redirect('/team_folders/jim/dwp_check/radios/non_passported_route')
   } else {
-    res.redirect('/jim/dwp_check/radios/use_ccms')
+    res.redirect('/team_folders/jim/dwp_check/radios/use_ccms')
   }
 })
 
 // DWP check fail - radios provider checks details
-router.post('/jim/dwp_check/radios/client_details', function (req, res) {
+router.post('/team_folders/jim/dwp_check/radios/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2092,14 +2117,14 @@ router.post('/jim/dwp_check/radios/client_details', function (req, res) {
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/radios/client_details')
+    res.redirect('/team_folders/jim/dwp_check/radios/client_details')
   } else {
-    res.redirect('/jim/dwp_check/radios/benefits')
+    res.redirect('/team_folders/jim/dwp_check/radios/benefits')
   }
 })
 
 // DWP check fail - radios provider checks details
-router.post('/non_passported_employment_v2/client_details', function (req, res) {
+router.post('/old/non_passported_employment_v2/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2107,14 +2132,14 @@ router.post('/non_passported_employment_v2/client_details', function (req, res) 
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/non_passported_employment_v2/client_details')
+    res.redirect('/old/non_passported_employment_v2/client_details')
   } else {
-    res.redirect('/non_passported_employment_v2/passported_benefits')
+    res.redirect('/old/non_passported_employment_v2/passported_benefits')
   }
 })
 
 // DWP check fail - confirmation page provider checks details
-router.post('/jim/dwp_check/confirmation/client_details', function (req, res) {
+router.post('/team_folders/jim/dwp_check/confirmation/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2122,14 +2147,14 @@ router.post('/jim/dwp_check/confirmation/client_details', function (req, res) {
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/confirmation/client_details')
+    res.redirect('/team_folders/jim/dwp_check/confirmation/client_details')
   } else {
-    res.redirect('/jim/dwp_check/confirmation/benefits')
+    res.redirect('/team_folders/jim/dwp_check/confirmation/benefits')
   }
 })
 
 // DWP check fail - confirmation page provider checks details
-router.post('/jim/dwp_check/cta/client_details', function (req, res) {
+router.post('/team_folders/jim/dwp_check/cta/client_details', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2137,14 +2162,14 @@ router.post('/jim/dwp_check/cta/client_details', function (req, res) {
   let over18 = req.session.data['check']
 
   if (over18 === 'no') {
-    res.redirect('/jim/dwp_check/cta/client_details')
+    res.redirect('/team_folders/jim/dwp_check/cta/client_details')
   } else {
-    res.redirect('/jim/dwp_check/cta/benefits')
+    res.redirect('/team_folders/jim/dwp_check/cta/benefits')
   }
 })
 
 // DF - multi proc
-router.post('/multiple_proceedings/df/v3/delegated_functions_select', function (req, res) {
+router.post('/old/multiple_proceedings/df/v3/delegated_functions_select', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2152,14 +2177,14 @@ router.post('/multiple_proceedings/df/v3/delegated_functions_select', function (
   let over18 = req.session.data['df']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v3/delegated_functions_select')
+    res.redirect('/old/multiple_proceedings/df/v3/delegated_functions_select')
   } else {
-    res.redirect('/multiple_proceedings/df/v3/delegated_functions_date')
+    res.redirect('/old/multiple_proceedings/df/v3/delegated_functions_date')
   }
 })
 
 // DF all v1
-router.post('/multiple_proceedings/df/v1/delegated_functions_select', function (req, res) {
+router.post('/old/multiple_proceedings/df/v1/delegated_functions_select', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2167,14 +2192,14 @@ router.post('/multiple_proceedings/df/v1/delegated_functions_select', function (
   let over18 = req.session.data['df']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v1/delegated_functions_select')
+    res.redirect('/old/multiple_proceedings/df/v1/delegated_functions_select')
   } else {
-    res.redirect('/multiple_proceedings/df/v1/delegated_functions_date')
+    res.redirect('/old/multiple_proceedings/df/v1/delegated_functions_date')
   }
 })
 
 // DF all v1
-router.post('/multiple_proceedings/df/v2/delegated_functions_select', function (req, res) {
+router.post('/old/multiple_proceedings/df/v2/delegated_functions_select', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2182,14 +2207,14 @@ router.post('/multiple_proceedings/df/v2/delegated_functions_select', function (
   let over18 = req.session.data['df']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v2/delegated_functions_select')
+    res.redirect('/old/multiple_proceedings/df/v2/delegated_functions_select')
   } else {
-    res.redirect('/multiple_proceedings/df/v2/delegated_functions_date')
+    res.redirect('/old/multiple_proceedings/df/v2/delegated_functions_date')
   }
 })
 
 // DF same date v1
-router.post('/multiple_proceedings/df/v1/delegated_functions_date_all', function (req, res) {
+router.post('/old/multiple_proceedings/df/v1/delegated_functions_date_all', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2197,14 +2222,14 @@ router.post('/multiple_proceedings/df/v1/delegated_functions_date_all', function
   let over18 = req.session.data['df-date']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v1/delegated_functions_date_all')
+    res.redirect('/old/multiple_proceedings/df/v1/delegated_functions_date_all')
   } else {
-    res.redirect('/multiple_proceedings/df/v1/what')
+    res.redirect('/old/multiple_proceedings/df/v1/what')
   }
 })
 
 // DF same date v2
-router.post('/multiple_proceedings/df/v2/non_mol', function (req, res) {
+router.post('/old/multiple_proceedings/df/v2/non_mol', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2212,14 +2237,14 @@ router.post('/multiple_proceedings/df/v2/non_mol', function (req, res) {
   let over18 = req.session.data['df-date']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v2/non_mol')
+    res.redirect('/old/multiple_proceedings/df/v2/non_mol')
   } else {
-    res.redirect('/multiple_proceedings/df/v2/what')
+    res.redirect('/old/multiple_proceedings/df/v2/what')
   }
 })
 
 // DF same date v2
-router.post('/multiple_proceedings/df/v2/delegated_functions_date_all', function (req, res) {
+router.post('/old/multiple_proceedings/df/v2/delegated_functions_date_all', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2227,14 +2252,14 @@ router.post('/multiple_proceedings/df/v2/delegated_functions_date_all', function
   let over18 = req.session.data['df-date']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/df/v2/delegated_functions_date_all')
+    res.redirect('/old/multiple_proceedings/df/v2/delegated_functions_date_all')
   } else {
-    res.redirect('/multiple_proceedings/df/v2/what')
+    res.redirect('/old/multiple_proceedings/df/v2/what')
   }
 })
 
 // Gateway evidence required
-router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res) {
+router.post('/old/multiple_proceedings/gateway/v1/check_answers', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2242,15 +2267,15 @@ router.post('/multiple_proceedings/gateway/v1/check_answers', function (req, res
   let over18 = req.session.data['gateway']
 
   if (over18 === 'no') {
-    res.redirect('/multiple_proceedings/gateway/v1/check_answers')
+    res.redirect('/old/multiple_proceedings/gateway/v1/check_answers')
   } else {
-    res.redirect('/multiple_proceedings/gateway/v1/evidence_upload')
+    res.redirect('/old/multiple_proceedings/gateway/v1/evidence_upload')
   }
 })
 
 
 // Other bank accounts - client
-router.post('/jim/AP-1931/types_of_income', function (req, res) {
+router.post('/team_folders/jim/AP-1931/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2258,14 +2283,14 @@ router.post('/jim/AP-1931/types_of_income', function (req, res) {
   let over18 = req.session.data['accounts']
 
   if (over18 === 'no') {
-    res.redirect('/jim/AP-1931/types_of_income')
+    res.redirect('/team_folders/jim/AP-1931/types_of_income')
   } else {
-    res.redirect('/jim/AP-1931/bank_select_03')
+    res.redirect('/team_folders/jim/AP-1931/bank_select_03')
   }
 })
 
 // Other bank accounts - client
-router.post('/jim/AP-1931/types_of_income', function (req, res) {
+router.post('/team_folders/jim/AP-1931/types_of_income', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2273,14 +2298,14 @@ router.post('/jim/AP-1931/types_of_income', function (req, res) {
   let over18 = req.session.data['accounts']
 
   if (over18 === 'no') {
-    res.redirect('/jim/AP-1931/types_of_income')
+    res.redirect('/team_folders/jim/AP-1931/types_of_income')
   } else {
-    res.redirect('/jim/AP-1931/bank_select_03')
+    res.redirect('/team_folders/jim/AP-1931/bank_select_03')
   }
 })
 
 // Other bank accounts - client
-router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
+router.post('/old/open_banking_solutions/Option_2/upload', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2288,14 +2313,14 @@ router.post('/open_banking_solutions/Option_2/upload', function (req, res) {
   let over18 = req.session.data['share']
 
   if (over18 === 'no') {
-    res.redirect('/open_banking_solutions/Option_2/upload')
+    res.redirect('/old/open_banking_solutions/Option_2/upload')
   } else {
-    res.redirect('/open_banking_solutions/Option_2/email_address')
+    res.redirect('/old/open_banking_solutions/Option_2/email_address')
   }
 })
 
 // Other bank accounts - client
-router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
+router.post('/old/open_banking_solutions/Option_3/upload', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2303,9 +2328,9 @@ router.post('/open_banking_solutions/Option_3/upload', function (req, res) {
   let over18 = req.session.data['share']
 
   if (over18 === 'no') {
-    res.redirect('/open_banking_solutions/Option_3/upload')
+    res.redirect('/old/open_banking_solutions/Option_3/upload')
   } else {
-    res.redirect('/open_banking_solutions/Option_3/check')
+    res.redirect('/old/open_banking_solutions/Option_3/check')
   }
 })
 
@@ -2416,7 +2441,7 @@ router.post('/new_app_to_DWP/substantive_LOS_FHH_scope', function (req, res) {
 
 // DWP check with PARTNER - CONCEPT
 // ../client_means/means_start
-router.post('/partner_means/client_means/means_start', function (req, res) {
+router.post('/old/partner_means/client_means/means_start', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2426,14 +2451,14 @@ router.post('/partner_means/client_means/means_start', function (req, res) {
   console.log('dwp = '+ req.session.data['dwp'])
 
   if (dwp === 'no') {
-    res.redirect('/partner_means/dwp_check/');
+    res.redirect('/old/partner_means/dwp_check/');
   }
   else if (dwp === 'no_partner') {
-    res.redirect('/partner_means/dwp_check/check_details');
+    res.redirect('/old/partner_means/dwp_check/check_details');
   }
   else {
     // yes //
-    res.redirect('/partner_means/client_means/means_start')
+    res.redirect('/old/partner_means/client_means/means_start')
   }
 })
 
@@ -2460,7 +2485,7 @@ router.post('/means_financial/client_means/means_start', function (req, res) {
 })
 
 // does your client use online banking? - CONCEPT
-router.post('/partner_means/client_means/tlguidance', function (req, res) {
+router.post('/old/partner_means/client_means/tlguidance', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2470,11 +2495,11 @@ router.post('/partner_means/client_means/tlguidance', function (req, res) {
   console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
 
   if (onlineBankingConsent === 'no') {
-    res.redirect('/partner_means/client_means/upload');
+    res.redirect('/old/partner_means/client_means/upload');
   }
   else {
     // yes //
-    res.redirect('/partner_means/client_means/tlguidance')
+    res.redirect('/old/partner_means/client_means/tlguidance')
   }
 })
 
@@ -2495,23 +2520,23 @@ router.post('/means_financial/tlguidance', function (req, res) {
 })
 
 // does the partner use online banking?
-router.post('/partner_means/partner_means/tlguidance', function (req, res) {
+router.post('/old/partner_means/partner_means/tlguidance', function (req, res) {
 
   let onlineBankingConsent = req.session.data['onlineBankingConsent'];
 
   console.log('onlineBankingConsent = '+ req.session.data['onlineBankingConsent'])
 
   if (onlineBankingConsent === 'no') {
-    res.redirect('/partner_means/partner_means/upload');
+    res.redirect('/old/partner_means/partner_means/upload');
   }
   else {
     // yes //
-    res.redirect('/partner_means/partner_means/tlguidance')
+    res.redirect('/old/partner_means/partner_means/tlguidance')
   }
 })
 
 // Unsupported TL guidance
-router.post('/jim/tl_unsupported_banks/guidance', function (req, res) {
+router.post('/team_folders/jim/tl_unsupported_banks/guidance', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2519,14 +2544,14 @@ router.post('/jim/tl_unsupported_banks/guidance', function (req, res) {
   let over18 = req.session.data['onlinebank']
 
   if (over18 === 'no') {
-    res.redirect('/jim/tl_unsupported_banks/guidance')
+    res.redirect('/team_folders/jim/tl_unsupported_banks/guidance')
   } else {
-    res.redirect('/jim/tl_unsupported_banks/upload')
+    res.redirect('/team_folders/jim/tl_unsupported_banks/upload')
   }
 })
 
 // Enhanced bank upload - open banking consent
-router.post('/enhanced_bank_upload/online_banking_question', function (req, res) {
+router.post('/old/enhanced_bank_upload/online_banking_question', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2536,14 +2561,14 @@ router.post('/enhanced_bank_upload/online_banking_question', function (req, res)
   console.log(req.session.data['onlineBankingConsent'])
 
   if (consent === 'no') {
-    res.redirect('/enhanced_bank_upload/upload')
+    res.redirect('/old/enhanced_bank_upload/upload')
   } else {
-    res.redirect('/enhanced_bank_upload/tlguidance')
+    res.redirect('/old/enhanced_bank_upload/tlguidance')
   }
 })
 
 // Enhanced bank upload - does client receive benefits
-router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
+router.post('/old/enhanced_bank_upload/receives_benefits', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -2551,9 +2576,9 @@ router.post('/enhanced_bank_upload/receives_benefits', function (req, res) {
   let consent = req.session.data['benefits']
 
   if (consent === 'no') {
-    res.redirect('/enhanced_bank_upload/add_benefit_details')
+    res.redirect('/old/enhanced_bank_upload/add_benefit_details')
   } else {
-    res.redirect('/enhanced_bank_upload/upload')
+    res.redirect('/old/enhanced_bank_upload/upload')
   }
 })
 
@@ -2644,6 +2669,19 @@ router.post('/justin/merits/assessment_pos_or_neg', function (req, res) {
     res.redirect('/justin/merits/merits_tasklist_proceeding_1_details_added')
   }
 })
+//question 08
+// router.post('/justin/merits/specific_issue', function (req, res) {
+//
+//   let myvar = req.session.data['prospects_plf']
+//
+//   if (myvar === 'yes') {
+//     res.redirect('/justin/merits/specific_issue')
+//   } else {
+//     res.redirect('/justin/merits/prospects_plf_less_than_45')
+//   }
+// })
+
+
 
 // merits chances of success
 router.post('/merits/merits_tasklist_proceeding_1_details_added', function (req, res) {
