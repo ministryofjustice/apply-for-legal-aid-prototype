@@ -17,6 +17,7 @@ router.get('/', function (req, res) {
 })
 
 
+
 //MANDATORY DISREGARDS - CURRENT
 //client only
 router.post('/means_capital/client_only/add_mandatory_disregards_details', function (req, res) {
@@ -296,6 +297,31 @@ router.post('/justin/linking_cases_03/new_app_to_DWP/substantive_LOS_edit', func
     res.redirect('/justin/linking_cases_03/new_app_to_DWP/limitations')
   }
 })
+
+//delegated functions date over a month old
+router.post('/new_app_to_DWP/delegated_functions', function (req, res) {
+
+  let delegatedMonth = req.session.data['delegated_over_one_month']
+
+  if (delegatedMonth === 'yes') {
+    res.redirect('/new_app_to_DWP/emergency_default')
+  } else {
+    res.redirect('/new_app_to_DWP/delegated_functions')
+  }
+})
+
+//delegated functions date over a month old (non mol)
+router.post('/new_app_to_DWP/delegated_functions_Non_Mol', function (req, res) {
+
+  let delegatedMonth = req.session.data['delegated_over_one_month_non_mol']
+
+  if (delegatedMonth === 'yes') {
+    res.redirect('/new_app_to_DWP/emergency_default_Non_Mol')
+  } else {
+    res.redirect('/new_app_to_DWP/delegated_functions_Non_Mol')
+  }
+})
+
 
 // Using delegated functions?
 router.post('/justin/linking_cases_03/new_app_to_DWP/emergency_default', function (req, res) {
@@ -2370,6 +2396,21 @@ router.post('/new_app_to_DWP/emergency_default', function (req, res) {
   }
 })
 
+// Using delegated functions? (non mol)
+router.post('/new_app_to_DWP/emergency_default_non_mol', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let df = req.session.data['DF']
+
+  if (df === 'no') {
+    res.redirect('/new_app_to_DWP/substantive_default_non_mol')
+  } else {
+    res.redirect('/new_app_to_DWP/emergency_default_non_mol')
+  }
+})
+
 // Using emergency default?
 router.post('/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
   // Get the answer from session data
@@ -2387,6 +2428,23 @@ router.post('/new_app_to_DWP/emergency_LOS_edit', function (req, res) {
   }
 })
 
+// Using emergency default? (non mol)
+router.post('/new_app_to_DWP/substantive_default_non_mol', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let emergencyDefault = req.session.data['emergencydefault'];
+
+  console.log('emergencydefault = '+ req.session.data['emergencydefault'])
+
+  if (emergencyDefault === 'no') {
+    res.redirect('/new_app_to_DWP/emergency_LOS_edit_non_mol');
+  } else {
+    res.redirect('/new_app_to_DWP/substantive_default_non_mol')
+  }
+})
+
 // emergency which scopes to show
 router.post('/new_app_to_DWP/emergency_LOS_FHH_scope', function (req, res) {
   // Get the answer from session data
@@ -2397,10 +2455,10 @@ router.post('/new_app_to_DWP/emergency_LOS_FHH_scope', function (req, res) {
 
   console.log('emergencyLOS = '+ req.session.data['emergencyLOS'])
 
-  if (emergencyLOS === 'Family help higher') {
+  if (emergencyLOS === 'Family help (higher)') {
     res.redirect('/new_app_to_DWP/emergency_LOS_FHH_scope');
   } else {
-    res.redirect('/new_app_to_DWP/emergency_LOS_FR_scope')
+    res.redirect('/new_app_to_DWP/emergency_LOS_FR_scope_final_contested_hearing')
   }
 })
 
@@ -2432,7 +2490,7 @@ router.post('/new_app_to_DWP/substantive_LOS_FHH_scope', function (req, res) {
 
   console.log('substantiveLOS = '+ req.session.data['substantiveLOS'])
 
-  if (substantiveLOS === 'Family help higher') {
+  if (substantiveLOS === 'Family help (higher)') {
     res.redirect('/new_app_to_DWP/substantive_LOS_FHH_scope');
   } else {
     res.redirect('/new_app_to_DWP/substantive_LOS_FR_scope')

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Proceedings
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/proceedings.js"></script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What does your client want legal aid for?</h1>
+    </div>
+</div>
+
+<div id="search-field" class="govuk-form-group govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+        <label class="govuk-heading-m govuk-!-margin-bottom-0" for="proceeding-search-input">
+            Search for legal proceedings
+            <div class="govuk-hint govuk-!-margin-top-0 govuk-!-width-two-thirds">
+                Select one proceeding at a time. You can choose more later.
+                <span class="govuk-visually-hidden">Enter search term, results will automatically return</span>
+            </div>
+        </label>
+    </h2>
+
+    <div class="govuk-grid-row search-field govuk-!-margin-top-0">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-top-0">
+            <input class="govuk-input" id="proceeding-search-input" name="proceeding-search-input" type="text" autocomplete="off">
+        </div>
+
+        <div class="govuk-grid-column-one-third clear-search">
+            <p><a href="#" class="govuk-link govuk-!-font-size-19" id="clear-proceeding-search">Clear search</a></p>
+        </div>
+    </div>
+</div>
+
+<input id="exclude_codes"
+       class="hidden"
+       style="display: none;"
+       data-uri="https://legal-framework-api-staging.cloud-platform.service.justice.gov.uk"
+       value="">
+    <div class="govuk-grid-row govuk-!-margin-top-0">
+        <div id="proceeding-list" class="govuk-grid-column-two-thirds govuk-list govuk-!-margin-bottom-0">
+            {% for proceeding in proceedings -%}
+            <div id="{{ proceeding.ccms_code }}" class="govuk-grid-row proceeding-item" style="display: none">
+                <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label">
+                            <strong>{{ proceeding.meaning | capitalize }}</strong>
+                            <br>
+                            {{ proceeding.ccms_matter }} ({{ proceeding.ccms_category_law }})
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+    <div class="govuk-grid-row no-proceeding-items" style="display: none;">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-body">No results found</span>
+        </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-5">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-button-group">
+            <a class="govuk-button" href="housing_disrepair_interrupt" role="button">
+                Save and continue
+            </a>
+            <a role="button" class="govuk-button draft-button">
+                Save and come back later
+            </a>
+          </div>
+        </div>
+    </div>
+<div id="screen-reader-messages" class="govuk-visually-hidden" aria-live="polite" aria-atomic="true" role="alert"></div>
+{% endblock %}

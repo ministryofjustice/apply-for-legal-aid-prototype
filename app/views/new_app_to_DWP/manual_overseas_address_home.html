@@ -35,44 +35,56 @@ Apply for legal aid - Manual address
         </legend>
         <br>
 
-      {{ xGovukAutocomplete({
-        id: "country",
-        name: "country",
-        allowEmpty: false,
-        label: {
-          text: "Country",
-          classes: "govuk-label--m"
-        },
-          items: [
-            { text: "Austria" },
-            { text: "Belgium" },
-            { text: "Bulgaria" },
-            { text: "Croatia" },
-            { text: "Republic of Cyprus" },
-            { text: "Czech Republic" },
-            { text: "Denmark" },
-            { text: "Estonia" },
-            { text: "Finland" },
-            { text: "France" },
-            { text: "Germany" },
-            { text: "Greece" },
-            { text: "Hungary" },
-            { text: "Ireland" },
-            { text: "Italy" },
-            { text: "Latvia" },
-            { text: "Lithuania" },
-            { text: "Luxembourg" },
-            { text: "Malta" },
-            { text: "Netherlands" },
-            { text: "Poland" },
-            { text: "Portugal" },
-            { text: "Romania" },
-            { text: "Slovakia" },
-            { text: "Slovenia" },
-            { text: "Spain" },
-            { text: "Sweden" }
-          ]
-        }) }}
+        <div class="govuk-grid-row search-field">
+            <div class="govuk-grid-column-three-quarters">
+                {{ xGovukAutocomplete({
+                  id: "country",
+                  name: "country",
+                  allowEmpty: false,
+                  label: {
+                    text: "Country",
+                    classes: "govuk-label--m"
+                  },
+                    items: [
+                      { text: "Austria" },
+                      { text: "Belgium" },
+                      { text: "Bulgaria" },
+                      { text: "Croatia" },
+                      { text: "Republic of Cyprus" },
+                      { text: "Czech Republic" },
+                      { text: "Denmark" },
+                      { text: "Estonia" },
+                      { text: "Finland" },
+                      { text: "France" },
+                      { text: "Germany" },
+                      { text: "Greece" },
+                      { text: "Hungary" },
+                      { text: "Ireland" },
+                      { text: "Italy" },
+                      { text: "Latvia" },
+                      { text: "Lithuania" },
+                      { text: "Luxembourg" },
+                      { text: "Malta" },
+                      { text: "Netherlands" },
+                      { text: "Poland" },
+                      { text: "Portugal" },
+                      { text: "Romania" },
+                      { text: "Slovakia" },
+                      { text: "Slovenia" },
+                      { text: "Spain" },
+                      { text: "Sweden" }
+                    ]
+                  }) }}
+            </div>
+
+        <div class="govuk-grid-column-one-quarter govuk-!-margin-top-7 clear-search">
+            <p class="govuk-body">
+              <a href="#" class="govuk-link" id="clear-proceeding-search">Clear search</a>
+            </p>
+        </div>
+
+      </div>
+
 
         <label class="govuk-label govuk-label--m" for="example">
           Address
@@ -116,10 +128,10 @@ Apply for legal aid - Manual address
       <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
         Save and come back later
       </a>
-
+  </div>
     </form>
 
     </div>
-  </div>
+
 
 {% endblock %}

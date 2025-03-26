@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="" method="post" novalidate>
+
+          <h1 class="govuk-heading-xl">Damages summary</h1>
+
+      <div class="govuk-form-group">
+        <!-- <span class="govuk-caption-xl">Proceeding name</span> -->
+        <h2 class="govuk-label-wrapper">
+
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label" for="cost">
+                How much in damages does your client want to get?
+              </label>
+            </h1>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false">
+            </div>
+          </div>
+
+
+            <div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+      Explain how you came to this amount
+    </label>
+    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+  </div>
+
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label" for="cost">
+        What are the costs likely to be if the case goes to trial?
+      </label>
+    </h1>
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false">
+    </div>
+  </div>
+
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

@@ -54,7 +54,7 @@ Apply for legal aid - Proceedings
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th class="govuk-table__cell govuk-body" scope="row">
-            <h2 class="govuk-heading-m">Child arrangements order (contact)</h2>
+            <h2 class="govuk-heading-m">Child arrangements order (CAO) - contact</h2>
             <h3 class="govuk-heading-s">Client role:<span class="govuk-!-font-weight-regular"> Applicant, claimant or petitioner</span> </h3>
             <!--  <li class="govuk-caption-m proceeding__list-item">Family law</li>
             <li class="govuk-caption-m proceeding__list-item"> > Children (Section 8)</li>
@@ -62,20 +62,21 @@ Apply for legal aid - Proceedings
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Scope limits
+                  Scope limitations
                 </span>
               </summary>
               <div class="govuk-details__text">
                 <h2 class="govuk-heading-m">Emergency certificate</h2>
                 <p class="govuk-body">
                   <strong>Form of service:</strong> Family help (higher)<br><br>
-                  <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+                  <strong>Work you can do:</strong> Interim order including return date<br>
+                  Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
                 </p>
                 <h2 class="govuk-heading-m">Substantive certificate</h2>
                 <p class="govuk-body">
                   <strong>Form of service:</strong> Family help (higher)<br><br>
-                  <strong>Work you can do:</strong>
-                  Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.</p>
+                  <strong>Work you can do:</strong> FHH Children<br>
+                  Limited to Family help (higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.</p>
                 </div>
               </details>
             </th>
@@ -93,19 +94,20 @@ Apply for legal aid - Proceedings
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Scope limits
+                  Scope limitations
                 </span>
               </summary>
               <div class="govuk-details__text">
                 <h2 class="govuk-heading-m">Emergency certificate</h2>
                 <p class="govuk-body">
                   <strong>Form of service:</strong> Full representation<br><br>
-                  <strong>Work you can do:</strong> Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
+                  <strong>Work you can do:</strong> Counsel's opinion<br>
+                   Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.
                 </p>
                 <h2 class="govuk-heading-m">Substantive certificate</h2>
                 <p class="govuk-body">
                   <strong>Form of service:</strong> Full representation<br><br>
-                  <strong>Work you can do:</strong>
+                  <strong>Work you can do:</strong> Injunction FLA-to final hearing<br>
                   As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).</p>
                 </div>
               </details>
@@ -140,7 +142,7 @@ Apply for legal aid - Proceedings
         {% if (data['linkcase'] != "Family link") %}
           <h2 class="govuk-heading-m">Emergency certificate</h2>
 
-          <p class="govuk-body">The default emergency cost limit is <strong>£2,250</strong>.</p>
+          <p class="govuk-body">The default emergency cost limit is <strong>£2,250</strong></p>
 
           <details class="govuk-details">
   <summary class="govuk-details__summary">
@@ -149,13 +151,20 @@ Apply for legal aid - Proceedings
     </span>
   </summary>
   <div class="govuk-details__text">
-  You can request <strong>£1,125</strong> more for each application that will be family linked to this one.
+  You can request <strong>£1,125</strong> more for each application that will be family linked to this one
   </div>
 </details>
-
+<!--
           <h2 class="govuk-heading-s">Do you want to request a higher emergency cost limit?</h2>
 
-          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  How would you prefer to be contacted?
+                </h1>
+              </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-contacted-conditional-1" name="emergency" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-1">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
@@ -181,7 +190,6 @@ Apply for legal aid - Proceedings
               </div>
             </div>
 
-
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-contacted-conditional-2" name="emergency" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("attempts-to-settle","no") }}>
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
@@ -189,13 +197,62 @@ Apply for legal aid - Proceedings
               </label>
             </div>
           </div>
-          <br><br>
+</fieldset>
+</div> -->
 
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to request a higher emergency cost limit?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="emergency">
+            Enter a new emergency cost limit
+          </label>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false">
+          </div>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="policies-value">
+            Tell us why you need a higher emergency cost limit
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="statement" rows="5
+          " aria-describedby="more-detail-hint">{{ data['statement'] }}</textarea>
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <!-- <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+        </div> -->
+      </div>
+    </div>
+  </fieldset>
+</div>
 
-          <h2 class="govuk-heading-m">Substantive certificate</h2>
+<h2 class="govuk-heading-m">Substantive certificate</h2>
+<p class="govuk-body">The default substantive cost limit is <strong>£25,000</strong></p>
 
-
-          <p class="govuk-body">The default substantive cost limit is <strong>£25,000</strong>.</p>
 
           <!-- <h2 class="govuk-heading-s">Do you want to request a higher substantive cost limit?</h2>
 

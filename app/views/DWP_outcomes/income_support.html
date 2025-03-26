@@ -31,21 +31,22 @@ Apply for legal aid - Property and mortgage
             <fieldset class="govuk-fieldset govuk-!-padding-bottom-4">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Do you have evidence that your client gets Income Support?
+                  Do you have evidence that your client receives Income Support?
                 </h1>
               </legend>
 
-              <p class="govuk-body govuk-!-margin-top-2">For example, a letter from DWP or any other relevant documents.</p>
+              <p class="govuk-hint govuk-!-margin-top-2">For example, a letter from DWP or any other relevant documents.</p>
 
-              <div class="govuk-!-padding-bottom-4"></div>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="contrary-interest-1" name="contrary-interest" type="radio" value="yes" {{ checked("contrary-interest","yes") }}>
                   <label class="govuk-label govuk-radios__label" for="contrary-interest-1">
                     Yes
-                    <div class="govuk-hint">You'll need to upload supporting evidence later.</div>
                   </label>
+                  <div id="income_support_evidence" class="govuk-hint govuk-radios__hint">
+                    You'll need to upload supporting evidence later.
+                  </div>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="contrary-interest-2" name="contrary-interest" type="radio" value="no" {{ checked("contrary-interest","no") }}>

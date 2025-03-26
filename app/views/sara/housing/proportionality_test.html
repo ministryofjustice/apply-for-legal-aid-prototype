@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+
+          <label class="govuk-label govuk-label--xl" for="more-detail">
+            How do the likley benefits to the client justify the costs?
+          </label>
+        </h1>
+        <div id="national-insurance-number-hint" class="govuk-hint">
+    This is also known as the proportionality test.
+  </div>
+
+  <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is the proportionality test?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    The proportionality test checks if the costs of a case are fair compared to the value it brings.
+
+      It is judged by:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <br>
+      <li>how much money is at stake</li>
+      <li>value of non-monetary outcomes</li>
+      <li>wider factors, like public importance or reputation</li>
+      </ul>
+<br>
+      The test is met if:
+      <ul class="govuk-list govuk-list--bullet">
+        <br>
+      <li>for damage claims, the ratio of damages to costs is reasonable</li>
+      <li>for non-damage claims, the costs are fair in relation to how important or significant the outcome is</li>
+      </ul>
+<br>
+      If the case is not cost-effective, it considers:
+      <ul class="govuk-list govuk-list--bullet">
+        <br>
+      <li>the seriousness of the issues raised if they are significant enough to justify the costs</li>
+      <li>if someone would be willing or able to pay for the case themselves</li>
+      </ul>
+        </div>
+      </details>
+
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

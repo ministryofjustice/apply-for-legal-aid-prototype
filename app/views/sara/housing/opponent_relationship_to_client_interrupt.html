@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="flash-card">
+  <h1 class="govuk-heading-l">You can only choose a harassment proceeding if the opponent is the landlord
+</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <p class="govuk-body" style="color:white">This is because the proceedings must have been issued if your client is the claimant.</p> -->
+      <p class="govuk-body" style="color:white">You can do one of the following:</p>
+      <ul style="color:white" class="govuk-list govuk-list--bullet">
+        <li>go back and change your answer</li>
+        <li>if the opponent is an associated person, such as a partner, family member, or someone living in the same house, use a domestic abuse matter type proceeding under a family contract </li>
+        <li>if the opponent is someone else, apply in <a>CCMS</a>  using a nuisance matter type proceeding under a residual contract </li>
+      </ul>
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <a href="" role="button" class="govuk-button white-button right">
+        Remove the proceeding and select a new one</a>
+
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

@@ -25,13 +25,18 @@ Apply for legal aid - Correspondence address select
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Do you want to add a ‘care of’ recipient for your client’s mail?</h1>
 
     <form action="does_client_have_home_address" method="post" novalidate>
 
 
           <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add a ‘care of’ recipient for your client’s mail?
+            </h1>
+          </legend>
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
@@ -73,6 +78,9 @@ Apply for legal aid - Correspondence address select
                   <label class="govuk-label govuk-radios__label" for="careofrecipient-3">
                     No
                   </label>
+                  <div class="govuk-hint govuk-radios__hint">
+                    Correspondence will be addressed to the client
+                  </div>
                 </div>
 
                 </div>

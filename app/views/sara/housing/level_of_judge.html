@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Is this a second appeal
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What level of judge heard the original case?
+            </h1>
+          </legend>
+          <p class="govuk-hint">This question will help us decide if a specialist caseworker should review your application</p>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="level_of_judge-2" name="level_of_judge" type="radio" value="DDJ">
+              <label class="govuk-label govuk-radios__label" for="level_of_judge-2">
+                Deputy District Judge (DDJ)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="level_of_judge-3" name="level_of_judge" type="radio" value="DJ">
+              <label class="govuk-label govuk-radios__label" for="level_of_judge-3">
+                District Judge (DJ)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="level_of_judge-5" name="level_of_judge" type="radio" value="J" aria-describedby="judge-item-hint">
+              <label class="govuk-label govuk-radios__label" for="level_of_judge-5">
+                High Court Judge (J)
+              </label>
+            </fieldset>
+          </div>
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save and come back later
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    {% endblock %}

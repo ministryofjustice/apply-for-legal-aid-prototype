@@ -33,7 +33,7 @@ Apply for legal aid - Client details
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <span class="govuk-caption-xl">Proceeding 1 of 2</span>
             <h1 class="govuk-fieldset__heading">
-              Child arrangements order (contact)
+              Child arrangements order (CAO) - contact
             </h1>
           </legend>
           <h2 class="govuk-heading-m govuk-!-margin-top-1">For the emergency application, select the scope</h2>
@@ -82,7 +82,7 @@ Apply for legal aid - Client details
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                       <legend class="govuk-fieldset__legend govuk-body">
                         <h3 class="govuk-fieldset__heading">
-                          Enter the date
+                          When is the hearing?
                         </h3>
                       </legend>
                       <div id="passport-issued-hint" class="govuk-hint">
@@ -116,14 +116,55 @@ Apply for legal aid - Client details
                       </div>
                     </fieldset>
                   </div>
-
                 </div>
+
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="scope-7" name="scope" type="checkbox" value="Hearing/Adjournment">
+                  <input class="govuk-checkboxes__input" id="scope-7" name="scope" type="checkbox" value="Hearing/Adjournment" data-aria-controls="conditional-hearing-adjournment">
                   <label class="govuk-label govuk-checkboxes__label" for="scope-7">
                     Hearing/adjournment
                   </label>
                 </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-hearing-adjournment">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                      <legend class="govuk-fieldset__legend govuk-body">
+                        <h3 class="govuk-fieldset__heading">
+                          When is the hearing?
+                        </h3>
+                      </legend>
+                      <div id="passport-issued-hint" class="govuk-hint">
+                        For example, 27 3 2007.
+                      </div>
+                      <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="scope-8" name="scope" type="checkbox" value="Interim order including return date">
                   <label class="govuk-label govuk-checkboxes__label" for="scope-8">

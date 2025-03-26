@@ -27,7 +27,7 @@ Apply for legal aid - Other capital
   <div class="govuk-grid-column-two-thirds">
     <form action="student_loan" method="post" class="form">
 
-      <div class="govuk-form-group">
+      <!-- <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <span class="govuk-caption-xl">Client's means assessment</span>
@@ -36,9 +36,10 @@ Apply for legal aid - Other capital
             </h1>
           </legend>
 
-          <p class="govuk-hint">Select all that apply.</p>
+          <p class="govuk-hint">Select all that apply.</p> -->
 
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+          <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="antiques" type="checkbox" value="yes" data-aria-controls="conditional-citizenship-conditional-1" {{ checked("antiques","yes") }}>
               <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
@@ -288,12 +289,272 @@ Apply for legal aid - Other capital
                   <input class="govuk-checkboxes__input" id="citizenship-conditional-7" name="estates" type="checkbox" value="yes">
                   <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-7">
                     None of these
-                    <!-- I do not receive these payments in cash -->
+                    I do not receive these payments in cash
                   </label>
-                </div>
+                </div> -->
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                          <span class="govuk-caption-xl">Client's means assessment</span>
+                          <h1 class="govuk-fieldset__heading">
+                            Which of these payments does your client get?
+                          </h1>
+                        </legend>
+                        <div id="contact-hint" class="govuk-hint">
+                          Select all that apply.
+                        </div>
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-checkboxes__label" for="contact">
+                              Financial help from friends or family
+                              </label>
+                              <div id="contact-hint" class="govuk-hint govuk-checkboxes__hint">
+                                This includes any regular payments your client gets from their friends or family. Do not include one-off payments.</div>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                Enter amount
+                              </label>
+                              <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-radios" for="contact-by-email">
+                                Select frequency
+                              </label>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every week
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 2 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 4 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Monthly
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Total in last 3 months
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                              Maintenance payments from a former partner
+                            </label>
+                            <div id="contact-hint" class="govuk-hint govuk-checkboxes__hint">
+                              This includes child maintenance.</div>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                Enter amount
+                              </label>
+                              <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-radios" for="contact-by-email">
+                                Select frequency
+                              </label>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every week
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 2 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 4 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Monthly
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Total in last 3 months
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+                            <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                              Income from a property or lodger
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                Enter amount
+                              </label>
+                              <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-radios" for="contact-by-email">
+                                Select frequency
+                              </label>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every week
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 2 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 4 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Monthly
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Total in last 3 months
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="fax" data-aria-controls="conditional-contact-4">
+                            <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+                              Pension
+                            </label>
+                            <div id="contact-hint" class="govuk-hint govuk-checkboxes__hint">
+                              This includes State, workplace and personal pensions.</div>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-4">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                Enter amount
+                              </label>
+                              <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-radios" for="contact-by-email">
+                                Select frequency
+                              </label>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every week
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 2 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Every 4 weeks
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Monthly
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                  Total in last 3 months
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="govuk-checkboxes__divider">or</div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="countries-5" name="contact" type="checkbox" value="none" data-behaviour="exclusive">
+                            <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                              None of these
+                            </label>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </div>
+
 
               </div>
-            </fieldset>
           </div>
 
           <div class="govuk-button-group">
