@@ -1,4 +1,5 @@
 {
+  "name": "apply-for-legal-aid-prototype",
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
@@ -13,6 +14,7 @@
     "govuk-prototype-components": "^1.1.0",
     "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.0",
-    "notifications-node-client": "7.0.3"
+    "notifications-node-client": "7.0.3",
+    "axios": "^1.8.3"
   }
 }
