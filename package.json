@@ -8,7 +8,7 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@ministryofjustice/frontend": "^4.0.1",
+    "@ministryofjustice/frontend": "^5.1.0",
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "5.9.0",
     "govuk-prototype-components": "^1.1.0",
