@@ -12,4 +12,3 @@ node_modules
 npm-debug.log
 lib/extensions/_extensions.scss
 app/views/.DS_Store
-package-lock.json
