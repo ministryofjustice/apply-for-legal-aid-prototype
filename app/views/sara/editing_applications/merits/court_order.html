@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Alternative funding
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="statement" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a copy of the court order for this application?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Yes
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                We will ask you to upload a copy of the court order at the end of this application
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <a href="statement_02" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </a>
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and go to task list
+        </a>
+      </div>
+
+      <!-- <div class="govuk-!-margin-bottom-3"</div>
+
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+        <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+          Save and come back later
+        </a> -->
+
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}

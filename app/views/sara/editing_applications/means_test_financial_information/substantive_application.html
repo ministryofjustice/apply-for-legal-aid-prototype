@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Dependants
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "PROTOTYPE"
+  },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="online_banking_question" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to make a substantive application now?
+            </h1>
+          </legend>
+
+          <div>
+            <p class="govuk-body">You told us you've used delegated functions. You can make a substantive application now or come back and do it later.</p>
+          </div>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+
+              <input class="govuk-radios__input" id="substantive-now-1" name="substantive_now" type="radio" value="yes" data-aria-controls="conditional-substantive-now-1" {{ checked("substantive_now","yes") }}>
+              <label class="govuk-label govuk-radios__label" for="substantive-now-1">
+                Yes
+              </label>
+            </div>
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="substantive-now-2" name="substantive_now" type="radio" value="no" data-aria-controls="conditional-substantive-now-2" {{ checked("substantive_now","no") }}>
+              <label class="govuk-label govuk-radios__label" for="substantive-now-2">
+                No, I'll do it later
+              </label>
+
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <!-- <span class="govuk-warning-text__assistive">Warning</span> -->
+              You must submit a substantive application by 22 May 2023
+            </strong>
+          </div>
+
+          <div class="govuk-button-group">
+            <a href="online_banking_question" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </a>
+            <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save and go to task list
+            </a>
+          </div>
+
+          <!-- <div class="govuk-button-group">
+            <button type="submit" class="govuk-button">
+              Save and continue
+            </button>
+            <a role="button" class="govuk-button draft-button">
+              Save and come back later
+            </a>
+          </div> -->
+
+
+        </form>
+      </div>
+    </div>
+
+    {% endblock %}

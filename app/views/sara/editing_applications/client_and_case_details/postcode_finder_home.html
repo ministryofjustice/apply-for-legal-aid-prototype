@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Correspondence address lookup
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Find your client’s home address
+      </h1>
+    </legend>
+
+    <form action="postcode_select_home" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label govuk-label--m" for="example">
+          Postcode
+        </label>
+
+        <div id="postcode-hint" class="govuk-hint">
+          This must be a UK postcode, for example SW1A 2AA.
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcodeHome" type="text" value="{{ data['postcodeHome']}}">
+      </div>
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label govuk-label--m" for="example">
+          Building number or name (optional)
+        </label>
+
+        <div id="building-hint" class="govuk-hint">
+          For example, 15 or Prospect Cottage.
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="building" name="buildingHome" type="text" value="{{ data['buildingHome']}}">
+      </div>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+    If your client has applied for legal aid in the past with a different home address, you will also need to update their record in CCMS.
+      </strong>
+      </div>
+
+      <p>
+        <a class="govuk-link" href="manual_UK_address_home">Enter an address manually</a>
+      </p>
+
+      {% if (data['correspondenceUK'] != "UK_home_address") %}
+      <p>
+        <a class="govuk-link" href="manual_overseas_address_home">Enter a non-UK address</a>
+      </p>
+      {% endif %}
+      <br>
+
+      <div class="govuk-button-group">
+        <a href="postcode_select_home" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Find address
+        </a>
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and go to task list
+        </a>
+      </div>
+
+      <!-- <button type="submit" class="govuk-button">
+        Find address
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a> -->
+
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

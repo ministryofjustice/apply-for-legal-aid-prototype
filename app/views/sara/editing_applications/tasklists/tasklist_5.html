@@ -1,0 +1,356 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+Apply for legal aid - merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">Make an application</h1>
+
+    <p class="govuk-body"> Use this list to see your progress.</p>
+    <p class="govuk-body">You can go back and edit completed sections if they appear as links. More sections will become editable over time.</p>
+
+    <p class="govuk-body">Name: <b>John Doe</b>
+      <br>
+      Reference number: <b>L-IE3-NN7</b></p>
+
+      <div class="govuk-button-group">
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Continue from last save
+        </a>
+      </div>
+
+<div>
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span>Client and case details
+          <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+          </span>
+        </h2>
+        <ul class="app-task-list__items">
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                Client details
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+            <li class="govuk-task-list__item ">
+              <div class="govuk-task-list__name-and-hint">
+                  Link to another application
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                  Proceedings
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                  Partner details
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                  Check your answers
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                  DWP outcome
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                Completed
+              </div>
+            </li>
+              </ul>
+            </li>
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Means test
+            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            </span>
+          </h2>
+          <h3 class="govuk-heading-m govuk-!-padding-left-6">Financial information</h3>
+          <ul class="app-task-list__items">
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Employment income
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item ">
+                <div class="govuk-task-list__name-and-hint">
+                    Other income and outgoings
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Partner employment income
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Partner's other income and outgoings
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Housing Benefits
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Dependants
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item">
+                <div class="govuk-task-list__name-and-hint">
+                    Check your answers
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+                </ul>
+
+                <h3 class="govuk-heading-m govuk-!-padding-left-6">Capital and assets</h3>
+                <ul class="app-task-list__items">
+                    <li class="govuk-task-list__item ">
+                      <div class="govuk-task-list__name-and-hint">
+                          Personal assets
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+                    <li class="govuk-task-list__item">
+                      <div class="govuk-task-list__name-and-hint">
+                          Savings and investments
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+                    <li class="govuk-task-list__item">
+                      <div class="govuk-task-list__name-and-hint">
+                          Other assets and payments
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+                    <li class="govuk-task-list__item">
+                      <div class="govuk-task-list__name-and-hint">
+                          Check your answers
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+                      </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span>Merits
+            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            </span>
+          </h2>
+          <h3 class="govuk-heading-m govuk-!-padding-left-6">About this application</h3>
+          <ul class="app-task-list__items">
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                    Opponents
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                    Children involved in this application
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                    The court order
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                    Statement of case
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="application-details-1-status">
+                  Completed
+                </div>
+              </li>
+
+                </ul>
+                <h3 class="govuk-heading-m govuk-!-padding-left-6">About the proceedings</h3>
+                <h4 class="govuk-heading-m govuk-!-padding-left-6">A. Care order</h4>
+                <ul class="app-task-list__items">
+                    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                      <div class="govuk-task-list__name-and-hint">
+                        <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                          Children involved in this proceeding
+                        </a>
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+                    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                      <div class="govuk-task-list__name-and-hint">
+                        <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                          Chances of success
+                        </a>
+                      </div>
+                      <div class="govuk-task-list__status" id="application-details-1-status">
+                        Completed
+                      </div>
+                    </li>
+
+                  </ul>
+                  <h3 class="govuk-heading-m govuk-!-padding-left-6">Supporting evidence and review</h3>
+                  <ul class="app-task-list__items">
+                      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                        <div class="govuk-task-list__name-and-hint">
+                          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                            Upload evidence
+                          </a>
+                        </div>
+                        <div class="govuk-task-list__status" id="application-details-1-status">
+                          Completed
+                        </div>
+                      </li>
+                      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                        <div class="govuk-task-list__name-and-hint">
+                          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                            Check your answers
+                          </a>
+                        </div>
+                        <div class="govuk-task-list__status" id="application-details-1-status">
+                          Completed
+                        </div>
+                      </li>
+                      </ul>
+                    </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span>Confirm and submit
+            <span id="nationality-1-item-hint" class="govuk-hint" style="margin-bottom: 0px">
+            </span>
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+                  Confirm declaration and submit application
+                </a>
+              </div>
+              <div class="govuk-task-list__status" id="application-details-1-status">
+                <strong class="govuk-tag govuk-tag--blue">
+                  Not started
+                </strong>
+              </div>
+            </li>
+
+                </ul>
+              </li>
+
+    </ol>
+</div>
+
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+          Back to your applications
+        </a>
+
+    <!-- <a href="#" role="button" class="govuk-button">
+      Save and continue
+    </a>
+
+    <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+      Save and come back later
+    </a> -->
+
+
+  </div>
+</div>
+
+{% endblock %}

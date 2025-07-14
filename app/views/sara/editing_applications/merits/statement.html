@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Statement of case
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Statement of case</h1>
+
+    <form action="statement_02" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+
+          <p class="govuk-body">Your statement must include:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <!-- <li>the latest domestic abuse incident</li> -->
+            <li>what's happened in the case so far</li>
+            <li>if any other parties involved and their relationship to your client</li>
+            <li>why the proceedings are necessary</li>
+            <li>if anyone else might be able to fund the case</li>
+          </ul>
+
+        </label>
+      </div>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <!-- <span class="govuk-warning-text__assistive">Warning</span> -->
+          You must provide a complete statement now. You cannot do it later.
+        </strong>
+      </div>
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        How will you provide the statement of case?
+      </h1>
+    </legend>
+    <div id="waste-hint" class="govuk-hint">
+      Select all that apply
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Upload a statement
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Type a statement
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+  <a href="statement_02" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </a>
+  <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and go to task list
+  </a>
+</div>
+
+
+      <!-- <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+        Save and come back later
+      </a> -->
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

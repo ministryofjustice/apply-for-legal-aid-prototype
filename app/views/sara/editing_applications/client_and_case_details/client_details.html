@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Enter your client's details</h1>
+
+      <form action="NINO" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Name
+            </legend>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="firstname">
+                First name
+                </label>
+              <input class="govuk-input govuk-!-width-three-quarters" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="lastname">
+                Last name
+                </label>
+              <input class="govuk-input govuk-!-width-three-quarters" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Has your client ever changed their last name?
+              </h1>
+            </legend>
+              <div id="contact-hint" class="govuk-hint">
+                For example, through marriage or deed poll
+              </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lastnamebirth-yes" name="lastnamebirth" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="lastnamebirth-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="lastnamebirth-what">
+                        What was your client's last name at birth?
+                      </label>
+                      <div class="govuk-hint" id="lastnamebirth-what-hint">This lets us check for any records we have for your client under a previous last name.</div>
+                      <input class="govuk-input govuk-!-width-three-quarters" id="lastnamebirth-what" name="lastnamebirth-what" type="email" spellcheck="false" autocomplete="email">
+                    </div>
+                  </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lastnamebirth-no" name="lastnamebirth" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="lastnamebirth-no">
+                  No
+                </label>
+                </div>
+              </fieldset>
+            </div>
+
+
+
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Date of birth
+              </legend>
+              <span id="dob-hint" class="govuk-hint">
+                For example, 31 3 1980.
+              </span>
+              <div class="govuk-date-input" id="dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+          <div class="govuk-!-padding-bottom-2"></div>
+
+
+          <!-- <div class="govuk-form-group">
+            <button type="submit" class="govuk-button form-buttons">
+              Save and continue
+            </button>
+            <button role="button" class="govuk-button draft-button form-buttons">
+              Save and come back later
+            </button>
+          </div> -->
+
+          <div class="govuk-button-group">
+            <a href="NINO" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </a>
+            <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save and go to task list
+            </a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}

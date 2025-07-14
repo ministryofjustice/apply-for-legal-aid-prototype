@@ -1,0 +1,441 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key {
+  width: 40%;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl">Merits assessment</span>
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <h1 class="govuk-heading-l">
+      Case details
+    </h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Latest incident details</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When did your client contact you about the latest incident?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 Dec 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            When did the incident occur?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8 Dec 2022
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Opponents</h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Opponent 1
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Joe Bloggs<br>Individual
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key">
+          Opponent 2
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hertfordshire council<br>Local authority
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Mental capacity</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Do all parties have the mental capacity to understand the terms of a court order?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Tell us why you think the court would enforce a breach of an order
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque lacus sed laoreet faucibus.
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Domestic abuse summary</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Has a warning letter been sent to the opponent?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Tell us why a warning letter has not been sent
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque lacus sed laoreet faucibus.
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Have the police been notified?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Tell us what action they've taken (if any), including dates and the outcome
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque lacus sed laoreet faucibus.
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Have bail conditions been set?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Tell us what action they've taken (if any), including dates and the outcome
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque lacus sed laoreet faucibus.
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Children involved in this application</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Child 1
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Billy Doe</br>born 1 Jan 2013
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Child 2
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Doe</br>born 20 Mar 2015
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Statement of case</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        File names
+      </dt>
+      <dd class="govuk-summary-list__value">
+        filename.doc (XX.XX KB)</br>
+        filename_02.doc (XX.XX KB)
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Child arrangements order (contact)
+</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Children covered under this proceeding</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Which children are covered under this proceeding?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Billy Doe
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Attempts to settle</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Have attempts been made to settle the matter?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Details of correspondence or mediation
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus tristique risus, vel sodales dui ultrices vitae. Vestibulum dignissim libero vitae erat molestie, a pellentesque sapien bibendum. Maecenas ut lorem sapien. Mauris ac tellus eu enim posuere condimentum.
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Chances of success</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is the chance of a successful outcome 50% or better?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        What is the chance of a successful outcome?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Borderline
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        Details on the chance of a successful outcome
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus tristique risus, vel sodales dui ultrices vitae. Vestibulum dignissim libero vitae erat molestie, a pellentesque sapien bibendum. Maecenas ut lorem sapien. Mauris ac tellus eu enim posuere condimentum.
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Non-molestation order
+</h2>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Chances of success</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Is the chance of a successful outcome 50% or better?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Yes
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<h2 class="govuk-heading-l">
+  Supporting evidence
+</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Supporting evidence</h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+      <dt class="govuk-summary-list__key">
+        File names
+      </dt>
+      <dd class="govuk-summary-list__value">
+        filename.doc</br>
+        filename_02.doc
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+<div class="govuk-button-group">
+  <a href="tasklist_5" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </a>
+  <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and go to task list
+  </a>
+</div>
+
+<!-- <div class="govuk-button-group">
+  <a class="govuk-button" href="/sign_and_submit/confirm_the_following" role="button">
+    Save and continue
+  </a>
+  <a role="button" class="govuk-button draft-button">
+    Save and come back later
+  </a>
+</div> -->
+
+</div>
+</div>
+
+{% endblock %}

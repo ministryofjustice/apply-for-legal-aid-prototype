@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Does your client use online banking
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="where_send_correspondence" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Has your client applied for civil legal aid before?
+          </h1>
+        </legend>
+
+        <p class="govuk-hint">By this, we mean certificated and licensed work. You don't need to tell us about controlled work and family mediation.</p>
+        <p class="govuk-hint">We'll find any previous records to make sure any contributions we calculate are correct.</p>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="" name="applied_before" type="radio" value="yes" data-aria-controls="conditional-applied-before-yes">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-applied-before-yes">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="applied-before-yes">
+                Give the CCMS reference number for any previous application
+              </label>
+              <div class="govuk-hint" id="applied-before-hint">For example, 300001234567. This is on any letter from the LAA (Legal aid agency). </div>
+              <input class="govuk-input govuk-!-width-one-third" id="applied-before-yes" name="applied-before-yes" spellcheck="false" value="">
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="applied-before-no" name="applied_before" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="applied-before-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+          <a href="where_send_correspondence" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </a>
+          <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save and go to task list
+          </a>
+        </div>
+
+        <!-- <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+          <a role="button" class="govuk-button draft-button">
+            Save and come back later
+          </a>
+        </div> -->
+
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
