@@ -20,7 +20,8 @@
 {% from "govuk/components/tag/macro.njk"           import govukTag %}
 {% from "govuk/components/textarea/macro.njk"      import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"  import govukWarningText %}
-{% from "govuk/components/header/macro.njk"        import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
 {% set useValidation = false %}
 
 
@@ -32,34 +33,11 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-<!-- {%- from "moj/components/header/macro.njk" import mojHeader -%}
-
-{{ mojHeader({
-  organisationLabel: {
-    text: "Organisation name",
-    href: "#"
-  },
-  serviceLabel: {
-    text: "Service name",
-    href: "#"
-  },
-  navigation: {
-    label: "Account navigation",
-    items: [{
-      text: "Account name",
-      href: "#",
-      active: true
-    }, {
-      text: "Sign out",
-      href: "#"
-    }]
-  }
-}) }} -->
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  {{ govukHeader({
+  <!-- {{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
@@ -76,9 +54,9 @@
 
   ],
     containerClasses: "govuk-width-container"
-  }) }}
+  }) }} -->
 
-{% endblock %}
+
 
 {{ mojHeader({
   organisationLabel: {
@@ -101,6 +79,27 @@
     }]
   }
 }) }}
+
+{% endblock %}
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "#",
+      text: "Navigation item 1"
+    },
+    {
+      href: "#",
+      text: "Navigation item 2",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Navigation item 3"
+    }
+  ]
+}) }}
+
 
 {% if useAutoStoreData %}
   {% block footer %}
