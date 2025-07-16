@@ -23,6 +23,7 @@
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {%- from "moj/components/header/macro.njk" import mojHeader -%}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
+{% set govukRebrand = true %}
 {% set useValidation = false %}
 
 
@@ -41,12 +42,12 @@
 {{ mojHeader({
   organisationLabel: {
     text: "Legal aid agency",
-    href: "#"
+    href: "/index"
   },
   navigation: {
     label: "Account navigation",
     items: [{
-      text: "Account name",
+      text: "John Doe",
       href: "/sitewide_links/profile",
       active: true
     }, {
@@ -58,31 +59,13 @@
 {% block serviceNavigation %}
 
     {{ govukServiceNavigation({
-      serviceName: "Service name",
-      serviceUrl: "#"
+      serviceName: "Apply for civil legal aid",
+      serviceUrl: "/new_app_to_DWP/dashboard"
     }) }}
 
   {% endblock %}
 {% endblock %}
 
-
-{{ govukServiceNavigation({
-  navigation: [
-    {
-      href: "#",
-      text: "Navigation item 1"
-    },
-    {
-      href: "#",
-      text: "Navigation item 2",
-      active: true
-    },
-    {
-      href: "#",
-      text: "Navigation item 3"
-    }
-  ]
-}) }}
 
 
 {% if useAutoStoreData %}

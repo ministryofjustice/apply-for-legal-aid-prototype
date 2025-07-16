@@ -4,6 +4,24 @@
 Apply for legal aid - Your applications
 {% endblock %}
 
+{% block serviceNavigation %}
+    {{ govukServiceNavigation({
+      serviceName: "Apply for civil legal aid",
+      serviceUrl: "/new_app_to_DWP/dashboard",
+      navigation: [
+    {
+      href: "#",
+      text: "Your applications",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Search"
+    }
+  ]
+    }) }}
+  {% endblock %}
+
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
@@ -12,23 +30,6 @@ Apply for legal aid - Your applications
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
-<div class="moj-primary-navigation">
-  <div class="moj-primary-navigation__container">
-    <div class="moj-primary-navigation__nav">
-
-      <nav class="moj-primary-navigation" aria-label="Primary navigation">
-        <ul class="moj-primary-navigation__list">
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="dashboard">Your applications</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="#2">Search</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
 {% endblock %}
 
 {% block content %}
