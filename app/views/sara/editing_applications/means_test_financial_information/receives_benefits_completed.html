@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Property and mortgage
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="add_benefit_details_completed" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Client's means assessment</span>
+            <h1 class="govuk-fieldset__heading">
+              Does your client get any benefits, charitable or government payments?
+            </h1>
+          </legend>
+
+
+
+          <p class="govuk-body">
+            For example, Child Benefit or tax credits.
+          </p>
+
+          <p class="govuk-body">Do not include Housing Benefit, Government Cost of Living Payments, or any other disregarded benefits and payments.</p>
+
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What not to include
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+              <p class="govuk-heading-m">Government Cost of Living Payments</p>
+              <p>Government Cost of Living Payments are disregarded from the financial eligibility calculation, for example:</p>
+              <ul>
+                <li>Pensioner Cost of Living Payment </li>
+                <li>Cost of Living Payment</li>
+                <li>Disability Cost of Living Payment</li>
+                <li>Household support fund</li>
+                <li>Council tax rebate</li>
+                <li>Energy Bills Support Scheme (EBSS)</li>
+                <li>Payments for those who are not served by mains gas</li>
+              </ul>
+
+              <p class="govuk-heading-m">Disregarded benefits and payments</p>
+              <p>The following are disregarded from the financial eligibility calculation. They are known as mandatory disregards.</p>
+              <p class="govuk-body"><strong>Carer and disability</strong></p>
+              <ul>
+                <li>Attendance Allowance </li>
+                <li>Carer's Allowance</li>
+                <li>Community Care Direct Payments</li>
+                <li>Constant Attendance Allowance</li>
+                <li>Disability Living Allowance</li>
+                <li>Exceptionally Severe Disablement Allowance</li>
+                <li>Independent Living Fund</li>
+                <li>Payments on account of benefit</li>
+                <li>Personal Independence Payments (PIP)</li>
+                <li>Severe Disablement Allowance</li>
+                <li>Special Education Needs (SEN) Direct Payment</li>
+                <li>Welsh Independent Living Grant</li>
+              </ul>
+
+                <p class="govuk-body"><strong>Low income</strong>
+                <ul>
+                  <li>Budgeting Advance</li>
+                  <li>Housing Benefit</li>
+                  <li>Social Fund Funeral Payment</li>
+                  <li>Social Fund payments</li>
+                  <li>Universal Credit advance payments</li>
+                </ul>
+
+                  <p class="govuk-body"><strong>Other</strong><br>
+                    <li>Armed Forces Independence Payment</li>
+                    <li>Compensation for miscarriage of justice</li>
+                    <li>Foster Carers Allowance</li>
+                    <li>Grenfell Tower Resident's Discretionary Fund</li>
+                    <li>Grenfell Tower fire victims payments</li>
+                    <li>Infected Blood Support Scheme (includes Infected Blood Interim Compensation Payment Scheme,  Infected Blood Further Interim Compensation Payment Scheme, Infected Blood Compensation Scheme or earlier support schemes)</li>
+                    <li>Scotland and Northern Ireland Redress Schemes for historical child abuse </li>
+                    <li>Modern Slavery Victim Care Contract (MSVCC) payments</li>
+                    <li>War Pensions Scheme payments</li>
+                    <li>War Widow(er) Pension</li>
+                    <li>Windrush Compensation Scheme Payments</li>
+
+                  </div>
+                </details>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="benefitsyes" name="benefits" type="radio" value="yes" checked="yes">
+                    <label class="govuk-label govuk-radios__label" for="benefitsyes">
+                      Yes</label>
+
+
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="benefitsno" name="benefits" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="benefitsno">
+                        No</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-button-group">
+                  <a href="add_benefit_details_completed" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                  </a>
+                  <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Save and go to task list
+                  </a>
+                </div>
+
+                <!-- <div class="govuk-button-group">
+                  <button type="submit" class="govuk-button">
+                    Save and continue
+                  </button>
+                  <a role="button" class="govuk-button draft-button">
+                    Save and come back later
+                  </a>
+                </div> -->
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endblock %}
