@@ -11,7 +11,7 @@
     "@ministryofjustice/frontend": "^5.1.5",
     "@x-govuk/govuk-prototype-components": "^5.0.1",
     "accessible-autocomplete": "^3.0.1",
-    "axios": "^1.11.0",
+    "axios": "^1.12.1",
     "govuk-frontend": "^5.11.1",
     "govuk-prototype-kit": "13.18.0",
     "jquery": "3.7.1",
