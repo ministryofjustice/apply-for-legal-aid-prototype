@@ -44,12 +44,14 @@ $('#search').hideseek({
 
 <div id="search-field" class="govuk-form-group">
 
-  <label class="govuk-heading-m" for="search">
-    Search for legal proceedings
+
+  <label class="govuk-heading-m govuk-!-margin-bottom-0" for="search">
+      Search for legal proceedings
+      <div class="govuk-hint govuk-!-margin-top-0 govuk-!-width-two-thirds">
+          Select one proceeding at a time. You can choose more later.
+          <span class="govuk-visually-hidden">Enter search term, results will automatically return</span>
+      </div>
   </label>
-  <span class="govuk-hint">
-    Select one proceeding at a time. You can choose more later.
-  </span>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -79,24 +81,50 @@ $('#search').hideseek({
                 </div>
               </ul>
             </div>
-
-
           </div>
           {%- endfor %}
         </div>
       </div>
 
     </div>
-
   </div>
 
   <br>
-  <a class="govuk-button" href="other_3" role="button">
-    Save and continue
-  </a>
 
-  <a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
-    Save and come back later
-  </a>
+  <p>
+    <a class="govuk-link" href="other">See your chosen proceedings</a>
+  </p>
 
+      <details class="govuk-details govuk-grid-column-two-thirds">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Applying for multiple proceedings
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      You will only be shown the proceedings that you can select. Each proceeding can only be added once.
+      </div>
+    <div class="govuk-details__text">
+      Special children act proceedings should be added before related ones.
+    </div>
+    <div class="govuk-details__text">
+      For public law family, means-tested and non-means-tested proceedings cannot be combined.
+    </div>
+  </details>
+
+
+  <br>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-button-group">
+          <a class="govuk-button" href="other_3" role="button">
+              Save and continue
+          </a>
+          <a role="button" class="govuk-button draft-button">
+              Save and come back later
+          </a>
+        </div>
+      </div>
+  </div>
   {% endblock %}

@@ -9,7 +9,7 @@ Apply for legal aid
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
-    text: "alpha"
+    text: "prototype"
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
@@ -21,23 +21,35 @@ Apply for legal aid
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Apply for civil legal aid</h1>
-    <p class="govuk-body">Civil and family legal aid providers can use this service to apply for civil legal aid.</p>
+    <p class="govuk-body">Providers can use this service to apply for civil legal aid for their clients.</p>
 
-    <h2 class="govuk-heading-m">When not to use this service </h2>
-
-    <p class="govuk-body">Do not use this service if your client:</p>
+    <p class="govuk-body">You can use it for:</p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>is under 16 years old</li>
-      <li>self-employed</li>
-      <li>has a partner, unless the case is against the partner</li>
+      <li>domestic abuse, except DAPO (domestic abuse protection orders)</li>
+      <li>section 8</li>
+      <li>special children act</li>
+      <li>public law family</li>
     </ul>
 
-    <p class="govuk-body">You will need to apply using <a href="#"> CCMS (Client and Cost Management System)</a href="#"> instead.</p>
+    <p class="govuk-body">But do not use this service if:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the client is self-employed or is a member of the armed forces</li>
+      <li>you want to make an emergency application and delegated functions have not been used</li>
+      <li>you want to make both a family link and legal link to your application</li>
+      <li>you want to amend a submitted application</li>
+    </ul>
+
+    <p class="govuk-body">If any of these apply, or you want to apply for other proceedings, use <a href="#"> CCMS (Client and Cost Management System)</a href="#"> instead.</p>
+
+    <p class="govuk-body">Your progress is saved so that you can come back to it later.</p>
+
+    <p class="govuk-body">You can use this service every day from 7am to 9.30pm. You'll be signed out after one hour of inactivity or after 12 hours of being signed in.</p>
 
 
       <a href="account_number" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-        Start now
+        Start
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
         </svg></a>

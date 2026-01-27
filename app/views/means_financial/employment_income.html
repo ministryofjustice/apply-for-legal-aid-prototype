@@ -7,23 +7,12 @@
 Apply for legal aid - Review employment income- Apply for legal aid- GOV.UK
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Apply for legal aid",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
-      text: "PROTOTYPE"
+      text: "prototype"
     },
-    html: 'This is a prototype. Some things may not work as expected.'
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
   {{ govukBackLink({
@@ -53,7 +42,7 @@ Apply for legal aid - Review employment income- Apply for legal aid- GOV.UK
       </div>
     </div>
 
-    
+
     <span class="govuk-caption-xl">Client's means assessment</span>
     <h1 class="govuk-heading-xl">Review Sam Doe's employment income</h1>
 

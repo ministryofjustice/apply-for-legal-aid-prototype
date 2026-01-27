@@ -24,7 +24,28 @@ Apply for legal aid - Confirmation page
 
 {% block content %}
 
-<div class="flash-card">
+<div class="moj-interruption-card">
+  <div class="moj-interruption-card__content">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h1 class="moj-interruption-card__heading">You cannot choose a special children act proceeding if it has not been issued</h1>
+    <div class="moj-interruption-card__body" >
+      <p>You can do one of the following:</p>
+      <ul style="color:white" class="govuk-list govuk-list--bullet">
+        <li>remove the proceeding and select a new one</li>
+        <li>go back and change your answer</li>
+        <li>use legal help</li>
+      </ul>
+    </div>
+    <div class="govuk-button-group moj-interruption-card__actions">
+      <a href="search" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+        Remove the proceeding and select a new one
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="flash-card">
   <h1 class="govuk-heading-l">You cannot choose a special children act proceeding if it has not been issued</h1>
 
   <div class="govuk-grid-row">
@@ -42,6 +63,6 @@ Apply for legal aid - Confirmation page
 
       </div>
     </div>
-  </div>
+  </div> -->
 
   {% endblock %}

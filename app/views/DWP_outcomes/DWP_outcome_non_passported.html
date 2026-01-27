@@ -24,7 +24,22 @@ Apply for legal aid - DWP outcome
 
 {% block content %}
 
-<form action="/means_financial/client_means/means_start" method="post" class="form">
+<div class="moj-interruption-card">
+  <div class="moj-interruption-card__content">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h1 class="moj-interruption-card__heading">DWP records show that your client does not get a passporting benefit. Is this correct?</h1>
+    <div class="govuk-button-group moj-interruption-card__actions">
+      <a href="means_financial/links_means_financial_start" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+        Yes, continue
+      </a>
+      <a class="govuk-link govuk-link--inverse" href="#">This is not correct</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- <form action="/means_financial/client_means/means_start" method="post" class="form">
 
   <div class="flash-card govuk-!-margin-bottom-2">
 
@@ -80,10 +95,10 @@ Apply for legal aid - DWP outcome
     Save and come back later
   </a>
 
-  <!--<p><a href="joint_passporting_benefit" style="color: #555555;"> Alternative: If third option is selected</a></p> -->
+  <!--<p><a href="joint_passporting_benefit" style="color: #555555;"> Alternative: If third option is selected</a></p>
 
 
-</form>
+</form> -->
 
 
 {% endblock %}

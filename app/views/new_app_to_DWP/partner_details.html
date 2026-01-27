@@ -31,7 +31,8 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Name
+               </legend>
             <div class="govuk-form-group">
                 <label class="govuk-label" for="firstname">
                 First name
@@ -52,9 +53,8 @@ Apply for legal aid - Client details
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-              <label class="govuk-label" for="dob">
-              Date of birth
-              </label>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Date of birth
+                 </legend>
               <span id="dob-hint" class="govuk-hint">
                 For example, 31 3 1980.
               </span>
@@ -107,14 +107,13 @@ Apply for legal aid - Client details
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="nino-detail-conditional">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="national-insurance-number">
-                  National Insurance number
+                  Enter National Insurance number
                 </label>
-                <span id="national-insurance-number-hint" class="govuk-hint">
-                  For example, ‘QQ 12 34 56 C’.
-                </span>
-                <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['partner-nino'] }}">
+                <div class="govuk-hint" id="national-insurance-number-hint">For example, QQ 12 34 56 C</div>
+                    <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['partner-nino'] }}">
               </div>
             </div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="nino-2" name="nino" type="radio" value="no" {{ checked("nino","no") }}>
               <label class="govuk-label govuk-radios__label" for="nino-2">

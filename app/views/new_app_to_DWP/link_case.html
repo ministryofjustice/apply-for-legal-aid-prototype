@@ -25,17 +25,26 @@ Apply for legal aid - Client details
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
   <form action="search_link_case" method="post" novalidate>
+
+
+    <h1 class="govuk-heading-xl">
+      Linking cases
+    </h1>
+
+    <p class="govuk-body">You can link to another application you have already submitted using this service.</p>
+      <p class="govuk-body">A family link can be made if you are representing 2 or more family members in the proceedings. This makes sure that the cost limit is shown on one certificate only.</p>
+        <p class="govuk-body">A legal link can be made if your client is involved in more than one court case and needs to have multiple certificates.</p>
+          <p class="govuk-body">Linking to an application that’s already linked to another one will group them together.</p>
+<br>
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Do you want to link this application with another one?
           </h1>
         </legend>
-        <p class="govuk-hint">You can link to another application you’ve already submitted using this service. Linking to an application that’s already linked to another one will group them together.
-        </p>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="linkcase" name="linkcase" type="radio" value="Family link" aria-describedby="Yes_family_link-hint">
@@ -43,7 +52,7 @@ Apply for legal aid - Client details
               Yes, I want to make a family link
             </label>
             <div id="Yes_family_link-hint" class="govuk-hint govuk-radios__hint">
-              When LAA needs multiple certificates with a shared cost limitation. The cost limit will be on the certificate of the application you submit first.
+              A shared cost limit. is shown on the certificate of the application you submit first
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -52,7 +61,7 @@ Apply for legal aid - Client details
               Yes, I want to make a legal link
             </label>
             <div id="Yes_legal_link-hint" class="govuk-hint govuk-radios__hint">
-              When LAA needs multiple certificates, each with a separate cost limitation.
+              There will be a separate cost limit on each certificate
             </div>
           </div>
           <div class="govuk-radios__item">

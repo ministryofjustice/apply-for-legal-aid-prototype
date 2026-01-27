@@ -24,7 +24,7 @@ Apply for legal aid - Confirmation page
 
 {% block content %}
 
-<div class="flash-card">
+<!-- <div class="flash-card">
   <header>
     <h1 class="govuk-heading-l">You will have to do a full means test as part of this application. This is because you do not have a National Insurance number for your client</h1>
   </header>
@@ -44,7 +44,22 @@ Apply for legal aid - Confirmation page
 
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <div class="moj-interruption-card">
+      <div class="moj-interruption-card__content">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+        <h1 class="moj-interruption-card__heading">You will have to do a full means test as part of this application</h1>
+        <div class="moj-interruption-card__body" >
+          <p>This is because you do not have a National Insurance number for your client</p>
+        </div>
+        <div class="govuk-button-group moj-interruption-card__actions">
+          <a href="/means_financial/links_means_financial_start" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+            Continue
+          </a>
+        </div>
+      </div>
+    </div>
 
     {% endblock %}
