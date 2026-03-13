@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What type of prior authority are you applying for? - Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: { text: "PROTOTYPE" },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/prior-authority-router" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What type of prior authority are you applying for?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="expert-pa" name="type-pa" type="radio" value="expert" {{ checked("type-pa", "expert") }}>
+              <label class="govuk-label govuk-radios__label" for="expert-pa">
+                Expert
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="expense-pa" name="type-pa" type="radio" value="expense" {{ checked("type-pa", "expense") }}>
+              <label class="govuk-label govuk-radios__label" for="expense-pa">
+                Expense
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="counsel-pa" name="type-pa" type="radio" value="counsel" {{ checked("type-pa", "counsel") }}>
+              <label class="govuk-label govuk-radios__label" for="counsel-pa">
+                Counsel
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+
+    </form>
+    
+  </div>
+</div>
+{% endblock %}

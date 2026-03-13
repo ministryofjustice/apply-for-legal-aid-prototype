@@ -2776,3 +2776,24 @@ router.post('/new_app_to_DWP/partner_details', function (req, res) {
     res.redirect('/new_app_to_DWP/partner_details')
   }
 })
+
+
+// Route for 'What type of prior authority are you applying for?'
+router.post('/prior-authority-router', function (req, res) {
+
+  var paType = req.session.data['type-pa']
+
+  if (paType === 'expert') {
+    res.redirect('/team_folders/caner/pa_form/expert')
+  } 
+  else if (paType === 'expense') {
+    res.redirect('/team_folders/caner/pa_form/expense')
+  } 
+  else if (paType === 'counsel') {
+    res.redirect('/team_folders/caner/pa_form/counsel')
+  } 
+  else {
+    res.redirect('/team_folders/caner/pa_form/type_pa_error')
+  }
+
+})

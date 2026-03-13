@@ -17,7 +17,7 @@
 
 {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "dashboard_SCA_application_decided"
   }) }}
 
 {% endblock %}
@@ -48,7 +48,7 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Matter type</dt>
-        <dd class="govuk-summary-list__value">Special Children's Act</dd>
+        <dd class="govuk-summary-list__value">Special children act</dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -70,7 +70,7 @@
           <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link govuk-link--no-visited-state" href="#details">View full application details</a>
           </h2>
-          <p class="govuk-body card__description">Review the client's submitted information, financial details, and case info.</p>
+          <p class="govuk-body card__description">Review the client's submitted information, financial details, and case info</p>
         </div>
       </li>
 
@@ -79,16 +79,16 @@
           <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link govuk-link--no-visited-state" href="#history">View application history</a>
           </h2>
-          <p class="govuk-body card__description">See a timeline of past decisions, submissions, and case events.</p>
+          <p class="govuk-body card__description">See a timeline of past decisions, submissions, and case events</p>
         </div>
       </li>
       
       <li class="govuk-grid-column-one-half card-group__item">
         <div class="card card--clickable" data-test="sca-applications">
           <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Apply for prior authority</a>
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="../pa_form/start_page_pa">Apply for prior authority</a>
           </h2>
-          <p class="govuk-body card__description">Request permission for upcoming costs or expert services.</p>
+          <p class="govuk-body card__description">Request permission for expenses or to use experts</p>
         </div>
       </li>
       
@@ -97,7 +97,7 @@
           <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Make an amendment</a>
           </h2>
-          <p class="govuk-body card__description">Update application details or request changes to cost limits.</p>
+          <p class="govuk-body card__description">Add proceedings and scope limits or increase cost limitations</p>
         </div>
       </li>
 
@@ -106,7 +106,7 @@
           <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Transfer to another provider</a>
           </h2>
-          <p class="govuk-body card__description">Reassign this legal aid application to a different provider.</p>
+          <p class="govuk-body card__description">Tell us which provider a case is being moved to</p>
         </div>
       </li>
 
@@ -115,7 +115,7 @@
           <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Appeal</a>
           </h2>
-          <p class="govuk-body card__description">Submit an appeal against a recent Legal Aid Agency decision.</p>
+          <p class="govuk-body card__description">Ask for a decision to be reviewed and reconsidered</p>
         </div>
       </li>
 
@@ -128,7 +128,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     
-    <h2 class="govuk-heading-l govuk-!-margin-top-6">Status of additional requests</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-top-6" id="requests-section">Status of additional requests</h2>
 
     <nav class="moj-sub-navigation" aria-label="Requests sub navigation">
       <ul class="moj-sub-navigation__list">
@@ -142,10 +142,10 @@
           </a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="#submitted">Submitted</a>
+          <a class="moj-sub-navigation__link" href="manage_SCA_submitted#requests-section">Submitted</a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="#decided">Decided</a>
+          <a class="moj-sub-navigation__link" href="manage_SCA_decided#requests-section">Decided</a>
         </li>
       </ul>
     </nav>
@@ -162,7 +162,7 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><a href="#7">Prior Authority</a></td>
-          <td class="govuk-table__cell" data-sort-value="4897">Mediator</td>
+          <td class="govuk-table__cell" data-sort-value="4897">Handwriting expert</td>
           <td class="govuk-table__cell">17 February 2026</td>
           <td class="govuk-table__cell"><a href="#">Delete</a></td>
         </tr>

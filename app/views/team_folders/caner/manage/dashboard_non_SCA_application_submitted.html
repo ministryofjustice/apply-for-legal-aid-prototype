@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Apply for legal aid - Your applications
+{% endblock %}
+
+{% block serviceNavigation %}
+    {{ govukServiceNavigation({
+      serviceName: "Apply for civil legal aid",
+      serviceUrl: "/new_app_to_DWP/dashboard",
+      navigation: [
+    {
+      href: "dashboard_SCA_application_inprogress",
+      text: "Special children act applications"
+    },
+    {
+      href: "dashboard_non_SCA_application_inprogress",
+      text: "Other applications",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Search"
+    }
+  ]
+    }) }}
+  {% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Other applications</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="declaration_provider" class="govuk-button">
+      Make a new application
+    </a>
+
+  </div>
+
+</div>
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+
+    <li class="moj-sub-navigation__item">
+  <a class="moj-sub-navigation__link" href="dashboard_non_SCA_application_inprogress">
+    In progress
+    <span class="moj-notification-badge">
+      <span aria-hidden="true">3</span>
+      <span class="govuk-visually-hidden">3 items in progress</span>
+    </span>
+  </a>
+</li>
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="#1">Submitted</a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Start date</th>
+      <th scope="col" class="govuk-table__header"> Reference number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Certificate type</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#1">Catrin Smith</a></td>
+      <td class="govuk-table__cell" data-sort-value="6194">4 Sept 2024</td>
+      <td class="govuk-table__cell">L-AB2-CG5</td>
+      <td class="govuk-table__cell" data-sort-value="1913">Substantive</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a></td>
+   </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#2">Martin Jones</a></td>
+      <td class="govuk-table__cell" data-sort-value="6961">4 Sept 2024</td>
+      <td class="govuk-table__cell">L-AB1-CD2</td>
+      <td class="govuk-table__cell" data-sort-value="1897">Substantive</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#4">Gillian Kent</a></td>
+      <td class="govuk-table__cell" data-sort-value="8850">2 Sept 2024</td>
+      <td class="govuk-table__cell">L-UY1-UY1</td>
+      <td class="govuk-table__cell" data-sort-value="1953">Emergency</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#5">Dennis Clarke</a></td>
+      <td class="govuk-table__cell" data-sort-value="5895">2 Sept 2024</td>
+      <td class="govuk-table__cell">L-TR3-BG5</td>
+      <td class="govuk-table__cell" data-sort-value="1889">Emergency</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a></td>
+    </tr>
+
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#11">Stephen Johns</a></td>
+      <td class="govuk-table__cell" data-sort-value="4897">29 Aug 2024</td>
+      <td class="govuk-table__cell">L-RE5-ZA9</td>
+      <td class="govuk-table__cell" data-sort-value="1966">Emergency</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+        {% endblock %}

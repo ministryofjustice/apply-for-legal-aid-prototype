@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  Error: What type of prior authority are you applying for? - Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: { text: "PROTOTYPE" },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#expert-pa">Select the type of prior authority you are applying for</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <form action="/prior-authority-router" method="post" class="form">
+
+      <div class="govuk-form-group govuk-form-group--error">
+        
+        <fieldset class="govuk-fieldset" aria-describedby="type-pa-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What type of prior authority are you applying for?
+            </h1>
+          </legend>
+
+          <p id="type-pa-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select the type of prior authority you are applying for
+          </p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="expert-pa" name="type-pa" type="radio" value="expert" {{ checked("type-pa", "expert") }}>
+              <label class="govuk-label govuk-radios__label" for="expert-pa">
+                Expert
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="expense-pa" name="type-pa" type="radio" value="expense" {{ checked("type-pa", "expense") }}>
+              <label class="govuk-label govuk-radios__label" for="expense-pa">
+                Expense
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="counsel-pa" name="type-pa" type="radio" value="counsel" {{ checked("type-pa", "counsel") }}>
+              <label class="govuk-label govuk-radios__label" for="counsel-pa">
+                Counsel
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+
+    </form>
+    
+  </div>
+</div>
+{% endblock %}
