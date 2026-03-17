@@ -2800,7 +2800,7 @@ router.post('/prior-authority-router', function (req, res) {
 
 router.post('/check-upload-answers', function (req, res) {
   
-  // Grab the user's answers for ALL three files and the checkbox
+  // 1. Grab the user's answers for ALL three files and the checkbox
   const file1 = req.session.data['file1Category']
   const file2 = req.session.data['file2Category']
   const file3 = req.session.data['file3Category']
@@ -2808,13 +2808,25 @@ router.post('/check-upload-answers', function (req, res) {
 
   const isCheckboxTicked = confirmedCheckbox && confirmedCheckbox.includes('yes')
 
-  // Check if ANY of the categories are missing, OR if the checkbox is missed
+  // 2. THIS IS THE MAGIC: Look at what they chose on that very first radio button page
+  const selectedType = req.session.data['type-pa']
+
+  // 3. Run the upload validation check
   if (!file1 || !file2 || !file3 || !isCheckboxTicked) {
-    // FAILED: Send them back to the error page
+    // FAILED: Send them back to the upload error page
     res.redirect('/team_folders/caner/pa_form/upload_error')
   } else {
-    // PASSED: Send them to the real next page!
-    res.redirect('/team_folders/caner/pa_form/check_answers') 
+    // PASSED: Send them to the correct Check Answers page!
+    if (selectedType === 'expert') {
+      res.redirect('/team_folders/caner/pa_form/check_answers_expert')
+    } else if (selectedType === 'expense') {
+      res.redirect('/team_folders/caner/pa_form/check_answers_expense')
+    } else if (selectedType === 'counsel') {
+      res.redirect('/team_folders/caner/pa_form/check_answers_counsel')
+    } else {
+      // Fallback just in case testing data gets wiped
+      res.redirect('/team_folders/caner/pa_form/check_answers') 
+    }
   }
 })
 
@@ -2822,4 +2834,30 @@ router.post('/check-upload-answers', function (req, res) {
 router.post('/check-empty-upload', function (req, res) {
   // They haven't uploaded anything yet, so clicking save here is an instant error
   res.redirect('/team_folders/caner/pa_form/upload_empty_error')
+})
+
+
+
+
+// Routing for Expert Details page
+router.post('/expert-guideline-check', function (req, res) {
+  
+  // 1. Grab the answers from the two questions
+  const questionOne = req.session.data['questionOne']
+  const questionTwo = req.session.data['questionTwo']
+
+  // 2. Check the specific logic: If Q1 is 'No' AND Q2 is 'Yes'
+  if (questionOne === 'no' && questionTwo === 'yes') {
+    
+    // Condition met: Send to the interruption page (Page 1)
+    // IMPORTANT: Change 'page_1_filename' to your actual interruption page name
+    res.redirect('/team_folders/caner/pa_form/interrupt_expert')
+    
+  } else {
+    
+    // Otherwise (any other combination): Send to the normal next page (Page 2)
+    // IMPORTANT: Change 'page_2_filename' to your actual next page name
+    res.redirect('/team_folders/caner/pa_form/expert_details')
+    
+  }
 })
