@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What type of prior authority are you applying for? - Apply for legal aid
+  Search for the expense type - Apply for legal aid
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,41 +20,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/prior-authority-router" method="post" class="form">
+    <form action="/next-page-url" method="post" class="form">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              EXPENSE PAGE
-            </h1>
-          </legend>
+        
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="expense-list">
+            Search for the expense type
+          </label>
+        </h1>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="expert-pa" name="type-pa" type="radio" value="expert" {{ checked("type-pa", "expert") }}>
-              <label class="govuk-label govuk-radios__label" for="expert-pa">
-                Expert
-              </label>
-            </div>
+        <div id="expense-list-hint" class="govuk-hint">
+          Start typing to select an expense from the dropdown list or continue typing to enter manually.
+        </div>
+        
+        <div id="expense-autocomplete-container"></div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="expense-pa" name="type-pa" type="radio" value="expense" {{ checked("type-pa", "expense") }}>
-              <label class="govuk-label govuk-radios__label" for="expense-pa">
-                Expense
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="counsel-pa" name="type-pa" type="radio" value="counsel" {{ checked("type-pa", "counsel") }}>
-              <label class="govuk-label govuk-radios__label" for="counsel-pa">
-                Counsel
-              </label>
-            </div>
-
-          </div>
-        </fieldset>
       </div>
 
       <div class="govuk-button-group">
@@ -70,4 +51,121 @@
     
   </div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  
+  <style>
+    .my-custom-header {
+      font-weight: bold !important;
+      background-color: #f3f2f1 !important; 
+      color: #0b0c0c !important; 
+      border-bottom: 1px solid #b1b4b6 !important;
+      pointer-events: none !important; 
+      padding: 5px 5px 5px 10px !important;
+    }
+
+    ul.autocomplete__menu li.autocomplete__option:not(.my-custom-header) {
+      background-color: #ffffff !important;
+      color: #0b0c0c !important;
+    }
+
+    ul.autocomplete__menu li.autocomplete__option:not(.my-custom-header):hover,
+    ul.autocomplete__menu li.autocomplete__option--focused:not(.my-custom-header) {
+      background-color: #1d70b8 !important;
+      color: #ffffff !important;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    // CHANGED: The new array of expenses
+    var expenseOptions = [
+      "Accommodation expenses",
+      "Client's Travel Costs",
+      "Duplicate Bank Statements",
+      "Birth certificates",
+      "Blood tests",
+      "Other certificates (not birth)",
+      "Conciliation fees",
+      "Conference with counsel",
+      "Conference with experts & counsel",
+      "Conference with others",
+      "Conference by video",
+      "County court proceedings",
+      "Drugs rehabilitation report",
+      "DSS Employment History",
+      "Facial Mapping Expert",
+      "To make a Film/Video recording",
+      "High court proceedings",
+      "Matrimonial proceedings",
+      "Preparation/Attendance at Mediation",
+      "Meterologist",
+      "Mileage",
+      "Naval Consultant",
+      "Newspaper adverts",
+      "Oath fees",
+      "Provide an overview report",
+      "Photocopying charges",
+      "Photographs/plans",
+      "Police accident report",
+      "Second post-mortem",
+      "Prisoner Travel Costs",
+      "HM Land Registry Fee",
+      "Produce a report",
+      "MRi Scan",
+      "Search fees",
+      "Site visit by counsel",
+      "Sport Science and Technology Consultant",
+      "Subsistence expenses",
+      "Costs of therapy/training excluded.",
+      "Transcript produced on the day",
+      "Transcript produced after the event",
+      "Computer aided transcript",
+      "Travel expenses",
+      "Attend trial/give evidence"
+    ];
+
+    if (window.accessibleAutocomplete) {
+      accessibleAutocomplete({
+        element: document.querySelector('#expense-autocomplete-container'), // Updated selector
+        id: 'expense-list', // Updated ID
+        name: 'expense-choice', // Updated name for the Prototype Kit data
+        source: expenseOptions, // Feeds the new array
+        autoselect: false, 
+        displayMenu: 'overlay'
+      });
+    }
+
+    setTimeout(function() {
+      // Updated the selector to look for the new expense listbox ID
+      var menu = document.querySelector('#expense-list__listbox');
+      
+      if (menu) {
+        var observer = new MutationObserver(function(mutations) {
+          
+          var options = menu.querySelectorAll('.autocomplete__option:not(.my-custom-header):not(.autocomplete__option--no-results)');
+          var count = options.length;
+          var header = menu.querySelector('.my-custom-header');
+
+          if (count > 0) {
+            if (!header) {
+              header = document.createElement('li');
+              header.className = 'autocomplete__option my-custom-header';
+              header.setAttribute('aria-hidden', 'true'); 
+              
+              menu.insertBefore(header, menu.firstChild);
+            }
+            header.innerHTML = 'Suggestions (' + count + ')';
+          } 
+          else if (header) {
+            header.remove();
+          }
+        });
+
+        observer.observe(menu, { childList: true });
+      }
+    }, 500);
+  </script>
 {% endblock %}

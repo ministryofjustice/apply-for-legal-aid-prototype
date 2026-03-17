@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: { text: "prototype" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key {
+  width: 40%;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl">Prior authority</span>
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Expense details</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expense type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['expert-choice'] | default("Not provided") }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> expert type</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expense paid to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['rates-exceeded'] | default("Not provided") }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> rates exceeded</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason for expense
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {{ data['costs-split'] | default("Not provided") }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> split costs</span>
+              </a>
+            </dd>
+          </div>
+          
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Supporting documents</h2>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Uploaded files
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+              court_order_signed.pdf<br>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file1Category'] | default("Court order") }}</span><br><br>
+              
+              dr_smith_estimate.docx<br>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file2Category'] | default("Estimate of costs") }}</span><br><br>
+              
+              instruction_letter_v2.pdf<br>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file3Category'] | default("Letter of instruction") }}</span>
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="upload_ready">
+                Change<span class="govuk-visually-hidden"> supporting documents</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <form action="confirmation" method="post">
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Submit
+        </button>
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

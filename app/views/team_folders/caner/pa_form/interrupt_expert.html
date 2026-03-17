@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="flash-card">
+  <h1 class="govuk-heading-l">This is not a public law family matter</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-body" style="color:white">
+        This is because it does not relate to an application or order set out in schedule 1, part 1, paragraph 1 of LASPO.
+      </div>
+      <p class="govuk-body" style="color:white">You can do one of the following:</p>
+      <ul style="color:white" class="govuk-list govuk-list--bullet">
+        <li>select a different proceeding in this service or <a>use CCMS</a></li>
+        <li>go back and change your answer</li>
+      </ul>
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <a href="search" role="button" class="govuk-button white-button right">
+        Select a different proceeding</a>
+
+        </div>
+      </div>
+    </div> -->
+
+    <div class="moj-interruption-card">
+      <div class="moj-interruption-card__content">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+        <h1 class="moj-interruption-card__heading">You do not need to apply for prior authority</h1>
+        <div class="moj-interruption-card__body" >
+          <p>This is because the expert you’re instructing is working at or below the codified rate and within the guideline hours, with the cost shared equally between the parties.</p>
+          <p>You can justify these costs on assessment.</p>
+        </div>
+        <div class="govuk-button-group moj-interruption-card__actions">
+          <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+            Back to your applications
+          </a>
+          <a class="govuk-link govuk-link--inverse" href="#">Continue applying for prior authority</a>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}

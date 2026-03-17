@@ -29,6 +29,8 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  
+  <link rel="stylesheet" href="/public/autocomplete/accessible-autocomplete.min.css" />
 {% endblock %}
 
 {% block pageTitle %}
@@ -115,7 +117,9 @@
 {% block bodyEnd %}
   {% block scripts %}
     {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
+    {% block pageScripts %}
+  <script src="/public/autocomplete/accessible-autocomplete.min.js"></script>
+{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

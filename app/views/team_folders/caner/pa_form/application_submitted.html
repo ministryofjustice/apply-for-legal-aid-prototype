@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h2 class="govuk-panel__title">
+          Prior authority application submitted
+        </h2>
+        <div class="govuk-panel__body">
+          for
+          <br><strong>L-YU5-UY3</strong>
+        </div>
+      </div>
+
+      <div class="govuk-!-padding-top-4"></div>
+
+      <!--  <h3 class="govuk-heading-m">We've sent your client a secure link</h3>
+
+      <p class="govuk-body">Your client can use the link to start the financial assessment from home or another location.</p> -->
+
+      <p class="govuk-body">We've sent you a confirmation email.</p>
+
+      
+
+    
+
+
+
+    <h3 class="govuk-heading-m">What happens next</h3>
+
+    <p class="govuk-body">We can review this application if the client’s civil aid application has been granted.</p>
+    <p class="govuk-body">We’ll email you our decision and update your dashboard.</p>
+
+    <div class="govuk-inset-text">
+    <a href="feedback" class="govuk_link">Give feedback</a> to help us improve this service.</div>
+
+    <a href="#" role="button" class="govuk-button">
+      Manage your application
+    </a>
+
+    
+
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

@@ -2797,3 +2797,29 @@ router.post('/prior-authority-router', function (req, res) {
   }
 
 })
+
+router.post('/check-upload-answers', function (req, res) {
+  
+  // Grab the user's answers for ALL three files and the checkbox
+  const file1 = req.session.data['file1Category']
+  const file2 = req.session.data['file2Category']
+  const file3 = req.session.data['file3Category']
+  const confirmedCheckbox = req.session.data['allDocumentsUploaded']
+
+  const isCheckboxTicked = confirmedCheckbox && confirmedCheckbox.includes('yes')
+
+  // Check if ANY of the categories are missing, OR if the checkbox is missed
+  if (!file1 || !file2 || !file3 || !isCheckboxTicked) {
+    // FAILED: Send them back to the error page
+    res.redirect('/team_folders/caner/pa_form/upload_error')
+  } else {
+    // PASSED: Send them to the real next page!
+    res.redirect('/team_folders/caner/pa_form/check_answers') 
+  }
+})
+
+// Check when user clicks 'Save and continue' on the completely empty page
+router.post('/check-empty-upload', function (req, res) {
+  // They haven't uploaded anything yet, so clicking save here is an instant error
+  res.redirect('/team_folders/caner/pa_form/upload_empty_error')
+})

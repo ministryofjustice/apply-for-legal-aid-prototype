@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block pageTitle %}
-  What type of prior authority are you applying for? - Apply for legal aid
+Apply for legal aid - Client details
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
-    tag: { text: "PROTOTYPE" },
-    html: 'This is a prototype. Some things may not work as expected.'
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
   {{ govukBackLink({
@@ -17,57 +21,41 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    <form action="/prior-authority-router" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              COUNSEL PAGE
-            </h1>
-          </legend>
+      <form action="applied_before" method="post" novalidate>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="expert-pa" name="type-pa" type="radio" value="expert" {{ checked("type-pa", "expert") }}>
-              <label class="govuk-label govuk-radios__label" for="expert-pa">
-                Expert
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="expense-pa" name="type-pa" type="radio" value="expense" {{ checked("type-pa", "expense") }}>
-              <label class="govuk-label govuk-radios__label" for="expense-pa">
-                Expense
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="counsel-pa" name="type-pa" type="radio" value="counsel" {{ checked("type-pa", "counsel") }}>
-              <label class="govuk-label govuk-radios__label" for="counsel-pa">
-                Counsel
-              </label>
-            </div>
-
+        <div class="govuk-form-group">
+          
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="more-detail">
+              Why do you need counsel?
+            </label>
+          </h1>
+          
+          <div id="more-detail-hint" class="govuk-hint">
+            Briefly explain why you need counsel services
           </div>
-        </fieldset>
-      </div>
+          
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
 
-      <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Save and come back later
-        </button>
-      </div>
+        <div class="govuk-!-padding-bottom-2"></div>
 
-    </form>
-    
+        <div class="govuk-form-group">
+          <button type="submit" class="govuk-button form-buttons">
+            Save and continue
+          </button>
+          <button role="button" class="govuk-button draft-button form-buttons">
+            Save and come back later
+          </button>
+        </div>
+
+      </form>
+
+    </div>
   </div>
-</div>
+
 {% endblock %}

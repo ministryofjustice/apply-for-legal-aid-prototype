@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+Error: Apply for legal aid - Upload documents
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({ tag: { text: "prototype" }, html: 'This is a new service.' }) }}
+{{ govukBackLink({ text: "Back", href: "upload_empty" }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">There is a problem</h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#dropzone-form-group">You must upload a document to continue</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <form action="/check-empty-upload" method="post" class="form">
+
+      <h1 class="govuk-heading-xl">Upload supporting documents</h1>
+
+      <p class="govuk-body">Use this page to upload:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the court order</li>
+        <li>the letter of instruction</li>
+        <li>an estimate of costs with a breakdown of hours</li>
+        <li>alternative quotes</li>
+        <li>the other parties' certificate references</li>
+      </ul>
+
+      <div class="dropzone__upload govuk-!-margin-bottom-9">
+        <div class="govuk-form-group govuk-form-group--error script" id="dropzone-form-group">
+          <label class="govuk-label govuk-label--m">Upload files</label>
+          <div class="govuk-hint">The maximum file size for each file is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</div>
+          
+          <p id="file-upload-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must upload a document to continue
+          </p>
+          
+          <div class="dropzone dz-clickable" style="border: 2px dashed #d4351c; padding: 30px; text-align: center; background-color: #ffffff;">
+            <div class="dz-message">
+              <span class="govuk-body" style="display: inline-block; vertical-align: middle; margin-right: 10px; margin-bottom: 0;">Drag and drop files here or</span>
+              <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" style="vertical-align: middle;" onclick="window.location.href='upload_ready'">Choose files</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button">Save and continue</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
