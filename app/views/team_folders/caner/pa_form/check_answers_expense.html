@@ -46,10 +46,10 @@ Apply for legal aid - Check your answers - Merits
               Expense type
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['expert-choice'] | default("Not provided") }}
+              {{ data['expense-choice'] | default("Not provided") }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="expense">
                 Change<span class="govuk-visually-hidden"> expert type</span>
               </a>
             </dd>
@@ -62,7 +62,7 @@ Apply for legal aid - Check your answers - Merits
               {{ data['expenseProvider'] | default("Not provided") }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="expense_details">
                 Change<span class="govuk-visually-hidden"> rates exceeded</span>
               </a>
             </dd>
@@ -75,7 +75,7 @@ Apply for legal aid - Check your answers - Merits
                {{ data['expenseReason'] | default("Not provided") }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="expense_details">
                 Change<span class="govuk-visually-hidden"> split costs</span>
               </a>
             </dd>
