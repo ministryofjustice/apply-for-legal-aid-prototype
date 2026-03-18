@@ -62,16 +62,12 @@ Apply for legal aid - Client details
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="questionTwo-yes" name="questionTwo" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="questionTwo-yes">
-                  Yes
-                </label>
+                <input class="govuk-radios__input" id="questionTwo-yes" name="questionTwo" type="radio" value="yes" {{ checked("questionTwo", "yes") }}>
+                <label class="govuk-label govuk-radios__label" for="questionTwo-yes">Yes</label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="questionTwo-no" name="questionTwo" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="questionTwo-no">
-                  No
-                </label>
+                <input class="govuk-radios__input" id="questionTwo-no" name="questionTwo" type="radio" value="no" {{ checked("questionTwo", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="questionTwo-no">No</label>
               </div>
             </div>
           </fieldset>

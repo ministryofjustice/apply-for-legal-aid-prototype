@@ -59,7 +59,7 @@ Apply for legal aid - Check your answers - Merits
               Expense paid to
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['rates-exceeded'] | default("Not provided") }}
+              {{ data['expenseProvider'] | default("Not provided") }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -72,7 +72,7 @@ Apply for legal aid - Check your answers - Merits
               Reason for expense
             </dt>
             <dd class="govuk-summary-list__value">
-               {{ data['costs-split'] | default("Not provided") }}
+               {{ data['expenseReason'] | default("Not provided") }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -88,6 +88,13 @@ Apply for legal aid - Check your answers - Merits
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Supporting documents</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="upload_ready">
+              Change<span class="govuk-visually-hidden"> supporting documents</span>
+            </a>
+          </li>
+        </ul>
       </div>
 
       <div class="govuk-summary-card__content">
@@ -108,12 +115,7 @@ Apply for legal aid - Check your answers - Merits
               <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file3Category'] | default("Letter of instruction") }}</span>
               
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="upload_ready">
-                Change<span class="govuk-visually-hidden"> supporting documents</span>
-              </a>
-            </dd>
-          </div>
+            </div>
         </dl>
       </div>
     </div>

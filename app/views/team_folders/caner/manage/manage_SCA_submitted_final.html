@@ -171,7 +171,7 @@
               {{ data['expert-choice'] | default('Expert') }}
               
             {% elif data['type-pa'] == 'expense' %}
-              {{ data['expense-type'] | default('Expense') }}
+              {{ data['expense-choice'] | default('Expense') }}
               
             {% elif data['type-pa'] == 'counsel' %}
               {{ data['counsel-type'] | default('Counsel') }}

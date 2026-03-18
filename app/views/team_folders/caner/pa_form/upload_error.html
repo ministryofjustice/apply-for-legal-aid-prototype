@@ -15,26 +15,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% set missingCategory = not data['file1Category'] or not data['file2Category'] or not data['file3Category'] %}
+
     <div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
         <h2 class="govuk-error-summary__title">There is a problem</h2>
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             
-            {% if not data['file1Category'] %}
-            <li><a href="#file-1-category">Select a category for court_order_signed.pdf</a></li>
-            {% endif %}
-
-            {% if not data['file2Category'] %}
-            <li><a href="#file-2-category">Select a category for dr_smith_estimate.docx</a></li>
-            {% endif %}
-
-            {% if not data['file3Category'] %}
-            <li><a href="#file-3-category">Select a category for instruction_letter_v2.pdf</a></li>
+            {% if missingCategory %}
+            <li>
+              <a href="#category-error">Select a category for each uploaded file</a>
+            </li>
             {% endif %}
 
             {% if not data['allDocumentsUploaded'] %}
-            <li><a href="#all-documents-uploaded">Select to confirm you have uploaded all the documents in the list</a></li>
+            <li>
+              <a href="#all-documents-uploaded">Select to confirm you have uploaded all the documents in the list</a>
+            </li>
             {% endif %}
 
           </ul>
@@ -45,9 +43,19 @@
     <form action="/check-upload-answers" method="post" class="form">
       <h1 class="govuk-heading-xl">Upload supporting documents</h1>
 
+      <p class="govuk-body">Use this page to upload:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the court order</li>
+        <li>the letter of instruction</li>
+        <li>an estimate of costs with a breakdown of hours</li>
+        <li>alternative quotes</li>
+        <li>the other parties' certificate references</li>
+      </ul>
+
       <div class="dropzone__upload govuk-!-margin-bottom-9">
         <div class="govuk-form-group script" id="dropzone-form-group">
           <label class="govuk-label govuk-label--m">Upload files</label>
+          <div class="govuk-hint">The maximum file size for each file is 7MB. Files must be a DOC, DOCX, RTF, ODT, JPG, BMP, PNG, TIF or PDF.</div>
           <div class="dropzone dz-clickable" style="border: 2px dashed #b1b4b6; padding: 30px; text-align: center;">
             <div class="dz-message">
               <span class="govuk-body" style="display: inline-block; vertical-align: middle; margin-right: 10px; margin-bottom: 0;">Drag and drop files here or</span>
@@ -57,63 +65,73 @@
         </div>
       </div>
 
-      <h2 class="govuk-heading-m">Uploaded files</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      {% set missingCategory = not data['file1Category'] or not data['file2Category'] or not data['file3Category'] %}
+      
+      <div class="govuk-form-group {% if missingCategory %}govuk-form-group--error{% endif %}">
         
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">File name</dt>
-          <dt class="govuk-summary-list__key">Category</dt>
-          <dd class="govuk-summary-list__actions govuk-!-font-weight-bold">Action</dd>
-        </div>
+        <h2 class="govuk-heading-m">Uploaded files</h2>
+        
+        {% if missingCategory %}
+        <p id="category-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select a category for each uploaded file
+        </p>
+        {% endif %}
 
-        <div class="govuk-summary-list__row {% if not data['file1Category'] %}govuk-form-group--error{% endif %}">
-          <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">court_order_signed.pdf</a></dt>
-          <dd class="govuk-summary-list__value">
-            {% if not data['file1Category'] %}
-            <p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select a category</p>
-            {% endif %}
-            <select class="govuk-select {% if not data['file1Category'] %}govuk-select--error{% endif %}" id="file-1-category" name="file1Category">
-              <option value="" disabled {% if not data['file1Category'] %}selected{% endif %}>Select a category</option>
-              <option value="court-order" {% if data['file1Category'] == 'court-order' %}selected{% endif %}>Court order</option>
-              <option value="letter-of-instruction" {% if data['file1Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
-              <option value="estimate-of-costs" {% if data['file1Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
-            </select>
-          </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
-        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">File name</dt>
+            <dt class="govuk-summary-list__key">Category</dt>
+            <dd class="govuk-summary-list__actions govuk-!-font-weight-bold">Action</dd>
+          </div>
 
-        <div class="govuk-summary-list__row {% if not data['file2Category'] %}govuk-form-group--error{% endif %}">
-          <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">dr_smith_estimate.docx</a></dt>
-          <dd class="govuk-summary-list__value">
-            {% if not data['file2Category'] %}
-            <p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select a category</p>
-            {% endif %}
-            <select class="govuk-select {% if not data['file2Category'] %}govuk-select--error{% endif %}" id="file-2-category" name="file2Category">
-              <option value="" disabled {% if not data['file2Category'] %}selected{% endif %}>Select a category</option>
-              <option value="court-order" {% if data['file2Category'] == 'court-order' %}selected{% endif %}>Court order</option>
-              <option value="letter-of-instruction" {% if data['file2Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
-              <option value="estimate-of-costs" {% if data['file2Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
-            </select>
-          </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">court_order_signed.pdf</a></dt>
+            <dd class="govuk-summary-list__value">
+              <select class="govuk-select {% if not data['file1Category'] %}govuk-select--error{% endif %}" id="file-1-category" name="file1Category">
+                <option value="" disabled {% if not data['file1Category'] %}selected{% endif %}>Select a category</option>
+                <option value="court-order" {% if data['file1Category'] == 'court-order' %}selected{% endif %}>Court order</option>
+                <option value="letter-of-instruction" {% if data['file1Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
+                <option value="estimate-of-costs" {% if data['file1Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
+                <option value="alternative-quote" {% if data['file1Category'] == 'alternative-quote' %}selected{% endif %}>Alternative quote</option>
+                <option value="other-parties-certificate-reference" {% if data['file1Category'] == 'other-parties-certificate-reference' %}selected{% endif %}>Other parties' certificate reference</option>
+              </select>
+            </dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
+          </div>
 
-        <div class="govuk-summary-list__row {% if not data['file3Category'] %}govuk-form-group--error{% endif %}">
-          <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">instruction_letter_v2.pdf</a></dt>
-          <dd class="govuk-summary-list__value">
-            {% if not data['file3Category'] %}
-            <p class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select a category</p>
-            {% endif %}
-            <select class="govuk-select {% if not data['file3Category'] %}govuk-select--error{% endif %}" id="file-3-category" name="file3Category">
-              <option value="" disabled {% if not data['file3Category'] %}selected{% endif %}>Select a category</option>
-              <option value="court-order" {% if data['file3Category'] == 'court-order' %}selected{% endif %}>Court order</option>
-              <option value="letter-of-instruction" {% if data['file3Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
-              <option value="estimate-of-costs" {% if data['file3Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
-            </select>
-          </dd>
-          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
-        </div>
-      </dl>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">dr_smith_estimate.docx</a></dt>
+            <dd class="govuk-summary-list__value">
+              <select class="govuk-select {% if not data['file2Category'] %}govuk-select--error{% endif %}" id="file-2-category" name="file2Category">
+                <option value="" disabled {% if not data['file2Category'] %}selected{% endif %}>Select a category</option>
+                <option value="court-order" {% if data['file2Category'] == 'court-order' %}selected{% endif %}>Court order</option>
+                <option value="letter-of-instruction" {% if data['file2Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
+                <option value="estimate-of-costs" {% if data['file2Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
+                <option value="alternative-quote" {% if data['file2Category'] == 'alternative-quote' %}selected{% endif %}>Alternative quote</option>
+                <option value="other-parties-certificate-reference" {% if data['file2Category'] == 'other-parties-certificate-reference' %}selected{% endif %}>Other parties' certificate reference</option>
+              </select>
+            </dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><a class="govuk-link" href="#">instruction_letter_v2.pdf</a></dt>
+            <dd class="govuk-summary-list__value">
+              <select class="govuk-select {% if not data['file3Category'] %}govuk-select--error{% endif %}" id="file-3-category" name="file3Category">
+                <option value="" disabled {% if not data['file3Category'] %}selected{% endif %}>Select a category</option>
+                <option value="court-order" {% if data['file3Category'] == 'court-order' %}selected{% endif %}>Court order</option>
+                <option value="letter-of-instruction" {% if data['file3Category'] == 'letter-of-instruction' %}selected{% endif %}>Letter of instruction</option>
+                <option value="estimate-of-costs" {% if data['file3Category'] == 'estimate-of-costs' %}selected{% endif %}>Estimate of costs</option>
+                <option value="alternative-quote" {% if data['file3Category'] == 'alternative-quote' %}selected{% endif %}>Alternative quote</option>
+                <option value="other-parties-certificate-reference" {% if data['file3Category'] == 'other-parties-certificate-reference' %}selected{% endif %}>Other parties' certificate reference</option>
+              </select>
+            </dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Delete</a></dd>
+          </div>
+
+        </dl>
+      </div>
 
       <div class="govuk-form-group {% if not data['allDocumentsUploaded'] %}govuk-form-group--error{% endif %}">
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">

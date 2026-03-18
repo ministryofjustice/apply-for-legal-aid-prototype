@@ -3,7 +3,7 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block pageTitle %}
-Apply for legal aid - Client details
+Apply for legal aid - Counsel details
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,30 +25,68 @@ Apply for legal aid - Client details
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-xl">Counsel</span>
+
       <form action="upload_empty" method="post" novalidate>
 
         <div class="govuk-form-group">
-          
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--xl" for="more-detail">
-              Why do you need counsel?
-            </label>
-          </h1>
-          
-          <div id="more-detail-hint" class="govuk-hint">
-            Briefly explain why you need counsel services
-          </div>
-          
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Which counsel is needed?
+              </h1>
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="counsel-type-1" name="counsel-type" type="radio" value="Two Counsel" aria-describedby="counsel-type-1-hint" {{ checked("counsel-type", "Two Counsel") }}>
+                <label class="govuk-label govuk-radios__label" for="counsel-type-1">
+                  Two Counsel
+                </label>
+                <div id="counsel-type-1-hint" class="govuk-hint govuk-radios__hint">
+                  Two barristers acting together
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="counsel-type-2" name="counsel-type" type="radio" value="King's Counsel" aria-describedby="counsel-type-2-hint" {{ checked("counsel-type", "King's Counsel") }}>
+                <label class="govuk-label govuk-radios__label" for="counsel-type-2">
+                  King's Counsel
+                </label>
+                <div id="counsel-type-2-hint" class="govuk-hint govuk-radios__hint">
+                  A senior specialist barrister
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="counsel-type-3" name="counsel-type" type="radio" value="King's Counsel with Junior Counsel" aria-describedby="counsel-type-3-hint" {{ checked("counsel-type", "King's Counsel with Junior Counsel") }}>
+                <label class="govuk-label govuk-radios__label" for="counsel-type-3">
+                  King's Counsel with Junior Counsel
+                </label>
+                <div id="counsel-type-3-hint" class="govuk-hint govuk-radios__hint">
+                  A senior specialist barrister supported by a junior barrister
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
         </div>
 
-        <div class="govuk-!-padding-bottom-2"></div>
-
         <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="counsel-reason">
+              Explain why this is needed and justify the cost
+            </label>
+          </h1>
+          <textarea class="govuk-textarea" id="counsel-reason" name="counsel-reason" rows="5">{{ data['counsel-reason'] }}</textarea>
+        </div>
+
+        <div class="govuk-button-group govuk-!-margin-top-6">
           <button type="submit" class="govuk-button form-buttons">
             Save and continue
           </button>
-          <button role="button" class="govuk-button draft-button form-buttons">
+          <button type="button" class="govuk-button govuk-button--secondary draft-button form-buttons">
             Save and come back later
           </button>
         </div>
