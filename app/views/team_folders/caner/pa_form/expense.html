@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: { text: "PROTOTYPE" },
-    html: 'This is a prototype. Some things may not work as expected.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -31,7 +31,7 @@
         </h1>
 
         <div id="expense-list-hint" class="govuk-hint">
-          Start typing to select an expense from the dropdown list or continue typing to enter manually.
+          Type to choose from the list or enter your own
         </div>
         
         <div id="expense-autocomplete-container"></div>
@@ -42,7 +42,7 @@
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Save and come back later
         </button>
       </div>

@@ -8,12 +8,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
 {{ govukBackLink({
     text: "Back",
@@ -68,9 +66,9 @@
       <li class="govuk-grid-column-one-half card-group__item">
         <div class="card card--clickable" data-test="card-five">
           <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link govuk-link--no-visited-state" href="#details">View full application details</a>
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#details">View full application</a>
           </h2>
-          <p class="govuk-body card__description">Review the client's submitted information, financial details, and case info</p>
+          <p class="govuk-body card__description">Review the information that was submitted for your client.</p>
         </div>
       </li>
 

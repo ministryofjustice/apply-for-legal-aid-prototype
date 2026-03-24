@@ -28,15 +28,13 @@ Apply for legal aid - Your applications
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
 }) }}
 
 {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "apply_sca_and_other"
   }) }}
 
 
@@ -101,7 +99,7 @@ Apply for legal aid - Your applications
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
       <th scope="col" class="govuk-table__header" aria-sort="ascending">Start date</th>
-      <th scope="col" class="govuk-table__header"> Reference number</th>
+      <th scope="col" class="govuk-table__header">LAA reference</th>
       <th scope="col" class="govuk-table__header"> Action</th>
     </tr>
   </thead>

@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: { text: "PROTOTYPE" },
-    html: 'This is a prototype. Some things may not work as expected.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -30,7 +30,7 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#expert-pa">Select the type of prior authority you are applying for</a>
+              <a href="#expert-pa">Select the type of prior authority you're applying for</a>
             </li>
           </ul>
         </div>
@@ -49,7 +49,7 @@
           </legend>
 
           <p id="type-pa-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select the type of prior authority you are applying for
+            <span class="govuk-visually-hidden">Error:</span> Select the type of prior authority you're applying for
           </p>
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -83,7 +83,7 @@
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Save and come back later
         </button>
       </div>

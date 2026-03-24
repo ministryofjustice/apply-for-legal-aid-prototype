@@ -7,8 +7,14 @@ Error: Apply for legal aid - Upload documents
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({ tag: { text: "prototype" }, html: 'This is a new service.' }) }}
-{{ govukBackLink({ text: "Back", href: "upload_empty" }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -60,7 +66,12 @@ Error: Apply for legal aid - Upload documents
       </div>
 
       <div class="govuk-button-group">
-        <button type="submit" class="govuk-button">Save and continue</button>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and come back later
+        </button>
       </div>
 
     </form>

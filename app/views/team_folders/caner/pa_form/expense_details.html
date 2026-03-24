@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: { text: "prototype" },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -31,10 +31,10 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="expense-provider">
-            Who was this expense paid to?
+            Organisation providing the service
           </label>
           <div id="expense-provider-hint" class="govuk-hint">
-            For example, the name of the agency, hotel, transport provider, or clinic
+            For example, an agency, hotel, transport provider, or clinic
           </div>
           <input class="govuk-input" id="expense-provider" name="expenseProvider" type="text" aria-describedby="expense-provider-hint">
         </div>
@@ -43,6 +43,9 @@
           <label class="govuk-label govuk-label--m" for="expense-reason">
             Why is this expense needed?
           </label>
+          <div id="expense-provider-justification-hint" class="govuk-hint">
+            Briefly explain what it’s for and justify the cost
+          </div>
           <textarea class="govuk-textarea" id="expense-reason" name="expenseReason" rows="5" aria-describedby="expense-reason-hint"></textarea>
         </div>
 
@@ -50,7 +53,7 @@
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Save and come back later
           </button>
         </div>

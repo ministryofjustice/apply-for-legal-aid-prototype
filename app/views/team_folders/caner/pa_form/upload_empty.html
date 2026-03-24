@@ -8,10 +8,8 @@ Apply for legal aid - Upload documents
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
 }) }}
 
 {{ govukBackLink({
@@ -68,7 +66,7 @@ Apply for legal aid - Upload documents
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Save and come back later
         </button>
       </div>

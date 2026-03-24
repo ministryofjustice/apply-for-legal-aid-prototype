@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+View application details - Prior authority
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">
+      Prior authority application
+    </h1>
+
+    <a href="#" role="button" class="govuk-button govuk-button--secondary">
+      Print application
+    </a>
+
+    <p class="govuk-body">
+      <strong>Client:</strong> Louise Bevan<br>
+      <strong>LAA reference:</strong> L-YU5-UY3<br>
+      <strong>Status:</strong> Submitted
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Request details</h2>
+
+    {% if data['type-pa'] == 'expert' %}
+    <h3 class="govuk-heading-m">Expert</h3>
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-half">Expert type</th>
+          <td class="govuk-table__cell">{{ data['expert-choice'] | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Full name</th>
+          <td class="govuk-table__cell">{{ data['expertFullName'] | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Guideline rates or hours exceeded?</th>
+          <td class="govuk-table__cell">{{ data['questionOne'] | capitalize | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Costs are split equally?</th>
+          <td class="govuk-table__cell">{{ data['questionTwo'] | capitalize | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for expert</th>
+          <td class="govuk-table__cell">{{ data['expertReason'] | default("Not provided") }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+
+
+    {% if data['type-pa'] == 'expense' %}
+    <h3 class="govuk-heading-m">Expense</h3>
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-half">Expense type</th>
+          <td class="govuk-table__cell">{{ data['expense-choice'] | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Organisation providing the service</th>
+          <td class="govuk-table__cell">{{ data['expenseProvider'] | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for expense</th>
+          <td class="govuk-table__cell">{{ data['expenseReason'] | default("Not provided") }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+
+
+    {% if data['type-pa'] == 'counsel' %}
+    <h3 class="govuk-heading-m">Counsel</h3>
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-half">Counsel type</th>
+          <td class="govuk-table__cell">{{ data['counsel-type'] | default("Not provided") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for counsel</th>
+          <td class="govuk-table__cell">{{ data['counsel-reason'] | default("Not provided") }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+
+
+    <h2 class="govuk-heading-l">Supporting documents</h2>
+    
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">File name</th>
+          <th scope="col" class="govuk-table__header">Category</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="#">court_order_signed.pdf</a>
+          </td>
+          <td class="govuk-table__cell">{{ data['file1Category'] | replace("-", " ") | capitalize | default("Court order") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="#">dr_smith_estimate.docx</a>
+          </td>
+          <td class="govuk-table__cell">{{ data['file2Category'] | replace("-", " ") | capitalize | default("Estimate of costs") }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="#">instruction_letter_v2.pdf</a>
+          </td>
+          <td class="govuk-table__cell">{{ data['file3Category'] | replace("-", " ") | capitalize | default("Letter of instruction") }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    <a href="manage_SCA_submitted_final" role="button" class="govuk-button govuk-button--secondary">
+      Back to your applications
+    </a>
+
+  </div>
+</div>
+{% endblock %}

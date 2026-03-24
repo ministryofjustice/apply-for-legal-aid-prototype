@@ -7,12 +7,10 @@ Apply for legal aid - Counsel details
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -24,8 +22,6 @@ Apply for legal aid - Counsel details
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Counsel</span>
 
       <form action="upload_empty" method="post" novalidate>
 

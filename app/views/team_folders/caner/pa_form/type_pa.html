@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: { text: "PROTOTYPE" },
-    html: 'This is a prototype. Some things may not work as expected.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -37,6 +37,9 @@
               <label class="govuk-label govuk-radios__label" for="expert-pa">
                 Expert
               </label>
+              <div id="pa-type-1-hint" class="govuk-hint govuk-radios__hint">
+                  A specialist who provides evidence, testing or assessment
+                </div>
             </div>
 
             <div class="govuk-radios__item">
@@ -44,6 +47,9 @@
               <label class="govuk-label govuk-radios__label" for="expense-pa">
                 Expense
               </label>
+              <div id="pa-type-2-hint" class="govuk-hint govuk-radios__hint">
+                  A cost, such as travel, records, fees or reports
+                </div>
             </div>
 
             <div class="govuk-radios__item">
@@ -51,6 +57,9 @@
               <label class="govuk-label govuk-radios__label" for="counsel-pa">
                 Counsel
               </label>
+              <div id="pa-type-3-hint" class="govuk-hint govuk-radios__hint">
+                  Barristers who represent the client, give legal advice or prepare advocacy work
+                </div>
             </div>
 
           </div>
@@ -61,7 +70,7 @@
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Save and come back later
         </button>
       </div>

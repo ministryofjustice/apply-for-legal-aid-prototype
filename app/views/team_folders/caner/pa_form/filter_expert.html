@@ -7,12 +7,10 @@ Apply for legal aid - Client details
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -28,7 +26,7 @@ Apply for legal aid - Client details
       <form action="/expert-guideline-check" method="post" novalidate>
 
         <h1 class="govuk-heading-xl">
-          {{ data['expert-choice'] | default("Expert details") }}
+          Costs for the {{ data['expert-choice'] | default("Costs for the expert") }}
         </h1>
 
         <p class="govuk-body">See the guidance on <a href="#">codified rates and guideline hours for experts.</a></p>
@@ -77,7 +75,7 @@ Apply for legal aid - Client details
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Save and come back later
           </button>
         </div>

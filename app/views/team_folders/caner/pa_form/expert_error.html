@@ -20,9 +20,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#expert-autocomplete-container">Search and select an expert type or enter your own</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <form action="/expert-search-submit" method="post" class="form">
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for="expert-list">
@@ -33,6 +48,10 @@
         <div id="expert-list-hint" class="govuk-hint">
           Start typing to select an expert from the dropdown list or continue typing to enter manually.
         </div>
+
+        <p id="type-pa-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>Search and select an expert type or enter your own
+          </p>
         
         <div id="expert-autocomplete-container"></div>
 

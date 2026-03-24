@@ -5,18 +5,14 @@ Apply for legal aid
 {% endblock %}
 
 {% block beforeContent %}
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
 }) }}
 
 {{ govukBackLink({
     text: "Back",
-    href: "manage_SCA_inprogress"
+    href: "/team_folders/caner/manage/manage_SCA_inprogress"
   }) }}
 
 {% endblock %}

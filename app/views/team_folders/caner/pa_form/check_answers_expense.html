@@ -8,8 +8,8 @@ Apply for legal aid - Check your answers - Merits
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
-  tag: { text: "prototype" },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
 }) }}
 
 {{ govukBackLink({
@@ -56,7 +56,7 @@ Apply for legal aid - Check your answers - Merits
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Expense paid to
+              Organisation providing the service
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['expenseProvider'] | default("Not provided") }}
@@ -106,13 +106,13 @@ Apply for legal aid - Check your answers - Merits
             <dd class="govuk-summary-list__value">
               
               court_order_signed.pdf<br>
-              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file1Category'] | default("Court order") }}</span><br><br>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file1Category'] | replace("-", " ") | capitalize | default("Court order") }}</span><br><br>
               
               dr_smith_estimate.docx<br>
-              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file2Category'] | default("Estimate of costs") }}</span><br><br>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file2Category'] | replace("-", " ") | capitalize | default("Estimate of costs") }}</span><br><br>
               
               instruction_letter_v2.pdf<br>
-              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file3Category'] | default("Letter of instruction") }}</span>
+              <span class="govuk-body-s govuk-!-font-weight-bold" style="color: #505a5f;">Category: {{ data['file3Category'] | replace("-", " ") | capitalize | default("Letter of instruction") }}</span>
               
             </dd>
             </div>

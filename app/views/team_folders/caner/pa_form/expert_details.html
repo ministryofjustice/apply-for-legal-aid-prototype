@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: { text: "prototype" },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{{ govukPhaseBanner({
+  tag: { text: "Prototype" },
+  html: 'This is a prototype. Some things may not work as expected.'
+}) }}
 
   {{ govukBackLink({
     text: "Back",
@@ -41,7 +41,7 @@
             Why is this expert needed?
           </label>
           <div id="expert-reason-hint" class="govuk-hint">
-            Briefly explain the work they’ll do and any extra costs or hours
+            Briefly explain the work they’ll do and justify any extra time or cost
           </div>
           <textarea class="govuk-textarea" id="expert-reason" name="expertReason" rows="5" aria-describedby="expert-reason-hint"></textarea>
         </div>
@@ -50,7 +50,7 @@
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Save and come back later
           </button>
         </div>
