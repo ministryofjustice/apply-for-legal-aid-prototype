@@ -2,6 +2,8 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
       day: tuesday
@@ -12,3 +14,11 @@ updates:
         patterns:
           - "*"
     open-pull-requests-limit: 10
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    cooldown:
+      default-days: 7
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "09:00"
