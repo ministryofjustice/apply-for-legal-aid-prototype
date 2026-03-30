@@ -80,12 +80,28 @@
   </style>
 
   <script>
-    // CHANGED: Provide your list of standard experts as a JavaScript array
+    
     var expertOptions = [
+      "A&E consultant",
       "Child Psychiatrist",
       "Child Psychologist",
+      "Dermatologist",
+      "Disability consultant",
+      "DNA (testing of sample)",
+      "DNA (preparation of report)",
+      "Doctor (GP)",
+      "Geneticist",
       "GP (records report)",
-      "Parental Assessment",
+      "Lip reader/Signer",
+      "Mediator",
+      "Medical consultant",
+      "Medical microbiologist",
+      "Midwife",
+      "Neonatologist",
+      "Neuropsychiatrist",
+      "Nursing expert",
+      "Photographer",
+      "Risk assessment expert",
       "Psychiatrist",
       "Psychotherapist",
       "Psychologist",
@@ -93,19 +109,19 @@
       
     ];
 
-    // CHANGED: Initialize the free-text autocomplete instead of enhancing a select box
+    
     if (window.accessibleAutocomplete) {
       accessibleAutocomplete({
         element: document.querySelector('#expert-autocomplete-container'),
-        id: 'expert-list', // Links the input to your label
-        name: 'expert-choice', // The name the Prototype Kit uses to save the answer
-        source: expertOptions, // Feeds the array above into the suggestions
-        autoselect: false, // Prevents it from forcefully auto-filling a suggestion if they type a custom one
+        id: 'expert-list', 
+        name: 'expert-choice', 
+        source: expertOptions, 
+        autoselect: false, 
         displayMenu: 'overlay'
       });
     }
 
-    // This remains exactly the same!
+    
     setTimeout(function() {
       var menu = document.querySelector('#expert-list__listbox');
       
