@@ -1,0 +1,88 @@
+Applicant{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Client details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="SCA_substantive_default" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Proceeding 1</span>
+            <h1 class="govuk-fieldset__heading">
+              Care order
+            </h1>
+          </legend>
+<br>
+
+          <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          What is your client's role in this proceeding?
+        </h1>
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Respondent
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            A child subject of the proceeding
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+        </fieldset>
+      </div>
+
+    </div>
+  </div>
+</fieldset>
+
+<button type="submit" class="govuk-button">
+  Save and continue
+</button>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+  Save and come back later
+</a>
+
+
+
+</form>
+
+
+</div>
+
+{% endblock %}

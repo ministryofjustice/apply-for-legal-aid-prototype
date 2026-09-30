@@ -17,6 +17,146 @@ router.get('/', function (req, res) {
 })
 
 
+//SPECIAL CHILDREN ACT 2026 TRANSFORMATION (adult journey) - CONCEPTS TAB
+
+// SCA 2026 TRANSFORMATION (adult journey) - link case? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/SCA_search', function (req, res) {
+
+  let myvar = req.session.data['linkcase']
+
+  if (myvar === 'no') {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_search')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/search_link_case')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (adult journey) - general filter question - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/SCA_interrupt_1', function (req, res) {
+
+  let myvar = req.session.data['proceeding-issued']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_other')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_interrupt_1')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (adult journey) - add more proceedings? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/delegated_functions', function (req, res) {
+
+  let myvar = req.session.data['add-another-proceeding']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_search_2')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/delegated_functions')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (adult journey) - opponent individual or org? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/sara/special_children_act_2026_adult/opponent_name')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/opponent_organisation_auto')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (adult journey) - biological parent? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/SCA_client_role_pr', function (req, res) {
+
+  let myvar = req.session.data['biological_parent']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_check_who_your_client_is_parent')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_client_role_pr')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (adult journey) - parental responsibility? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/SCA_check_who_your_client_is', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_check_who_your_client_is_pr')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_check_who_your_client_is')
+  }
+})
+
+
+// SCA 2026 TRANSFORMATION (adult journey) - go to upload page? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_adult/SCA_check_answers_merits', function (req, res) {
+
+  let myvar = req.session.data['parental_responsibility']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_adult/upload_01_no_files')
+  } else {
+    res.redirect('/sara/special_children_act_2026_adult/SCA_check_answers_merits')
+  }
+})
+
+
+//SPECIAL CHILDREN ACT 2026 TRANSFORMATION (child journey) - CONCEPTS TAB
+
+// SCA 2026 TRANSFORMATION (child journey) - link case? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_child/SCA_search', function (req, res) {
+
+  let myvar = req.session.data['linkcase']
+
+  if (myvar === 'no') {
+    res.redirect('/sara/special_children_act_2026_child/SCA_search')
+  } else {
+    res.redirect('/sara/special_children_act_2026_child/search_link_case')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (child journey) - general filter question - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_child/SCA_interrupt_1', function (req, res) {
+
+  let myvar = req.session.data['proceeding-issued']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_child/SCA_other')
+  } else {
+    res.redirect('/sara/special_children_act_2026_child/SCA_interrupt_1')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (child journey) - add more proceedings? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_child/delegated_functions', function (req, res) {
+
+  let myvar = req.session.data['add-another-proceeding']
+
+  if (myvar === 'yes') {
+    res.redirect('/sara/special_children_act_2026_child/SCA_search_2')
+  } else {
+    res.redirect('/sara/special_children_act_2026_child/delegated_functions')
+  }
+})
+
+// SCA 2026 TRANSFORMATION (child journey) - opponent individual or org? - CONCEPTS TAB
+router.post('/sara/special_children_act_2026_child/opponent_name', function (req, res) {
+
+  let myvar = req.session.data['individualororganisation']
+
+  if (myvar === 'individual') {
+    res.redirect('/sara/special_children_act_2026_child/opponent_name')
+  } else {
+    res.redirect('/sara/special_children_act_2026_child/opponent_organisation_auto')
+  }
+})
+
+
+
 
 //MANDATORY DISREGARDS - CURRENT
 //client only
@@ -2785,13 +2925,13 @@ router.post('/prior-authority-router', function (req, res) {
 
   if (paType === 'expert') {
     res.redirect('/team_folders/caner/pa_form/expert')
-  } 
+  }
   else if (paType === 'expense') {
     res.redirect('/team_folders/caner/pa_form/expense')
-  } 
+  }
   else if (paType === 'counsel') {
     res.redirect('/team_folders/caner/pa_form/counsel')
-  } 
+  }
   else {
     res.redirect('/team_folders/caner/pa_form/type_pa_error')
   }
@@ -2799,7 +2939,7 @@ router.post('/prior-authority-router', function (req, res) {
 })
 
 router.post('/check-upload-answers', function (req, res) {
-  
+
   // grab the user's answers for three files and the checkbox
   const file1 = req.session.data['file1Category']
   const file2 = req.session.data['file2Category']
@@ -2825,7 +2965,7 @@ router.post('/check-upload-answers', function (req, res) {
       res.redirect('/team_folders/caner/pa_form/check_answers_counsel')
     } else {
       // just in case testing data gets wiped
-      res.redirect('/team_folders/caner/pa_form/check_answers') 
+      res.redirect('/team_folders/caner/pa_form/check_answers')
     }
   }
 })
@@ -2838,38 +2978,38 @@ router.post('/check-empty-upload', function (req, res) {
 
 // routing for expert details page in PA form
 router.post('/expert-guideline-check', function (req, res) {
-  
+
   // grab the answers from the two questions
   const questionOne = req.session.data['questionOne']
   const questionTwo = req.session.data['questionTwo']
 
   // check the specific logic: If Q1 is 'No' AND Q2 is 'Yes'
   if (questionOne === 'no' && questionTwo === 'yes') {
-    
+
     // if condition met, then send to the interruption page
     res.redirect('/team_folders/caner/pa_form/interrupt_expert')
-    
+
   } else {
-    
+
     // otherwise send to the normal next page coming after the interruption page
     res.redirect('/team_folders/caner/pa_form/expert_details')
-    
+
   }
 })
 
 // PA form, search for the expert type error page
 router.post('/expert-search-submit', function (req, res) {
-  
+
   const expertChoice = req.session.data['expert-choice']
   if (!expertChoice || expertChoice.trim() === '') {
-    
+
     // to the error page
     res.redirect('/team_folders/caner/pa_form/expert_error')
-    
+
   } else {
-    
+
     // next page
     res.redirect('/team_folders/caner/pa_form/filter_expert')
-    
+
   }
 })

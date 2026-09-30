@@ -1,0 +1,319 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+td:first-child {
+  font-weight: bold !important;
+}
+th {
+  /*font-weight: normal !important;*/
+}
+dt:first-child{
+  font-weight: bold;
+}
+th:first-child {
+  font-weight: bold;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+      <form action="application_submitted" method="post" novalidate>
+
+
+    <h1 class="govuk-heading-xl">
+      Print and submit your application
+    </h1>
+
+    <p><strong>Client:</strong> Sam Doe
+      <br><strong>LAA reference:</strong> L-23A-56D
+      <br><strong>Office:</strong> Hitchcock, Jones and King, 17 Hammond Drive, Fareling, FL5 7SH
+    </p>
+
+    <h2 class="govuk-heading-l">
+    Client and case details
+    </h2>
+
+    <h3 class="govuk-heading-m">
+    Client
+    </h3>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h4 class="govuk-summary-card__title">
+          Client details
+        </h4>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              First name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['firstname'] or "Sam" }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['lastname'] or "Doe" }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client had a different last name at birth?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last name at birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['lastnamebirth'] == "no") %}
+              Same as last name
+              {% endif %}
+
+              {% if (data['lastnamebirth'] == "yes") %}
+              {{ data['lastnamebirth-what'] or "Jones" }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dob-day'] or "11" }} {{ data['dob-month'] or "September" }} {{ data['dob-year'] or "2023" }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['NINO-yes'] or "Not provided" }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has applied before?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applied_before'] | capitalize}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where to send client's mail?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              My client's UK home address
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Welsh language?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Buckingham Palace
+              London
+              SW1A 1AA
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Buckingham Palace
+              London
+              SW1A 1AA
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="govuk-heading-m">
+    Cases linked to this one
+    </h3>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h4 class="govuk-summary-card__title">
+          Linking
+        </h4>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Link to another application?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="govuk-heading-m">
+    What you're applying for
+    </h3>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h4 class="govuk-summary-card__title">
+          Care order
+        </h4>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              A child subject of this proceeding
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delegated functions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              30 September 2026
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Substantive level of service
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Full representation
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Substantive scope limitations
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Final hearing<br>
+              Limited to all steps up to and including final hearing and any action necessary to implement (but not enforce) the order.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-l">
+    Merits
+    </h2>
+
+    <h3 class="govuk-heading-m">
+    Case details
+    </h3>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Opponents</h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opponent 1 name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Joe Bloggs
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Opponent 1 type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Individual
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+
+
+
+<h3 class="govuk-heading-m">Print or save application</h3>
+
+<p class="govuk-body">You'll need to keep a copy of the application on file, along with any evidence you included.</p>
+
+<p class="govuk-body">You may need to show this if you're audited by the LAA in the future.</p>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot change your answers once you submit and continue
+  </strong>
+</div>
+
+<br>
+
+<a role="button" href="print_view" target="_blank" style="margin-left:" class="govuk-button draft-button">Print or save application</a>
+
+<p></p>
+
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Submit and continue
+  </button>
+  <a class="govuk-link" href="#">Back to your applications</a>
+</div>
+
+
+</form>
+
+</div>
+</div>
+
+
+{% endblock %}

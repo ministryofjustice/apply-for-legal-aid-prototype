@@ -1,0 +1,515 @@
+<form class="" action="index.html" method="post">
+
+</form>{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-summary-list__key {
+  width: 40%;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-xl">Client and case details</span>
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <h2 class="govuk-heading-l">
+      Client
+    </h2>
+
+     <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Client details</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                First name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['firstname'] or "Sam" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> first name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['lastname'] or "Doe" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> last name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last name at birth
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                {% if (data['lastnamebirth'] == "no") %}
+                Same as last name
+                {% endif %}
+
+                {% if (data['lastnamebirth'] == "yes") %}
+                {{ data['lastnamebirth-what'] or "Jones" }}
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="client_details">
+                  Change<span class="govuk-visually-hidden"> last name</span>
+                </a>
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob-day'] or "11" }} {{ data['dob-month'] or "September" }} {{ data['dob-year'] or "2023" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['NINO-yes'] or "Not provided" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> National Insurance number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Has applied before?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['applied_before'] | capitalize}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> National Insurance number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where to send client's mail?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['correspondenceUK'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="postcode_finder">
+                  Change<span class="govuk-visually-hidden"> Correspondence address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Welsh language?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> National Insurance number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <!-- {{ data['address-select'] }} -->
+                1 Main Street</br>London</br>SE15 5NP
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Correspondence address</span>
+                </a>
+              </dd>
+            </div>
+
+            <!-- //// -->
+            {% if (data['correspondenceUK'] != "My client's UK home address") %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Care of recipient
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if (data['careofrecipient'] == "person") %}
+                {{ data['personfirstname']}} {{ data['personlastname']}}
+                {% endif %}
+
+                {% if (data['careofrecipient'] == "organisation") %}
+                {{ data['organisationname'] }}
+                {% endif %}
+
+                {% if (data['careofrecipient'] == "no") %}
+                None
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Care of recipient</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Client has a home address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['clientHomeAddress'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Client has a home address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if (data['correspondenceUK'] == "My client's UK home address") %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Barrio de San Roque<br>
+                09692 Canicosa De La Sierra<br>
+                Burgos<br>
+                Spain
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="postcode_finder">
+                  Change<span class="govuk-visually-hidden"> Correspondence address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+
+
+
+      <h2 class="govuk-heading-l">
+        Cases linked to this one
+      </h2>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Linking</h2>
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Link to another application?
+              </dt>
+
+
+              {% if (data['linkcase'] != "no" and data['linkcase_result'] != "no") %}
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="link_case">
+                  Change<span class="govuk-visually-hidden"> link application answer</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {{ data['linkcase'] or 'Link type' }}
+                made to
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Client Name, A-BCD-E1F, Child Arrangements Order.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="link_case">
+                  Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                </a>
+              </dd>
+              </div>
+              {% endif %}
+
+              {% if (data['linkcase'] == "no" or data['linkcase_result'] == "no") %}
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="copy_case">
+                  Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                </a>
+              </dd>
+              </div>
+              {% endif %}
+
+            </dl>
+          </div>
+        </div>
+
+
+        {% if (data['linkcase'] == "Family link") %}
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">All applications with a family link to this one</h2>
+            </div>
+
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Client 1
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    A-BCD-E1F</br>
+                    Child Arrangements Order
+                  </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Client 2
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      A-BCD-E1F</br>
+                      Child Arrangements Order
+                    </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Client 3
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        A-BCD-E1F</br>
+                        Child Arrangements Order
+                      </dd>
+                      </div>
+                  </dl>
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+      {% if (data['linkcase'] == "Family link") %}
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Copying</h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action"> <a class="govuk-link" href="copy_case">
+                Change<span class="govuk-visually-hidden"> proceedings</span>
+              </a>
+            </li>
+          </ul>
+          </div>
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Copy from another application?
+                </dt>
+
+                {% if (data['copycase'] != "No") %}
+                  <dd class="govuk-summary-list__value">
+                    Yes
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="copy_case">
+                      Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                    </a>
+                  </dd> -->
+                  </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Application copied
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Client Name, A-BCD-E1F, Proceeding name 1.
+                    </dd>
+                    <!-- <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="copy_case">
+                        Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                      </a>
+                    </dd> -->
+                  </div>
+                  {% endif %}
+
+                  {% if (data['copycase'] == "No") %}
+                    <dd class="govuk-summary-list__value">
+                      No
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="copy_case">
+                        Change<span class="govuk-visually-hidden"> application linked to answer</span>
+                      </a>
+                    </dd>
+                    </div>
+                    {% endif %}
+
+                </dl>
+              </div>
+            </div>
+            {% endif %}
+
+
+    <h2 class="govuk-heading-l">
+      What you're applying for
+    </h2>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Proceedings</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> proceedings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Proceeding 1
+          </dt>
+          <dd class="govuk-summary-list__value">Care order<br>
+          <p class="govuk-body">
+            Special children act (SCA), family
+          </p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Care order</h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action"> <a class="govuk-link" href="client_involvement_type">
+          Change<span class="govuk-visually-hidden"> Proceeding name details</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          A child subject of the proceeding
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Delegated functions
+        </dt>
+        <dd class="govuk-summary-list__value">
+          23 August 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Substantive level of service
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Full representation
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+        <dt class="govuk-summary-list__key">
+          Substantive scope limits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Final hearing
+          <br>Limited to all steps up to and including final hearing and any action necessary to implement (but not enforce) the order.
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot change the answers on this page once you save and continue.
+  </strong>
+</div>
+
+
+<div class="govuk-button-group">
+  <a class="govuk-button" href="DWP_outcome_SCA" data-module="govuk-button">
+    Save and continue
+  </a>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and come back later
+  </button>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% block pageTitle %}
+Apply for legal aid - Check your answers - Merits
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+<h1 class="govuk-heading-xl">Confirm the following</h1>
+
+ <p class="govuk-body">You agree for {{ data['firstname'] or "Sam" }}   {{ data['lastname'] or "Doe" }} that:</p>
+
+ <ul class="govuk-list govuk-list--bullet">
+
+<li>their date of birth on the application is correct based on the information you have</li>
+<li>they or their guardian have read the <a href="/privacy/privacy">LAA privacy policy</a></li>
+<li>they've instructed Hitchcock, Jones and King to represent them</li>
+<li>the information they’ve given is complete and correct</li>
+ </ul>
+
+
+ <div class="govuk-form-group">
+
+<!-- <p class="govuk-body">You confirm that:</p> -->
+
+     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+         <label class="govuk-label govuk-checkboxes__label" for="countries">
+        I confirm the above is correct
+         </label>
+       </div>
+
+     </div>
+
+ </div>
+
+
+<a class="govuk-button" href="application_cert_review" role="button">
+Save and continue
+</a>
+
+<a role="button" style="margin-left: 15px;" class="govuk-button draft-button">
+Save and come back later
+</a>
+
+</div>
+</div>
+
+
+
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
