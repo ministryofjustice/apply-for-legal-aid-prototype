@@ -22,3 +22,7 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "09:00"
+    groups:
+      actions:
+        patterns:
+          - "*"
