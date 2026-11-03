@@ -16,5 +16,13 @@
     "govuk-prototype-kit": "14.0.2",
     "jquery": "4.0.0",
     "notifications-node-client": "8.5.0"
+  },
+  "devDependencies": {
+    "minimatch": ">=11.0.1",
+    "follow-redirects": ">=1.16.1"
+  },
+  "resolutions": {
+    "minimatch": ">=11.0.1",
+    "follow-redirects": ">=1.16.1"
   }
 }
