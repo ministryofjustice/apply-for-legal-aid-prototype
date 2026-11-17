@@ -8,23 +8,23 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "3.0.1",
     "@govuk-prototype-kit/step-by-step": "3.0.0",
-    "@ministryofjustice/frontend": "^11.1.0",
+    "@ministryofjustice/frontend": "^12.0.0",
     "@x-govuk/govuk-prototype-components": "^6.0.0",
     "accessible-autocomplete": "^3.0.2",
-    "axios": "^1.21.0",
+    "axios": "^1.21.1",
     "govuk-frontend": "^6.6.0",
     "govuk-prototype-kit": "14.0.2",
     "jquery": "4.0.0",
     "notifications-node-client": "8.5.0"
   },
   "devDependencies": {
-    "follow-redirects": ">=1.16.1",
-    "minimatch": ">=11.0.1",
+    "follow-redirects": ">=1.16.3",
+    "minimatch": ">=11.0.5",
     "qs": "^6.17.1"
   },
   "resolutions": {
-    "follow-redirects": ">=1.16.1",
-    "minimatch": ">=11.0.1",
+    "follow-redirects": ">=1.16.3",
+    "minimatch": ">=11.0.5",
     "qs": "^6.17.1"
   }
 }
